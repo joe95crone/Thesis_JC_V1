@@ -46,6 +46,7 @@
 \RequirePackage{xcolor}
 \RequirePackage{enumerate}
 \RequirePackage{graphicx}
+\RequirePackage{amsmath}
 
 
 
