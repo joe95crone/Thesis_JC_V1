@@ -47,6 +47,7 @@
 \RequirePackage{enumerate}
 \RequirePackage{graphicx}
 \RequirePackage{amsmath}
+\RequirePackage{setspace}
 
 
 
