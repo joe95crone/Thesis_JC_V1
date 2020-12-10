@@ -20,10 +20,13 @@
 \chapter{Theory of Photon Production by Inverse Compton Scattering}
 \label{Theory_of_Photon_Production_by_Inverse_Compton_Scattering} % to reference use \ref{ChapterTemplate}
 
-\textcolor{blue}{**TALK ABOUT THE REGIMES OF INVERSE COMPTON SCATTERING, NON-LINEAR AND RECOIL**}
+\begin{equation}
+\frac{\omega'}{\omega} = \gamma\left(1+\beta\cos\theta\right),
+\label{eq:doppler_shift}
+\end{equation}
+where $\omega'$ is the Doppler shifted angular frequency, $\omega$ is the incident photon angular frequency, $\beta$ is the Lorentz speed factor and $\theta$ is the angle between the incident and Doppler shifted photon. 
 
-\textcolor{blue}{**DERIVATION OF THE ICS SCATTERED PHOTON ENERGY**\\
-\textit{Haven't been able to do this yet}}
+\textcolor{blue}{**TALK ABOUT THE REGIMES OF INVERSE COMPTON SCATTERING, NON-LINEAR AND RECOIL**}
 
 \begin{figure}[!htb]
     \centering
@@ -32,18 +35,97 @@
     \label{fig:scattered_photon_kinematics}
 \end{figure}
 
-\begin{equation}
-\frac{\omega'}{\omega} = \gamma\left(1+\beta\cos\theta\right),
-\label{eq:doppler_shift}
-\end{equation}
-where $\omega'$ is the Doppler shifted angular frequency, $\omega$ is the incident photon angular frequency, $\beta$ is the Lorentz speed factor and $\theta$ is the angle between the incident and Doppler shifted photon. 
+\textcolor{blue}{**DERIVATION OF THE ICS SCATTERED PHOTON ENERGY**\\}
+
+Motivated by the geometry of the inverse Compton scattering process as shown in Figure \ref{fig:scattered_photon_kinematics}, we can write the initial photon $Q_{i}$ and electron $P_{i}$ four-vectors
+
+\begin{align}
+Q_{i} = \frac{E_{L}}{c}\left(1,\hat{n}_{i}\right), \\
+P_{i} = \gamma m\left(c,\boldsymbol{v_{i}}\right),
+\label{eq:initial_four_vectors}
+\end{align}
+where $E_{L}$ is the energy of the incident photon, $\hat{n}_{i}$ is the unit displacement three-vector of the incident photon, $\gamma$ is the Lorentz factor, $m$ is the mass of the electron, $c$ the speed of light in a vacuum and $\boldsymbol{v_{i}}$ is the velocity three-vector of the incident electron with magnitude $v_{i}$. Similarly, we can present the final electron and scattered photon states with the four-vectors 
+
+\begin{align}
+Q_{f} = \frac{E_{\gamma}}{c}\left(1,\hat{n}_{f}\right),
+P_{f} = \gamma' m\left(c,\boldsymbol{v_{f}}\right),
+\label{eq:final_four_vectors}
+\end{align}
+
+where $E_{\gamma}$ is the scattered photon energy, $\hat{n}_{f}$ is the unit displacement three-vector of the scattered photon, $\gamma'$ is the Lorentz factor of the recoiling electron and $\boldsymbol{v_{f}}$ is the velocity three-vector of the recoiling electron with magnitude $v_{f}$. At this point we can consider our Lorentz invariant quantities 
+
+\begin{align}
+P_{\mu}P^{\mu} = \gamma^{2}m^{2}\left(v^{2}-c^{2}\right) = -m^{2}c^{2},
+\label{eq:lorentz_invariants1} \\
+Q_{\mu}Q^{\mu} = 0.
+\label{eq:lorentz_invariants2}
+\end{align}
+
+In the inverse Compton scattering the conservation of four-momentum can be wrote as
 
 \begin{equation}
-E_{\gamma} = \frac{\left(1-\beta\cos\phi'\right)E_{L}}{1-\beta\cos\theta+\left(1-\cos\theta'\right)\frac{E_{L}}{E_{e}}}, 
+P_{i} + Q_{i} = P_{f} + Q_{f}.
+\label{eq:conservation_four_momentum}
+\end{equation}
+
+We can multiply Eq. \ref{eq:conservation_four_momentum} by the final four momentum of the scattered photon and apply Eq. \ref{eq:lorentz_invariants2} the Lorentz invariant 
+
+\begin{align}
+Q_{f}^{\mu}\left(P_{i\mu} + Q_{i\mu}\right) = Q_{f}^{\mu}\left(P_{f\mu} + Q_{f\mu}\right), \\
+Q_{f}^{\mu}P_{i\mu}+Q_{f}^{\mu}Q_{i\mu} = Q_{f}^{\mu}P_{f\mu}.
+\label{eq:apply_photon_pfinal}
+\end{align}
+ 
+Similarly we can construct another equation by inspecting the square of the conservation of four-momentum
+
+\begin{align}
+\left(P_{i}+Q_{i}\right)_{\mu}\left(P_{i}+Q_{i}\right)^{\mu} = \left(P_{f}+Q_{f}\right)_{\mu}\left(P_{f}+Q_{f}\right)^{\mu}, \\
+P_{i\mu}P_{i}^{\mu}+Q_{i\mu}P_{i}^{\mu}+Q_{i\mu}P_{i}^{\mu}+Q_{i\mu}Q_{i}^{\mu} = P_{f\mu}P_{f}^{\mu}+Q_{f\mu}P_{f}^{\mu}+P_{f\mu}Q_{f}^{\mu}+Q_{f\mu}Q_{f}^{\mu},
+\label{eq:apply_conservation_squared}
+\end{align}
+utilising the commutation of four-vectors ($P_{\mu}Q^{\mu} = Q_{\mu}P^{\mu}$) and our Lorentz invariants Eq. \ref{eq:lorentz_invariants1}, \ref{eq:lorentz_invariants2} we can simplify this further
+
+\begin{equation}
+P_{i\mu}Q_{i}^{\mu} = P_{f\mu}Q_{f}^{\mu}.
+\label{eq:end_conservation_squared}
+\end{equation}
+Subbing Eq. \ref{eq:end_conservation_squared} into Eq. \ref{eq:apply_photon_pfinal} yields
+
+\begin{equation}
+Q_{f}^{\mu}P_{i\mu}+Q_{f}^{\mu}Q_{i\mu} = Q_{i}^{\mu}P_{i\mu}
+\label{eq:substitution_four_vector}
+\end{equation}
+
+Which in three-vector notation is shown as
+
+\begin{equation}
+\frac{E_{L}E_{\gamma}}{c^{2}}\left(\hat{n}_{i}\cdot\hat{n}_{f}-1\right)+\frac{E_{\gamma}}{c}\gamma m\left(\hat{n}_{f}\cdot \boldsymbol{v_{i}}-c\right) = \frac{E_{L}}{c}\gamma m\left(\hat{n}_{i}\cdot \boldsymbol{v_{i}} -c\right)
+\label{eq:three_vector_solution}
+\end{equation}
+
+However, Eq. \ref{eq:three_vector_solution} should be presented in terms of the angles in Figure \ref{fig:scattered_photon_kinematics}. The dot products within this formula can be replaced using projections to introduce the angular dependencies
+
+\begin{align}
+\hat{n}_{i}\cdot\hat{n}_{f} = \cos\theta',
+\label{eq:projection_angle_incident_scattered_photon}\\
+\hat{n}_{f}\cdot \boldsymbol{v_{i}} = v_{i}\cos\theta,
+\label{eq:projection_scattering_angle}\\
+\hat{n}_{i}\cdot \boldsymbol{v_{i}} = v_{i}\cos\phi'.
+\label{eq:projection_pi_minus_crossing_angle}
+\end{align}
+where $\phi'=\pi-\phi$ with $\phi$, the crossing angle, which is the angle between the incident photon and the incident electron, $\theta$ is the angle between the incident electrons and the scattered photons and $\theta'=\phi'-\theta$ is the angle between the incident and scattered photons. Upon subbing in the projections (Eq. \ref{eq:projection_angle_incident_scattered_photon}, \ref{eq:projection_scattering_angle}, \ref{eq:projection_pi_minus_crossing_angle}) Eq. \ref{eq:three_vector_solution} becomes
+
+\begin{equation}
+E_{L}E_{\gamma}\left(\cos\theta'-1\right)+E_{\gamma}\gamma mc^{2}\left(\frac{v_{i}}{c}\cos\theta-1\right) = E_{L}\gamma mc^{2}\left( \frac{v_{i}}{c}\cos\phi'-1\right)
+\label{eq:three_vector_solution_projections}
+\end{equation}
+Using the Lorentz speed factor $\beta = v/c$ and the total electron beam energy $E_{e} = \gamma mc^{2}$ and rearranging we arive at the general linear, recoil-corrected form for the scattered photon energy resulting from inverse Compton scattering 
+
+\begin{equation}
+E_{\gamma} = \frac{\left(1-\beta\cos\phi'\right)E_{L}}{1-\beta\cos\theta+\left(1-\cos\theta'\right)\frac{E_{L}}{E_{e}}}. 
 \label{eq:scattered_photon_energy}
 \end{equation}
-where $E_{\gamma}$ is the scattered photon energy, $E_{L}$ is the energy of the incident photon $\phi'=\pi-\phi$ with $\phi$, the crossing angle, which is the angle between the incident photon and the incident electron, $\theta$ is the angle between the incident electrons and the scattered photons and $\theta'=\phi'-\theta$ is the angle between the incident and scattered photons.  
-
+  
 In the head-on case, for $\theta \ll 1$ i.e. in the small angle approximation
 
 \begin{equation}
