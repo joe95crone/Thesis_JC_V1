@@ -1,0 +1,66 @@
+KEY
+(1) Individual tasks are shown - 
+(2) If something is done nicely it is denoted -%
+(3) If something needs some work or review it is denoted -~
+(4) If not sure of where it fits into structure etc. denote it -@
+(5) If not sure of how to do it, it is shown with -#
+(6) If not sure it is necessary denote it with a -?
+
+For example if something is done nicely, but it requires review it is shown as -%~ i.e multiple flags but follows order defined above.
+
+----------------------------------------------------------------------------
+Introduction
+----------------------------------------------------------------------------
+
+- Overview of light sources (Brem, Synch, Compton)
+- History of Compton light sources
+- History of ERL's
+- Motivation for an ERL driven ICS as next gen light source
+-? Overview of CBETA
+-? Overview of DIANA
+
+----------------------------------------------------------------------------
+Theory of Photon Production by Inverse Compton Scattering
+----------------------------------------------------------------------------
+Order is far from set in stone here, it is very rough
+
+- Show Feynman Diagram of electron-photon interaction [Berestetskii 74.14 - maybe find better or create own]
+- Show the p + k = p' + k' equation
+-~ Show the geometry of the inverse Compton scattering interaction [Need to repace Ee etc. with p and k etc.]
+- Derive the Mandelstam variables and the X and Y Lorentz quantities
+-@? Derive the Doppler shift of the radiation
+-~ Derive the scattered photon equation
+- Talk about the recoil regime, when inverse Compton scattering becomes Thomson scattering
+-# Talk about the linear and non-linear regimes i.e where the boundaries of it are
+-? Describe the non-linear effects (ponderomotive broadening, harmonic generation, multi-photon compton scattering)
+-? Derive the cross section from Berestetskii/Sun/Klein
+-~ Larmor theorem to flux in head-on case
+- Angular crossing effect via Suzuki + Miyahara
+- Hourglass Effect + Angular Crossing study/investigation
+- Spectral Density
+- Peak + Average Brilliance (Possible study/investigation)
+-? Bandwidth Study
+- Collimated Flux in a Bandwdidth
+- ICARUS theory
+
+----------------------------------------------------------------------------
+CBETA Multi-Pass Commissioning
+----------------------------------------------------------------------------
+I have no idea how to construct this chapter...
+
+- Description of CBETA
+
+----------------------------------------------------------------------------
+CBETA Inverse Compton Source
+----------------------------------------------------------------------------
+
+- Setting of the ICS parameters
+- Optimisation of collimated flux + tuning curves
+- Bypass design
+- Output parameters
+- Development of ICARUS, SUN1D benchmarking + ICCS3D benchmarking
+- Comparison with 
+
+
+----------------------------------------------------------------------------
+DIANA Inverse Compton Source
