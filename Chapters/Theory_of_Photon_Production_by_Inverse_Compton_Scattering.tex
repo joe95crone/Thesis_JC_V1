@@ -96,9 +96,10 @@ which, when transformed into the geometry as shown in Fig.~\ref{fig:scattered_ph
 \begin{align}
 X = \frac{2\gamma E_{L}\left(1-\beta\cos\phi'\right)}{m_{e}c^{2}},
 \label{eq:X_geometry} \\
-Y = \frac{2\gamma E_{\gamma}\left(1-\beta\cos\theta\right)}{m_{e}c^{2}}.
+Y = \frac{2\gamma E_{\gamma}\left(1-\beta\cos\theta\right)}{m_{e}c^{2}},
 \label{eq:Y_geometry}
 \end{align}
+where $\beta = v/c$, the Lorentz speed factor.
 
 \textcolor{blue}{Do I show the full derivation of the Madelstam variables? I have done this but still...}
 \textcolor{blue}{**STATEMENT OF RECOIL REGIME}
@@ -111,63 +112,51 @@ X = \frac{4\gamma E_{L}}{m_{e}c^{2}}.
 
 The Lorentz invariant $X$ can also be termed the recoil parameter, which denotes the magnitude of the recoil of the incident electron. For the case $X \ll 1$, the recoil is small and inverse Compton scattering reduces to Thomson scattering.    
 
+\section{Non-linear Inverse Compton Scattering}
+
 \section{Derivation of the Scattered Photon Energy Due to Inverse Compton Scattering}
 
 \textcolor{blue}{**DERIVATION OF THE ICS SCATTERED PHOTON ENERGY**}
 
-At this point we can consider our Lorentz invariant quantities 
-
+The relation in (Eq.~\ref{eq:ICS_process}) can be modified in order to calculate the scattered photon energy of an electron - photon interaction. Using the four-momenta in (Eq.~\ref{eq:initial_four_vectors}-\ref{eq:final_four_vectors}) we can create Lorentz invariant quantities from the Minkowski norms of the four-momenta 
 \begin{align}
-P_{\mu}P^{\mu} = \gamma^{2}m^{2}\left(v^{2}-c^{2}\right) = -m^{2}c^{2},
+p_{1\mu}p_{1}^{\mu} = \gamma^{2}m_{e}^{2}\left(v^{2}-c^{2}\right) = -m_{e}^{2}c^{2},
 \label{eq:lorentz_invariants1} \\
-Q_{\mu}Q^{\mu} = 0.
+k_{1\mu}k_{1}^{\mu} = 0.
 \label{eq:lorentz_invariants2}
 \end{align}
 
-In the inverse Compton scattering the conservation of four-momentum can be wrote as
-
-\begin{equation}
-P_{i} + Q_{i} = P_{f} + Q_{f}.
-\label{eq:conservation_four_momentum}
-\end{equation}
-
-We can multiply Eq. \ref{eq:conservation_four_momentum} by the final four momentum of the scattered photon and apply Eq. \ref{eq:lorentz_invariants2} the Lorentz invariant 
-
+We can multiply (Eq.~\ref{eq:ICS_process}) by the four-momentum  of the scattered photon and apply (Eq.~\ref{eq:lorentz_invariants2}) the Lorentz invariant 
 \begin{align}
-Q_{f}^{\mu}\left(P_{i\mu} + Q_{i\mu}\right) = Q_{f}^{\mu}\left(P_{f\mu} + Q_{f\mu}\right), \\
-Q_{f}^{\mu}P_{i\mu}+Q_{f}^{\mu}Q_{i\mu} = Q_{f}^{\mu}P_{f\mu}.
+k_{2}^{\mu}\left(p_{1\mu} + k_{1\mu}\right) = k_{2}^{\mu}\left(p_{2\mu} + k_{2\mu}\right), \\
+k_{2}^{\mu}p_{1\mu}+k_{2}^{\mu}k_{1\mu} = k_{2}^{\mu}p_{2\mu}.
 \label{eq:apply_photon_pfinal}
 \end{align}
- 
-Similarly we can construct another equation by inspecting the square of the conservation of four-momentum
 
+Similarly we can construct another equation by inspecting the square of the conservation of four-momentum
 \begin{align}
-\left(P_{i}+Q_{i}\right)_{\mu}\left(P_{i}+Q_{i}\right)^{\mu} = \left(P_{f}+Q_{f}\right)_{\mu}\left(P_{f}+Q_{f}\right)^{\mu}, \\
-P_{i\mu}P_{i}^{\mu}+Q_{i\mu}P_{i}^{\mu}+Q_{i\mu}P_{i}^{\mu}+Q_{i\mu}Q_{i}^{\mu} = P_{f\mu}P_{f}^{\mu}+Q_{f\mu}P_{f}^{\mu}+P_{f\mu}Q_{f}^{\mu}+Q_{f\mu}Q_{f}^{\mu},
+\left(p_{1}+k_{1}\right)_{\mu}\left(p_{1}+k_{1}\right)^{\mu} = \left(p_{2}+k_{2}\right)_{\mu}\left(p_{2}+k_{2}\right)^{\mu}, \\
+p_{1\mu}p_{1}^{\mu}+k_{1\mu}p_{1}^{\mu}+k_{1\mu}p_{1}^{\mu}+k_{1\mu}k_{1}^{\mu} = p_{2\mu}p_{2}^{\mu}+k_{2\mu}p_{2}^{\mu}+p_{2\mu}k_{2}^{\mu}+k_{2\mu}k_{2}^{\mu},
 \label{eq:apply_conservation_squared}
 \end{align}
-utilising the commutation of four-vectors ($P_{\mu}Q^{\mu} = Q_{\mu}P^{\mu}$) and our Lorentz invariants Eq. \ref{eq:lorentz_invariants1}, \ref{eq:lorentz_invariants2} we can simplify this further
-
+utilising the commutation of four-vectors ($p_{\mu}k^{\mu} = k_{\mu}p^{\mu}$) and our Lorentz invariants (Eq.~\ref{eq:lorentz_invariants1}, \ref{eq:lorentz_invariants2}) we can simplify this further 
 \begin{equation}
-P_{i\mu}Q_{i}^{\mu} = P_{f\mu}Q_{f}^{\mu}.
+p_{1\mu}k_{1}^{\mu} = p_{2\mu}k_{2}^{\mu}.
 \label{eq:end_conservation_squared}
 \end{equation}
-Subbing Eq. \ref{eq:end_conservation_squared} into Eq. \ref{eq:apply_photon_pfinal} yields
-
+Subbing (Eq.~\ref{eq:end_conservation_squared}) into (Eq.~\ref{eq:apply_photon_pfinal}) yields
 \begin{equation}
-Q_{f}^{\mu}P_{i\mu}+Q_{f}^{\mu}Q_{i\mu} = Q_{i}^{\mu}P_{i\mu}
+k_{2}^{\mu}p_{1\mu}+k_{2}^{\mu}k_{1\mu} = k_{1}^{\mu}p_{1\mu}
 \label{eq:substitution_four_vector}
 \end{equation}
 
 Which in three-vector notation is shown as
-
 \begin{equation}
-\frac{E_{L}E_{\gamma}}{c^{2}}\left(\hat{n}_{i}\cdot\hat{n}_{f}-1\right)+\frac{E_{\gamma}}{c}\gamma m\left(\hat{n}_{f}\cdot \boldsymbol{v_{i}}-c\right) = \frac{E_{L}}{c}\gamma m\left(\hat{n}_{i}\cdot \boldsymbol{v_{i}} -c\right)
+\frac{E_{L}E_{\gamma}}{c^{2}}\left(\hat{n}_{i}\cdot\hat{n}_{f}-1\right)+\frac{E_{\gamma}}{c}\gamma m_{e}\left(\hat{n}_{f}\cdot \boldsymbol{v_{i}}-c\right) = \frac{E_{L}}{c}\gamma m_{e}\left(\hat{n}_{i}\cdot \boldsymbol{v_{i}} -c\right)
 \label{eq:three_vector_solution}
 \end{equation}
 
-However, Eq. \ref{eq:three_vector_solution} should be presented in terms of the angles in Figure \ref{fig:scattered_photon_kinematics}. The dot products within this formula can be replaced using projections to introduce the angular dependencies
-
+However, (Eq.~\ref{eq:three_vector_solution}) should be presented in terms of the angles in Fig.~\ref{fig:scattered_photon_kinematics}. The dot products within this formula can be replaced using projections to introduce the angular dependencies
 \begin{align}
 \hat{n}_{i}\cdot\hat{n}_{f} = \cos\theta',
 \label{eq:projection_angle_incident_scattered_photon}\\
@@ -176,37 +165,33 @@ However, Eq. \ref{eq:three_vector_solution} should be presented in terms of the 
 \hat{n}_{i}\cdot \boldsymbol{v_{i}} = v_{i}\cos\phi'.
 \label{eq:projection_pi_minus_crossing_angle}
 \end{align}
-where $\phi'=\pi-\phi$ with $\phi$, the crossing angle, which is the angle between the incident photon and the incident electron, $\theta$ is the angle between the incident electrons and the scattered photons and $\theta'=\phi'-\theta$ is the angle between the incident and scattered photons. Upon subbing in the projections (Eq. \ref{eq:projection_angle_incident_scattered_photon}, \ref{eq:projection_scattering_angle}, \ref{eq:projection_pi_minus_crossing_angle}) Eq. \ref{eq:three_vector_solution} becomes
 
+Upon introducing the projections (Eq.~\ref{eq:projection_angle_incident_scattered_photon}, \ref{eq:projection_scattering_angle}, \ref{eq:projection_pi_minus_crossing_angle}), (Eq.~\ref{eq:three_vector_solution}) becomes
 \begin{equation}
-E_{L}E_{\gamma}\left(\cos\theta'-1\right)+E_{\gamma}\gamma mc^{2}\left(\frac{v_{i}}{c}\cos\theta-1\right) = E_{L}\gamma mc^{2}\left( \frac{v_{i}}{c}\cos\phi'-1\right)
+E_{L}E_{\gamma}\left(\cos\theta'-1\right)+E_{\gamma}\gamma m_{e}c^{2}\left(\frac{v_{i}}{c}\cos\theta-1\right) = E_{L}\gamma m_{e}c^{2}\left( \frac{v_{i}}{c}\cos\phi'-1\right)
 \label{eq:three_vector_solution_projections}
 \end{equation}
-Using the Lorentz speed factor $\beta = v/c$ and the total electron beam energy $E_{e} = \gamma mc^{2}$ and rearranging we arive at the general linear, recoil-corrected form for the scattered photon energy resulting from inverse Compton scattering 
-
+Using the Lorentz speed factor $\beta = v/c$ and the total electron beam energy $E_{e} = \gamma m_{e}c^{2}$ and rearranging we arive at the general linear, recoil-corrected form for the scattered photon energy resulting from inverse Compton scattering 
 \begin{equation}
 E_{\gamma} = \frac{\left(1-\beta\cos\phi'\right)E_{L}}{1-\beta\cos\theta+\left(1-\cos\theta'\right)\frac{E_{L}}{E_{e}}}. 
 \label{eq:scattered_photon_energy}
 \end{equation}
   
-In the head-on case, for $\theta \ll 1$ i.e. in the small angle approximation
+In the head-on case, for $\theta \ll 1$ i.e. in the small angle approximation and an ultra-relativistic electron beam ($\beta \rightarrow 0$)
 
 \begin{equation}
 E_{\gamma} \approx \frac{4\gamma^{2}E_{L}}{1+\gamma^{2}\theta^{2}+X},    
 \label{eq:small_angle_scattered_photon_energy}
 \end{equation}
-where $\gamma$ is the Lorentz factor and the recoil term $X$ is given by
-\begin{equation}
-X = \frac{2\gamma\left(1+\beta\right)E_{L}}{mc^{2}}.
-\label{eq:recoil_term}
-\end{equation}
-
-In the ultra-relativistic regime ($\beta \approx 1$) most ICS sources inhabit this becomes
+where the recoil term $X$ is given by (Eq.~\ref{eq:X_headon}). Extending this to backscattering of the incident photon ($\theta = 0$), the scattered photon energy becomes
 
 \begin{equation}
-X \approx \frac{4\gamma E_{L}}{mc^{2}}.
-\label{eq:recoil_term_ultrarelativistic}    
+E_{\gamma} = \frac{4\gamma^{2}E_{L}}{1+X},
+\label{eq:headon_backscattering_scattered_photon_energy}
 \end{equation}
+which is referred to in the literature \cite{krafft2010compton} as the Compton edge. The $\gamma^{2}$ factor within this equation refers to the double Doppler shift experienced by the incident photon as it is scattered.
+
+\section{Electron - Photon Interaction Cross Section}
 
 \textcolor{blue}{**THE CROSS SECTION FORMULA** \\ \textit{Where does this need to go, need to fix an order.}}
 
@@ -245,7 +230,7 @@ Y = \frac{2\gamma E_{\gamma}\left(1-\beta\cos\theta\right)}{mc^{2}}.
 
 For a circular or unpolarised incident laser this is negligible ($P_{t}=0$), however this is non-zero for linear polarised cases ($P_{t}\neq0$). Therefore, the distribution of scattered photons is azimuthally symetric for the circularly or unpolarized case polarised case but azimuthally modulated and asymmetric for the linear polarisation case \cite{sun2011theoretical}.  
 
-
+\section{Luminosity and Flux}
 \textcolor{blue}{**DERIVATION FROM LARMOR THEOREM TO HEAD-ON LUMINOSITY**}
 Using Larmor's theorem \textcolor{blue}{[citation please!]} and following the the derivation by Krafft and Priebe \cite{krafft2010compton} the luminosity of an ICS source in the head on case can be derived. \textcolor{blue}{text needs work}
 
@@ -280,6 +265,8 @@ N_{\gamma} = \sigma_{c}\frac{N_{e}N_{L}}{2\pi\sqrt{\sigma_{x,e}^{2}+\sigma_{x,L}
 
 The total flux of the photons is given by $\mathcal{F} = N_{\gamma}\cdot f$ where $f$ is the repetition frequency of the ICS source.
 
+\section{Angular Crossing and Hourglass Effects}
+
 \textcolor{blue}{**DERIVATION FOR THE ANGULAR CASE, Miyahara \cite{miyahara2008luminosity}or Suzuki \cite{suzuki1976general}**}
 
 The flux in the case of an angular crossing is given by 
@@ -292,9 +279,23 @@ where $\sigma_{i}(i=x,y,z) = \sqrt{\sigma_{i,e}^{2}+\sigma_{i,L}^{2}}$ with $\si
 
 \textcolor{blue}{**DERIVATION FOR THE HOURGLASS EFFECT**}
 
-\textcolor{blue}{**DERIVATION FOR FLUX IN A BANDWIDTH/APERTURE**}
+\section{Collimated Flux + Investigation}
 
-\textcolor{blue}{**BANDWIDTH BEFORE THE BRILLIANCE**}
+\section{Spectral Density}
+
+\section{Peak and Average Brilliance}
+\textcolor{blue}{**DERIVATION OF THE AVERAGE BRILLIANCE \\ Is this necessary?? Is it enough to say flux per area in phase space?}
+
+The average brilliance is defined as the flux per unit phase space area of the interaction per 0.1\% bandwidth and is subsequently given by \cite{krafft2010compton,deitrick2018high} \textcolor{blue}{is this the correct source, did they get it from somewhere else earlier?}
+
+\begin{equation}
+B_{\mathrm{avg}} = \frac{\mathcal{F}_{0.1\%}}{4\pi^{2}\sigma_{\gamma,x}\sigma_{\gamma,x'}\sigma_{\gamma,y}\sigma_{\gamma,y'}},
+\label{eq:average_brightness}
+\end{equation}
+where $\mathcal{F}_{0.1\%}$ is the flux in a 0.1\% bandwidth, $\sigma_{\gamma,x/y}$ are the source sizes in each plane and $\sigma_{\gamma,x'/y'}$ are the angular divergences in each plane.
+
+
+\section{Bandwidth + Investigation}
 
 The bandwidth, the energy spread of the scattered photons, is given in the recoil corrected non-linear regime ($a_{0}\ll 1$) \cite{ranjan2018simulation} by
 
@@ -324,14 +325,6 @@ where $\frac{\sigma_{\theta}}{E_{\theta}}$ is the collimation term, $\frac{\sigm
 \end{equation}
 where $\psi = \gamma\theta$ is the acceptance angle, $\epsilon_{x/y}$ is the emittance in the $x$ or $y$ direction and $\beta_{x/y}^{*}$ are the $\beta$ functions at the IP in both directions.
 
-\textcolor{blue}{**DERIVATION OF THE AVERAGE BRILLIANCE \\ Is this necessary?? Is it enough to say flux per area in phase space?}
 
-The average brilliance is defined as the flux per unit phase space area of the interaction per 0.1\% bandwidth and is subsequently given by \cite{krafft2010compton,deitrick2018high} \textcolor{blue}{is this the correct source, did they get it from somewhere else earlier?}
-
-\begin{equation}
-B_{\mathrm{avg}} = \frac{\mathcal{F}_{0.1\%}}{4\pi^{2}\sigma_{\gamma,x}\sigma_{\gamma,x'}\sigma_{\gamma,y}\sigma_{\gamma,y'}},
-\label{eq:average_brightness}
-\end{equation}
-where $\mathcal{F}_{0.1\%}$ is the flux in a 0.1\% bandwidth, $\sigma_{\gamma,x/y}$ are the source sizes in each plane and $\sigma_{\gamma,x'/y'}$ are the angular divergences in each plane.
 
 \end{document}

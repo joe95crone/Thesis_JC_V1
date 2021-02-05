@@ -32,8 +32,9 @@ Order is far from set in stone here, it is very rough
 -% Show 4-momenta equations
 -~ Derivation of Mandelstam variables + X/Y Lorentz Invariants
 -~ Statement of X << 1 in recoil regime
+-# Talk about the linear and non-linear regimes i.e where the boundaries of it are [a_0 and effects (pond broad, harmonic gen, multi-photon)]
 -~ Derive the scattered photon equation [Need to change 4-momenta to match Berestetskii, add some more detail + go to 4\gamma^2 E_L]
--? Derive the cross section from Berestetskii/Sun/Klein, cross section in limits, cross section vs energy, angle. Derivation of Geoff's 3/2 factor
+-# Derive the cross section from Berestetskii/Sun/Klein, cross section in limits, cross section vs energy, angle. Derivation of Geoff's 3/2 factor
 -~ Larmor theorem to flux in head-on case
 - Angular crossing effect via Suzuki + Miyahara
 - Hourglass Effect + Angular Crossing study/investigation
@@ -42,8 +43,7 @@ Order is far from set in stone here, it is very rough
 - Peak + Average Brilliance (Possible study/investigation)
 - Bandwidth Study
 
--#@ Talk about the linear and non-linear regimes i.e where the boundaries of it are [a_0 and effects (pond broad, harmonic gen, multi-photon)]
--?@ Describe the non-linear effects (ponderomotive broadening, harmonic generation, multi-photon compton scattering)
+
 
 ----------------------------------------------------------------------------
 CBETA Multi-Pass Commissioning
