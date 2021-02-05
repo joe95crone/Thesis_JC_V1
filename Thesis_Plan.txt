@@ -26,24 +26,24 @@ Order is far from set in stone here, it is very rough
 
 -# Blurb about electron photon interactions
 -
--% Show Feynman Diagram of electron-photon interaction [Berestetskii 74.14 - maybe find better or create own]
--% Show the p + k = p' + k' equation
--~ Show the geometry of the inverse Compton scattering interaction [Need to repace Ee etc. with p and k etc.]
-- Derive the Mandelstam variables and the X and Y Lorentz quantities
--@? Derive the Doppler shift of the radiation
--~ Derive the scattered photon equation
-- Talk about the recoil regime, when inverse Compton scattering becomes Thomson scattering
--# Talk about the linear and non-linear regimes i.e where the boundaries of it are
--? Describe the non-linear effects (ponderomotive broadening, harmonic generation, multi-photon compton scattering)
--? Derive the cross section from Berestetskii/Sun/Klein
+-% Show the p + k = p' + k' equation, i.e general form of elec - photon interactions
+-% Show Feynman Diagram of electron-photon interaction [modified Berestetskii 74.14]
+-~ Show the geometry of the inverse Compton scattering interaction [Need to repace Ee etc. with p and k etc.][Should this go above 4-momenta? used in Mandelstam etc.]
+-% Show 4-momenta equations
+-~ Derivation of Mandelstam variables + X/Y Lorentz Invariants
+-~ Statement of X << 1 in recoil regime
+-~ Derive the scattered photon equation [Need to change 4-momenta to match Berestetskii, add some more detail + go to 4\gamma^2 E_L]
+-? Derive the cross section from Berestetskii/Sun/Klein, cross section in limits, cross section vs energy, angle. Derivation of Geoff's 3/2 factor
 -~ Larmor theorem to flux in head-on case
 - Angular crossing effect via Suzuki + Miyahara
 - Hourglass Effect + Angular Crossing study/investigation
+- Collimated flux + derivation 
 - Spectral Density
 - Peak + Average Brilliance (Possible study/investigation)
--? Bandwidth Study
-- Collimated Flux in a Bandwdidth
-- ICARUS theory
+- Bandwidth Study
+
+-#@ Talk about the linear and non-linear regimes i.e where the boundaries of it are [a_0 and effects (pond broad, harmonic gen, multi-photon)]
+-?@ Describe the non-linear effects (ponderomotive broadening, harmonic generation, multi-photon compton scattering)
 
 ----------------------------------------------------------------------------
 CBETA Multi-Pass Commissioning

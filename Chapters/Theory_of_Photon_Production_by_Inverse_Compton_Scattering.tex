@@ -20,6 +20,8 @@
 \chapter{Theory of Photon Production by Inverse Compton Scattering}
 \label{Theory_of_Photon_Production_by_Inverse_Compton_Scattering} % to reference use \ref{ChapterTemplate}
 
+\section{Photon - Electron Interactions}
+
 \textcolor{blue}{**BLURB ABOUT PHOTON - ELECTRON INTERACTIONS**}
 
 \textcolor{blue}{**EXPLANATION OF THOMSON, COMPTON AND INVERSE COMPTON**}
@@ -30,54 +32,90 @@ Within this section we are concerned with inverse Compton scattering, the proces
 
 \textcolor{blue}{**GENERAL FORM OF THE PHOTON-ELECTRON INTERACTION + FEYNMAN DIAGRAMS**}
 
-Photon - electron interactions in general can be summarised by the expression
-
-\begin{equation}
-p_{1} + k_{1} = p_{2} + k_{2}
-\label{eq:ICS_process}
-\end{equation}
-
-where $p_{1}$ is the 4-momenta of the incident electron, $k_{1}$ is the 4-momenta of the incident photon, $p_{2}$ is the 4-momenta of the recoiling electron, and $k_{2}$ is the 4-momenta of the scattered photon.
+Quantum electrodynamic photon - electron interactions, in general, can be represented by the two leading order Feynman diagrams as shown in Fig.~\ref{fig:ICS_Feynman_diagrams}. 
 
 \begin{figure}[!htb]
     \centering\includegraphics[width=0.7\textwidth]{Figures/Theory_of_Photon_Production_by_Inverse_Compton_Scattering/Berestetskii_ICS_Feynman.pdf}
-    \caption{Two tree-level Feynman diagrams, which contributing to the matrix element of the (inverse) Compton scattering process. \cite{berestetskii1982quantum}}
+    \caption{Two tree-level Feynman diagrams, which contributing to the matrix element of the (inverse) Compton scattering process. Left: The scattered photon is emitted with the annihilation of the incident photon, and the incident photon is absorbed with the production of the recoiling electron. Right: The incident photon and electron are absorbed, and the scattered photon is emitted with the recoiling electron. \cite{berestetskii1982quantum}}
     \label{fig:ICS_Feynman_diagrams}
 \end{figure}
 
-\textcolor{blue}{**4-MOMENTA EQUATIONS**}
+The general form of the electron - photon interactions can therefore be specified by
+\begin{equation}
+p_{1} + k_{1} = p_{2} + k_{2},
+\label{eq:ICS_process}
+\end{equation}
 
-\textcolor{blue}{**DERIVATION OF MANDELSTAM VARIABLES + LORENTZ INVARIANTS }
-
-\textcolor{blue}{**STATEMENT OF RECOIL REGIME}
-
-\textcolor{blue}{**TALK ABOUT THE REGIMES OF INVERSE COMPTON SCATTERING, NON-LINEAR AND RECOIL**}
+where $p_{1}$ is the four-momenta of the incident electron, $k_{1}$ is the four-momenta of the incident photon, $p_{2}$ is the four-momenta of the recoiling electron, and $k_{2}$ is the four-momenta of the scattered photon. The geometry of the inverse Compton scattering interaction in a 2D plane is shown in Fig.~\ref{fig:scattered_photon_kinematics}.
 
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{Figures/Theory_of_Photon_Production_by_Inverse_Compton_Scattering/scatteringkinematicsdiagram.pdf}
-    \caption{Geometry of the inverse Compton scattering event at the interaction point. This geometry follows the geometry prescribed by Sun et al \cite{sun2009energy}. }
+    \caption{Geometry of the inverse Compton scattering event at the interaction point. This geometry follows the geometry prescribed by Sun et al \cite{sun2009energy}. Here $\theta$ is the scattering angle of the photon, with $\phi' = \pi -\phi$ the angle between the incident electron and incident photon, where $\phi$ is the crossing angle of the electron and photon and $\theta' = \pi - \theta - \phi$ the angle between the incident and scattered photon. }
     \label{fig:scattered_photon_kinematics}
 \end{figure}
 
+\textcolor{blue}{**4-MOMENTA EQUATIONS**}
+
+Motivated by the geometry of the inverse Compton scattering process as shown in Fig. \ref{fig:scattered_photon_kinematics}, we can write the initial photon $p_{1}$ and electron $k_{1}$ four-momenta
+\begin{align}
+p_{1} = \gamma m_{e}\left(c,\boldsymbol{v_{i}}\right),
+\label{eq:initial_four_vectors} \\
+k_{1} = \frac{E_{L}}{c}\left(1,\hat{n}_{i}\right), 
+\end{align}
+
+where $E_{L}$ is the energy of the incident photon, $\hat{n}_{i}$ is the unit displacement three-vector of the incident photon, $\gamma$ is the Lorentz factor, $m_{e}$ is the mass of the electron, $c$ the speed of light in a vacuum and $\boldsymbol{v_{i}}$ is the velocity three-vector of the incident electron with magnitude $v_{i}$. Similarly, we can present the final electron and scattered photon states with four-momenta 
+\begin{align}
+p_{2} = \gamma' m_{e}\left(c,\boldsymbol{v_{f}}\right), \\
+k_{2} = \frac{E_{\gamma}}{c}\left(1,\hat{n}_{f}\right), 
+\label{eq:final_four_vectors} 
+\end{align}
+
+where $E_{\gamma}$ is the scattered photon energy, $\hat{n}_{f}$ is the unit displacement three-vector of the scattered photon, $\gamma'$ is the Lorentz factor of the recoiling electron and $\boldsymbol{v_{f}}$ is the velocity three-vector of the recoiling electron with magnitude $v_{f}$.
+
+\textcolor{blue}{**DERIVATION OF MANDELSTAM VARIABLES + LORENTZ INVARIANTS }
+
+Using our four-momenta definitions (Eq.~\ref{eq:initial_four_vectors}-\ref{eq:final_four_vectors}), a  series of kinematic invariants (Mandelstam variables \cite{mandelstam1958determination}) can be determined for the photon-electron scattering process \cite{berestetskii1982quantum}
+\begin{align}
+s = \left(p_{1}+k_{1}\right)^{2} = \left(p_{2}+k_{2}\right)^{2},
+\label{eq:s_Mandelstam} \\
+t = \left(p_{1}-p_{2}\right)^{2} = \left(k_{2}-k_{1}\right)^{2},
+\label{eq:t_Mandelstam} \\
+u = \left(p_{1}-k_{2}\right)^{2} = \left(p_{2}-k_{1}\right)^{2}.
+\label{eq:u_Mandelstam}
+\end{align}
+
+The kinematic invariants can be used to form more convenient Lorentz invariants
+\begin{align}
+X = \frac{s-\left(m_{e}c\right)^{2}}{\left(m_{e}c\right)^{2}},
+\label{eq:X_Mandelstam} \\
+Y = \frac{\left(m_{e}c\right)^{2}-u}{\left(m_{e}c\right)^{2}},
+\label{eq:Y_Mandelstam}
+\end{align}
+which, when transformed into the geometry as shown in Fig.~\ref{fig:scattered_photon_kinematics}, can be re-wrote as
+\begin{align}
+X = \frac{2\gamma E_{L}\left(1-\beta\cos\phi'\right)}{m_{e}c^{2}},
+\label{eq:X_geometry} \\
+Y = \frac{2\gamma E_{\gamma}\left(1-\beta\cos\theta\right)}{m_{e}c^{2}}.
+\label{eq:Y_geometry}
+\end{align}
+
+\textcolor{blue}{Do I show the full derivation of the Madelstam variables? I have done this but still...}
+\textcolor{blue}{**STATEMENT OF RECOIL REGIME}
+
+If we take the head-on case ($\phi = 0$) and  assume the incident electron is ultra-relativistic ($\beta \rightarrow 1$) then the $X$ simplifies to 
+\begin{equation}
+X = \frac{4\gamma E_{L}}{m_{e}c^{2}}.
+\label{eq:X_headon}
+\end{equation}
+
+The Lorentz invariant $X$ can also be termed the recoil parameter, which denotes the magnitude of the recoil of the incident electron. For the case $X \ll 1$, the recoil is small and inverse Compton scattering reduces to Thomson scattering.    
+
+\section{Derivation of the Scattered Photon Energy Due to Inverse Compton Scattering}
+
 \textcolor{blue}{**DERIVATION OF THE ICS SCATTERED PHOTON ENERGY**}
 
-Motivated by the geometry of the inverse Compton scattering process as shown in Figure \ref{fig:scattered_photon_kinematics}, we can write the initial photon $Q_{i}$ and electron $P_{i}$ four-vectors
-
-\begin{align}
-Q_{i} = \frac{E_{L}}{c}\left(1,\hat{n}_{i}\right), \\
-P_{i} = \gamma m\left(c,\boldsymbol{v_{i}}\right),
-\label{eq:initial_four_vectors}
-\end{align}
-where $E_{L}$ is the energy of the incident photon, $\hat{n}_{i}$ is the unit displacement three-vector of the incident photon, $\gamma$ is the Lorentz factor, $m$ is the mass of the electron, $c$ the speed of light in a vacuum and $\boldsymbol{v_{i}}$ is the velocity three-vector of the incident electron with magnitude $v_{i}$. Similarly, we can present the final electron and scattered photon states with the four-vectors 
-
-\begin{align}
-Q_{f} = \frac{E_{\gamma}}{c}\left(1,\hat{n}_{f}\right),
-P_{f} = \gamma' m\left(c,\boldsymbol{v_{f}}\right),
-\label{eq:final_four_vectors}
-\end{align}
-
-where $E_{\gamma}$ is the scattered photon energy, $\hat{n}_{f}$ is the unit displacement three-vector of the scattered photon, $\gamma'$ is the Lorentz factor of the recoiling electron and $\boldsymbol{v_{f}}$ is the velocity three-vector of the recoiling electron with magnitude $v_{f}$. At this point we can consider our Lorentz invariant quantities 
+At this point we can consider our Lorentz invariant quantities 
 
 \begin{align}
 P_{\mu}P^{\mu} = \gamma^{2}m^{2}\left(v^{2}-c^{2}\right) = -m^{2}c^{2},
