@@ -20,30 +20,37 @@ Introduction
 -? Overview of DIANA
 
 ----------------------------------------------------------------------------
+Theory of Accelerator Design
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
 Theory of Photon Production by Inverse Compton Scattering
 ----------------------------------------------------------------------------
 Order is far from set in stone here, it is very rough
 
 -# Blurb about electron photon interactions
+   > mention that while inverse Compton scattering can be broadend to include all (charged?) particles, we only consider electron interactions
 -
 -% Show the p + k = p' + k' equation, i.e general form of elec - photon interactions
 -% Show Feynman Diagram of electron-photon interaction [modified Berestetskii 74.14]
--~ Show the geometry of the inverse Compton scattering interaction [Need to repace Ee etc. with p and k etc.][Should this go above 4-momenta? used in Mandelstam etc.]
+-~ Show the geometry of the inverse Compton scattering interaction
+   > maybe replace with a 3D geometry?
 -% Show 4-momenta equations
 -~ Derivation of Mandelstam variables + X/Y Lorentz Invariants
+   > Can add in additional derivation between s and u forms to 
 -~ Statement of X << 1 in recoil regime
--# Talk about the linear and non-linear regimes i.e where the boundaries of it are [a_0 and effects (pond broad, harmonic gen, multi-photon)]
+-# Talk about the linear and non-linear regimes i.e where the boundaries of it are [a_0 and effects (pond broad, harmonic gen, multi-photon)][Struggling on harmonic gen + multi-photon]
 -~ Derive the scattered photon equation [Need to change 4-momenta to match Berestetskii, add some more detail + go to 4\gamma^2 E_L]
 -# Derive the cross section from Berestetskii/Sun/Klein, cross section in limits, cross section vs energy, angle. Derivation of Geoff's 3/2 factor
 -~ Larmor theorem to flux in head-on case
-- Angular crossing effect via Suzuki + Miyahara
-- Hourglass Effect + Angular Crossing study/investigation
+-~ Angular crossing effect via Suzuki + Miyahara
+-~ Hourglass Effect + Angular Crossing study/investigation
 - Collimated flux + derivation 
 - Spectral Density
 - Peak + Average Brilliance (Possible study/investigation)
 - Bandwidth Study
 
-
+-@ Source Size Derivation [Got from Geoff]
 
 ----------------------------------------------------------------------------
 CBETA Multi-Pass Commissioning
@@ -57,15 +64,23 @@ I have no idea how to construct this chapter... not much is my work
 ----------------------------------------------------------------------------
 CBETA Inverse Compton Source
 ----------------------------------------------------------------------------
+-> All CBETA ICS Paper figures + tables have been copied to this section + have been updated to most recent form as of [09/02/2021]
 
+
+- Brief motivation of a CBETA ICS
 - Setting of the ICS parameters
-- Optimisation of collimated flux + tuning curves
-- Bypass design
+-~ Optimisation of collimated flux + tuning curves
+   > May need changing when the collimated flux method changes
+   > tuning curves may need re-running as the recoil effect on beta* was neglected by accident, but this effect is negligible
+-~ Bypass design
+   > Added a schematic of the CBETA hall to illustrate the complexities 
+   > Wrote this to focus on the 150 MeV case which I actually worked out
+   > Discussion of lower lines + common transport limitations added
 - Output parameters
 - ICARUS + SUN1D Theory
 - Development of ICARUS, SUN1D benchmarking + ICCS3D benchmarking
 - Comparison with other ICS Sources
-- Comparison with Synchrotron sources + how we exceed their energy range [also the source size advantage - both 1/gamma cones but gamma smaller in ICS so larger spot size on sample]
+- Comparison with Synchrotron sources + how we exceed their energy range      > also the source size advantage - both 1/gamma cones but gamma smaller in   ICS so larger spot size on sample]
 - Applications
 
 ----------------------------------------------------------------------------

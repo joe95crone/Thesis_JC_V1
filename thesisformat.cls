@@ -47,8 +47,11 @@
 \RequirePackage{enumerate}
 \RequirePackage{graphicx}
 \RequirePackage{amsmath}
+\RequirePackage{amssymb}
 \RequirePackage{setspace}
-
+\RequirePackage{cite}
+\RequirePackage{siunitx}
+\RequirePackage{threeparttable}
 
 
 % PDF Settings
