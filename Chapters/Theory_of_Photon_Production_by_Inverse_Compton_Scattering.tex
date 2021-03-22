@@ -23,9 +23,9 @@
 \section{Electron - Photon Interactions}
 \label{sec:electron_photon_interactions}
 \textcolor{blue}{**BLURB ABOUT PHOTON - ELECTRON INTERACTIONS**}
+% AHHHHHH THIS IS SHIT
 
-
-While inverse Compton scattering is possible from all (charged?) particles, the work presented here is only concerned with electron - photon interactions, the most common form of inverse Compton scattering.  
+While scattering interactions, specifically inverse Compton scattering interactions, are possible from all particles, the work presented here is only concerned with electron - photon interactions, the most common form of inverse Compton scattering.  Electron - photon interactions are advantageous over other particle - photon interactions due to their low rest mass $m_{e}$, resulting in a typically large Lorentz factor, which allows for the production of high energy photons as the scattered photon energy $E_{\gamma}$ is proportional to the Lorentz factor squared ($E_{\gamma}\propto\gamma^{2}$.    
 
 \textcolor{blue}{**EXPLANATION OF THOMSON, COMPTON AND INVERSE COMPTON**}
 
@@ -39,7 +39,7 @@ Quantum electrodynamic photon - electron interactions, in general, can be repres
 
 \begin{figure}[!h]
     \centering\includegraphics[width=0.7\textwidth]{Figures/Theory_of_Photon_Production_by_Inverse_Compton_Scattering/Berestetskii_ICS_Feynman.pdf}
-    \caption{Two tree-level Feynman diagrams, which contributing to the matrix element of the (inverse) Compton scattering process. Left: The scattered photon is emitted with the annihilation of the incident photon, and the incident photon is absorbed with the production of the recoiling electron. Right: The incident photon and electron are absorbed, and the scattered photon is emitted with the recoiling electron. \cite{berestetskii1982quantum}}
+    \caption{Two tree-level Feynman diagrams, which contribute to the matrix element of the (inverse) Compton scattering process. Left: The scattered photon is emitted with the annihilation of the incident photon, and the incident photon is absorbed with the production of the recoiling electron. Right: The incident photon and electron are absorbed, and the scattered photon is emitted with the recoiling electron. \cite{berestetskii1982quantum}}
     \label{fig:ICS_Feynman_diagrams}
 \end{figure}
 
@@ -308,7 +308,7 @@ f_{e}\left(\mathbf{r},\mathbf{p},t\right) = \frac{1}{\left(2\pi\right)^{3}\varep
 f_{L}\left(\mathbf{r},\mathbf{k},t\right) = \frac{1}{4\pi^{2}\sigma_{z,L}\sigma_{k}\sigma_{w}^{2}}\exp\left[-\frac{x_{L}^{2}+y_{L}^{2}}{2\sigma_{w}^{2}}-\frac{z_{L}+ct}{2\sigma_{z,L}^{2}}-\frac{\left(k-k_{0}\right)}{2\sigma_{k}^{2}}\right],
 \label{eq:laser_gaussian_intensity_distribution}
 \end{gather}
-where $\varepsilon_{x/y}$ is the emittance of the electron beam in the $x$ and $y$ directions, $\sigma_{p}$ is the fractional momentum spread of the electron bunch, $\sigma_{z,e}$ is the \textit{rms} electron bunch length, $\beta_{x/y}$, $\alpha_{x/y}$ and $\gamma_{x/y}$ are the Twiss parameters in either the $x$ or $y$ direction, $x$ and $y$ are the positions of the electron in both directions, similarly $x'$ and $y'$ are the angular divergences in each direction, $p$ is the magnitude of the momentum of an individual electron and $p_{0}$ is the centroid electron momentum of the bunch. The pulse length of the laser pulse is $\sigma_{z,L}$, $\sigma_{k}$ is the fractional momentum spread of the incident laser pulse, $x_{L}$, $y_{L}$ and $z_{L}$ are the positions of an incident photon in each direction, $k$ is the wavenumber of an individual photon and $k_{0}$ is the centroid wavenumber of the laser pulse and $\sigma_{w}$ is the \textit{rms} transverse waist of the laser pulse given by the usual Gaussian optics formula \cite{siegmann1986lasers}
+where $\varepsilon_{x/y}$ is the emittance of the electron beam in the $x$ and $y$ directions, $\sigma_{p}$ is the fractional momentum spread of the electron bunch, $\sigma_{z,e}$ is the \textit{rms} electron bunch length, $\beta_{x/y}$, $\alpha_{x/y}$ and $\gamma_{x/y}$ are the Twiss parameters in either the $x$ or $y$ direction, $x$ and $y$ are the positions of the electron in both directions, similarly $x'$ and $y'$ are the angular divergences in each direction, $p$ is the magnitude of the momentum of an individual electron and $p_{0}$ is the centroid electron momentum of the bunch. The pulse length of the laser pulse is $\sigma_{z,L}$, $\sigma_{k}$ is the fractional momentum spread of the incident laser pulse, $x_{L}$, $y_{L}$ and $z_{L}$ are the positions of an incident photon in each direction, $k$ is the wavenumber of an individual photon and $k_{0}$ is the centroid wavenumber of the laser pulse and $\sigma_{w}$ is the \textit{rms} transverse waist of the laser pulse given by the usual Gaussian optics formula  \cite{siegmann1986lasers}
 \begin{equation}
 \sigma_{w} = \sigma_{L}\sqrt{1+\frac{z_{L}}{z_{R}}},
 \label{eq:laser_waist}    
@@ -418,6 +418,8 @@ The luminosity of this result is given by $\mathcal{L} = R_{ACHG}\mathcal{L}_{\m
 
 In this section, the collimated flux - the total flux collected within an aperture of semi-angle $\theta_{\mathrm{col}}$ is derived from first principles, using the work of Berestetskii et al \cite{berestetskii1982quantum}. This method, unlike others in the literature \cite{curatolo2017analytical}, is valid for the angular crossing case ($\phi\in\mathbb{R}$) as the effect of the crossing angle is encompassed in the cross section alongside the geometric beam--beam angular crossing effect. The collimated flux calculation method is a semi-analytic calculation that is valid within the recoil regime (above $X\ll1$) but is only valid for the linear inverse Compton scattering case ($a_{0}\ll1$).
 
+\textcolor{blue}{Mention that the Curatolo formula is deficient as it doesn't provide adequate derivation to verify, seemingly that the bandwidth it is based upon is deficient (Ranjan et al say so in (2018), Fig.~1) and doesn't provide angular case either.}
+
 In order to find the scattering angle $\theta$ dependence of the cross section \textcolor{blue}{link to cross section derivation/work} we must focus on the dependence of the scattering angle on the Lorentz invariant quantities ($X$ and $Y$) (Eq.~\ref{eq:X_geometry},~\ref{eq:Y_geometry}) derived from Mandelstam variables in Section~\ref{sec:electron_photon_interactions}. Intrinsically, our definition of the recoil parameter $X$ (Eq.~\ref{eq:X_Mandelstam}) relates to the centre of mass $s$ Mandelstam variable before the interaction, so there is no scattering angle  dependence. The $Y$ Lorentx invariant is dependent on $\theta$, to include it's scattering angle dependence we must examine the derivative of $Y$ with $\theta$. Inspecting (Eq.~\ref{eq:Y_geometry}) we see $Y$ is also dependent on $E_{\gamma}$, the scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}) derived in Section~\ref{sec:derivation_of_the_scattered_photon_energy}, which is also dependent on scattering angle. Thus, we must first expand $Y$ which can be simplified in terms of the recoil parameter $X$ (Eq.~\ref{eq:X_geometry})
 \begin{equation}
 Y = \frac{2\gamma E_{L}\left(1+\beta\cos\phi\right)\left(1-\beta\cos\theta\right)}{m_{e}c^{2}\left\{1-\beta\cos\theta+\left[1+\cos\left(\phi+\theta\right)\right]E_{L}/E_{e}\right\}} = \frac{X\left(1-\beta\cos\theta\right)}{1-\beta\cos\theta+\left[1+\cos\left(\phi+\theta\right)\right]E_{L}/E_{e}}.
@@ -497,29 +499,39 @@ where $Y, X, E_{\gamma}$ are of the forms in (Eq.~\ref{eq:Y_geometry},~\ref{eq:X
 
 It is inherent in (Eq.~\ref{eq:collimated_flux}) that the interaction occurs from a point source - the transverse and longitudinal positions of the electrons within the bunch are neglected. This is a common approximation in both simulations and in all presented flux formulae.
 
-Within (Eq.~\ref{eq:collimated_flux}) the effect of the energy spread of the bunch, the laser pulse energy spread and partially the effect of the emittance (spatial extent) of the bunch are neglected. The geometry consideration of the spatial extent of the bunch is taken into account via the luminosity reduction factors, but not the offset in emission position which would affect whether the photon passes the collimator. The justification is that this methodology is intended as a quick semi-analytical calculation. The codes \textsc{ICARUS} and \textsc{ICCS3D} \cite{krafft2016laser,ranjan2018simulation} properly take into account the energy spread factors but the emission position problem is only solved in MonteCarlo codes such as \texsc{CAIN} \cite{chen1995cain}.  
+Within (Eq.~\ref{eq:collimated_flux}) the effect of the energy spread of the bunch, the laser pulse energy spread and partially the effect of the emittance (spatial extent) of the bunch are neglected. The geometry consideration of the spatial extent of the bunch is taken into account via the luminosity reduction factors, but not the offset in emission position which would affect whether the photon passes the collimator. The justification is that this methodology is intended as a quick semi-analytical calculation. The codes \textsc{ICARUS} and \textsc{ICCS3D} \cite{krafft2016laser,ranjan2018simulation} properly take into account the energy spread factors but the emission position problem is only solved in MonteCarlo codes such as \texsc{CAIN} \cite{chen1995cain}. However, this effect is expected to be small as the source is dependent on far field collimation. Far field collimation is applicable when the transverse size of the electron bunch - laser pulse overlap is negligible in relation to the aperture of the collimator. This is covered in more detail in the next section.  
+
+\section{Source Size}
+\textcolor{blue}{**Source size derivation**}
+
+\begin{equation}
+\sigma_{\gamma,x/y} = \frac{\sigma_{e,x/y}\sigma_{L}}{\sqrt{\sigma_{e,x/y}^{2}+\sigma_{L}^{2}}}
+\label{eq:source_size}
+\end{equation}
+\textcolor{blue}{**State how emission can occur from any spatial point, say how it is unlikely from the edges**}
+\textcolor{blue}{**Explain how this isn't a problem transversely or longitudinally, what Balsa and I talked about**}
 
 \section{Spectral Density}
 
 \section{Peak and Average Brilliance}
 \textcolor{blue}{**DERIVATION OF THE AVERAGE BRILLIANCE \\ Is this necessary?? Is it enough to say flux per area in phase space?}
 
-The average brilliance is defined as the flux per unit phase space area of the interaction per 0.1\% bandwidth and is subsequently given by \cite{krafft2010compton,deitrick2018high} \textcolor{blue}{is this the correct source, did they get it from somewhere else earlier?}
+The average brilliance is defined as the flux per unit phase space area of the interaction per 0.1\% \textcolor{blue}{FWHM?} bandwidth and is subsequently given by \cite{krafft2010compton,deitrick2018high} \textcolor{blue}{is this the correct source, did they get it from somewhere else earlier?}
 
 \begin{equation}
 B_{\mathrm{avg}} = \frac{\mathcal{F}_{0.1\%}}{4\pi^{2}\sigma_{\gamma,x}\sigma_{\gamma,x'}\sigma_{\gamma,y}\sigma_{\gamma,y'}},
 \label{eq:average_brightness}
 \end{equation}
-where $\mathcal{F}_{0.1\%}$ is the flux in a 0.1\% bandwidth, $\sigma_{\gamma,x/y}$ are the source sizes in each plane and $\sigma_{\gamma,x'/y'}$ are the angular divergences in each plane.
+where $\mathcal{F}_{0.1\%}$ is the flux in a 0.1\% \textcolor{blue}{FWHM?} bandwidth, $\sigma_{\gamma,x/y}$ are the source sizes in each plane and $\sigma_{\gamma,x'/y'}$ are the angular divergences in each plane.
 
 
 \section{Bandwidth + Investigation}
 
-The bandwidth, the energy spread of the scattered photons, is given in the recoil corrected non-linear regime ($a_{0}\ll 1$) \cite{ranjan2018simulation} by
+The bandwidth, the \textit{rms} energy spread of the scattered photons, is given in the recoil corrected non-linear regime ($a_{0}\ll 1$) \cite{ranjan2018simulation} by
 
 \begin{equation}
 \frac{\Delta E_{\gamma}}{E_{\gamma}} = \sqrt{\left(\frac{\sigma_{\theta}}{E_{\theta}}\right)^{2}+\left(\frac{\sigma_{e}}{E_{e}}\right)^{2}+\left(\frac{\sigma_{L}}{E_{L}}\right)^{2}+\left(\frac{\sigma_{\epsilon}}{E_{\epsilon}}\right)^{2}},
-\label{eq:bandwidth}    
+\label{eq:RMS_bandwidth}    
 \end{equation}
 where $\frac{\sigma_{\theta}}{E_{\theta}}$ is the collimation term, $\frac{\sigma_{e}}{E_{e}}$ is the electron beam energy spread term, $\frac{\sigma_{L}}{E_{L}}$ is the laser pulse energy spread term and $\frac{\sigma_{\epsilon}}{E_{\epsilon}}$ is the emittance terms. These terms are given by
 \begin{gather}
@@ -532,7 +544,12 @@ where $\frac{\sigma_{\theta}}{E_{\theta}}$ is the collimation term, $\frac{\sigm
 \frac{\sigma_{\epsilon}}{E_{\epsilon}} = \frac{\sqrt{2}\gamma^{2}}{1+X}\sqrt{\frac{\epsilon_{x}^{2}}{\beta_{x}^{*2}}+\frac{\epsilon_{y}^{2}}{\beta_{y}^{*2}}}
 \label{eq:emittance_term}
 \end{gather}
-where $\psi = \gamma\theta$ is the acceptance angle, $\epsilon_{x/y}$ is the emittance in the $x$ or $y$ direction and $\beta_{x/y}^{*}$ are the $\beta$ functions at the IP in both directions.
+where $\psi = \gamma\theta$ is the acceptance angle, $\epsilon_{x/y}$ is the emittance in the $x$ or $y$ direction and $\beta_{x/y}^{*}$ are the $\beta$ functions at the IP in both directions. This can be converted into the full width half maximum (FWHM) bandwidth 
+
+\begin{equation}
+\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{\mathrm{FWHM}} = 2\sqrt{2\ln{2}}\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{rms}
+\label{eq:FWHM_bandwidth}
+\end{equation}
 
 
 

@@ -23,6 +23,11 @@ Introduction
 Theory of Accelerator Design
 ----------------------------------------------------------------------------
 
+- Twiss Parameters
+- Explanation of an ERL + Multipass
+- Common Transport
+- FFAG Optics (for CBETA)
+
 ----------------------------------------------------------------------------
 Theory of Photon Production by Inverse Compton Scattering
 ----------------------------------------------------------------------------
@@ -30,7 +35,6 @@ Order is far from set in stone here, it is very rough
 
 -# Blurb about electron photon interactions
    > mention that while inverse Compton scattering can be broadend to include all (charged?) particles, we only consider electron interactions
--
 -% Show the p + k = p' + k' equation, i.e general form of elec - photon interactions
 -% Show Feynman Diagram of electron-photon interaction [modified Berestetskii 74.14]
 -~ Show the geometry of the inverse Compton scattering interaction

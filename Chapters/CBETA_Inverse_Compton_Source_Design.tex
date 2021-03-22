@@ -26,7 +26,7 @@
 
 
 \begin{table}[!h]
-\caption{Electron beam parameters envisaged at the CBETA ICS source interaction point (IP). The given baseline parameters -- which assume the same $\beta^*$ at the IP -- allow a comparison of flux and bandwidth at different energies. The optimised values beneath those are where we have maximised the flux into a 0.5\% scattered photon bandwidth through a suitable combination of beam spot size and collimation angle.}
+\caption{Electron beam parameters envisaged at the CBETA ICS source interaction point (IP). The given baseline parameters -- which assume the same $\beta^*$ at the IP -- allow a comparison of flux and bandwidth at different energies. The optimised values beneath those are where we have maximised the flux into a 0.5\% \textit{rms} scattered photon bandwidth through a suitable combination of beam spot size and collimation angle.}
 \vspace{3mm}
 \begin{tabular}{lccccc}
 \hline\hline
@@ -45,7 +45,7 @@ Relative energy spread & \multicolumn{4}{c}{$5.0\times 10^{-4}$} & \\
 $\beta^*$ (at the IP) & \multicolumn{4}{c}{1} & cm\\
 Electron bunch spot size, $\sigma_{\mathrm{electron}}$ & 6.01 & 4.42 & 3.65 & 3.19  & \si{\micro\meter} \\
 \hline
- & \multicolumn{4}{c}{Optimised for 0.5\% bandwidth} & \\
+ & \multicolumn{4}{c}{Optimised for 0.5\% \textit{rms} bandwidth} & \\
 \hline
 $\beta^*$ (at the IP) & 3.56 & 6.58 & 9.60 & 12.62 & cm\\
 Electron bunch spot size, $\sigma_{\mathrm{electron}}$ & 11.34 & 11.34 & 11.34 & 11.34  & \si{\micro\meter}\\
@@ -79,16 +79,16 @@ Relative energy spread, $\Delta E_\textrm{laser}/E_\textrm{laser}$ & 6.57$\times
 
 \section{Flux - Bandwidth Optimisation}
 
-The bandwidth of an ICS light source is tuneable and can be selected on the basis of user requirements. Here we develop a method to maximise flux within a selected bandwidth for the simplified case of an electron beam with a round transverse profile i.e normalised emittance is identical in both directions ($\epsilon_{nx} = \epsilon_{ny} = \epsilon_{n}$). Bandwidth selection is possible by selecting $\beta^{*}$ at the IP and by setting the collimation angle, $\theta_{\mathrm{col}}$ that collects the scattered photons; these may for example comprise switchable, fixed-aperture collimators.
+The bandwidth of an ICS light source is tuneable and can be selected on the basis of user requirements. Here we develop a method to maximise flux within a selected \textit{rms} bandwidth for the simplified case of an electron beam with a round transverse profile i.e normalised emittance is identical in both directions ($\epsilon_{nx} = \epsilon_{ny} = \epsilon_{n}$). This can simply be converted to a FWHM bandwidth (Eq.~\ref{eq:FWHM_bandwidth}. Bandwidth selection is possible by selecting $\beta^{*}$ at the IP and by setting the collimation angle, $\theta_{\mathrm{col}}$ that collects the scattered photons; these may for example comprise switchable, fixed-aperture collimators.
 
-Within this optimisation derivation, the bandwidth is given by (Eq.~\ref{eq:bandwidth}) with the emittance term (Eq.~\ref{eq:emittance_term}) modified for the transversely round bunch case
+Within this optimisation derivation, the \textit{rms} bandwidth is given by (Eq.~\ref{eq:RMS_bandwidth}) with the emittance term (Eq.~\ref{eq:emittance_term}) modified for the transversely round bunch case
 \begin{equation}
 \frac{\sigma_{\epsilon}}{E_{\epsilon}} = \frac{2\gamma\epsilon_{n}}{\left(1+X\right)\beta^{*}},
 \label{eq:emittance_term_round_beam}    
 \end{equation}
 where $X$ is the recoil parameter (Eq.~\ref{eq:X_geometry}), $\epsilon_{n}$ is the transverse \textit{rms} normalised emittance of the electron bunch and $\beta^{*}$ is the $\beta$-function at the interaction point.
 
-Typically the dominant terms that define the bandwidth of an inverse Compton source Eq.~(\ref{eq:bandwidth}) are the collimation term Eq.~(\ref{eq:collimation_term}) and the emittance term Eq.~(\ref{eq:emittance_term_round_beam}). The free parameter of the collimation term is the collimation angle $\theta_{\mathrm{col}}$, which can be adjusted either by changing the collimator aperture or changing its distance from the IP. Adjustable collimators have been designed for the ELI-NP-GBS $\gamma$-ray ICS source~\cite{paterno2017collimation}; a similar design could be implemented at other ICS sources.
+Typically the dominant terms that define the bandwidth of an inverse Compton source Eq.~(\ref{eq:RMS_bandwidth}) are the collimation term Eq.~(\ref{eq:collimation_term}) and the emittance term Eq.~(\ref{eq:emittance_term_round_beam}). The free parameter of the collimation term is the collimation angle $\theta_{\mathrm{col}}$, which can be adjusted either by changing the collimator aperture or changing its distance from the IP. Adjustable collimators have been designed for the ELI-NP-GBS $\gamma$-ray ICS source~\cite{paterno2017collimation}; a similar design could be implemented at other ICS sources.
 
 The emittance term is dependent both on the normalised transverse emittance $\epsilon_{n}$ and on $\beta^{*}$. It is more convenient to change the $\beta$-function at the IP with focusing rather than by varying the emittance, since the latter is dependent on the injector and collective effects prior to the IP. By using a larger $\beta^{*}$ and a small collimator aperture, it is possible to reduce the contribution of the collimation and emittance terms so that they are negligible; thus the electron bunch and laser pulse energy spread terms (Eq.~\ref{eq:beam_energy_spread_term},~\ref{eq:laser_energy_spread_term}) become dominant for accelerators with a sufficiently small emittance. This effectively places a lower limit on the bandwidth of an ICS source, i.e. it is limited by the energy spread of the electron beam $\Delta E_{e}/E_{e}$ and laser pulse $\Delta E_{\mathrm{laser}}/E_{\mathrm{laser}}$ as 
 \begin{equation}
@@ -112,30 +112,30 @@ The different $\beta^{*}$, $\theta_{\mathrm{col}}$ combinations each give a diff
 \end{equation}
 where $\mathcal{F}$ is the total (uncollimated) flux, $\Psi = \gamma\theta_{\mathrm{col}}$ is the acceptance angle, and $X$ is the recoil parameter. The solution giving the maximal flux is selected.
 
-It is not practicable to calculate the flux from every combination of $\beta^{*}$ and $\theta_{\mathrm{col}}$. Instead, an array of collimation angles $\theta_{\mathrm{col}}$ from 0 to $1/\gamma$ is used ($\gamma\theta_{\mathrm{col}}<1$), and for a given bandwidth value the corresponding $\beta^*$ is calculated using
+It is not practicable to calculate the flux from every combination of $\beta^{*}$ and $\theta_{\mathrm{col}}$. Instead, an array of collimation angles $\theta_{\mathrm{col}}$ from 0 to $1/\gamma$ is used ($\gamma\theta_{\mathrm{col}}<1$), and for a given \textit{rms} bandwidth value the corresponding $\beta^*$ is calculated using
 \begin{equation}
 \beta^{*} = \frac{2\gamma\epsilon_{n}}{\left(1+X\right)\sqrt{\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)^{2}-\left[\left(\frac{\sigma_{\theta}}{E_{\theta}}\right)^{2}+\left(\frac{\sigma_{e}}{E_{e}}\right)^{2}+\left(\frac{\sigma_{L}}{E_{L}}\right)^{2}\right]}},
 \label{eq:beta_star_round_beam}
 \end{equation}
-which is a rearrangement of (Eq.~\ref{eq:bandwidth}) with the emittance term in the transversely round bunch case (Eq.~\ref{eq:emittance_term_round_beam}). 
+which is a rearrangement of (Eq.~\ref{eq:RMS_bandwidth}) with the emittance term in the transversely round bunch case (Eq.~\ref{eq:emittance_term_round_beam}). A near identical solution can also be found for the case of an FWHM bandwidth. 
 
 The collimated flux $\mathcal{F}_{\Psi}$ is calculated for each combination produced via this method. The maximal collimated flux is selected and the combination of $\beta^{*}$ and $\theta_{\mathrm{col}}$ corresponding to this solution is returned. This process can be applied to the case of a target bandwidth to determine $\theta_{\mathrm{col}}$, $\beta^{*}$, and collimated flux in the selected bandwidth. In addition, applying this method to a continuum of bandwidths allows us to map the possible operational settings of our ICS source, and to derive tuning curves such as the variation of the collimated flux with bandwidth.
 
-The optimised $\beta^{*}$ and $\theta_{\mathrm{col}}$ of a 0.5\% narrow bandwidth case are shown in Table~\ref{TABLE:CBETA_electron_beam_design_parameters}, with the collimated flux this produces tabulated in Table~\ref{tab:CBETA_spectral_output}. The $\beta^{*}-\theta_{\mathrm{col}}$ parameter space of the CBETA ICS, for all nominal energies, is shown in Fig.~\ref{fig:CBETA_beta_theta_parameter_space}.
+The optimised $\beta^{*}$ and $\theta_{\mathrm{col}}$ of a 0.5\% \textit{rms} narrow bandwidth case are shown in Table~\ref{TABLE:CBETA_electron_beam_design_parameters}, with the collimated flux this produces tabulated in Table~\ref{tab:CBETA_spectral_output}. The $\beta^{*}-\theta_{\mathrm{col}}$ parameter space of the CBETA ICS, for all nominal energies, is shown in Fig.~\ref{fig:CBETA_beta_theta_parameter_space}.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/CBETABetaTheta.pdf}
-\caption{Tuning curves of $\beta^{*}$ against $\theta_{\mathrm{col}}$ for each of the nominal CBETA electron beam energies satisfying the maximal flux across the 0--1\% bandwidth range. The shaded area is the parameter space, while the line corresponds to the maximal flux solution for a given bandwidth. Minimised bandwidth solutions in this range have large $\beta$-functions at the IP and small collimation angles $\theta_{\mathrm{col}}$; the maximal bandwidth solutions have small $\beta$-functions and larger collimation angles $\theta_{\mathrm{col}}$.}
+\caption{Tuning curves of $\beta^{*}$ against $\theta_{\mathrm{col}}$ for each of the nominal CBETA electron beam energies satisfying the maximal flux across the 0--1\% \textit{rms} bandwidth range. The shaded area is the parameter space, while the line corresponds to the maximal flux solution for a given \textit{rms} bandwidth. Minimised bandwidth solutions in this range have large $\beta$-functions at the IP and small collimation angles $\theta_{\mathrm{col}}$; the maximal bandwidth solutions have small $\beta$-functions and larger collimation angles $\theta_{\mathrm{col}}$.}
 \label{fig:CBETA_beta_theta_parameter_space}
 \end{figure}
 
 Each of the pareto fronts (for each nominal energy) of the $\beta^{*}-\theta_{\mathrm{col}}$ parameter spaces in Fig.~\ref{fig:CBETA_beta_theta_parameter_space} has a distinctive shape - a linear regime followed by non-linear regime. The pareto front shows a linear relationship as the collimation angle increases, this part is dominated by the emittance term, until a vertex is reached and, as collimation angle increases, there is a non-linear shape, where the pareto front is dominated by the collimation term. The termination of the pareto fronts at the small collimation angle marks the point in which the optimal $\beta$-function at the IP becomes imaginary.
 
-By applying the collimated flux maximisation to the parameter space shown in Fig.~\ref{fig:CBETA_beta_theta_parameter_space}, the collimated flux - bandwidth tuning curve of the CBETA ICS can be discerned, as shown in Fig.~\ref{fig:CBETA_Tuning_Curve}. 
+By applying the collimated flux maximisation to the parameter space shown in Fig.~\ref{fig:CBETA_beta_theta_parameter_space}, the collimated flux - \textit{rms} bandwidth tuning curve of the CBETA ICS can be discerned, as shown in Fig.~\ref{fig:CBETA_Tuning_Curve}. 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/CBETATuningCurve.pdf}
-\caption{Tuning curve of collimated flux against bandwidth for a 0--1\% bandwidth range, produced by tuning $\beta^{*}$ and $\theta_{\mathrm{col}}$. The tuning curve is independent of beam energy for scattering scenarios within the Thomson regime, hence this tuning curve applies to all energies in CBETA. The left end of tuning curve indicates the minimum possible bandwidth of the ICS source, which in CBETA is $\simeq$~0.1\% and is determined by the electron beam energy spread.}
+\caption{Tuning curve of collimated flux against \textit{rms} bandwidth for a 0--1\% \textit{rms} bandwidth range, produced by tuning $\beta^{*}$ and $\theta_{\mathrm{col}}$. The tuning curve is independent of beam energy for scattering scenarios within the Thomson regime, hence this tuning curve applies to all energies in CBETA. The left end of tuning curve indicates the minimum possible \textit{rms} bandwidth of the ICS source, which in CBETA is $\simeq$~0.15\% and is determined by the electron beam and laser pulse energy spreads.}
 \label{fig:CBETA_Tuning_Curve}
 \end{figure}
 
@@ -166,11 +166,11 @@ The bypass line diverts the 150~\si{\mega\electronvolt} electron beam after the 
 
 A system of vertical doglegs, replacing sections of the S4 and R4 lines, are required to provide a 30~\si{\centi\meter} vertical elevation of the bypass line relative to the plane of the FFA return loop in order to avoid the existing accelerator. Bypass arc sections replace the existing FFA arc sections (FA, FB). Following the first arc, there is a horizontal dogleg used to close horizontal dispersion before the interaction region and offset the bypass from existing infrastructure. 
 
-At the interaction region (IR) the beam is again offset upward locally by a further 20~\si{\centi\meter} -- to a 50~\si{\centi\meter} total offset above the FFA reference orbit height -- using a pair of vertical doglegs; these are here called the IR doglegs. The further vertical offset is imposed so the photons are produced in a different plane to both the bypass line and FFA return loop which is necessary for the extraction of the x-ray beam to an external experimental hutch and in order to avoid irradiation of the FFA permanent magnets. A flexible focusing section within the pair of IR doglegs is used to focus to the required beam waist. The final focus section is designed to enable both $\beta^{*} = 1$~\si{\centi\meter} for the baseline case and $\beta^{*} = 12.6$~\si{\centi\meter} for the 0.5\% bandwidth case (see Table~\ref{TABLE:CBETA_electron_beam_design_parameters}). The final focus section is constructed from 7 quadrupoles with the laser re-circulation cavity placed between the 4th and 5th quadrupole. This scheme allows the photons to be extracted via the first dipole of the downstream IR dogleg, minimizing the number of magnets requiring modification for photon extraction. 
+At the interaction region (IR) the beam is again offset upward locally by a further 20~\si{\centi\meter} -- to a 50~\si{\centi\meter} total offset above the FFA reference orbit height -- using a pair of vertical doglegs; these are here called the IR doglegs. The further vertical offset is imposed so the photons are produced in a different plane to both the bypass line and FFA return loop which is necessary for the extraction of the x-ray beam to an external experimental hutch and in order to avoid irradiation of the FFA permanent magnets. A flexible focusing section within the pair of IR doglegs is used to focus to the required beam waist. The final focus section is designed to enable both $\beta^{*} = 1$~\si{\centi\meter} for the baseline case and $\beta^{*} = 12.6$~\si{\centi\meter} for the 0.5\% \textit{rms} bandwidth case (see Table~\ref{TABLE:CBETA_electron_beam_design_parameters}). The final focus section is constructed from 7 quadrupoles with the laser re-circulation cavity placed between the 4th and 5th quadrupole. This scheme allows the photons to be extracted via the first dipole of the downstream IR dogleg, minimizing the number of magnets requiring modification for photon extraction. 
 
 Within the straight section of the bypass following the IR, a variable path length adjustment is implemented based on the moving chicane described by H. Owen et al~\cite{owen2012modular}; this 4-dipole focusing chicane uses two mechanically-adjustable swing arms each incorporating a quadrupole triplet, and a central bellows. The chicane replicates the function of the S4/R4 splitter/recombiners to allow variation of both $R_{56}$ and path length for re-entry into the MLC. Path length adjustment is made by opening the swing arms whilst increasing the dipole strengths accordingly; over a change in path length of $\pm\lambda_{RF}$ the variation in Twiss values (after re-matching) is moderate.
 
-Optics tuning of the bypass is limited by the compact layout of CBETA, the conditions required for energy recovery of the interacted beam ($R_{56}=0$), and the necessity for the bypass to be constructed above the existing FFA return loop; the $\beta$-functions and dispersion are however still feasible. Plots of $\beta$-functions and dispersion in the bypass line for the 0.5\% bandwidth case are shown in Figs.~\ref{fig:CBETA_ICS_Twiss} and~\ref{fig:CBETA_ICS_dispersion}. 
+Optics tuning of the bypass is limited by the compact layout of CBETA, the conditions required for energy recovery of the interacted beam ($R_{56}=0$), and the necessity for the bypass to be constructed above the existing FFA return loop; the $\beta$-functions and dispersion are however still feasible. Plots of $\beta$-functions and dispersion in the bypass line for the 0.5\% \textit{rms} bandwidth case are shown in Figs.~\ref{fig:CBETA_ICS_Twiss} and~\ref{fig:CBETA_ICS_dispersion}. 
 
 \begin{figure}[!h]
     \centering
@@ -184,7 +184,7 @@ Optics tuning of the bypass is limited by the compact layout of CBETA, the condi
 \centering
 \includegraphics[width=0.5\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/dispplotx.pdf}
 \includegraphics[width=0.5\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/dispplotx.pdf}
-\caption{Dispersion functions in the ICS bypass line for the 0.5\% bandwidth case, showing the re-matched conditions for different path length configurations $-\lambda_{RF}$, $0$ and $+\lambda_{RF}$. The ICS interaction point (IP) is indicated.}
+\caption{Dispersion functions in the ICS bypass line for the 0.5\% \textit{rms} bandwidth case, showing the re-matched conditions for different path length configurations $-\lambda_{RF}$, $0$ and $+\lambda_{RF}$. The ICS interaction point (IP) is indicated.}
 \label{fig:CBETA_ICS_dispersion}
 \end{figure}
 
@@ -199,7 +199,7 @@ The author favours the latter solution to this problem as common transport syste
 \section{Spectral Output}
 
 \begin{table}[!h]
-\caption{Anticipated photon output for each of the four electron beam energies in CBETA, taking into account a 5~degree crossing angle. The uncollimated flux varies by around 2\% due to the small effect of the electron spot size; $X < 0.003$ even at 150~MeV. The collimated flux has been optimised for a 0.5\% bandwidth. The number of scattered photons is essentially independent of electron energy for a fixed electron spot size at the IP, and since both the Compton spectrum and the (relative) 0.5\% bandwidth scale together with $\gamma^2$, both the optimised spot size and the predicted collimated fluxes are the same at all electron energies.}
+\caption{Anticipated photon output for each of the four electron beam energies in CBETA, taking into account a 5~degree crossing angle. The uncollimated flux varies by around 2\% due to the small effect of the electron spot size; $X < 0.003$ even at 150~MeV. The collimated flux has been optimised for a 0.5\% \textit{rms} bandwidth. The number of scattered photons is essentially independent of electron energy for a fixed electron spot size at the IP, and since both the Compton spectrum and the (relative) 0.5\% \textit{rms} bandwidth scale together with $\gamma^2$, both the optimised spot size and the predicted collimated fluxes are the same at all electron energies.}
 \scalebox{0.92}{
 \begin{tabular}{lccccc}
 \hline\hline
@@ -214,7 +214,7 @@ Spectral density & 9.82$\times10^{5}$ & 2.92$\times10^{5}$ & 1.38$\times10^{5}$ 
 Average brilliance & 9.23$\times10^{10}$ & 3.19$\times10^{11}$ & 6.81$\times 10^{11}$ & 1.18$\times10^{12}$ & ph/s mm$^{2}$ mrad$^{2}$ 0.1\% bw\\
 Peak brilliance & 2.80$\times 10^{15}$ & 1.00$\times 10^{16}$ & 2.18$\times10^{16}$ & 3.80$\times 10^{16}$ & ph/s mm$^{2}$ mrad$^{2}$ 0.1\% bw\\
 \hline
- & \multicolumn{4}{c}{0.5\% bandwidth} & \\
+ & \multicolumn{4}{c}{0.5\% \textit{rms} bandwidth} & \\
 \hline
 Source Size & 10.25 & 10.34 & 10.32 & 10.35 & \si{\micro\meter} \\ 
 Collimated flux & 2.09$\times 10^{8}$ & 2.09$\times 10^{8}$ & 2.09$\times 10^{8}$ & 2.09$\times 10^{8}$ & ph/s 0.5\% bw \\
@@ -266,7 +266,7 @@ HI$\gamma$S\tnote{$\dagger$} ~\cite{weller2009research} & Storage Ring & 1000 - 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/spring8bl10fluxplot.pdf}
-\caption{Comparison of CBETA predicted flux (here flux in a 0.1\% bandwidth to allow comparison with conventional calculations of undulator flux) at the four discrete operating energies given in Table~\ref{tab:CBETA_spectral_output} with the output from a typical high-energy undulator. The undulator shown is the SPRING-8 BL10XU insertion device~\cite{spring8beamlines} assuming an \textit{rms} phase error of 5~degrees. Whilst this undulator is not designed to deliver good output at high harmonic number, it offers a useful guide to possible 3rd-generation source output in the 100~keV to 500~keV range. the measured flux at 30~keV and 61~keV for this beamline is also shown~\cite{spring8beamlines}. We predict that CBETA flux at 402~keV (150~MeV electron energy) exceeds that from 3rd-generation sources.}
+\caption{Comparison of CBETA predicted flux (here flux in a 0.1\% FWHM bandwidth to allow comparison with conventional calculations of undulator flux) at the four discrete operating energies given in Table~\ref{tab:CBETA_spectral_output} with the output from a typical high-energy undulator. The undulator shown is the SPRING-8 BL10XU insertion device~\cite{spring8beamlines} assuming an \textit{rms} phase error of 5~degrees. Whilst this undulator is not designed to deliver good output at high harmonic number, it offers a useful guide to possible 3rd-generation source output in the 100~keV to 500~keV range. the measured flux at 30~keV and 61~keV for this beamline is also shown~\cite{spring8beamlines}. We predict that CBETA flux at 402~keV (150~MeV electron energy) exceeds that from 3rd-generation sources.}
 \label{fig:ICS_vs_SPRING8_Undulator_Flux}
 \end{figure}
 
