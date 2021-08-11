@@ -25,7 +25,7 @@
 \textcolor{blue}{**BLURB ABOUT PHOTON - ELECTRON INTERACTIONS**}
 % AHHHHHH THIS IS SHIT
 
-While scattering interactions, specifically inverse Compton scattering interactions, are possible from all particles, the work presented here is only concerned with electron - photon interactions, the most common form of inverse Compton scattering.  Electron - photon interactions are advantageous over other particle - photon interactions due to their low rest mass $m_{e}$, resulting in a typically large Lorentz factor, which allows for the production of high energy photons as the scattered photon energy $E_{\gamma}$ is proportional to the Lorentz factor squared ($E_{\gamma}\propto\gamma^{2}$.    
+While scattering interactions, specifically inverse Compton scattering interactions, are possible from all particles, the work presented here is only concerned with electron - photon interactions, the most common form of inverse Compton scattering.  Electron - photon interactions are advantageous over other particle - photon interactions due to their low rest mass $m_{e}$, resulting in a typically large Lorentz factor, which allows for the production of high energy photons as the scattered photon energy $E_{\gamma}$ is proportional to the Lorentz factor squared ($E_{\gamma}\propto\gamma^{2}$).    
 
 \textcolor{blue}{**EXPLANATION OF THOMSON, COMPTON AND INVERSE COMPTON**}
 
@@ -245,7 +245,7 @@ which is referred to in the literature \cite{krafft2010compton} as the Compton e
 
 \textcolor{blue}{**THE CROSS SECTION FORMULA** \\ \textit{Where does this need to go, need to fix an order.}}
 
-The cross section for the inverse Compton scattering interaction \cite{landau1982course} is given by \textcolor{blue}{is this excluding non-linear effects?}
+The cross section for the inverse Compton scattering interaction \cite{berestetskii1982quantum} is given by \textcolor{blue}{is this excluding non-linear effects?}
 
 \begin{equation}
  \sigma = \frac{2\pi r_{e}^{2}}{X}\left[\frac{1}{2}+\frac{8}{X}-\frac{1}{2\left(1+X\right)^{2}}+\left(1-\frac{4}{X}-\frac{8}{X^{2}}\right)\log{\left(1+X\right)}\right],
@@ -266,7 +266,7 @@ where $\sigma_{T}$ is the Thomson cross section. Where the interaction is firmly
 
 \textcolor{blue}{**WOULD IT BE WORTHWHILE HAVING A GRAPH HERE TO SHOW CROSS SECTION VS ENERGY**}
 
-Following the derevation by Berestetskii et al \cite{landau1982course} and using the notation of Sun and Wu \cite{sun2011theoretical}, the inverse Compton scattering cross section is given by
+Following the derevation by Berestetskii et al \cite{berestetskii1982quantum} and using the notation of Sun and Wu \cite{sun2011theoretical}, the inverse Compton scattering cross section is given by
 
 \begin{equation}
 \frac{d\sigma}{d\Omega} = \frac{8r_{e}^{2}}{X^{2}}\left\{\left[1+P_{t}\left(2\tau-2\phi_{f}\right)\right]\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}+\frac{1}{Y}\right]+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\right\}\left(\frac{E_{\gamma}}{mc^{2}}\right)^{2},    
@@ -454,7 +454,7 @@ The full derivative of $Y$ by $\theta$ is therefore
 
 Since we understand that the cross section's \textcolor{blue}{Link to the cross section section} scattering angle dependence is due to the $Y$ Lorentz invariant, as this is constructed from both Lorentz invariants and the $X$ invariant (Eq.~\ref{eq:X_geometry}) which is defined without scattering angle dependence, we must find the dependence of the cross section on the Lorentz invariant $Y$ in order to propagate the full dependencies. \textcolor{blue}{Feels as though some of this is required in the cross section section} Fig.~\ref{fig:sun_geometry} shows the full 3D geometry of the electron - phton interaction, which includes a polarisation diagram. Following Eq. (2.27) by Sun \cite{sun2009characterizations}, we can then use a standard result from QED for the cross section of the interaction of unpolarised electron beam and polarised laser pulse, without considering the post-interaction polarisations \cite{grozin2002complete} \textcolor{blue}{Did this just stay as an arXiv paper?}
 \begin{equation}
-\frac{d\sigma}{dYd\phi_{f}} = \frac{4r_{e}^{2}}{X^{2}}\left\{\left(1-\xi_{3}\right)\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right]+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\right\},
+\frac{d^{2}\sigma}{dYd\phi_{f}} = \frac{4r_{e}^{2}}{X^{2}}\left\{\left(1-\xi_{3}\right)\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right]+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\right\},
 \label{eq:differential_cross_section_Y_phif}
 \end{equation}
 where $\phi_{f}$ is the azimuthal angle of the scattered photon, $r_{e}$ is the classical electron radius, $X$ and $Y$ are the Lorentz invariants in (Eq.~\ref{eq:X_geometry}, \ref{eq:Y_geometry}) and $\xi_{3}$ is the Stokes parameter, describing linear polarisation aligned to the $x$ or $y$ axis, given by
@@ -501,29 +501,30 @@ It is inherent in (Eq.~\ref{eq:collimated_flux}) that the interaction occurs fro
 
 Within (Eq.~\ref{eq:collimated_flux}) the effect of the energy spread of the bunch, the laser pulse energy spread and partially the effect of the emittance (spatial extent) of the bunch are neglected. The geometry consideration of the spatial extent of the bunch is taken into account via the luminosity reduction factors, but not the offset in emission position which would affect whether the photon passes the collimator. The justification is that this methodology is intended as a quick semi-analytical calculation. The codes \textsc{ICARUS} and \textsc{ICCS3D} \cite{krafft2016laser,ranjan2018simulation} properly take into account the energy spread factors but the emission position problem is only solved in MonteCarlo codes such as \texsc{CAIN} \cite{chen1995cain}. However, this effect is expected to be small as the source is dependent on far field collimation. Far field collimation is applicable when the transverse size of the electron bunch - laser pulse overlap is negligible in relation to the aperture of the collimator. This is covered in more detail in the next section.  
 
-\section{Source Size}
+\section{Source Size and Divergence}
 \textcolor{blue}{**Source size derivation**}
 
+The \textit{rms} source size of an inverse Compton scattering electron bunch--laser pulse interaction is 
 \begin{equation}
 \sigma_{\gamma,x/y} = \frac{\sigma_{e,x/y}\sigma_{L}}{\sqrt{\sigma_{e,x/y}^{2}+\sigma_{L}^{2}}}
 \label{eq:source_size}
 \end{equation}
+where $\sigma_{e,x/y}$ is the \textit{rms} transverse electron bunch spot size in each plane and $\sigma_{L}$ is the \textit{rms} transverse laser pulse spot size.  
+
+The \textit{rms} source angular divergence of an ICS interaction is
+\begin{equation}
+\sigma_{\gamma,x/y}' = \frac{\sigma_{e,x/y}'\sigma_{L}'}{\sqrt{\sigma_{e,x/y}'^{~2}+\sigma_{L}'^{~2}}},
+\label{eq:source_divergence}
+\end{equation}
+where $\sigma_{e,x/y}' = \sqrt{\epsilon_{x}/\beta_{x}^{*}}$ is the \textit{rms} transverse electron bunch angular divergence and $\sigma_{L} = \sqrt{\lambda/4\pi}$ is the \textit{rms} transverse laser pulse angular divergence. REFERENCE?
+
+
 \textcolor{blue}{**State how emission can occur from any spatial point, say how it is unlikely from the edges**}
 \textcolor{blue}{**Explain how this isn't a problem transversely or longitudinally, what Balsa and I talked about**}
 
+
+
 \section{Spectral Density}
-
-\section{Peak and Average Brilliance}
-\textcolor{blue}{**DERIVATION OF THE AVERAGE BRILLIANCE \\ Is this necessary?? Is it enough to say flux per area in phase space?}
-
-The average brilliance is defined as the flux per unit phase space area of the interaction per 0.1\% \textcolor{blue}{FWHM?} bandwidth and is subsequently given by \cite{krafft2010compton,deitrick2018high} \textcolor{blue}{is this the correct source, did they get it from somewhere else earlier?}
-
-\begin{equation}
-B_{\mathrm{avg}} = \frac{\mathcal{F}_{0.1\%}}{4\pi^{2}\sigma_{\gamma,x}\sigma_{\gamma,x'}\sigma_{\gamma,y}\sigma_{\gamma,y'}},
-\label{eq:average_brightness}
-\end{equation}
-where $\mathcal{F}_{0.1\%}$ is the flux in a 0.1\% \textcolor{blue}{FWHM?} bandwidth, $\sigma_{\gamma,x/y}$ are the source sizes in each plane and $\sigma_{\gamma,x'/y'}$ are the angular divergences in each plane.
-
 
 \section{Bandwidth + Investigation}
 
@@ -550,6 +551,30 @@ where $\psi = \gamma\theta$ is the acceptance angle, $\epsilon_{x/y}$ is the emi
 \left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{\mathrm{FWHM}} = 2\sqrt{2\ln{2}}\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{rms}
 \label{eq:FWHM_bandwidth}
 \end{equation}
+
+
+\section{Peak and Average Brilliance}
+\textcolor{blue}{**DERIVATION OF THE AVERAGE BRILLIANCE \\ Is this necessary?? Is it enough to say flux per area in phase space?}
+
+Brilliance, also termed brightness, is a quantity originally used to quantify the 6D phase space density of particle beams \cite{courant1958theory}. This concept was adopted to characterize production of radiation from accelerator driven light sources such as bending magnet or wiggler synchrotron radiation sources and undulators \cite{kim1989characteristics} where the brilliance is defined as the flux into a cone of particular spectral bandwidth (usually 0.1\%) per unit phase space area. 
+
+Average brilliance is time averaged, summing the contribution of all electron bunch--laser pulse interactions of the source, thereby accounting for the repetition rate of the interactions. Whereas, peak brilliance is calculated for a single bunch--pulse interaction subject to the interaction time. Experimentally, both peak and average brilliance have advantages ... \textcolour{blue}{NEED A GOOD ARGUMENT}. Linac driven ICS sources typically are designed to be single-shot, high peak brilliance sources whereas storage ring and recirculated electron beam based ICS sources take advantage of high repetition rates to be high average brilliance sources. Theoretically, ERL's with linac quality recirculated electron beams could dually provide high peak and average brilliance.   
+
+Often ICS sources are viewed as analagous to undulator radiation, a 'laser undulator' system. Hence, the average brilliance of an ICS source is adapted from that of an undulator. The average brilliance of an undulator source assuming a Gaussian electron bunch and planar undulator field \cite{chao2013handbook} is given by 
+
+\begin{equation}
+\mathcal{B}_{U} = \frac{\Phi_{n}}{4\pi^{2}\Sigma_{x}\Sigma_{y}\Sigma_{x}'\Sigma_{y}'}
+\label{eq:undulator_brightness}    
+\end{equation}
+where $\Phi_{n}$ is the total spectral flux of the $n$th undulator harmonic generate into a central cone of 0.1\% spectral bandwidth, $\Sigma_{x/y} = \sqrt{\sigma_{x/y}^{2}+\sigma_{R}^{2}}$ are the source sizes of the interaction in each plane with $\sigma_{x/y}$ the \textit{rms} source size of the electron beam and $\sigma_{R}$ the diffraction limited source size of a single electron emission \cite{kim1987brightness}, and $\Sigma_{x/y}' = \sqrt{\sigma_{x}'^{2}+\sigma_{R}'^{2}}$ the source size divergences with $\sigma_{x}'$ the \textit{rms} divergence of the electron beam and $\sigma_{R}'$ the \textit{rms} angular divergence of the single electron emission \cite{krinsky1983undulators}. 
+
+The average brilliance for an inverse Compton scattering source is defined as the average flux per unit phase space area of the interaction per 0.1\% \textit{rms} bandwidth. The ICS average brilliance, is modified from the undulator brilliance (Eq.~\ref{eq:undulator_brightness}) through replacement of the single electron emission field for the electric field of a Gaussian laser pulse \cite{krafft2010compton,deitrick2018high}, is of the form   
+
+\begin{equation}
+\mathcal{B}_{\mathrm{avg}} = \frac{\mathcal{F}_{0.1\%}}{4\pi^{2}\sigma_{\gamma,x}\sigma_{\gamma,x}'\sigma_{\gamma,y}\sigma_{\gamma,y}'},
+\label{eq:average_brightness}
+\end{equation}
+where $\mathcal{F}_{0.1\%}$ is the flux in a 0.1\%  \textcolor{blue}{FWHM?rms?} bandwidth, $\sigma_{\gamma,x/y}$ are the source sizes in each plane (Eq.~\ref{eq:source_size}) and $\sigma_{\gamma,x/y}'$ are the source angular divergences in each plane. The form of the source sizes in the ICS average brilliance 
 
 
 

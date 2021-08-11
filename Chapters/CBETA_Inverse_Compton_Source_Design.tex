@@ -22,8 +22,35 @@
 
 \section{Motivation for a CBETA Inverse Compton Scattering Source}
 
+\textcolor{blue}{**SHITE BUT GETTING POINTS DOWN**}
+
+The CBETA ERL is the first demonstration of an SRF multi-pass ERL \cite{bartnik2020cbeta}, which enables a compact accelerator to provide 100's~\si{\mega\electronvolt} electron beams with small emittance ($\epsilon_{n} < 1$~\si{\milli\meter}-\si{\milli\radian}) and small relative energy spread whilst maximising beam power. These factors contribute to a high-quality, high-brillance electron beam which is an ideal driver of an inverse Compton source. Consequently, an x-ray light source can be designed to harness CBETA and provide high-quality x-ray beams within a compact footprint. Another advantage of using a multi-pass ERL is that ICS sources can be constructed to use each of the four nominal energies of the CBETA accelerator, therefore a multi-colour radiation source is possible. 
+
+ The maximum electron beam energy of the CBETA at 150~\si{\mega\electronvolt} enables production of x-rays with a minimum wavelength of $\lambda = 0.03$~\si{\angstrom} ($E_{\gamma} = 402$~\si{\kilo\electronvolt}), extending the reach of current synchrotron facilities which are limited to the $E_{\gamma} = 300$~\si{\kilo\electronvolt} range. Smaller wavelength opens up new avenues of application such as tomography of thick specimens and non-resonant inelastic scattering (NIXS) of transition metal oxides -- of relevance to development of high temperature superconductors.
+ 
+ Inherent in the inverse Compton scattering process is a correspondence between photon energy and scattering angle ($E_{\gamma} \propto \theta$), therefore simple collimation is adequate to select a bandwidth of photons from a source. This is even possible once geometric bunch--pulse effects are accounted for. However, this is in contrast to synchrotron and bremmsstrahlung sources, where complicated optical arrangements, like monochromators, are required to select a user specified photon bandwidth. 
+ 
+ Production of narrow-bandwidth radiation is plausible using an ERL ICS source as ERLs such as CBETA have small energy spread and are capable of very small emittances ($\epsilon_{n} = 0.3$~\si{\milli\meter}-\si{\milli\radian}), as evidenced by inspection of Eq.~\ref{eq:RMS_bandwidth}. Therefore, operation and design of a CBETA inverse Compton scattering source would be informative toward narrow-band radiation sources in the $\gamma$-ray regime, where only bremsstrahlung is competitive as a high-flux source yet suffers from a broad bandwidth and where monochromation is less feasible. 
+
 \section{ERL Electron Beam and Optical Cavity Laser Pulse Parameters}
 
+\begin{itemize}
+\item{Electron Bream Parameters}
+    \begin{itemize}
+    \item{CBETA design parameters + their justification}
+    \item{Baseline parameters}
+    \item{CBETA limitations}
+    \end{itemize}
+\item{Laser Pulse Parameters}
+    \begin{itemize}
+    \item{Fabry-Perot Optical Cavity Design}
+    \item{KEK cERL results + cavity}
+    \item{Limitations of Fabry Perot cavities}
+    \item{Laura Corner spectral bandwidth of Nd:YAG private communication}
+    \end{itemize}
+\end{itemize}
+
+The electron parameters for the design of the CBETA inverse Compton scattering source are majoritively based on the design parameters of the CBETA ERL as presented in the design report \cite{hoffstaetter2017cbeta}.
 
 \begin{table}[!h]
 \caption{Electron beam parameters envisaged at the CBETA ICS source interaction point (IP). The given baseline parameters -- which assume the same $\beta^*$ at the IP -- allow a comparison of flux and bandwidth at different energies. The optimised values beneath those are where we have maximised the flux into a 0.5\% \textit{rms} scattered photon bandwidth through a suitable combination of beam spot size and collimation angle.}
@@ -55,6 +82,11 @@ Collimation angle, $\theta_{\mathrm{col}}$ & 1.533 & 0.830 & 0.569 & 0.433 & mra
 \label{TABLE:CBETA_electron_beam_design_parameters}
 \end{table}
 
+A Nd:YAG laser ($\lambda = 1064$~\si{\nano\meter}) is specified for the CBETA ICS as this laser typically has a narrow spectral bandwidth in comparison to other possibilities such as Ti:Sa lasers and industrial Nd:YAG lasers are widely available with picosecond domain pulse lengths which are ideal for an ICS source.
+
+The laser pulse parameters are based on the Fabry-Perot optical cavity demonstrated in the cERL inverse Compton scattering source \cite{akagi2016narrow}. An identical bow-tie 4-mirror planar cavity is envisioned for the CBETA ICS, a full design of a Fabry-Perot optical cavity was forseen as beyond the scope of this source design.
+
+The Fabry--Perot cavity included within this source design has an average stored power of 10~\si{\kilo\watt}, which is below the state-of-the-art 670~\si{\kilo\watt} stored power demonstration by Carstens et al \cite{carstens2014megawatt}, though this was conducted outside of an accelerator environment. The recent demonstration of the Munich Compact Light Source (MuCLS) operated with a 70~\si{\kilo\watt} average stored power \cite{eggl2016munich}, therefore our parameters are conservative.   
 \begin{table}[!h]
 \centering
 \caption{Nd:YAG Gaussian laser pulse parameters at the CBETA ICS IP. The laser pulse is produced from a Nd:YAG infrared laser and re-circulated in a bow-tie optical cavity.}
@@ -79,7 +111,7 @@ Relative energy spread, $\Delta E_\textrm{laser}/E_\textrm{laser}$ & 6.57$\times
 
 \section{Flux - Bandwidth Optimisation}
 
-The bandwidth of an ICS light source is tuneable and can be selected on the basis of user requirements. Here we develop a method to maximise flux within a selected \textit{rms} bandwidth for the simplified case of an electron beam with a round transverse profile i.e normalised emittance is identical in both directions ($\epsilon_{nx} = \epsilon_{ny} = \epsilon_{n}$). This can simply be converted to a FWHM bandwidth (Eq.~\ref{eq:FWHM_bandwidth}. Bandwidth selection is possible by selecting $\beta^{*}$ at the IP and by setting the collimation angle, $\theta_{\mathrm{col}}$ that collects the scattered photons; these may for example comprise switchable, fixed-aperture collimators.
+The bandwidth of an ICS light source is tuneable and can be selected on the basis of user requirements. Here we develop a method to maximise flux within a selected \textit{rms} bandwidth for the simplified case of an electron beam with a round transverse profile i.e normalised emittance is identical in both directions ($\epsilon_{nx} = \epsilon_{ny} = \epsilon_{n}$). This can simply be converted to a FWHM bandwidth (Eq.~\ref{eq:FWHM_bandwidth}). Bandwidth selection is possible by selecting $\beta^{*}$ at the IP and by setting the collimation angle, $\theta_{\mathrm{col}}$ that collects the scattered photons; these may for example comprise switchable, fixed-aperture collimators.
 
 Within this optimisation derivation, the \textit{rms} bandwidth is given by (Eq.~\ref{eq:RMS_bandwidth}) with the emittance term (Eq.~\ref{eq:emittance_term}) modified for the transversely round bunch case
 \begin{equation}
@@ -139,7 +171,9 @@ By applying the collimated flux maximisation to the parameter space shown in Fig
 \label{fig:CBETA_Tuning_Curve}
 \end{figure}
 
-In Fig.~\ref{fig:CBETA_Tuning_Curve}, the tuning curves of the four nominal energies of the CBETA ICS are shown as a single line. This is as the recoil parameter for the CBETA ICS is near-negligible for the operating energy of CBETA, which means the tuning curves directly overlap. The relationship between collimated flux and bandwidth for the CBETA ICS is linear past the rapid fall off at low bandwidth which is occurs once we approach the minimum theoretical limit of the bandwidth. Within the non-linear range of Fig.~\ref{fig:CBETA_Tuning_Curve} the energy spreads of the electron bunch and laser pulse dominate the bandwidth, which restricts the $\beta^{*}$-$\theta_{\mathrm{col}}$ parameter space. Consequently the optimum balance between the emittance and collimation term can not be achieved, causing a rapid decrease in the collimated flux.   
+In Fig.~\ref{fig:CBETA_Tuning_Curve}, the tuning curves of the four nominal energies of the CBETA ICS are shown as a single line. This is as the recoil parameter for the CBETA ICS is near-negligible for the operating energy of CBETA, which means the tuning curves directly overlap. The relationship between collimated flux and bandwidth for the CBETA ICS is linear past the rapid fall off at low bandwidth which is occurs once we approach the minimum theoretical limit of the bandwidth. Within the non-linear range of Fig.~\ref{fig:CBETA_Tuning_Curve} the energy spreads of the electron bunch and laser pulse dominate the bandwidth, which restricts the $\beta^{*}$-$\theta_{\mathrm{col}}$ parameter space. Consequently the optimum balance between the emittance and collimation term can not be achieved, causing a rapid decrease in the collimated flux.  
+
+\textcolor{blue}{**EXPLAIN THE ENERGY DEPENDENCE OF THIS**}
 
 \section{Bypass Design}
 
@@ -155,6 +189,16 @@ To utilize CBETA as an inverse Compton scattering source at the 150~\si{\mega\el
 The layout of such a bypass line is shown in Fig.~\ref{fig:CBETA_ICS_Layout}. The bypass is configured for 150~\si{\mega\electronvolt} 4th-pass operation but could be adapted to operate with all nominal energies. The bypass was designed and optimised using the \textsc{Bmad} accelerator simulation library~\cite{BmadManual} and the \textsc{Tao} program~\cite{TaoManual} for simulating high
 energy particle beams in accelerators.
 
+%\textcolor{blue}{\begin{itemize}
+%    \item{In different plane from CBETA}
+%    \item{IP in different plane from CBETA and bypass}
+%    \item{$\beta$-functions at the IP tunable between the baseline and optimised values}
+%    \item{$\alpha_{x/y} =0$, $\eta_{x/y} =0$, $\eta'_{x/y} =0$ at the IP in each case}
+%    \item{Path length tunability $\pm \lambda_{\mathrm{RF}}$}
+%    \item{$R_{56} = 0$ for 5th linac pass, as this is the value for standard 5th pass.}
+%    \item{Small peak $\beta$-functions and dispersion throughout the lattice - sensitivity issues}
+%\end{itemize}}
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/cbetaicslayout.pdf}
@@ -164,19 +208,29 @@ energy particle beams in accelerators.
 
 The bypass line diverts the 150~\si{\mega\electronvolt} electron beam after the 4th linac pass in the corresponding S4 splitter line; the electron beam then re-enters the existing layout in the R4 line. The bypass replaces the FFA return loop, S4, from the 4th dipole onward and R4 up to the 4th dipole. The bypass will be located above the existing permanent magnet arc as the FFA arc is still used to transport the lower energy (42, 78, and 114~MeV) beams before and after the bypass.
 
-A system of vertical doglegs, replacing sections of the S4 and R4 lines, are required to provide a 30~\si{\centi\meter} vertical elevation of the bypass line relative to the plane of the FFA return loop in order to avoid the existing accelerator. Bypass arc sections replace the existing FFA arc sections (FA, FB). Following the first arc, there is a horizontal dogleg used to close horizontal dispersion before the interaction region and offset the bypass from existing infrastructure. 
+A system of vertical doglegs, replacing sections of the S4 and R4 lines, are required to provide a 30~\si{\centi\meter} vertical elevation of the bypass line relative to the plane of the FFA return loop in order to avoid the existing accelerator. Single step vertical doglegs are preferred over the staircase style vertical doglegs used in the CEBAF spreader \cite{york1987optics}, as they offer a smaller footprint; desirable in a compact accelerator. However, this comes at the cost of increased dispersion growth and therefore poor $R_{56}$. Increased dispersion growth can be mitigated by additional focusing though in the CBETA case additional focusing is not required as the vertical doglegs are short enough to limit the impact on $R_{56}$.   
 
-At the interaction region (IR) the beam is again offset upward locally by a further 20~\si{\centi\meter} -- to a 50~\si{\centi\meter} total offset above the FFA reference orbit height -- using a pair of vertical doglegs; these are here called the IR doglegs. The further vertical offset is imposed so the photons are produced in a different plane to both the bypass line and FFA return loop which is necessary for the extraction of the x-ray beam to an external experimental hutch and in order to avoid irradiation of the FFA permanent magnets. A flexible focusing section within the pair of IR doglegs is used to focus to the required beam waist. The final focus section is designed to enable both $\beta^{*} = 1$~\si{\centi\meter} for the baseline case and $\beta^{*} = 12.6$~\si{\centi\meter} for the 0.5\% \textit{rms} bandwidth case (see Table~\ref{TABLE:CBETA_electron_beam_design_parameters}). The final focus section is constructed from 7 quadrupoles with the laser re-circulation cavity placed between the 4th and 5th quadrupole. This scheme allows the photons to be extracted via the first dipole of the downstream IR dogleg, minimizing the number of magnets requiring modification for photon extraction. 
+Bypass arc sections replace the existing FFA arc sections (FA, FB). Following the first arc, there is a horizontal dogleg used to close horizontal dispersion before the interaction region and offset the bypass from existing infrastructure. 
 
-Within the straight section of the bypass following the IR, a variable path length adjustment is implemented based on the moving chicane described by H. Owen et al~\cite{owen2012modular}; this 4-dipole focusing chicane uses two mechanically-adjustable swing arms each incorporating a quadrupole triplet, and a central bellows. The chicane replicates the function of the S4/R4 splitter/recombiners to allow variation of both $R_{56}$ and path length for re-entry into the MLC. Path length adjustment is made by opening the swing arms whilst increasing the dipole strengths accordingly; over a change in path length of $\pm\lambda_{RF}$ the variation in Twiss values (after re-matching) is moderate.
+At the interaction region (IR) the beam is again offset upward locally by a further 20~\si{\centi\meter} -- to a 50~\si{\centi\meter} total offset above the FFA reference orbit height -- using a pair of vertical doglegs; these are here called the IR doglegs. The further vertical offset is imposed so the photons are produced in a different plane to both the bypass line and FFA return loop which is necessary for the extraction of the x-ray beam to an external experimental hutch and in order to avoid irradiation of the FFA permanent magnets. \textcolor{blue}{**TALK ABOUT POTENTIAL EXPERIMENTAL HUTCH POSITION**} A flexible focusing section within the pair of IR doglegs is used to focus to the required beam waist. The final focus section is designed to enable both $\beta^{*} = 1$~\si{\centi\meter} for the baseline case and $\beta^{*} = 12.6$~\si{\centi\meter} for the 0.5\% \textit{rms} bandwidth case (see Table~\ref{TABLE:CBETA_electron_beam_design_parameters}). Further interaction point conditions require $\alpha_{x/y} =0$ and the dispersion and it's derivative be zeroed ($\eta_{x/y} = 0$, $\eta'_{x/y} = 0$). \textcolor{blue}{**WHY?**} The final focus section is based on a low $\beta$ insertion \cite{chao2013handbook} and is constructed from 7 quadrupoles with the laser re-circulation cavity placed between the 4th and 5th quadrupole. Quadrupole triplets are used to focus the bunch to the required small waist for interaction whilst the 7th IR quadrupole is used to aid matching of the outgoing interaction vertical dogleg. This scheme allows the photons to be extracted via the first dipole of the downstream IR dogleg, minimizing the number of magnets requiring modification for photon extraction. 
 
-Optics tuning of the bypass is limited by the compact layout of CBETA, the conditions required for energy recovery of the interacted beam ($R_{56}=0$), and the necessity for the bypass to be constructed above the existing FFA return loop; the $\beta$-functions and dispersion are however still feasible. Plots of $\beta$-functions and dispersion in the bypass line for the 0.5\% \textit{rms} bandwidth case are shown in Figs.~\ref{fig:CBETA_ICS_Twiss} and~\ref{fig:CBETA_ICS_dispersion}. 
+\textcolor{blue}{**NEEDS WORK**}
+
+Within the straight section of the bypass following the IR, variable path length adjustment is implemented based on the moving chicane described by H. Owen et al~\cite{owen2012modular}; this 4-dipole focusing chicane uses two mechanically-adjustable swing arms each incorporating a quadrupole triplet, and a central bellows. 
+
+For the 4th pass of CBETA, the total path length must be altered by $(n+1/2)\lambda_{\mathrm{RF}}$ so the electron beam is decelerated in the subsequent pass. Small adjustments are typically made to the path length by the splitter/recombiner lines, however in the bypass design these have been bisected and  can not accomplish this task. 
+
+The chicane replicates the function of the S4/R4 splitter/recombiners to allow variation of both $R_{56}$ and path length for re-entry into the MLC.  Path length adjustment is made by opening the swing arms of the chicane whilst increasing the dipole strengths accordingly. With this system a path length adjustment of $\pm\lambda_{\mathrm{RF}}$ is possible, which corresponds to 180\si{\degree} of linac phase; more than adequate for adjustment of the bypass line. Over a change in path length of $\pm\lambda_{\mathrm{RF}}$ the variation in Twiss values (after re-matching) is moderate, as can be seen in Figure~\ref{fig:CBETA_ICS_Twiss}.
+
+\textcolor{blue}{**TALK ABOUT 2nd ARC, VERTICAL DOGLEG + MERGE TO 5th LINAC PASS + MATCHING CONDITIONS**}
+
+The quality of the Twiss parameter matching of the bypass is limited by the compact layout of CBETA, the conditions required for energy recovery of the interacted beam, re-entry from the bypass to the 5th linac pass (Twiss matching, $R_{56} =0$), and the necessity for the bypass to be constructed above the existing FFA return loop; the $\beta$-functions and dispersion remain feasible. Plots of $\beta$-functions and dispersion in the bypass line for the 0.5\% \textit{rms} bandwidth case are shown in Figs.~\ref{fig:CBETA_ICS_Twiss} and~\ref{fig:CBETA_ICS_dispersion}. 
 
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.5\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/twissplotx.pdf}
     \includegraphics[width=0.5\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/twissploty.pdf}
-    \caption{Twiss functions in the ICS bypass line, showing the re-matched conditions for different path length configurations $-\lambda_{RF}$, $0$ and $+\lambda_{RF}$. The ICS interaction point (IP) is indicated. \textcolor{blue}{Potentially worth putting the beta functions and dispersion functions side by side?}}
+    \caption{Twiss functions in the ICS bypass line, showing the re-matched conditions for different path length configurations $-\lambda_{\mathrm{RF}}$, $0$ and $+\lambda_{\mathrm{RF}}$. The ICS interaction point (IP) is indicated. \textcolor{blue}{Potentially worth putting the beta functions and dispersion functions side by side?}}
     \label{fig:CBETA_ICS_Twiss}
 \end{figure}
 
@@ -192,20 +246,24 @@ The solution for the 150~\si{\mega\electronvolt} 4th pass could be generalised t
 
 The 150~\si{\mega\electronvolt} nominal energy is potentially the most challenging as this requires the highest gradient magnets for focusing at the IP, path length correction and transport. However, in standard 4-pass operation this transport line is only traversed once, each other line is traversed twice in both acceleration and deceleration configuration.
 
-For example the 3rd pass 114~\si{\mega\electronvolt} nominal energy transport line is traversed on both the 3rd turn (accelerating pass) and the 5th turn (decelerating pass). The result is that if the ERL is still operated in 4-pass mode the bypass line (for the 3rd pass) has to satisfy both sets of conditions imposed on the accelerating and decelerating pass, whilst still achieving the same IP focusing constraints. Alternatively, the ERL could be operated as a 3-pass ERL for the purpose of an ICS at the 3rd nominal energy which would require sufficient flexibility within a bypass ICS line in order to operate as a multi-colour photon source.
+For example, the 3rd pass 114~\si{\mega\electronvolt} nominal energy transport line is traversed on both the 3rd turn (accelerating pass) and the 5th turn (decelerating pass). If the ERL is still operated in 4-pass mode, the bypass line (for the 3rd pass) has to satisfy both sets of conditions imposed on the accelerating and decelerating pass whilst maintaining the same IP focusing constraints. The electron bunch must be delivered to the IP with the same longitudinal and transverse profile or consecutive electron bunch--photon pulse interactions will produce radiation with varying spectral characteristics. Alternatively, the ERL could be operated as a 3-pass ERL for the purpose of an ICS at the 3rd nominal energy. A decelerating configuration bunch is interacted at the IP meaning the produced radiation is identical for each interaction. Sufficient flexibility would be required within this bypass line as decelerating pass linac matching condition require replication and a 180$\degree$ phase change  is compulsory, irrespective of electron kinetic energy. There would also be consequences for repetition rate of the ICS interaction.   
+
+\textcolor{blue}{**NEEDS A BIT OF WORK THIS, EXPLAIN BETTER**}
 
 The author favours the latter solution to this problem as common transport systems in ERLs are already typically highly constrained - more-so for the FFAG multiple energy common transport system in CBETA  (\textcolor{blue}{reference to the relevant part in CBETA ERL commissioning}) - and the latter solution appears to offer less constraints on the beam dynamics. Of course, this issue could be avoided entirely via the use of single transport, where we have different transport beamlines for both the accelerating and decelerating configuration of each nominal energy of the multi-turn ERL, with ICS interaction points integrated, not retrofitted into the design.     
 
 \section{Spectral Output}
 
+In order to determine the performance of the CBETA inverse Compton scattering source, the predicted spectral output of the source -- several measures quantifying the output radiation -- must be characterised using the formulae in Chapter~\ref{Theory_of_Photon_Production_by_Inverse_Compton_Scattering}. Anticipated spectral output of the CBETA inverse Compton scattering source is denoted in Table~\ref{tab:CBETA_spectral_output}, where the baseline and the 0.5\% \textit{rms} bandwidth optimised configurations are both shown. 
+
 \begin{table}[!h]
-\caption{Anticipated photon output for each of the four electron beam energies in CBETA, taking into account a 5~degree crossing angle. The uncollimated flux varies by around 2\% due to the small effect of the electron spot size; $X < 0.003$ even at 150~MeV. The collimated flux has been optimised for a 0.5\% \textit{rms} bandwidth. The number of scattered photons is essentially independent of electron energy for a fixed electron spot size at the IP, and since both the Compton spectrum and the (relative) 0.5\% \textit{rms} bandwidth scale together with $\gamma^2$, both the optimised spot size and the predicted collimated fluxes are the same at all electron energies.}
+\caption{Anticipated photon output for each of the four electron beam energies in CBETA, taking into account a 5~degree crossing angle. The recoil parameter is negligible $X < 0.003$, even at  150~MeV -- the maximum electron beam energy. The collimated flux has been optimised for a 0.5\% \textit{rms} bandwidth and the baseline case focuses at the IP to $\beta^{*} =1$~\si{\centi\meter} for each nominal energy.}
 \scalebox{0.92}{
 \begin{tabular}{lccccc}
 \hline\hline
  & \multicolumn{4}{c}{Electron Kinetic Energy (MeV)} & \\
  \cline{2-5}
- & 42 & 78 & 114 & 150 & Unit \\
+ & 42 & 78 & 114 & 150 & \\
 \hline
 X-ray peak energy & 32.2 & 109.7 & 233.1 & 402.5 & keV\\
 Source Size & 5.84 & 4.35 & 3.62 & 3.17 & \si{\micro\meter} \\
@@ -222,6 +280,10 @@ Collimated flux & 2.09$\times 10^{8}$ & 2.09$\times 10^{8}$ & 2.09$\times 10^{8}
 \end{tabular}}
 \label{tab:CBETA_spectral_output}
 \end{table}
+
+The uncollimated flux varies by around 2\% due to the small effect of the electron spot size;
+
+The number of scattered photons is essentially independent of electron energy for a fixed electron spot size at the IP, and since both the Compton spectrum and the (relative) 0.5\% \textit{rms} bandwidth scale together with $\gamma^2$, both the optimised spot size and the predicted collimated fluxes are the same at all electron energies.
 
 \section{Development of ICARUS and Bench-marking}
 

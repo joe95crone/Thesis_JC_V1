@@ -48,6 +48,7 @@
 \RequirePackage{graphicx}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
+\RequirePackage{gensymb}
 \RequirePackage{setspace}
 \RequirePackage{cite}
 \RequirePackage{siunitx}
