@@ -60,23 +60,24 @@ The electron parameters for the design of the CBETA inverse Compton scattering s
 Parameter & \multicolumn{4}{c}{Quantity} & Unit \\
 \hline
 Turn number & 1 & 2 & 3 & 4 & \\
-Electron kinetic energy, $E_e$ & 42 & 78 & 114 & 150 & MeV\\
-Repetition rate, $f$ & \multicolumn{4}{c}{162.5} & MHz\\
-Bunch charge, $e N_e$ & \multicolumn{4}{c}{32} & pC \\
-Transverse normalised \textit{rms} emittance, $\epsilon_{N}$ & \multicolumn{4}{c}{0.3} & mm-mrad\\
-\textit{rms} bunch length, $\Delta \tau$ & \multicolumn{4}{c}{1.0 (3.33)} & mm (ps)\\
-Relative energy spread & \multicolumn{4}{c}{$5.0\times 10^{-4}$} & \\
+Electron kinetic energy, $E_e$ & 42 & 78 & 114 & 150 & \si{\mega\electronvolt}\\
+Injection kinetic energy, $E_{\mathrm{inj}}$ & \multicolumn{4}{c}{6} & \si{\mega\electronvolt} \\
+Repetition rate, $f$ & \multicolumn{4}{c}{162.5} & \si{\mega\hertz}\\
+Bunch charge, $e N_e$ & \multicolumn{4}{c}{32} & \si{\pico\coulomb} \\
+Transverse normalised \textit{rms} emittance, $\epsilon_{N}$ & \multicolumn{4}{c}{0.3} & \si{\milli\meter}-\si{\milli\radian}\\
+\textit{rms} bunch length, $\Delta \tau$ & \multicolumn{4}{c}{1.0 (3.33)} & \si{\milli\meter} (\si{\pico\second})\\
+Relative energy spread, $\Delta E_{e}/E_{e}$ & \multicolumn{4}{c}{$5.0\times 10^{-4}$} & \\
 \hline
  & \multicolumn{4}{c}{Baseline parameters} & \\
 \hline
-$\beta^*$ (at the IP) & \multicolumn{4}{c}{1} & cm\\
+$\beta^*$ (at the IP) & \multicolumn{4}{c}{1} & \si{\centi\meter}\\
 Electron bunch spot size, $\sigma_{\mathrm{electron}}$ & 6.01 & 4.42 & 3.65 & 3.19  & \si{\micro\meter} \\
 \hline
  & \multicolumn{4}{c}{Optimised for 0.5\% \textit{rms} bandwidth} & \\
 \hline
-$\beta^*$ (at the IP) & 3.56 & 6.58 & 9.60 & 12.62 & cm\\
+$\beta^*$ (at the IP) & 3.56 & 6.58 & 9.60 & 12.62 & \si{\centi\meter}\\
 Electron bunch spot size, $\sigma_{\mathrm{electron}}$ & 11.34 & 11.34 & 11.34 & 11.34  & \si{\micro\meter}\\
-Collimation angle, $\theta_{\mathrm{col}}$ & 1.533 & 0.830 & 0.569 & 0.433 & mrad\\
+Collimation angle, $\theta_{\mathrm{col}}$ & 1.533 & 0.830 & 0.569 & 0.433 & \si{\milli\radian}\\
 \hline\hline
 \end{tabular}
 \label{TABLE:CBETA_electron_beam_design_parameters}
@@ -94,14 +95,14 @@ The Fabry--Perot cavity included within this source design has an average stored
 \hline\hline
 Parameter & Quantity & Unit \\
 \hline
-Wavelength, $\lambda_\textrm{laser}$ & 1064 & nm\\
-Photon energy, $E_\textrm{laser}$ & 1.17 & eV\\
+Wavelength, $\lambda_\textrm{laser}$ & 1064 & \si{\nano\meter}\\
+Photon energy, $E_\textrm{laser}$ & 1.17 & \si{\electronvolt}\\
 Pulse energy  & 62 & \si{\micro\joule}\\
 Number of photons, N_{\textrm{laser}} & $3.3\times 10^{14}$\\ 
-Repetition rate, $f$ & 162.5 & MHz\\
+Repetition rate, $f$ & 162.5 & \si{\mega\hertz}\\
 Spot size at the IP, $\sigma_\textrm{laser}$ & 25 & \si{\micro\meter}\\
 Crossing angle, $\phi$ & 5 & deg \\
-Pulse length  & 10 & ps\\
+Pulse length  & 10 & \si{\pico\second}\\
 Relative energy spread, $\Delta E_\textrm{laser}/E_\textrm{laser}$ & 6.57$\times 10^{-4}$ &   \\
  % 0.7nm error on 1064nm
 \hline\hline
@@ -110,6 +111,8 @@ Relative energy spread, $\Delta E_\textrm{laser}/E_\textrm{laser}$ & 6.57$\times
 \end{table}
 
 \section{Flux - Bandwidth Optimisation}
+
+\textcolor{blue}{**THIS FEELS LIKE IT NEEDS TO GO ELSEWHERE**}
 
 The bandwidth of an ICS light source is tuneable and can be selected on the basis of user requirements. Here we develop a method to maximise flux within a selected \textit{rms} bandwidth for the simplified case of an electron beam with a round transverse profile i.e normalised emittance is identical in both directions ($\epsilon_{nx} = \epsilon_{ny} = \epsilon_{n}$). This can simply be converted to a FWHM bandwidth (Eq.~\ref{eq:FWHM_bandwidth}). Bandwidth selection is possible by selecting $\beta^{*}$ at the IP and by setting the collimation angle, $\theta_{\mathrm{col}}$ that collects the scattered photons; these may for example comprise switchable, fixed-aperture collimators.
 
@@ -261,31 +264,35 @@ In order to determine the performance of the CBETA inverse Compton scattering so
 \scalebox{0.92}{
 \begin{tabular}{lccccc}
 \hline\hline
- & \multicolumn{4}{c}{Electron Kinetic Energy (MeV)} & \\
+ & \multicolumn{4}{c}{Electron Kinetic Energy (\si{\mega\electronvolt})} & \\
  \cline{2-5}
  & 42 & 78 & 114 & 150 & \\
 \hline
-X-ray peak energy & 32.2 & 109.7 & 233.1 & 402.5 & keV\\
+X-ray peak energy & 32.2 & 109.7 & 233.1 & 402.5 & \si{\kilo\electronvolt}\\
 Source Size & 5.84 & 4.35 & 3.62 & 3.17 & \si{\micro\meter} \\
-Uncollimated flux & 3.16$\times10^{10}$ & 3.20$\times10^{10}$ & 3.21$\times10^{10}$ & 3.22$\times10^{10}$ & ph/s\\
-Spectral density & 9.82$\times10^{5}$ & 2.92$\times10^{5}$ & 1.38$\times10^{5}$ & 8.00$\times10^{4}$ & ph/s eV\\
-Average brilliance & 9.23$\times10^{10}$ & 3.19$\times10^{11}$ & 6.81$\times 10^{11}$ & 1.18$\times10^{12}$ & ph/s mm$^{2}$ mrad$^{2}$ 0.1\% bw\\
-Peak brilliance & 2.80$\times 10^{15}$ & 1.00$\times 10^{16}$ & 2.18$\times10^{16}$ & 3.80$\times 10^{16}$ & ph/s mm$^{2}$ mrad$^{2}$ 0.1\% bw\\
+Uncollimated flux & 3.16$\times10^{10}$ & 3.20$\times10^{10}$ & 3.21$\times10^{10}$ & 3.22$\times10^{10}$ & ph/\si{\second}\\
+Spectral density & 9.82$\times10^{5}$ & 2.92$\times10^{5}$ & 1.38$\times10^{5}$ & 8.00$\times10^{4}$ & ph/\si{\second} \second{\electronvolt}\\
+Average brilliance & 9.23$\times10^{10}$ & 3.19$\times10^{11}$ & 6.81$\times 10^{11}$ & 1.18$\times10^{12}$ & ph/\si{\second} \si{\milli\meter}$^{2}$-\si{\milli\radian}$^{2}$ 0.1\% bw\\
+Peak brilliance & 2.80$\times 10^{15}$ & 1.00$\times 10^{16}$ & 2.18$\times10^{16}$ & 3.80$\times 10^{16}$ & ph/\si{\second} \si{\milli\meter}$^{2}$-\si{\milli\radian}$^{2}$ 0.1\% bw\\
 \hline
  & \multicolumn{4}{c}{0.5\% \textit{rms} bandwidth} & \\
 \hline
-Source Size & 10.25 & 10.34 & 10.32 & 10.35 & \si{\micro\meter} \\ 
-Collimated flux & 2.09$\times 10^{8}$ & 2.09$\times 10^{8}$ & 2.09$\times 10^{8}$ & 2.09$\times 10^{8}$ & ph/s 0.5\% bw \\
+Source Size & 10.25 & 10.34 & 10.32 & 10.35 & \si{\micro\meter} \\
+Collimated flux & 2.09$\times 10^{8}$ & 2.09$\times 10^{8}$ & 2.09$\times 10^{8}$ & 2.09$\times 10^{8}$ & ph/\si{\second} 0.5\% bw \\
 \hline\hline
 \end{tabular}}
 \label{tab:CBETA_spectral_output}
 \end{table}
 
-The uncollimated flux varies by around 2\% due to the small effect of the electron spot size;
+We can see from Table~\ref{tab:CBETA_spectral_output} that uncollimated flux varies by around 2\% due to the small effect of the electron spot size. Recoil effects are negligible even at the highest electron beam energy $E_{e} = 150$~\si{\mega\electronvolt}, as $X = 2.70\times 10^{-3}$.  
 
 The number of scattered photons is essentially independent of electron energy for a fixed electron spot size at the IP, and since both the Compton spectrum and the (relative) 0.5\% \textit{rms} bandwidth scale together with $\gamma^2$, both the optimised spot size and the predicted collimated fluxes are the same at all electron energies.
 
+Table~\ref{tab:CBETA_spectral_output} also shows the brilliance of the source, both peak and average, increasing with nominal energy due to the $\mathcal{B} \propto \gamma^{2}$ relationship. Similarly, the spectral density decreases approximately inversely proportional to the Lorentz factor of the electron beam ($S \propto \frac{1}{\gamma^{2}}$). The two relations are approximate as they both also depend on flux, where we see a 2\% increase in collimated flux due to the aforementioned spot size effect. 
+
 \section{Development of ICARUS and Bench-marking}
+
+\textcolor{blue}{**THIS FEELS LIKE IT NEEDS TO GO ELSEWHERE**}
 
 \begin{figure}[!h]
 \centering
@@ -295,13 +302,18 @@ The number of scattered photons is essentially independent of electron energy fo
 \end{figure}
 
 \section{X-ray ICS Source Comparison}
+\label{sec:xray_ICS_comparison}
+
+Many inverse Compton scattering sources driven by a variety of accelerator types have been designed and built to operate in the x-ray regime, the CBETA ICS can be compared against these to evaluate the quality of the ERL driven ICS approach. Direct comparison is difficult as different designs have different objectives -- one design may prioritize maximizing flux while another prioritizes having a narrower bandwidth.
+
+To collate ICS sources of interest, we arbitrarily limit our discussions to the scattered photon energy range $1$~\si{\kilo\electronvolt} ($\sim$10~\si{\angstrom}) $< E_{\gamma} <$ 1~\si{\mega\electronvolt} ($\sim$0.01~\si{\angstrom}). A survey of x-ray inverse Compton sources is presented in Table~\ref{tab:xray_ICS_comparison}.
 
 \begin{table}[!h]
-\caption{Comparison of existing and designed x-ray ICS.}
+\caption{Comparison of existing and designed x-ray ICS. \textcolor{}{}}
 \begin{threeparttable}
 \begin{tabular}{lccc}
 \hline\hline
-ICS & Accelerator Type & Scattered Photon Energy (keV) & Flux (ph/s) \\
+ICS & Accelerator Type & Scattered Photon Energy (\si{\kilo\electronvolt}) & Flux (ph/\si{\second}) \\
 \hline
 cERL \cite{akagi2016narrow} & ERL & 6.95 & 2.6$\times 10^{7}$ \\ 
 ALICE \cite{priebe2008inverse,priebe2010first} & ERL & 21.5 & 9$\times 10^{5}$ \\
@@ -309,7 +321,7 @@ MIT ICS\tnote{*} ~\cite{graves2014compact} & Linac & 3 - 30 & 3$\times 10^{14}$ 
 MuCLS \cite{eggl2016munich} & Storage Ring & 15 - 35 & 0.443 - 1.78$\times 10^{10}$ \\ 
 Tsinghua \cite{du2013generation} & Linac & 51.7 & 1$\times 10^{6}$ \\
 ThomX\tnote{*} ~\cite{variola2014thomx,dupraz2020thomx} & Storage Ring & 45 - 90 & $1\times 10^{10}$ - $10^{13}$ \\
-BriXS\tnote{*} ~\cite{faillace2019status,cardarelli2020brixs} & ERL & 20 - 180 & $1\times 10^{10}$ - $10^{13}$ \\
+BriXS\tnote{*} ~\cite{faillace2019status,drebot2019brixs,cardarelli2020brixs} & ERL & 20 - 180 & $1\times 10^{10}$ - $10^{13}$ \\
 CBETA\tnote{*} & ERL & 32.2, 109.7, 233.1, 402.5 & 3.16 - 3.21$\times 10^{10}$ \\ 
 NIJI-IV \cite{sei2017demonstration} & Storage Ring & 1200 & 3.1$\times 10^{4}$ \\ 
 HI$\gamma$S\tnote{$\dagger$} ~\cite{weller2009research} & Storage Ring & 1000 - 3000 & 5$\times 10^{7}$ - 5$\times 10^{8}$ \\
@@ -323,27 +335,101 @@ HI$\gamma$S\tnote{$\dagger$} ~\cite{weller2009research} & Storage Ring & 1000 - 
 \label{tab:xray_ICS_comparison}
 \end{table}
 
+As evident from Table~\ref{tab:xray_ICS_comparison}, the 3rd and 4th pass ICS sources on CBETA nopminally produce x-rays at 233~\si{\kilo\electronvolt} and 403~\si{\kilo\electronvolt} respectively. Therefore, these offer unparalleled access to the $< 200$~\si{\kilo\electronvolt} x-ray regime, enabling a series of new high energy x-ray applications as shown in Section~\ref{sec:CBETA_ICS_applications}.
+
+The highest flux x-ray ICS demonstration is the 1.78$\times 10^{10}$~ph/\si{\second} demonstration at MuCLS \cite{eggl2016munich}, which uses a small ($\sim4$~\si{\meter} diameter) storage ring and a 70~\si{\kilo\watt} average stored power Fabry-Perot optical cavity. The CBETA ICS source design excels this by a factor $\sim2$. However, CBETA ICS is also capable of a much smaller bandwidth due to the smaller energy spread of the ERL in comparison with a storage ring.
+
+The CBETA ICS design outclasses the cERL ICS demonstration, the highest flux ERL driven ICS source, in terms of flux by a factor of $\sim1000$. As the Fabry-Perot optical cavity for CBETA is based upon the cERL ICS design, the difference is mainly due to the increase in bunch charge of CBETA in comparison to cERL (32~\si{\pico\coulomb} $>$ 0.355~\si{\pico\coulomb}) and the smaller electron bunch spot size at the interaction point (for the baseline case).
+
+The design of the BriXS and ThomX ICS sources offer fluxes up to $10^{13}$~ph/\si{\second} which are a factor $\sim300$ higher than those predicted for the CBETA ICS. In the BriXS case this is because the push-pull ERL design expects a much higher bunch charge than CBETA (32~\si{\pico\coulomb} < 200~\si{\pico\coulomb}) \cite{drebot2019brixs} and the average stored power at 750~\si{\kilo\watt} \cite{drebot2019brixs} is greater than the 670~\si{\kilo\watt} highest average stored power demonstration \cite{carstens2014megawatt} outside of an accelerator environment. The ThomX source intends to increase its flux in three steps corresponding to bunch charges of 50~\si{\pico\coulomb}, 100~\si{\pico\coulomb} and 1~\si{\nano\coulomb} with average stored powers in the Fabry-Perot cavity of 100~\si{\kilo\watt}, 500~\si{\kilo\watt} and 1~\si{\mega\watt} with the repetition rate being increased a factor of 5 from the first to second stage \cite{dupraz2020thomx}. These parameter sets lead to predicted fluxes of $10^{11}$~ph/\si{\second}, $10^{11}$~ph/\si{\second} and $10^{13}$~ph/\si{\second}. However, a Fabry-Perot optical cavity beyond the 70~\si{\kilo\watt} average stored power demonstration of MuCLS \cite{eggl2016munich} has not been shown to be operable as part of an ICS source. When the ThomX source parameters are within the state-of-the-art, the flux is comparable to that of the CBETA ICS.   
+
+% MIT ICS a special case - why?
+
 \section{Synchrotron Facility Comparison}
+
+% review of how x-rays can be produced
+% why is synchrotron the main competitior
+% mention SRS + Ian Munro @ Daresbury
+
+Inverse Compton production of photons at CBETA has the ability to extend the reach of monochromatic photon sources toward \si{\mega\electronvolt} scale, as shown in Table~\ref{tab:CBETA_spectral_output}. Alternative sources are bremsstrahlung methods, though these generate intrinsically broad-band radiation, line sources such as $^{137}$Cs and $^{60}$Co, and synchrotron radiation. Whilst line sources provide photons in the \si{\mega\electronvolt} scale, they are not tuneable, emit isotropically and require proper handling. Therefore, synchrotron radiation sources such as undulators are currently the premier method to generate intense, narrow-band radiation tunable on a \si{\kilo\electronvolt} to \si{\mega\electronvolt} scale. Hence, evaluation of the CBETA ICS as a source of monochromatic x-ray radiation is best attained by direct comparison with leading synchrotron radiation sources as well as other inverse Compton scattering sources (Section~\ref{sec:xray_ICS_comparison}).   
+
+Krafft and Priebe \cite{krafft2010compton} hypothesised that flux and brilliance offered by ICS sources is not competitive at the photon energies produced by 3rd generation light sources such as synchrotron radiation facilities. Subsequently, recent x-ray ICS source designs are intended to compromise between typical labratory-scale sources, such as synchrotron radiaton facilities and rotating cathode tubes,in terms of size, cost, access, availability, and x-ray quality \cite{deitrick2018high}. \textcolor{blue}{- would be nice to re-arrange this so we delineate the weak points of each of these}.
+The CBETA ICS source design provides scope to test Krafft and Priebe's hypothesis because it spans to the 100's~\si{\kilo\electronvolt} regime which allows better assessment of the utility of ICS production at the limits of synchrotron production.
+
+The characteristic critical photon energy for synchrotron radiation is
+\begin{equation}
+\epsilon_{c}=\frac{3}{2}\frac{\hbar c \gamma^3}{\rho},
+\label{eq:synchrotron_critical_energy}
+\end{equation}
+which can be recast in more natural units as $\epsilon_{c}$[\si{\kilo\electronvolt}]$\simeq 0.665E^{2}B$ (for $E$, the electron kinetic energy, given in \si{\giga\electronvolt} and $B$, the magnetic flux density of the bending magnets, in \si{\tesla}). The highest-energy 3rd-generation light source source today is Spring-8 with $E = 8$~\si{\giga\electronvolt} and $B\simeq 0.68$~\si{\tesla} to obtain a critical energy $\epsilon_{c}\simeq 29$~\si{\kilo\electronvolt} for its broadband incoherent SR production. Storage rings for 3rd generation light sources, such as Spring-8, have a physical circumference exceeding 1~\si{\kilo\meter} therefore due to financial considerations it is unlikely that a storage ring above 8~\si{\giga\electronvolt} will be built. 
+
+The undulator output limit from a storage ring can be illustrated by setting the undulator $K$-parameter to be $K \sim 1$ and an undulator period $\lambda_u \sim$~1~\si{\centi\meter}. This gives a magnetic field limit of
+\begin{equation}
+B_0 = \frac{m_{e} c}{e}\frac{2\pi}{\lambda_{u}} K \simeq 1\textrm{T}.
+\label{eq:undulator_field_limit}
+\end{equation}
+The minimum undulator wavelength ($K=0$) possible (in the fundamental harmonic of emission) is
+\begin{equation}
+\lambda_\textrm{min} = \frac{\lambda_{u}}{2 \gamma^2} \simeq 0.2 \textrm{\AA}
+\label{eq:undulator_minimum_wavelength}
+\end{equation}
+at 8~\si{\giga\electronvolt} ($\gamma \sim 15,700$), corresponding to a photon energy of $62$~\si{\kilo\electronvolt}. In practice, most hard x-ray undulators and wigglers operate up to around 100~\si{\kilo\electronvolt} photon energy by using higher harmonics, with few existing beamlines extending beyond that. Undulator output at higher harmonics is energy limited predominantly by the presence of magnetic phase errors, and the reduction factor $R$ in ideal flux from an \textit{rms} phase error $\sigma_{\phi}$ can be modelled approximately \cite{walker1993interference} using 
+\begin{equation}
+R=\exp{\left(-n^2 \sigma_{\phi}^{2}\right)},
+\label{eq:undulator_phase_errors}
+\end{equation}
+where $n$ is an integer (odd) undulator harmonic number, and $\sigma_\phi$ typically has a value of a few degrees \cite{walker2013phase}. In practice this limits undulators to $n<15$ in operation, although there is still debate on the pessimism of the \textit{rms} error in some cases \cite{tanaka2018universal} and around schemes for reduction of $\sigma_{\phi}$ future insertion devices \cite{hwang2011development,huang2017challenges}.
+
+Hard x-ray sources presently available at the high-energy storage rings APS \cite{apsbeamlines}, ESRF-EBS \cite{esrfbeamlines}, PETRA-III \cite{petraiiibeamlines}, and Spring-8 \cite{spring8beamlines}, have been surveyed. The codes \textsc{SPECTRA} \cite{tanaka2001spectra} and \textsc{SRW} \cite{chubar2013wavefront} are used to validate expected spectral output \cite{tanaka2001field}. For example, the flux of the Spring-8 BL10XU beamline  including a 5~\si{\degree} \textit{rms} phase error is shown in Fig.~\ref{fig:ICS_vs_SPRING8_Undulator_Flux}; this is compared with sample fluxes at the source points presented by Spring-8 \cite{spring8beamlines} and with the predicted flux from the CBETA ICS source design plotted as tabulated in Table~\ref{tab:CBETA_spectral_output}.
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/spring8bl10fluxplot.pdf}
-\caption{Comparison of CBETA predicted flux (here flux in a 0.1\% FWHM bandwidth to allow comparison with conventional calculations of undulator flux) at the four discrete operating energies given in Table~\ref{tab:CBETA_spectral_output} with the output from a typical high-energy undulator. The undulator shown is the SPRING-8 BL10XU insertion device~\cite{spring8beamlines} assuming an \textit{rms} phase error of 5~degrees. Whilst this undulator is not designed to deliver good output at high harmonic number, it offers a useful guide to possible 3rd-generation source output in the 100~keV to 500~keV range. the measured flux at 30~keV and 61~keV for this beamline is also shown~\cite{spring8beamlines}. We predict that CBETA flux at 402~keV (150~MeV electron energy) exceeds that from 3rd-generation sources.}
+\caption{Comparison of CBETA predicted flux (here flux in a 0.1\% \textit{FWHM} bandwidth to allow comparison with conventional calculations of undulator flux) at the four discrete operating energies given in Table~\ref{tab:CBETA_spectral_output} with the output from a typical high-energy undulator. The undulator shown is the SPRING-8 BL10XU insertion device~\cite{spring8beamlines} assuming an \textit{rms} phase error of 5\si{\degree}. Whilst this undulator is not designed to deliver good output at high harmonic number, it offers a useful guide to possible 3rd-generation source output in the 100~\si{\kilo\electronvolt} to 500~\si{\kilo\electronvolt} range. the measured flux at 30~\si{\kilo\electronvolt} and 61~\si{\kilo\electronvolt} for this beamline is also shown~\cite{spring8beamlines}. We predict that CBETA flux at 402~\si{\kilo\electronvolt} (150~\si{\mega\electronvolt} electron energy) exceeds that from 3rd-generation sources.}
 \label{fig:ICS_vs_SPRING8_Undulator_Flux}
 \end{figure}
+
+The predicted brilliance of CBETA at the nominal energies of each turn energies is compared in Fig.~\ref{fig:ICS_vs_SPRING8_Undulator_Brilliance} with a high-energy undulator (BL10XU) at Spring-8 -- the worlds highest-energy 3rd-generation synchrotron source. Because the Spring-8 BL10XU undulator is not particularly atypical, Fig.~\ref{fig:ICS_vs_SPRING8_Undulator_Brilliance} is indicative of achievable brilliance from other state-of-the-art synchrotron facilities. This statement also holds for the flux case.
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/spring8bl10brillianceplot.pdf}
-\caption{Comparison of CBETA predicted brilliance at the four discrete operating energies given in Table~\ref{CBETA_spectral_output} with the output from a typical high-energy undulator. The undulator shown is the SPRING-8 BL10XU insertion device~\cite{spring8beamlines} assuming an \textit{rms} phase error of 5~degrees. We predict that CBETA brilliance at 402~keV (150~MeV electron kinetic energy) exceeds that from 3rd-generation sources.}
+\caption{Comparison of CBETA predicted brilliance at the four discrete operating energies given in Table~\ref{CBETA_spectral_output} with the output from a typical high-energy undulator. The undulator shown is the SPRING-8 BL10XU insertion device~\cite{spring8beamlines} assuming an \textit{rms} phase error of 5\si{\degrees}. We predict that CBETA brilliance at 402~\si{\kilo\electronvolt} (150~\si{\mega\electronvolt} electron kinetic energy) exceeds that from 3rd-generation sources.}
 \label{fig:ICS_vs_SPRING8_Undulator_Brilliance}
 \end{figure}
+
+As hypothesized by Krafft and Priebe \cite{krafft2010compton}, storage ring sources produce greater brilliance and flux at high harmonic number for photon energies up to approximately 300~\si{\kilo\electronvolt}. However, the fundamental energy scaling of synchrotron radiation and the finite undulator magnetic field quality means that the ICS output from CBETA becomes superior beyond 300~\si{\kilo\electronvolt}. From Fig.~\ref{fig:ICS_vs_SPRING8_Undulator_Flux} we see the measured flux at 30~\si{\kilo\electronvolt} and 61~\si{\kilo\electronvolt} \cite{spring8beamlines} is orders of magnitude superior to that from an ICS source, but at 400~\si{\kilo\electronvolt} this is reversed. From inspection of other ICS source designs in Table~\ref{tab:xray_ICS_comparison} it is evident that ICS sources are projected to achieve $\sim 10^{10} - 10^{13}$~ph/\si{\second} independent of scattered photon energy so we can broaden our conclusions state that the interface between utility of ICS sources and 3rd generation light sources lies at $< 300$~\si{kilo\electronvolt}. Therefore, the hypothesis of Krafft and Priebe \cite{krafft2010compton} must be modified to note that ICS sources become competitive against synchrotron light sources at around 300~\si{\kilo\electronvolt}.  
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/sourcefluxcomparison.pdf}
-\caption{On-sample measured fluxes from APS, ESRF-EBS, PETRA-III, and SPRING-8 for which information has been published~\cite{apsbeamlines,esrfbeamlines,petraiiibeamlines,spring8beamlines}. This is compared with the predicted CBETA outputs in Table~\ref{CBETA_spectral_output}, at the 4 discrete photon energies from 32 to 402~keV, and the predicted flux obtained by scaling the CBETA electron energy to 300~MeV (1600~keV photons) and 600~MeV (6360~keV photons). Whilst 3rd-generation sources are superior to ICS sources up to photon energies around 300~keV, they do not produce useable flux above 400~keV.}
+\caption{On-sample measured fluxes from APS, ESRF-EBS, PETRA-III, and SPRING-8 for which information has been published~\cite{apsbeamlines,esrfbeamlines,petraiiibeamlines,spring8beamlines}. This is compared with the predicted CBETA outputs in Table~\ref{CBETA_spectral_output}, at the 4 discrete photon energies from 32 to 402~\si{\kilo\electronvolt}, and the predicted flux obtained by scaling the CBETA electron energy to 300~\si{\mega\electronvolt} (1.60~\si{\mega\electronvolt} photons) and 600~\si{\mega\electronvolt} (6.36~\si{\mega\electronvolt} photons). Whilst 3rd-generation sources are superior to ICS sources up to photon energies around 300~\si{\kilo\electronvolt}, they do not produce useable flux above 400~\si{\kilo\electronvolt}.}
 \label{fig:ICS_Undulator_Comparison}
 \end{figure}
+
+Fig.~\ref{fig:ICS_Undulator_Comparison} compares the on-sample measured fluxes from those high-energy synchrotron beamlines ($>$30~\si{\kilo\electronvolt}) for which data is available \cite{apsbeamlines,esrfbeamlines,petraiiibeamlines,spring8beamlines}. Almost no beamline generates output above 100~\si{\kilo\electronvolt}, and above 300~\si{\kilo\electronvolt} we have shown that ICS is a superior production method. Extending the demonstrated CBETA parameters to higher electron energy we would expect the collimated flux values to remain nearly constant as we see that flux in inverse Compton scattering sources is broadly independent of electron kinetic energy. Hence we can estimate the likely possible flux for \si{\mega\electronvolt}-scale photons from a CBETA style ERL-based source. Therefore, two indicative electron energies (300~\si{\mega\electronvolt} and 600~\si{\mega\electronvolt}) are included in Fig.~\ref{fig:ICS_Undulator_Comparison}. The fluxes at 100's~\si{\mega\electronvolt}, based on a conservatively designed multi-pass ERL ICS, highlight the potential of this approach to $\gamma$-ray sources. 
+
+\section{CBETA ICS Applications}
+\label{sec:CBETA_ICS_applications}
+\textcolor{blue}{**REQUIRES HEAVY EDITING, TOOK FROM CBETA PAPER** }
+
+The proposed CBETA ICS is a high-flux, small-bandwidth, quasi-monochromatic source of x-rays, producing high peak energy photons in the 100s~\si{\kilo\electronvolt} range. The large flux opens up a parameter space for x-ray applications previously attainable only at the largest synchrotrons, and then only using substantial x-ray optics. We now outline some possible uses.  
+
+Important applications of such a source are x-ray absorption spectroscopy and x-ray fluorescence (XRF) \cite{willmott2019introduction}.
+High-energy XRF is an application that is particularly well-suited for this ICS source; due to collimation there is no need to monochromate, avoiding complex x-ray optical instrumentation. Energy-sensitive x-ray fluorescence detection can be provided by a solid-state detector coupled to a pulse-height analyzer. For example, in any analysis of a fission reactor's fuel rods, the $K\alpha$ and $K\beta$ lines for uranium ($K\alpha_{1} = 98.4$~\si{\kilo\electronvolt}, $K\beta_{1} = 111.3$~\si{\kilo\electronvolt}) and plutonium ($K\alpha_{1} = 103.7$~\si{\kilo\electronvolt}, $K\beta_{1} = 117.2$~\si{\kilo\electronvolt}) could be probed \cite{havrilla2015feasibility}. Quantitative assays would be performed by means of a low-$Z$ reference scatterer to ascertain the spectral content of the broadband incident beam through elastic and Compton scattering into the same detector. The fluorescence efficiency of the detection scheme is then provided by the known photo-absorption cross sections of the elements of interest versus incident energy. 
+
+The deep penetrating power of a high-energy x-ray source provides the opportunity for imaging of thick specimens that would would not be possible at lower energies. These range from straightforward techniques such as 2D shadowgraphy through to 3D reconstruction with tomography \cite{als2011elements}.
+
+Another ready application exploits the high flux and high energy of the source: energy-dispersive x-ray diffraction (EDXRD) for the identification of constituents of a polycrystalline/powdered sample. A high-flux source would allow for rapid identification of the minerals in a mined ore sample, while the high energy of the source allows for the inspection of thick specimens. In EDXRD \cite{kampfe2005energy} one applies the non-monochromated peak to a specimen of the material of interest, and checks for diffracted photons with an energy-sensitive solid-state detector. From the energy we deduce the wavelength, and applying the Bragg relation we find the combination of Miller indices and lattice spacing of the reflecting crystalline planes. Checking for many such reflections in a particular mineral provides constituent identification; the intensity of these Bragg peaks provides the relative abundances of the various mineral components. Our source serves as a high flux alternative to SR facilities \cite{CHESSstructuralmaterialsbeamline} which typically operate up to approximately 200~\si{\kilo\electronvolt}, though some facilities are capable of higher energy. Additionally, our design provides photons well beyond that energy range.
+
+Turning to more ambitious but equally exciting applications, significant beamline infrastructure would be required here in contrast to the applications just discussed. In the first, we propose to perform non-resonant inelastic x-ray scattering (NIXS) \textcolor{blue}{I'd like a reference for this} in order to examine the dynamic electronic response of quantum materials throughout the periodic chart. The high incident photon energy and large flux provided by our source allows us to test exciting materials such as transition metal oxides, which are a testbed for theories such as the Mott-Hubbard model \textcolor{blue}{I'd like a reference for this}, since they provide fresh insight into the candidates for useful applications such as high-temperature superconductors \cite{hasan2002momentum,isaacs1996inelastic}.
+
+The energy resolution requirements for this method are severe: 1~\si{\electronvolt} out of 100~\si{\kilo\electronvolt}; it would require the development of high-energy x-ray monochromator and analyzer optics, most likely through synthetic multi-layers in order to provide an optimal match to beam optics. In our implementation of the NIXS technique the analyzers are arrayed at a range of scattering angles to provide a comprehensive set of momentum transfers. The pass energy of the analyzers is fixed while the incident energy is scanned to provide variable energy transfers with a double crystal monochromator configuration \cite{schulke2007electron,fister2006multielement}. Because of sample self absorption and the weak signal set by the small Thomson cross section~\cite{schulke2007electron}, the reach of NIXS is especially limited for medium to large Z elements. Performance of NIXS at an incident energy of 100~\si{\kilo\electronvolt} as proposed here would provide an attenuation length due to photoabsorption of 100~\si{\micro\meter}. This is a factor of 25 greater \cite{TungstenGraph} than that provided at the contemporary hard NIXS facility at the Advanced Photon Source \cite{fister2006multielement} which operates with an incident energy of 10~\si{\kilo\electronvolt} when performing spectroscopy at the low energy transfers of great interest in condensed matter studies.  
+
+In our second ambitious application of Compton-produced photons, a mixing crystal would be employed to generate entangled photon pairs via parametric down conversion (PDC). Here the efficiency is boosted by working at high input photon energy, since the intensity of the vacuum fluctuations present at the mixer's input varies as the fourth power of the operating energy \cite{eisenberger1971x}.
+
+Besides the accomplishment of achieving PDC at around a factor of five higher energy than is currently practised \cite{schori2018ghost}, it will provide exciting applications, for example twin microscopy -- which promises enhanced visibility through quantum ghost imaging of otherwise inaccessible specimens -- and twin ellipsometry for the careful examination of surface structures \cite{simon2017quantum}. To compare PDC applications with contemporary SR sources: the ghost imaging demonstration of Schori et al \cite{schori2018ghost} was recently performed with an input energy of 22.3~\si{\kilo\electronvolt}. Using our source at 100~\si{\kilo\electronvolt} would provide PDC generation according to the aforementioned scaling law with a zero point energy flux advantage of about 400 times greater.  
+
+
 
 \end{document}
