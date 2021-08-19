@@ -20,4 +20,37 @@
 \chapter{Theory of Energy Recovery Linac Design}
 \label{Theory_Of_ERL_Design} % to reference use \ref{ChapterTemplate}
 
+
+\section{Description of an Energy Recovery Linac}
+
+Within this first order explanation of an energy recovery linac we consider, for simplicity, the case of a single turn electron ERL, with a single linac. Firstly, the electron bunches are injected typically by a high energy photoinjector and injector accelerator section to an electron beam kinetic energy of 5--10~\si{\mega\electronvolt} with a small emittance either operating in a burst mode, in which a train of bunches is injected with intermittent pauses, or in continuous wave (CW) mode where pulses are injected with a fixed bunch spacing. These particle bunches are then delivered in suitable configuration to a linac, a series of consecutive radio-frequency (RF) accelerating cavities, which accelerate the particle bunch via a generated electric field to some nominal energy. For an ERL either normal conducting RF (NCRF) or superconducting radio-frequency RF (SRF) accelerating cavities can be utilised. The accelerating electromagnetic field in an RF cavity produces a standing wave of wavelength $\lambda_{\mathrm{RF}}$ with a potential difference that is sinusoidally varying in position and time. Therefore, to accelerate the electron bunch it's transit of the cavity must coincide with near-peak voltage of the electric field.   
+
+The particle bunch accelerated to nominal energy is then transported through a return beamline (return loop) consisting of a series of magnets which confine the electron bunch and return it to the linac. During transport the electron bunch could be utilised for a variety of applications, such as driving a light source, or for collider experiments as envisioned in Tigner's original design \cite{tigner1965possible}.
+
+The electron bunch must have a path length of $\left(w+\frac{1}{2}\right)\lambda_{\mathrm{RF}}$, where $w$ is an integer, through the return beamline because this will determine that the electron bunch re-enters the linac at a trough in the potential difference ensuring the particle bunch is decelerated. The kinetic energy of the electron bunch is transferred to the electric field of the accelerating cavities within this deceleration and therefore recovered for acceleration of a subsequent bunch. The initial electron bunch is then transported to a beam stop.
+
+When the energy imparted to the electron beam by an RF cavity is recovered by the identical RF cavity upon deceleration this is termed same cell energy recovery. Several different schemes can exist where energy imparted by a particular RF cavity is recovered by a different RF cavity or the energy used to accelerate an electron bunch is only partially recovered by an RF cavity. Schematics of energy recovery can be further complicated when there are multiple linac sections within an energy recovery linac and complexity is compounded when these are of asymmetric length.     
+
+Multi-pass ERLs are a prominent subject within this manuscript, these operate differently from single turn ERLs as there are consecutive accelerating passes of the linac, as in a recirculating linac \cite{}, followed by consecutive decelerating passes of the linac. In a multi-pass ERL the electron bunch is injected into the linac and is accelerated to the first nominal energy, then transported to the linac via a return beamline. However, we differ from a single turn ERL here as the return beamline must have a path length of $w\lambda_{\mathrm{RF}}$ in order for the electron bunch to coincide with the peak of the accelerating field and therefore be re-accelerated.
+
+The acceleration can occur for an unbounded total of $m$ passes before the return beamline must conform to the $\left(w+\frac{1}{2}\right)\lambda_{\mathrm{RF}}$ path length condition; a phase change of 180\si{\degree} relative to the electromagnetic wave of the linac RF cavities which converts the electron bunch into a decelerating configuration. A series of $m$ decelerating passes then returns the bunch to its injection energy. The decelerating passes must have a path length obeying the $w\lambda_{\mathrm{RF}}$ condition as the bunch is already in the decelerating configuration and therefore must maintain a path length of integer RF wavelengths in order for the electron bunch to coincide with the troughs of the RF cavity electromagnetic wave. Once the electron bunch has returned to the injection energy it is transported to the beam stop. Each deceleration recovers energy for the subsequent electron bunch to be accelerated.        
+
+Here we define the convention that an acceleration and later deceleration is termed a turn and that a single traversal of the linac is termed a pass, accelerating or otherwise. For example for a single linac two turn ERL, the electron bunch is accelerated by the linac twice then decelerated by the linac twice, however the electron bunch is returned to the linac only three times. An $n$ turn single linac ERL involves $m$ passes of the linac and requires $m-1$ traversals of a return beamline before the electron bunch is transported to the beam stop.   
+
+% define transport types
+
+\textcolor{blue}{\begin{itemize}
+    \item{Need to explain a photoinjector and an injector cryomodule}
+    \item{Explain particle acceleration better}
+    \item{Why is SRF currently preferred?
+        \begin{itemize}
+            \item{beam current considerations} 
+        \end{itemize}}
+    \item{Dual linac ERLs
+        \begin{itemize}
+            \item{Asymmetry of linacs etc.} 
+        \end{itemize}}
+\end{itemize}}
+
+
 \end{document}
