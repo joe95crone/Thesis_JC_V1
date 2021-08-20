@@ -1,0 +1,92 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Doctoral Thesis Template @ The University of Manchester
+% LaTeX Chapter Template
+% Version 1 (23/07/2020)
+% Joe Crone
+%
+% This template is based on:
+% The University of Manchester, Presentation of Thesis Policy
+% Research Office Graduate Education Team
+% June 2017
+% http://www.regulations.manchester.ac.uk/pgr-presentation-theses/
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+% Title
+%--------------------------------------------------------
+\chapter{Optimisation and Characterisation of Inverse Compton Scattering Spectra}
+\label{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra} % to reference use \ref{ChapterTemplate}
+
+\section{Transverse Profile Matching}
+
+\section{1D Round Beam Optimisation}
+\label{sec:RB_optimisation}
+
+The bandwidth of an ICS light source is tuneable and can be selected on the basis of user requirements. Here we develop a method to maximise flux within a selected \textit{rms} bandwidth for the simplified case of an electron beam with a round transverse profile i.e normalised emittance is identical in both directions ($\epsilon_{nx} = \epsilon_{ny} = \epsilon_{n}$). This can simply be converted to a FWHM bandwidth (Eq.~\ref{eq:FWHM_bandwidth}). Bandwidth selection is possible by selecting $\beta^{*}$ at the IP and by setting the collimation angle, $\theta_{\mathrm{col}}$ that collects the scattered photons; these may for example comprise switchable, fixed-aperture collimators.
+
+Within this optimisation derivation, the \textit{rms} bandwidth is given by (Eq.~\ref{eq:RMS_bandwidth}) with the emittance term (Eq.~\ref{eq:emittance_term}) modified for the transversely round bunch case
+\begin{equation}
+\frac{\sigma_{\epsilon}}{E_{\epsilon}} = \frac{2\gamma\epsilon_{n}}{\left(1+X\right)\beta^{*}},
+\label{eq:emittance_term_round_beam}    
+\end{equation}
+where $X$ is the recoil parameter (Eq.~\ref{eq:X_geometry}), $\epsilon_{n}$ is the transverse \textit{rms} normalised emittance of the electron bunch and $\beta^{*}$ is the $\beta$-function at the interaction point.
+
+Typically the dominant terms that define the bandwidth of an inverse Compton source Eq.~(\ref{eq:RMS_bandwidth}) are the collimation term Eq.~(\ref{eq:collimation_term}) and the emittance term Eq.~(\ref{eq:emittance_term_round_beam}). The free parameter of the collimation term is the collimation angle $\theta_{\mathrm{col}}$, which can be adjusted either by changing the collimator aperture or changing its distance from the IP. Adjustable collimators have been designed for the ELI-NP-GBS $\gamma$-ray ICS source~\cite{paterno2017collimation}; a similar design could be implemented at other ICS sources.
+
+The emittance term is dependent both on the normalised transverse emittance $\epsilon_{n}$ and on $\beta^{*}$. It is more convenient to change the $\beta$-function at the IP with focusing rather than by varying the emittance, since the latter is dependent on the injector and collective effects prior to the IP. By using a larger $\beta^{*}$ and a small collimator aperture, it is possible to reduce the contribution of the collimation and emittance terms so that they are negligible; thus the electron bunch and laser pulse energy spread terms (Eq.~\ref{eq:beam_energy_spread_term},~\ref{eq:laser_energy_spread_term}) become dominant for accelerators with a sufficiently small emittance. This effectively places a lower limit on the bandwidth of an ICS source, i.e. it is limited by the energy spread of the electron beam $\Delta E_{e}/E_{e}$ and laser pulse $\Delta E_{\mathrm{laser}}/E_{\mathrm{laser}}$ as 
+\begin{equation}
+\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{\mathrm{min}} \approx \sqrt{\left[\left(\frac{2+X}{1+X}\right)\frac{\Delta E_{e}}{E_{e}}\right]^{2} + \left[\left(\frac{1}{1+X}\right)\frac{\Delta E_{L}}{E_{L}}\right]^{2}},
+\label{eq:bandwidth_limitation_minimum}
+\end{equation}
+for the low recoil approximation.
+
+Consequently, any bandwidth above this limit can be achieved by an ICS source by tuning of the collimation angle and $\beta^*$ so that a desired bandwidth, $\Delta E_{\gamma}/E_{\gamma}$, is achieved. Since the collimation and emittance terms are typically dominant, all other terms can be excluded and the solutions are bounded by
+\begin{equation}
+\frac{\Delta E_{\gamma}}{E_{\gamma}} > \sqrt{\left(\frac{ \sigma_{\theta}}{E_{\theta}}\right)^{2}+\left(\frac{\sigma_{\epsilon}}{E_{\epsilon}}\right)^{2}}.    
+\end{equation}
+This results in myriad combinations of $\beta^{*}$ and $\theta_{\mathrm{col}}$ that satisfy a particular chosen bandwidth larger than this lower limit (Eq.~\ref{eq:bandwidth_limitation_minimum}).
+
+The different $\beta^{*}$, $\theta_{\mathrm{col}}$ combinations each give a different collimated flux; obviously we wish to chose the solution with the largest flux. The collimated flux $\mathcal{F}_{\Psi}$ of each solution is calculated based on a method valid for small collimation angles ($\gamma\theta_{\mathrm{col}} < 1$) derived by Curatolo et al.~\cite{curatolo2017analytical}. Re-cast for our variable definitions, it becomes
+\textcolor{blue}{**THIS MAY CHANGE WITH THE NEW COLLIMATED FLUX METHOD**}
+% serafini calc
+\begin{equation}
+\mathcal{F}_{\Psi}\propto \frac{\left(1+\sqrt[3]{X}\Psi^{2}/3\right)\Psi^{2}}{\left[1+\left(1+X/2\right)\Psi^{2}\right]\left(1+\Psi^{2}\right)}, 
+\label{eq:curatolo_collimated_flux}
+\end{equation}
+where $\mathcal{F}$ is the total (uncollimated) flux, $\Psi = \gamma\theta_{\mathrm{col}}$ is the acceptance angle, and $X$ is the recoil parameter. The solution giving the maximal flux is selected.
+
+It is not practicable to calculate the flux from every combination of $\beta^{*}$ and $\theta_{\mathrm{col}}$. Instead, an array of collimation angles $\theta_{\mathrm{col}}$ from 0 to $1/\gamma$ is used ($\gamma\theta_{\mathrm{col}}<1$), and for a given \textit{rms} bandwidth value the corresponding $\beta^*$ is calculated using
+\begin{equation}
+\beta^{*} = \frac{2\gamma\epsilon_{n}}{\left(1+X\right)\sqrt{\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)^{2}-\left[\left(\frac{\sigma_{\theta}}{E_{\theta}}\right)^{2}+\left(\frac{\sigma_{e}}{E_{e}}\right)^{2}+\left(\frac{\sigma_{L}}{E_{L}}\right)^{2}\right]}},
+\label{eq:beta_star_round_beam}
+\end{equation}
+which is a rearrangement of (Eq.~\ref{eq:RMS_bandwidth}) with the emittance term in the transversely round bunch case (Eq.~\ref{eq:emittance_term_round_beam}). A near identical solution can also be found for the case of an FWHM bandwidth. 
+
+The collimated flux $\mathcal{F}_{\Psi}$ is calculated for each combination produced via this method. The maximal collimated flux is selected and the combination of $\beta^{*}$ and $\theta_{\mathrm{col}}$ corresponding to this solution is returned. This process can be applied to the case of a target bandwidth to determine $\theta_{\mathrm{col}}$, $\beta^{*}$, and collimated flux in the selected bandwidth. In addition, applying this method to a continuum of bandwidths allows us to map the possible operational settings of our ICS source, and to derive tuning curves such as the variation of the collimated flux with bandwidth.
+
+\section{2D Non-Round Beam Optimisation}
+
+\subsection{Genetic Algorithm Approach}
+
+\subsection{Nelder--Mead Approach}
+
+\section{Development of the ICARUS Spectrum code}
+\label{sec:development_of_the_ICARUS_spectrum_code}
+
+
+\section{Benchmarking of the ICARUS Spectrum Code}
+\label{sec:benchmarking_of_the_ICARUS_spectrum_code}
+
+
+The code \textsc{ICCS3D}, a generalization of the \textsc{ICCS} code \cite{krafft2016laser,ranjan2018simulation}, computes radiation produced in ICS within the linear Compton regime (when $a_{0}\ll 1$, and electron recoil is properly accounted for). In \textsc{ICCS3D}, a 3D laser pulse model replaces the 1D plane wave model used in \textsc{ICCS}. This modification is implemented in a manner described in Terzi\'c et al \cite{terzic2019improving}; instead of all electrons experiencing the same laser field strength $a_{0}$, as they do for a 1D plane wave, their effective laser field strength is dependent on the electron's distance from the laser's center at the moment of scattering. To calculate anticipated spectral output, \textsc{ICCS3D} can use either the parameters of the electron beam or an arbitrary electron distribution, in addition to the laser parameters. For Fig.~\ref{fig:cbetaspectrumplot}, a particle distribution was tracked by \textsc{Tao} \cite{TaoManual} through the bypass lattice to the IP; the distribution at the IP was provided to \textsc{ICCS3D}. When compared to the spectrum calculated using only the electron beam parameters, the differences were negligible. 
+
+\textcolor{blue}{Paper Footnote: Note that there is an error in Equation 53 of Sun's paper, where the prefactor gives that $dN/dE\propto L^{2}$ for a source-to-collimator distance $L$. Clearly, this should be $dN/dE\propto 1/L^{2}$; the other parts of the given equation are correct.}
+
+\textsc{ICARUS}: inverse Compton scattering semi-analytic recoil-corrected ultra-relativistic spectrum code, uses a modified and corrected  version of the 2D formalism of Sun et al. \cite{sun2011theoretical}. \textsc{ICARUS} integrates the photons at small energy intervals that pass through a given 2D collimator aperture (here circular) for the fundamental laser mode. This code assumes that the electron bunch has a 3D Gaussian distribution, approximates the laser as a 3D Gaussian pulse, and is currently only valid for the head-on ($\phi = 0$) geometry; it has been validated against \textsc{ICCS3D} as well as the analytical results of this paper. 
+
+ 
+
+\end{document}
