@@ -78,20 +78,62 @@ The collimated flux $\mathcal{F}_{\Psi}$ is calculated for each combination prod
 
 
 \begin{multline}
-\frac{dN_{\gamma}}{dE_{\gamma}} = \frac{r_{e}^{2}N_{e}N_{L}}{4\pi^{3}L^{2}\hbar c z_{R}\sigma_{e}\sigma_{k}}\int_{k_{\mathrm{min}}}^{k_{\mathrm{max}}}\int_{-\theta_{x,\mathrm{max}}}^{\theta_{x,\mathrm{max}}}\int_{-\theta_{y,\mathrm{max}}}^{\theta_{y,\mathrm{max}}}\int_{y_{\mathrm{min}}}^{y_{\mathrm{max}}}\int_{x_{\mathrm{min}}}^{x_{\mathrm{max}}}\frac{1}{\sqrt{\zeta_{x}\zeta_{y}}\sigma_{\theta_{x}}\sigma_{\theta_{y}}}\frac{\bar{\gamma}}{1+2\gamma E_{L}/m_{e}c^{2}} \\
+\frac{dN_{\gamma}}{dE_{\gamma}} = \frac{r_{e}^{2}N_{e}N_{L}}{4\pi^{3}L^{2}\hbar c z_{R}\sigma_{\gamma}\sigma_{k}}\int_{k_{\mathrm{min}}}^{k_{\mathrm{max}}}\int_{-\theta_{x,\mathrm{max}}}^{\theta_{x,\mathrm{max}}}\int_{-\theta_{y,\mathrm{max}}}^{\theta_{y,\mathrm{max}}}\int_{y_{\mathrm{min}}}^{y_{\mathrm{max}}}\int_{x_{\mathrm{min}}}^{x_{\mathrm{max}}}\frac{1}{\sqrt{\zeta_{x}\zeta_{y}}\sigma_{\theta_{x}}\sigma_{\theta_{y}}}\frac{\bar{\gamma}}{1+2\gamma E_{L}/m_{e}c^{2}} \\
 \times\left\{\frac{1}{4}\left[\frac{4\bar{\gamma}^{2}E_{L}}{E_{\gamma}\left(1+\bar{\gamma}^{2}\theta^{2}\right)}+\frac{E_{\gamma}\left(1+\bar{\gamma}^{2}\theta^{2}\right)}{4\bar{\gamma}^{2}E_{L}}\right]-2\cos^{2}\left(\tau-\phi_{f}\right)\frac{\bar{\gamma}^{2}\theta^{2}}{\left(1+\bar{\gamma}^{2}\theta^{2}\right)^{2}}\right\} \\
-\times\exp{\left[-\frac{\left(\theta_{x}-x_{d}/L\right)^{2}}{2\sigma_{\theta_{x}}^{2}}-\frac{\left(\theta_{y}-y_{d}/L\right)^{2}}{2\sigma_{\theta_{y}}^{2}}-\frac{\left(\bar{\gamma}-\gamma\right)^{2}}{2\sigma_{e}^{2}}-\frac{\left(k-k_{0}\right)^{2}}{2\sigma_{k}^{2}}\right]}dx_{d}dy_{d}d\theta_{y}d\theta_{x}dk,
+\times\exp{\left[-\frac{\left(\theta_{x}-x_{d}/L\right)^{2}}{2\sigma_{\theta_{x}}^{2}}-\frac{\left(\theta_{y}-y_{d}/L\right)^{2}}{2\sigma_{\theta_{y}}^{2}}-\frac{\left(\bar{\gamma}-\gamma\right)^{2}}{2\sigma_{\gamma}^{2}}-\frac{\left(k-k_{0}\right)^{2}}{2\sigma_{k}^{2}}\right]}dx_{d}dy_{d}d\theta_{y}d\theta_{x}dk,
 \label{eq:ICARUS_equation}
 \end{multline}
 
+\begin{gather}
+\xi_{x} = 1+\left(\alpha_{x}-\frac{\beta_{x}}{L}\right)^{2}+\frac{2k\beta_{x}\epsilon_{x}}{z_{R}}, \\
+\xi_{y} = 1+\left(\alpha_{y}-\frac{\beta_{y}}{L}\right)^{2}+\frac{2k\beta_{y}\epsilon_{y}}{z_{R}},
+\label{eq:xi_parameters_sun}
+\end{gather}
+
+\begin{gather}
+\zeta_{x} = 1+\frac{2k\beta_{x}\epsilon_{x}}{z_{R}}, \\
+\zeta_{y} = 1+\frac{2k\beta_{y}\epsilon_{y}}{z_{R}},
+\label{eq:zeta_parameters_sun}
+\end{gather}
+
+\begin{gather}
+\sigma_{\theta_{x}} = \sqrt{\frac{\epsilon_{x}\xi_{x}}{\beta_{x}\zeta_{x}}}, \\
+\sigma_{\theta_{y}} = \sqrt{\frac{\epsilon_{y}\xi_{y}}{\beta_{y}\zeta_{y}}}.
+\label{eq:sigmatheta_parameters_sun}
+\end{gather}
+
+\begin{gather}
+\theta_{x,\mathrm{max}} = \sqrt{\frac{4E_{L}}{E_{\gamma}}-\theta_{y}^{2}}, \\
+\theta_{y,\mathrm{max}} = \sqrt{\frac{4E_{L}}{E_{\gamma}}},
+\label{eq:theta_max_parameter_sun}
+\end{gather}
+
+\begin{equation}
+\sigma_{\gamma} = \frac{\sigma_{e}}{m_{e}c^{2}},
+\label{eq:gamma_energy_spread}
+\end{equation}
+
+\begin{equation}
+\theta = \sqrt{\theta_{x}^{2}+\theta_{y}^{2}},
+\label{eq:theta_angle_sun}
+\end{equation}
+
+\begin{equation}
+\bar{\gamma} = \frac{2E_{\gamma}E_{L}/m_{e}c^{2}}{4E_{L}-E_{\gamma\theta^{2}}}\left[1+\sqrt{\frac{4E_{L}-E_{\gamma}\theta^{2}}{4E_{L}E_{\gamma}/\left(m_{e}c^{2}\right)^{2}}}\right],  
+\label{eq:gamma_bar_sun}
+\end{equation}
+
 \begin{multline}
-\frac{dN_{\gamma}}{dE_{\gamma}} \approx \frac{r_{e}^{2}N_{e}N_{L}}{2\pi^{2}\hbar c z_{R}\sqrt{\zeta_{x}}\sigma_{e}\sigma_{\theta_{x}}}\int_{-\theta_{x,\mathrm{max}}}^{\theta_{x,\mathrm{max}}}\int_{y_{\mathrm{min}}}^{y_{\mathrm{max}}}\int_{x_{\mathrm{min}}}^{\mathrm{max}}\frac{\bar{\gamma}}{1+2\gamma E_{L}/m_{e}c^{2}} \\
+\frac{dN_{\gamma}}{dE_{\gamma}} \approx \frac{r_{e}^{2}N_{e}N_{L}}{2\pi^{2}\hbar c z_{R}\sqrt{\zeta_{x}}\sigma_{\gamma}\sigma_{\theta_{x}}}\int_{-\theta_{x,\mathrm{max}}}^{\theta_{x,\mathrm{max}}}\int_{y_{\mathrm{min}}}^{y_{\mathrm{max}}}\int_{x_{\mathrm{min}}}^{\mathrm{max}}\frac{\bar{\gamma}}{1+2\gamma E_{L}/m_{e}c^{2}} \\
 \times\left\{\frac{1}{4}\left[\frac{4\bar{\gamma}^{2}E_{L}}{E_{\gamma}\left(1+\bar{\gamma}^{2}\theta^{2}\right)}+\frac{E_{\gamma\left(1+\bar{\gamma}^{2\theta^{2}}\right)}}{4\bar{\gamma}^{2}E_{L}}\right]-\frac{\bar{\gamma}^{2}\theta^{2}}{\left(1+\bar{\gamma}^{2}\theta^{2}\right)^{2}}\right\} \\
-\times\exp{\left[-\frac{\left(\theta_{x}-x_{d}/L\right)^{2}}{2\sigma_{\theta_{x}}^{2}}-\frac{\left(\bar{\gamma}-\gamma\right)^{2}}{2\sigma_{e}^{2}}\right]}d\theta_{x}dy_{d}dx_{d},
+\times\exp{\left[-\frac{\left(\theta_{x}-x_{d}/L\right)^{2}}{2\sigma_{\theta_{x}}^{2}}-\frac{\left(\bar{\gamma}-\gamma\right)^{2}}{2\sigma_{\gamma}^{2}}\right]}d\theta_{x}dy_{d}dx_{d},
 \label{eq:1D_sun_equation}    
 \end{multline}
     
-
+\begin{equation}
+\theta_{x,\mathrm{max}} = \sqrt{\frac{4E_{L}}{E_{\gamma}}-\left(\frac{y_{d}}{L}\right)^{2}},
+\label{eq:theta_max_parameter_1D_sun}
+\end{equation}
 
 
 \section{Benchmarking of the ICARUS Spectrum Code}
