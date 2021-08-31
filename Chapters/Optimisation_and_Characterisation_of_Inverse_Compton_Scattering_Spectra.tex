@@ -20,7 +20,17 @@
 \chapter{Optimisation and Characterisation of Inverse Compton Scattering Spectra}
 \label{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra} % to reference use \ref{ChapterTemplate}
 
+\section{Motivation for Optimisation of ICS Sources}
+
 \section{Transverse Profile Matching}
+
+In the literature \cite{akagi2016narrow,deitrick2018high,jacquet2015radiation} \textcolor{blue}{add more examples, BriXS?}, many inverse Compton scattering sources have attempted to maximise flux output via matching the \textit{rms} spot size of the transverse profile of the laser pulse to that of the electron bunch ($\sigma_{L}\approx\sigma_{\mathrm{electron}}$). Here, we term this the transverse profile matching scheme. The transverse profile matching scheme ignores the full interaction dynamics at the IP in favour of a simplistic solution. 
+
+The intensity of the laser and electron bunch are often non-uniform transversely within the bunch or pulse (for example in a Gaussian laser pulse), and instead intensity peaks at the centroid. A laser pulse used in inverse Compton scattering is typically more intense by orders of magnitude than the electron bunch ($N_{L} \gg N_{e}$), for example a 1~\si{\nano\coulomb} bunch contains $N_{e} = 6.25\times 10^{9}$ electrons in comparison to a paltry 1~\si{\micro\joule} Nd:YAG ($\lambda = 1064$~\si{\nano\meter}) laser pulse which contains $N_{L} = 5.35\times 10^{12}$ photons. Therefore, to maximise the probability of electron--photon interaction it is favourable to obey the condition $\sigma_{L} > \sigma_{\mathrm{electron}}$.
+
+To first order, the transverse profile matching scheme is a decent approximation for small crossing angles, laser pulse profiles chosen to avoid the worst diffraction effects and near-round transverse profiles ($\sigma_{L}\sim\sigma_{\mathrm{electron}}$); approximate to electron bunches delivered by an ERL or linac. Within experimental tolerances transverse profile matching may be the most attractive scenario however, for ICS light source operation, high flux narrow-bandwidth operation is necessary and optimisation of transverse interaction point parameters can improve this. 
+
+\textcolor{blue}{**Would benefit from some kind of example calculation**}
 
 \section{1D Round Beam Optimisation}
 \label{sec:RB_optimisation}
@@ -76,6 +86,16 @@ The collimated flux $\mathcal{F}_{\Psi}$ is calculated for each combination prod
 \section{Development of the ICARUS Spectrum code}
 \label{sec:development_of_the_ICARUS_spectrum_code}
 
+
+\begin{multline}
+\frac{dN_{\gamma}}{d\Omega_{d} dE_{\gamma}} = N_{e}N_{L}\int \frac{d\sigma}{d\Omega}\delta\left(\bar{E_{\gamma}}-E_{\gamma}\right)c\left(1-\beta\cos\phi\right)f_{e}\left(x,y,z,x',y',p,t\right)\\ \times f_L\left(x,y,z,k,t\right)dx' dy' dp dk dV dt,
+\label{eq:central_distribution_sun}
+\end{multline}
+
+\begin{equation}
+d\Omega_{d} = dx_{d}dy_{d}/L^{2},
+\label{eq:detector_solid_angle_sun}
+\end{equation}
 
 \begin{multline}
 \frac{dN_{\gamma}}{dE_{\gamma}} = \frac{r_{e}^{2}N_{e}N_{L}}{4\pi^{3}L^{2}\hbar c z_{R}\sigma_{\gamma}\sigma_{k}}\int_{k_{\mathrm{min}}}^{k_{\mathrm{max}}}\int_{-\theta_{x,\mathrm{max}}}^{\theta_{x,\mathrm{max}}}\int_{-\theta_{y,\mathrm{max}}}^{\theta_{y,\mathrm{max}}}\int_{y_{\mathrm{min}}}^{y_{\mathrm{max}}}\int_{x_{\mathrm{min}}}^{x_{\mathrm{max}}}\frac{1}{\sqrt{\zeta_{x}\zeta_{y}}\sigma_{\theta_{x}}\sigma_{\theta_{y}}}\frac{\bar{\gamma}}{1+2\gamma E_{L}/m_{e}c^{2}} \\

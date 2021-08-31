@@ -20,6 +20,101 @@
 \chapter{DIANA Inverse Compton Source Design}
 \label{DIANA_Inverse_Compton_Source_Design} % to reference use \ref{ChapterTemplate}
 
+\section{Motivation for a DIANA Energy Recovery Linac}
+
+\section{The DIANA Energy Recovery Linac}
+
+\section{DIANA ERL ICS Electron Beam and Optical Cavity Laser Pulse Parameters}
+
+\begin{table}[H]
+\centering
+\begin{threeparttable}
+\begin{tabular}{lccccc}
+\hline\hline
+Parameter & \multicolumn{3}{c}{Quantity} & Unit \\
+\hline
+Turn number & 1 & 2 & 3  \\
+Injection Energy, $E_{\mathrm{inj}}$ & \multicolumn{3}{c}{7} & \si{\mega\electronvolt}\\
+\tnote{$\dagger$}~Electron kinetic energy, $E_e$ & 362 & 717 & 1072 & \si{\mega\electronvolt}\\
+Harmonic Frequency, $f$ & \multicolumn{3}{c}{125} & \si{\mega\hertz}\\
+Bunch charge, $e N_e$ & \multicolumn{3}{c}{100} & \si{\pico\coulomb} \\
+Beam current, $I$ & \multicolumn{3}{c}{12.5} & \si{\mill\ampere} \\
+Transverse normalised \textit{rms} emittance, $\epsilon_{N}$ & \multicolumn{3}{c}{0.5} & \si{\milli\meter}-\si{\milli\radian}\\
+\tnote{$\sharp$}~\textit{rms} bunch length, $\Delta \tau$ & \multicolumn{3}{c}{0.9 (3)} & \si{\milli\meter} (\si{\pico\second})\\
+Bunch spacing, $t_{b}$ & \multicolumn{3}{c}{10} & \si{\pico\second} \\
+RF frequency, $f_{RF}$ & \multicolumn{3}{c}{750} & \si{\mega\hertz} \\
+\tnote{*}~Absolute energy spread, $\Delta E_{e}$ & \multicolumn{3}{c}{$\sim$10} & \si{\kilo\electronvolt} \\ 
+\tnote{*}~Relative energy spread, $\left(\Delta E_{e}/E_{e}\right)$ & \multicolumn{3}{c}{$\sim10^{-5}$} & \\
+\hline
+\multicolumn{5}{c}{Baseline Parameters} \\
+\hline
+$\beta$-functions at the IP, $\beta_{x}^{*}$/$\beta_{y}^{*}$ & 0.2/0.2 & 0.2/0.2 & 0.2/0.2 & \si{\meter} \\
+Electron bunch spot size, $\sigma_{e,x}$/$\sigma_{e,y}$ & 11.87/11.87 & 8.44/8.44 & 6.90/6.90 & \si{\micro\meter}\\
+\hline\multicolumn{5}{c}{Optimised 0.5\% \textit{rms} Bandwidth} \\
+\hline
+$\beta$-functions at the IP $\beta_{x}^{*}$/$\beta_{y}^{*}$ & 1.33/0.298 & 2.62/0.587 & 3.90/0.874 & \si{\meter} \\
+Electron bunch spot size, $\sigma_{e,x}$/$\sigma_{e,y}$ & 30.62/14.49 & 30.54/14.46 & 30.48/14.43 & \si{\micro\meter}\\
+Collimation Angle, $\theta_{\mathrm{col}}$ & 0.180 & 0.091 & 0.061 & \si{\milli\radian} \\ 
+\hline\hline
+\end{tabular}
+\begin{tablenotes}
+\item[$\sharp$]{Taken from the ASML parameters.}
+\item[*]{Estimated values.}
+\item[$\dagger$]{Electron beam energies to accomplish $E_{\gamma}^{\mathrm{max}}$ = 20~\si{\mega\electronvolt} $\gamma$-rays. $\Delta E_{\mathrm{turn}}$ = 355~\si{\mega\electronvolt}.}
+\end{tablenotes}
+\end{threeparttable}
+\label{tab:DIANA_electron_beam_design_parameters}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\hline\hline
+Parameter & Quantity & Unit \\
+\hline
+Wavelength, $\lambda_\textrm{laser}$ & 1064 & \si{\nano\meter}\\
+Photon energy, $E_\textrm{laser}$ & 1.17 & \si{\electronvolt}\\
+Pulse energy, $E_{pulse}$  & 100 & \si{\micro\joule}\\
+Number of photons, $N_{\textrm{laser}}$ & 5.34$\times 10^{14}$ & \\ 
+Repetition rate, $f$ & 125 & \si{\mega\hertz}\\
+Spot size at the IP, $\sigma_\textrm{laser}$ & 25 & \si{\micro\meter}\\
+Crossing angle, $\phi$ & 5 & deg \\
+Pulse length, $\tau_{\mathrm{laser}}$  & 10 & \si{\pico\second}\\
+Relative energy spread, $\Delta E_\textrm{laser}/E_\textrm{laser}$ & $\times 10^{-5}$ &   \\
+\hline\hline
+\end{tabular}
+\label{tab:DIANA_laser_pulse_design_parameters}
+\end{table}
+
+\section{ICS Source Spectral Output}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcccc}
+\hline\hline
+ & \multicolumn{3}{c}{Electron Kinetic Energy (\si{\mega\electronvolt})} & \\
+ \cline{2-4}
+ & 362 & 717 & 1072 & \\
+\hline
+$\gamma$-ray peak energy  & 2.33 & 9.06 & 20.11 & \si{\mega\electronvolt}\\
+Source size ($x$/$y$)  & 10.72/10.72 & 8.00/8.00 & 6.65/6.65 & \si{\micro\meter} \\
+Uncollimated flux  & 5.77$\times 10^{10}$ & 6.02$\times 10^{10}$ & 6.08$\times 10^{10}$ & ph/\si{\second}\\
+Spectral density  & 2.48$\times 10^{5}$ & 6.65$\times 10^{4}$ & 3.03$\times 10^{4}$ & ph/\si{\second} \si{\electronvolt}\\
+Average brilliance  & 5.64$\times 10^{12}$ & 2.05$\times 10^{13}$ & 4.45$\times 10^{13}$ & ph/\si{\second} \si{\milli\meter}$^{2}$\si{\milli\radian}$^{2}$ 0.1\% bw\\
+Peak brilliance  & 5.60$\times 10^{17}$ & 2.22$\times 10^{18}$ & 4.99$\times 10^{18}$ & ph/\si{\second} \si{\milli\meter}$^{2}$ \si{\milli\radian}$^{2}$ 0.1\% bw\\
+\hline
+ & \multicolumn{3}{c}{0.5\% \textit{rms} bandwidth} & \\
+\hline
+Source Size ($x$/$y$) & 19.36/12.54 & 19.35/12.52 & 19.33/12.50 & \si{\micro\meter} \\ 
+Collimated flux  & 1.30$\times 10^{9}$ & 1.29$\times 10^{9}$ & 1.29$\times 10^{9}$ & ph/\si{\second} 0.5\% bw \\
+\hline\hline
+\end{tabular}
+\label{tab:DIANA_spectral_output}
+\end{table}
+
+\section{$\gamma$-ray ICS Source Comparison}
+
+\section{Bremsstrahlung Source Comparison}
 
 \section{DIANA ICS Applications}
 \textcolor{blue}{**$\gamma$-ray applications from CBETA** \\ **SOME MAY BE USEFUL**}

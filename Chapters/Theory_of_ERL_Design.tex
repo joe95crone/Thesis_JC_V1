@@ -71,4 +71,18 @@ Another solution exists wherein multiple nominal energy electron beams in both a
 
 \section{Collective Effects}
 
+\subsection{Beam Breakup Instability}
+
+The average beam current off energy recovery linacs can be seriously limited by the effects of the beam breakup instability (BBU). Average beam current limitations are challenging for inverse Compton scattering source development with ERL drivers because of the dependency of flux upon electron beam average current. Therefore, this collective effect has substantial consequences for the design of ERL driven ICS sources.
+
+In the beam breakup instability, the electron bunch interacts with a higher order mode (HOM) of the accelerating structure and is subsequently deflected. Electron bunches with a transverse offset traverse an RF cavity and excite a HOM within the cavity. The electron bunch subsequently recieves a transverse kick, thereby generating a further higher order mode due to the transverse offset the kick generates. Beyond some threshold current value $I_{\mathrm{th}}$ this process becomes exponential in nature resulting in beam loss.
+
+Two forms of beam breakup exist; cumulative BBU in which the instability builds up over a series of RF accelerating structures, for example a long (100's~\si{\meter}) linac, and regenerative BBU where the effect build up via multiple passes of the same RF cavity. The former of these was the observed first, with experimentation at SLAC \cite{panofsky1966electrons,altenmueller1966beam} and LLNL \cite{neil1970coherent} and analytically modelled by Panofsky and Bander et al \cite{panofsky1968asymptotic}. However, for ERLs -- especially multi-turn ERLs -- regenerative beam breakup instability is of greater concern due to the recirculated nature of the accelerator in which a short linac section is typical.
+
+Theoretical studies of regenerative BBU in ERL's were conducted by Hoffstaetter and Bazarov \cite{hoffstaetter2004beam} for uncoupled optics, then furthered for the case of coupled optics \cite{hoffstaetter2007recirculating}. The focus here is typically on the excitation of dipole higher order modes \textcolor{blue}{Why?} Experimentally, regenerative BBU was observed and studied in an ERL at the Jefferson Laboratory FEL \cite{tennant2005first,douglas2006experimental}. \textcolor{blue}{What did this show?} Here conventional methods of suppressing BBU \cite{tennant2004methods} in an ERL, such as HOM dampeners, are explored as well as accelerator optics based solutions \cite{rand1980beam}. 
+
+Recently BBU studies have been performed for the CBETA ERL \cite{lou2019beam}, one of the main accelerators of interest within this work, which have predicted a restrictive average beam current limitation of $I_{\mathrm{th}} = 40$~\si{\milli\ampere}. However, mitigation of regenerative BBU remains an active field exemplified by the proposal of a bunch filling pattern which could increase the threshold current limitation by up to a factor of 5 for a 3-turn ERL \cite{setiniyaz2021filling}.    
+
+
+
 \end{document}
