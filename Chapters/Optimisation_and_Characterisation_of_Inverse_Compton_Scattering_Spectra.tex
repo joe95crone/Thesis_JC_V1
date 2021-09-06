@@ -86,6 +86,7 @@ The collimated flux $\mathcal{F}_{\Psi}$ is calculated for each combination prod
 \section{Development of the ICARUS Spectrum code}
 \label{sec:development_of_the_ICARUS_spectrum_code}
 
+\textcolor{blue}{**USE $\sim$ BETWEEN INTEGRATION VARIABLES FOR PROPER SPACING**}
 
 \begin{multline}
 \frac{dN_{\gamma}}{d\Omega_{d} dE_{\gamma}} = N_{e}N_{L}\int \frac{d\sigma}{d\Omega}\delta\left(\bar{E_{\gamma}}-E_{\gamma}\right)c\left(1-\beta\cos\phi\right)f_{e}\left(x,y,z,x',y',p,t\right)\\ \times f_L\left(x,y,z,k,t\right)dx' dy' dp dk dV dt,
@@ -144,7 +145,7 @@ d\Omega_{d} = dx_{d}dy_{d}/L^{2},
 \end{equation}
 
 \begin{multline}
-\frac{dN_{\gamma}}{dE_{\gamma}} \approx \frac{r_{e}^{2}N_{e}N_{L}}{2\pi^{2}\hbar c z_{R}\sqrt{\zeta_{x}}\sigma_{\gamma}\sigma_{\theta_{x}}}\int_{-\theta_{x,\mathrm{max}}}^{\theta_{x,\mathrm{max}}}\int_{y_{\mathrm{min}}}^{y_{\mathrm{max}}}\int_{x_{\mathrm{min}}}^{\mathrm{max}}\frac{\bar{\gamma}}{1+2\gamma E_{L}/m_{e}c^{2}} \\
+\frac{dN_{\gamma}}{dE_{\gamma}} \approx \frac{r_{e}^{2}N_{e}N_{L}}{2\pi^{2}L^{2}\hbar c z_{R}\sqrt{\zeta_{x}}\sigma_{\gamma}\sigma_{\theta_{x}}}\int_{-\theta_{x,\mathrm{max}}}^{\theta_{x,\mathrm{max}}}\int_{y_{\mathrm{min}}}^{y_{\mathrm{max}}}\int_{x_{\mathrm{min}}}^{\mathrm{max}}\frac{\bar{\gamma}}{1+2\gamma E_{L}/m_{e}c^{2}} \\
 \times\left\{\frac{1}{4}\left[\frac{4\bar{\gamma}^{2}E_{L}}{E_{\gamma}\left(1+\bar{\gamma}^{2}\theta^{2}\right)}+\frac{E_{\gamma\left(1+\bar{\gamma}^{2\theta^{2}}\right)}}{4\bar{\gamma}^{2}E_{L}}\right]-\frac{\bar{\gamma}^{2}\theta^{2}}{\left(1+\bar{\gamma}^{2}\theta^{2}\right)^{2}}\right\} \\
 \times\exp{\left[-\frac{\left(\theta_{x}-x_{d}/L\right)^{2}}{2\sigma_{\theta_{x}}^{2}}-\frac{\left(\bar{\gamma}-\gamma\right)^{2}}{2\sigma_{\gamma}^{2}}\right]}d\theta_{x}dy_{d}dx_{d},
 \label{eq:1D_sun_equation}    
