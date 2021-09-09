@@ -24,6 +24,8 @@
 
 \section{De-Gaussing of Spreader Magnets}
 
+\textcolor{blue}{**NEEDS PLENTY OF WORK, GETTING POINTS DOWN** \\ **NOTEBOOK 8 HAS ALL OF THE DETAILS + NOTES**}
+
 Hysteresis effects within spreader magnets in the splitter/recombiner lines degraded the reproducibility of CBETA configurations between consecutive operational periods. Once the accelerator orbit was tuned, a series of magnet strength set points corresponding to the orbit could be saved however hysteresis invalidates the previously discovered set points.
 
 The hysteresis effects occur because of the use of ferromagnetic materials in the yokes of magnets to enhance the magnetic field of a coil. Ferromagnetic materials used in this typically have a strong dependence on their history \cite{decker1991physical} -- previous magnetizations affect the current state of the magnet. An example of a $B$--$I$ curve of an electromagnet is shown in Figure~\ref{fig:example_BI_curve}.
@@ -31,14 +33,61 @@ The hysteresis effects occur because of the use of ferromagnetic materials in th
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/example_BI_curve.png}
-\caption{}
+\caption{Example $B$--$I$ curve of a magnet that has undergone a de-gaussing procedure \cite{decker1991physical} \textcolor{blue}{don't know what else to say}}
 \label{fig:example_BI_curve}
 \end{figure}
 
 The basic procedure is to repetitively alternate the current passed through the coils of the magnet around the tuning set point thereby increasing and decreasing the induced magnetic field. This shifts the position in the $B$--$H$ (or $B$--$I$) hysteresis curve upon which the magnet lies and instead leads to the magnet following its original $B$--$H$ curve. \textcolor{blue}{**Explanation needs a lot of work**} The original trialed procedure was based upon the procedure used for a series of quadrupoles at LCLS \cite{weidemann2010degaussing}.   
 
-In order to increase reproducibility of the CBETA ERL configuration during commissioning a script was devised to combat the hysteresis effects by 'de-Gaussing' the magnets within the splitter lines. Only the splitter line magnets are chosen at this procedure is only applicable to electromagnets; the FFA magnets are permanent magnet quadrupoles and combined function magnets. 
+\begin{equation}
+I\left(t\right) = I_{0}+\Delta I\exp\left(-t/\tau\right)\sin\left(\omega t\right),
+\label{eq:decker_degauss_current}
+\end{equation}
+where $I_{0}$ is the magnet set point current, $\Delta I$ is the swing current by which the magnet current is varied, $\tau$ is the pause time between current variations, $t$ is the time from initiation of the procedure and $\omega$ is \textcolor{blue}{I don't know...}. 
+
+Converted into a set of cycles with a two second pause in between each cycle, the current of any cycle number $n_{\mathrm{cycle}}$ can be wrote as
+\begin{equation}
+I\left(n_{\mathrm{cycle}}\right) =  I_{0}+\Delta I\left(-1\right)^{n_{\mathrm{cycle}}}\left(1-\kappa\right),
+\label{eq:cycle_degauss_current_fractional}
+\end{equation}
+where $\kappa$ is the fractional decrease in swing current as given by
+\begin{equation}
+\kappa = \frac{n_{\mathrm{cycles}}}{n_{\mathrm{tot}}},
+\label{eq:fractional_swing_current_decrease}    
+\end{equation}
+with $n_{\mathrm{tot}}$ the total number of cycles performed in the de-gaussing procedure.
+
+In practice the de-gaussing procedure is applied to all spreader magnets and correctors simultaneously as the de-gaussing procedure enacted upon each magnet takes $\sim t_{\mathrm{pause}n_{\mathrm{tot}}}$ to run. With the large number of magnets \textcolor{blue}{how many spreader magnets?} and vast number of correctors \textcolor{blue}{how many?} it would be time prohibitive to run these consecutively. However, this has the notable drawback of enabling cross-talk between neighbouring magnets during the de-gaussing procedure which may impact efficacy.
+
+\textcolor{blue}{**WRITE ABOUT HOW $\Delta I$ IS DEFINED AND ITS DRIVE HIGH/LOW LIMITS**}
+The swing current $\Delta I$ in (Eq.~\ref{eq:cycle_degauss_current_fractional}) varies based on the set point current of the magnet $I_{0}$ and the current limitations of the magnet in question, named the drive high current $I_{\mathrm{DRVH}}$ which is the maximum tolerable current and the drive low current $I_{\mathrm{DRVL}}$ which is the minimum tolerable current (typically zero for non-bipolar magnets). Therefore, the sing current can be represented as
+\begin{equation}
+\Delta I =
+\begin{cases}
+\left|I_{0}-I_{\mathrm{DRVL}}\right|, \text{ if odd} \\
+\left|I_{0}-I_{\mathrm{DRVH}}\right|, \text{ if even.}
+\end{cases}
+\label{eq:swing_current_variation}
+\end{equation}
+For example, for a bi-polar corrector coil the current tolerance is $\pm 3$~\si{\ampere}, which corresponds to the drive high and drive low currents, and these correctors typically have a set point current of $I_{0} = 0$~\si{\ampere} (as we aim to operate without magnetic correction) so the swing current in this case is $\Delta I = 3$~\si{\ampere}.     
+
+\textcolor{blue}{**SHOW I--t PLOT OF BOTH THE FRACTIONAL AND MIN MAX PROCEDURES** \\ plot $t_{\mathrm{pause}}$ as time for varying current, do for a single magnet with defined $\Delta I$}
+
+Steve Peggs has looked into de-gaussing of the CBETA H1 dipole magnets \cite{fabus2019hysteresis}
+
+In order to increase reproducibility of the CBETA ERL configuration during commissioning a script was devised to combat the hysteresis effects by 'de-Gaussing' the magnets within the splitter lines. Only the splitter line magnets were initially selected as this procedure is only applicable to electromagnets; the FFA magnets are permanent magnet quadrupoles and combined function magnets. However, this was eventually extended to the window frame corrector coils on the FFA permanent magnets.
+
+The more complicated procedure detailed here was abandoned after testing because it failed to accomplish full de-gaussing of the spreader magnets. The Max to Zero scheme outlined by Fabus and Peggs \cite{fabus2019hysteresis}, though applied to more than the H1 dipoles, was found to be more easily applicable and effective. This involved repetitively driving the power supply to produce the maximum and minimum current within its tolerable limits to produce the maximum and minimum magnetic flux density. Typically this involves a maximum to zero current variation however for bipolar magnets this involved alternating the sign of the maximum magnitude of the magnetic flux density. In this case, as opposed to the fractional variation of current (Eq.~\ref{eq:cycle_degauss_current_fractional}), the current is varied per cycle as
+\begin{equation}
+I\left(n_{\mathrm{cycle}}\right) =  I_{0}+\Delta I\left(-1\right)^{n_{\mathrm{cycle}}},
+\label{eq:cycle_degauss_current_max_min}
+\end{equation}
+where the $\left(1-\kappa\right)$ term in (Eq.~\ref{eq:cycle_degauss_current_fractional}) is abandoned.
+
 
 \section{Multi-pass FFA Chromaticity Measurement}
+
+\textcolor{blue}{**AGAIN, JUST GETTING POINTS DOWN HERE** \\ **NOTEBOOK 9 HAS CHROMATICITY NOTES, POSITIONS MARKED BY POST-IT**}
+
 
 \end{document}
