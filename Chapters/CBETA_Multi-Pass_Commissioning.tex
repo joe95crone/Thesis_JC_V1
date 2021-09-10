@@ -28,14 +28,16 @@
 
 Hysteresis effects within spreader magnets in the splitter/recombiner lines degraded the reproducibility of CBETA configurations between consecutive operational periods. Once the accelerator orbit was tuned, a series of magnet strength set points corresponding to the orbit could be saved however hysteresis invalidates the previously discovered set points.
 
-The hysteresis effects occur because of the use of ferromagnetic materials in the yokes of magnets to enhance the magnetic field of a coil. Ferromagnetic materials used in this typically have a strong dependence on their history \cite{decker1991physical} -- previous magnetizations affect the current state of the magnet. An example of a $B$--$I$ curve of an electromagnet is shown in Figure~\ref{fig:example_BI_curve}.
+The hysteresis effects occur because of the use of ferromagnetic materials in the yokes of magnets to enhance the magnetic field of a coil. Ferromagnetic materials used in this typically have a strong dependence on their history \cite{decker1991physical} -- previous magnetizations affect the current state of the magnet via the yoke material. An example of an anhysteretic $B$--$I$ curve of a ferromagnetic yoke material, as used in an electromagnet, is shown in Figure~\ref{fig:example_BI_curve}.
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/example_BI_curve.png}
-\caption{Example $B$--$I$ curve of a magnet that has undergone a de-gaussing procedure \cite{decker1991physical} \textcolor{blue}{don't know what else to say}}
+\caption{Example $B$--$I$ anhysteric curve of a ferromagnetic yoke material \cite{decker1991physical} \textcolor{blue}{don't know what else to say}}
 \label{fig:example_BI_curve}
 \end{figure}
+
+\textcolor{blue}{**WRITE HOW DEGAUSSING WORKS VIA THE STEVE PEGGS NOTE**}
 
 The basic procedure is to repetitively alternate the current passed through the coils of the magnet around the tuning set point thereby increasing and decreasing the induced magnetic field. This shifts the position in the $B$--$H$ (or $B$--$I$) hysteresis curve upon which the magnet lies and instead leads to the magnet following its original $B$--$H$ curve. \textcolor{blue}{**Explanation needs a lot of work**} The original trialed procedure was based upon the procedure used for a series of quadrupoles at LCLS \cite{weidemann2010degaussing}.   
 
@@ -84,10 +86,50 @@ I\left(n_{\mathrm{cycle}}\right) =  I_{0}+\Delta I\left(-1\right)^{n_{\mathrm{cy
 \end{equation}
 where the $\left(1-\kappa\right)$ term in (Eq.~\ref{eq:cycle_degauss_current_fractional}) is abandoned.
 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/degauss_current_time_corrector.pdf}
+\caption{Plots of de-Gaussing procedures in current--time ($I$--$t$) space for the permanent magnet window frame correctors. The correctors are typically operated using bi-polar power supplies with a $I_{\mathrm{DRVH/DRVL}}=\pm3$~\si{\ampere} current limit and their set point is $I_{0}=0$~\si{\ampere} as for nominal operation correctors should not be necessary. Current is varied in $t_{\mathrm{pause}}=2$~\si{\second} intervals for a total of $n_{\mathrm{tot}}=20$ cycles. Left: Fractional de-Gaussing method (Eq.~\ref{eq:cycle_degauss_current_fractional}). Right: Min to Zero de-Gaussing method (Eq.~\ref{eq:cycle_degauss_current_max_min}). }
+\label{fig:corrector_degauss_procedure}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/degauss_current_time_MS1QUA02.pdf}
+\caption{Plots of de-Gaussing procedures in current--time ($I$--$t$) space for the MS1QUA02 quadrupole located in the S1 spreader line. The MS1QUA02 operated using a bi-polar power supply with a $I_{\mathrm{DRVH/DRVL}}=\pm10$~\si{\ampere} current limit and a set point current of $I_{0}=4.39$~\si{\ampere}. Current is varied in $t_{\mathrm{pause}}=2$~\si{\second} intervals for a total of $n_{\mathrm{tot}}=20$ cycles. Left: Fractional de-Gaussing method (Eq.~\ref{eq:cycle_degauss_current_fractional}). Right: Min to Zero de-Gaussing method (Eq.~\ref{eq:cycle_degauss_current_max_min}).}
+\label{fig:MS1QUA02_degauss_procedure}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/degauss_current_time_MS1DIP03.pdf}
+\caption{Plots of de-Gaussing procedures in current--time ($I$--$t$) space for the MS1DIP03 dipole in the S1 (42~\si{\mega\electronvolt}) spreader line. The correctors are typically operated using a power supply with a $I_{\mathrm{DRVH}}=120$~\si{\ampere} maximum current limit ($I_{\mathrm{DRVL}}=0$) and their set point is $I_{0}=95.93$~\si{\ampere}. Current is varied in $t_{\mathrm{pause}}=2$~\si{\second} intervals for a total of $n_{\mathrm{tot}}=20$ cycles. Left: Fractional de-Gaussing method (Eq.~\ref{eq:cycle_degauss_current_fractional}). Right: Min to Zero de-Gaussing method (Eq.~\ref{eq:cycle_degauss_current_max_min}).}
+\label{fig:MS1DIP03_degauss_procedure}
+\end{figure}
 
 \section{Multi-pass FFA Chromaticity Measurement}
 
 \textcolor{blue}{**AGAIN, JUST GETTING POINTS DOWN HERE** \\ **NOTEBOOK 9 HAS CHROMATICITY NOTES, POSITIONS MARKED BY POST-IT**}
+
+Chromaticity measurements within non-scaling FFA transport and for multi-pass ERL's have never been successfully accomplished \textcolor{blue}{**CHECK**}
+
+\textcolor{blue}{**LITERATURE REVIEW SECTION** \\ What was the original source I used for this? }
+
+A chromaticity script was constructed to measure the chromaticity per cell, in both planes, of sections of the accelerator,
+such as the FFA recirculation line and splitter/recombiner sections, for all 4 turns. Chromaticity measurement was accomplished by recursively applying a modified version of an existing script used to measure tune in sections of the machine whilst incrementing the beam energy through adjustment of cavity 1 voltage (the cavity traversed last by an accelerated beam).
+
+\begin{equation}
+\nu = \frac{1}{2\pi}\oint \frac{1}{\beta\left(s\right)}ds,
+\label{eq:tune_definition}
+\end{equation}
+
+\begin{equation}
+\Delta Q = Q'\frac{\delta p}{p},
+\label{eq:chromaticity_measurement_central}
+\end{equation}
+
+Unfortunately, this script was only tested on the last day of operation; due to energy drift in the linac only measurements
+up to the second turn produced usable data when this was compared to the expected tune produced from eldmaps.
 
 
 \end{document}
