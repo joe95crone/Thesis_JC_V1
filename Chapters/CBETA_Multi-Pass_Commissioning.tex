@@ -115,13 +115,32 @@ Chromaticity measurements within non-scaling FFA transport and for multi-pass ER
 
 \textcolor{blue}{**LITERATURE REVIEW SECTION** \\ What was the original source I used for this? }
 
-A chromaticity script was constructed to measure the chromaticity per cell, in both planes, of sections of the accelerator,
-such as the FFA recirculation line and splitter/recombiner sections, for all 4 turns. Chromaticity measurement was accomplished by recursively applying a modified version of an existing script used to measure tune in sections of the machine whilst incrementing the beam energy through adjustment of cavity 1 voltage (the cavity traversed last by an accelerated beam).
+A chromaticity script was constructed to measure the chromaticity per cell, in both planes, of sections of the FFA recirculation line, for all 4 turns. Chromaticity measurement was accomplished by recursively applying a modified version of an existing script used to measure tune in sections of the machine whilst incrementing the electron beam energy, thereby changing the electron momentum spread $\Delta p/p$.
 
+The energy of a particle after traversing an RF cavity is given by
 \begin{equation}
-\nu = \frac{1}{2\pi}\oint \frac{1}{\beta\left(s\right)}ds,
+E_{e} = qV_{\mathrm{RF}}\sin\phi_{\mathrm{RF}},
+\label{eq:particle_acceleration_energy}
+\end{equation}
+where $q$ is the charge of the particle (we consider only electrons, $q=e$), $V_{\mathrm{RF}}$ is the maximum RF cavity voltage (generator voltage) and $\phi_{\mathrm{RF}}$ is the RF accelerating phase the electron bunch witnesses. From inspection of (Eq.~\ref{eq:particle_acceleration_energy}), it is possible to vary the energy of the electron bunch in two main ways: by varying the maximum RF cavity voltage or through variation of the accelerating phase. For the chromaticity measurement on CBETA the energy of the electron bunch was manipulated through adjustment of cavity 1 voltage (the cavity traversed last by an accelerated beam). The electron momentum spread is related to the change in RF cavity generator voltage by
+\begin{equation}
+\frac{\Delta p}{p}\approx \frac{\Delta E_{e}}{E_{e}} = \frac{\Delta V_{\mathrm{RF}}}{V_{\mathrm{RF}}}.    
+\end{equation}
+
+To measure the \textcolor{blue}{fractional?} tune per cell of a section of CBETA a vertical or horizontal kick is generated to cause a betatron oscillation which propagates through the FFA common transport return line \cite{gulliford2021measurement}. The vertical kick is provided by the last vertical corrector in the corresponding splitter line of that turn; for example, the 3rd turn vertical kick is provided by the MS3CRV04 vertical corrector. Horizontal kicks are implemented by the last independent dipole magnet (non-septa) in which only a single bunch is traverses the magnet as otherwise betatron oscillations would be generated cumulatively in each effected turn. Quality of orbit kicks in CBETA is also affected by cross-talk between magnets therefore dipole selection is also dependent upon this condition \textcolor{blue}{**IMPROVE THIS SENTENCE**}. For example, the MS2DIP08 dipole is used to induce a horizontal kick in the 78~\si{\mega\electronvolt} 2nd turn. Within an ERL the bunch will traverse the splitter line in each turn twice (with the exception of the 4th turn) passing through in both accelerating and decelerating configuration therefore two kicks are applied to a bunch \textcolor{blue}{How is this problem -- if it is a problem -- solved?}.     
+
+The closed orbit throughout the whole accelerator is modulated via the induced betatron oscillation which is measured by the beam position monitors (BPMs) in the FFA which can detect variation in bunch position in either transverse plane. As per the procedure used in the CBETA fractional arc test \cite{gulliford2019beam} -- a preliminary investigation of FFA transport arcs -- the BPM data is analysed by fitting of a sinusoidal function \textcolor{blue}{**EXPAND**} to produce the betatron phase advance per cell given by
+\begin{equation}
+\Psi_{x/y}\left(s\right) = \int_{0}^{s}\frac{1}{\beta_{x/y}\left(s\right)}ds,
+\label{eq:betatron_phase_advance_per_cell}
+\end{equation}
+where $s$ is the distance traversed for a single cell in the direction of propagation and $\beta_{x/y}\left(s\right)$ is the $\beta$-function, the amplitude of this oscillation. The betatron phase advance per cell can then be converted into tune per cell via 
+\begin{equation}
+Q_{x/y} = \frac{1}{2\pi}\int_{0}^{s} \frac{1}{\beta_{x/y}\left(s\right)}ds.
 \label{eq:tune_definition}
 \end{equation}
+
+
 
 \begin{equation}
 \Delta Q = Q'\frac{\delta p}{p},
@@ -129,7 +148,7 @@ such as the FFA recirculation line and splitter/recombiner sections, for all 4 t
 \end{equation}
 
 Unfortunately, this script was only tested on the last day of operation; due to energy drift in the linac only measurements
-up to the second turn produced usable data when this was compared to the expected tune produced from eldmaps.
+up to the second turn produced usable data when this was compared to the expected tune produced from fieldmaps.
 
 
 \end{document}
