@@ -111,11 +111,22 @@ where the $\left(1-\kappa\right)$ term in (Eq.~\ref{eq:cycle_degauss_current_fra
 
 \textcolor{blue}{**AGAIN, JUST GETTING POINTS DOWN HERE** \\ **NOTEBOOK 9 HAS CHROMATICITY NOTES, POSITIONS MARKED BY POST-IT**}
 
-Chromaticity measurements within non-scaling FFA transport and for multi-pass ERL's have never been successfully accomplished \textcolor{blue}{**CHECK**}
+A measurement script has been developed and tested, with experiment during CBETA commissioning, to measure the chromaticity per cell (in both planes) of sections of the CBETA FFA recirculation line, for all 4 turns. Chromaticity per cell $Q'_{x/y}$ can be experimentally measured through measurement of the tune per cell $Q_{x/y}$ as a function of the relative change in momentum of an electron beam $\delta p/p$, as shown in (Eq.~\ref{eq:chromaticity_measurement_central})
+\begin{equation}
+\Delta Q = Q'\frac{\delta p}{p}.
+\label{eq:chromaticity_measurement_central}
+\end{equation}
+In practice this was accomplished by recursively applying a modified version of an existing script used to measure tune in sections of the FFA whilst incrementing the electron beam energy, thereby changing the electron momentum spread $\Delta p/p$. Firstly, a history of previous ERL chromaticity measurements is presented, then details of this measurement are outlined in Section~\ref{sec:chromaticity_measurement_methodology}, then experimental results are shown in Section~\ref{sec:CBETA_chromaticity_measurement_results}. Finally, the results of this approach are discussed in Section~\ref{sec:chromaticity_discussion}. 
+
+\subsection{ERL Chromaticity Measurements}
+\label{sec:ERL_chromaticity_measurements}
+
+Chromaticity measurements within non-scaling FFA transport and for multi-pass ERLs have never been successfully accomplished \textcolor{blue}{**CHECK**}
 
 \textcolor{blue}{**LITERATURE REVIEW SECTION** \\ What was the original source I used for this? }
 
-A chromaticity script was constructed to measure the chromaticity per cell, in both planes, of sections of the FFA recirculation line, for all 4 turns. Chromaticity measurement was accomplished by recursively applying a modified version of an existing script used to measure tune in sections of the machine whilst incrementing the electron beam energy, thereby changing the electron momentum spread $\Delta p/p$.
+\subsection{Chromaticity Measurement Methodology}
+\label{sec:chromaticity_measurement_methodology}
 
 The energy of a particle after traversing an RF cavity is given by
 \begin{equation}
@@ -140,15 +151,27 @@ Q_{x/y} = \frac{1}{2\pi}\int_{0}^{s} \frac{1}{\beta_{x/y}\left(s\right)}ds.
 \label{eq:tune_definition}
 \end{equation}
 
+\subsection{CBETA Chromaticity Measurement Results}
+\label{sec:CBETA_chromaticity_measurement_results}
 
-
+The chromaticity and tune per cell of the FFA can be predicted via \textsc{Opera} fieldmap tracking simulations. \textcolor{blue}{**ASK KIRSTEN WHERE THIS IS FROM**} Data for the fieldmap tracking simulations of the FA/FB arcs and the ZX straight have been made available by the CBETA collaboration. \textcolor{blue}{**WHAT ARE THE I and H DATA SETS--ASK KIRSTEN**} The tune data has bee converted into chromaticity data via a re-arrangement of (Eq.~\ref{eq:chromaticity_measurement_central}), with appropriate substitution of the total electron beam energy
 \begin{equation}
-\Delta Q = Q'\frac{\delta p}{p},
-\label{eq:chromaticity_measurement_central}
+Q'_{x/y} = \frac{\Delta Q E_{e}}{\Delta E_{e}}.
+\label{eq:fieldmap_chromaticity}
 \end{equation}
+The plots of the chromaticity and tune per cell in each plane from fieldmap tracking simulations for the CBETA FFA sections (FA/FB arc and ZX straight) are shown in Fig.~\ref{fig:fieldmap_chromaticity_tune} for a 40--160~\si{\mega\electronvolt} electron bunch energy range.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/fieldmap_grid.pdf}
+\caption{CBETA fieldmap tracking simulations as a function of electron beam total energy. Top Left: FA/FB arc tune per cell in each transverse plane. Top Right: ZX straight tune per cell in each plane. Bottom Left: Chromaticity per cell of the FA/FB arc in each transverse plane. Bottom Right: ZX straight chromaticity per cell in each plane. }
+\label{fig:fieldmap_chromaticity_tune}
+\end{figure}
+
+\subsection{Discussion}
+\label{sec:chromaticity_discussion}
 
 Unfortunately, this script was only tested on the last day of operation; due to energy drift in the linac only measurements
-up to the second turn produced usable data when this was compared to the expected tune produced from fieldmaps.
+up to the second turn produced usable data when this was compared to the expected tune produced from fieldmap tracking.
 
 
 \end{document}
