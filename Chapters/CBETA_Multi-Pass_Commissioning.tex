@@ -140,7 +140,7 @@ where $q$ is the charge of the particle (we consider only electrons, $q=e$), $V_
 
 To measure the \textcolor{blue}{fractional?} tune per cell of a section of CBETA a vertical or horizontal kick is generated to cause a betatron oscillation which propagates through the FFA common transport return line \cite{gulliford2021measurement}. The vertical kick is provided by the last vertical corrector in the corresponding splitter line of that turn; for example, the 3rd turn vertical kick is provided by the MS3CRV04 vertical corrector. Horizontal kicks are implemented by the last independent dipole magnet (non-septa) in which only a single bunch is traverses the magnet as otherwise betatron oscillations would be generated cumulatively in each effected turn. Quality of orbit kicks in CBETA is also affected by cross-talk between magnets therefore dipole selection is also dependent upon this condition \textcolor{blue}{**IMPROVE THIS SENTENCE**}. For example, the MS2DIP08 dipole is used to induce a horizontal kick in the 78~\si{\mega\electronvolt} 2nd turn. Within an ERL the bunch will traverse the splitter line in each turn twice (with the exception of the 4th turn) passing through in both accelerating and decelerating configuration therefore two kicks are applied to a bunch \textcolor{blue}{How is this problem -- if it is a problem -- solved?}.     
 
-The closed orbit throughout the whole accelerator is modulated via the induced betatron oscillation which is measured by the beam position monitors (BPMs) in the FFA which can detect variation in bunch position in either transverse plane. As per the procedure used in the CBETA fractional arc test \cite{gulliford2019beam} -- a preliminary investigation of FFA transport arcs -- the BPM data is analysed by fitting of a sinusoidal function \textcolor{blue}{**EXPAND**} to produce the betatron phase advance per cell given by
+The closed orbit throughout the whole accelerator is modulated via the induced betatron oscillation which is measured by the beam position monitors (BPMs) in the FFA which can detect variation in bunch position in either transverse plane. As per the procedure used in the CBETA fractional arc test \cite{gulliford2019beam} -- a preliminary investigation of FFA transport arcs -- the BPM data is analysed by fitting of a sinusoidal function \textcolor{blue}{**EXPAND - read the technical note on tune measurement**} to produce the betatron phase advance per cell given by
 \begin{equation}
 \Psi_{x/y}\left(s\right) = \int_{0}^{s}\frac{1}{\beta_{x/y}\left(s\right)}ds,
 \label{eq:betatron_phase_advance_per_cell}
@@ -154,17 +154,58 @@ Q_{x/y} = \frac{1}{2\pi}\int_{0}^{s} \frac{1}{\beta_{x/y}\left(s\right)}ds.
 \subsection{CBETA Chromaticity Measurement Results}
 \label{sec:CBETA_chromaticity_measurement_results}
 
-The chromaticity and tune per cell of the FFA can be predicted via \textsc{Opera} fieldmap tracking simulations. \textcolor{blue}{**ASK KIRSTEN WHERE THIS IS FROM**} Data for the fieldmap tracking simulations of the FA/FB arcs and the ZX straight have been made available by the CBETA collaboration. \textcolor{blue}{**WHAT ARE THE I and H DATA SETS--ASK KIRSTEN**} The tune data has bee converted into chromaticity data via a re-arrangement of (Eq.~\ref{eq:chromaticity_measurement_central}), with appropriate substitution of the total electron beam energy
-\begin{equation}
-Q'_{x/y} = \frac{\Delta Q E_{e}}{\Delta E_{e}}.
-\label{eq:fieldmap_chromaticity}
-\end{equation}
-The plots of the chromaticity and tune per cell in each plane from fieldmap tracking simulations for the CBETA FFA sections (FA/FB arc and ZX straight) are shown in Fig.~\ref{fig:fieldmap_chromaticity_tune} for a 40--160~\si{\mega\electronvolt} electron bunch energy range.
+The chromaticity and tune per cell of the FFA can be predicted via \textsc{Opera} fieldmap within \textsc{Bmad} tracking simulations within the CBETA virtual machine. \textcolor{blue}{**CONFIRM WITH KIRSTEN WHERE THIS IS FROM**} Data for BPM positions in the fieldmap tracking virtual machine simulations of the FA/FB arcs and the ZX straight have been made available by the CBETA collaboration. \textcolor{blue}{**WHAT ARE THE I and H DATA SETS--ASK KIRSTEN**} For the case of these simulations, the BPM positions can be related to the tune by 
+\begin{align}
+x &= 2\cos\left(2\pi\nu_{x}\right),
+y &= 2\cos\left(2\pi\nu_{y}\right)
+\label{eq:bpm_tune_conversion_fieldmap}
+\end{align}
+where $x$ ($y$) is the BPM position in $x$ ($y$) plane and $\nu_{x}$ ($\nu_{y}$) is the tune in $x$ ($y$) plane. This is a simplification of the fitting function \cite{gulliford2019beam} used to calculate the tune from BPM measurements upon CBETA.
+
+The plots of the tune per cell in each plane from fieldmap tracking simulations for the CBETA FFA sections (FA/FB arc and ZX straight) and from measured data at the nominal energies of each 4 turns are shown in Fig.~\ref{fig:fieldmap_chromaticity_tune} for a 40--160~\si{\mega\electronvolt} electron bunch energy range.
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/fieldmap_grid.pdf}
-\caption{CBETA fieldmap tracking simulations as a function of electron beam total energy. Top Left: FA/FB arc tune per cell in each transverse plane. Top Right: ZX straight tune per cell in each plane. Bottom Left: Chromaticity per cell of the FA/FB arc in each transverse plane. Bottom Right: ZX straight chromaticity per cell in each plane. }
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/FAFBZX_nominal_tunes.pdf}
+\caption{CBETA virtual machine fieldmap tracking simulation derived tunes per cell as a function of electron beam total energy. Measured tunes per cell at the nominal turn energies are also displayed. Top Left: FA arc tune per cell in each transverse plane. Top Right: ZX straight tune per cell in each plane. Bottom Left: FB arc tune per cell in each transverse plane. }
 \label{fig:fieldmap_chromaticity_tune}
+\end{figure}
+
+Overall the measured nominal tunes show good agreement with the simulations. However, there are some anomalous points such as the 78~\si{\mega\electronvolt} FA arc $Q_{y}$ tune and the 150~\si{\mega\electronvolt} FB arc $Q_{y}$ tune. The cause of these discrepancies is though to be the jitter of the accelerator or incorrect tuning of the accelerator optics within those turns.
+
+Upon further inspection of the tune data, where the energy of the electron bunch is varied by up to 0.5\%, it is noted that this energy variation has distorted the orbit of the final 150~\si{\mega\electronvolt} 4th turn by an intolerable amount as evidenced by Fig.~\ref{FAFBZX_150MeV_tunes}. The optics in this turn are too sensitive to allow for measurement of the chromaticity in the current configuration.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/FAFBZX_150_tunes.pdf}
+\caption{FFA tune measured data in both planes against electron bunch energy varied by 0.5\% for the 150~\si{\mega\electronvolt} 4th turn of CBETA. Top Left: FA arc section. Top Right: FB arc section. Bottom Left: ZX straight section.}
+\label{fig:FAFBZX_150MeV_tunes}
+\end{figure}
+
+Beyond the first 3 measurements closest to the nominal 150~\si{\mega\electronvolt} energy, it is clear in every case that the measured data is erroneous and incomparable with the predictions. On this basis, the 150~\si{\mega\electronvolt} data contradicts the predicted tunes for each of the FFA sections (FA, FB, ZX) and is subsequently discarded from further analysis.
+
+Further analysis includes ...
+
+The tunes in each plane as a function of electron bunch energy for each of the three remaining turns are presented for the sections of the FFA this measurement has focused upon: FA (Fig.~\ref{fig:FA_analysed_tunes}), FB (Fig.~\ref{fig:FB_analysed_tunes}) and ZX (Fig.~\ref{fig:ZX_analysed_tunes}).
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/FA_analysed_3turn_tunes.pdf}
+\caption{}
+\label{fig:FA_analysed_tunes}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/FB_analysed_3turn_tunes.pdf}
+\caption{}
+\label{fig:FB_analysed_tunes}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/ZX_analysed_3turn_tunes.pdf}
+\caption{}
+\label{fig:ZX_analysed_tunes}
 \end{figure}
 
 \subsection{Discussion}
