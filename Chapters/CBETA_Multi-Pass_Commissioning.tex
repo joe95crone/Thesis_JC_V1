@@ -237,7 +237,7 @@ The difference in tune per cell from the tune per cell of the nominal energy is 
 
 \textcolor{blue}{**TALK ABOUT THE dQdE PLOTS**}
 
-The chromaticity has been calculated in each plane for each of the three nominal energies using the line of best fit in each plot in Fig.~\ref{fig:FA_dQdEe}, \ref{fig:FB_dQdEe}, \ref{fig:ZX_dQdEe} and these are tabulated in Table~\ref{tab:FAFBFZX_measured_chromaticity}. \textcolor{blue}{**TALK ABOUT THE MEASUREMENTS**} 
+The chromaticity has been calculated in each plane for each of the three nominal energies using the line of best fit in each plot in Fig.~\ref{fig:FA_dQdEe}, \ref{fig:FB_dQdEe}, \ref{fig:ZX_dQdEe} and these are tabulated in Table~\ref{tab:FAFBZX_measured_chromaticity}. \textcolor{blue}{**TALK ABOUT THE MEASUREMENTS**} 
 
 \begin{table}[!h]
 \centering
@@ -265,9 +265,13 @@ The measured chromaticities are plotted against the predicted chromaticity which
 \label{fig:FAFBZX_chromaticity}
 \end{figure}
 
+The predictions in Fig.~\ref{fig:FAFBZX_chromaticity} show that the chromaticity of each of the sections of the CBETA FFA is expected to be negative throughout the whole energy range of the CBETA operation however, as seen in Table~\ref{tab:FAFBZX_measured_chromaticity}, some measurements show large positive chromaticities such as the 114~\si{\mega\electronvolt} FB arc $Q'_{x} = 2.26$ measurement. Good agreement with the simulated chromaticity is achieved in several measurements for example the 42~\si{\mega\electronvolt} FA arc chromaticities in each plane.   
+
 \subsection{Discussion}
 \label{sec:chromaticity_discussion}
 
-Unfortunately, this script was only tested on the last day of operation; due to energy drift in the linac 
+Unfortunately, this script was only tested on the last day of operation in the CBETA multi-pass commissioning period. Due to energy drift and jitter in the linac, many tune measurements appear to be distorted. With more data collection on a series of runs the effect of energy drift and linac jitter could be excluded from the data set which could improve the quality of the chromaticity measurement.
+
+The general consistency of the nominal tunes with virtual machine predictions in Fig.~\ref{fig:fieldmap_chromaticity_tune} and the general consistency of the measured and predicted tune per cell variation with electron beam energy in Fig.~\ref{fig:FA_analysed_tunes}, \ref{fig:FB_analysed_tunes}, \ref{fig:ZX_analysed_tunes}, as well as the agreement demonstrated the multi-pass CBETA paper \cite{bartnik2020cbeta}, gives confidence that the existing method of measuring tune is accurate. However, the chromaticity measurement appears to be more sensitive to small changes in energy and measured BPM position. \textcolor{blue}{**I DON'T REALLY KNOW WHAT TO SAY**} 
 
 \end{document}
