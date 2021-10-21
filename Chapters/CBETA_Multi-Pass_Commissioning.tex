@@ -88,21 +88,21 @@ where the $\left(1-\kappa\right)$ term in (Eq.~\ref{eq:cycle_degauss_current_fra
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/degauss_current_time_corrector.pdf}
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/degauss/degauss_current_time_corrector.pdf}
 \caption{Plots of de-Gaussing procedures in current--time ($I$--$t$) space for the permanent magnet window frame correctors. The correctors are typically operated using bi-polar power supplies with a $I_{\mathrm{DRVH/DRVL}}=\pm3$~\si{\ampere} current limit and their set point is $I_{0}=0$~\si{\ampere} as for nominal operation correctors should not be necessary. Current is varied in $t_{\mathrm{pause}}=2$~\si{\second} intervals for a total of $n_{\mathrm{tot}}=20$ cycles. Left: Fractional de-Gaussing method (Eq.~\ref{eq:cycle_degauss_current_fractional}). Right: Min to Zero de-Gaussing method (Eq.~\ref{eq:cycle_degauss_current_max_min}). }
 \label{fig:corrector_degauss_procedure}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/degauss_current_time_MS1QUA02.pdf}
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/degauss/degauss_current_time_MS1QUA02.pdf}
 \caption{Plots of de-Gaussing procedures in current--time ($I$--$t$) space for the MS1QUA02 quadrupole located in the S1 spreader line. The MS1QUA02 operated using a bi-polar power supply with a $I_{\mathrm{DRVH/DRVL}}=\pm10$~\si{\ampere} current limit and a set point current of $I_{0}=4.39$~\si{\ampere}. Current is varied in $t_{\mathrm{pause}}=2$~\si{\second} intervals for a total of $n_{\mathrm{tot}}=20$ cycles. Left: Fractional de-Gaussing method (Eq.~\ref{eq:cycle_degauss_current_fractional}). Right: Min to Zero de-Gaussing method (Eq.~\ref{eq:cycle_degauss_current_max_min}).}
 \label{fig:MS1QUA02_degauss_procedure}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/degauss_current_time_MS1DIP03.pdf}
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/degauss/degauss_current_time_MS1DIP03.pdf}
 \caption{Plots of de-Gaussing procedures in current--time ($I$--$t$) space for the MS1DIP03 dipole in the S1 (42~\si{\mega\electronvolt}) spreader line. The correctors are typically operated using a power supply with a $I_{\mathrm{DRVH}}=120$~\si{\ampere} maximum current limit ($I_{\mathrm{DRVL}}=0$) and their set point is $I_{0}=95.93$~\si{\ampere}. Current is varied in $t_{\mathrm{pause}}=2$~\si{\second} intervals for a total of $n_{\mathrm{tot}}=20$ cycles. Left: Fractional de-Gaussing method (Eq.~\ref{eq:cycle_degauss_current_fractional}). Right: Min to Zero de-Gaussing method (Eq.~\ref{eq:cycle_degauss_current_max_min}).}
 \label{fig:MS1DIP03_degauss_procedure}
 \end{figure}
@@ -138,7 +138,9 @@ where $q$ is the charge of the particle (we consider only electrons, $q=e$), $V_
 \frac{\Delta p}{p}\approx \frac{\Delta E_{e}}{E_{e}} = \frac{\Delta V_{\mathrm{RF}}}{V_{\mathrm{RF}}}.    
 \end{equation}
 
-To measure the \textcolor{blue}{fractional?} tune per cell of a section of CBETA a vertical or horizontal kick is generated to cause a betatron oscillation which propagates through the FFA common transport return line \cite{gulliford2021measurement}. The vertical kick is provided by the last vertical corrector in the corresponding splitter line of that turn; for example, the 3rd turn vertical kick is provided by the MS3CRV04 vertical corrector. Horizontal kicks are implemented by the last independent dipole magnet (non-septa) in which only a single bunch is traverses the magnet as otherwise betatron oscillations would be generated cumulatively in each effected turn. Quality of orbit kicks in CBETA is also affected by cross-talk between magnets therefore dipole selection is also dependent upon this condition \textcolor{blue}{**IMPROVE THIS SENTENCE**}. For example, the MS2DIP08 dipole is used to induce a horizontal kick in the 78~\si{\mega\electronvolt} 2nd turn. Within an ERL the bunch will traverse the splitter line in each turn twice (with the exception of the 4th turn) passing through in both accelerating and decelerating configuration therefore two kicks are applied to a bunch \textcolor{blue}{How is this problem -- if it is a problem -- solved?}.     
+To measure the fractional tune per cell of a section of CBETA a vertical or horizontal kick is generated to cause a betatron oscillation which propagates through the FFA common transport return line \cite{gulliford2021measurement}. The vertical kick is provided by the last vertical corrector in the corresponding splitter line of that turn; for example, the 3rd turn vertical kick is provided by the MS3CRV04 vertical corrector. Horizontal kicks are implemented by the last independent dipole magnet (non-septa) in which only a single bunch is traverses the magnet as otherwise betatron oscillations would be generated cumulatively in each effected turn. Quality of orbit kicks in CBETA is also affected by cross-talk between magnets therefore dipole selection is also dependent upon this condition \textcolor{blue}{**IMPROVE THIS SENTENCE**}. For example, the MS2DIP08 dipole is used to induce a horizontal kick in the 78~\si{\mega\electronvolt} 2nd turn.
+
+During chromaticity measurement, each turn is measured independently - only a single kick in a single turn is applied - whilst the energy is varied via the cavity 1 voltage. A viewscreen was placed in the splitter of the consecutive turn to the measured turn in order to prevent the beam from traversing into higher passes. This allowed magnets beyond the measured pass to be turned off, minimizing cross--talk between magnets. However, since the electron bunch is not energy recovered in this measurement only the accelerating bunch may be measured.    
 
 The closed orbit throughout the whole accelerator is modulated via the induced betatron oscillation which is measured by the beam position monitors (BPMs) in the FFA which can detect variation in bunch position in either transverse plane. As per the procedure used in the CBETA fractional arc test \cite{gulliford2019beam} -- a preliminary investigation of FFA transport arcs -- the BPM data is analysed by fitting of a sinusoidal function \textcolor{blue}{**EXPAND - read the technical note on tune measurement**} to produce the betatron phase advance per cell given by
 \begin{equation}
@@ -165,7 +167,7 @@ where $x$ ($y$) is the BPM position in $x$ ($y$) plane and $\nu_{x}$ ($\nu_{y}$)
 The plots of the tune per cell in each plane from fieldmap tracking simulations for the CBETA FFA sections (FA/FB arc and ZX straight) and from measured data at the nominal energies of each 4 turns are shown in Fig.~\ref{fig:fieldmap_chromaticity_tune} for a 40--160~\si{\mega\electronvolt} electron bunch energy range.
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/FAFBZX_nominal_tunes.pdf}
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/FAFBZX_nominal_tunes.pdf}
 \caption{CBETA virtual machine fieldmap tracking simulation derived tunes per cell as a function of electron beam total energy. Measured tunes per cell at the nominal turn energies are also displayed. Top Left: FA arc tune per cell in each transverse plane. Top Right: ZX straight tune per cell in each plane. Bottom Left: FB arc tune per cell in each transverse plane. }
 \label{fig:fieldmap_chromaticity_tune}
 \end{figure}
@@ -176,7 +178,7 @@ Upon further inspection of the tune data, where the energy of the electron bunch
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/FAFBZX_150_tunes.pdf}
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/FAFBZX_150_tunes.pdf}
 \caption{FFA tune measured data in both planes against electron bunch energy varied by 0.5\% for the 150~\si{\mega\electronvolt} 4th turn of CBETA. Top Left: FA arc section. Top Right: FB arc section. Bottom Left: ZX straight section.}
 \label{fig:FAFBZX_150MeV_tunes}
 \end{figure}
@@ -189,23 +191,50 @@ The tunes in each plane as a function of electron bunch energy for each of the t
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/FA_analysed_3turn_tunes.pdf}
-\caption{Tunes per cell as a function of electron beam energy for the FA arc. The measured data (black), with a linear regression line of best fit (blue), is shown against the tracking simulation prediction (purple). Data points classified as anomalous (red) are highlighted, these lay further than $2\sigma$ from the mean of the data set. Note that anomalous points lay outside the plotting range in  Top Left: 42~\si{\mega\electronvolt} 1st turn tune measurement in the $x$ plane. Top Right: 42~\si{\mega\electronvolt} 1st turn tune measurement in the $y$ plane. Middle Left: 78~\si{\mega\electronvolt} 2nd turn tune measurement in the $x$ plane. Note: a single anomalous point lays outside of the plot range. Middle Right: 78~\si{\mega\electronvolt} 2nd turn tune measurement in the $y$ plane. Bottom Left:  114~\si{\mega\electronvolt} 3rd turn tune measurement in the $x$ plane. Note: a single anomalous point lays outside of the plot range. Bottom Right: 114~\si{\mega\electronvolt} 3rd turn tune measurement in the $y$ plane.}
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/FA_analysed_3turn_tunes.pdf}
+\caption{Tunes per cell as a function of electron beam energy for the FA arc. The measured data (black), with a linear regression line of best fit (blue), is shown against the tracking simulation prediction (purple). Data points classified as anomalous (red) are highlighted, these lay further than $2\sigma$ from the mean of the data set. Top Left: 42~\si{\mega\electronvolt} 1st turn tune measurement in the $x$ plane. Top Right: 42~\si{\mega\electronvolt} 1st turn tune measurement in the $y$ plane. Middle Left: 78~\si{\mega\electronvolt} 2nd turn tune measurement in the $x$ plane. Note: a single anomalous point lays outside of the plot range. Middle Right: 78~\si{\mega\electronvolt} 2nd turn tune measurement in the $y$ plane. Bottom Left:  114~\si{\mega\electronvolt} 3rd turn tune measurement in the $x$ plane. Note: a single anomalous point lays outside of the plot range. Bottom Right: 114~\si{\mega\electronvolt} 3rd turn tune measurement in the $y$ plane.}
 \label{fig:FA_analysed_tunes}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/FB_analysed_3turn_tunes.pdf}
-\caption{}
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/FB_analysed_3turn_tunes.pdf}
+\caption{Tunes per cell as a function of electron beam energy for the FB arc. The measured data (black), with a linear regression line of best fit (blue), is shown against the tracking simulation prediction (purple). Data points classified as anomalous (red) are highlighted, these lay further than $2\sigma$ from the mean of the data set. Top Left: 42~\si{\mega\electronvolt} 1st turn measurement in the $x$ plane. Top Right: 42~\si{\mega\electronvolt} 1st turn measurement in the $y$ plane. Middle Left: 78~\si{\mega\electronvolt} 2nd turn measurement in the $x$ plane. Note: a single anomalous point lays outside of the plot range. Middle Right: 78~\si{\mega\electronvolt} 2nd turn measurement in the $y$ plane. Bottom Left: 114~\si{\mega\electronvolt} 3rd turn measurement in the $x$ plane. Note: a single anomalous point lays outside of the plot range. Bottom Right: 114~\si{\mega\electronvolt} 3rd turn measurement in the $y$ plane.}
 \label{fig:FB_analysed_tunes}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/ZX_analysed_3turn_tunes.pdf}
-\caption{}
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/ZX_analysed_3turn_tunes.pdf}
+\caption{Tunes per cell as a function of electron beam energy for the ZX straight. The measured data (black), with a linear regression line of best fit (blue), is shown against the tracking simulation prediction (purple). Data points classified as anomalous (red) are highlighted, these lay further than $2\sigma$ from the mean of the data set. Top Left: 42~\si{\mega\electronvolt} 1st turn measurement in the $x$ plane. Top Right: 42~\si{\mega\electronvolt} 1st turn measurement in the $y$ plane. Middle Left: 78~\si{\mega\electronvolt} 2nd turn measurement in the $x$ plane. Note: a single anomalous point lays outside of the plot range. Middle Right: 78~\si{\mega\electronvolt} 2nd turn measurement in the $y$ plane. Bottom Left: 114~\si{\mega\electronvolt} 3rd turn measurement in the $x$ plane. Note: a single anomalous point lays outside of the plot range. Bottom Right: 114~\si{\mega\electronvolt} 3rd turn measurement in the $y$ plane.}
 \label{fig:ZX_analysed_tunes}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/FA_analysed_3turn_dEedQ.pdf}
+\caption{FA dE/dQ plot}
+\label{fig:FA_dEdQ}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/FB_analysed_3turn_dEedQ.pdf}
+\caption{FB dE/dQ plot}
+\label{fig:FB_dEdQ}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/ZX_analysed_3turn_dEedQ.pdf}
+\caption{ZX dE/dQ plot}
+\label{fig:ZX_dEdQ}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/FAFBZX_chromaticity.pdf}
+\caption{FA, FB and ZX chromaticity plots.}
 \end{figure}
 
 \subsection{Discussion}
