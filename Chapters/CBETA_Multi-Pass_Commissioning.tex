@@ -32,7 +32,7 @@ The hysteresis effects occur because of the use of ferromagnetic materials in th
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.7\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/example_BI_curve.png}
+\includegraphics[width=0.7\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/degauss/example_BI_curve.png}
 \caption{Example $B$--$I$ anhysteric curve of a ferromagnetic yoke material \cite{decker1991physical} \textcolor{blue}{don't know what else to say}}
 \label{fig:example_BI_curve}
 \end{figure}
@@ -156,10 +156,10 @@ Q_{x/y} = \frac{1}{2\pi}\int_{0}^{s} \frac{1}{\beta_{x/y}\left(s\right)}ds.
 \subsection{CBETA Chromaticity Measurement Results}
 \label{sec:CBETA_chromaticity_measurement_results}
 
-The chromaticity and tune per cell of the FFA can be predicted via \textsc{Opera} fieldmap within \textsc{Bmad} tracking simulations within the CBETA virtual machine. \textcolor{blue}{**CONFIRM WITH KIRSTEN WHERE THIS IS FROM**} Data for BPM positions in the fieldmap tracking virtual machine simulations of the FA/FB arcs and the ZX straight have been made available by the CBETA collaboration. \textcolor{blue}{**WHAT ARE THE I and H DATA SETS--ASK KIRSTEN**} For the case of these simulations, the BPM positions can be related to the tune by 
+The chromaticity and tune per cell of the FFA can be predicted via \textsc{Opera} fieldmap within \textsc{Bmad} tracking simulations within the CBETA virtual machine. \textcolor{blue}{**CONFIRM WITH KIRSTEN WHERE THIS IS FROM**} Data for BPM positions in the fieldmap tracking virtual machine simulations of the FA/FB arcs and the ZX straight have been made available by the CBETA collaboration. The data set includes the electron beam total energy, the $x$ and $y$ positions of a reference particle at the position of the BPMs and the simulation error associated with this. For the case of these simulations, the BPM positions can be related to the tune by 
 \begin{align}
-x &= 2\cos\left(2\pi\nu_{x}\right),
-y &= 2\cos\left(2\pi\nu_{y}\right)
+x &= 2\cos\left(2\pi\nu_{x}\right), \\
+y &= 2\cos\left(2\pi\nu_{y}\right),
 \label{eq:bpm_tune_conversion_fieldmap}
 \end{align}
 where $x$ ($y$) is the BPM position in $x$ ($y$) plane and $\nu_{x}$ ($\nu_{y}$) is the tune in $x$ ($y$) plane. This is a simplification of the fitting function \cite{gulliford2019beam} used to calculate the tune from BPM measurements upon CBETA.
@@ -174,13 +174,13 @@ The plots of the tune per cell in each plane from fieldmap tracking simulations 
 
 Overall the measured nominal tunes show good agreement with the simulations. However, there are some anomalous points such as the 78~\si{\mega\electronvolt} FA arc $Q_{y}$ tune and the 150~\si{\mega\electronvolt} FB arc $Q_{y}$ tune. The cause of these discrepancies is though to be the jitter of the accelerator or incorrect tuning of the accelerator optics within those turns.
 
-Upon further inspection of the tune data, where the energy of the electron bunch is varied by up to 0.5\%, it is noted that this energy variation has distorted the orbit of the final 150~\si{\mega\electronvolt} 4th turn by an intolerable amount as evidenced by Fig.~\ref{FAFBZX_150MeV_tunes}. The optics in this turn are too sensitive to allow for measurement of the chromaticity in the current configuration.
+Upon further inspection of the tune data, where the energy of the electron bunch is varied by up to 0.5\%, it is noted that this energy variation has distorted the orbit of the final 150~\si{\mega\electronvolt} 4th turn by an intolerable amount as evidenced by Fig.~\ref{fig:FAFBZX_150_tunes}. The optics in this turn are too sensitive to allow for measurement of the chromaticity in the current configuration.
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/FAFBZX_150_tunes.pdf}
-\caption{FFA tune measured data in both planes against electron bunch energy varied by 0.5\% for the 150~\si{\mega\electronvolt} 4th turn of CBETA. Top Left: FA arc section. Top Right: FB arc section. Bottom Left: ZX straight section.}
-\label{fig:FAFBZX_150MeV_tunes}
+\caption{FFA tune measured data in both $x$ (red point) and $y$ (blue point) against electron bunch energy varied by 0.5\% for the 150~\si{\mega\electronvolt} 4th turn of CBETA in comparison with predicted tune data in the $x$ (red line) and $y$ (blue line) planes from the CBETA virtual machine study. Top Left: FA arc section. Top Right: FB arc section. Bottom Left: ZX straight section.}
+\label{fig:FAFBZX_150_tunes}
 \end{figure}
 
 Beyond the first 3 measurements closest to the nominal 150~\si{\mega\electronvolt} energy, it is clear in every case that the measured data is erroneous and incomparable with the predictions. On this basis, the 150~\si{\mega\electronvolt} data contradicts the predicted tunes for each of the FFA sections (FA, FB, ZX) and is subsequently discarded from further analysis.
@@ -210,38 +210,64 @@ The tunes in each plane as a function of electron bunch energy for each of the t
 \label{fig:ZX_analysed_tunes}
 \end{figure}
 
+\textcolor{blue}{**TALK ABOUT THE TUNE PLOTS**}
+
+The difference in tune per cell from the tune per cell of the nominal energy is then plotted against the fractional variation in electron bunch total energy compared to the nominal energy. Again, the $2\sigma$ statistical test is applied to categorise any points laying outside of $2\sigma$ as anomalous. A line of best fit is plotted using linear regression of the remaining data points. The gradient of the line of best fit on the plot of $\Delta Q$ as a function of $\Delta E_{e}/E_{e}$ is the chromaticity, as per (Eq.~\ref{eq:chromaticity_measurement_central}). Fig.~\ref{fig:FA_dQdEe}, \ref{fig:FB_dQdEe}, \ref{fig:ZX_dQdEe} present the plots of the tune variation as a function of the fractional electron bunch energy variation for each of the three nominal energy cases (42, 78, 114~\si{\mega\electronvolt}) in each plane ($x$ and $y$).    
+
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/FA_analysed_3turn_dEedQ.pdf}
-\caption{FA dE/dQ plot}
-\label{fig:FA_dEdQ}
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/FA_analysed_3turn_dQdEe.pdf}
+\caption{Variation in tune per cell from the nominal energy tune per cell as a function of the fractional variation in electron bunch energy from the nominal energy for the FA arc. The measured data (black) is plotted with a linear regression line of best fit (blue), with anomalous points (red) highlighted. Top Left: 42~\si{\mega\electronvolt} 1st turn measurement in the $x$ plane. Top Right: 42~\si{\mega\electronvolt} 1st turn measurement in the $y$ plane. Middle Left: 78~\si{\mega\electronvolt} 2nd turn measurement in the $x$ plane. Middle Right: 78~\si{\mega\electronvolt} 2nd turn measurement in the $y$ plane. Bottom Left: 114~\si{\mega\electronvolt} 3rd turn measurement in the $x$ plane. Bottom Right: 114~\si{\mega\electronvolt} 3rd turn measurement in the $y$ plane.}
+\label{fig:FA_dQdEe}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/FB_analysed_3turn_dEedQ.pdf}
-\caption{FB dE/dQ plot}
-\label{fig:FB_dEdQ}
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/FB_analysed_3turn_dQdEe.pdf}
+\caption{Variation in tune per cell from the nominal energy tune per cell as a function of the fractional variation in electron bunch energy from the nominal energy for the FB arc. The measured data (black) is plotted with a linear regression line of best fit (blue), with anomalous points (red) highlighted. Top Left: 42~\si{\mega\electronvolt} 1st turn measurement in the $x$ plane. Note: two anomalous points in this data set lay outside of the plotting range. Top Right: 42~\si{\mega\electronvolt} 1st turn measurement in the $y$ plane. Middle Left: 78~\si{\mega\electronvolt} 2nd turn measurement in the $x$ plane. Middle Right: 78~\si{\mega\electronvolt} 2nd turn measurement in the $y$ plane. Bottom Left: 114~\si{\mega\electronvolt} 3rd turn measurement in the $x$ plane. Bottom Right: 114~\si{\mega\electronvolt} 3rd turn measurement in the $y$ plane.}
+\label{fig:FB_dQdEe}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/ZX_analysed_3turn_dEedQ.pdf}
-\caption{ZX dE/dQ plot}
-\label{fig:ZX_dEdQ}
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/ZX_analysed_3turn_dQdEe.pdf}
+\caption{Variation in tune per cell from the nominal energy tune per cell as a function of the fractional variation in electron bunch energy from the nominal energy for the ZX straight. The measured data (black) is plotted with a linear regression line of best fit (blue), with anomalous points (red) highlighted. Top Left: 42~\si{\mega\electronvolt} 1st turn measurement in the $x$ plane. Top Right: 42~\si{\mega\electronvolt} 1st turn measurement in the $y$ plane. Middle Left: 78~\si{\mega\electronvolt} 2nd turn measurement in the $x$ plane. Middle Right: 78~\si{\mega\electronvolt} 2nd turn measurement in the $y$ plane. Bottom Left: 114~\si{\mega\electronvolt} 3rd turn measurement in the $x$ plane. Bottom Right: 114~\si{\mega\electronvolt} 3rd turn measurement in the $y$ plane.}
+\label{fig:ZX_dQdEe}
 \end{figure}
+
+\textcolor{blue}{**TALK ABOUT THE dQdE PLOTS**}
+
+The chromaticity has been calculated in each plane for each of the three nominal energies using the line of best fit in each plot in Fig.~\ref{fig:FA_dQdEe}, \ref{fig:FB_dQdEe}, \ref{fig:ZX_dQdEe} and these are tabulated in Table~\ref{tab:FAFBFZX_measured_chromaticity}. \textcolor{blue}{**TALK ABOUT THE MEASUREMENTS**} 
+
+\begin{table}[!h]
+\centering
+\caption{chromaticity measured data}
+\begin{tabular}{lcccccc}
+\hline\hline
+FFA Section & \multicolumn{2}{c}{FA} & \multicolumn{2}{c}{FB} & \multicolumn{2}{c}{ZX} \\
+\hline
+Nominal Electron Energy (\si{\mega\electronvolt}) & $Q'_{x}$ & $Q'_{y}$ & $Q'_{x}$ & $Q'_{y}$ & $Q'_{x}$ & $Q'_{y}$ \\
+\hline
+42 & -0.669 & -0.429 & -1.22 & 1.19 & -1.99 & -0.219 \\
+78 & -0.384 & 0.793 & 0.308 & 0.0768 & -0.278 & -0.0468 \\
+114 & 5.93$\times 10^{-4}$ & 9.47$\times 10^{-3}$ & 2.26 & 0.187 & -0.414 & -0.109 \\ 
+\hline\hline
+\end{tabular}
+\label{tab:FAFBZX_measured_chromaticity}
+\end{table}
+
+The measured chromaticities are plotted against the predicted chromaticity which is calculated via the derivative of the virtual machine tune--electron bunch energy for each plane and each of the three nominal energies in Fig.~\ref{fig:FAFBZX_chromaticity}. 
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/chromaticity/FAFBZX_chromaticity.pdf}
-\caption{FA, FB and ZX chromaticity plots.}
+\caption{Plots of the measured chromaticity in the $x$ (red point) and $y$ (blue point) planes, for the first three nominal energies, against the chromaticity predicted via simulation using the CBETA virtual machine in the $x$ (red line) and $y$ (blue line) planes. Top Left: Chromaticity measurement and simulation prediction in both planes through the FA arc. Note: the measured 78~\si{\mega\electronvolt} $Q'_{y}$ point lays outside of the plot range. Top Right: Chromaticity measurement and simulation prediction in both planes in the FB arc. Note: all measured points except the 78~\si{\mega\electronvolt} $Q'_{y}$ point lay outside of the plot range. Bottom Left: Chromaticity measurement and simulation prediction in both planes in the ZX straight. Note: the measured 42~\si{\mega\electronvolt} $Q'_{x}$ point lays outside of the plot range.}
+\label{fig:FAFBZX_chromaticity}
 \end{figure}
 
 \subsection{Discussion}
 \label{sec:chromaticity_discussion}
 
-Unfortunately, this script was only tested on the last day of operation; due to energy drift in the linac only measurements
-up to the second turn produced usable data when this was compared to the expected tune produced from fieldmap tracking.
-
+Unfortunately, this script was only tested on the last day of operation; due to energy drift in the linac 
 
 \end{document}
