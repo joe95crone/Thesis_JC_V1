@@ -22,7 +22,7 @@
 
 \section{The DIANA Energy Recovery Linac and it's Motivation}
 
-DIANA, the Daresbury Industrial Accelerator for Nuclear Physics Applications is an applications centric conceptual 3-turn superconducting RF ERL designed for electron based light source operations. The DIANA ERL is anticipated to provide a high brilliance electron beam at a maximum energy of $\sim$\si{\giga\electronvolt} with small relative energy spread ($< 10^{-4}$) and transverse emittance ($< 1$~\si{\milli\meter}-\si{\milli\radian}) pushing the average beam current to the 10's~\si{\milli\ampere} frontier -- at the state-of-the-art for SRF ERL development. The project remains in an early conceptual phase; potential configurations for the machine and its applications are being investigated from a design choices standpoint and a user community, with scope across nuclear, particle, medical physics and material science, is being assembled.  
+DIANA, the Daresbury Industrial Accelerator for Nuclear Physics Applications is an applications centric conceptual 3-turn superconducting RF ERL designed for electron based light source operations. Tunability of this light source is paramount, enabling a variety of applications from lithography to nuclear photonics and security. The DIANA ERL is anticipated to provide a high brilliance electron beam at a maximum energy of $\sim$1~\si{\giga\electronvolt} with small relative energy spread ($< 10^{-4}$) and transverse emittance ($< 1$~\si{\milli\meter}-\si{\milli\radian}) pushing the average beam current to the 10's~\si{\milli\ampere} frontier -- at the state-of-the-art for SRF ERL development. The project remains in an early conceptual phase; potential configurations for the machine and its applications are being investigated from a design choices standpoint and a user community, with scope across nuclear, particle, medical physics and material science, is being assembled.  
 
 The ERL will be designed using a dual linac approach, with an SRF linac placed in each straight of the racetrack style configuration. The DIANA SRF linacs may either be asymmetric or symmetric; subject to a full conceptual design process. Because DIANA is a 3-turn ERL with dual linacs, a total of 6 nominal energy electron bunches must be transported through the ERL recirculation beamlines in both accelerating and decelerating configurations. A drawing of the DIANA ERL is shown in Fig.~\ref{fig:DIANA_ERL_diagram} \textcolor{blue}{**outdated diagram as placeholder**}. Currently, separate transport optics - in which the accelerating and decelerating configuration  of an electron bunch of each nominal energy has a dedicated transport beamline - is under consideration. Separate transport is selected because it offers advantages towards a multi-colour light source facility with additional control over optics in each pass at the cost of more magnets and more challenging linac entrance and exit design. A more robust analysis and justification of these design choices is presented in Section~\ref{sec:DIANA_transport_optics_investigation}. 
 \begin{figure}[!h]
@@ -33,20 +33,23 @@ The ERL will be designed using a dual linac approach, with an SRF linac placed i
 \end{figure}
 Within the context of the wider accelerator community, this would be a national scale facility and is aligned to two projects in particular: a proposal for the UK-XFEL \cite{burnett2020uk} and as a solution for the Large Hadron--electron Collider (LHeC) \cite{valloni2013strawman,bruning2019exploring,holzer2021accelerator}. Within the wealth of accelerator solutions to a UK x-ray free electron laser presented in the UK-XFEL science case \cite{burnett2020uk}, a partial ERL solution is suggested with an ICS source. The UK-XFEL ICS source work is a precursor to the DIANA ICS source design as DIANA could be a potential demonstrator for the UK-XFEL. In terms of the LHeC project, the DIANA ERL could act as a proof-of-principle for the LHeC ERL alongside the existing PERLE accelerator \cite{angal2018perle}, demonstrating another design and transport approach.
 
-High brilliance electron beams on the \si{\giga\electronvolt}-scale can facilitate applications such as a high power extreme ultraviolet (EUV) FEL and a $\gamma$-ray inverse Compton scattering source. An EUV FEL source would have far-reaching consequences for semiconductor lithography providing an unparalleled source of 13.5~\si{\nano\meter} EUV radiation (or some harmonic thereof). Whereas a narrowband $\gamma$-ray inverse Compton scattering source driven by an ERL would have considerable impact upon nuclear physics and security, beyond the achievements and opportunities available at storage ring facilities such as HI$\gamma$S \cite{weller2009research}. Within the scope of the authors current work, the focus is on the development of the latter application as well a progress toward a conceptual design of the DIANA ERL. Hence, the following chapter excludes EUV FEL developments.
+High brilliance electron beams on the \si{\giga\electronvolt}-scale can facilitate applications such as a high power extreme ultraviolet (EUV) FEL and a $\gamma$-ray inverse Compton scattering source. Tunability within the electron bunch energy of the ERL is necessary for many light source experiements and must be central to the design philosophy of DIANA for useful operation of the ICS source and EUV FEL. An EUV FEL source would have far-reaching consequences for semiconductor lithography providing an unparalleled source of 13.5~\si{\nano\meter} EUV radiation (or some harmonic thereof). Whereas a high flux, narrowband  $\gamma$-ray inverse Compton scattering source driven by an ERL would have considerable impact upon nuclear physics and security, beyond the achievements and opportunities available at storage ring facilities such as HI$\gamma$S \cite{weller2009research}. Within the scope of the authors current work, the focus is on the development of the latter application as well a progress toward a conceptual design of the DIANA ERL. Hence, the following chapter excludes EUV FEL developments.
 
-A $\gamma$-ray ICS source at moderate energies ($E_{\gamma} < 5$~\si{\mega\electronvolt}) could enable applications such as nuclear resonance fluorescence (NRF) for inspection of nuclear fuel rods, waste studies and detection of clandestine nuclear material \cite{angell2015demonstration,bolind2015states} to high energy ($E_{\gamma} > 5$~\si{\mega\electronvolt}) applications such as nuclear photonics \cite{budker2021expanding} and medical isotope production \cite{habs2011production}. Here special consideration is given to the photo-nuclear production of medical isotopes. 
+The DIANA ICS source will be driven by the ERL electron bunch, with interaction points designed directly into the transport optics, unlike in the CBETA ICS, to produce a multi-colour $\gamma$-ray source taking advantage of the three nominal energies of the DIANA ERL. A high average power 4-mirror Fabry-Perot optical re-circulation cavity is intended to store the laser pulse and interact this at a high duty factor, producing a high flux and making use of the re-circulated nature of an electron bunch in an ERL. Through specification of the ERL with a focus toward $\gamma$-ray production and design of the interaction points using optimisation procedures developed in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}, the DIANA ICS source aims to produce narrowband ($< 1$\% \textit{rms} BW) radiation on the \si{\mega\electronvolt}-scale. 
+
+A $\gamma$-ray ICS source at moderate energies ($E_{\gamma} < 5$~\si{\mega\electronvolt}) could enable applications such as nuclear resonance fluorescence (NRF) for inspection of nuclear fuel rods, waste studies and detection of clandestine nuclear material \cite{angell2015demonstration,bolind2015states} to high energy ($E_{\gamma} > 5$~\si{\mega\electronvolt}) applications such as nuclear photonics \cite{budker2021expanding} and medical isotope production \cite{habs2011production}. The scattered photon energy regime of nuclear photonics lays in the $\sim$20~\si{\mega\electronvolt} regime and above - at the limitations in energy of the DIANA ICS source. However, the scattered photon energy of the DIANA ICS can be extended to $\sim$40~\si{\mega\electronvolt} through use of frequency doubled lasers such as the commonly used 2nd harmonic of a Nd:YAG ($\lambda =$532~\si{\nano\meter}) laser \cite{} \textcolor{blue}{**WHO SUGGESTS THIS?**}. Within the applications of a DIANA ERL driven ICS source, special consideration is given to the photo-nuclear production of medical isotopes. 
 
 \section{Transport Optics Investigation}
 \label{sec:DIANA_transport_optics_investigation}
 
 \section{ERL ICS Electron Beam and Optical Cavity Laser Pulse Parameters}
 \subsection{ERL ICS Electron Beam Parameters }
-The electron bunch parameters for the DIANA ERL ICS are presented in Table~\ref{tab:DIANA_electron_beam_design_parameters}. Baseline parameters are designed for the case of a small interaction point $\beta$-function and therefore a small electron spot size in order to maximise the uncollimated flux and brilliance of the ICS source. This is also useful for highlighting changes within source performance that only occur due to the varying kinetic energy of the electron bunch. A non-round beam optimised case is also shown for maximising the collimated flux into a narrow 0.5\% bandwidth, which is optimised using the simplex non-round beam methodology in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}. 
+The electron bunch parameters for the DIANA ERL ICS are presented in Table~\ref{tab:DIANA_electron_beam_design_parameters}. The DIANA electron bunch parameters target a high brilliance electron bunch for operation of a high quality ICS and FEL light source facility. The focus of the parameter set displayed here is on maximising the ICS output, however these parameters are broadly applicable to development of a high brilliance FEL, with some adjustment to the longitudinal parameters resulting from the necessity of coherence in FELs requiring short bunch lengths and high peak powers.    
 
-\begin{table}[H]
+\begin{table}[!h]
 \centering
-\caption{Electron beam parameters foreseen at the DIANA ICS source interaction point (IP). Baseline parameters assume a round transverse profile for the electron bunch whereas the optimised parameters are the result of a non-round beam optimisation \textcolor{blue}{what type?}. The given baseline parameters -- which assume the same $\beta^*$ at the IP -- allow a comparison of flux and bandwidth at different energies. The optimised values beneath those are designed to maximise the flux into a 0.5\% \textit{rms} scattered photon bandwidth through a trade-off of $\beta$-function of the electron bunch in each transverse plane and collimation angle.}
+\caption{Electron beam parameters foreseen at the DIANA ICS source interaction point (IP). Baseline parameters assume a round transverse profile for the electron bunch whereas the optimised parameters are the result of a simplex non-round beam optimisation. The given baseline parameters -- which assume the same $\beta^*$ at the IP -- allow a comparison of flux and bandwidth at different energies. The optimised values beneath those are designed to maximise the flux into a 0.5\% \textit{rms} scattered photon bandwidth through a trade-off of $\beta$-function of the electron bunch in each transverse plane and collimation angle.}
+\vspace{3mm}
 \begin{threeparttable}
 \begin{tabular}{lccccc}
 \hline\hline
@@ -57,10 +60,10 @@ Injection Energy, $E_{\mathrm{inj}}$ & \multicolumn{3}{c}{7} & \si{\mega\electro
 \tnote{$\dagger$}~Electron kinetic energy, $E_e$ & 362 & 717 & 1072 & \si{\mega\electronvolt}\\
 Harmonic Frequency, $f$ & \multicolumn{3}{c}{125} & \si{\mega\hertz}\\
 Bunch charge, $e N_e$ & \multicolumn{3}{c}{100} & \si{\pico\coulomb} \\
-Beam current, $I$ & \multicolumn{3}{c}{12.5} & \si{\mill\ampere} \\
+Avg. beam current, $I$ & \multicolumn{3}{c}{12.5} & \si{\milli\ampere} \\
 Transverse normalised \textit{rms} emittance, $\epsilon_{N}$ & \multicolumn{3}{c}{0.5} & \si{\milli\meter}-\si{\milli\radian}\\
 \tnote{$\sharp$}~\textit{rms} bunch length, $\Delta \tau$ & \multicolumn{3}{c}{0.9 (3)} & \si{\milli\meter} (\si{\pico\second})\\
-Bunch spacing, $t_{b}$ & \multicolumn{3}{c}{10} & \si{\pico\second} \\
+Bunch spacing, $t_{b}$ & \multicolumn{3}{c}{8} & \si{\nano\second} \\
 RF frequency, $f_{RF}$ & \multicolumn{3}{c}{750} & \si{\mega\hertz} \\
 \tnote{*}~Absolute energy spread, $\Delta E_{e}$ & \multicolumn{3}{c}{$\sim$10} & \si{\kilo\electronvolt} \\ 
 \tnote{*}~Relative energy spread, $\left(\Delta E_{e}/E_{e}\right)$ & \multicolumn{3}{c}{$\sim10^{-5}$} & \\
@@ -85,13 +88,41 @@ Collimation Angle, $\theta_{\mathrm{col}}$ & 0.180 & 0.091 & 0.061 & \si{\milli\
 \label{tab:DIANA_electron_beam_design_parameters}
 \end{table}
 
+Baseline parameters are designed in order to maximise the uncollimated flux and brilliance of the ICS source. Therefore, the case of a small interaction point $\beta$-function, which is kept constant, is used to produce a small electron spot size at the IP. The constant $\beta$-function in the baseline case is also useful for highlighting changes within the spectral output that characterises source performance, allowing effects due to the varying kinetic energy of the electron bunch to be disentangled. A non-round beam optimised case is also shown for maximising the collimated flux into a narrow 0.5\% bandwidth, which is optimised using the simplex non-round beam methodology in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}. The 0.5\% optimised \textit{rms} bandwidth case is designed to show the ability of DIANA to produce high flux into a narrow bandwidth, required by some nuclear physics experiments, and investigate the difference between ICS source configurations required for both approaches. 
+
+\textcolor{blue}{**JUSTIFY THE PARAMETERS**}
+% electron bunch energy
+The nominal electron kinetic energies of the DIANA 3-turn ERL are set at 362, 717, 1072~\si{\mega\electronvolt} with a variation in energy per turn of 355~\si{\mega\electronvolt} due to acceleration in the dual linacs from injection of the electron bunch at 7~\si{\mega\electronvolt}. A maximum electron energy of 1072~\si{\mega\electronvolt} is selected as, with a Nd:YAG laser, this allows production of 20~\si{\mega\electronvolt} $\gamma$-rays via inverse Compton scattering which is within the realms of nuclear photonics experiements\cite{} \textcolor{blue}{**NEED SOME REFERENCES**} at the frontier on nuclear physics. The 1072~\si{\mega\electronvolt} maximum energy also reflects the limitations imposed upon the ERL by both physical size and CSR effects. For example, assuming a 20~\si{\mega\volt}/\si{\meter} accelerating electric field \cite{ben2006review}, symmetric linacs and an 80\% filling factor (assumed from CBETA \cite{hoffstaetter2017cbeta}) the length of the linacs would be required to be $\sim$11~\si{\meter}, with the complexities of transport and subsystems this would be an accelerator with $\sim$100's~\si{\meter} circumference. Power loss via CSR would also become a problem at the \si{\giga\electronvolt}-scale, with the limitations of strongly bending arc sections. \textcolor{blue}{**THIS NEEDS SOME WORK**} Because of the maximum electron energy requirements, the nominal energies of the previous turns are fixed at 362~\si{\mega\electronvolt} and 717~\si{\mega\electronvolt}. However, the first turn electron energy is advantageous as this produces scattered photon energies within the energy range for nuclear resonance fluorescence experiments.          
+
+% Injection energy
+The injection energy of the DIANA ERL electron bunches is 7~\si{\mega\electronvolt} because this...
+\textcolor{blue}{Ask Pete!}
+
+% Harmonic frequency
+The bunch repetition frequency of DIANA is set to 125~\si{\mega\hertz}, 1/6th of the RF frequency of the linac at 750~\si{\mega\hertz}, therefore as we have 3-turns only half of the RF buckets are filled. However, we are further bound by the requirement that the laser pulse and electron bunch must interact at the same rate. To satisfy this for a single pulse optical re-circulation cavity and electron bunch must have the same frequency, which means we could operate the laser pulse re-circulation cavity at a maximum bunch rate of 250~\si{\mega\hertz} or any harmonic thereof. It appears that the ideal repetition frequency of both systems is 125~\si{\mega\hertz} driven by the laser pulse optical re-circulation cavity limitations mentioned in the next section. Obviously, the bunch repetition frequency sets the bunch spacing ($t_{b}=1/f$) in the ERL.
+
+% Beam Current (Bunch Charge and REP FREQ dependence)
+Average current of the electron bunch in DIANA is 12.5~\si{\milli\ampere}, this is reliant upon the bunch charge and the bunch repetition frequency. Average current is fundamentally limited bu collective effects such as CSR and beam break-up instabilities arising during transport in the ERL, as in CBETA. \textcolor{blue}{Justify 12.5~\si{\milli\ampere}!}
+
+% Transverse Emittance
+A small transverse emittance of 0.5~\si{\milli\meter}--\si{\milli\radian} is proposed for the DIANA ERL. Small emittance is necessary for high-brilliance beams and therefore it is a feature of most high brilliance light source projects. Cornell University has previously demonstrated a world-leading transverse emittance of 0.3~\si{\milli\meter}--\si{\milli\radian} from a continuous wave photoinjector \cite{bartnik2015operational}, this photoinjector was applied within the CBETA project, so our specified transverse emittance is well within the state-of-the-art.
+
+% Bunch length
+Very short bunch lengths, on a sub-picosecond scale, are possible in the DIANA ERL however this is only desirable in field of ICS sources if the time duration of the radiation is critical for applications. Unlike in FEL applications, where bunch compression would be required for a high peak power electron bunches and to achieve coherent radiation output. Otherwise, the easily attainable picosecond domain is ideal for DIANA as the bunch length of the electron bunch is the same order of magnitude as commercial laser pulse lengths. When the bunch length and the laser pulse length are in the picosecond, domain the reduction in luminosity due to the hourglass effect (Eq.~\ref{eq:furman_hourglass_reduction}) is small, though an angular crossing still results in a modest reduction in flux -- minimising bunch length is a poor way to mitigate this. The value presented for the DIANA ERL is based upon the bunch length within the ASML associated ERL-FEL \cite{akkermans2017compact} with a 3$\sigma$ cut-off, as our discussion of transport options has resulted in the choice of similar optics to this accelerator in a similar electron energy scale.   
+
+% RF Frequency
+The RF frequency has been specified at 750~\si{\mega\electronvolt}... \textcolor{blue}{Why?}
+
+% Bunch Energy Spread
+A small electron bunch energy spread is necessary for the production of narrowband radiation from both an ICS source and a FEL. The bandwidth of the spectral output of an ICS source is directly proportional to the energy spread of the of the electron bunch. Therefore, it is necessary to minimise the energy spread of the electron bunch for light source operations. The energy spread in Table~\ref{tab:DIANA_electron_beam_design_parameters} is based upon... \textcolor{blue}{**WHERE DOES THIS COME FROM?**}
+
 \subsection{Optical Cavity and Laser Pulse Parameters}
 
 The envisioned parameters of the laser pulse provided by a Nd:YAG ($\lambda = 1064$~\si{\nano\meter}) laser and a four mirror Fabry-Perot optical cavity for use in the DIANA ICS source are shown in Table~\ref{tab:DIANA_laser_pulse_design_parameters}. Again, an Nd:YAG laser is selected for its picosecond domain and narrow spectral bandwidth. Only a single pulse is recirculated within the optical cavity which is designed to be operated with a fixed \textit{rms} laser pulse waist of radius 25~\si{\micro\meter}. A crossing angle of 5\si{\degree} must be imposed due to the geometry considerations of such a source.
 
 These laser pulse parameters are based upon the demonstration of the Fabry-Perot optical cavity in the cERL ICS experiment \cite{akagi2016narrow}. However, they have been modified for a reduced 125~\si{\mega\hertz} repetition rate with an increased pulse energy of 100~\si{\micro\joule} resulting in an increased average stored power of 12.5~\si{\kilo\watt} recirculated in the optical cavity. Therefore, the parameters for the DIANA ICS source are slightly less conservative than those proposed for the CBETA ICS source in Table~\ref{tab:CBETA_laser_pulse_design_parameters} though the MuCLS demonstration of 70~\si{\kilo\watt} \cite{eggl2016munich} affords credibility to these design parameters.
 
-\begin{table}[H]
+\begin{table}[!h]
 \centering
 \caption{Nd:YAG Gaussian laser pulse parameters at the CBETA ICS IP. The interacted laser pulse is produced via a Nd:YAG infrared laser and re-circulated in a bow-tie Fabry-Perot optical cavity.}
 \begin{tabular}{lcc}
@@ -106,7 +137,7 @@ Repetition rate, $f$ & 125 & \si{\mega\hertz}\\
 Spot size at the IP, $\sigma_\textrm{laser}$ & 25 & \si{\micro\meter}\\
 Crossing angle, $\phi$ & 5 & deg \\
 Pulse length, $\tau_{\mathrm{laser}}$  & 10 & \si{\pico\second}\\
-Relative energy spread, $\Delta E_\textrm{laser}/E_\textrm{laser}$ & $\times 10^{-5}$ &   \\
+Relative energy spread, $\Delta E_\textrm{laser}/E_\textrm{laser}$ & $\sim10^{-5}$ &   \\
 \hline\hline
 \end{tabular}
 \label{tab:DIANA_laser_pulse_design_parameters}
@@ -116,7 +147,7 @@ Relative energy spread, $\Delta E_\textrm{laser}/E_\textrm{laser}$ & $\times 10^
 
 The anticipated spectral output of the DIANA ICS source, using the electron bunch and laser pulse parameters specified in Tables~\ref{tab:DIANA_electron_beam_design_parameters},~\ref{tab:DIANA_laser_pulse_design_parameters}, is presented in Table~\ref{tab:DIANA_spectral_output}. 
 
-\begin{table}[H]
+\begin{table}[!h]
 \centering
 \begin{tabular}{lcccc}
 \hline\hline
