@@ -118,11 +118,11 @@ A small electron bunch energy spread is necessary for the production of narrowba
 
 \subsection{Optical Cavity and Laser Pulse Parameters}
 
-The drive laser of the inverse Compton scattering source for DIANA is re-circulated, meaning a low pulse energy laser pulse is repetitively interacted within an optical cavity consisting of several high reflectivity mirrors. The re-circulation approach is in contrast to the use of a high power laser, such as a Joule-scale short-pulse Ti:Sa ($\lambda = 800--1100$~\si{\nano\meter}) laser which has a higher intensity and therefore produced more photons per interaction. However  for DIANA ICS, the re-circulated approach is selected to avoid non-linear ICS effects such as ponderomotive broadening of the $\gamma$-ray spectral bandwidth and to take full advantage of the high repetition rate of ERLs which high powered laser systems can't operate at.      
+% Why re-circ + Nd:YAG?
+The drive laser, a Nd:YAG ($\lambda = 1064$~\si{\nano\meter}) laser, of the inverse Compton scattering source for DIANA is re-circulated, meaning a low pulse energy laser pulse is repetitively interacted within an optical cavity consisting of several high reflectivity mirrors. The re-circulation approach is in contrast to the use of a high power laser, such as a Joule-scale short-pulse Ti:Sa ($\lambda = 800--1100$~\si{\nano\meter}) laser, which has a higher intensity and therefore produced more photons per interaction at the cost of potential non-linear effects. Laser choice must also account for the spectral bandwidth of the laser which is necessary for a narrow bandwidth source, here Nd:YAG lasers typically have smaller spectral bandwidth than Ti:Sa and other high power laser systems. Consequently, for DIANA ICS, the re-circulated approach is selected to avoid non-linear ICS effects such as ponderomotive broadening of the $\gamma$-ray spectral bandwidth, to keep the spectral bandwidth small overall and to take full advantage of the high repetition rate of ERLs, which high powered laser systems can't operate at.      
 
-Envisioned parameters of the laser pulse provided by a Nd:YAG ($\lambda = 1064$~\si{\nano\meter}) laser and a four mirror Fabry-Perot optical cavity for use in the DIANA ICS source are shown in Table~\ref{tab:DIANA_laser_pulse_design_parameters}. Again, an Nd:YAG laser is selected for its picosecond domain and narrow spectral bandwidth. Only a single pulse is recirculated within the optical cavity which is designed to be operated with a fixed \textit{rms} laser pulse waist of radius 25~\si{\micro\meter}. A crossing angle of 5\si{\degree} must be imposed due to the geometry considerations of such a source.
-
-These laser pulse parameters are based upon the demonstration of the Fabry-Perot optical cavity in the cERL ICS experiment \cite{akagi2016narrow}. However, they have been modified for a reduced 125~\si{\mega\hertz} repetition rate with an increased pulse energy of 100~\si{\micro\joule} resulting in an increased average stored power of 12.5~\si{\kilo\watt} recirculated in the optical cavity. Therefore, the parameters for the DIANA ICS source are slightly less conservative than those proposed for the CBETA ICS source in Table~\ref{tab:CBETA_laser_pulse_design_parameters} though the MuCLS demonstration of 70~\si{\kilo\watt} \cite{eggl2016munich} affords credibility to these design parameters.
+% 4-mirror + Nd:YAG selection 
+Envisioned parameters of the laser pulse provided by a Nd:YAG ($\lambda = 1064$~\si{\nano\meter}) laser and a four mirror Fabry-Perot optical cavity for use in the DIANA ICS source are shown in Table~\ref{tab:DIANA_laser_pulse_design_parameters}. A 4 mirror cavity is selected over a 2 mirror design for improved stability of operation \textcolor{blue}{**WHY IS THIS BETTER?**}. As in the CBETA ICS source (Chapter~\ref{CBETA_Inverse_Compton_Scattering_Source_Design}), an Nd:YAG laser is selected for its picosecond domain and narrow spectral bandwidth. Only a single pulse is recirculated within the optical cavity which is designed to be operated with a fixed \textit{rms} laser pulse waist of radius 25~\si{\micro\meter}. A crossing angle of 5\si{\degree} must be imposed due to the geometry considerations of the 4 mirror cavity.
 
 \begin{table}[!h]
 \centering
@@ -139,15 +139,31 @@ Repetition rate, $f$ & 125 & \si{\mega\hertz}\\
 Spot size at the IP, $\sigma_\textrm{laser}$ & 25 & \si{\micro\meter}\\
 Crossing angle, $\phi$ & 5 & deg \\
 Pulse length, $\tau_{\mathrm{laser}}$  & 10 & \si{\pico\second}\\
-Relative energy spread, $\Delta E_\textrm{laser}/E_\textrm{laser}$ & $\sim10^{-5}$ &   \\
+Spectral bandwidth (\textit{rms}), $\Delta E_\textrm{laser}/E_\textrm{laser}$ & $\sim10^{-5}$ &   \\
 \hline\hline
 \end{tabular}
 \label{tab:DIANA_laser_pulse_design_parameters}
 \end{table}
 
+% Justification of cavity + stored power
+These laser pulse parameters are based upon the demonstration of the Fabry-Perot optical cavity in the cERL ICS experiment \cite{akagi2016narrow}. However, they have been modified for a reduced 125~\si{\mega\hertz} repetition rate with an increased pulse energy of 100~\si{\micro\joule} resulting in an increased average stored power of 12.5~\si{\kilo\watt} recirculated in the optical cavity. Therefore, the parameters for the DIANA ICS source are slightly less conservative than those proposed for the CBETA ICS source in Table~\ref{tab:CBETA_laser_pulse_design_parameters} though the MuCLS demonstration of 70~\si{\kilo\watt} \cite{eggl2016munich} affords credibility to these design parameters. The DIANA optical re-circulation cavity also has an  stored power a factor of $\sim50\times$ lower than the state-of-the-art 670~\si{\kilo\watt} average stored power demonstrated by Carstens et al \cite{carstens2014megawatt}, therefore these parameters remain conservative. 
+
+% Justification of rep freq
+A repetition frequency of 125~\si{\mega\hertz} results in a cavity path length of 2.4~\si{\meter}, which is tolerable for misalignment errors and within the same scale as the 9.2~\si{\meter} MuCLS optical re-circulation cavity \cite{eggl2016munich}. The laser re-circulation cavity must also remain small so electron bunch focusing optics can achieve a small spot size at the interaction point. Another limitation is mirror heating and damage due to the high peak power per unit area of the laser pulse impinging upon the mirrors within the Fabry-Perot cavity. The peak laser power per unit area upon the cavity mirrors is indirectly related to the repetition frequency as the spot size on the cavity mirrors is related to the path length of the optical cavity and hence the repetition rate.
+
+% Justification of Spot size
+A \textit{rms} spot size (radius) on the order of 10's~\si{\micro\meter} is common within ICS sources \cite{} \textcolor{blue}{**COLLECT THESE**}, the waist achieved at cERL ICS (20~\si{\micro\meter}/30~\si{\micro\meter}) \cite{akagi2016narrow} is within the specification here. Using the same laser type (Nd:YAG), with a similar 4 mirror cavity design replication of the cERL ICS laser pulse waist should be possible.
+
+
+% Justification of crossing angle
+A crossing angle is imposed in order to prevent the generated gamma rays from impinging on cavity mirrors and allowing the electron bunch an unobstructed transit through the interaction region. Whilst head-on interactions are possible using strong bending interaction regions that can introduce to the IP and remove the electron bunch within the mirror spacing, as is the case in MuCLS \cite{eggl2016munich}, or via mirrors with holes, which reduces gain in optical re-circulation cavities, these may not be advantageously implemented within ERLs. A crossing angle within a 2--12\si{\degree} range is reasonable, whilst being tolerable for integration of cavity components \cite{variola2011luminosity}. The DIANA ICS uses a 5\si{\degree} crossing angle because the envisioned cavity is based upon the cERL ICS \cite{akagi2016narrow}. 
+
+% Justification of the spectral bandwidth
+The spectral bandwidth... \textcolor{blue}{**THIS IS TRICKY**}
+
 \section{ICS Source Spectral Output}
 
-The anticipated spectral output of the DIANA ICS source, using the electron bunch and laser pulse parameters specified in Tables~\ref{tab:DIANA_electron_beam_design_parameters},~\ref{tab:DIANA_laser_pulse_design_parameters}, is presented in Table~\ref{tab:DIANA_spectral_output}. 
+The anticipated spectral output of the DIANA ICS source, using the electron bunch and laser pulse parameters specified in Tables~\ref{tab:DIANA_electron_beam_design_parameters},~\ref{tab:DIANA_laser_pulse_design_parameters}, is presented in Table~\ref{tab:DIANA_spectral_output}. In Table~\ref{tab:DIANA_spectral_output} spectral output parameters are shown for both the 0.5\% \textit{rms} bandwidth optimised case and the baseline case for small electron bunch spot size. 
 
 \begin{table}[!h]
 \centering
@@ -172,6 +188,22 @@ Collimated flux  & 1.30$\times 10^{9}$ & 1.29$\times 10^{9}$ & 1.29$\times 10^{9
 \end{tabular}
 \label{tab:DIANA_spectral_output}
 \end{table}
+
+% what energies are possible + tunability
+Table~\ref{tab:DIANA_spectral_output} shows the DIANA ICS source is capable of producing $\gamma$-rays up to 20.11~\si{\mega\electronvolts}. The first two turns produce 2.33 and 9.06~\si{\mega\electronvolt} $\gamma$-rays however, depending on the tunability of the electron bunch and through variation of the detection angle (due to the energy--angle correspondence), scattered photon energies $< 20.11$~\si{\mega\electronvolt} may be accessible. Tunable $\gamma$-ray energy production will be a focus for future DIANA design work, this is highly dependent on the transport design for the ERL. 
+
+% Why is flux, spec den, avg brill good 
+World-class uncollimated flux, spectral density and average brilliance are available from the DIANA ICS source due to the interaction of a high brilliance, high repetition rate electron beam with a high repetition rate re-circulated laser pulse. A comparison of the DIANA ICS source to other designed and operated ICS sources on the \si{\mega\electronvolt}-scale in terms of scattered photon energies and flux is presented in Section~\ref{sec:gamma_ICS_comparison}. The re-circulated nature of this source allows the advantage of high intensity Joule-scale lasers to be overcome delivering a high average power source of $\gamma$-rays. 
+\textcolor{blue}{**ADD TO THIS**}
+
+% Why is peak power poor?
+Peak power of the DIANA ICS source is reduced in the DIANA ICS source in comparison to other ICS sources \cite{} which typically target $10^{20}$~ph/\si{\second}~\si{\milli\meter}$^{2}$--\si{\milli\radian}$^{2}$~0.1\% BW because the focus of DIANA is producing $\gamma$-rays at a high repetition rate and therefore the focus is on high average brilliance. Modest peak power is due to the low energy of the interacted laser pulse ($E_{\mathrm{pulse} = 100}$~\si{\micro\joule}) and the moderate picosecond durations of the laser pulse and electron bunch. High peak brilliance ICS sources such as \textcolor{blue}{**NAME ONE**} typically target femtosecond electron bunch and laser pulse lengths with Joule-scale laser pulse energies. 
+
+% Bandwidth + minimum theoretical bandwidth
+
+% Narrowband optimised numbers
+
+
 
 \begin{figure}[!h]
 \centering
@@ -201,7 +233,11 @@ Collimated flux  & 1.30$\times 10^{9}$ & 1.29$\times 10^{9}$ & 1.29$\times 10^{9
 \label{fig:DIANA1072_comparison_optimisation}
 \end{figure}
 
+% size at the collimator
+At a collimator placed 10~\si{\meter} downstream of the interaction point the spot size (radius) of the produced radiation is of the magnitude $\sim0.1$~\si{\milli\meter}, delivering a pencil beam of $\gamma$-rays for experimental use.
+
 \section{$\gamma$-ray ICS Source Comparison}
+\label{sec:gamma_ICS_comparison}
 
 Inverse Compton scattering sources for production of $\gamma$-rays have been developed and designed worldwide. Differing approaches for the production of $\gamma$-rays have been trialed such as variations on the type of accelerators and incident photon sources used. For example, the HI$\gamma$S source uses radiation produced from a free electron laser to achieve high energy photon production up to 100~\si{\mega\electronvolt}. The most relevant facilities for comparison to the DIANA ICS are tabulated in Table~\ref{tab:gammaray_ICS_comparison}, this presents a combination of operating facilities and recently designed sources. 
 
