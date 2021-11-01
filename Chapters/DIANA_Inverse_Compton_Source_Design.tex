@@ -35,7 +35,7 @@ Within the context of the wider accelerator community, this would be a national 
 
 High brilliance electron beams on the \si{\giga\electronvolt}-scale can facilitate applications such as a high power extreme ultraviolet (EUV) FEL and a $\gamma$-ray inverse Compton scattering source. Tunability within the electron bunch energy of the ERL is necessary for many light source experiements and must be central to the design philosophy of DIANA for useful operation of the ICS source and EUV FEL. An EUV FEL source would have far-reaching consequences for semiconductor lithography providing an unparalleled source of 13.5~\si{\nano\meter} EUV radiation (or some harmonic thereof). Whereas a high flux, narrowband  $\gamma$-ray inverse Compton scattering source driven by an ERL would have considerable impact upon nuclear physics and security, beyond the achievements and opportunities available at storage ring facilities such as HI$\gamma$S \cite{weller2009research}. Within the scope of the authors current work, the focus is on the development of the latter application as well a progress toward a conceptual design of the DIANA ERL. Hence, the following chapter excludes EUV FEL developments.
 
-The DIANA ICS source will be driven by the ERL electron bunch, with interaction points designed directly into the transport optics, unlike in the CBETA ICS, to produce a multi-colour $\gamma$-ray source taking advantage of the three nominal energies of the DIANA ERL. A high average power 4-mirror Fabry-Perot optical re-circulation cavity is intended to store the laser pulse and interact this at a high duty factor, producing a high flux and making use of the re-circulated nature of an electron bunch in an ERL. Through specification of the ERL with a focus toward $\gamma$-ray production and design of the interaction points using optimisation procedures developed in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}, the DIANA ICS source aims to produce narrowband ($< 1$\% \textit{rms} BW) radiation on the \si{\mega\electronvolt}-scale. 
+The DIANA ICS source will be driven by the ERL electron bunch, with interaction points designed directly into the transport optics, unlike in the CBETA ICS, to produce a multi-colour $\gamma$-ray source taking advantage of the three nominal energies of the DIANA ERL. A high average power 4-mirror Fabry-Perot optical re-circulation cavity is intended to store the laser pulse and interact this at a high duty factor, producing a high flux and making use of the re-circulated nature of an electron bunch in an ERL. A variable aperture circular collimator placed 10~\si{\meter} from the interaction point will then select the user-desired portion of the spectral output for narrowband operation, making use of the energy--angle correspondence  Through specification of the ERL with a focus toward $\gamma$-ray production and design of the interaction points using optimisation procedures developed in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}, the DIANA ICS source aims to produce narrowband ($< 1$\% \textit{rms} BW) radiation on the \si{\mega\electronvolt}-scale. 
 
 A $\gamma$-ray ICS source at moderate energies ($E_{\gamma} < 5$~\si{\mega\electronvolt}) could enable applications such as nuclear resonance fluorescence (NRF) for inspection of nuclear fuel rods, waste studies and detection of clandestine nuclear material \cite{angell2015demonstration,bolind2015states} to high energy ($E_{\gamma} > 5$~\si{\mega\electronvolt}) applications such as nuclear photonics \cite{budker2021expanding} and medical isotope production \cite{habs2011production}. The scattered photon energy regime of nuclear photonics lays in the $\sim$20~\si{\mega\electronvolt} regime and above - at the limitations in energy of the DIANA ICS source. However, the scattered photon energy of the DIANA ICS can be extended to $\sim$40~\si{\mega\electronvolt} through use of frequency doubled lasers such as the commonly used 2nd harmonic of a Nd:YAG ($\lambda =$532~\si{\nano\meter}) laser \cite{} \textcolor{blue}{**WHO SUGGESTS THIS?**}. Within the applications of a DIANA ERL driven ICS source, special consideration is given to the photo-nuclear production of medical isotopes. 
 
@@ -199,18 +199,30 @@ World-class uncollimated flux, spectral density and average brilliance are avail
 % Why is peak power poor?
 Peak power of the DIANA ICS source is reduced in the DIANA ICS source in comparison to other ICS sources \cite{} which typically target $10^{20}$~ph/\si{\second}~\si{\milli\meter}$^{2}$--\si{\milli\radian}$^{2}$~0.1\% BW because the focus of DIANA is producing $\gamma$-rays at a high repetition rate and therefore the focus is on high average brilliance. Modest peak power is due to the low energy of the interacted laser pulse ($E_{\mathrm{pulse} = 100}$~\si{\micro\joule}) and the moderate picosecond durations of the laser pulse and electron bunch. High peak brilliance ICS sources such as \textcolor{blue}{**NAME ONE**} typically target femtosecond electron bunch and laser pulse lengths with Joule-scale laser pulse energies. 
 
+% size at the collimator
+At a collimator placed 10~\si{\meter} downstream of the interaction point the spot size (radius) of the produced radiation is of the magnitude $\sim0.1$~\si{\milli\meter}, delivering a pencil beam of $\gamma$-rays for experimental use.
+
 % Bandwidth + minimum theoretical bandwidth
+A minimum theoretical bandwidth can be constructed by taking the limit of a small collimation angle ($\theta_{\mathrm{col}}\rightarrow 0$) and large $\beta$-functions ($\beta_{x/y}\rightarrow\infty$) to minimise the emittance (Eq.~\ref{eq:emittance_term}) and collimation (Eq.~\ref{eq:}) terms for the DIANA cases. In reality, these parameters are easily adjustable via the collimator and IP focusing design until they are negligible. Using electron bunch parameters specified in Table~\ref{tab:DIANA_electron_beam_design_parameters} and laser pulse parameters specified in Table~\ref{tab:DIANA_laser_pulse_design_parameters} the minimum theoretical \textit{rms} bandwidth for the DIANA ICS is 0.0022\% i.e 2.2$\times 10^{-5}$. However, due to the assumption of very small laser pulse and energy spreads within this source design, this estimate is likely to be optimistic -- the figures quoted are order of magnitude estimates. 
 
 % Narrowband optimised numbers
+The flux around the minimum theoretical bandwidth is also very small, on the order of single photon generations, which is not conducive to experimentation. Typically in ICS sources, the collimation term and emittance term of the bandwidth are dominant when achieving a high flux source. Therefore, to determine a balance betweeen small bandwidth and high flux, it is necessary to select a bandwidth to quantify narrow bandwidth performance. A 0.5\% \textit{rms} bandwidth has been selected because this is within the $<1$\% \textit{rms} bandwidth limit designated as narrow bandwidth within this work, and 0.5\% \texit{rms} BW is of the order of the ELI-NP-GBS $\gamma$-ray source \cite{} \textcolor{blue}{**GET REFERENCES**} (0.5\% \textit{FWHM} BW) which is the current flagship narrowband $\gamma$-ray production facility under construction in Europe. 
 
+The suite of DIANA ICS sources have been optimised for a 0.5\% \textit{rms} bandwidth using the non-round beam simplex optimisation method described in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}. The optimised electron beam interaction parameters and collimation parameters shown in Table~\ref{tab:DIANA_electron_beam_design_parameters}. Laser pulse parameters remain unchanged from Table~\ref{tab:DIANA_laser_pulse_design_parameters}. The DIANA ICS source is expected to deliver a collimated flux of 1.30--1.29$\times 10^{9}$~ph/\si{\second} in a 0.5\% \textit{rms} bandwidth, with variation due to the increase in the recoil parameter with electron bunch energy. Furthermore, to characterise narrowband operation of the DIANA ICS sources a series of tuning curves have been devised, based on optimisation methods in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}, to show the maximum collimated flux as a function of bandwidth within the narrow bandwidth ($<1$\% \tetxit{rms} BW) regime. 
 
-
+% Round beam tuning curves
+Round-beam tuning curves for the three nominal energies of the DIANA ICS sources (362, 717, 1072~\si{\mega\electronvolt}) are shown in Fig~\ref{fig:DIANA_RB_comparison}, where both the collimated flux--\textit{rms} bandwidth pareto fronts and $\beta$-function at the IP against collimation angle parameter space pareto fronts are shown.  
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/DIANA_Inverse_Compton_Source_Design/DIANA_Tuning_Curve_Opt/DIANARBplot.pdf}
 \caption{Round beam optimisation comparison at the three nominal energies 362~\si{\mega\electronvolt} (blue), 717~\si{\mega\electronvolt} (red), 1072~\si{\mega\electronvolt} (orange) of the DIANA ICS source. Left: Optimised tuning curves of the $\beta^{*}$-function at the IP (same in both planes) against the collimation angle for each nominal electron energy. Right: collimated flux as a function of the \textit{rms} bandwidth of the DIANA ICS source at each nominal energy.}
 \label{fig:DIANA_RB_comparison}
 \end{figure}
+
+% What part of the Fcol-BW & beta-theta tuning curve can be tuned in DIANA?
+% Where does narrowband operation lie on beta-theta?
+% reason for the variation with energy?
+% minimum bandiwdth point shown on plot
 
 \begin{figure}[!h]
 \centering
@@ -233,8 +245,7 @@ Peak power of the DIANA ICS source is reduced in the DIANA ICS source in compari
 \label{fig:DIANA1072_comparison_optimisation}
 \end{figure}
 
-% size at the collimator
-At a collimator placed 10~\si{\meter} downstream of the interaction point the spot size (radius) of the produced radiation is of the magnitude $\sim0.1$~\si{\milli\meter}, delivering a pencil beam of $\gamma$-rays for experimental use.
+
 
 \section{$\gamma$-ray ICS Source Comparison}
 \label{sec:gamma_ICS_comparison}
