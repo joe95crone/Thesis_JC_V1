@@ -258,8 +258,7 @@ Again, the optimisation methods outlined in Chapter~\ref{Optimisation_and_Charac
 \label{fig:DIANA1072_comparison_optimisation}
 \end{figure}
 
-\textcolor{blue}{**write about optimisation**}
-The suite of optimisations for the 1072~\si{\mega\electronvolt} nominal electron bunch energy, as shown in Fig~\ref{fig:DIANA1072_comparison_optimisation}, are again similar to the optimisations at the two lower nominal electron bunch energies. In the collimated flux--\textit{rms} bandwidth Pareto front, we see more anomalous points which is also visible in the stratification of the simplex points in the parameter space plots. Overall, we see good agreement again between the genetic algorithm method and the simplex method for the 1072~\si{\mega\electronvolt} ICS optimisations. The genetic algorithm results in the $\beta_{x}^{*}$--$\theta_{\mathrm{col}}$ parameter space plot however, the increase in stratification may be artificial and may be amplified because of the increasing size of the $\beta$-functions in each plane leading to an amplification in the variation between value.    
+The suite of optimisations for the 1072~\si{\mega\electronvolt} nominal electron bunch energy, as shown in Fig~\ref{fig:DIANA1072_comparison_optimisation}, are again similar to the optimisations at the two lower nominal electron bunch energies. In the collimated flux--\textit{rms} bandwidth Pareto front, we see more anomalous points which is also visible in the stratification of the simplex points in the parameter space plots. Overall, we see good agreement again between the genetic algorithm method and the simplex method for the 1072~\si{\mega\electronvolt} ICS optimisations. The genetic algorithm results in the $\beta_{x}^{*}$--$\theta_{\mathrm{col}}$ parameter space plot show large variation however, the increase in stratification may be artificial as this effect could be amplified because of the increasing size of the $\beta$-functions in each plane leading to an amplification in the variation between values.    
 
 The performance of a suite of ICS sources driven by the conceptual DIANA 3-turn ERL has been characterised by spectrum plots within a 0.5\% \textit{rms} bandwidth for each nominal energy using the ICARUS code, as described in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}. Spectra for ICS sources at 0.5\% \textit{rms} bandwidth are shown in Fig~\ref{fig:}.
 
@@ -288,18 +287,29 @@ NewSUBARU \cite{utsunomiya2015gamma} & Storage Ring & 5--40 & $3\times 10^{7}$ \
 %T-REX & Linac & & \\
 Pan et al CBS\tnote{*} \cite{pan2019design} & Storage Ring & 4--10 & 0.14--3.87$\times 10^{12}$ \\ 
 Super-ACO \cite{nutarelli1998gamma} & Storage Ring & 13 & $5\times10^{6}$ \\
-HI$\gamma$S\tnote{$\dagger$} ~\cite{weller2009research} & Storage Ring & 1--100 & 5$\times 10^{7}$--5$\times 10^{8}$ \\
+HI$\gamma$S \cite{weller2009research} & Storage Ring & 1--100 & 5$\times 10^{7}$--5$\times 10^{8}$ \\
 \hline\hline
 \end{tabular}
 \begin{tablenotes}
 \item[*]{Denotes design parameters for sources which are not yet demonstrated.}
-\item[$\dagger$]{The HI$\gamma$S source is capable of scattered photon energies up to 100~\si{\mega\electronvolt}. }
 \end{tablenotes}
 \end{threeparttable}
 \label{tab:gammaray_ICS_comparison}
 \end{table}
 
-As is evident from Table~\ref{tab:gammaray_ICS_comparison}, in-depth consideration of an ERL as the driver of an inverse Compton scattering source for production of $\gamma$-rays is limited. Predominantly ICS $\gamma$-ray production is driven by storage ring methods with the existing facilities such as NewSUBARU and HI$\gamma$S sources utilising existing synchrotron facilities. 
+% How does DIANA measure up? ENERGY
+
+
+% How does DIANA measure up? FLUX
+Through examination of Table~\ref{tab:gammaray_ICS_comparison}, it is possible to see that DIANA is of the same order in flux and scattered photon energy as other world-leading source designs such as those by Pan et al and the ELI-NP-VEGA collaboration. A flux of 6.08$\times 10^{11}$ph/\si{\second} is bested only by the Compton Back-scattering Source (CBS) by Pan et al \cite{pan2019design} which has a factor of 2 larger laser pulse energy, where the DIANA ICS source is conservative, and also assumes a head-on interaction, which will be difficult to implement, where the hourglass effect has been neglected. The hourglass effect would be non-negligible in this case because the electron bunch and laser pulse are both of considerable length ($\sigma_{z,e} = 110$~\si{\milli\meter}, $\sigma_{z,L} = 6$~\si{\milli\meter}) resulting in a luminosity reduction factor of $R_{HG} = $ \textcolor{blue}{**CALCULATE THIS**}. With this in mind, it appears that the DIANA ICS source and the CBS are very similar. 
+
+% Re-circulation advantage and the abundance of storage ring driven ICS
+As is evident from Table~\ref{tab:gammaray_ICS_comparison}, in-depth consideration of an ERL as the driver of an inverse Compton scattering source for production of $\gamma$-rays is limited. Predominantly ICS $\gamma$-ray production is driven by storage ring methods with the existing facilities such as NewSUBARU \cite{utsunomiya2015gamma} and HI$\gamma$S \cite{weller2009research} sources utilising existing synchrotron facilities. World leading facilities such as the ELI-NP $\gamma$-ray source which is currently planned to utilise the Lyncean Technologies variable energy gamma-ray (VEGA) system \cite{tanaka2020current,elinp2019vega} -- a storage ring system, in favour of the ELI-NP-GBS \cite{adriani2014technical}linac system are still therefore based upon the existing storage ring approach. Storage ring sources are undoubtedly favoured because of the high-flux available due to re-circulation of the electron bunch and laser pulse leading to a higher interaction rate. However, as demonstrated in the DIANA ICS source design, because of re-circulation ERL driven ICS sources are capable of high flux operation as in storage ring driven ICS; further evidenced by the similarity in uncollimated flux predicted for DIANA ICS to the flux predictions of leading designs such as ELI-NP VEGA and the CBS \cite{pan2019design} in Table~\ref{tab:gammaray_ICS_comparison}. 
+
+% ERL advantages in bandwidth
+Whilst the ERL approach has been shown to be competitive in terms of flux the real advantage of an ERL driven ICS source may be producing a high flux in a narrow bandwidth, and even achieving a narrowband . However, quantifying the bandwidth and the collimated flux per bandwidth is difficult as these are often not quoted within the literature.
+
+\textcolor{blue}{why is bandwidth important to a gamma source? \\ storage rings have high energy spread of electron bunch \\ FEL as photon sources give bad bandwidth \\ can be overcome - NEQ ring + low emittance rings \\ not enough info to be decisive but ERL are promising}       
 
 \section{Bremsstrahlung Source Comparison}
 
