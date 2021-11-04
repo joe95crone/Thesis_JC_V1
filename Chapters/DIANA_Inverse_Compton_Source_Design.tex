@@ -208,7 +208,7 @@ A minimum theoretical bandwidth can be constructed by taking the limit of a smal
 % Narrowband optimised numbers
 The flux around the minimum theoretical bandwidth is also very small, on the order of single photon generations, which is not conducive to experimentation. Typically in ICS sources, the collimation term and emittance term of the bandwidth are dominant when achieving a high flux source. Therefore, to determine a balance betweeen small bandwidth and high flux, it is necessary to select a bandwidth to quantify narrow bandwidth performance. A 0.5\% \textit{rms} bandwidth has been selected because this is within the $<1$\% \textit{rms} bandwidth limit designated as narrow bandwidth within this work, and 0.5\% \texit{rms} BW is of the order of the ELI-NP-GBS $\gamma$-ray source \cite{} \textcolor{blue}{**GET REFERENCES**} (0.5\% \textit{FWHM} BW) which is the current flagship narrowband $\gamma$-ray production facility under construction in Europe. 
 
-The suite of DIANA ICS sources have been optimised for a 0.5\% \textit{rms} bandwidth using the non-round beam simplex optimisation method described in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}. The optimised electron beam interaction parameters and collimation parameters shown in Table~\ref{tab:DIANA_electron_beam_design_parameters}. Laser pulse parameters remain unchanged from Table~\ref{tab:DIANA_laser_pulse_design_parameters}. The DIANA ICS source is expected to deliver a collimated flux of 1.30--1.29$\times 10^{9}$~ph/\si{\second} in a 0.5\% \textit{rms} bandwidth, with variation due to the increase in the recoil parameter with electron bunch energy. Furthermore, to characterise narrowband operation of the DIANA ICS sources a series of tuning curves have been devised, based on optimisation methods in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}, to show the maximum collimated flux as a function of bandwidth within the narrow bandwidth ($<1$\% \tetxit{rms} BW) regime. 
+The suite of DIANA ICS sources have been optimised for a 0.5\% \textit{rms} bandwidth using the non-round beam simplex optimisation method described in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}. The optimised electron beam interaction parameters and collimation parameters shown in Table~\ref{tab:DIANA_electron_beam_design_parameters}. Laser pulse parameters remain unchanged from Table~\ref{tab:DIANA_laser_pulse_design_parameters}. The DIANA ICS source is expected to deliver a collimated flux of 1.30--1.29$\times 10^{9}$~ph/\si{\second} in a 0.5\% \textit{rms} bandwidth, with variation due to the increase in the recoil parameter with electron bunch energy. \textcolor{blue}{**NEED TO PUT THE TABLES IN HERE FOR A COMPARISON OF METHODS**} Furthermore, to characterise narrowband operation of the DIANA ICS sources a series of tuning curves have been devised, based on optimisation methods in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}, to show the maximum collimated flux as a function of bandwidth within the narrow bandwidth ($<1$\% \tetxit{rms} BW) regime. 
 
 % Round beam tuning curves
 Round-beam tuning curves for the three nominal energies of the DIANA ICS sources (362, 717, 1072~\si{\mega\electronvolt}) are shown in Fig~\ref{fig:DIANA_RB_comparison}, where both the collimated flux--\textit{rms} bandwidth pareto fronts and $\beta$-function at the IP against collimation angle parameter space pareto fronts are shown.  
@@ -223,12 +223,20 @@ The $\beta$-function at the IP--collimation angle parameter space tuning curves 
 
 The right hand plot of Fig~\ref{fig:DIANA_RB_comparison} shows the pareto front of the collimated flux against the \textit{rms} bandwidth according to the round beam optimisation method. The tuning curve shows the maximum collimated flux available to users within the narrowband regime when the $\beta$-functions in each plane are symmetric. We see only a small variation in the tuning curves due to electron bunch energy which is a reflection of the small variation in the magnitude of the recoil parameter between energies, for example the recoil parameters are $X_{1072~\mathrm{\si{\mega\electronvolt}}} = 0.019$ and $X_{717~\mathrm{\si{\mega\electronvolt}}} = 0.013$ for the DIANA 1072~\si{\mega\electronvolt} and 717~\si{\mega\electronvolt} cases respectively. 
 
+Extension of this optimisation strategy to encompass non-round beam optimisations (see Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}) has been applied to design of the DIANA interaction points. Tuning curves produces via the three optimisation methods are compared for the DIANA 362~\si{\mega\electronvolt} nominal energy ICS source in Fig~\ref{fig:DIANA362_comparison_optimisation}.
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/DIANA_Inverse_Compton_Source_Design/DIANA_Tuning_Curve_Opt/DIANA362fullcomp.pdf}
 \caption{DIANA 362~\si{\mega\electronvolt} 1st turn ICS source optimisations, comparing the two non-round beam approaches (simplex and GA) and the round beam approach. Top Left: collimated flux as a function of \textit{rms} bandwidth pareto fronts of the source. Top Right: interaction point $\beta$-function parameter space in the $x$ and $y$ plane for optimised cases. Bottom Left: parameter space of the interaction $\beta$-function in the $x$ plane and collimation angle for optimised cases. Bottom Right: parameter space of the interaction $\beta$-function in the $y$ plane and collimation angle for optimised cases.}
 \label{fig:DIANA362_comparison_optimisation}
 \end{figure}
+
+Within Fig~\ref{fig:DIANA362_comparison_optimisation} it is evident that the Pareto front of the collimated flux--\textit{rms} bandwidth is in good agreement between the simplex and genetic algorithm methods. We see that $\sim$2.7$\times 10^{9}$~ph/\si{\second} can be produced by DIANA in a narrow bandwidth ($<1$\%). The non-round beam methodologies also produce higher flux within the \textit{rms} bandwidth, than the non-round beam methodology, though both have the same minimum achievable bandwidth. The case of an ERL is a poor case to demonstrate the advantage of a non-round beam optimisation for an ICS IP as the round beam case holds well here, though the increase in flux due to useage of non-round beams is more pronounced at higher $\sim1$\%-scale \textit{rms} bandwidths. 
+
+% Other plots
+
+Optimisation methods have also been similarly applied to the DIANA 717~\si{\mega\electronvolt} nominal energy ICS interaction. Comparison of these methods and the produced tuning curves for the accelerator are presented in Fig~\ref{fig:DIANA717_comparison_optimisation}.
 
 \begin{figure}[!h]
 \centering
@@ -237,6 +245,10 @@ The right hand plot of Fig~\ref{fig:DIANA_RB_comparison} shows the pareto front 
 \label{fig:DIANA717_comparison_optimisation}
 \end{figure}
 
+\textcolor{blue}{**write about optimisation**}
+
+Again, the optimisation methods outlined in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra} have been applied to the highest nominal energy electron bunch ICS interaction within the DIANA ERL. Resulting tuning curves in collimated flux--\textit{rms} bandwidth space and parameter spaces are shown in Fig~\ref{fig:DIANA1072_comparison_optimisation}.
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/DIANA_Inverse_Compton_Source_Design/DIANA_Tuning_Curve_Opt/DIANA1072fullcomp.pdf}
@@ -244,7 +256,13 @@ The right hand plot of Fig~\ref{fig:DIANA_RB_comparison} shows the pareto front 
 \label{fig:DIANA1072_comparison_optimisation}
 \end{figure}
 
+\textcolor{blue}{**write about optimisation**}
 
+The performance of a suite of ICS sources driven by the conceptual DIANA 3-turn ERL has been characterised by spectrum plots within a 0.5\% \textit{rms} bandwidth for each nominal energy using the ICARUS code, as described in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}. Spectra for ICS sources at 0.5\% \textit{rms} bandwidth are shown in Fig~\ref{fig:}.
+
+\textcolor{blue}{**ICARUS PLOTS FOR DIANA**}
+
+\textcolor{blue}{**describe what these plots mean**}
 
 \section{$\gamma$-ray ICS Source Comparison}
 \label{sec:gamma_ICS_comparison}
