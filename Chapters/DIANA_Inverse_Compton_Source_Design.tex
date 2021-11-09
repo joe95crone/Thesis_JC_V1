@@ -322,12 +322,30 @@ A series of ICS sources driven by the 3-turn ERL DIANA would enable a broad spec
 % Nuclear Resonance Fluorescence
 The first nominal electron kinetic energy ($E_{e} = 362$~\si{\mega\electronvolt}) of the DIANA ICS source is capable of producing tunable $\gamma$-rays with a centroid energy of 2.33~\si{\mega\electronvolt} which is useful for nuclear resonance fluorescence based assays of nuclear materials. Nuclear resonance fluorescence enables isotopic discrimination of materials via resonant absorption of $\gamma$-ray photons at characteristic photon energies then the subsequent emission of $\gamma$-rays at the same energy which is in contrast to XRF -- a suggested application of the CBETA ICS in Chapter~\ref{CBETA_Inverse_Compton_Scattering_Source_Design} -- where a similar process occurs for the atomic levels of atoms allowing elemental discrimination. NRF can be applied to a challenges such as identification of manufacturing defects in fission fuel assemblies, nonproliferation security of spent fission fuel and identification of unknown legacy wastes~\cite{angal2018perle,angell2015demonstration,bolind2015states,geddes2017impact,kwan2011discrete}.
 
-For example, the three isotopes of high importance in nuclear nonproliferation are $^{238}\mathrm{U}$, $^{235}\mathrm{U}$ and $^{239}\mathrm{Pu}$, which display major resonances for incident photon energies of $E_{238~U}^{\mathrm{NRF}} = 2.176$~\si{\mega\electronvolt} \cite{quiter2011transmission},  $E_{235~U}^{\mathrm{NRF}} = 1.733$~\si{\mega\electronvolt} and  $E_{239~Pu}^{\mathrm{NRF}} = 2.143$~\si{\mega\electronvolt} \cite{hayakawa2010nondestructive}, therefore by tuning the electron bunch energy of DIANA in the first pass within the range $E_{\gamma} =$ 312--350~\si{\mega\electronvolt} studies of these isotopes are possible.
+For example, the three isotopes of high importance in nuclear nonproliferation are $^{238}\mathrm{U}$, $^{235}\mathrm{U}$ and $^{239}\mathrm{Pu}$, which display major resonances for incident photon energies of $E_{238~U}^{\mathrm{NRF}} = 2.176$~\si{\mega\electronvolt} \cite{quiter2011transmission},  $E_{235~U}^{\mathrm{NRF}} = 1.733$~\si{\mega\electronvolt} and  $E_{239~Pu}^{\mathrm{NRF}} = 2.143$~\si{\mega\electronvolt} \cite{hayakawa2010nondestructive}, therefore by tuning the electron bunch energy of DIANA in the first pass within the range $E_{\gamma} =$ 312--350~\si{\mega\electronvolt} studies of these isotopes are possible. Resonance spacing between isotopes of interest is often on the order of $\sim10--100$~\si{\kilo\electronvolt}, as evidenced by the difference between $^{238}\mathrm{U}$ and $^{239}\mathrm{Pu}$, therefore narrowband nature and tunability of the bandwidth of the $\gamma$-ray beam is a requirement for isotopic determination by NRF. With a 0.5\% \textit{rms} bandwidth, the first pass ICS source driven by the DIANA ERL has a linewidth of 27.43~\si{\kilo\electronvolt} which is adequate for selective targeting of the nuclear resonances.    
 
-\textcolor{blue}{**$\gamma$-ray applications from CBETA** \\ **SOME MAY BE USEFUL** \\ **DELETE AS I GO**}
+% Transmutation of wastes
+Progressing towards the higher energy $\gamma$-rays ($E_{\gamma} =$ 9.06--20.11~\si{\mega\electronvolt}\textcolor{blue}{**CHECK**}) produced via a DIANA ICS source operating at the 2nd and 3rd turn nominal electron bunch kinetic energy (717, 1072~\si{\mega\electronvolt}) of DIANA, studies such as transmutation of waste and fission dynamics become plausible. Photonuclear transmutation reactions such as $(\gamma,p)$, $(\gamma,n)$, $(\gamma,\alpha)$, $(\gamma,f)$ become possible above 5~\si{\mega\electronvolt} which, when driven by suitable fluxes of photons \textcolor{blue}{**NUMBER?**}, could potentially transform long-lived wastes such as actinides \textcolor{blue}{**??**} into wastes with shorter lifespan or wastes that are easier to handle. 
+
+For example, $^{129}\mathrm{I}$ is a major long lived waste with half-life $T_{1/2} = 1.57\times 10^{8}$~\si{\years}, which poses an additional challenge to repository storage methods \cite{cho2016reconsideration} due to water solubility. Whilst other storage methods are being developed \cite{lee2021chemical,morizet2021immobilization}, another solution would be transmutation of this waste to a stable state, as proposed by Rehman et al \cite{ur2017optimization}, using a giant dipole resonance photonuclear reaction ($\gamma$,n) 
+\begin{equation}
+^{129}\mathrm{I} \left(T_{1/2}=1.57\times 10^{7}\textrm{y}\right) \xrightarrow[]{\left(\gamma,n\right)} {}^{128}\mathrm{I} \left(T_{1/2}=24.99\mathrm{\si{\minute}}\right) \substack{\xrightarrow[]{\left(\beta^{-},93.1\%\right)} {}^{128}\mathrm{Xe}\left(\mathrm{stable}\right)\\[0.1em] \xrightarrow[]{\left(\beta^{+},6.9\%\right)} {}^{128}\mathrm{Te}\left(\mathrm{stable}\right)}
+\label{eq:129I_photonuclear_transmutation}
+\end{equation}
+where $^{129}\mathrm{I}$ is transmuted to two stable isotopes $^{128}\mathrm{Xe}$ and $^{128}\mathrm{Te}$. Based on the cross section measurements for $^{129}\mathrm{I}$ by J. Magill et al \cite{}, as re-created in Fig~\ref{} using data from the EXFOR database entry \cite{}, 
+
+% Fission Dynamics studies
+Other experiments of use to the nuclear physics and reactor communities such as fission dynamics studies \cite{bellia1983towards,bhike2017exploratory,finch2018monoenergetic} would also be possible with the suite of DIANA $\gamma$-ray ICS sources.
+
+% Medical isotope production - Separate part?
+
+% Nuclear Photonics
+
 
  
- Moving up to photon energies above $5$~\si{\mega\electronvolt} (requiring a \si{\giga\electronvolt}-scale electron ERL) would open up the nuclear transmutation reactions $(\gamma,p)$, $(\gamma,n)$, $(\gamma,f)$ with potentially far-reaching applications in waste transmutation \cite{ur2017optimization}, the understanding of fission dynamics \cite{bellia1983towards,bhike2017exploratory,finch2018monoenergetic} and bespoke medical isotope production from existing waste streams \cite{habs2011production}. 
+  and bespoke medical isotope production from existing waste streams \cite{habs2011production}. 
+
+\section{Photonuclear Medical Isotope Production}
 
 \section{Summary}
 
