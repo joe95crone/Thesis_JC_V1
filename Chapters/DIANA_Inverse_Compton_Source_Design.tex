@@ -163,7 +163,7 @@ The spectral bandwidth... \textcolor{blue}{**THIS IS TRICKY**}
 
 \section{ICS Source Spectral Output}
 
-The anticipated spectral output of the DIANA ICS source, using the electron bunch and laser pulse parameters specified in Tables~\ref{tab:DIANA_electron_beam_design_parameters},~\ref{tab:DIANA_laser_pulse_design_parameters}, is presented in Table~\ref{tab:DIANA_spectral_output}. In Table~\ref{tab:DIANA_spectral_output} spectral output parameters are shown for both the 0.5\% \textit{rms} bandwidth optimised case and the baseline case for small electron bunch spot size. 
+The anticipated spectral output of the DIANA ICS source, using the electron bunch and laser pulse parameters specified in Tables~\ref{tab:DIANA_electron_beam_design_parameters},~\ref{tab:DIANA_laser_pulse_design_parameters}, is presented in Table~\ref{tab:DIANA_spectral_output}. In Table~\ref{tab:DIANA_spectral_output} spectral output parameters are shown for both the 0.5\% \textit{rms} bandwidth optimised case and the baseline case for small electron bunch spot size.
 
 \begin{table}[!h]
 \centering
@@ -279,7 +279,8 @@ Inverse Compton scattering sources for production of $\gamma$-rays have been dev
 ICS & Accelerator Type & Scattered Photon Energy (\si{\mega\electronvolt}) & Flux (ph/\si{\second}) \\
 \hline
 DIANA\tnote{*} & ERL & 2.33--20.11 & 5.77--6.08$\times 10^{11}$ \\ 
-NIJI-IV \cite{sei2017demonstration} & Storage Ring & 1.2 & 3.1$\times 10^{4}$ \\ 
+NIJI-IV \cite{sei2017demonstration} & Storage Ring & 1.2 & 3.1$\times 10^{4}$ \\
+VIGAS\tnote{*} \cite{shi2021vigas,brenner2020summary} & Linac & 0.2--4.8 & 1--4$\times 10^{8}$ \\
 ELI-NP-GBS\tnote{*} \cite{adriani2014technical} & Linac & 0.2--19.5 & $3.9\times 10^{9}$ \\
 ELI-NP VEGA\tnote{*} \cite{tanaka2020current,elinp2019vega} & Storage Ring & 1--19.5 & 1$\times 10^{11}$\\
 NewSUBARU \cite{utsunomiya2015gamma} & Storage Ring & 5--40 & $3\times 10^{7}$ \\
@@ -315,9 +316,11 @@ Within an ERL both the electron bunch energy spread and large divergence (emitta
 
 \section{Bremsstrahlung Source Comparison}
 
+\textcolor{blue}{**ASK PETE FOR SOUME REFERENCES TO MAKE THE CASE** \\ **HYWEL + PETE SAID NO NEW WORK IS REQUIRED JUST MAKE A CASE**}
+
 \section{DIANA ICS Applications}
 
-A series of ICS sources driven by the 3-turn ERL DIANA would enable a broad spectrum of experimentation within nuclear physics such as nuclear resonance fluorescence and transmutation toward nuclear forensics and security, nuclear photonics at the forefront of nuclear physics, high energy astrophysics, high energy physics and fundamental tests of quantum mechanics as well as medical isotope production. The DIANA ICS source, with spectral output parameters shown in Table~\ref{tab:DIANA_spectral_output}, offers high flux and a narrow bandwidth which are requirements in enhancing experimentation in these areas. The preliminary examination of applications for the DIANA ICS has focused upon nuclear resonance fluorescence and medical isotope production.  
+A series of ICS sources driven by the 3-turn ERL DIANA would enable a broad spectrum of experimentation within nuclear photonics \cite{nedorezov2017nuclear} such as nuclear resonance fluorescence and transmutation toward nuclear forensics and security, fundamental nuclear physics, high energy astrophysics, high energy physics and fundamental tests of quantum mechanics as well as medical isotope production. The DIANA ICS source, with spectral output parameters shown in Table~\ref{tab:DIANA_spectral_output}, offers high flux and a narrow bandwidth which are requirements in enhancing experimentation in these areas. The preliminary examination of applications for the DIANA ICS has focused upon nuclear resonance fluorescence and medical isotope production, with potential exploitation of the DIANA ICS source for photonuclear medical isotope production explored in more depth in Section~\ref{sec:photonuclear_medical_isotope_production}.  
 
 % Nuclear Resonance Fluorescence
 The first nominal electron kinetic energy ($E_{e} = 362$~\si{\mega\electronvolt}) of the DIANA ICS source is capable of producing tunable $\gamma$-rays with a centroid energy of 2.33~\si{\mega\electronvolt} which is useful for nuclear resonance fluorescence based assays of nuclear materials. Nuclear resonance fluorescence enables isotopic discrimination of materials via resonant absorption of $\gamma$-ray photons at characteristic photon energies then the subsequent emission of $\gamma$-rays at the same energy which is in contrast to XRF -- a suggested application of the CBETA ICS in Chapter~\ref{CBETA_Inverse_Compton_Scattering_Source_Design} -- where a similar process occurs for the atomic levels of atoms allowing elemental discrimination. NRF can be applied to a challenges such as identification of manufacturing defects in fission fuel assemblies, nonproliferation security of spent fission fuel and identification of unknown legacy wastes~\cite{angal2018perle,angell2015demonstration,bolind2015states,geddes2017impact,kwan2011discrete}.
@@ -325,7 +328,7 @@ The first nominal electron kinetic energy ($E_{e} = 362$~\si{\mega\electronvolt}
 For example, the three isotopes of high importance in nuclear nonproliferation are $^{238}\mathrm{U}$, $^{235}\mathrm{U}$ and $^{239}\mathrm{Pu}$, which display major resonances for incident photon energies of $E_{238~U}^{\mathrm{NRF}} = 2.176$~\si{\mega\electronvolt} \cite{quiter2011transmission},  $E_{235~U}^{\mathrm{NRF}} = 1.733$~\si{\mega\electronvolt} and  $E_{239~Pu}^{\mathrm{NRF}} = 2.143$~\si{\mega\electronvolt} \cite{hayakawa2010nondestructive}, therefore by tuning the electron bunch energy of DIANA in the first pass within the range $E_{\gamma} =$ 312--350~\si{\mega\electronvolt} studies of these isotopes are possible. Resonance spacing between isotopes of interest is often on the order of $\sim10--100$~\si{\kilo\electronvolt}, as evidenced by the difference between $^{238}\mathrm{U}$ and $^{239}\mathrm{Pu}$, therefore narrowband nature and tunability of the bandwidth of the $\gamma$-ray beam is a requirement for isotopic determination by NRF. With a 0.5\% \textit{rms} bandwidth, the first pass ICS source driven by the DIANA ERL has a linewidth of 27.43~\si{\kilo\electronvolt} which is adequate for selective targeting of the nuclear resonances.    
 
 % Transmutation of wastes
-Progressing towards the higher energy $\gamma$-rays ($E_{\gamma} =$ 9.06--20.11~\si{\mega\electronvolt}\textcolor{blue}{**CHECK**}) produced via a DIANA ICS source operating at the 2nd and 3rd turn nominal electron bunch kinetic energy (717, 1072~\si{\mega\electronvolt}) of DIANA, studies such as transmutation of waste and fission dynamics become plausible. Photonuclear transmutation reactions such as $(\gamma,p)$, $(\gamma,n)$, $(\gamma,\alpha)$, $(\gamma,f)$ become possible above 5~\si{\mega\electronvolt} which, when driven by suitable fluxes of photons \textcolor{blue}{**NUMBER?**}, could potentially transform long-lived wastes such as actinides \textcolor{blue}{**??**} into wastes with shorter lifespan or wastes that are easier to handle. 
+Progressing towards the higher energy $\gamma$-rays ($E_{\gamma} =$ 9.06--20.11~\si{\mega\electronvolt}) produced via a DIANA ICS source operating at the 2nd and 3rd turn nominal electron bunch kinetic energy (717, 1072~\si{\mega\electronvolt}) of DIANA, studies such as transmutation of waste and fission dynamics become plausible. Photonuclear transmutation reactions such as $(\gamma,p)$, $(\gamma,n)$, $(\gamma,\alpha)$, $(\gamma,f)$ become possible above 5~\si{\mega\electronvolt} which, when driven by suitable fluxes of photons \textcolor{blue}{**NUMBER?**}, could potentially transform long-lived wastes such as $^{241}\mathrm{Am}$ and $^{129}\mathrm{I}$ into wastes with shorter lifespan or wastes that are easier to handle. 
 
 For example, $^{129}\mathrm{I}$ is a major long lived waste with half-life $T_{1/2} = 1.57\times 10^{8}$~\si{\years}, which poses an additional challenge to repository storage methods \cite{cho2016reconsideration} due to water solubility. Whilst other storage methods are being developed \cite{lee2021chemical,morizet2021immobilization}, another solution would be transmutation of this waste to a stable state, as proposed by Rehman et al \cite{ur2017optimization}, using a giant dipole resonance photonuclear reaction ($\gamma$,n) 
 \begin{equation}
@@ -334,19 +337,28 @@ For example, $^{129}\mathrm{I}$ is a major long lived waste with half-life $T_{1
 \end{equation}
 where $^{129}\mathrm{I}$ is transmuted to two stable isotopes $^{128}\mathrm{Xe}$ and $^{128}\mathrm{Te}$. Based on the cross section measurements for $^{129}\mathrm{I}$ by J. Magill et al \cite{magill2003laser}, as re-created in Fig~\ref{} using data from the EXFOR database entry \cite{zerkin2018experimental}, the peak cross section of the photonuclear reaction is $\sigma_{\mathrm{reac}} = 229$~\si{\milli\barn} at 15~\si{\mega\electronvolt}. Tuning DIANA to the required 15~\si{\mega\electronvolt} scattered photon energy would produce a total of $6.04\time 10^{10}$~ph/\si{\second} which, when scaling the transmutation rate with the assumed $10^{13}$~ph/\si{\second} quoted by Rehman et al \cite{ur2017optimization}, would produce a transmutation rate of $\sim10^{8}$~atoms/\si{\second}. Therefore, only miniscule amounts ($\sim0.1$~\si{\micro\gram}) could be processed within a year by this method but there is scope for proof of principle experiments.  
 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.7\textwidth]{Figures/DIANA_Inverse_Compton_Source_Design/Iodine_129_cs_photon_energy.pdf}
+\caption{Measured \cite{magill2003laser} photonuclear GDR $\left(\gamma,n\right)$ cross section as a function of incident photon energy for the long-lived radioactive waste isotope $^{129}\mathrm{I}$. The cross section peaks at $E_{\gamma} = 15$~\si{\mega\electronvolt} incident photon energy with a cross section of $\sigma = 229$~\si{\milli\barn}. Data acquired from EXFOR database \cite{zerkin2018experimental}.}
+\label{fig:I129_cross_section_photon_energy}
+\end{figure}
 
 % Fission Dynamics studies
-Other experiments of use to the nuclear physics and reactor communities such as fission dynamics studies \cite{bellia1983towards,bhike2017exploratory,finch2018monoenergetic} would also be possible with the suite of DIANA $\gamma$-ray ICS sources.
+Other experiments of use to the nuclear physics and reactor communities such as fission dynamics studies \cite{bellia1983towards,bhike2017exploratory,finch2018monoenergetic} would also be possible with the suite of DIANA $\gamma$-ray ICS sources. Fission dynamics studies are typically conducted with neutronic probes i.e $\left(n,f\right)$ interactions however there are advantages to conducting these with photofission reactions $\left(\gamma,f\right)$ such as strict angular-momentum selection rules which are well-known, an absence of binding energy in the formation of a compound nucleus and the lack of Coulomb barrier in the interaction due to the neutrality of photons \cite{finch2018monoenergetic}. The photofission GDR reactions of the main isotopes of interest ($^{235}\mathrm{U}$, $^{238}\mathrm{U}$, $^{239}\mathrm{Pu}$) could be investigated from the fission threshold to the high-energy tail of the giant dipole resonance using the DIANA ICS sources, as this requires an energy range $E_{\gamma} =$ 9.0--17.0~\si{\mega\electronvolt} \cite{finch2018monoenergetic}, which is  accessible with steplessly tunable $\gamma$-ray production from the 2nd and 3rd turns ($E_{\gamma} =$ 9.06--20.11~\si{\mega\electronvolt}).
 
-% Medical isotope production - Separate part?
+% Fundamental Nuclear Photonics + astrophysics
+Collective modes of nuclei such as giant dipole resonances \cite{goldhaber1948nuclear,baldwin1947photo}, pygmy dipole resonances \cite{} and scissor modes \cite{de1984reformulation,bohle1984new} can be probed via NRF techniques using $\gamma$-ray ICS sources. For example, the M1 scissors mode of a $^{152}\textrm{Sm}$ nucleus has recently been probed at the HI$\gamma$S source to investigate the electric quadrupole (E2) mode decay \cite{ide20212}. However, this experiment has been limited by the large 100~\si{\kilo\electronvolt} \textit{FWHM} bandwidth \cite{ide20212} of the source at the $E_{\gamma} = 2.995$~\si{\mega\electronvolt} incident $\gamma$-ray energy required to probe the scissor mode \cite{ziegler1993low} and consequently excited states beyond the $2^{+}$ state are inaccessible because of the insensitivity of the incident $\gamma$-ray beam \cite{ide20212}. However, based on the DIANA ERL ICS source calculations at 362~\si{\mega\electronvolt} ($E_{\gamma} =$ 2.33~\si{\mega\electronvolt}) for a 0.5\% \textit{rms} bandwidth the \textit{FWHM} energy spread of the $\gamma$-ray beam is 27.43~\si{\kilo\electronvolt}, a factor $\sim3$ smaller than the HI$\gamma$S bandwidth, which can still be minimised further. The DIANA ICS source is also design to produce comparatively larger flux than HI$\gamma$S, as seen in Table~\ref{tab:gammaray_ICS_comparison}, which will improve data acquisition times for these measurements.  
 
-% Nuclear Photonics
-
-
- 
-  and bespoke medical isotope production from existing waste streams \cite{habs2011production}. 
+% whilst experiments are possible at HIGS, spectral output (bw + flux) @ DIANA allows experimental advantage, similar experiments targeted for eli-np
 
 \section{Photonuclear Medical Isotope Production}
+\label{sec:photonuclear_medical_isotope_production}
+
+% 153 Sm
+% 155 Tb
+
+ and bespoke medical isotope production from existing waste streams \cite{habs2011production}. 
 
 \section{Summary}
 
