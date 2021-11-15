@@ -35,6 +35,88 @@ The \textsc{ICARUS} spectrum code is a dedicated semi-analytical inverse Compton
 \section{Analytical Collimated Flux}
 \label{sec:analytical_collimated_flux}
 
+In this section, the collimated flux - the total flux collected within an aperture of semi-angle $\theta_{\mathrm{col}}$ is derived from first principles, using the work of Berestetskii et al \cite{berestetskii1982quantum}. This method, unlike others in the literature \cite{curatolo2017analytical}, is valid for the angular crossing case ($\phi\in\mathbb{R}$) as the effect of the crossing angle is encompassed in the cross section alongside the geometric beam--beam angular crossing effect. The hourglass effect is also fully accounted for in this method, using the prescription of Miyahara \cite{miyahara2008luminosity}. The collimated flux calculation method is a semi-analytic calculation that is valid within the recoil regime (above $X\ll1$) but is only valid for the linear inverse Compton scattering case ($a_{0}\ll1$).
+
+In order to find the scattering angle $\theta$ dependence of the cross section \textcolor{blue}{link to cross section derivation/work} we must focus on the dependence of the scattering angle on the Lorentz invariant quantities ($X$ and $Y$) (Eq.~\ref{eq:X_geometry},~\ref{eq:Y_geometry}) derived from Mandelstam variables in Section~\ref{sec:electron_photon_interactions}. Intrinsically, our definition of the recoil parameter $X$ (Eq.~\ref{eq:X_Mandelstam}) relates to the centre of mass $s$ Mandelstam variable before the interaction, so there is no scattering angle  dependence. The $Y$ Lorentx invariant is dependent on $\theta$, to include it's scattering angle dependence we must examine the derivative of $Y$ with $\theta$. Inspecting (Eq.~\ref{eq:Y_geometry}) we see $Y$ is also dependent on $E_{\gamma}$, the scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}) derived in Section~\ref{sec:derivation_of_the_scattered_photon_energy}, which is also dependent on scattering angle. Thus, we must first expand $Y$ which can be simplified in terms of the recoil parameter $X$ (Eq.~\ref{eq:X_geometry})
+\begin{equation}
+Y = \frac{2\gamma E_{L}\left(1+\beta\cos\phi\right)\left(1-\beta\cos\theta\right)}{m_{e}c^{2}\left\{1-\beta\cos\theta+\left[1+\cos\left(\phi+\theta\right)\right]E_{L}/E_{e}\right\}} = \frac{X\left(1-\beta\cos\theta\right)}{1-\beta\cos\theta+\left[1+\cos\left(\phi+\theta\right)\right]E_{L}/E_{e}}.
+\label{eq:Y_geometry_expanded}
+\end{equation}
+For our purposes, we require the derivative of $Y$ with respect to $\theta$. The derivative of our expanded $Y$ Lorentz invariant (Eq.~\ref{eq:Y_geometry_expanded}) is best found using the quotient rule  
+\begin{gather}
+Y\left(\theta\right) = \frac{g\left(\theta\right)}{h\left(\theta\right)}, \\
+\frac{dY\left(\theta\right)}{d\theta} = \frac{g'\left(\theta\right)h\left(\theta\right)-g\left(\theta\right)h'\left(\theta\right)}{\left[h\left(\theta\right)\right]^{2}},
+\label{eq:quotient_rule}
+\end{gather}
+where the terms in (Eq.~\ref{eq:quotient_rule}) are given by
+\begin{gather}
+g\left(\theta\right) = X\left(1-\beta\cos\theta\right), \\
+g'\left(\theta\right) = X\beta\sin\theta, \\
+h\left(\theta\right) = 1-\beta\cos\theta+\left[1+\cos\left(\phi+\theta\right)\right]E_{L}/E_{e}, \\
+h'\left(\theta\right) = \beta\sin\theta-\sin\left(\phi+\theta\right)E_{L}/E_{e}.
+\label{eq:quotientterms}
+\end{gather}
+The full derivative of $Y$ by $\theta$ is therefore
+\begin{equation}
+\frac{dY}{d\theta} = \frac{X\beta\sin\theta\left\{1-\beta\cos\theta+\left[1+\cos\left(\phi+\theta\right)\right]E_{L}/E_{e}\right\}-X\left(1-\beta\cos\theta\right)\left[\beta\sin\theta-\sin\left(\phi+\theta\right)E_{L}/E_{e}\right]}{\left\{1-\beta\cos\theta+\left[1+\cos\left(\phi+\theta\right)\right]E_{L}/E_{e}\right\}^{2}}.
+\label{eq:dY_dtheta}
+\end{equation}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/SunPolarisationScatteringDiagram.pdf}
+\caption{Left: The 3D scattering geometry of the electron - photon interaction by C. Sun \cite{sun2009characterizations}. Here $\phi_{f}$ is the azimuthal angle of the scattered photon and $\tilde{x}, \tilde{y}, \tilde{z}$ define the co-ordinate system of the incident electron and the notation is varied $p = p_{1}$, $k = k_{1}$ and $k' = k_{2}$. Right: Interaction polarisation diagram by C. Sun \cite{sun2009characterizations}. Here $\tau$ is the azimuthal angle of the polarization vector $\epsilon$.\textcolor{blue}{**NEED TO REPLACE DIAGRAM**}}
+\label{fig:sun_geometry}
+\end{figure}
+
+Since we understand that the cross section's \textcolor{blue}{Link to the cross section section} scattering angle dependence is due to the $Y$ Lorentz invariant, as this is constructed from both Lorentz invariants and the $X$ invariant (Eq.~\ref{eq:X_geometry}) which is defined without scattering angle dependence, we must find the dependence of the cross section on the Lorentz invariant $Y$ in order to propagate the full dependencies. \textcolor{blue}{**some of this is required in the cross section section**} Fig.~\ref{fig:sun_geometry} shows the full 3D geometry of the electron - phton interaction, which includes a polarisation diagram. Following Eq. (2.27) by Sun \cite{sun2009characterizations}, we can then use a standard result from QED for the cross section of the interaction of unpolarised electron beam and polarised laser pulse, without considering the post-interaction polarisations \cite{grozin2002complete} \textcolor{blue}{Did this just stay as an arXiv paper?}
+\begin{equation}
+\frac{d^{2}\sigma}{dYd\phi_{f}} = \frac{4r_{e}^{2}}{X^{2}}\left\{\left(1-\xi_{3}\right)\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right]+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\right\},
+\label{eq:differential_cross_section_Y_phif}
+\end{equation}
+where $\phi_{f}$ is the azimuthal angle of the scattered photon, $r_{e}$ is the classical electron radius, $X$ and $Y$ are the Lorentz invariants in (Eq.~\ref{eq:X_geometry}, \ref{eq:Y_geometry}) and $\xi_{3}$ is the Stokes parameter, describing linear polarisation aligned to the $x$ or $y$ axis, given by
+\begin{equation}
+\xi_{3} = -P_{t}\cos\left(2\tau-2\phi_{f}\right),
+\label{eq:stokes_3}
+\end{equation} 
+with $0 \leq P_{t} \leq 1$, the degree of linear polarisation and $\tau$ the azimuthal angle of the polarisation vector. 
+
+We can then integrate over the azimuthal scattering angle $\phi_{f}$
+\begin{equation}
+\frac{d\sigma}{dY} = \frac{4r_{e}^{2}}{X^{2}}\int_{0}^{2\pi}\left[1+P_{t}\cos\left(2\tau-2\phi_{f}\right)\right]\left\{\left(1-\xi_{3}\right)\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right]+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\right\} d\phi_{f}, 
+\label{eq:phif_integral}
+\end{equation}
+we can then take the case of an unpolarised laser pulse or a circularly polarised laser pulse ($P_{t} = 0$), or acknowledge that this polarisation term becomes zero once integrated over the full azimuthal angle $\phi_{f}$, to simplify this to
+\begin{equation}
+\frac{d\sigma}{dY} = \frac{8\pi r_{e}^{2}}{X^{2}}\left\{\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right]+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\right\},
+\label{eq:cross_section_Y_berestetskii_form}
+\end{equation}
+which replicates the form in Eq. (86.16) by Berestetskii et al \cite{berestetskii1982quantum}.
+
+The dependence of the cross section $\sigma$ upon the scattering angle $\theta$ can be found using the chain rule
+\begin{equation}
+\frac{d\sigma}{d\theta} = \frac{d\sigma}{dY}\frac{dY}{d\theta}.
+\label{eq:cross_section_chain_rule}
+\end{equation}
+Therefore, the cross section for a collimation angle $\theta_{\mathrm{col}}$ becomes
+\begin{equation}
+\sigma\left(\theta_{\mathrm{col}}\right) = \int_{0}^{\theta_{\mathrm{col}}}\frac{d\sigma}{dY}\frac{dY}{d\theta}d\theta,
+\label{eq:cross_section_integral}
+\end{equation} 
+where $\frac{d\sigma}{dY}$ is given by (Eq.~\ref{eq:cross_section_Y_berestetskii_form}) and $\frac{dY}{d\theta}$ is given by (Eq.~\ref{eq:dY_dtheta}). The full cross section calculation is summarised as
+\begin{multline}
+\sigma\left(\theta_{\mathrm{col}}\right) = \int_{0}^{\theta_{\mathrm{col}}} \frac{8\pi r_{e}^{2}}{X^{2}}\left\{\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right]+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\right\}\\\frac{X\beta\sin\theta\left\{1-\beta\cos\theta+\left[1+\cos\left(\phi+\theta\right)\right]E_{L}/E_{e}\right\}-X\left(1-\beta\cos\theta\right)\left[\beta\sin\theta-\sin\left(\phi+\theta\right)E_{L}/E_{e}\right]}{\left\{1-\beta\cos\theta+\left[1+\cos\left(\phi+\theta\right)\right]E_{L}/E_{e}\right\}^{2}}d\theta,
+\label{eq:full_scattering_angle_cross_section_integral}
+\end{multline}
+where $Y, X, E_{\gamma}$ are of the forms in (Eq.~\ref{eq:Y_geometry},~\ref{eq:X_geometry},~\ref{eq:scattered_photon_energy}). Using the results derived in Sections~\ref{sec:luminosity_and_flux},~\ref{sec:angular_crossing_and_hourglass_effects} the collimated flux is given by a modified cross section (Eq.~\ref{eq:full_scattering_angle_cross_section_integral}) form of the flux equation (Eq.~\ref{eq:headon_flux}), with an angular crossing and the  hourglass effect taken into account (Eq.~\ref{eq:flux_angular_crossing_hourglass})
+\begin{equation}
+\mathcal{F}_{\mathrm{col}} = \sigma\left(\theta_{\mathrm{col}}\right) R_{ACHG}\mathcal{L}_{\mathrm{HEAD-ON}}f.
+\label{eq:collimated_flux}
+\end{equation}
+
+It is inherent in (Eq.~\ref{eq:collimated_flux}) that the interaction occurs from a point source - the transverse and longitudinal positions of the electrons within the bunch are neglected. This is a common approximation in both simulations and in all presented flux formulae.
+
+Within (Eq.~\ref{eq:collimated_flux}) the effect of the energy spread of the bunch, the laser pulse energy spread (spectral bandwidth) and partially, via the point source approximation, the effect of the emittance (spatial extent) of the bunch are neglected. The geometry consideration of the spatial extent of the bunch is taken into account via the luminosity reduction factors, but not the offset in emission position which would affect whether the photon passes the collimator. The codes \textsc{ICARUS} and \textsc{ICCS3D} \cite{krafft2016laser,ranjan2018simulation} properly take into account the energy spread factors but the emission position problem is only solved in Monte Carlo codes such as \texsc{CAIN} \cite{chen1995cain}. However, this effect is expected to be small as the source is dependent on far-field collimation. Far-field collimation is applicable when the transverse size of the electron bunch - laser pulse overlap is negligible in relation to the aperture of the collimator. 
 
 \section{Development of the ICARUS Spectrum code}
 \label{sec:development_of_the_ICARUS_spectrum_code}
@@ -112,9 +194,10 @@ d\Omega_{d} = dx_{d}dy_{d}/L^{2},
 \section{Benchmarking Cases for Characterisation and Optimisation}
 \label{sec:benchmarking_cases_characterisation_optimisation}
 
-\section{Benchmarking of the ICARUS Spectrum Code}
+\section{Benchmarking of Characterisation Methods}
 \label{sec:benchmarking_of_the_ICARUS_spectrum_code}
 
+\textcolor{blue}{Mention that the Curatolo formula is deficient as it doesn't provide adequate derivation to verify, seemingly that the bandwidth it is based upon is deficient (Ranjan et al say so in (2018), Fig.~1) and doesn't provide angular case either.}
 
 The code \textsc{ICCS3D}, a generalization of the \textsc{ICCS} code \cite{krafft2016laser,ranjan2018simulation}, computes radiation produced in ICS within the linear Compton regime (when $a_{0}\ll 1$, and electron recoil is properly accounted for). In \textsc{ICCS3D}, a 3D laser pulse model replaces the 1D plane wave model used in \textsc{ICCS}. This modification is implemented in a manner described in Terzi\'c et al \cite{terzic2019improving}; instead of all electrons experiencing the same laser field strength $a_{0}$, as they do for a 1D plane wave, their effective laser field strength is dependent on the electron's distance from the laser's center at the moment of scattering. To calculate anticipated spectral output, \textsc{ICCS3D} can use either the parameters of the electron beam or an arbitrary electron distribution, in addition to the laser parameters. For Fig.~\ref{fig:cbetaspectrumplot}, a particle distribution was tracked by \textsc{Tao} \cite{TaoManual} through the bypass lattice to the IP; the distribution at the IP was provided to \textsc{ICCS3D}. When compared to the spectrum calculated using only the electron beam parameters, the differences were negligible. 
 
