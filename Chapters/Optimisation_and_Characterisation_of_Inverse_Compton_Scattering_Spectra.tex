@@ -161,17 +161,29 @@ where $p_{0}$ is the centroid momentum of the electron bunch and $k_{0}$ is the 
 
 The delta function, encompassing the energy conservation of this process can be re-wrote in terms of the Lorentz factor
 \begin{equation}
-\delta\left(\right) = -\delta\left(\gamma-\bar{\gamma}\right)\frac{\left(1+\right)}{}
-\label{sun_electron_energy_delta_function}    
+\delta\left(\bar{E_{\gamma}}-E_{\gamma}\right) = -\delta\left(\gamma-\bar{\gamma}\right)\frac{\left(1+\bar{\gamma}^{2}\theta^{2}+\frac{4\bar{\gamma}E_{L}}{m_{e}c^{2}}\right)^{2}}{8\bar{\gamma}E_{L}\left(1+\frac{2\bar{\gamma}E_{L}}{m_{e}c^{2}}\right)},
+\label{eq:sun_electron_energy_delta_function}    
+\end{equation}
+where $\bar{\gamma}$ is the route of $\bar{E_{\gamma}}$ (Eq.~\ref{eq:sun_Egamma_bar}) as given by
+\begin{equation}
+\bar{\gamma} = \frac{2E_{\gamma}E_{L}}{m_{e}c^{2}\left(4E_{L}-E_{\gamma}\theta^{2}\right)}\left[1+\sqrt{1+\frac{4E_{L}-E_{\gamma}\theta^{2}}{4E_{L}^{2}E_{\gamma}/\left(m_{e}c^{2}\right)^{2}}}\right].    
 \end{equation}
 
+Substituting for $\delta\left(\bar{E_{\gamma}-E_{\gamma}}\right)$ using (Eq.~\ref{eq:sun_electron_energy_delta_function}) and changing the electron bunch momentum variable from $dp$ to $d\gamma$, we can then integrate (Eq.~\ref{eq:}) over $d\gamma$ to introduce the electron bunch energy spread variation which gives
 \begin{multline}
 \frac{dN_{\gamma}}{dE_{\gamma}} = \frac{r_{e}^{2}N_{e}N_{L}}{4\pi^{3}L^{2}\hbar c z_{R}\sigma_{\gamma}\sigma_{k}}\int_{k_{\mathrm{min}}}^{k_{\mathrm{max}}}\int_{-\theta_{x,\mathrm{max}}}^{\theta_{x,\mathrm{max}}}\int_{-\theta_{y,\mathrm{max}}}^{\theta_{y,\mathrm{max}}}\int_{y_{\mathrm{min}}}^{y_{\mathrm{max}}}\int_{x_{\mathrm{min}}}^{x_{\mathrm{max}}}\frac{1}{\sqrt{\zeta_{x}\zeta_{y}}\sigma_{\theta_{x}}\sigma_{\theta_{y}}}\frac{\bar{\gamma}}{1+2\gamma E_{L}/m_{e}c^{2}} \\
 \times\left\{\frac{1}{4}\left[\frac{4\bar{\gamma}^{2}E_{L}}{E_{\gamma}\left(1+\bar{\gamma}^{2}\theta^{2}\right)}+\frac{E_{\gamma}\left(1+\bar{\gamma}^{2}\theta^{2}\right)}{4\bar{\gamma}^{2}E_{L}}\right]-2\cos^{2}\left(\tau-\phi_{f}\right)\frac{\bar{\gamma}^{2}\theta^{2}}{\left(1+\bar{\gamma}^{2}\theta^{2}\right)^{2}}\right\} \\
-\times\exp{\left[-\frac{\left(\theta_{x}-x_{d}/L\right)^{2}}{2\sigma_{\theta_{x}}^{2}}-\frac{\left(\theta_{y}-y_{d}/L\right)^{2}}{2\sigma_{\theta_{y}}^{2}}-\frac{\left(\bar{\gamma}-\gamma\right)^{2}}{2\sigma_{\gamma}^{2}}-\frac{\left(k-k_{0}\right)^{2}}{2\sigma_{k}^{2}}\right]}dx_{d}~dy_{d}~d\theta_{y}~d\theta_{x}~dk,
+\times\exp{\left[-\frac{\left(\theta_{x}-x_{d}/L\right)^{2}}{2\sigma_{\theta_{x}}^{2}}-\frac{\left(\theta_{y}-y_{d}/L\right)^{2}}{2\sigma_{\theta_{y}}^{2}}-\frac{\left(\gamma-\gamma_{0}\right)^{2}}{2\sigma_{\gamma}^{2}}-\frac{\left(k-k_{0}\right)^{2}}{2\sigma_{k}^{2}}\right]}dx_{d}~dy_{d}~d\theta_{y}~d\theta_{x}~dk,
 \label{eq:ICARUS_equation}
 \end{multline}
+where the cross section has been expanded in terms of the $\bar{\gamma}$ parameter with a normalisation factor, $\gamma_{0}$ is the centroid Lorentz factor of the electron bunch, $\sigma_{\gamma} = \sigma_{e}/m_{e}c^{2}$ is the spread of the Lorentz factor of the electron bunch and integral limits have been imposed. \textcolor{blue}{**integral limits}
 
+% k integral
+
+The polarisation term $2\cos^{2}\left(\tau-\phi_{f}\right)$ in (Eq.~\ref{eq:ICARUS_equation}) must be modified as the azimuthal scattering angle $\phi_{f}$ is not explicitly integrated over, instead the azimuthal scattering angle dependence is covered via integration of the projection of the scattering angles ($\theta_{x}$ and $\theta_{y}$) in each plane. Therefore, we replace the azimuthal scattering angle $\phi_{f}$ in (Eq.~\ref{eq:ICARUS_equation}) with $\phi_{f} = \cos^{-1}\left(\theta_{x}/\theta\right)$. However, it is trivial to show that when integrated over the full azimuthal scattering angle ($0 \geq \phi_{f} \geq 2\pi$), as is the case in evaluating (Eq.~\ref{eq:ICARUS_equation}), the polarisation term is negligible. 
+ 
+
+To summarise, the model presented here has been adapted from the model by Sun et al \cite{} through modification of the polarisation term in order to treat the azimuthal scattering angle dependence properly, revised integral limits for the wavenumber integration to limit this to the fundamental mode within reasonable $3\sigma$ spectral bandwidth tolerances and to correct the algebraic error involving the source-to-detector distance $L$ so the formula obeys the inverse square law. These modifications have allowed the \textsc{ICARUS} code to correctly take into account both circular and linear polarisation within the spectrum, properly account for the effect of the laser spectral bandwidth on the produced radiation (by limiting the calculation to the fundamental harmonic) and for the spectrum code to produce quantitative predictions of the spectral density, with the abandonment of the arbitrary units quoted by Sun et al \cite{sun2009characterizations,sun2011theoretical} for the spectra. Further work could include extending the model (Eq.~\ref{eq:ICARUS_equation}) for an angular crossing, accounting for non-Gaussian laser pulse and electron bunch distributions and generalising the model from the small angle and far-field collimation approximations it relies upon, though this is beyond the scope of this current work.        
 
 
 
