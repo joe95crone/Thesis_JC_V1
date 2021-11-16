@@ -123,14 +123,46 @@ Within (Eq.~\ref{eq:collimated_flux}) the effect of the energy spread of the bun
 
 \textcolor{blue}{**USE $\sim$ BETWEEN INTEGRATION VARIABLES FOR PROPER SPACING**}
 
+Using the result of Sun et al \cite{sun2009characterizations,sun2011theoretical}, the spatial and energy distributions of a $\gamma$-ray beam produced by a head-on collision of an electron bunch and laser pulse is given by
 \begin{multline}
-\frac{dN_{\gamma}}{d\Omega_{d} dE_{\gamma}} = N_{e}N_{L}\int \frac{d\sigma}{d\Omega}\delta\left(\bar{E_{\gamma}}-E_{\gamma}\right)c\left(1-\beta\cos\phi\right)f_{e}\left(x,y,z,x',y',p,t\right)\\ \times f_L\left(x,y,z,k,t\right)dx' dy' dp dk dV dt,
+\frac{dN_{\gamma}}{d\Omega_{d} dE_{\gamma}} = N_{e}N_{L}\int \frac{d\sigma}{d\Omega}\delta\left(\bar{E_{\gamma}}-E_{\gamma}\right)c\left(1+\beta\right)f_{e}\left(x,y,z,x',y',p,t\right)\\ \times f_L\left(x,y,z,k,t\right)dx'~dy'~dp~dk~dV~dt,
 \label{eq:central_distribution_sun}
 \end{multline}
+where the detection solid angle is $d\Omega = dx_{d}dy_{d}/L^{2}$ with $x_{d}$ and $y_{d}$ the $x$ and $y$ positions at the detector and $L$ the source-to-detector distance, $\frac{d\sigma}{d\Omega}$ is the differential cross section of the ICS interaction, $\delts\left(\bar{E_{\gamma}}-E_{\gamma}\right)$ is a delta function which encapsulates energy conservation in the process with $\bar{E_{\gamma}}$ the maximum possible energy a $\gamma$-ray have for a scattering angle $\theta$ and $E_{\gamma}$ the actual $\gamma$-ray energy, the $c\left(1+\beta\right)$ term arises from the Doppler shifting of the radiation, $f_{e}$ and $f_{L}$ are the phase-space intensity distributions of the electron bunch (Eq.~\ref{eq:electron_gaussian_intensity_distribution}) and laser pulse (Eq.~\ref{eq:laser_gaussian_intensity_distribution}) as modelled by Gaussian distributions, $dx'$ and $dy'$ are the divergence integration variables in $x$ and $y$ respectively, $dp$ is momentum of the electron integration variable, $dk$ is the wavenumber of the laser pulse integration variable, $dV$ is the volume of the interaction integration parameter and  $dt$ is the interaction time integration variable. 
 
+The differential cross section for a head-on collision in this model is given by
 \begin{equation}
-d\Omega_{d} = dx_{d}dy_{d}/L^{2},
-\label{eq:detector_solid_angle_sun}
+\frac{d\sigma}{d\Omega} = 8r_{e}^{2}\left\{\frac{1}{4}\left[\frac{4\gamma^{2}E_{L}}{\bar{E_{\gamma}}\left(1+\gamma^{2}\theta^{2}\right)}+\frac{\bar{E_{\gamma}}\left(1+\gamma^{2}\theta^{2}\right)}{4\gamma^{2}E_{\gamma}}\right]-2\cos^{2}\left(\tau-\phi_{f}\right)\frac{\gamma^{2}\theta^{2}}{\left(1+\gamma^{2}\theta^{2}\right)^{2}}\right\}\left(\frac{\bar{E_{\gamma}}}{4\gamma E_{L}}\right)^{2},
+\label{eq:sun_differential_cross_section}    
+\end{equation}
+where $\bar{E_{\gamma}}$ is the Compton edge energy for a particular scattering angle $\theta$ in the small angle approximation for a head-on ($\phi=0$) collision
+\begin{equation}
+\bar{E_{\gamma}} = \frac{4\gamma^{2}E_{L}}{1+\gamma^{2}\theta^{2}+\frac{4\gamma E_{L}}{m_{e}c^{2}}}.
+\label{eq:sun_Egamma_bar}    
+\end{equation}
+We can then express the angular divergences $x'$ and $y'$ by the projection of the scattering angle of of the produced radiation in each plane $\theta_{x}'$ and $\theta_{y}'$ ($\theta = \sqrt{\theta_{x}^{2}+\theta_{y}^{2}}$), whilst neglecting the very small angular divergences of the laser pulse, using the relations
+\begin{align}
+\theta_{x}' + x' &= \frac{x_{d}-x}{L} \\
+\theta_{y}' + y' &= \frac{y_{d}-y}{L}
+\label{eq:sun_angular_divergence}    
+\end{align}
+which arise from the geometric constraints of a photon passing through a collimator and impinging on a detector in far-field collimation ($L \gg \sqrt{x_{d}^{2}+y_{d}^{2}}$), where $x$ and $y$ are the positions of the interaction in each plane. We typically assume $x=y=0$ because we assume a point source. Applying (Eq.~\ref{eq:sun_angular_divergence}) and integrating (Eq.~\ref{eq:central_distribution_sun}) with respect to $dV$, the interaction geometric volume and $dt$ the interaction time, whilst expanding the detector solid angle and the Gaussian intensity distributions of the electron bunch (Eq.~\ref{eq:electron_gaussian_intensity_distribution}) and laser pulse (Eq.~\ref{eq:laser_gaussian_intensity_distribution}), we gain
+\begin{multline}
+\frac{dN_{\gamma}}{dE_{\gamma}dx_{d}dy_{d}} = \frac{N_{e}N_{L}}{\left(2\pi\right)^{3}z_{R}\sigma_{p}\sigma_{k}}\int \frac{k}{\sqrt{\zeta_{x}\zeta_{y}}\sigma_{\theta_{x}}\sigma_{\theta_{y}}}\frac{d\sigma}{d\Omega}\delta\left(\bar{E_{\gamma}}-E_{\gamma}\right)\left(1+\beta\right) \\\times\exp\left[-\frac{\left(\theta_{x}-x_{d}/L\right)^{2}}{2\sigma_{\theta_{x}}^{2}}-\frac{\left(\theta_{y}-y_{d}/L\right)^{2}}{2\sigma_{\theta_{y}}^{2}}-\frac{\left(p-p_{0}\right)^{2}}{2\sigma_{p}^{2}}-\frac{\left(k-k_{0}\right)^{2}}{2\sigma_{k}^{2}}\right]~d\theta_{x}~d\theta_{y}~dp~dk,
+\label{eq:sun_volume_time_integral}    
+\end{multline}
+where $z_{R}$ is the Rayleigh range \textcolor{blue}{**reference once sorted Compton theory**}, the $\zeta_{x/y}$, $\sigma_{\theta_{x/y}}$ and  $\xi_{x/y}$ parameterisations in each plane are given by
+\begin{align}
+\zeta_{x} &= 1+\frac{2k\beta_{x}\epsilon_{x}}{z_{R}}, & \sigma_{\theta_{x}} &= \sqrt{\frac{\epsilon_{x}\xi_{x}}{\beta_{x}\zeta_{x}}}, & \xi_{x} &= 1+\left(\alpha_{x}-\frac{\beta_{x}}{L}\right)^{2}+\frac{2k\beta_{x}\epsilon_{x}}{z_{R}}, \nonumber\\
+\zeta_{y} &= 1+\frac{2k\beta_{y}\epsilon_{y}}{z_{R}}, & \sigma_{\theta_{y}} &= \sqrt{\frac{\epsilon_{y}\xi_{y}}{\beta_{y}\zeta_{y}}}, & \xi_{y} &= 1+\left(\alpha_{y}-\frac{\beta_{y}}{L}\right)^{2}+\frac{2k\beta_{y}\epsilon_{y}}{z_{R}}, 
+\label{eq:zeta_sigmatheta_xi_parameters_sun}
+\end{align}
+where $p_{0}$ is the centroid momentum of the electron bunch and $k_{0}$ is the centroid wavenumber of the laser pulse. Here note that there is an algebraic error in Sun et al's \cite{sun2009characterizations,sun2011theoretical} derivation, the prefactor gives that $dN/dE\propto L^{2}$ for a source-to-detector distance $L$. This arises due to a mishandling of the detector solid angle. Clearly, this should be $dN/dE\propto 1/L^{2}$, meaning there is an inverse square relationship between source-to-detector distance and the spectral density as would be expected. 
+
+The delta function, encompassing the energy conservation of this process can be re-wrote in terms of the Lorentz factor
+\begin{equation}
+\delta\left(\right) = -\delta\left(\gamma-\bar{\gamma}\right)\frac{\left(1+\right)}{}
+\label{sun_electron_energy_delta_function}    
 \end{equation}
 
 \begin{multline}
@@ -140,23 +172,11 @@ d\Omega_{d} = dx_{d}dy_{d}/L^{2},
 \label{eq:ICARUS_equation}
 \end{multline}
 
-\begin{gather}
-\xi_{x} = 1+\left(\alpha_{x}-\frac{\beta_{x}}{L}\right)^{2}+\frac{2k\beta_{x}\epsilon_{x}}{z_{R}}, \\
-\xi_{y} = 1+\left(\alpha_{y}-\frac{\beta_{y}}{L}\right)^{2}+\frac{2k\beta_{y}\epsilon_{y}}{z_{R}},
-\label{eq:xi_parameters_sun}
-\end{gather}
 
-\begin{gather}
-\zeta_{x} = 1+\frac{2k\beta_{x}\epsilon_{x}}{z_{R}}, \\
-\zeta_{y} = 1+\frac{2k\beta_{y}\epsilon_{y}}{z_{R}},
-\label{eq:zeta_parameters_sun}
-\end{gather}
 
-\begin{gather}
-\sigma_{\theta_{x}} = \sqrt{\frac{\epsilon_{x}\xi_{x}}{\beta_{x}\zeta_{x}}}, \\
-\sigma_{\theta_{y}} = \sqrt{\frac{\epsilon_{y}\xi_{y}}{\beta_{y}\zeta_{y}}}.
-\label{eq:sigmatheta_parameters_sun}
-\end{gather}
+
+
+
 
 \begin{gather}
 \theta_{x,\mathrm{max}} = \sqrt{\frac{4E_{L}}{E_{\gamma}}-\theta_{y}^{2}}, \\
@@ -201,7 +221,7 @@ d\Omega_{d} = dx_{d}dy_{d}/L^{2},
 
 The code \textsc{ICCS3D}, a generalization of the \textsc{ICCS} code \cite{krafft2016laser,ranjan2018simulation}, computes radiation produced in ICS within the linear Compton regime (when $a_{0}\ll 1$, and electron recoil is properly accounted for). In \textsc{ICCS3D}, a 3D laser pulse model replaces the 1D plane wave model used in \textsc{ICCS}. This modification is implemented in a manner described in Terzi\'c et al \cite{terzic2019improving}; instead of all electrons experiencing the same laser field strength $a_{0}$, as they do for a 1D plane wave, their effective laser field strength is dependent on the electron's distance from the laser's center at the moment of scattering. To calculate anticipated spectral output, \textsc{ICCS3D} can use either the parameters of the electron beam or an arbitrary electron distribution, in addition to the laser parameters. For Fig.~\ref{fig:cbetaspectrumplot}, a particle distribution was tracked by \textsc{Tao} \cite{TaoManual} through the bypass lattice to the IP; the distribution at the IP was provided to \textsc{ICCS3D}. When compared to the spectrum calculated using only the electron beam parameters, the differences were negligible. 
 
-\textcolor{blue}{Paper Footnote: Note that there is an error in Equation 53 of Sun's paper, where the prefactor gives that $dN/dE\propto L^{2}$ for a source-to-collimator distance $L$. Clearly, this should be $dN/dE\propto 1/L^{2}$; the other parts of the given equation are correct.}
+
 
 \textsc{ICARUS}: inverse Compton scattering semi-analytic recoil-corrected ultra-relativistic spectrum code, uses a modified and corrected  version of the 2D formalism of Sun et al. \cite{sun2011theoretical}. \textsc{ICARUS} integrates the photons at small energy intervals that pass through a given 2D collimator aperture (here circular) for the fundamental laser mode. This code assumes that the electron bunch has a 3D Gaussian distribution, approximates the laser as a 3D Gaussian pulse, and is currently only valid for the head-on ($\phi = 0$) geometry; it has been validated against \textsc{ICCS3D} as well as the analytical results of this paper
 
