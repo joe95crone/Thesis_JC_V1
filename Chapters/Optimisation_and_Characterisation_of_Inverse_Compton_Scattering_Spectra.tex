@@ -123,12 +123,18 @@ Within (Eq.~\ref{eq:collimated_flux}) the effect of the energy spread of the bun
 
 \textcolor{blue}{**USE $\sim$ BETWEEN INTEGRATION VARIABLES FOR PROPER SPACING**}
 
+\textcolor{blue}{\\\textbf{**TO DO**}\\ \textcolor{blue}{**WRITE BLURB**}\\**CHECK THE MATHS AND SHORE UP THE DERIVATION WITH ADDITIONAL EXPLANATION OF ASSUMPTIONS**\\ **MAYBE INCLUDE DIAGRAMS EXPLAINING THE INTERACTION AND THE GEOMETRY ETC.**\\  **MODIFICATION FOR DETECTOR/COLLIMATOR MISALIGNMENT** \\  **HOW THE CODE ACTUALLY OPERATES AND IS RAN** }
+
+\textcolor{blue}{\textbf{**HERE**}\\ **THIS NEEDS A BLURB ABOUT WHAT THE CODE DOES + AIMS TO DO** \\ **PRODUCE ENERGY SPECTRUM OF THE RADIATION THAT IS COLLIMATED + THEREFORE VISIBLE ON THE DETECTOR** \\ **WHAT DOES IT ACCOUNT FOR + WHAT DOESN't IT ACCOUNT FOR**}
+
+
+
 Using the result of Sun et al \cite{sun2009characterizations,sun2011theoretical}, the spatial and energy distributions of a $\gamma$-ray beam produced by a head-on collision of an electron bunch and laser pulse is given by
 \begin{multline}
 \frac{dN_{\gamma}}{d\Omega_{d} dE_{\gamma}} = N_{e}N_{L}\int \frac{d\sigma}{d\Omega}\delta\left(\bar{E_{\gamma}}-E_{\gamma}\right)c\left(1+\beta\right)f_{e}\left(x,y,z,x',y',p,t\right)\\ \times f_L\left(x,y,z,k,t\right)dx'~dy'~dp~dk~dV~dt,
 \label{eq:central_distribution_sun}
 \end{multline}
-where the detection solid angle is $d\Omega = dx_{d}dy_{d}/L^{2}$ with $x_{d}$ and $y_{d}$ the $x$ and $y$ positions at the detector and $L$ the source-to-detector distance, $\frac{d\sigma}{d\Omega}$ is the differential cross section of the ICS interaction, $\delts\left(\bar{E_{\gamma}}-E_{\gamma}\right)$ is a delta function which encapsulates energy conservation in the process with $\bar{E_{\gamma}}$ the maximum possible energy a $\gamma$-ray have for a scattering angle $\theta$ and $E_{\gamma}$ the actual $\gamma$-ray energy, the $c\left(1+\beta\right)$ term arises from the Doppler shifting of the radiation, $f_{e}$ and $f_{L}$ are the phase-space intensity distributions of the electron bunch (Eq.~\ref{eq:electron_gaussian_intensity_distribution}) and laser pulse (Eq.~\ref{eq:laser_gaussian_intensity_distribution}) as modelled by Gaussian distributions, $dx'$ and $dy'$ are the divergence integration variables in $x$ and $y$ respectively, $dp$ is momentum of the electron integration variable, $dk$ is the wavenumber of the laser pulse integration variable, $dV$ is the volume of the interaction integration parameter and  $dt$ is the interaction time integration variable. 
+where the collimator solid angle is $d\Omega_{c} = dx_{c}dy_{c}/L^{2}$ with $x_{d}$ and $y_{d}$ the $x$ and $y$ positions at the collimator and $L$ the source-to-collimator distance, $\frac{d\sigma}{d\Omega}$ is the differential cross section of the ICS interaction, $\delts\left(\bar{E_{\gamma}}-E_{\gamma}\right)$ is a delta function which encapsulates energy conservation in the process with $\bar{E_{\gamma}}$ the maximum possible energy a $\gamma$-ray have for a scattering angle $\theta$ and $E_{\gamma}$ the actual $\gamma$-ray energy, the $c\left(1+\beta\right)$ term arises from the Doppler shifting of the radiation, $f_{e}$ and $f_{L}$ are the phase-space intensity distributions of the electron bunch (Eq.~\ref{eq:electron_gaussian_intensity_distribution}) and laser pulse (Eq.~\ref{eq:laser_gaussian_intensity_distribution}) as modelled by Gaussian distributions, $dx'$ and $dy'$ are the divergence integration variables in $x$ and $y$ respectively, $dp$ is momentum of the electron integration variable, $dk$ is the wavenumber of the laser pulse integration variable, $dV$ is the volume of the interaction integration parameter and  $dt$ is the interaction time integration variable. 
 
 The differential cross section for a head-on collision in this model is given by
 \begin{equation}
@@ -142,11 +148,11 @@ where $\bar{E_{\gamma}}$ is the Compton edge energy for a particular scattering 
 \end{equation}
 We can then express the angular divergences $x'$ and $y'$ by the projection of the scattering angle of of the produced radiation in each plane $\theta_{x}'$ and $\theta_{y}'$ ($\theta = \sqrt{\theta_{x}^{2}+\theta_{y}^{2}}$), whilst neglecting the very small angular divergences of the laser pulse, using the relations
 \begin{align}
-\theta_{x}' + x' &= \frac{x_{d}-x}{L} \\
-\theta_{y}' + y' &= \frac{y_{d}-y}{L}
+\theta_{x}' + x' &= \frac{x_{c}-x}{L} \\
+\theta_{y}' + y' &= \frac{y_{c}-y}{L}
 \label{eq:sun_angular_divergence}    
 \end{align}
-which arise from the geometric constraints of a photon passing through a collimator and impinging on a detector in far-field collimation ($L \gg \sqrt{x_{d}^{2}+y_{d}^{2}}$), where $x$ and $y$ are the positions of the interaction in each plane. We typically assume $x=y=0$ because we assume a point source. Applying (Eq.~\ref{eq:sun_angular_divergence}) and integrating (Eq.~\ref{eq:central_distribution_sun}) with respect to $dV$, the interaction geometric volume and $dt$ the interaction time, whilst expanding the detector solid angle and the Gaussian intensity distributions of the electron bunch (Eq.~\ref{eq:electron_gaussian_intensity_distribution}) and laser pulse (Eq.~\ref{eq:laser_gaussian_intensity_distribution}), we gain
+which arise from the geometric constraints of a photon passing through a collimator and then impinging on a detector in far-field collimation ($L \gg \sqrt{x_{c}^{2}+y_{c}^{2}}$), where $x$ and $y$ are the positions of the interaction in each plane. We typically assume $x=y=0$ because we assume a point source. Applying (Eq.~\ref{eq:sun_angular_divergence}) and integrating (Eq.~\ref{eq:central_distribution_sun}) with respect to $dV$, the interaction geometric volume and $dt$ the interaction time, whilst expanding the detector solid angle and the Gaussian intensity distributions of the electron bunch (Eq.~\ref{eq:electron_gaussian_intensity_distribution}) and laser pulse (Eq.~\ref{eq:laser_gaussian_intensity_distribution}), we gain
 \begin{multline}
 \frac{dN_{\gamma}}{dE_{\gamma}dx_{d}dy_{d}} = \frac{N_{e}N_{L}}{\left(2\pi\right)^{3}z_{R}\sigma_{p}\sigma_{k}}\int \frac{k}{\sqrt{\zeta_{x}\zeta_{y}}\sigma_{\theta_{x}}\sigma_{\theta_{y}}}\frac{d\sigma}{d\Omega}\delta\left(\bar{E_{\gamma}}-E_{\gamma}\right)\left(1+\beta\right) \\\times\exp\left[-\frac{\left(\theta_{x}-x_{d}/L\right)^{2}}{2\sigma_{\theta_{x}}^{2}}-\frac{\left(\theta_{y}-y_{d}/L\right)^{2}}{2\sigma_{\theta_{y}}^{2}}-\frac{\left(p-p_{0}\right)^{2}}{2\sigma_{p}^{2}}-\frac{\left(k-k_{0}\right)^{2}}{2\sigma_{k}^{2}}\right]~d\theta_{x}~d\theta_{y}~dp~dk,
 \label{eq:sun_volume_time_integral}    
@@ -157,7 +163,7 @@ where $z_{R}$ is the Rayleigh range \textcolor{blue}{**reference once sorted Com
 \zeta_{y} &= 1+\frac{2k\beta_{y}\epsilon_{y}}{z_{R}}, & \sigma_{\theta_{y}} &= \sqrt{\frac{\epsilon_{y}\xi_{y}}{\beta_{y}\zeta_{y}}}, & \xi_{y} &= 1+\left(\alpha_{y}-\frac{\beta_{y}}{L}\right)^{2}+\frac{2k\beta_{y}\epsilon_{y}}{z_{R}}, 
 \label{eq:zeta_sigmatheta_xi_parameters_sun}
 \end{align}
-where $p_{0}$ is the centroid momentum of the electron bunch and $k_{0}$ is the centroid wavenumber of the laser pulse. Here note that there is an algebraic error in Sun et al's \cite{sun2009characterizations,sun2011theoretical} derivation, the prefactor gives that $dN/dE\propto L^{2}$ for a source-to-detector distance $L$. This arises due to a mishandling of the detector solid angle. Clearly, this should be $dN/dE\propto 1/L^{2}$, meaning there is an inverse square relationship between source-to-detector distance and the spectral density as would be expected. 
+where $p_{0}$ is the centroid momentum of the electron bunch and $k_{0}$ is the centroid wavenumber of the laser pulse. Here note that there is an algebraic error in Sun et al's \cite{sun2009characterizations,sun2011theoretical} derivation, the prefactor gives that $dN/dE\propto L^{2}$ for a source-to-collimator distance $L$. This arises due to a mishandling of the detector solid angle. Clearly, this should be $dN/dE\propto 1/L^{2}$, meaning there is an inverse square relationship between source-to-collimator distance and the spectral density as would be expected. 
 
 The delta function, encompassing the energy conservation of this process can be re-wrote in terms of the Lorentz factor
 \begin{equation}
@@ -173,55 +179,31 @@ Substituting for $\delta\left(\bar{E_{\gamma}-E_{\gamma}}\right)$ using (Eq.~\re
 \begin{multline}
 \frac{dN_{\gamma}}{dE_{\gamma}} = \frac{r_{e}^{2}N_{e}N_{L}}{4\pi^{3}L^{2}\hbar c z_{R}\sigma_{\gamma}\sigma_{k}}\int_{k_{\mathrm{min}}}^{k_{\mathrm{max}}}\int_{-\theta_{x,\mathrm{max}}}^{\theta_{x,\mathrm{max}}}\int_{-\theta_{y,\mathrm{max}}}^{\theta_{y,\mathrm{max}}}\int_{y_{\mathrm{min}}}^{y_{\mathrm{max}}}\int_{x_{\mathrm{min}}}^{x_{\mathrm{max}}}\frac{1}{\sqrt{\zeta_{x}\zeta_{y}}\sigma_{\theta_{x}}\sigma_{\theta_{y}}}\frac{\bar{\gamma}}{1+2\gamma E_{L}/m_{e}c^{2}} \\
 \times\left\{\frac{1}{4}\left[\frac{4\bar{\gamma}^{2}E_{L}}{E_{\gamma}\left(1+\bar{\gamma}^{2}\theta^{2}\right)}+\frac{E_{\gamma}\left(1+\bar{\gamma}^{2}\theta^{2}\right)}{4\bar{\gamma}^{2}E_{L}}\right]-2\cos^{2}\left(\tau-\phi_{f}\right)\frac{\bar{\gamma}^{2}\theta^{2}}{\left(1+\bar{\gamma}^{2}\theta^{2}\right)^{2}}\right\} \\
-\times\exp{\left[-\frac{\left(\theta_{x}-x_{d}/L\right)^{2}}{2\sigma_{\theta_{x}}^{2}}-\frac{\left(\theta_{y}-y_{d}/L\right)^{2}}{2\sigma_{\theta_{y}}^{2}}-\frac{\left(\gamma-\gamma_{0}\right)^{2}}{2\sigma_{\gamma}^{2}}-\frac{\left(k-k_{0}\right)^{2}}{2\sigma_{k}^{2}}\right]}dx_{d}~dy_{d}~d\theta_{y}~d\theta_{x}~dk,
+\times\exp{\left[-\frac{\left(\theta_{x}-x_{c}/L\right)^{2}}{2\sigma_{\theta_{x}}^{2}}-\frac{\left(\theta_{y}-y_{c}/L\right)^{2}}{2\sigma_{\theta_{y}}^{2}}-\frac{\left(\gamma-\gamma_{0}\right)^{2}}{2\sigma_{\gamma}^{2}}-\frac{\left(k-k_{0}\right)^{2}}{2\sigma_{k}^{2}}\right]}dx_{c}~dy_{c}~d\theta_{y}~d\theta_{x}~dk,
 \label{eq:ICARUS_equation}
 \end{multline}
-where the cross section has been expanded in terms of the $\bar{\gamma}$ parameter with a normalisation factor, $\gamma_{0}$ is the centroid Lorentz factor of the electron bunch, $\sigma_{\gamma} = \sigma_{e}/m_{e}c^{2}$ is the spread of the Lorentz factor of the electron bunch and integral limits have been imposed. \textcolor{blue}{**integral limits}
+where the cross section has been expanded in terms of the $\bar{\gamma}$ parameter with a normalisation factor, $\gamma_{0}$ is the centroid Lorentz factor of the electron bunch, $\sigma_{\gamma} = \sigma_{e}/m_{e}c^{2}$ is the spread of the Lorentz factor of the electron bunch and integral limits have been imposed. 
 
-% k integral
+The integral over the collimator aperture ($dx_{c}$ and $dy_{c}$) can be carried out with the limits $x/y_{\mathrm{min}}$ and $x/y_{\mathrm{max}}$ which vary dependent on the collimator shape (rectangular or circular) and based on the specified collimator dimensions. For the circular collimation case, the relationship $R\geq\sqrt{x_{c}^{2}+y_{c}^{2}}$ must be obeyed with $R$ the radius of the collimator. For example, in the $x$ plane of the collimator $x_{\mathrm{min}} = -R$ and $x_{\mathrm{max}} = R$ i.e the limits are equal to the radius of the collimator, however this means that in the $y$ plane the collimator position integration limits are a function of $x_{c}$: $y_{\mathrm{min}} = -\sqrt{R^{2}-x_{c}^{2}}$ and $y_{\mathrm{max}} = \sqrt{R^{2}-x_{c}^{2}}$. For the case of a rectangular collimator these limits can be treated independently.  
 
-The polarisation term $2\cos^{2}\left(\tau-\phi_{f}\right)$ in (Eq.~\ref{eq:ICARUS_equation}) must be modified as the azimuthal scattering angle $\phi_{f}$ is not explicitly integrated over, instead the azimuthal scattering angle dependence is covered via integration of the projection of the scattering angles ($\theta_{x}$ and $\theta_{y}$) in each plane. Therefore, we replace the azimuthal scattering angle $\phi_{f}$ in (Eq.~\ref{eq:ICARUS_equation}) with $\phi_{f} = \cos^{-1}\left(\theta_{x}/\theta\right)$. However, it is trivial to show that when integrated over the full azimuthal scattering angle ($0 \geq \phi_{f} \geq 2\pi$), as is the case in evaluating (Eq.~\ref{eq:ICARUS_equation}), the polarisation term is negligible. 
+Integrals over the projection of the scattering angles in each plane are carried out using the limits
+\begin{align}
+\theta_{x,\mathrm{max}} &= \sqrt{\frac{4E_{L}}{E_{\gamma}}-\theta_{y}^{2}}, & \theta_{x,\mathrm{min}} &= -\sqrt{\frac{4E_{L}}{E_{\gamma}}-\theta_{y}^{2}} \nonumber\\ 
+\theta_{y,\mathrm{max}} &= \sqrt{\frac{4E_{L}}{E_{\gamma}}}, & \theta_{y,\mathrm{min}} &= -\sqrt{\frac{4E_{L}}{E_{\gamma}}},  
+\end{align}
+which constrains the angular cone the radiation is produced into to a $\pm 1/\gamma$ cone in two dimensions. As the limits of the integral on $\theta_{x}$ is dependent on  $\theta_{y}$, this constrains the order of integration -- $\theta_{y}$ must be evaluated before $\theta_{x}$. The order of integration is similarly constrained for the aforementioned circular collimator aperture case.
+
+Integration over the wavenumber $k$ of the incident laser photon in Sun et al's model \cite{sun2009characterizations,sun2011theoretical} is from the limits $0$ to $\infty$ to reflect a summation over all possible laser harmonics. However, this is impractical in a real simulation and unneccessary for laser driven sources as the fundamental harmonic is the laser wavelength of interest and other harmonics will have incredibly weak contribution or be excluded completely due to re-circulation in a Fabry-Perot optical cavity. Therefore, the limit for the integration of the wavenumber of the incident laser is set to $k\pm3\sigma_{k}$ representing the 3$\sigma_{k}$ spectral bandwidth tail of the laser pulse, as the laser pulse is modelled using a Gaussian distribution.  
+
+The polarisation term $2\cos^{2}\left(\tau-\phi_{f}\right)$ in (Eq.~\ref{eq:ICARUS_equation}) must be modified as the azimuthal scattering angle $\phi_{f}$ is not explicitly integrated over, instead the azimuthal scattering angle dependence is covered via integration of the projection of the scattering angles ($\theta_{x}$ and $\theta_{y}$) in each plane. Therefore, we replace the azimuthal scattering angle $\phi_{f}$ in (Eq.~\ref{eq:ICARUS_equation}) with $\phi_{f} = \cos^{-1}\left(\theta_{x}/\theta\right)$. The $x$ plane projection of the scattering angle $\theta_{x}$ is selected over the $y$ plane due to order of integration constraints. However, it is trivial to show that when integrated over the full azimuthal scattering angle ($0 \leq \phi_{f} \leq 2\pi$), as is the case in evaluating (Eq.~\ref{eq:ICARUS_equation}), the polarisation term is negligible.
+
+The \textsc{ICARUS} spectrum code is operated as a Mathematica script with pre-input of source parameters and post-processing which produces plots of spectra from the developed model and calculates the spectral yield i.e collimated flux from the produced spectrum. The spectrum simulation evaluates (Eq.~\ref{eq:ICARUS_equation}) at a series of scattered photon energy points to determine the number of photons produced at scattered photon energy intervals thereby building up a spectrum. For the complex integration involved in evaluating the central equation of \textsc{ICARUS} (Eq.~\ref{eq:ICARUS_equation}), quasi-Monte Carlo integration methods are used alongside parallel-processing, where each node iterates an individual scattered photon energy point in the simulation. 
+\textcolor{blue}{\\**ENERGY RANGE CALCULATION** \\ **ENERGY STEP DETERMINATION**}
  
-
 To summarise, the model presented here has been adapted from the model by Sun et al \cite{} through modification of the polarisation term in order to treat the azimuthal scattering angle dependence properly, revised integral limits for the wavenumber integration to limit this to the fundamental mode within reasonable $3\sigma$ spectral bandwidth tolerances and to correct the algebraic error involving the source-to-detector distance $L$ so the formula obeys the inverse square law. These modifications have allowed the \textsc{ICARUS} code to correctly take into account both circular and linear polarisation within the spectrum, properly account for the effect of the laser spectral bandwidth on the produced radiation (by limiting the calculation to the fundamental harmonic) and for the spectrum code to produce quantitative predictions of the spectral density, with the abandonment of the arbitrary units quoted by Sun et al \cite{sun2009characterizations,sun2011theoretical} for the spectra. Further work could include extending the model (Eq.~\ref{eq:ICARUS_equation}) for an angular crossing, accounting for non-Gaussian laser pulse and electron bunch distributions and generalising the model from the small angle and far-field collimation approximations it relies upon, though this is beyond the scope of this current work.        
 
 
 
-
-
-
-\begin{gather}
-\theta_{x,\mathrm{max}} = \sqrt{\frac{4E_{L}}{E_{\gamma}}-\theta_{y}^{2}}, \\
-\theta_{y,\mathrm{max}} = \sqrt{\frac{4E_{L}}{E_{\gamma}}},
-\label{eq:theta_max_parameter_sun}
-\end{gather}
-
-\begin{equation}
-\sigma_{\gamma} = \frac{\sigma_{e}}{m_{e}c^{2}},
-\label{eq:gamma_energy_spread}
-\end{equation}
-
-\begin{equation}
-\theta = \sqrt{\theta_{x}^{2}+\theta_{y}^{2}},
-\label{eq:theta_angle_sun}
-\end{equation}
-
-\begin{equation}
-\bar{\gamma} = \frac{2E_{\gamma}E_{L}/m_{e}c^{2}}{4E_{L}-E_{\gamma\theta^{2}}}\left[1+\sqrt{\frac{4E_{L}-E_{\gamma}\theta^{2}}{4E_{L}E_{\gamma}/\left(m_{e}c^{2}\right)^{2}}}\right],  
-\label{eq:gamma_bar_sun}
-\end{equation}
-
-\begin{multline}
-\frac{dN_{\gamma}}{dE_{\gamma}} \approx \frac{r_{e}^{2}N_{e}N_{L}}{2\pi^{2}L^{2}\hbar c z_{R}\sqrt{\zeta_{x}}\sigma_{\gamma}\sigma_{\theta_{x}}}\int_{-\theta_{x,\mathrm{max}}}^{\theta_{x,\mathrm{max}}}\int_{y_{\mathrm{min}}}^{y_{\mathrm{max}}}\int_{x_{\mathrm{min}}}^{\mathrm{max}}\frac{\bar{\gamma}}{1+2\gamma E_{L}/m_{e}c^{2}} \\
-\times\left\{\frac{1}{4}\left[\frac{4\bar{\gamma}^{2}E_{L}}{E_{\gamma}\left(1+\bar{\gamma}^{2}\theta^{2}\right)}+\frac{E_{\gamma\left(1+\bar{\gamma}^{2\theta^{2}}\right)}}{4\bar{\gamma}^{2}E_{L}}\right]-\frac{\bar{\gamma}^{2}\theta^{2}}{\left(1+\bar{\gamma}^{2}\theta^{2}\right)^{2}}\right\} \\
-\times\exp{\left[-\frac{\left(\theta_{x}-x_{d}/L\right)^{2}}{2\sigma_{\theta_{x}}^{2}}-\frac{\left(\bar{\gamma}-\gamma\right)^{2}}{2\sigma_{\gamma}^{2}}\right]}d\theta_{x}dy_{d}dx_{d},
-\label{eq:1D_sun_equation}    
-\end{multline}
-    
-\begin{equation}
-\theta_{x,\mathrm{max}} = \sqrt{\frac{4E_{L}}{E_{\gamma}}-\left(\frac{y_{d}}{L}\right)^{2}},
-\label{eq:theta_max_parameter_1D_sun}
-\end{equation}
 
 \section{Benchmarking Cases for Characterisation and Optimisation}
 \label{sec:benchmarking_cases_characterisation_optimisation}
