@@ -208,7 +208,47 @@ To summarise, the model presented here has been adapted from the model by Sun et
 \section{Benchmarking Cases for Characterisation and Optimisation}
 \label{sec:benchmarking_cases_characterisation_optimisation}
 
+\textcolor{blue}{\textbf{**THESE PARAMETERS ARE VERY MUCH A WORK IN PROGRESS** \\ **NEED TO BE JUSTIFIED + TALKED THROUGH**} \\ **DIANA-ISH, MAX-III NEQ RING (HYWEL + PETE), ODU ICS LINAC (KIRSTEN)** \\  }
 
+\begin{table}[!h]
+\centering
+\begin{tabular}{lcccc}
+\hline\hline
+Parameter & Case A & Case B & Case C & Unit \\
+\hline
+Kinetic Energy, $E_{e}$ & 1000 & 500 & 25 & \si{\mega\electronvolt} \\
+Repetition Rate, $f$ & 100 & 100 & 100 & \si{\mega\hertz} \\
+Bunch Charge, $Q$ & 100 & 2500 & 10 & \si{\pico\coulomb} \\
+Normalised Transverse Emittance, $\epsilon_{n,x}/\epsilon_{n,y}$ & 0.50/0.50 & 6.37/1.25 & 0.10/0.10 & \si{\milli\meter}-\si{\milli\radian} \\
+Bunch Length, $\sigma_{e,z}$ & 1.00 & 26.7 & 0.38 & \si{\milli\meter} \\
+Relative Energy Spread, $\Delta E_{e}/E_{e}$ & $10^{-4}$ & $8.6\times 10^{-4}$ & $3.00\times 10^{-4}$ & \\
+\hline\hline
+\end{tabular}
+\caption{Electron bunch parameters at the interaction point. Parameters are given for three cases: a state-of-the-art 1~\si{\giga\electronvolt} ERL based on design of the DIANA ERL (Case A), the MAX-III storage ring operated at 500~\si{\mega\electronvolt} in non-equilibrium mode \cite{owen2013nonequilibrium} (Case B) and the designed ODU ICS 25~\si{\mega\electronvolt} high repetition rate linac \cite{krafft2016laser,deitrick2017inverse,deitrick2018high} (Case C).}
+\label{tab:char_opt_electron_bunch_parameters}
+\end{table}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{lcc}
+\hline\hline
+Parameter & Quantity & Unit \\
+\hline
+Wavelength, $\lambda_\textrm{laser}$ & 1064 & nm\\
+Photon energy, $E_\textrm{laser}$ & 1.17 & eV\\
+Pulse energy  & 0.1 & \si{\milli\joule}\\
+Number of photons, $N_{\textrm{laser}}$ & $5.34\times 10^{14}$\\ 
+Repetition rate, $f$ & 100 & MHz\\
+Spot size at the IP, $\sigma_{L}$ & 30 & \si{\micro\meter}\\
+Crossing angle, $\phi$ & 5 & deg \\
+Pulse length  & 10 & ps\\
+Spectral Bandwidth, $\Delta E_\textrm{laser}/E_\textrm{laser}$ & 4.66$\times 10^{-4}$ &   \\
+ % 0.5nm rms error on 1064nm
+\hline\hline
+\end{tabular}
+\caption{Laser pulse parameters at the interaction point. Each accelerator electron bunch case in Table~\ref{tab:char_opt_electron_bunch_parameters} is assumed to interact with identical laser pulse parameters at the IP.}
+\label{tab:char_opt_laser_pulse_parameters}
+\end{table}
 
 \section{Benchmarking of Characterisation Methods}
 \label{sec:benchmarking_of_the_ICARUS_spectrum_code}
