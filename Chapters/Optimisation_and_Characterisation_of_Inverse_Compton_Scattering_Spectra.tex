@@ -210,6 +210,10 @@ To summarise, the model presented here has been adapted from the model by Sun et
 
 \textcolor{blue}{\textbf{**THESE PARAMETERS ARE VERY MUCH A WORK IN PROGRESS** \\ **NEED TO BE JUSTIFIED + TALKED THROUGH**} \\ **DIANA-ISH, MAX-III NEQ RING (HYWEL + PETE), ODU ICS LINAC (KIRSTEN)** \\  }
 
+\textcolor{blue}{\textbf{**NEED TO JUSTIFY THE MAX-III PARAMETERS**}\\**NOT NON-EQUILIBRIUM SET**}
+
+A series of three cases have been devised to test both the characterisation and optimisation methods outlined within this chapter. The cases are each designed to imitate three accelerator types that could be used to operate an inverse Compton scattering source including: a high energy ERL driven $\gamma$-ray ICS source case (Case A), a precursor to the DIANA design in Chapter~\ref{DIANA_Inverse_Compton_Source_Design}, a storage ring case based on a $\gamma$-ray ICS source driven by the MAX-III storage ring  \cite{owen2013nonequilibrium} (Case B), which with smaller normalised emittance has more utility as a narrowband ICS source, and a low energy, high repetition rate linac based on the Old Dominion University x-ray ICS source design \cite{krafft2016laser,deitrick2017inverse,deitrick2018high} (Case C). The electron bunch parameters at the interaction point for each of these cases are shown in Table~\ref{tab:char_opt_electron_bunch_parameters}.
+
 \begin{table}[!h]
 \centering
 \begin{tabular}{lcccc}
@@ -224,9 +228,32 @@ Bunch Length, $\sigma_{e,z}$ & 1.00 & 26.7 & 0.38 & \si{\milli\meter} \\
 Relative Energy Spread, $\Delta E_{e}/E_{e}$ & $10^{-4}$ & $8.6\times 10^{-4}$ & $3.00\times 10^{-4}$ & \\
 \hline\hline
 \end{tabular}
-\caption{Electron bunch parameters at the interaction point. Parameters are given for three cases: a state-of-the-art 1~\si{\giga\electronvolt} ERL based on design of the DIANA ERL (Case A), the MAX-III storage ring operated at 500~\si{\mega\electronvolt} in non-equilibrium mode \cite{owen2013nonequilibrium} (Case B) and the designed ODU ICS 25~\si{\mega\electronvolt} high repetition rate linac \cite{krafft2016laser,deitrick2017inverse,deitrick2018high} (Case C).}
+\caption{Electron bunch parameters at the interaction point. Parameters are given for three cases: a state-of-the-art 1~\si{\giga\electronvolt} ERL -- a precursor of the DIANA ERL -- (Case A), the MAX-III storage ring operated at 500~\si{\mega\electronvolt} \cite{owen2013nonequilibrium} (Case B) and the designed ODU ICS 25~\si{\mega\electronvolt} high repetition rate linac \cite{krafft2016laser,deitrick2017inverse,deitrick2018high} (Case C).}
 \label{tab:char_opt_electron_bunch_parameters}
 \end{table}
+\textcolor{blue}{\textbf{**CASE B PARAMETERS VERY UP IN THE AIR**}}
+\begin{table}[!h]
+\centering
+\begin{tabular}{lcccc}
+\hline\hline
+Parameter & Case A & Case B & Case C & Unit \\
+\hline
+Kinetic Energy, $E_{e}$ & 1000 & 700 & 25 & \si{\mega\electronvolt} \\
+Repetition Rate, $f$ & 100 & 83.3 & 100 & \si{\mega\hertz} \\
+Bunch Charge, $Q$ & 100 & 3000 & 10 & \si{\pico\coulomb} \\
+Normalised Transverse Emittance, $\epsilon_{n,x}/\epsilon_{n,y}$ & 0.50/0.50 & 17.55/? & 0.10/0.10 & \si{\milli\meter}-\si{\milli\radian} \\
+Bunch Length, $\sigma_{e,z}$ & 1.00 & 26.7 & 0.38 & \si{\milli\meter} \\
+Relative Energy Spread, $\Delta E_{e}/E_{e}$ & $10^{-4}$ & $8.6\times 10^{-4}$ & $3.00\times 10^{-4}$ & \\
+\hline\hline
+\end{tabular}
+\caption{Electron bunch parameters at the interaction point. Parameters are given for three cases: a state-of-the-art 1~\si{\giga\electronvolt} ERL -- a precursor of the DIANA ERL -- (Case A), the MAX-III storage ring operated at 700~\si{\mega\electronvolt} \cite{owen2013nonequilibrium} (Case B) and the designed ODU ICS 25~\si{\mega\electronvolt} high repetition rate linac \cite{krafft2016laser,deitrick2017inverse,deitrick2018high} (Case C).}
+\label{tab:char_opt_electron_bunch_parameters}
+\end{table}
+
+\textcolor{blue}{**JUSTIFY THE CHOOSING OF THESE ACCELERATORS AS CASES**}
+The three electron bunch cases in Table~\ref{tab:char_opt_electron_bunch_parameters} have electron bunch energies chosen to reflect the typical energy regimes of x-ray and $\gamma$-ray production most designed and operating ICS sources are focused upon. 
+
+The laser parameters for the test case ICS sources, based on the electron bunch parameters in Table~\ref{tab:char_opt_electron_bunch_parameters}, are kept constant so the effect of the electron bunch on the ICS spectrum and optimisation is observable with the invariant laser parameters presented in Table~\ref{tab:char_opt_laser_pulse_parameters}. The laser parameters are based upon an Nd:YAG laser ($\lambda = 1064$~\si{\nano\meter}) re-circulated in a 4-mirror Fabry-Perot optical cavity based on the cERL ICS demonstration at KEK \cite{akagi2016narrow}. 
 
 \begin{table}[!h]
 \centering
@@ -250,10 +277,29 @@ Spectral Bandwidth, $\Delta E_\textrm{laser}/E_\textrm{laser}$ & 4.66$\times 10^
 \label{tab:char_opt_laser_pulse_parameters}
 \end{table}
 
+\textcolor{blue}{**JUSTIFY THE LASER PARAMETERS**}
+The optical cavity envisioned to deliver these laser parameters has an average stored power of 10~\si{\kilo\watt}, well below demonstrations at MuCLS \cite{eggl2016munich} and the state-of-the-art 670~\si{\kilo\watt} stored average power optical cavity \cite{carstens2014megawatt}. At a repetition rate of 100~\si{\mega\hertz} the cavity path length is $\sim3$~\si{\meter} which is tolerable for both misalignment errors and mirror heating considerations with a single stored 0.1~\si{\milli\joule} laser pulse.
+
 \section{Benchmarking of Characterisation Methods}
 \label{sec:benchmarking_of_the_ICARUS_spectrum_code}
 
-\textcolor{blue}{Mention that the Curatolo formula is deficient as it doesn't provide adequate derivation to verify, seemingly that the bandwidth it is based upon is deficient (Ranjan et al say so in (2018), Fig.~1) and doesn't provide angular case either.}
+The analytical collimated flux derivation (Eq.~\ref{eq:collimated_flux}) in Section~\ref{sec:analytical_collimated_flux} has been compared against both the developed \textsc{ICARUS} code (Section~\ref{sec:development_of_the_ICARUS_spectrum_code}) and an analytical collimated flux method by Curatolo et al \cite{curatolo2017analytical} using the test case parameters (Tables~\ref{tab:char_opt_electron_bunch_parameters} and \ref{tab:char_opt_laser_pulse_parameters}) as described in Section~\ref{sec:benchmarking_cases_characterisation_optimisation}. The analytical calculation of collimated flux by Curatolo et al \cite{curatolo2017analytical} in 'natural units' is given by  
+\begin{equation}
+\mathcal{F}_{\mathrm{col}} = 6.25\times 10^{8}\frac{E_{\mathrm{pulse}}\left(\mathrm{\si{\joule}}\right)Q\left(\si{\pico\coulomb}\right)f\left(\si{\hertz}\right)}{E_{L}\left(\si{\electronvolt}\right)\left[\sigma_{x}^{2}\left(\si{\micro\meter}\right)+\sigma_{L}^{2}\left(\si{\micro\meter}\right)\right]}\times\frac{\left(1+\sqrt[3]{X}\Psi^{2}/3\right)\Psi^{2}}{\left[1+\left(1+X/2\right)\Psi^{2}\right]\left(1+\Psi^{2}\right)},
+\label{eq:curatolo_collimated_flux}
+\end{equation}
+where all symbols are consistent with the exception of $\sigma_{x}$, which in the work of Curatolo et al is the \textit{rms} spot size of the electron bunch at the IP and $\Psi = \gamma\theta_{\mathrm{col}}$, the acceptance angle.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/Opt_Char_Fcol_Curatolo_Comp_CaseAC.pdf}
+\caption{aye \textcolor{blue}{**ADD THE ICARUS RUNS TO THESE PLOTS, LIKE BALSA HAS WITH THE BW COMPARISON**}}
+\label{fig:curatolo_collimated_flux_comparison}
+\end{figure}
+
+\textcolor{blue}{**Show Curatolo collimated Flux** \\ **Say that had to do head-on and exclude case B as their luminosity assumes round beams** \\ **They don't show a derivation** \\ **Show plots of A and C** \\ **Add on the ICARUS data for these** \\ **Explain that Ranjan et al Showed a similar situation for bandwidth + link to that theory section**}
+
+\textcolor{blue}{Mention that the Curatolo formula is deficient as it doesn't provide adequate derivation to verify, seemingly that the bandwidth it is based upon is deficient (Ranjan et al say so in (2018), Fig.~1) and doesn't provide angular case either. Do a comparative plot of a test case for my analytical formula and curatolo's analytical formula.}
 
 The code \textsc{ICCS3D}, a generalization of the \textsc{ICCS} code \cite{krafft2016laser,ranjan2018simulation}, computes radiation produced in ICS within the linear Compton regime (when $a_{0}\ll 1$, and electron recoil is properly accounted for). In \textsc{ICCS3D}, a 3D laser pulse model replaces the 1D plane wave model used in \textsc{ICCS}. This modification is implemented in a manner described in Terzi\'c et al \cite{terzic2019improving}; instead of all electrons experiencing the same laser field strength $a_{0}$, as they do for a 1D plane wave, their effective laser field strength is dependent on the electron's distance from the laser's center at the moment of scattering. To calculate anticipated spectral output, \textsc{ICCS3D} can use either the parameters of the electron beam or an arbitrary electron distribution, in addition to the laser parameters. For Fig.~\ref{fig:cbetaspectrumplot}, a particle distribution was tracked by \textsc{Tao} \cite{TaoManual} through the bypass lattice to the IP; the distribution at the IP was provided to \textsc{ICCS3D}. When compared to the spectrum calculated using only the electron beam parameters, the differences were negligible. 
 
