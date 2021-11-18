@@ -283,21 +283,27 @@ The optical cavity envisioned to deliver these laser parameters has an average s
 \section{Benchmarking of Characterisation Methods}
 \label{sec:benchmarking_of_the_ICARUS_spectrum_code}
 
-The analytical collimated flux derivation (Eq.~\ref{eq:collimated_flux}) in Section~\ref{sec:analytical_collimated_flux} has been compared against both the developed \textsc{ICARUS} code (Section~\ref{sec:development_of_the_ICARUS_spectrum_code}) and an analytical collimated flux method by Curatolo et al \cite{curatolo2017analytical} using the test case parameters (Tables~\ref{tab:char_opt_electron_bunch_parameters} and \ref{tab:char_opt_laser_pulse_parameters}) as described in Section~\ref{sec:benchmarking_cases_characterisation_optimisation}. The analytical calculation of collimated flux by Curatolo et al \cite{curatolo2017analytical} in 'natural units' is given by  
+\textcolor{blue}{**Show Curatolo collimated Flux** \\ **They don't show a derivation** \\ **Show plots of A, B and C** \\ **Add on the ICARUS data for these** \\ **Explain that Ranjan et al Showed a similar situation for bandwidth + link to that theory section**}
+
+The analytical collimated flux derivation (Eq.~\ref{eq:collimated_flux}) in Section~\ref{sec:analytical_collimated_flux} has been compared against both the developed \textsc{ICARUS} code (Section~\ref{sec:development_of_the_ICARUS_spectrum_code}) and an analytical collimated flux method by Curatolo et al \cite{curatolo2017analytical}, using the test case parameters (Tables~\ref{tab:char_opt_electron_bunch_parameters} and \ref{tab:char_opt_laser_pulse_parameters}) as described in Section~\ref{sec:benchmarking_cases_characterisation_optimisation}. All methods should be capable of calculating the flux within a particular collimation angle; agreement of the derived analytical collimated flux calculation (Eq.~\ref{eq:collimated_flux}) is expected to be within $\sim10$\% of the full spectral yield calculation from the \textsc{ICARUS} spectrum code as the only differences between these models are a neglect of the energy spread of the electron bunch, spectral bandwidth and point source approximation. 
+
+The analytical calculation of collimated flux by Curatolo et al \cite{curatolo2017analytical} in 'natural units' is given by  
 \begin{equation}
 \mathcal{F}_{\mathrm{col}} = 6.25\times 10^{8}\frac{E_{\mathrm{pulse}}\left(\mathrm{\si{\joule}}\right)Q\left(\si{\pico\coulomb}\right)f\left(\si{\hertz}\right)}{E_{L}\left(\si{\electronvolt}\right)\left[\sigma_{x}^{2}\left(\si{\micro\meter}\right)+\sigma_{L}^{2}\left(\si{\micro\meter}\right)\right]}\times\frac{\left(1+\sqrt[3]{X}\Psi^{2}/3\right)\Psi^{2}}{\left[1+\left(1+X/2\right)\Psi^{2}\right]\left(1+\Psi^{2}\right)},
 \label{eq:curatolo_collimated_flux}
 \end{equation}
-where all symbols are consistent with the exception of $\sigma_{x}$, which in the work of Curatolo et al is the \textit{rms} spot size of the electron bunch at the IP and $\Psi = \gamma\theta_{\mathrm{col}}$, the acceptance angle.
+where all symbols are consistent with the exception of $\sigma_{x}$, which in the work of Curatolo et al is the \textit{rms} spot size of the electron bunch at the IP and $\Psi = \gamma\theta_{\mathrm{col}}$, the acceptance angle. The collimated flux calculation by Curatolo et al \cite{curatolo2017analytical} apparently uses the Berestetskii, Pitaevskii and Lifshitz \cite{berestetskii1982quantum} differential cross section as is used in the derivation in Section~\ref{sec:analytical_collimated_flux} however, an explicit derivation is not shown or referenced. Upon inspection of (Eq.~\ref{eq:curatolo_collimated_flux}), it is evident that this is only valid for a head-on ($\phi=0$) interaction, for round electron spot sizes, where the $x$ and $y$ plane spot sizes are identical, doesn't take into account the hourglass effect \cite{furman1991hourglass,miyahara2008luminosity} and it appears the cross section is assumed to be the Thomson cross section, not the recoil corrected cross section unlike the calculation in (Eq.~\ref{eq:collimated_flux}).   
+
+In Fig.~\ref{fig:curatolo_collimated_flux_comparison}, the derived analytical calculation (Eq.~\ref{eq:collimated_flux}) is compared with the calculation by Curatolo et al \cite{curatolo2017analytical} (Eq.~\ref{eq:curatolo_collimated_flux}) and the spectral yield (collimated flux) of the \textsc{ICARUS} spectrum code. The comparison is made in Fig.~\ref{fig:curatolo_collimated_flux_comparison} through calculation of the collimated flux against the acceptance angle $\Psi = \gamma\theta$ for each of the cases in Table~\ref{tab:char_opt_electron_bunch_parameters} with the transverse profile matching condition ($\sigma_{e} = \sigma_{L}$, see Section~\ref{sec:transverse_profile_matching}) applied -- where the laser pulse \textit{rms} spot size and electron bunch \textit{rms} spot size are identical ($\sigma_{e} = \sigma_{L} = 30$~\si{\micro\meter}), which in this case is set by the laser pulse \textit{rms} spot size in Table~\ref{tab:char_opt_laser_pulse_parameters}.    
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/Opt_Char_Fcol_Curatolo_Comp_CaseAC.pdf}
-\caption{aye \textcolor{blue}{**ADD THE ICARUS RUNS TO THESE PLOTS, LIKE BALSA HAS WITH THE BW COMPARISON**}}
+\caption{aye \textcolor{blue}{**ADD THE ICARUS RUNS TO THESE PLOTS, LIKE BALSA HAS WITH THE BW COMPARISON** \\ **ADD THE MAX-III CASE, WE CAN DO THIS WITH TRANSVERSE PROFILE MATCHING**}}
 \label{fig:curatolo_collimated_flux_comparison}
 \end{figure}
 
-\textcolor{blue}{**Show Curatolo collimated Flux** \\ **Say that had to do head-on and exclude case B as their luminosity assumes round beams** \\ **They don't show a derivation** \\ **Show plots of A and C** \\ **Add on the ICARUS data for these** \\ **Explain that Ranjan et al Showed a similar situation for bandwidth + link to that theory section**}
+
 
 \textcolor{blue}{Mention that the Curatolo formula is deficient as it doesn't provide adequate derivation to verify, seemingly that the bandwidth it is based upon is deficient (Ranjan et al say so in (2018), Fig.~1) and doesn't provide angular case either. Do a comparative plot of a test case for my analytical formula and curatolo's analytical formula.}
 
@@ -306,6 +312,7 @@ The code \textsc{ICCS3D}, a generalization of the \textsc{ICCS} code \cite{kraff
 \section{Motivation for Optimisation of ICS Sources}
 
 \section{Transverse Profile Matching}
+\label{sec:transverse_profile_matching}
 
 In the literature \cite{akagi2016narrow,deitrick2018high,jacquet2015radiation} \textcolor{blue}{add more examples, BriXS?}, many inverse Compton scattering sources have attempted to maximise flux output via matching the \textit{rms} spot size of the transverse profile of the laser pulse to that of the electron bunch ($\sigma_{L}\approx\sigma_{\mathrm{electron}}$). Here, we term this the transverse profile matching scheme. The transverse profile matching scheme ignores the full interaction dynamics at the IP in favour of a simplistic solution. 
 
