@@ -322,7 +322,15 @@ The \textsc{ICCS3D} spectrum code, a generalization of the \textsc{ICCS} code \c
 
 \textcolor{blue}{**CASE PLOTS OF SPECTRA AGAINST ICCS3D SPECTRA** \\ **NEED CONFIRMATION OF THE CASES** \\ **NEED TO MAKE SPECTRA PLOTS** \\ **NEED TO GET THE ICCS3D PLOTS** \\ **TALK ABOUT THE PLOTS**}
 
-\section{Motivation for Optimisation of ICS Sources}
+\section{Motivation for Narrowband Optimisation of ICS Sources}
+
+Currently, many ICS sources \cite{deitrick2017inverse,deitrick2018high} \textcolor{blue}{**NEED MORE**} are optimised with regard to producing the maximum uncollimated flux from the ICS interaction. However, within design of an inverse Compton scattering source for light source experimentation there are two objectives: to produce a large quantity of photons and to minimise the energy spread i.e bandwidth of the scattered radiation towards a monochromatic source. The former, a high flux of photons, is desirable because a high flux speeds up data acquisition times and can improve the signal-to-noise ratio of measurements and the later is advantageous due to the ability to target only a certain process, for example a specific resonance in $^{235}\mathrm{U}$ in a nuclear resonance fluorescence investigation. Users typically require a compromise on bandwidth and flux to have enough precision to detect a specific phenomena whilst needing to make a measurement on a reasonable timescale with adequate statistics. Therefore, within the following optimisations we aim to maximise the collimated flux (Eq.~\ref{eq:collimated_flux}) whilst minimising, or limiting to some user specified value, the \textit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}) of the source.
+
+The two objectives, collimated flux and \textit{rms} bandwidth, compete in an ICS source as minimising the two typically dominant terms of the \texit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}), the emittance/divergence term (Eq.~\ref{eq:emittance_term}) and the collimation term (Eq.~\ref{eq:collimation_term}), reduces the collimated flux. Therefore, a trade-off between these objectives needs to be developed; maximisation of the collimated flux within a user selected \textit{rms} bandwidth. Through inspection of these terms of the bandwidth it is clear to see that optimisation is possible via control of the transverse dynamics at the IP (transverse emittances and $\beta$-functions) and the collimator specification (collimation angle). These parameters can be tuned for any accelerator type and therefore this work is generalised to any accelerator driver of an ICS source, not just an ERL.
+
+Optimisation of the ICS interaction allows for understanding of the best ICS source configuration for a particular experiment. Through use of tuning curves, where a Pareto front is generated in collimated flux--\textit{rms} bandwidth space, the possible configurations of an ICS source can be understood whereas in a single bandwidth point optimisation the best electron bunch and collimation settings for a particular experiment can be determined. Therefore, methods are developed to perform both tuning curve optimisations and single point optimisations.
+
+In the second half of this chapter a default method, transverse profile matching, applied to maximise the flux of many ICS sources is explained then a series of optimisations such as the 1D round-beam optimisation, 2D non-round beam simplex optimisation and 2D non-roun beam genetic algorithm optimisation are developed which are finally evaluated in Section~\ref{sec:evaluation_of_optimisation_methods} using the cases in Table~\ref{tab:char_opt_electron_bunch_parameters} previously used for the characterisation studies.   
 
 \section{Transverse Profile Matching}
 \label{sec:transverse_profile_matching}
@@ -387,6 +395,7 @@ The collimated flux $\mathcal{F}_{\Psi}$ is calculated for each combination prod
 \subsection{Nelder--Mead Approach}
 
 \section{Evaluation of Optimisation Methods} 
+\label{sec:evaluation_of_optimisation_methods}
 
  
 
