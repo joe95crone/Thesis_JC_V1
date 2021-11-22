@@ -212,51 +212,42 @@ To summarise, the model presented here has been adapted from the model by Sun et
 
 \textcolor{blue}{\textbf{**NEED TO JUSTIFY THE MAX-III PARAMETERS**}\\**NOT NON-EQUILIBRIUM SET**}
 
-A series of three cases have been devised to test both the characterisation and optimisation methods outlined within this chapter. The cases are each designed to imitate three accelerator types that could be used to operate an inverse Compton scattering source including: a high energy ERL driven $\gamma$-ray ICS source case (Case A), a precursor to the DIANA design in Chapter~\ref{DIANA_Inverse_Compton_Source_Design}, a storage ring case based on a $\gamma$-ray ICS source driven by the MAX-III storage ring  \cite{owen2013nonequilibrium} (Case B), which with smaller normalised emittance has more utility as a narrowband ICS source, and a low energy, high repetition rate linac based on the Old Dominion University x-ray ICS source design \cite{krafft2016laser,deitrick2017inverse,deitrick2018high} (Case C). The electron bunch parameters at the interaction point for each of these cases are shown in Table~\ref{tab:char_opt_electron_bunch_parameters}.
+A series of three cases have been devised to test both the characterisation and optimisation methods outlined within this chapter. The cases are each designed to imitate three accelerator types that could be used to operate an inverse Compton scattering source including: a high energy ERL driven $\gamma$-ray ICS source case (Case A), a precursor to the DIANA design in Chapter~\ref{DIANA_Inverse_Compton_Source_Design}, a storage ring case based on a $\gamma$-ray ICS source driven by the MAX-III storage ring  \cite{owen2013nonequilibrium} (Case B), and a low energy, high repetition rate linac based on the Old Dominion University x-ray ICS source design \cite{krafft2016laser,deitrick2017inverse,deitrick2018high} (Case C). The electron bunch parameters at the interaction point for each of these cases are shown in Table~\ref{tab:char_opt_electron_bunch_parameters}.
 
 \begin{table}[!h]
 \centering
-\begin{tabular}{lcccc}
-\hline\hline
-Parameter & Case A & Case B & Case C & Unit \\
-\hline
-Kinetic Energy, $E_{e}$ & 1000 & 500 & 25 & \si{\mega\electronvolt} \\
-Repetition Rate, $f$ & 100 & 100 & 100 & \si{\mega\hertz} \\
-Bunch Charge, $Q$ & 100 & 2500 & 10 & \si{\pico\coulomb} \\
-Normalised Transverse Emittance, $\epsilon_{n,x}/\epsilon_{n,y}$ & 0.50/0.50 & 6.37/1.25 & 0.10/0.10 & \si{\milli\meter}-\si{\milli\radian} \\
-Bunch Length, $\sigma_{e,z}$ & 1.00 & 26.7 & 0.38 & \si{\milli\meter} \\
-Relative Energy Spread, $\Delta E_{e}/E_{e}$ & $10^{-4}$ & $8.6\times 10^{-4}$ & $3.00\times 10^{-4}$ & \\
-\hline\hline
-\end{tabular}
-\caption{Electron bunch parameters at the interaction point. Parameters are given for three cases: a state-of-the-art 1~\si{\giga\electronvolt} ERL -- a precursor of the DIANA ERL -- (Case A), the MAX-III storage ring operated at 500~\si{\mega\electronvolt} \cite{owen2013nonequilibrium} (Case B) and the designed ODU ICS 25~\si{\mega\electronvolt} high repetition rate linac \cite{krafft2016laser,deitrick2017inverse,deitrick2018high} (Case C).}
+\caption{Electron bunch parameters at the interaction point. Parameters are given for three cases: a state-of-the-art 1~\si{\giga\electronvolt} ERL -- a precursor of the DIANA ERL -- (Case A), the MAX-III storage ring operated at 700~\si{\mega\electronvolt} \cite{sjostrom2009max,hansson2011imaging,rosborg2012electron,owen2013nonequilibrium,} (Case B) and the designed ODU ICS 25~\si{\mega\electronvolt} high repetition rate linac \cite{krafft2016laser,deitrick2017inverse,deitrick2018high} (Case C).}
 \label{tab:char_opt_electron_bunch_parameters}
-\end{table}
-\textcolor{blue}{\textbf{**CASE B PARAMETERS VERY UP IN THE AIR**}}
-\begin{table}[!h]
-\centering
 \begin{tabular}{lcccc}
 \hline\hline
 Parameter & Case A & Case B & Case C & Unit \\
 \hline
 Kinetic Energy, $E_{e}$ & 1000 & 700 & 25 & \si{\mega\electronvolt} \\
-Repetition Rate, $f$ & 100 & 83.3 & 100 & \si{\mega\hertz} \\
+Repetition Rate, $f$ & 100 & 83.33 & 100 & \si{\mega\hertz} \\
 Bunch Charge, $Q$ & 100 & 3000 & 10 & \si{\pico\coulomb} \\
-Normalised Transverse Emittance, $\epsilon_{n,x}/\epsilon_{n,y}$ & 0.50/0.50 & 17.55/? & 0.10/0.10 & \si{\milli\meter}-\si{\milli\radian} \\
-Bunch Length, $\sigma_{e,z}$ & 1.00 & 26.7 & 0.38 & \si{\milli\meter} \\
-Relative Energy Spread, $\Delta E_{e}/E_{e}$ & $10^{-4}$ & $8.6\times 10^{-4}$ & $3.00\times 10^{-4}$ & \\
+Normalised Transverse Emittance, $\epsilon_{n,x}/\epsilon_{n,y}$ & 0.50/0.50 & 18.78/0.233 & 0.10/0.10 & \si{\milli\meter}-\si{\milli\radian} \\
+Bunch Length, $\sigma_{e,z}$ & 1.00 & 27.9 & 0.38 & \si{\milli\meter} \\
+Relative Energy Spread, $\Delta E_{e}/E_{e}$ & $10^{-4}$ & $6.07\times 10^{-4}$ & $3.00\times 10^{-4}$ & \\
 \hline\hline
 \end{tabular}
-\caption{Electron bunch parameters at the interaction point. Parameters are given for three cases: a state-of-the-art 1~\si{\giga\electronvolt} ERL -- a precursor of the DIANA ERL -- (Case A), the MAX-III storage ring operated at 700~\si{\mega\electronvolt} \cite{owen2013nonequilibrium} (Case B) and the designed ODU ICS 25~\si{\mega\electronvolt} high repetition rate linac \cite{krafft2016laser,deitrick2017inverse,deitrick2018high} (Case C).}
 \label{tab:char_opt_electron_bunch_parameters}
 \end{table}
 
-\textcolor{blue}{**JUSTIFY THE CHOOSING OF THESE ACCELERATORS AS CASES**}
-The three electron bunch cases in Table~\ref{tab:char_opt_electron_bunch_parameters} have electron bunch energies chosen to reflect the typical energy regimes of x-ray and $\gamma$-ray production most designed and operating ICS sources are focused upon. 
+\textcolor{blue}{**JUSTIFY THE CHOOSING OF THESE ACCELERATORS AS CASES**\\}
+The three electron bunch cases in Table~\ref{tab:char_opt_electron_bunch_parameters} have electron bunch energies chosen to reflect the typical electron bunch energy regimes of x-ray ($E_{e} =$10's~\si{\mega\electronvolt}) and $\gamma$-ray ($E_{e} =$100's~\si{\mega\electronvolt}) production most designed and operating ICS sources are focused upon. Within the three electron bunch cases, each of the main accelerator driver options for ICS sources are represented: an ERL, storage ring and linac, therefore this should provide a fair overview of the applicability of the developed methods to a wide range of ICS source designs. The three accelerator cases in Table~\ref{tab:char_opt_electron_bunch_parameters} provide a large range in electron bunch energy (25--1000~\si{\mega\electronvolt}) as well as a large variation in bunch charge (10~\si{\pico\coulomb}--3~\si{\nano\coulomb}), tranverse normalised emittance (0.1--18.78~\si{\milli\meter}-\si{\milli\radian}) and bunch length (0.38--26.7~\si{\milli\meter}) which should be suitable for evaluating the optimisation and characterisation methods and determining their efficacy in modelling a range of ICS sources.
 
-The laser parameters for the test case ICS sources, based on the electron bunch parameters in Table~\ref{tab:char_opt_electron_bunch_parameters}, are kept constant so the effect of the electron bunch on the ICS spectrum and optimisation is observable with the invariant laser parameters presented in Table~\ref{tab:char_opt_laser_pulse_parameters}. The laser parameters are based upon an Nd:YAG laser ($\lambda = 1064$~\si{\nano\meter}) re-circulated in a 4-mirror Fabry-Perot optical cavity based on the cERL ICS demonstration at KEK \cite{akagi2016narrow}. 
+\textcolor{blue}{**JUSTIFY ELECTRON BUNCH PARAMETERS**\\}
+\textcolor{blue}{**CASE A JUSTIFICATION?**\\}
+The electron beam parameters of case B are based upon the electron bunch parameters of the MAX-III storage ring synchrotron light source \cite{owen2012modular,rosborg2012electron}
+
+
+\textcolor{blue}{**LASER BLURB**\\}
+The laser parameters for the test case ICS sources, based on the electron bunch parameters in Table~\ref{tab:char_opt_electron_bunch_parameters}, are kept constant, with the exception of an adjusted repetition rate for the MAX-III case B parameters, so the effect of the electron bunch on the ICS spectrum and optimisation is observable with the invariant laser parameters presented in Table~\ref{tab:char_opt_laser_pulse_parameters}. The laser parameters are based upon an Nd:YAG laser ($\lambda = 1064$~\si{\nano\meter}) re-circulated in a 4-mirror Fabry-Perot optical cavity based on the cERL ICS demonstration at KEK \cite{akagi2016narrow}. 
 
 \begin{table}[!h]
 \centering
+\caption{Laser pulse parameters at the interaction point. Each accelerator electron bunch case in Table~\ref{tab:char_opt_electron_bunch_parameters} is assumed to interact with identical laser pulse parameters at the IP.}
+\begin{threeparttable}
 \begin{tabular}{lcc}
 \hline\hline
 Parameter & Quantity & Unit \\
@@ -265,7 +256,7 @@ Wavelength, $\lambda_\textrm{laser}$ & 1064 & nm\\
 Photon energy, $E_\textrm{laser}$ & 1.17 & eV\\
 Pulse energy  & 0.1 & \si{\milli\joule}\\
 Number of photons, $N_{\textrm{laser}}$ & $5.34\times 10^{14}$\\ 
-Repetition rate, $f$ & 100 & MHz\\
+Repetition rate, $f$ & 100 (83.33)\tnote{*} & MHz\\
 Spot size at the IP, $\sigma_{L}$ & 30 & \si{\micro\meter}\\
 Crossing angle, $\phi$ & 5 & deg \\
 Pulse length  & 10 & ps\\
@@ -273,11 +264,14 @@ Spectral Bandwidth, $\Delta E_\textrm{laser}/E_\textrm{laser}$ & 4.66$\times 10^
  % 0.5nm rms error on 1064nm
 \hline\hline
 \end{tabular}
-\caption{Laser pulse parameters at the interaction point. Each accelerator electron bunch case in Table~\ref{tab:char_opt_electron_bunch_parameters} is assumed to interact with identical laser pulse parameters at the IP.}
+\begin{tablenotes}
+\item[*]{Adjusted to compensate for the lower case B (MAX-III \cite{owen2013nonequilibrium}) repetition rate.}
+\end{tablenotes}
+\end{threeparttable}
 \label{tab:char_opt_laser_pulse_parameters}
 \end{table}
 
-\textcolor{blue}{**JUSTIFY THE LASER PARAMETERS**}
+\textcolor{blue}{**JUSTIFY THE LASER PARAMETERS**\\}
 The optical cavity envisioned to deliver these laser parameters has an average stored power of 10~\si{\kilo\watt}, well below demonstrations at MuCLS \cite{eggl2016munich} and the state-of-the-art 670~\si{\kilo\watt} stored average power optical cavity \cite{carstens2014megawatt}. At a repetition rate of 100~\si{\mega\hertz} the cavity path length is $\sim3$~\si{\meter} which is tolerable for both misalignment errors and mirror heating considerations with a single stored 0.1~\si{\milli\joule} laser pulse.
 
 \section{Benchmarking of Characterisation Methods}
@@ -298,8 +292,8 @@ In Fig.~\ref{fig:curatolo_collimated_flux_comparison}, the derived analytical ca
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/Opt_Char_Fcol_Curatolo_Comp_CaseAC.pdf}
-\caption{Comparison of the derived analytical caluclation in this work (Eq.~\ref{eq:collimated_flux}) (blue) with the Curatolo et al \cite{curatolo2017analytical} calculation (Eq.~\ref{eq:curatolo_collimated_flux}) (red) within an acceptance angle $0 \geq \Psi \geq 1$ (a $1/\gamma$ cone). Electron bunch and laser pulse spot sizes are matched ($\sigma_{e}=\sigma_{L}=30$~\si{\micro\meter}). Left: collimated flux against acceptance angle of the Case A parameters. Right: collimated flux against acceptance angle of the Case C parameters. \textcolor{blue}{**ADD THE ICARUS RUNS TO THESE PLOTS, LIKE BALSA HAS WITH THE BW COMPARISON** \\ **ADD THE MAX-III CASE, WE CAN DO THIS WITH TRANSVERSE PROFILE MATCHING**}}
+\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/Opt_Char_Fcol_Curatolo_Comp_FINAL.pdf}
+\caption{Comparison of the derived analytical caluclation in this work (Eq.~\ref{eq:collimated_flux}) (blue) with the Curatolo et al \cite{curatolo2017analytical} calculation (Eq.~\ref{eq:curatolo_collimated_flux}) (red) within an acceptance angle $0 \geq \Psi \geq 1$ (a $1/\gamma$ cone). Electron bunch and laser pulse spot sizes are matched ($\sigma_{e}=\sigma_{L}=30$~\si{\micro\meter}). Left: collimated flux against acceptance angle of the Case A parameters. Right: collimated flux against acceptance angle of the Case C parameters. \textcolor{blue}{**ADD THE ICARUS RUNS TO THESE PLOTS, LIKE BALSA HAS WITH THE BW COMPARISON**}}
 \label{fig:curatolo_collimated_flux_comparison}
 \end{figure}
 
@@ -309,7 +303,7 @@ With reference to Fig.~\ref{fig:curatolo_collimated_flux_comparison}, it is clea
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.6\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/Opt_Char_Fcol_Curatolo_SF.pdf}
+\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/Opt_Char_Fcol_Curatolo_SF_FINAL.pdf}
 \caption{Scaling factor between the analytical collimated flux equation developed in this work (Eq.~\ref{eq:collimated_flux}) and Curatolo et al's \cite{curatolo2017analytical} calculation (Eq.~\ref{eq:curatolo_collimated_flux}) against acceptance angle for case A (red) and case C (blue) presented in Table~\ref{tab:char_opt_electron_bunch_parameters}.}
 \label{fig:curatolo_scaling_factor_comparison}
 \end{figure}
@@ -357,7 +351,7 @@ where $X$ is the recoil parameter (Eq.~\ref{eq:X_geometry}), $\epsilon_{n}$ is t
 
 Typically the dominant terms that define the bandwidth of an inverse Compton source Eq.~(\ref{eq:RMS_bandwidth}) are the collimation term Eq.~(\ref{eq:collimation_term}) and the emittance term Eq.~(\ref{eq:emittance_term_round_beam}). The free parameter of the collimation term is the collimation angle $\theta_{\mathrm{col}}$, which can be adjusted either by changing the collimator aperture or changing its distance from the IP. Adjustable collimators have been designed for the ELI-NP-GBS $\gamma$-ray ICS source~\cite{paterno2017collimation}; a similar design could be implemented at other ICS sources.
 
-The emittance term is dependent both on the normalised transverse emittance $\epsilon_{n}$ and on $\beta^{*}$. It is more convenient to change the $\beta$-function at the IP with focusing rather than by varying the emittance, since the latter is dependent on the injector and collective effects prior to the IP. By using a larger $\beta^{*}$ and a small collimator aperture, it is possible to reduce the contribution of the collimation and emittance terms so that they are negligible; thus the electron bunch and laser pulse energy spread terms (Eq.~\ref{eq:beam_energy_spread_term},~\ref{eq:laser_energy_spread_term}) become dominant for accelerators with a sufficiently small emittance. This effectively places a lower limit on the bandwidth of an ICS source, i.e. it is limited by the energy spread of the electron beam $\Delta E_{e}/E_{e}$ and laser pulse $\Delta E_{\mathrm{laser}}/E_{\mathrm{laser}}$ as 
+The emittance term is dependent both on the normalised transverse emittance $\epsilon_{n}$ and on $\beta^{*}$. It is more convenient to change the $\beta$-function at the IP with focusing rather than by varying the emittance, since the latter is dependent on the injector and collective effects prior to the IP. By using a larger $\beta^{*}$ and a small collimator aperture, it is possible to reduce the contribution of the collimation and emittance terms so that they are negligible; thus the electron bunch (Eq.~\ref{eq:beam_energy_spread_term}) and laser pulse energy spread terms (Eq.~\ref{eq:laser_energy_spread_term}) become dominant for accelerators with a sufficiently small emittance. This effectively places a lower limit on the bandwidth of an ICS source, i.e. it is limited by the energy spread of the electron beam $\Delta E_{e}/E_{e}$ and laser pulse $\Delta E_{\mathrm{laser}}/E_{\mathrm{laser}}$ as 
 \begin{equation}
 \left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{\mathrm{min}} \approx \sqrt{\left[\left(\frac{2+X}{1+X}\right)\frac{\Delta E_{e}}{E_{e}}\right]^{2} + \left[\left(\frac{1}{1+X}\right)\frac{\Delta E_{L}}{E_{L}}\right]^{2}},
 \label{eq:bandwidth_limitation_minimum}
