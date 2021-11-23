@@ -364,25 +364,24 @@ A range of production methods for medical isotopes are available such as cyclotr
 Using the DIANA ICS source, with high flux and narrow bandwidth, preliminary experiments on the photonuclear production of medical isotopes could be undertaken. A series of candidates have been evaluated for production using DIANA, with particular focus on the photoneutron $\left(\gamma,n\right)$ reaction. Within this section photonuclear production of two promising medical isotope candidates: $^{153}\mathrm{Sm}$ and $^{155}\mathrm{Tb}$ will be investigated.  
 
 \subsection{Samarium 153 Production}
-% 153 Sm
-\textcolor{blue}{**This needs references to back it up**}
-Samarium 153 is a well established radionuclide used in the commercial radio-pharmaceuticals Quadramet \cite{} and Lexidronam \cite{}, which via $\beta^{-}$ decay 
+
+Samarium 153 is a well established radionuclide used in the commercial radio-pharmaceuticals Quadramet \cite{ema2015quadramet} -- Samarium lexidronam pentasodium -- which via $\beta^{-}$ decay 
 \begin{equation}
 ^{153}\mathrm{Sm} \left(T_{1/2} = 1.93~\mathrm{\si{\day}}\right)\xrightarrow[]{\left(\beta^{-},\mathrm{100\%}\right)} {}^{153}\mathrm{Eu},
 \label{eq:153Sm_beta_minus_decay}    
 \end{equation}
-is used as a therapy for palliation of bone metastases. Typically, $^{153}\mathrm{Sm}$ is produced in a research reactor via 
+is used as a therapy for palliation of bone metastases \cite{kapoor2021cancer,murray2021systemic}. Typically, $^{153}\mathrm{Sm}$ is produced in a research reactor via 
 \begin{align}
 ^{152}\mathrm{Sm}&\xrightarrow[]{\left(n,\gamma\right)}{}^{153}\mathrm{Sm} \\
 ^{154}\mathrm{Sm}&\xrightarrow[]{\left(n,2n\right)}{}^{153}\mathrm{Sm}
 \label{eq:153Sm_research_reactor_production}
 \end{align}
-neutron capture reactions using highly enriched Samarium targets. Enriched $^{152}\mathrm{Sm}$ and $^{154}\mathrm{Sm}$ targets can be produced using electromagnetic isotopes separators which has been demonstrated at Oak Ridge Laboratory using Caultrons producing enrichments of $>$98\% respectively \cite{bell1987stable}. These highly enriched Samarium isotope targets are now available commercially at enrichments of $>$98.4\% and $>$98.5\% \cite{isoflex2021sm}. However, due to the relatively short half-life of $^{153}\mathrm{Sm}$ ($T_{1/2} = 1.93$~\si{\day}) and the neutron rich environment of a reactor, research reactor irradiation production methods are suceptible to contamination with $^{154}\mathrm{Eu}$ via
+neutron capture reactions using highly enriched Samarium targets. Enriched $^{152}\mathrm{Sm}$ and $^{154}\mathrm{Sm}$ targets can be produced using electromagnetic isotope separators which has been demonstrated at Oak Ridge Laboratory using Caultrons producing enrichments of $>$98\% respectively \cite{bell1987stable}. These highly enriched Samarium isotope targets are now available commercially at enrichments of $>$98.4\% and $>$98.5\% \cite{isoflex2021sm}. However, due to the relatively short half-life of $^{153}\mathrm{Sm}$ ($T_{1/2} = 1.93$~\si{\day}) and the neutron rich environment of a reactor, research reactor irradiation production methods are suceptible to contamination with $^{154}\mathrm{Eu}$ \cite{naseri2021effective,van2018separation} via
 \begin{equation}
 ^{153}\mathrm{Sm}\xrightarrow[]{\left(\beta^{-},\mathrm{100\%}\right)}{}^{153}\mathrm{Eu}\xrightarrow[]{\left(n,\gamma\right)}{}^{154}\mathrm{Eu},
 \label{eq:153Sm_reactor_contamination}    
 \end{equation}
-typically occurs where the $^{153}\mathrm{Sm}$ $\beta^{-}$ decays during irradiation to $^{153}\mathrm{Eu}$ which then undergoes neutron capture $\left(n,\gamma\right)$ to $^{154}\mathrm{Eu}$. The $^{154}\mathrm{Eu}$ contaminant is relatively long-lived ($T_{1/2} = 8.59$~y), which results in difficulties for storage and handling of $^{153}\mathrm{Sm}$ based radiopharmaceuticals and a short shelf-life. \textcolor{blue}{**WHY??**}
+typically occurs where the $^{153}\mathrm{Sm}$ $\beta^{-}$ decays during irradiation to $^{153}\mathrm{Eu}$ which then undergoes neutron capture $\left(n,\gamma\right)$ to $^{154}\mathrm{Eu}$. The $^{154}\mathrm{Eu}$ contaminant is relatively long-lived ($T_{1/2} = 8.59$~y), which results in difficulties for storage and handling of $^{153}\mathrm{Sm}$ based radiopharmaceuticals and a short 24 hour shelf-life \cite{ema2015quadramet} as the prevalence of $^{154}\mathrm{Eu}$ impurities becomes too high \cite{van2018separation}.
 
 However, photonuclear production of $^{153}\mathrm{Sm}$ \cite{carlos1974giant,filipescu2014photoneutron} is possible via
 \begin{equation}
@@ -395,7 +394,7 @@ using an ICS $\gamma$-ray source such as DIANA and a highly enriched ($>$98\%) $
 ^{154}\mathrm{Sm}\xrightarrow[]{\left(\gamma,n\right)+\left(\gamma,np\right)}{}^{153}\mathrm{Sm}+{}^{152}\mathrm{Pm},
 \label{eq:153Sm_photonuclear_disruptors}    
 \end{align}
-for a mono-isotopic $^{154}\mathrm{Sm}$ target. More competing processes may occur, such as a $\left(\gamma,3n\right)$ reaction etc. however data for these is unavailable in the EXFOR database \cite{zerkin2018experimental} and the literature, we limit this discussion to the measured cross-sections. \textcolor{blue}{**DISCUSSION OF SOURCES, FILIPESCU AT NEWSUBARU**} The cross section of the desired (Eq.~\ref{eq:153Sm_photonuclear_production}) and measured disruptive (Eq.~\ref{eq:153Sm_photonuclear_disruptors}) photonuclear processes as a function of $\gamma$-ray photon energy in Fig.~\ref{fig:154Sm_cross_section_photon_energy}.
+for a mono-isotopic $^{154}\mathrm{Sm}$ target. More competing processes may occur, such as a $\left(\gamma,3n\right)$ reaction etc. however data for these is unavailable in the EXFOR database \cite{zerkin2018experimental} and the literature, we limit this discussion to the measured cross-sections. A full study of impurities would be required, but this is beyond the scope of this investigation.  \textcolor{blue}{**DISCUSSION OF SOURCES, FILIPESCU AT NEWSUBARU**} The cross section of the desired (Eq.~\ref{eq:153Sm_photonuclear_production}) and measured disruptive (Eq.~\ref{eq:153Sm_photonuclear_disruptors}) photonuclear processes as a function of $\gamma$-ray photon energy in Fig.~\ref{fig:154Sm_cross_section_photon_energy}.
 
 \begin{figure}[!h]
 \centering
@@ -405,30 +404,69 @@ for a mono-isotopic $^{154}\mathrm{Sm}$ target. More competing processes may occ
 \end{figure}
 Fig.~\ref{fig:154Sm_cross_section_photon_energy} shows that the known competing processes for a mono-isotopic $^{154}\mathrm{Sm}$ can be avoided below 13.21~\si{\mega\electronvolt} as this is the threshold for the $^{154}\mathrm{Sm}\left(\gamma,2n\right)$ photonuclear reaction. However, some of the data presented by Carlos et al \cite{carlos1974giant} for the disruptive processes has negative cross sections, which appears to be unphysical. The peak cross sections for the desired $^{154}\mathrm{Sm}\left(\gamma,n\right)$ reaction are $\sigma_{\mathrm{reac}} = 252.1$~\si{\milli\barn} at $E_{\gamma} = 12.39$~\si{\mega\electronvolt} (Carlos et al \cite{carlos1974giant}) and $\sigma_{\mathrm{reac}} = 225.3$~\si{\milli\barn} at $E_{\gamma} = 12.65$~\si{\mega\electronvolt} (Filipescu et al \cite{filipescu2014photoneutron}). Therefore, with the DIANA ICS source tuned to the scattered photon energy corresponding to the peak cross section, photonuclear production of $^{153}\mathrm{Sm}$ is possible.
 
-\textcolor{blue}{\\**SPECIFIC ACTIVITY CALCULATION**\\**NEED TO PUT IN SOME REFERENCES FOR PARTS OF THIS**}
-The resultant specific activity ($A/m$) of a produced radioisotope at irradiation time $t_{\mathrm{irr}}$ is given by \cite{habs2011production}
+The specific activity of a radioisotope produced using a photonuclear method can be calculated simply based on the assumption that we produce a pure radioisotope without admixture of stable isotopes \cite{habs2011production} and we assume that other photoneutron reations, for example a $\left(\gamma,n\right)$ reaction on a produced radisotope, do not interfere during irradiation. The resultant specific activity ($A/m$) in \si{\becquerel}/\si{\milli\gram} of a produced radioisotope at irradiation time $t_{\mathrm{irr}}$ is given by \cite{habs2011production}
 \begin{equation}
-\frac{A}{m} = \frac{N_{A}}{M}\sigma_{\mathrm{reac}}\mathcal{F}\left\{1-\exp\left[\frac{-\log\left(2\right)t_{\mathrm{irr}}}{T_{1/2}}\right]\right\},
+\frac{A}{m} = \frac{N_{A}}{M}\sigma_{\mathrm{reac}}\Phi\left\{1-\exp\left[\frac{-\ln\left(2\right)t_{\mathrm{irr}}}{T_{1/2}}\right]\right\},
 \label{eq:specific_activity}    
 \end{equation}
-where $N_{A}$ is Avogadros constant, $M$ is the molar mass of the radioisotope, $\sigma_{\mathrm{reac}}$ is the cross section of the reaction used to generate the radionuclide and $T_{1/2}$ is the half-life of the radioisotope. At saturation, where sufficiently long irradiation time overcomes the half-life the specific activity becomes maximal
+where $N_{A}$ is Avogadros constant, $M$ is the molar mass of the target isotope, $\sigma_{\mathrm{reac}}$ is the cross section of the reaction used to generate the radionuclide and $T_{1/2}$ is the half-life of the generated radioisotope and $\Phi$ is the flux density in ph/(\si{\second}~$\mathrm{\si{\milli\meter}}^2$) at the target. The flux density at the target is calculated by the collimated flux in a 0.5\% bandwidth at the scattered photon energy corresponding to the peak cross section, either through scaling or re-optimisation, and the area on the target is calculated assuming a circular collimator and no divergence of the produced $\gamma$-ray beam, which produces a circular spot on the target. We have also assumed that all of the 0.5\% \textit{rms} bandwidth acts at the peak cross section, which is an overestimation. 
+
+At saturation, where sufficiently long irradiation time overcomes the half-life the specific activity becomes maximal
 \begin{equation}
-\left(\frac{A}{m}\right)_{\mathrm{max}} = \frac{N_{A}}{M}\sigma_{\mathrm{reac}}\mathcal{F}.
-\label{eq:max_specific_activity}    
+\left(\frac{A}{m}\right)_{\mathrm{max}} = \frac{N_{A}}{M}\sigma_{\mathrm{reac}}\Phi.
+\label{eq:sat_specific_activity}    
 \end{equation}
-To get an order of magnitude estimate for the specific activity for the photonuclear production of $^{153}\mathrm{Sm}$ using DIANA, the assumption that all of the flux ($\mathcal{F} = 6.04\times 10^{10}$~ph/\si{\second}) is concentrated at the peak photonuclear cross section is made. This overestimate bounds the maximal possibility of using the DIANA ERL ICS as a generator for medical isotopes. The specific activity as a function of irradiation time for $^{153}\mathrm{Sm}$ is shown in Fig.~\ref{fig:153Sm_specific_activity}.
+To get an order of magnitude estimate for the specific activity for the photonuclear production of $^{153}\mathrm{Sm}$ using DIANA, the assumption that the collimated flux in a 0.5\% \textit{rms} bandwidth ($\mathcal{F} = 1.30\times 10^{9}$~ph/\si{\second}) is concentrated at the peak photonuclear cross section is made. The peak cross section assumption results in a slight overestimation of the produced specific activity, however optimisation of the bandwidth and accounting for the full energy dependence of the cross section for photonuclear production of radioisotopes is beyond the scope of this work. The specific activity as a function of irradiation time for $^{153}\mathrm{Sm}$ is shown in Fig.~\ref{fig:153Sm_specific_activity}.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.6\textwidth]{Figures/DIANA_Inverse_Compton_Source_Design/154Sm_specific_activity.pdf}
-\caption{Estimated specific activity of the produced $^{153}\mathrm{Sm}$ as a function of irradiation time assuming the full flux of the DIANA ICS source at the peak photoneutron reaction cross section measured by Carlos et al \cite{carlos1974giant} (red) and Filipescu et al \cite{filipescu2014photoneutron} (blue).}
+\caption{Estimated specific activity of the produced $^{153}\mathrm{Sm}$ as a function of irradiation time using the collimated flux of the DIANA ICS source operating in a 0.5\% \textit{rms} bandwidth at the peak photoneutron reaction cross section, as measured by Carlos et al \cite{carlos1974giant} (red) and Filipescu et al \cite{filipescu2014photoneutron} (blue).}
 \label{fig:153Sm_specific_activity}
 \end{figure}
 
-As shown in Fig.~\ref{fig:153Sm_specific_activity}, within 300-400 hours of irradiation the specific activity of the sample reaches a maximum of 5.95~\si{\mega\becquerel}/\si{\milli\gram} (Carlos et al \cite{carlos1974giant}) and 5.32~\si{\mega\becquerel}/\si{\milli\gram} (Filipescu et al \cite{filipescu2014photoneutron}). However, due to irradiation time constraints, the radioisotopic sample will not achieve the maximal specific activity. Considering the assumptions of peak cross section and that the full uncollimated flux is impinging on the $^{154}\mathrm{Sm}$ target, the specific activity is likely to be much lower. For example, for iradiation with a 0.5\% \textit{rms} bandwidth DIANA ICS source at the peak cross section (Carlos et al) the maximum specific activity of the produced sample would be 128~\si{\kilo\becquerel}/\si{\milli\gram}. Therefore, photonuclear production of $^{153}\mathrm{Sm}$ is currently below viable commercial production standards because of the low reaction cross section and flux limitations of the DIANA ICS source. However, proof-of-principle experiments could be conducted at the DIANA $\gamma$-ray ICS source.      
+As shown in Fig.~\ref{fig:153Sm_specific_activity}, within around 10 days of irradiation the specific activity of the sample reaches a maximum of 66.92~\si{\mega\becquerel}/\si{\milli\gram} (Carlos et al \cite{carlos1974giant}) and 61.07~\si{\mega\becquerel}/\si{\milli\gram} (Filipescu et al \cite{filipescu2014photoneutron}). However, if there are irradiation time constraints, as is likely, the radioisotopic sample will not achieve the saturated specific activity. 
+
+Typically, Quadramet is produced for clinical applications with a specific activity of 16--65~\si{\mega\becquerel}/\si{\micro\gram} \cite{ema2015quadramet}, a factor of $\sim$1000 below the current estimate for the photoneutron route. Therefore, photonuclear production of $^{153}\mathrm{Sm}$ is currently below viable commercial production standards because of the low reaction cross section, flux limitations of the DIANA ICS source and a lack of optimisation of this method. With optical cavities on the 100's~\si{\kilo\watt} scale becoming widely available \cite{eggl2016munich,liu2018optical}, the possibility of improving interaction dynamics using crab cavities \cite{variola2011luminosity,koshiba2018luminosity} and the increasing the average power frontier of ERLs, photonuclear production of radioisotopes could become plausible. There is also the additional possibility of increasing specific activity by targeting nuclear resonances for improved photoneutron reaction cross sections \cite{habs2011production}, though this hasn't been investigated within this work. However, proof-of-principle experiments involving photoneutron production of $^{153}\mathrm{Sm}$ could be conducted at the DIANA $\gamma$-ray ICS source, and optimisation of photonuclear production of radioisotopes is a possible topic for future work.      
 
 \subsection{Terbium 155 Production}
 % 155 Tb
+Isotopes of Terbium, specifically the Terbium radioisotope quadruplet \cite{muller2012unique}, are highly regarded as a candidate for theranostic use where the four clinically useful candidates are: $^{149}\mathrm{Tb}$, $^{152}\mathrm{Tb}$, $^{155}\mathrm{Tb}$ and $^{161}\mathrm{Tb}$. The lowest mass isotope $^{149}\mathrm{Tb}$ ($T_{1/2} = 4.12$~\si{\hour}) decays via $\alpha$ emission, which could have many applications in oncology \cite{muller2017alpha} including treatment of leukemia and lymphoma \cite{beyer2004targeted}. The highest mass isotope $^{161}\mathrm{Tb}$ ($T_{1/2} = 6.89$~\si{\day}) decays exclusively via a low-energy $\beta^{-}$ decay route producing Auger electrons \cite{muller2012unique}, which is being explored at the trial phase as a treatment for prostate cancer \cite{baum2021first,muller2019terbium} and may be advantageous over $^{177}\mathrm{Lu}$ ($T_{1/2} = $~\si{}) to which $^{161}\mathrm{Tb}$ has similar decay characteristics with the production of more Auger electrons \cite{lehenberger2011low,grunberg2014anti}. Both $^{152}\mathrm{Tb}$ and $^{155}\mathrm{Tb}$ are useful in imaging; $^{152}\mathrm{Tb}$ decays via $\beta^{+}$ decay and therefore is useful in PET imaging \cite{muller2012unique}, whereas $^{155}\mathrm{Tb}$ ($T_{1/2} = 5.32$~\si{\day}) decays exclusively by electron capture and could be used in SPECT imaging to provide tumour imaging without a high radiation dose burden to the patient \cite{muller2012unique}.
 
+These isotopes are typically produced using spallation methods; $^{161}\mathrm{Tb}$ is produced using neutron spallation of highly enriched $^{160}\mathrm{Gd}$ targets \cite{lehenberger2011low} whereas the other three isotopes have all been produced via high energy ($E_{e} = 1.4$~\si{\giga\electronvolt}) proton spallation \cite{muller2012unique} at the CERN-MEDICIS facility \cite{dos2014cern} with isotope separation on-line (ISOL) at the ISOLDE \cite{catherall2017isolde} facility. Deutron spallation techniques have also been used for the production of $^{155}\mathrm{Tb}$ using 34~\si{\mega\electronvolt} deutrons from the ARRONAX cyclotron \cite{duchemin2016deuteron}. 
+
+Spallation methods with ISOL are typically expensive and complex facilities \cite{duchemin2016deuteron}, with only a handful worldwide such as the SPES-ISOLPHARM experiment \cite{andrighetto2019isolpharm} and no existing dedicated production facilities based on this method. The spallation and ISOL method consequently focuses on isotopes that are difficult to produce via more conventional research reactor and cyclotron based approaches. Therefore, an opportunity exists to develop alternative methods to produce isotopes solely available at ISOL facilities without the cost and complexity of high energy spallation and isotope separation on-line. The photonuclear route could provide some of these isotopes with less complexity; here we present a case study for one such isotope -- $^{155}\mathrm{Tb}$.
+
+Terbium 155 is useful in SPECT imaging via the electron capture decay
+\begin{equation}
+^{155}\mathrm{Tb}\left(T_{1/2} = 5.32~\mathrm{\si{\day}}\right)\xrightarrow[]{\left(\mathrm{EC}, \mathrm{100\%}\right)}{}^{155}\mathrm{Gd},
+\label{eq:Tb155_decay}
+\end{equation}
+which produces $\gamma$-rays at 86.55~\si{\kilo\electronvolt} (32\%) and 105.3~\si{\kilo\electronvolt} (25\%)\cite{muller2012unique} which are useful for SPECT imaging. A possible photonuclear route to produce $^{155}\mathrm{Tb}$ is via a photoneutron reaction $\left(\gamma,n\right)$ and subsequent exclusive $\beta^{+}$ decay from $^{156}\mathrm{Dy}$
+\begin{equation}
+^{156}\mathrm{Dy}\xrightarrow[]{\left(\gamma,n\right)}{}^{155}\mathrm{Dy}\left(T_{1/2} = 9.92~\mathrm{\si{\hour}}\right)\xrightarrow[]{\left(\beta^{+},\mathrm{100\%}\right)}{}^{155}\mathrm{Tb}.    
+\label{eq:155Tb_photonuclear_production}
+\end{equation}
+Production via this route (Eq.~\ref{eq:155Tb_photonuclear_production}) would require a monoisotopic target of $^{156}\mathrm{Dy}$, however 156 Dysprosium isotope has a particularly low abunance in natural Dysprosium (0.056\%) and therefore requires enrichment. Enrichment via electromagnetic isotope separators, such as Caultrons \cite{bell1987stable}, can provide $< 34\%$ pure $^{156}\mathrm{Dy}$ whilst commercially $^{156}\mathrm{Dy}$ is available at $< 20.7\%$ enrichment \cite{}. Improvement in enrichment may be possible using lasers with methods such as separation of isotopes by laser excitation (SILEX)\cite{} \textcolor{blue}{**SILEX explanation, some examples ETC**} Because enrichment is so low for commercially available target isotopes, unlike in the $^{153}\mathrm{Sm}$ case, we must account for photoneutron reactions from other isotopes of Dysprosium in the assesment of the cross section.
+
+The $^{156}\mathrm{Dy}\left(\gamma,n\right){}^{155}\mathrm{Dy}$ photoneutron reaction has a small cross section ($\sigma_{\mathrm{reac}} = 144\pm 44$~\si{\milli\barn}) \cite{vagena2017photodisintegration}, measured as an average cross section across a wide range of energies using a Bremsstrahlung method driven by an electron linac and tungsten target. However, several competing reactions to the $^{156}\mathrm{Dy}\left(\gamma,n\right){}^{155}\mathrm{Dy}$ reaction exist such as \cite{renstrom2018verification,vagena2017photodisintegration}
+\begin{align}
+^{163}\mathrm{Dy}&\xrightarrow[]{\left(\gamma,n\right)}{}^{162}\mathrm{Dy}, \\
+^{162}\mathrm{Dy}&\xrightarrow[]{\left(\gamma,n\right)}{}^{161}\mathrm{Dy}, \\
+^{158}\mathrm{Dy}&\xrightarrow[]{\left(\gamma,n\right)}{}^{157}\mathrm{Dy}, \\
+^{156}\mathrm{Dy}&\xrightarrow[]{\left(\gamma,n\right)}{}^{155}\mathrm{Dy},
+\label{eq:155Tb_photonuclear_disruptors}    
+\end{align}
+where higher order ($\gamma,2n$ etc.) reactions and those involving protons or alpha particles have no known measurement \cite{zerkin2018experimental}.
+
+The photoneutron reaction cross sections as a function of incident photon energy are shown in Fig.~\ref{fig:}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\textwidth]{Figures/DIANA_Inverse_Compton_Source_Design/DyLandscape.pdf}
+\caption{Reaction cross section as a function of incident photon energy for measured photoneutron reactions from $^{\mathrm{nat}}\mathrm{Dy}$ including the desired $^{156}\mathrm{Dy}\left(\gamma,n\right){}^{155}\mathrm{Dy}$ (green \cite{vagena2017photodisintegration}) reaction and the disruptors $^{163}\mathrm{Dy}\left(\gamma,n\right){}^{162}\mathrm{Dy}$ (blue \cite{renstrom2018verification}), $^{162}\mathrm{Dy}\left(\gamma,n\right){}^{161}\mathrm{Dy}$ (red \cite{renstrom2018verification}) and $^{158}\mathrm{Dy}\left(\gamma,n\right){}^{157}\mathrm{Dy}$ (orange \cite{vagena2017photodisintegration}). Data for other $^{\mathrm{nat}}\mathrm{nat}$ reactions is unavailable. Dashed lines represent average cross section measurements \cite{vagena2017photodisintegration}, whereas full lines are cross section measurements made at varied incident photon energies. The EXFOR database has been used as a source of these measurements \cite{zerkin2018experimental}. }
+\label{fig:Dy_cross_section_energy)}
+\end{figure}
+
+\textcolor{blue}{**Say that measurement quality is a challenge to this and that better measurement, via ICS sources (examples of HIgS) could help understand isotope production and narrowband measurement could identify targetable resonances which may boost production.** }
 
 
 \section{Summary}
