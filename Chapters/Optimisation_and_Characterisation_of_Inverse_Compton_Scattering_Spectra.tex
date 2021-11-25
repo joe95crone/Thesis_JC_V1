@@ -351,9 +351,7 @@ To first order, the transverse profile matching scheme is a decent approximation
 \section{1D Round Beam Optimisation}
 \label{sec:RB_optimisation}
 
-\textcolor{blue}{**THE ORDER NEEDS SOME CHANGING AROUND**}
-
-The bandwidth of an ICS light source is tuneable and can be selected on the basis of user requirements. Here we develop a method to maximise flux within a selected \textit{rms} bandwidth for the simplified case of an electron beam with a round transverse profile where we assume the normalised emittance is identical in both planes ($\epsilon_{nx} = \epsilon_{ny} = \epsilon_{n}$) and therefore the $\beta$-function at the IP is tuned to the same value in each plane ($\beta_{x}^{*} = \beta_{y}^{*} = \beta^{*}$). Bandwidth tuning is therefore possible via two variables in the 1D case: selecting $\beta^{*}$ at the IP and by setting the collimation angle $\theta_{\mathrm{col}}$. The 1D model is a simplification of the interaction dynamics from the 2D model, with three variables, that is designed to show even simple optimisation can yield improvement in collimated flux.
+The bandwidth of an ICS light source is tuneable and can be selected on the basis of user requirements. Here we develop a method to maximise flux within a selected \textit{rms} bandwidth for the simplified case of an electron beam with a round transverse profile where we assume the normalised emittance is identical in both planes ($\epsilon_{nx} = \epsilon_{ny} = \epsilon_{n}$) and therefore the $\beta$-function at the IP is tuned to the same value in each plane ($\beta_{x}^{*} = \beta_{y}^{*} = \beta^{*}$), this is named the round beam (RB) approximation. Bandwidth tuning is therefore possible via two variables in the 1D case: selecting $\beta^{*}$ at the IP and by setting the collimation angle $\theta_{\mathrm{col}}$. The 1D model is a simplification of the interaction dynamics from the 2D model, with three variables, that is designed to show even simple optimisation can yield improvement in collimated flux.
 
 Within this optimisation derivation, the \textit{rms} bandwidth is given by (Eq.~\ref{eq:RMS_bandwidth}) with the emittance term (Eq.~\ref{eq:emittance_term}) modified for the transversely round bunch case
 \begin{equation}
@@ -370,34 +368,49 @@ By using a larger $\beta^{*}$ and a small collimator aperture, it is possible to
 \label{eq:bandwidth_limitation_minimum}
 \end{equation}
 
-Consequently, any bandwidth above the theoretical limit (Eq.~\ref{eq:bandwidth_limitation_minimum}) can theoretically be achieved by an ICS source by tuning of the collimation angle and $\beta^{*}$ so that a desired bandwidth, $\Delta E_{\gamma}/E_{\gamma}$, is achieved. Since the collimation and emittance terms are typically dominant, all other terms can be excluded and the solutions are bounded by
+Consequently, any bandwidth above the theoretical limit (Eq.~\ref{eq:bandwidth_limitation_minimum}) can theoretically be achieved by an ICS source by tuning of the collimation angle and $\beta^{*}$ so that a desired bandwidth, $\Delta E_{\gamma}/E_{\gamma}$, is achieved. Therefore, (Eq.~\ref{eq:bandwidth_limitation_minimum}) provides our lower band. Since the collimation and emittance terms are typically dominant, all other terms can be excluded and the solutions are approximately bounded by
 \begin{equation}
-\frac{\Delta E_{\gamma}}{E_{\gamma}} > \sqrt{\left(\frac{ \sigma_{\theta}}{E_{\theta}}\right)^{2}+\left(\frac{\sigma_{\epsilon}}{E_{\epsilon}}\right)^{2}}.    
+\frac{\Delta E_{\gamma}}{E_{\gamma}} > \sqrt{\left(\frac{ \sigma_{\theta}}{E_{\theta}}\right)^{2}+\left(\frac{\sigma_{\epsilon}}{E_{\epsilon}}\right)^{2}}.
+\label{eq:bandwidth_limitation_maximum_approximation}
 \end{equation}
-This results in myriad combinations of $\beta^{*}$ and $\theta_{\mathrm{col}}$ that satisfy a particular chosen bandwidth larger than the lower limit (Eq.~\ref{eq:bandwidth_limitation_minimum}).
+Making no approximations we can then re-cast the limit in (Eq.~\ref{eq:bandwidth_limitation_maximum_approximation}) in terms of $\beta^{*}$ through a rearrangement of (Eq.~\ref{eq:RMS_bandwidth}) with the emittance term in the transversely round bunch case (Eq.~\ref{eq:emittance_term_round_beam})
+\begin{equation}
+\beta^{*} \geq \frac{2\gamma\epsilon_{n}}{\left(1+X\right)\sqrt{\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)^{2}-\left[\left(\frac{\sigma_{\theta}}{E_{\theta}}\right)^{2}+\left(\frac{\sigma_{e}}{E_{e}}\right)^{2}+\left(\frac{\sigma_{L}}{E_{L}}\right)^{2}\right]}}.
+\label{eq:beta_star_maximum limitation}
+\end{equation}
 
-The different $\beta^{*}$, $\theta_{\mathrm{col}}$ combinations each give a different collimated flux; obviously we wish to chose the solution with the largest flux. The collimated flux $\mathcal{F}_{\mathrm{col}}$ of each solution is calculated based on the collimated flux calculation (Eq.~\ref{eq:collimated_flux}) derived in Section~\ref{sec:analytical_collimated_flux}. The solution giving the maximal collimated flux is selected.
+Bounding the  bandwidth by a lower (Eq.~\ref{eq:bandwidth_limitation_minimum}) and upper (Eq.~\ref{eq:bandwidth_limitation_maximum_approximation}) limit results in myriad combinations of $\beta^{*}$ and $\theta_{\mathrm{col}}$ that satisfy a particular chosen bandwidth.The different $\beta^{*}$, $\theta_{\mathrm{col}}$ combinations each give a different collimated flux; obviously we wish to chose the solution with the largest flux. The collimated flux $\mathcal{F}_{\mathrm{col}}$ of each solution is calculated based on the collimated flux calculation (Eq.~\ref{eq:collimated_flux}) derived in Section~\ref{sec:analytical_collimated_flux}. The solution giving the maximal collimated flux is selected. 
 
-\textcolor{blue}{**HERE**}
-
-It is not practicable to calculate the flux from every combination of $\beta^{*}$ and $\theta_{\mathrm{col}}$. Instead, an array of collimation angles $\theta_{\mathrm{col}}$ from 0 to $1/\gamma$ is used ($\gamma\theta_{\mathrm{col}}<1$), and for a given \textit{rms} bandwidth value the corresponding $\beta^*$ is calculated using
+It is not practicable to calculate the flux from every combination of $\beta^{*}$ and $\theta_{\mathrm{col}}$ within the upper (Eq.~\ref{eq:beta_star_maximum limitation}) and lower (Eq.~\ref{eq:bandwidth_limitation_minimum}) bounds. Instead, an array of collimation angles $\theta_{\mathrm{col}}$ from 0 to $1/\gamma$ is used ($\Psi<1$). The maximal collimated flux for the RB case is achieved when $\beta^{*}$ is smallest, as this maximises luminosity, therefore for a given user selected \textit{rms} bandwidth value the corresponding $\beta^{*}$ is calculated using
 \begin{equation}
 \beta^{*} = \frac{2\gamma\epsilon_{n}}{\left(1+X\right)\sqrt{\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)^{2}-\left[\left(\frac{\sigma_{\theta}}{E_{\theta}}\right)^{2}+\left(\frac{\sigma_{e}}{E_{e}}\right)^{2}+\left(\frac{\sigma_{L}}{E_{L}}\right)^{2}\right]}},
 \label{eq:beta_star_round_beam}
 \end{equation}
-which is a rearrangement of (Eq.~\ref{eq:RMS_bandwidth}) with the emittance term in the transversely round bunch case (Eq.~\ref{eq:emittance_term_round_beam}). A near identical solution can also be found for the case of an FWHM bandwidth. 
+which is a modification of (Eq.~\ref{eq:beta_star_maximum limitation}). A near identical solution can also be found, using simple scaling, for the case of an \texit{FWHM} bandwidth. 
 
-The collimated flux $\mathcal{F}_{\Psi}$ is calculated for each combination produced via this method. The maximal collimated flux is selected and the combination of $\beta^{*}$ and $\theta_{\mathrm{col}}$ corresponding to this solution is returned. This process can be applied to the case of a target bandwidth to determine $\theta_{\mathrm{col}}$, $\beta^{*}$, and collimated flux in the selected bandwidth. In addition, applying this method to a continuum of bandwidths allows us to map the possible operational settings of our ICS source, and to derive tuning curves such as the variation of the collimated flux with bandwidth.
+The collimated flux $\mathcal{F}_{\mathrm{col}}$ (Eq.~\ref{eq:collimated_flux}) is calculated for each combination produced via this method. The maximal collimated flux is selected and the combination of $\beta^{*}$ and $\theta_{\mathrm{col}}$ corresponding to this solution is returned. The method described here is a rather brute force methodology to optimising the collimated flux within bandiwdth limits. This process can be applied to the case of a target bandwidth to determine $\theta_{\mathrm{col}}$, $\beta^{*}$, and collimated flux in the selected bandwidth. In addition, applying this method to a series of bandwidths allows us to map the possible operational settings of our ICS source, and to derive tuning curves such as the variation of the collimated flux with bandwidth.
 
 \section{2D Non-Round Beam Optimisation}
+
+In a non-round beam (NRB) optimisation we relax the conditions that are imposed in the round beam case in Section~\ref{sec:RB_optimisation}, so that the transverse normalised emittances in each plane ($\epsilon_{nx}/\epsilon_{ny}$) and the $\beta$-functions at the IP in each direction ($\beta_{x}^{*}/\beta_{y}^{*}$) can differ, as well as the collimation angle. For a 2D non-round beam optimisation, the variables can not be easily bound or calculated as a function of each other as in (Eq.~\ref{eq:beta_star_round_beam}) due to the form of the non-approximated emittance term (Eq.~\ref{eq:emittance_term}), which can not be re-arranged as the emittance term (Eq.~\ref{eq:emittance_term_round_beam}) in the RB case can. Therefore, the 2D non-round beam optimisation can't operate as a simple brute force optimisation method as in the RB case.
+
+In order to solve the 2D NRD case, a more sophisticated approach is required where the collimated flux and \textit{rms} bandwidth are traded-off for the tuning curve case or in the single point optimisation case where the collimated flux is maximised and a penalty function
+\begin{equation}
+\left|\left(\frac{\Delta E_{\gamma}}{e_{\gamma}}\right)_{\mathrm{tar}}-\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{\mathrm{ach}}\right|,
+\label{eq:penalty_function}
+\end{equation}
+where $\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{tar}}$ is the user targeted bandwidth and $\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{ach}}$ is the achieved bandwidth by the optimisation, is minimised. Two optimisation methodologies are employed to solve this: a genetic algorithm approach and a Nelder-Mead approach, which are detailed in the following section and are compared in Section~\ref{sec:evaluation_of_optimisation_methods}.
 
 \subsection{Genetic Algorithm Approach}
 
 \textcolor{blue}{\textbf{**RIPPED FROM THE COMPTON OPTIMISATION PAPER**}}
 
-The genetic algorithm (GA) optimisation uses the minimisation routine of the strength Pareto evolutionary algorithm \cite{} within the \textsc{PISA} platform \cite{} framework. The objective functions minimised are the \texit{rms} Bandwidth (Eq.~\ref{eq:rms_bandwidth}) and $-\mathcal{F}_{\mathrm{col}}$ (Eq.~\ref{eq:collimated_flux}), the negative collimated flux (hence it is maximised) for the tuning curve case. Whereas the single point optimisation is conducted using the penalty function (Eq.~\ref{eq:penalty_function}) and the negative collimated flux as objective functions. In the case of the single point bandwidth optimisations the minimimum penalty function point is selected as the optimum solution where the associated variables of this point are the optimal configuration of the ICS source.     
+The genetic algorithm (GA) optimisation uses the minimisation routine of the strength Pareto evolutionary algorithm \cite{} within the \textsc{PISA} platform \cite{} framework. The objective functions minimised are the \texit{rms} Bandwidth (Eq.~\ref{eq:RMS_bandwidth}) and $-\mathcal{F}_{\mathrm{col}}$ (Eq.~\ref{eq:collimated_flux}), the negative collimated flux (hence it is maximised) for the tuning curve case. Here the Pareto fron is defined by the non-dominated points in the last generation simulated. \textcolor{blue}{**IS THIS BOLLOCKS?**}
+Whereas the single point optimisation is conducted using the penalty function (Eq.~\ref{eq:penalty_function}) and the negative collimated flux as objective functions. In the case of the single point bandwidth optimisations the non-dominated minimimum penalty function point is selected as the optimum solution, where the associated variables of this point are the optimal configuration of the ICS source.     
 
-The genetic algorithm method is a global optimisation technique which provides a set of solutions for each optimisation run, allowing the full solution space to be mapped more effectively. Global optimisation via a genetic algorithm should deliver a global minimum for the bandwidth whilst providing a global maximum for the collimated flux. This method should avoid the pitfalls of local optimisation techniques where a local minima may be returned.
+The genetic algorithm method is a global optimisation technique which provides a set of solutions for each optimisation run, allowing the full solution space to be mapped more effectively. Global optimisation via a genetic algorithm should deliver a global minimum for the bandwidth whilst providing a global maximum for the collimated flux. This method should avoid the pitfalls of local optimisation techniques where a local minima may be returned. \textcolor{blue}{**MORE ABOUT HOW THE OPTIMISATION METHOD ACTUALLY WORKS**}
+
+\textcolor{blue}{**HOW IS THIS CODED?**}
 
 \subsection{Nelder--Mead Approach}
 
