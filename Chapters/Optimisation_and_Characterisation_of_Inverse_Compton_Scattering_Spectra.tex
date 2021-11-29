@@ -324,6 +324,7 @@ The \textsc{ICCS3D} spectrum code, a generalization of the \textsc{ICCS} code \c
 \textcolor{blue}{**CASE PLOTS OF SPECTRA AGAINST ICCS3D SPECTRA** \\ **NEED CONFIRMATION OF THE CASES** \\ **NEED TO MAKE SPECTRA PLOTS** \\ **NEED TO GET THE ICCS3D PLOTS** \\ **TALK ABOUT THE PLOTS**}
 
 \section{Motivation for Narrowband Optimisation of ICS Sources}
+\label{sec:motivation_optimisation}
 
 \textcolor{blue}{\textbf{**CONSIDER SPLITTING THIS AND ADDING A SECTION ON OBJECTIVE FUNCTIONS AND VARIABLES**}}
 
@@ -331,18 +332,25 @@ Currently, many ICS sources \cite{deitrick2017inverse,deitrick2018high} \textcol
 
 In order to maximise the collimated flux within a user determined bandwidth the transverse dynamics of the electron bunch and the collimation are modified. Variables include the $\beta$-functions of the electron bunch at the IP and the collimation angle; justification for these choices is provided in Section~\ref{sec:objective_functions_and_variables}. Transverse electron bunch dynamics are selected for optimisation as preliminary scaling studies showed that this would be the most effective variable set to improve the collimated flux within an \textit{rms} bandwidth, whilst optimising with the transverse dynamics of the laser pulse is more complex as this impacts optical re-circulation cavity design, for which a full design was beyond the scope of this study. Longitudinal dynamics were also considered as a potential route to optimisation of the bandwidth and collimated flux of an ICS source however, due to the interplay of an RF system with the electron bunch length, optimisation using these dynamics would require a more complete accelerator design than transverse dynamics, with a lesser collimated flux advantage predicted due to the weak relation between electron bunch length and collimated flux. Because of the added complexity transverse laser pulse and longitudinal electron bunch optimisations are considered possible future work but excluded from this work.   
 
-\textcolor{blue}{**I SHOULD BE TALKING ABOUT THE VARIOUS OPTIMISATION METHODS HERE, INTRODUCE THEM - WITH THAT IT MAY BE WORTH TALKING ABOUT VARIABLES + OBJECTIVES ELSEWHERE**}
+Within the optimisation work several optimisation methods: a round beam optimisation, a non-round beam simplex optimisation and a non-round beam genetic algorithm method are developed and tested to solve the multi-objective optimisation problem. Round beam optimisations simplify the transverse dynamics to be identical in each plane ($x$ and $y$), hence a 1D approach, whereas non-round beam optimisations are a full 2D approach that treats each plane individually. The 1D round beam optimisation in Section~\ref{sec:RB_optimisation} uses a brute force optimisation approach, calculating each possible solution then sorting for the best solution. More sophisticated algorithms are required for 2D non-round beams as the parameter space is significantly expanded and unbounded.  The 2D non-round beam optimisations use a simplex/Nelder-Mead method, based on the Nelder-Mead NMaximise routine in \textsc{Mathematica} \cite{wolfram2021nmaximize}, and the upgraded strength Pareto evolutionary algorithm (\textsc{SPEA2}) genetic algorithm \cite{zitzler2001spea2} -- a genetic algorithm (GA) -- with the \textsc{PISA} platform \cite{bleuler2003pisa}, where a series of \textsc{Python} scripts have been wrote to interface with this generalised multi-objective optimisation code.    
 
-In the second half of this chapter the objective functions and variables of the optimisations are justified, a default ICS source configuration -- transverse profile matching -- applied to maximise the flux of many ICS sources is explained, then a series of optimisations such as the 1D round-beam optimisation, 2D non-round beam simplex optimisation and 2D non-roun beam genetic algorithm optimisation are developed, which are finally evaluated in Section~\ref{sec:evaluation_of_optimisation_methods}. The electron bunch cases in Table~\ref{tab:char_opt_electron_bunch_parameters} with the laser parameters in Table~\ref{tab:char_opt_laser_pulse_parameters},  as previously used for the characterisation studies, are applied to evaluate the optimisation methods. The optimisation methods are then applied, in various forms, throughout the ICS source and experiment designs in Chapters~\ref{CBETA_Inverse_Compton_Scattering_Source_Design}, \ref{DIANA_Inverse_Compton_Source_Design}, \ref{FEBE_Inverse_Compton_Scattering_Experiment}    
+In the second half of this chapter the objective functions and variables of the optimisations are justified, a default ICS source configuration -- transverse profile matching -- applied to maximise the flux of many ICS sources is explained, then a series of optimisations such as the 1D round-beam optimisation, 2D non-round beam simplex optimisation and 2D non-round beam genetic algorithm optimisation are developed, which are finally evaluated in Section~\ref{sec:evaluation_of_optimisation_methods}. The electron bunch cases in Table~\ref{tab:char_opt_electron_bunch_parameters} with the laser parameters in Table~\ref{tab:char_opt_laser_pulse_parameters},  as previously used for the characterisation studies, are applied to evaluate the optimisation methods. The optimisation methods are then applied, in various forms, throughout the ICS source and experiment designs in Chapters~\ref{CBETA_Inverse_Compton_Scattering_Source_Design}, \ref{DIANA_Inverse_Compton_Source_Design}, \ref{FEBE_Inverse_Compton_Scattering_Experiment}    
 
 \section{Objective Functions and Variables}
 \label{sec:objective_functions_and_variables}
 
 \textcolor{blue}{**JUSTIFICATION OF THE OBJECTIVE FUNCTIONS AND VARIABLES**}
 
-The two objectives, collimated flux and \textit{rms} bandwidth, compete in an ICS source as minimising the two typically dominant terms of the \texit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}), the emittance/divergence term (Eq.~\ref{eq:emittance_term}) and the collimation term (Eq.~\ref{eq:collimation_term}), reduces the collimated flux. Therefore, a trade-off between these objectives needs to be developed; maximisation of the collimated flux within a user selected \textit{rms} bandwidth. Through inspection of these terms of the bandwidth it is clear to see that optimisation is possible via control of the transverse dynamics at the IP (transverse emittances and $\beta$-functions) and the collimator specification (collimation angle). These parameters can be tuned for any accelerator type and therefore this work is generalised to any accelerator driver of an ICS source, not just an ERL.
+As mentioned in Section~\ref{sec:motivation_optimisation}, we aim to maximise the collimated flux within a user selected bandwidth. The two objective functions required for optimisation are the collimated flux and bandwidth, we select the \textit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}) but extention to the \textit{FWHM} bandwidth (Eq.~\ref{eq:FWHM_bandwidth}) is trivial. In an ICS source, the two objective functions compete as minimising the two typically dominant terms of the \texit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}), the emittance/divergence term (Eq.~\ref{eq:emittance_term}) and the collimation term (Eq.~\ref{eq:collimation_term}), reduces the collimated flux. Therefore, a trade-off between the competing objectives needs to be developed; maximisation of the collimated flux within a user selected \textit{rms} bandwidth. 
 
-Optimisation of the ICS interaction allows for understanding of the best ICS source configuration for a particular experiment and for the mapping of the parameter space of an ICS source. Through use of tuning curves, where a Pareto front is generated in collimated flux--\textit{rms} bandwidth space, the possible configurations of an ICS source can be understood. Whereas in a single bandwidth point optimisation, where the $\textit{rms}$ bandwidth objective is replaced by a penalty function between the user target bandwidth and the achieved bandiwdth, the best electron bunch and collimation settings for a particular experiment can be determined. Therefore, methods are developed to perform both tuning curve optimisations and single point optimisations.
+Optimisation of the ICS interaction allows for understanding of the best ICS source configuration for a particular experiment and for the mapping of the parameter space of an ICS source. Through use of tuning curves, where a Pareto front is generated in collimated flux--\textit{rms} bandwidth space, the possible configurations of an ICS source can be understood. Whereas in a single bandwidth point optimisation, where the $\textit{rms}$ bandwidth objective is replaced by a penalty function
+\begin{equation}
+\left|\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{\mathrm{tar}}-\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{\mathrm{ach}}\right|,
+\label{eq:penalty_function}
+\end{equation}
+where $\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{tar}}$ is the user targeted bandwidth and $\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{ach}}$ is the bandwidth achieved by the optimisation, allowing for determination of the best electron bunch and collimation settings for a particular experiment. Therefore, methods are developed to perform both tuning curve optimisations and single point optimisations.
+
+Through inspection of the emittance (Eq.~\ref{eq:emittance_term}) and collimation (Eq.~\ref{eq:collimation_term}) terms of the bandwidth it is evident that optimisation is possible via control of the transverse dynamics at the IP (transverse emittances and $\beta$-functions at the IP) and the collimator specification (collimation angle). Varying the $\beta$-functions at the IP is advantageous over varying the transverse emittance as the $\beta$-functions can be varied through adjustment of the final focus system whereas the transverse emittance is dependent on the electron photoinjector and the collective effects experienced by the bunch throughout the accelerator, from generation of the bunch to interaction. Collimation of the produced radiation is conducted externally to the accelerator, therefore collimation angle is an easy parameter to adjust with a selection of collimators, a variable aperture collimator or by adjusting the source-to-collimator distance. The chosen variable parameters can be tuned for any accelerator type and therefore this work is generalised to any accelerator driver of an ICS source, not just an ERL.
 
 \section{Transverse Profile Matching}
 \label{sec:transverse_profile_matching}
@@ -397,29 +405,52 @@ which is a modification of (Eq.~\ref{eq:beta_star_maximum limitation}). A near i
 
 The collimated flux $\mathcal{F}_{\mathrm{col}}$ (Eq.~\ref{eq:collimated_flux}) is calculated for each combination produced via this method. The maximal collimated flux is selected and the combination of $\beta^{*}$ and $\theta_{\mathrm{col}}$ corresponding to this solution is returned. The method described here is a rather brute force methodology to optimising the collimated flux within bandiwdth limits. This process can be applied to the case of a target bandwidth to determine $\theta_{\mathrm{col}}$, $\beta^{*}$, and collimated flux in the selected bandwidth. In addition, applying this method to a series of bandwidths allows us to map the possible operational settings of our ICS source, and to derive tuning curves such as the variation of the collimated flux with bandwidth.
 
+\textcolor{blue}{\textbf{**SHOW A PLOT OF EACH CASE TUNING CURVE (Fcol-rmsBW) IN RB APPROXIMATION**}}
+
 \section{2D Non-Round Beam Optimisation}
 
-In a non-round beam (NRB) optimisation we relax the conditions that are imposed in the round beam case in Section~\ref{sec:RB_optimisation}, so that the transverse normalised emittances in each plane ($\epsilon_{nx}/\epsilon_{ny}$) and the $\beta$-functions at the IP in each direction ($\beta_{x}^{*}/\beta_{y}^{*}$) can differ, as well as the collimation angle. For a 2D non-round beam optimisation, the variables can not be easily bound or calculated as a function of each other as in (Eq.~\ref{eq:beta_star_round_beam}) due to the form of the non-approximated emittance term (Eq.~\ref{eq:emittance_term}), which can not be re-arranged as the emittance term (Eq.~\ref{eq:emittance_term_round_beam}) in the RB case can. Therefore, the 2D non-round beam optimisation can't operate as a simple brute force optimisation method as in the RB case.
+In a non-round beam (NRB) optimisation we relax the conditions that are imposed in the round beam case in Section~\ref{sec:RB_optimisation}, so that the transverse normalised emittances in each plane ($\epsilon_{nx}/\epsilon_{ny}$) and the $\beta$-functions at the IP in each direction ($\beta_{x}^{*}/\beta_{y}^{*}$) can differ, as well as the collimation angle. There are now three variables, unlike the two in the 1D RB case in Section~\ref{sec:RB_optimisation}. For a 2D non-round beam optimisation, the selected variables can not be easily bound or calculated as a function of each other as in (Eq.~\ref{eq:beta_star_round_beam}) of the round beam methodology because of the form of the non-approximated emittance term (Eq.~\ref{eq:emittance_term}), which can not be re-arranged simply like the emittance term in the RB case (Eq.~\ref{eq:emittance_term_round_beam}). Therefore, the 2D non-round beam optimisation can't operate as a simple brute force optimisation method as in the RB optimisation.
 
-In order to solve the 2D NRD case, a more sophisticated approach is required where the collimated flux and \textit{rms} bandwidth are traded-off for the tuning curve case or in the single point optimisation case where the collimated flux is maximised and a penalty function
-\begin{equation}
-\left|\left(\frac{\Delta E_{\gamma}}{e_{\gamma}}\right)_{\mathrm{tar}}-\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{\mathrm{ach}}\right|,
-\label{eq:penalty_function}
-\end{equation}
-where $\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{tar}}$ is the user targeted bandwidth and $\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{ach}}$ is the achieved bandwidth by the optimisation, is minimised. Two optimisation methodologies are employed to solve this: a genetic algorithm approach and a Nelder-Mead approach, which are detailed in the following section and are compared in Section~\ref{sec:evaluation_of_optimisation_methods}.
+In order to solve the 2D NRD case, a more sophisticated approach is required where the collimated flux and \textit{rms} bandwidth are traded-off for the tuning curve case or in the single point optimisation case where the collimated flux is maximised and a simple penalty function (Eq.~\ref{eq:penalty_function}) is minimised. Two optimisation methodologies are employed to solve this: a genetic algorithm approach and a simplex (Nelder-Mead) approach, which are detailed in the following section and are compared in Section~\ref{sec:evaluation_of_optimisation_methods}.
 
 \subsection{Genetic Algorithm Approach}
 
 \textcolor{blue}{\textbf{**RIPPED FROM THE COMPTON OPTIMISATION PAPER**}}
 
-The genetic algorithm (GA) optimisation uses the minimisation routine of the strength Pareto evolutionary algorithm \cite{} within the \textsc{PISA} platform \cite{} framework. The objective functions minimised are the \texit{rms} Bandwidth (Eq.~\ref{eq:RMS_bandwidth}) and $-\mathcal{F}_{\mathrm{col}}$ (Eq.~\ref{eq:collimated_flux}), the negative collimated flux (hence it is maximised) for the tuning curve case. Here the Pareto fron is defined by the non-dominated points in the last generation simulated. \textcolor{blue}{**IS THIS BOLLOCKS?**}
-Whereas the single point optimisation is conducted using the penalty function (Eq.~\ref{eq:penalty_function}) and the negative collimated flux as objective functions. In the case of the single point bandwidth optimisations the non-dominated minimimum penalty function point is selected as the optimum solution, where the associated variables of this point are the optimal configuration of the ICS source.     
+The genetic algorithm (GA) optimisation uses the minimisation routine of \textsc{SPEA2} \cite{zitzler2001spea2} within the \textsc{PISA} platform \cite{bleuler2003pisa} framework. The objective functions minimised are the \texit{rms} Bandwidth (Eq.~\ref{eq:RMS_bandwidth}) and $-\mathcal{F}_{\mathrm{col}}$ (Eq.~\ref{eq:collimated_flux}), the negative collimated flux (hence it is maximised) for the tuning curve case. The Pareto front of the tuning curve is defined by the non-dominated points across all of the generation simulated. Whereas the single point optimisation is conducted using the penalty function (Eq.~\ref{eq:penalty_function}) and the negative collimated flux (Eq.~\ref{eq:collimated}) as objective functions. In the case of the single point bandwidth optimisations the non-dominated minimimum penalty function point is selected as the optimum solution, where the associated variables of this point are the optimal configuration of the ICS source.
 
 The genetic algorithm method is a global optimisation technique which provides a set of solutions for each optimisation run, allowing the full solution space to be mapped more effectively. Global optimisation via a genetic algorithm should deliver a global minimum for the bandwidth whilst providing a global maximum for the collimated flux. This method should avoid the pitfalls of local optimisation techniques where a local minima may be returned. \textcolor{blue}{**MORE ABOUT HOW THE OPTIMISATION METHOD ACTUALLY WORKS**}
 
 \textcolor{blue}{**HOW IS THIS CODED?**}
 
+The genetic algorithm approach has been applied to each of the electron bunch parameter cases in Table~\ref{tab:char_opt_electron_bunch_parameters} using the laser parameters in Table~\ref{tab:char_opt_laser_pulse_parameters}. Plots of the tuning curves produced via the genetic algorithm method are shown in Figs.~\ref{fig:case_A_GA_tuning_curves}, \ref{fig:case_B_GA_tuning_curves} and \ref{fig:case_C_GA_tuning_curves}, demonstrating the typical output of the genetic algorithm where the non-dominated Pareto front points are highlighted and the other trial points are shown. Onward from this section in the thesis only the Pareto front points and their corresponding variables will be included in plots to aid comparison of optimisation methods.
 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/CaseA_GA_Tuning_Curve.pdf}
+\caption{Case A genetic algorithm tuning curves (solution and parameter space) produced using 200 generations and 50 individuals showing the non-dominated Pareto front points (red) and the dominated trial points (blue). Top Left: collimated flux as a function of \textit{rms} bandwidth solution space. Top Right: parameter space plot of the $\beta$-function in the $x$ plane as a function of the $\beta$-function in the $y$ plane at the IP. Bottom Left: parameter space plot of the $\beta_{x}$-function at the IP as a function of the collimation angle. Bottom Right: parameter space plot of the $\beta_{y}$-function at the IP as a function of the collimation angle.}
+\label{fig:case_A_GA_tuning_curves}
+\end{figure}
+
+\textcolor{blue}{**TALK ABOUT CASE A OPTIMISATION**}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/CaseB_GA_Tuning_Curve.pdf}
+\caption{Case B genetic algorithm tuning curves (solution and parameter space) produced using 200 generations and 50 individuals showing the non-dominated Pareto front points (red) and the dominated trial points (blue). Top Left: collimated flux as a function of \textit{rms} bandwidth solution space. Top Right: parameter space plot of the $\beta$-function in the $x$ plane as a function of the $\beta$-function in the $y$ plane at the IP. Bottom Left: parameter space plot of the $\beta_{x}$-function at the IP as a function of the collimation angle. Bottom Right: parameter space plot of the $\beta_{y}$-function at the IP as a function of the collimation angle.}
+\label{fig:case_B_GA_tuning_curves}
+\end{figure}
+
+\textcolor{blue}{**TALK ABOUT CASE B OPTIMISATION**}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/CaseC_GA_Tuning_Curve.pdf}
+\caption{Case C genetic algorithm tuning curves (solution and parameter space) produced using 200 generations and 50 individuals showing the non-dominated Pareto front points (red) and the dominated trial points (blue). Top Left: collimated flux as a function of \textit{rms} bandwidth solution space. Top Right: parameter space plot of the $\beta$-function in the $x$ plane as a function of the $\beta$-function in the $y$ plane at the IP. Bottom Left: parameter space plot of the $\beta_{x}$-function at the IP as a function of the collimation angle. Bottom Right: parameter space plot of the $\beta_{y}$-function at the IP as a function of the collimation angle.}
+\label{fig:case_C_GA_tuning_curves}
+\end{figure}
+
+\textcolor{blue}{**TALK ABOUT CASE C OPTIMISATION**}
 
 \subsection{Nelder--Mead Approach}
 
@@ -429,9 +460,51 @@ Within the Nelder-Mead optimisation, the collimated flux (Eq.~\ref{eq:collimated
 
 This optimisation is based on a local minimisation routine therefore, unlike in the GA method, only a single solution space point is returned for each optimisation. This means the full solution space is not mapped in this optimisation. The Nelder-Mead optimisation may also fail to find the optimal solution and become trapped in a local minima, however the parameter space is \textcolor{blue}{**ASSUMED, NOT PROVEN**} simple enough to produce a global minima result.
 
+\textcolor{blue}{\textbf{**SHOW PLOTS OF THE 3 CASES TUNING CURVES (Fcol-rmsBW)**}}
+
 \section{Evaluation of Optimisation Methods} 
 \label{sec:evaluation_of_optimisation_methods}
 
+\subsection{Single Point Bandwidth Optimisations}
+
+\begin{table}[!h]
+\centering
+\caption{Single point optimisations for the transverse profile matching (TPM), round beam (RB), non-round beam Simplex (NRB Simplex) and non-round beam genetic algorithm (NRB GA) methods of all cases. \textit{Rms} bandwidths of 0.5\% (Case A), 2\% (Case B), 0.5\% (Case C) are chosen to evaluate the single point optimisation methodologies for each individual case.}
+\vspace{3mm}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{lccccc}
+\hline\hline
+Method & \textit{rms} Bandwidth (\%)  & Collimated Flux (ph/\si{\second}) & $\beta_{x}^{*}$-function (\si{\meter}) & $\beta_{y}^{*}$-function (\si{\meter}) & Collimation angle (\si{\milli\radian}) \\
+\hline
+\multicolumn{6}{c}{\textbf{Case A}} \\
+\hline
+TPM & 0.5 & 7.37$\times 10^{8}$ & 3.53 & 3.53 & 0.068  \\
+RB & 0.5 & 8.62$\times 10^{8}$ & 1.15 & 1.15 & 0.066 \\
+NRB Simplex & 0.5 & 8.81$\times 10^{8}$ & 1.69 & 0.88 & 0.066  \\
+NRB GA & & & & &  \\
+\hline
+\multicolumn{6}{c}{\textbf{Case B}} \\
+\hline
+TPM & -- & -- & -- & -- & --  \\
+RB & -- & -- & -- & -- & -- \\
+NRB Simplex & 2.0 & 9.19$\times 10^{9}$ & 3.46 & 0.10 & 0.178 \\
+NRB GA & & & & &  \\
+\hline
+\multicolumn{6}{c}{\textbf{Case C}} \\
+\hline
+TPM & 0.5 & 8.35$\times 10^{7}$ & 0.45 & 0.45 & 2.63 \\
+RB & 0.5 & 1.16$\times 10^{8}$ & 0.015 & 0.015 & 2.62  \\
+NRB Simplex & 0.5 & 1.16$\times 10^{8}$ & 0.016 & 0.015 & 2.63 \\
+NRB GA & & & & &  \\
+\hline\hline
+\end{tabular}}
+\label{tab:single_point_optimisations}
+\end{table}
+
+
+\subsection{Tuning Curve Optimisations}
+
+\textcolor{blue}{**4-PANE TUNING CURVE OPTIMISATION PLOTS COMPARING ALL METHODS FOR EACH CASE**}
  
 
 \end{document}
