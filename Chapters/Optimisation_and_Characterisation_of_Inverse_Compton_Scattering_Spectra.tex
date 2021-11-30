@@ -345,9 +345,9 @@ In the second half of this chapter the objective functions and variables of the 
 
 As mentioned in Section~\ref{sec:motivation_optimisation}, we aim to maximise the collimated flux within a user selected bandwidth. The two objective functions required for optimisation are the collimated flux and bandwidth, we select the \textit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}) but extention to the \textit{FWHM} bandwidth (Eq.~\ref{eq:FWHM_bandwidth}) is trivial. In an ICS source, the two objective functions compete as minimising the two typically dominant terms of the \texit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}), the emittance/divergence term (Eq.~\ref{eq:emittance_term}) and the collimation term (Eq.~\ref{eq:collimation_term}), reduces the collimated flux. Therefore, a trade-off between the competing objectives needs to be developed; maximisation of the collimated flux within a user selected \textit{rms} bandwidth. 
 
-Optimisation of the ICS interaction allows for understanding of the best ICS source configuration for a particular experiment and for the mapping of the parameter space of an ICS source. Through use of tuning curves, where a Pareto front is generated in collimated flux--\textit{rms} bandwidth space, the possible configurations of an ICS source can be understood. Whereas in a single bandwidth point optimisation, where the $\textit{rms}$ bandwidth objective is replaced by a penalty function
+Optimisation of the ICS interaction allows for understanding of the best ICS source configuration for a particular experiment and for the mapping of the parameter space of an ICS source. Through use of tuning curves, where a Pareto front is generated in collimated flux--\textit{rms} bandwidth space, the possible configurations of an ICS source can be understood. Whereas in a single bandwidth point optimisation, where the $\textit{rms}$ bandwidth objective is replaced by a penalty function $\Omega$
 \begin{equation}
-\left|\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{\mathrm{tar}}-\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{\mathrm{ach}}\right|,
+\Omega = \left|\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{\mathrm{tar}}-\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{\mathrm{ach}}\right|,
 \label{eq:penalty_function}
 \end{equation}
 where $\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{tar}}$ is the user targeted bandwidth and $\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{ach}}$ is the bandwidth achieved by the optimisation, allowing for determination of the best electron bunch and collimation settings for a particular experiment. Therefore, methods are developed to perform both tuning curve optimisations and single point optimisations.
@@ -425,7 +425,7 @@ The collimated flux $\mathcal{F}_{\mathrm{col}}$ (Eq.~\ref{eq:collimated_flux}) 
 
 In a non-round beam (NRB) optimisation we relax the conditions that are imposed in the round beam case in Section~\ref{sec:RB_optimisation}, so that the transverse normalised emittances in each plane ($\epsilon_{nx}/\epsilon_{ny}$) and the $\beta$-functions at the IP in each direction ($\beta_{x}^{*}/\beta_{y}^{*}$) can differ, as well as the collimation angle. There are now three variables, unlike the two in the 1D RB case in Section~\ref{sec:RB_optimisation}. For a 2D non-round beam optimisation, the selected $\beta$-function variables can not be easily bound or calculated as a function of each other as in (Eq.~\ref{eq:beta_star_round_beam}) of the round beam methodology because of the form of the non-approximated emittance term (Eq.~\ref{eq:emittance_term}), which can not be re-arranged simply like the emittance term in the RB case (Eq.~\ref{eq:emittance_term_round_beam}). Therefore, the 2D non-round beam optimisation can't operate as a simple brute force optimisation method as in the RB optimisation.
 
-The 2D NRB can be framed as a 3-dimensional, double objective non-linear minimisation problem of the form
+The 2D NRB optimisation for the tuning curve case can be framed as a 3-dimensional, double objective non-linear minimisation problem of the form
 \begin{equation}
 \begin{aligned}
 &\underset{\theta_{\mathrm{col}},~\beta_{x}^{*},~\beta_{y}^{*}}{\text{minimize}},  &-\mathcal{F}_{\mathrm{col}}\left(\theta_{\mathrm{col},~\beta_{x}^{*}},~\beta_{y}^{*}\right), \\
@@ -434,19 +434,47 @@ The 2D NRB can be framed as a 3-dimensional, double objective non-linear minimis
 & &0 < \beta_{x}^{*} \leq \beta_{x,\mathrm{max}}^{*}, \\
 & &0 < \beta_{y}^{*} \leq \beta_{y,\mathrm{max}}^{*}, 
 \end{aligned}
-\label{eq:2D_optimisation_definition}
+\label{eq:2D_tuning_curve_optimisation_definition}
 \end{equation}
 \textcolor{blue}{**SORT OUT SPACING, number also in wrong place**}
-where $\mathcal{F}_{\mathrm{col}}$ is the collimated flux (Eq.~\ref{eq:collimated_flux}) -- the neagative collimated flux is minimised therefore collimated flux is maximised -- and $\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{rms}}$ is the \textit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}) are the objective functions, $\theta_{\mathrm{col},\mathrm{max}}$ is the approximate upper bound on the collimation angle (Eq.~\ref{eq:collimation_angle_upper_bound}) and $\beta_{x/y,\mathrm{max}}^{*}$ are the upper bounds of the $\beta$-functions at the IP in each plane, which are set arbitrarily on a case by case basis. Therefore, in order to solve the 2D NRB case, a more sophisticated approach is required where the collimated flux and \textit{rms} bandwidth are traded-off for the tuning curve case or in the single point optimisation case where the collimated flux is maximised and a simple penalty function (Eq.~\ref{eq:penalty_function}) is minimised. Two optimisation methodologies are employed to solve this: a genetic algorithm approach, developed in collaboration with Prof B. Terzic, and a simplex (Nelder-Mead) approach, which are detailed in the following section and are compared in Section~\ref{sec:evaluation_of_optimisation_methods}.
+where $\mathcal{F}_{\mathrm{col}}$ is the collimated flux (Eq.~\ref{eq:collimated_flux}) -- the neagative collimated flux is minimised therefore collimated flux is maximised -- and $\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{rms}}$ is the \textit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}) are the objective functions, $\theta_{\mathrm{col},\mathrm{max}}$ is the approximate upper bound on the collimation angle (Eq.~\ref{eq:collimation_angle_upper_bound}) and $\beta_{x/y,\mathrm{max}}^{*}$ are the upper bounds of the $\beta$-functions at the IP in each plane, which are set arbitrarily on a case by case basis. For single point optimisations, the problem is modified with the penalty function $\Omega$ (Eq.~\ref{eq:penalty_function}) instead of the \textit{rms} bandwidth, and the problem becomes
+\begin{equation}
+\begin{aligned}
+&\underset{\theta_{\mathrm{col}},~\beta_{x}^{*},~\beta_{y}^{*}}{\text{minimize}},  &-\mathcal{F}_{\mathrm{col}}\left(\theta_{\mathrm{col},~\beta_{x}^{*}},~\beta_{y}^{*}\right), \\
+& &\Omega\left(\theta_{\mathrm{col}},~\beta_{x}^{*},~\beta_{y}^{*}\right), \\
+&\text{subject to} &0 < \theta_{\mathrm{col}} <  \theta_{\mathrm{col},\mathrm{max}}, \\
+& &0 < \beta_{x}^{*} \leq \beta_{x,\mathrm{max}}^{*}, \\
+& &0 < \beta_{y}^{*} \leq \beta_{y,\mathrm{max}}^{*}, 
+\end{aligned}
+\label{eq:2D_single_point_optimisation_definition}
+\end{equation}
+\textcolor{blue}{**SORT OUT SPACING, number also in wrong place**}
+Due to the complexity of the 2D NRB optimisation problems, a more sophisticated approach  to solving the optimisation problems than in the RB case (Section~\ref{sec:RB_optimisation}) is required. Two optimisation methodologies are employed to solve this: a genetic algorithm approach, developed in collaboration with Prof B. Terzic, and a simplex (Nelder-Mead) approach, which are detailed in the following section and are compared in Section~\ref{sec:evaluation_of_optimisation_methods}.
 
 \subsection{Genetic Algorithm Approach}
+\textcolor{blue}{This is going to be a bit sporadic; write and then organise...}
 
-The genetic algorithm (GA) optimisation uses the minimisation routine of \textsc{SPEA2} \cite{zitzler2001spea2} within the \textsc{PISA} platform \cite{bleuler2003pisa} framework, following the methodology outlined by A. Hofler et al \cite{hofler2013innovative}. The objective functions minimised are the \texit{rms} Bandwidth (Eq.~\ref{eq:RMS_bandwidth}) and $-\mathcal{F}_{\mathrm{col}}$ (Eq.~\ref{eq:collimated_flux}), the negative collimated flux (hence it is maximised) for the tuning curve case. The Pareto front of the tuning curve is defined by the non-dominated points across all of the generation simulated. Whereas the single point optimisation is conducted using the penalty function (Eq.~\ref{eq:penalty_function}) and the negative collimated flux (Eq.~\ref{eq:collimated}) as objective functions. In the case of the single point bandwidth optimisations the non-dominated minimimum penalty function point is selected as the optimum solution, where the associated variables of this point are the optimal configuration of the ICS source.
+\textcolor{blue}{**WHAT IS A GENETIC ALGORITHM**}
+% Point heavily to SPEA2 paper etc.
+% Just want to give an overview of how these things work
+% Fitness, Mating, Strength etc. -> what happens?
+% define feasible, non-dominated, individual, generation etc.
 
-The genetic algorithm method is a global optimisation technique which provides a set of solutions for each optimisation run, allowing the full solution space to be mapped more effectively. Global optimisation via a genetic algorithm should deliver a global minimum for the bandwidth whilst providing a global maximum for the collimated flux. This method should avoid the pitfalls of local optimisation techniques where a local minima may be returned. \textcolor{blue}{**MORE ABOUT HOW THE OPTIMISATION METHOD ACTUALLY WORKS**}
+The genetic algorithm method is a global optimisation technique which provides a set of solutions for each optimisation run, allowing the full solution space to be mapped more effectively. Optimisation via a genetic algorithm delivers a global maximum for the collimated flux at each of the \textit{rms} bandwidths or values of the penalty function within the limits of the variables. This method should avoid the pitfalls of local optimisation techniques where a local minima may be returned.
 
-\textcolor{blue}{**HOW IS THIS CODED?**}
+\textcolor{blue}{I need to mention how SPEA2 works somewhere + link to the paper for further details.}
 
+\textcolor{blue}{**HOW IS IT APPLIED HERE}
+The genetic algorithm (GA) optimisation uses the minimisation routine of \textsc{SPEA2} \cite{zitzler2001spea2} within the \textsc{PISA} platform \cite{bleuler2003pisa} framework, following the methodology outlined by A. Hofler et al \cite{hofler2013innovative}. The GA optimises the multi-dimensional multi-objective problems outlined in (Eqs.~\ref{eq:2D_tuning_curve_optimisation_definition},\ref{eq:2D_single_point_optimisation_definition}) where, as both optimisation problems have conflicting objectives, multiple equally valid solutions exist in the solution space which define a Pareto-optimal front. Each solution on the Pareto-optimal front is a feasible solution, non-dominated with respect to other individuals that contribute to the Pareto front and dominates another feasible individual in the solution space \cite{hofler2013innovative}. 
+
+In the case of the tuning curve optimisation, the Pareto-optimal front that is defined in solution space is the tuning curve; the Pareto-optimal front shows the maximal collimated flux for each \textit{rms} bandwidth constrained by the variable limits. Whereas, in the single point optimisations a Pareto-optimal front of the collimated flux as a function of the penalty function is returned. Therefore, the single optimal solution is decided in a post-processing selection procedure by isolating all values that fit the penalty function criteria of $\Omega < 10^{-5}$, used as this is well below experimental tolerances \textcolor{blue}{**JUSTIFY**}, and selecting the solution with the maximal collimated flux. The selection procedure is advantageous over choosing the point with the minimum penalty function as this accounts for anomalous collimated flux deficient points near $\Omega = 0$, which can occur due to a lack of individuals achieving a small penalty function.          
+
+By inspection of the variables in parameter space corresponding to the non-dominated Pareto-optimal individuals in solution space, relationships can be deduced. Characteristics of the Pareto-optimal variables parameter space, such as stratification of the points can show that some variables have more influence over the objective functions than others. For example, a lesser spread in the Pareto-optimal variable vales of $\theta_{\mathrm{col}}$ compared to $\beta_{x}^{*}$ would suggest that $\theta_{\mathrm{col}}$ is a more important variable to the optimisation. In single point optimisations, the pareto-optimal variables of the selected point are the optimal configuration for the ICS source.  
+
+\textcolor{blue}{**HOW IS IT IMPLEMENTED + CODED}
+
+
+\textcolor{blue}{**RESULTS**}
 The genetic algorithm approach has been applied to each of the electron bunch parameter cases in Table~\ref{tab:char_opt_electron_bunch_parameters} using the laser parameters in Table~\ref{tab:char_opt_laser_pulse_parameters}. Plots of the tuning curves produced via the genetic algorithm method are shown in Figs.~\ref{fig:case_A_GA_tuning_curves}, \ref{fig:case_B_GA_tuning_curves} and \ref{fig:case_C_GA_tuning_curves}, demonstrating the typical output of the genetic algorithm where the non-dominated Pareto front points are highlighted and the other trial points are shown. Onward from this section in the thesis only the Pareto front points and their corresponding variables will be included in plots to aid comparison of optimisation methods.
 
 \begin{figure}[!h]
