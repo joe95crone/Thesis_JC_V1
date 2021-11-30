@@ -472,6 +472,7 @@ This optimisation is based on a local minimisation routine therefore, unlike in 
 \caption{Single point optimisations for the transverse profile matching (TPM), round beam (RB), non-round beam Simplex (NRB Simplex) and non-round beam genetic algorithm (NRB GA) methods of all cases. \textit{Rms} bandwidths of 0.5\% (Case A), 2\% (Case B), 0.5\% (Case C) are chosen to evaluate the single point optimisation methodologies for each individual case.}
 \vspace{3mm}
 \resizebox{\columnwidth}{!}{
+\begin{threeparttable}
 \begin{tabular}{lccccc}
 \hline\hline
 Method & \textit{rms} Bandwidth (\%)  & Collimated Flux (ph/\si{\second}) & $\beta_{x}^{*}$-function (\si{\meter}) & $\beta_{y}^{*}$-function (\si{\meter}) & Collimation angle (\si{\milli\radian}) \\
@@ -481,23 +482,28 @@ Method & \textit{rms} Bandwidth (\%)  & Collimated Flux (ph/\si{\second}) & $\be
 TPM & 0.5 & 7.37$\times 10^{8}$ & 3.53 & 3.53 & 0.068  \\
 RB & 0.5 & 8.62$\times 10^{8}$ & 1.15 & 1.15 & 0.066 \\
 NRB Simplex & 0.5 & 8.81$\times 10^{8}$ & 1.69 & 0.88 & 0.066  \\
-NRB GA & & & & &  \\
+NRB GA & 0.5 & 8.86$\times 10^{8}$ & 2.11 & 0.867 & 0.066  \\
 \hline
 \multicolumn{6}{c}{\textbf{Case B}} \\
 \hline
-TPM & -- & -- & -- & -- & --  \\
-RB & -- & -- & -- & -- & -- \\
+TPM~\tnote{*} & -- & -- & -- & -- & --  \\
+RB~\tnote{$\dagger$} & -- & -- & -- & -- & -- \\
 NRB Simplex & 2.0 & 9.19$\times 10^{9}$ & 3.46 & 0.10 & 0.178 \\
-NRB GA & & & & &  \\
+NRB GA & 2.0 & 1.04$\times 10^{10}$ & 11.05 & 0.20 & 0.194 \\
 \hline
 \multicolumn{6}{c}{\textbf{Case C}} \\
 \hline
 TPM & 0.5 & 8.35$\times 10^{7}$ & 0.45 & 0.45 & 2.63 \\
 RB & 0.5 & 1.16$\times 10^{8}$ & 0.015 & 0.015 & 2.62  \\
 NRB Simplex & 0.5 & 1.16$\times 10^{8}$ & 0.016 & 0.015 & 2.63 \\
-NRB GA & & & & &  \\
+NRB GA & 0.5 & 1.17$\times 10^{8}$ & 0.029 & 0.013 & 2.64 \\
 \hline\hline
-\end{tabular}}
+\end{tabular}
+\begin{tablenotes}[flushedleft]
+\item[*]{Transverse profile matching settings aren't possible because the emittance term (Eq.~\ref{eq:emittance_term}) for $\sigma_{\mathrm{electron}} = \sigma_{L}$ leads to a larger than 2\% \textit{rms} bandwidth.}
+\item[$\dagger$]{This case doesn't satisfy the round beam condition ($\epsilon_{nx} \neq \epsilon_{ny}$), therefore the RB optimisation can't be utilised.}
+\end{tablenotes}
+\end{threeparttable}}
 \label{tab:single_point_optimisations}
 \end{table}
 
