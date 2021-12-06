@@ -440,6 +440,13 @@ where $\sigma_{e,x/y}' = \sqrt{\epsilon_{x}/\beta_{x}^{*}}$ is the \textit{rms} 
 
 \section{Spectral Density}
 
+The spectral density of an ICS source is a measure of the energy density of the produced photon spectrum; a higher spectral density for the same scattered photon energy source means more photons are produced. The spectral density of an inverse Compton scattering source is given by
+\begin{equation}
+\mathcal{S} = \frac{\mathcal{F}}{E_{\gamma}^{\mathrm{MAX}}},
+\label{eq:spectral_density}    
+\end{equation}
+where $\mathcal{F}$ is the uncollimated total flux of the ICS source given by (Eq.~\ref{eq:flux_angular_crossing_hourglass}) and $E_{\gamma}$ is the scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}) at the Compton edge ($\theta = 0$). The spectral density can also be measured around the Compton edge energy for a particular bandwidth by replaceing the flux encompassed by that bandwidth, for example by replacing the raw flux $\mathcal{F}$ with the \textit{FWHM} flux in a 0.1\% bandwidth $\mathcal{F_{\mathrm{0.1\%}}}$. \textcolor{blue}{**NEED TO SHOW THIS SOMEWHERE**} Framed in these terms, the spectral density becomes an important performance parameter of a narrowband ICS source.  
+
 \section{Bandwidth + Investigation}
 \label{sec:bandwidth}
 
@@ -475,7 +482,7 @@ where $\psi = \gamma\theta$ is the acceptance angle, $\epsilon_{x/y}$ is the emi
 
 Brilliance, also termed brightness, is a quantity originally used to quantify the 6D phase space density of particle beams \cite{courant1958theory}. This concept was adopted to characterize production of radiation from accelerator driven light sources such as bending magnet or wiggler synchrotron radiation sources and undulators \cite{kim1989characteristics} where the brilliance is defined as the flux into a cone of particular spectral bandwidth (usually 0.1\%) per unit phase space area. 
 
-Average brilliance is time averaged, summing the contribution of all electron bunch--laser pulse interactions of the source, thereby accounting for the repetition rate of the interactions. Whereas, peak brilliance is calculated for a single bunch--pulse interaction subject to the interaction time. Experimentally, both peak and average brilliance have advantages ... \textcolour{blue}{NEED A GOOD ARGUMENT}. Linac driven ICS sources typically are designed to be single-shot, high peak brilliance sources whereas storage ring and recirculated electron beam based ICS sources take advantage of high repetition rates to be high average brilliance sources. Theoretically, ERL's with linac quality recirculated electron beams could dually provide high peak and average brilliance.   
+Average brilliance is time averaged, summing the contribution of all electron bunch--laser pulse interactions of the source, thereby accounting for the repetition rate of the interactions. Whereas, peak brilliance is calculated for a single bunch--pulse interaction subject to the interaction time. Experimentally, both peak and average brilliance have advantages ... \textcolor{blue}{**NEED A GOOD ARGUMENT**}. Linac driven ICS sources typically are designed to be single-shot, high peak brilliance sources whereas storage ring and recirculated electron beam based ICS sources take advantage of high repetition rates to be high average brilliance sources. Theoretically, ERL's with linac quality recirculated electron beams could dually provide high peak and average brilliance.   
 
 Often ICS sources are viewed as analagous to undulator radiation, a 'laser undulator' system. Hence, the average brilliance of an ICS source is adapted from that of an undulator. The average brilliance of an undulator source assuming a Gaussian electron bunch and planar undulator field \cite{chao2013handbook} is given by 
 
