@@ -321,29 +321,25 @@ To benchmark the \textsc{ICARUS} spectrum code, the \textsc{ICCS3D} code \cite{k
 
 The \textsc{ICCS3D} spectrum code, a generalization of the \textsc{ICCS} code \cite{krafft2016laser,ranjan2018simulation}, computes radiation produced in ICS within the linear Compton regime (when $a_{0}\ll 1$, and electron recoil is properly accounted for). In \textsc{ICCS3D}, a 3D laser pulse model replaces the 1D plane wave model used in \textsc{ICCS}. This modification is implemented in a manner described in Terzi\'c et al \cite{terzic2019improving}; instead of all electrons experiencing the same laser field strength $a_{0}$, as they do for a 1D plane wave, their effective laser field strength is dependent on the electron's distance from the laser's center at the moment of scattering. To calculate anticipated spectral output, in addition to the laser parameters, \textsc{ICCS3D} can use either the parameters of the electron beam or an arbitrary electron distribution -- which could be tracked through the accelerator driver -- allowing start-to-end simulation of ICS sources. 
 
-\textcolor{blue}{**CASE PLOTS OF SPECTRA AGAINST ICCS3D SPECTRA** \\ **NEED CONFIRMATION OF THE CASES** \\ **NEED TO MAKE SPECTRA PLOTS** \\ **NEED TO GET THE ICCS3D PLOTS** \\ **TALK ABOUT THE PLOTS**}
+\textcolor{blue}{**CASE PLOTS OF SPECTRA AGAINST ICCS3D SPECTRA** \\ **NEED CONFIRMATION OF THE CASES** \\ **SQUARE AND CIRCULAR COLLIMATION COMPARISON - CHECK THIS IS MENTIONED** \\ **NEED TO MAKE SPECTRA PLOTS** \\ **NEED TO GET THE ICCS3D PLOTS** \\ **TALK ABOUT THE PLOTS**}
 
 \section{Motivation for Narrowband Optimisation of ICS Sources}
 \label{sec:motivation_optimisation}
 
-\textcolor{blue}{\textbf{**CONSIDER SPLITTING THIS AND ADDING A SECTION ON OBJECTIVE FUNCTIONS AND VARIABLES**}}
-
-Currently, many ICS sources \cite{deitrick2017inverse,deitrick2018high} \textcolor{blue}{**NEED MORE**} are designed with regard to producing the maximum uncollimated flux from the ICS interaction. However, within design of an inverse Compton scattering source for light source experimentation there are two objectives: to produce a large quantity of photons and to minimise the energy spread i.e bandwidth of the scattered radiation towards a monochromatic source. The former, a high flux of photons, is desirable because a high flux speeds up data acquisition times and can improve the signal-to-noise ratio of measurements and the later is advantageous due to the ability to target only a certain process, for example a specific resonance in $^{235}\mathrm{U}$ in a nuclear resonance fluorescence investigation. Users typically require a compromise on bandwidth and flux to have enough precision to investigate a specific phenomena whilst needing to make measurements on a reasonable timescale, with adequate statistics. Therefore, within the following optimisations we aim to maximise the collimated flux (Eq.~\ref{eq:collimated_flux}) whilst minimising, or limiting to some user specified value, the \textit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}) of the source.
+Currently, many ICS sources \cite{deitrick2017inverse,deitrick2018high} \textcolor{blue}{**NEED MORE**} are designed with regard to producing the maximum uncollimated flux from the ICS interaction. However, within design of an inverse Compton scattering source for light source experimentation there are two objectives: to produce a large quantity of photons and to minimise the energy spread i.e bandwidth of the scattered radiation towards a monochromatic source. The former, a high flux of photons, is desirable because a high flux speeds up data acquisition times and can improve the signal-to-noise ratio of measurements and the later is advantageous due to the ability to target only a certain process, for example a specific resonance in $^{235}\mathrm{U}$ in a nuclear resonance fluorescence investigation. Users typically require a compromise on bandwidth and flux to have enough precision to investigate a specific phenomena whilst needing to make measurements on a reasonable timescale, with adequate statistics. Therefore, within the following optimisations we aim to maximise the collimated flux (Eq.~\ref{eq:collimated_flux}) whilst minimising, or limiting to some user specified value, the \textit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}) of the source. All optimisations are performed with the assumption of a circular collimator as the focus of this study is on narrow bandwidth and the studies within Section~\ref{sec:benchmarking_of_the_ICARUS_spectrum_code} and by Hajima \cite{hajima2021bandwidth} agree circular collimation is the best approach and the analytical collimated flux (Eq.~\ref{eq:collimated_flux}) is derived for this case.
 
 In order to maximise the collimated flux within a user determined bandwidth the transverse dynamics of the electron bunch and the collimation are modified. Variables include the $\beta$-functions of the electron bunch at the IP and the collimation angle; justification for these choices is provided in Section~\ref{sec:objective_functions_and_variables}. Therefore, this problem becomes a multidimensional multiobjective optimisation problem with up to 3 variables and 2 objective functions. Local optimisation techniques may be insufficient because the parameter space of this optimisation is non-linear -- the objective functions do not vary linearly with the variables -- and the complexity of the parameter space is unknown, consequently both global and local optimisation techniques are trialed.
 
 Transverse electron bunch dynamics are selected for optimisation as preliminary scaling studies showed that this would be the most effective variable set to improve the collimated flux within an \textit{rms} bandwidth, whilst optimising with the transverse dynamics of the laser pulse is more complex as this impacts optical re-circulation cavity design, for which a full design was beyond the scope of this study. Longitudinal dynamics were also considered as a potential route to optimisation of the bandwidth and collimated flux of an ICS source however, due to the interplay of an RF system with the electron bunch length, optimisation using these dynamics would require a more complete accelerator design than transverse dynamics, with a lesser collimated flux advantage predicted due to the weak relation between electron bunch length and collimated flux. Because of the added complexity transverse laser pulse and longitudinal electron bunch optimisations are considered possible future work but excluded from this work.   
 
-Within the optimisation work several optimisation methods: a round beam optimisation, a non-round beam simplex optimisation and a non-round beam genetic algorithm method are developed and tested to solve the multi-objective optimisation problem. Round beam optimisations simplify the transverse dynamics to be identical in each plane ($x$ and $y$), hence a 1D approach, whereas non-round beam optimisations are a full 2D approach that treats each plane individually. The 1D round beam optimisation in Section~\ref{sec:RB_optimisation} uses a brute force optimisation approach, calculating each possible solution then sorting for the best solution. More sophisticated algorithms are required for 2D non-round beams as the parameter space is significantly expanded and unbounded.  The 2D non-round beam optimisations use a simplex/Nelder-Mead method, based on the Nelder-Mead NMaximise routine in \textsc{Mathematica} \cite{wolfram2021nmaximize}, and the upgraded strength Pareto evolutionary algorithm (\textsc{SPEA2}) genetic algorithm \cite{zitzler2001spea2} -- a genetic algorithm (GA) -- with the \textsc{PISA} platform \cite{bleuler2003pisa}, where a series of \textsc{Python} scripts have been wrote to interface with this generalised multi-objective optimisation code.    
+Within the optimisation work several optimisation methods: a round beam optimisation, a non-round beam simplex optimisation and a non-round beam genetic algorithm method are developed and tested to solve the multi-objective optimisation problem. Round beam optimisations simplify the transverse dynamics to be identical in each plane ($x$ and $y$), hence a 1D approach, whereas non-round beam optimisations are a full 2D approach that treats each plane individually. The 1D round beam optimisation in Section~\ref{sec:RB_optimisation} uses a brute force optimisation approach, calculating each possible solution then sorting for the best solution. More sophisticated algorithms are required for 2D non-round beams as the parameter space is significantly expanded and unbounded.  The 2D non-round beam optimisations use a downhill simplex method, based on the Nelder-Mead NMaximise routine in \textsc{Mathematica} \cite{wolfram2021nmaximize}, and the upgraded strength Pareto evolutionary algorithm (\textsc{SPEA2}) genetic algorithm \cite{zitzler2001spea2} -- a genetic algorithm (GA) -- with the \textsc{PISA} platform \cite{bleuler2003pisa}, where a series of \textsc{Python} scripts have been wrote to interface with this generalised multi-objective evolutionary optimisation code.    
 
 In the second half of this chapter the objective functions and variables of the optimisations are justified, a default ICS source configuration -- transverse profile matching -- applied to maximise the flux of many ICS sources is explained, then a series of optimisations such as the 1D round-beam optimisation, 2D non-round beam simplex optimisation and 2D non-round beam genetic algorithm optimisation are developed, which are finally evaluated in Section~\ref{sec:evaluation_of_optimisation_methods}. The electron bunch cases in Table~\ref{tab:char_opt_electron_bunch_parameters} with the laser parameters in Table~\ref{tab:char_opt_laser_pulse_parameters},  as previously used for the characterisation studies, are applied to evaluate the optimisation methods. The optimisation methods are then applied, in various forms, throughout the ICS source and experiment designs in Chapters~\ref{CBETA_Inverse_Compton_Scattering_Source_Design}, \ref{DIANA_Inverse_Compton_Source_Design}, \ref{FEBE_Inverse_Compton_Scattering_Experiment}    
 
 \section{Objective Functions and Variables}
 \label{sec:objective_functions_and_variables}
 
-\textcolor{blue}{**JUSTIFICATION OF THE OBJECTIVE FUNCTIONS AND VARIABLES**}
-
-As mentioned in Section~\ref{sec:motivation_optimisation}, we aim to maximise the collimated flux within a user selected bandwidth. The two objective functions required for optimisation are the collimated flux and bandwidth, we select the \textit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}) but extention to the \textit{FWHM} bandwidth (Eq.~\ref{eq:FWHM_bandwidth}) is trivial. In an ICS source, the two objective functions compete as minimising the two typically dominant terms of the \texit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}), the emittance/divergence term (Eq.~\ref{eq:emittance_term}) and the collimation term (Eq.~\ref{eq:collimation_term}), reduces the collimated flux. Therefore, a trade-off between the competing objectives needs to be developed; maximisation of the collimated flux within a user selected \textit{rms} bandwidth. 
+As mentioned in Section~\ref{sec:motivation_optimisation}, we aim to maximise the collimated flux within a user selected bandwidth. The two objective functions required for optimisation are the collimated flux (Eq.~\ref{eq:collimated_flux}) and bandwidth, we select the \textit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}) but extention to the \textit{FWHM} bandwidth (Eq.~\ref{eq:FWHM_bandwidth}) is trivial. The analytical calculation of the collimated flux is selected over the yield of the \textsc{ICARUS} code because, whilst the \textsc{ICARUS} code is more accurate (see Section~\ref{sec:benchmarking_of_the_ICARUS_spectrum_code}), the analytical calculation is much quicker -- using \textsc{ICARUS} would be time prohibitive.  In an ICS source, the two objective functions compete as minimising the two typically dominant terms of the \texit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}), the emittance/divergence term (Eq.~\ref{eq:emittance_term}) and the collimation term (Eq.~\ref{eq:collimation_term}), reduces the collimated flux. Therefore, a trade-off between the competing objectives needs to be developed; maximisation of the collimated flux within a user selected \textit{rms} bandwidth. 
 
 Optimisation of the ICS interaction allows for understanding of the best ICS source configuration for a particular experiment and for the mapping of the parameter space of an ICS source. Through use of tuning curves, where a Pareto front is generated in collimated flux--\textit{rms} bandwidth space, the possible configurations of an ICS source can be understood. Whereas in a single bandwidth point optimisation, where the $\textit{rms}$ bandwidth objective is replaced by a penalty function $\Omega$
 \begin{equation}
@@ -422,6 +418,7 @@ The collimated flux $\mathcal{F}_{\mathrm{col}}$ (Eq.~\ref{eq:collimated_flux}) 
 \textcolor{blue}{\textbf{**SHOW A PLOT OF EACH CASE TUNING CURVE (Fcol-rmsBW) IN RB APPROXIMATION**}}
 
 \section{2D Non-Round Beam Optimisation}
+\label{sec:NRB_optimisation}
 
 In a non-round beam (NRB) optimisation we relax the conditions that are imposed in the round beam case in Section~\ref{sec:RB_optimisation}, so that the transverse normalised emittances in each plane ($\epsilon_{nx}/\epsilon_{ny}$) and the $\beta$-functions at the IP in each direction ($\beta_{x}^{*}/\beta_{y}^{*}$) can differ, as well as the collimation angle. There are now three variables, unlike the two in the 1D RB case in Section~\ref{sec:RB_optimisation}. For a 2D non-round beam optimisation, the selected $\beta$-function variables can not be easily bound or calculated as a function of each other as in (Eq.~\ref{eq:beta_star_round_beam}) of the round beam methodology because of the form of the non-approximated emittance term (Eq.~\ref{eq:emittance_term}), which can not be re-arranged simply like the emittance term in the RB case (Eq.~\ref{eq:emittance_term_round_beam}). Therefore, the 2D non-round beam optimisation can't operate as a simple brute force optimisation method as in the RB optimisation.
 
@@ -449,7 +446,7 @@ where $\mathcal{F}_{\mathrm{col}}$ is the collimated flux (Eq.~\ref{eq:collimate
 \label{eq:2D_single_point_optimisation_definition}
 \end{equation}
 \textcolor{blue}{**SORT OUT SPACING, number also in wrong place**}
-Due to the complexity of the 2D NRB optimisation problems, a more sophisticated approach  to solving the optimisation problems than in the RB case (Section~\ref{sec:RB_optimisation}) is required. Two optimisation methodologies are employed to solve this: a genetic algorithm approach, developed in collaboration with Prof B. Terzic, and a simplex (Nelder-Mead) approach, which are detailed in the following section and are compared in Section~\ref{sec:evaluation_of_optimisation_methods}.
+Due to the complexity of the 2D NRB optimisation problems, a more sophisticated approach  to solving the optimisation problems than in the RB case (Section~\ref{sec:RB_optimisation}) is required. Two optimisation methodologies are employed to solve this: a genetic algorithm approach, developed in collaboration with Prof B. Terzic, and a downhill simplex approach, which are detailed in the following section and are compared in Section~\ref{sec:evaluation_of_optimisation_methods}.
 
 \subsection{Genetic Algorithm Approach}
 
@@ -497,11 +494,9 @@ The genetic algorithm approach has been applied to each of the electron bunch pa
 \label{fig:case_A_GA_tuning_curves}
 \end{figure}
 
-\textcolor{blue}{**TALK ABOUT CASE A OPTIMISATION**\\}
 In Fig.~\ref{fig:case_A_GA_tuning_curves}, we see a clearly defined Pareto-optimal front in the collimated flux--\textit{rms} bandwidth solution space. The individuals that construct the solution space Pareto-optimal front are clearly non-dominated with a series of dominated points shown below this front. The resulting Pareto-optimal front is clearly the maximal collimated flux as a function if \textit{rms} bandwidth, and therefore a tuning curve for the case A ICS source. The $\beta_{x}^{*}$--$\beta_{y}^{*}$ parameter space plot shows that the variables corresponding to the non-dominated solutions do not follow the round beam solution ($\beta_{x}^{*}=\beta_{y}^{*}=\beta^{*}$), therefore non-round beam simulation is beneficial in all cases even when $\epsilon_{nx}=\epsilon_{ny}=\epsilon_{n}$ -- as is necessary for the RB optimisation -- as this is observed by case A. Typically, the Pareto-optimal variables favour $\beta_{x}^{*}>\beta_{y}^{*}$; the only possible explanation is that this is because the crossing angle is impose in the $x$--$z$ plane because this is the only difference between the two planes. Many dominated individuals exist around the parameter space of the Pareto-optimal individuals in the $\beta_{x}^{*}$--$\beta_{y}^{*}$ parameter space, demonstrating that the parameter space is well explored.
 
 The parameter spaces  of the $\beta$-functions against the collimation angle show very different relationships in the Pareto-optimal variables due to the crossing angle in the $x$--$z$ plane. The $\beta_{x}$--$\theta_{\mathrm{col}}$ parameter space shows a large stratification in the Pareto-optimal variable positions which shows that the objective functions have a weak dependence on this variable, this plot varies largely from the $\beta^{*}$--$\theta_{\mathrm{col}}$ parameter space curve in Fig.~\ref{} \textcolor{blue}{**1D RB PARAMETER SPACE**}. In comparison, the $\beta_{y}^{*}$--$\theta_{\mathrm{col}}$ parameter space plot shows far less stratification of the Pareto-optimal front variables and this also mirrors the elbow shape of the optimal variables in the parameter space of the RB optimisation in Fig.~\ref{}\textcolor{blue}{**1D RB PARAMETER SPACE**}  In both of the $\beta$-function at the IP against collimation angle parameter space plots for case A there appears to be a lack of statistics -- dominated points -- around 0.02~\si{\milli\radian}, the cause of which is unknown though this may be a random occurrence in the optimisation.    
-
 
 \begin{figure}[!h]
 \centering
@@ -510,7 +505,6 @@ The parameter spaces  of the $\beta$-functions against the collimation angle sho
 \label{fig:case_B_GA_tuning_curves}
 \end{figure}
 
-\textcolor{blue}{**TALK ABOUT CASE B OPTIMISATION**\\}
 Within the GA simulation of the case B tuning curve in Fig.~\ref{fig:case_B_GA_tuning_curves}, the Pareto-optimal front in the collimated flux--\textit{rms} bandwidth is well defined, showing only non-dominated individuals, with an increase in flux of a factor $\sim2$ on the case A parameters in Fig.~\ref{fig:case_A_GA_tuning_curves} for a 1\% \textit{rms} bandwidth, though this simulation is extended to 3\% as the case B parameters are more conducive to wider bandwidth operation. In the $\beta_{x}^{*}$--$\beta_{y}^{*}$ parameter pace, the Pareto-optimal variables clearly favour a large $\beta_{x}^{*}$ over $\beta_{y}^{*}$, the stratification in the Pareto-optimal variables is much less that that for case A. The $\beta$-function at the IP against collimation angle parameter space plots in Fig.~\ref{fig:case_B_GA_tuning_curves} differ more so between each plane than those in case A (Fig.~\ref{fig:case_A_GA_tuning_curves}) due to the non-symmetry of the emittance in each plane. In the $\beta_{x}^{*}$--$\theta_{\mathrm{col}}$ parameter space the Pareto-optimal variables are stratified as in Fig.~\ref{fig:case_A_GA_tuning_curves}, however in case B many variables exist at the upper bounds of both the collimation angle and $\beta_{x}^{*}$-function as the $\beta^{*}$-function at the IP has been arbitrarily limited. In the $\beta_{y}^{*}$--$\theta_{\mathrm{col}}$ parameter space the typical 'elbow' shape seen in the round beam optimisations is more evident, and the Pareto-optimal variables are less stratified however there seems to be an unusual lack of individuals around $5\mathrm{~\si{m}} < \beta_{y}^{*} < 10\mathrm{~\si{m}}$ which is unexplained.
 
 \begin{figure}[!h]
@@ -520,37 +514,64 @@ Within the GA simulation of the case B tuning curve in Fig.~\ref{fig:case_B_GA_t
 \label{fig:case_C_GA_tuning_curves}
 \end{figure}
 
-\textcolor{blue}{**TALK ABOUT CASE C OPTIMISATION**}
 The GA tuning curves for case C in Fig.~\ref{fig:case_C_GA_tuning_curves} shows a well defined Pareto-optimal front in collimated flux--\textit{rms} bandwidth space which shows the case C ICS source is capable of narrowband operation with a minimum \textit{rms} bandwidth of $\sim0.1$\%. Pareto-optimal variables in the $\beta$-function in each plane parameter space are clustered either at small values or around $\beta_{x}^{*} = 14$~\si{\meter}, $\beta_{y}^{*} = 8$~\si{\meter}, which is unexpected but still shows that generally $\beta_{x}^{*}>\beta_{y}^{*}$ is preferred. Pareto-optimal variables in the $2\mathrm{~\si{\meter}} < \beta_{x}^{*} < 11\mathrm{~\si{\meter}}$ range of the $\beta_{x}^{*}$--$\theta_{\mathrm{col}}$ parameter space plot are sparse; this area of the parameter space has been poorly explored. Variation in the number of individuals simulated may improve statistics in this region. The $\beta_{y}^{*}$--$\theta_{\mathrm{col}}$ parameter space plot shows that individuals on the tuning curve in solution space favour small $\beta_{y}^{*}$-functions at large collimation angle until a sharp transition at $\sim0.2$~\si{\milli\radian}, however the Pareto-optimal variables do adhere to the 'elbow' shape of the round beam plots in Fig.~\ref{} \textcolor{blue}{**RB PLOTS REF**}.   
 
-\subsection{Simplex (Nelder--Mead) Approach}
+\subsection{Simplex Approach}
 
 \textcolor{blue}{**HOW DOES SIMPLEX OPTIMISATION WORK**}
 
-The downhill Simplex method is a direct search optimisation method used to minimise an objective function $f\left(x\right)$, where for a function of $n$ variables a set of $n+1$ points ($x_{1}$--$x_{n+1}$) are used to form the vertices of a polytope in $n$-dimensional space \cite{wolfram2021nmaximize}. For example, in the 2D NRB optimisation there are 3 variables so the polytope is a 4-vertex polyhedron in parameter space. Selection of
-the vertex points can be prescribed, but random selection allows the potential to fully investigate the parameter space \cite{koshel2002enhancement}. The objective function is calculated for each of these vertex's and they are sorted into the form
+The downhill simplex method is a direct search optimisation method used to minimise an objective function $f\left(x\right)$, where for a function of $n$ variables a set of $n+1$ points ($x_{1}$--$x_{n+1}$) are used to form the vertices of a polytope in $n$-dimensional space \cite{wolfram2021nmaximize}. For example, in the 2D NRB optimisation there are 3 variables so the polytope is a 4-vertex polyhedron in parameter space. Selection of
+the vertex points can be prescribed, but random selection allows the potential to fully investigate the parameter space \cite{koshel2002enhancement}. Here the simplex method will be explained using the Wolfram \textsc{Mathematica} formalism \cite{wolfram2021nmaximize}. The objective function is calculated for each of these vertex's and they are sorted into the form
 \begin{equation}
 f\left(x_{1}\right) \leq f\left(x_{2}\right) \leq \ldots \leq f\left(x_{n+1}\right),
 \label{eq:simplex_polytope_objective_functions}
 \end{equation}
+where their order is from minimum objective function ($x_{1}$, best point) to maximum objective function ($x_{n+1}$, worst point). The worst point is then replaces in the set by a trial point $x_{t}$, given by
+\begin{equation}
+x_{t} = c+s_{r}\left(c-x_{n+1}\right),
+\label{eq:simplex_trial_point}    
+\end{equation}
+which is a reflection of the worst point $x_{n+1}$, with $s_{r} > 0$ the refection parameter and the midpoint $c$ of the n-dimensional polytope is given by
+\begin{equation}
+c = \frac{1}{n}\sum_{i=1}^{n}x_{i}.
+\label{eq:polytope_centroid_simplex}
+\end{equation}
 
+If $\x_{t}$ minimises the objective better than the best point ($f\left(x_{t}\right) \leq f\left(x_{1}\right)$), then reflection is a successful method in minimising the objective function. The effect of the reflection may be accentuated by an expansion of the polytope in that direction via the trial point $x_{e}$ given by
+\begin{equation}
+x_{e} = c+s_{e}\left(x_{t}-c\right),
+\label{eq:simplex_expansion}    
+\end{equation}
+where $s_{e} > 1$ is the expansion parameter. If $f\left(x_{e}\right) < f\left(x_{t}\right)$, $x_{e}$ is a better solution and then replaces the worst point in the set $x_{n+1}$, otherwise $x_{t}$ replaces $x_{n+1}$. 
 
+A more optimal vertex may then be found via a contraction of the polytope if the new trial point $x_{t}$ is worse than the the second worst point $f\left(x_{t}\right) \geq f\left(x_{n}\right)$, the new trial vertex is given by
+\begin{equation}
+x_{c} = 
+\begin{cases}
+c+s_{c}\left(x_{n+1}-c\right), & \text{if}  ~f\left(x_{t}\right) \geq f\left(x_{n+1}\right), \\
+c+s_{c}\left(x_{t}-c\right), & \text{if}  ~f\left(x_{t}\right) < f\left(x_{n+1}\right),
+\end{cases}
+\label{eq:simplex_contraction}
+\end{equation}
+where $0 < s_{c} < 1$ is the contraction parameter. A further contraction, named a shrink is carried out if $f\left(x_{c}\right) < f\left(x_{n+1}\right) \land f\left(x_{t}\right)$ because the previous contraction was successful, with $x_{t}$ replacing $x_{n+1}$. A shrink would be of identical form to (Eq.~\ref{eq:simplex_contraction}) with the contraction parameter $s_{c}$ replaced by a shrink parameter $0 < s_{s} < 1$ 
+
+The method is then iterated until the termination condition, typically a number of iterations, is exceeded or until convergence below a set tolerance in the penalty function (Eq.~\ref{eq:penalty_function}) is achieved. 
 
 \textcolor{blue}{**CONSTRAINTS IN SIMPLEX?**}
 
-\textcolor{blue}{**WHY IS SIMPLEX USEFUL + NOT**}
-The Simplex methodology is typically a fast optimisation process because a minimum of $n+1$  objective function calculations, with $n$ variables, are required per iteration in comparison to genetic algorithm methods where objective functions are calculated for each individual. Since a single trial point is compared against $n+1$ points in each iteration, the comparative aspect of a downhill Simplex method is also more efficient. The combination of these factors mean the downhill Simplex method can be a fast optimisation, on the scale of minutes for the single point optimisation examples. A full benchmarking of the Simplex method is also more readily achievable due to the small number of simulation settings that can be adjusted -- these consist of the 4 constants governing refection and expansion etc., the tolerance of the simulation and the no. iterations.   
+\textcolor{blue}{**WHY IS simplex USEFUL + NOT**}
+The simplex methodology is typically a fast optimisation process because a minimum of $n+1$  objective function calculations, with $n$ variables, are required per iteration in comparison to genetic algorithm methods where objective functions are calculated for each individual. Since a single trial point is compared against $n+1$ points in each iteration, the comparative aspect of a downhill simplex method is also more efficient. The combination of these factors mean the downhill simplex method can be a fast optimisation, on the scale of minutes for the single point optimisation examples. A full benchmarking of the simplex method is also more readily achievable due to the small number of simulation settings that can be adjusted -- these consist of the 4 constants governing refection and expansion etc., the tolerance of the simulation and the no. iterations.   
 
-The downhill Simplex optimisation method is a local minimisation routine therefore, unlike in the GA method, only a single solution space point is returned for each optimisation. This means the full solution space is not mapped in this optimisation. The Nelder-Mead optimisation may also fail to find the optimal solution and become trapped in a local minima as this is a heuristic method, however in practice downhill Simplex tends to work reasonably well for problems that do not have many local minima \cite{wolfram2021nmaximize}. The parameter space of the 2D NRB optimisation problem (Eq.~\ref{eq:2D_tuning_curve_optimisation_definition}) is assumed to be simple enough to produce a global minima result, however this assumption will be evaluated in Section~\ref{sec:evaluation_of_optimisation_methods} by comparison with the GA 2D NRB method. Another limitation of this method is that the optimisation arbitrarily terminates after a set number of iterations, which may mean that a true optimal solution is not found if finding it exceeds the iteration limit.
+The downhill simplex optimisation method is a local minimisation routine as effectively, derivatives are used to find minima \cite{jones2016design} therefore, unlike in the GA method, only a single solution space point is returned for each optimisation. This means the full solution space is not mapped in this optimisation. The simplex optimisation may also fail to find the optimal solution and become trapped in a local minima as this is a heuristic method, however in practice downhill simplex tends to work reasonably well for problems that do not have many local minima \cite{wolfram2021nmaximize}. The parameter space of the 2D NRB optimisation problem (Eq.~\ref{eq:2D_tuning_curve_optimisation_definition}) is assumed to be simple enough to produce a global minima result, however this assumption will be evaluated in Section~\ref{sec:evaluation_of_optimisation_methods} by comparison with the GA 2D NRB method. Another limitation of this method is that the optimisation arbitrarily terminates after a set number of iterations, which may mean that a true optimal solution is not found if finding it exceeds the iteration limit.
 
 \textcolor{blue}{**HOW DOES THE CODE WORK**}
 
-Within the Simplex optimisation, the collimated flux (Eq.~\ref{eq:collimated_flux}) objective function is maximised and the bandwidth penalty function (Eq.~\ref{eq:penalty_function}) is minimised. In order to produce tuning curves using the Simplex method, the optimisation is applied to an array of bandwidth values, as it is for the RB optimisation in Section~\ref{sec:RB_optimisation}.
+Within the simplex optimisation, the collimated flux (Eq.~\ref{eq:collimated_flux}) objective function is maximised and the bandwidth penalty function (Eq.~\ref{eq:penalty_function}) is minimised. In order to produce tuning curves using the simplex method, the optimisation is applied to an array of bandwidth values, as it is for the RB optimisation in Section~\ref{sec:RB_optimisation}.
 
-The optimisation operates using the \textsc{NMaximise} maximisation routine in \textsc{Mathematica} \cite{wolfram2021nmaximize} using the Simplex/Nelder-Mead method built into this function. The collimated flux is set as the objective to be maximised whilst the condition to be satisfied is $\Omega = 0$ i.e the penalty function (Eq.~\ref{eq:penalty_function}) must equal zero within a tolerance of $10^{-5}$, analagous to the single point GA optimisation in Section~\ref{sec:}. The interaction point $\beta$-functions and collimation angle are initialised as variables, therefore the optimisation problem is stated as in (Eq.~\ref{eq:2D_single_point_optimisation_definition}) with the collimation upper bound given by (Eq.~\ref{eq:collimation_angle_upper_bound}).
+The optimisation operates using the \textsc{NMaximise} maximisation routine in \textsc{Mathematica} \cite{wolfram2021nmaximize} using the simplex method built into this function. The collimated flux is set as the objective to be maximised whilst the condition to be satisfied is $\Omega = 0$ i.e the penalty function (Eq.~\ref{eq:penalty_function}) must equal zero within a tolerance of $10^{-5}$, analagous to the single point GA optimisation in Section~\ref{sec:}. The interaction point $\beta$-functions and collimation angle are initialised as variables, therefore the optimisation problem is stated as in (Eq.~\ref{eq:2D_single_point_optimisation_definition}) with the collimation upper bound given by (Eq.~\ref{eq:collimation_angle_upper_bound}).
 
 \textcolor{blue}{**HOW DOES NMaximise WORK?**}
-The NMaximise function aims to produce a global maximum, via minimising the inverse of the objective function i.e. minimising $-\mathcal{F}_{\mathrm{col}}$ subject to the $\Omega = 0$ penalty function (Eq.~\ref{eq:penalty_function}) constraint with a small tolerance ($\Omega < 10^{-5}$) subject to the other bounds on the variables; the arbitrary $\beta$-function at the IP in each plane upper bounds and the collimation angle upper bound (Eq.~\ref{eq:collimation_angle_upper_bound}). The downhill simplex method, detailed earlier in this section, is applied to minimise the negative collimated flux with 200 maximum iterations. The ReflectRatio, ExpandRatio, ContractRatio and ShrinkRatio parameters \textcolor{blue}{**MENTION THAT THESE CORRESPOND TO THE CONSTANTS**} \cite{wolfram2021nmaximize} of the Nelder-Mead/Simplex method are set to their default values as this was found to be sufficient to optimise all of the cases in Table~\ref{tab:char_opt_electron_bunch_parameters}.
+The NMaximise function aims to produce a global maximum, via minimising the inverse of the objective function i.e. minimising $-\mathcal{F}_{\mathrm{col}}$ subject to the $\Omega = 0$ penalty function (Eq.~\ref{eq:penalty_function}) constraint with a small tolerance ($\Omega < 10^{-5}$) subject to the other bounds on the variables; the arbitrary $\beta$-function at the IP in each plane upper bounds and the collimation angle upper bound (Eq.~\ref{eq:collimation_angle_upper_bound}). The downhill simplex method, detailed earlier in this section, is applied to minimise the negative collimated flux with 200 maximum iterations. The ReflectRatio, ExpandRatio, ContractRatio and ShrinkRatio parameters \textcolor{blue}{**MENTION THAT THESE CORRESPOND TO THE CONSTANTS**} \cite{wolfram2021nmaximize} of the simplex method are set to their default values as this was found to be sufficient to optimise all of the cases in Table~\ref{tab:char_opt_electron_bunch_parameters}.
 
 \textcolor{blue}{**RESULTS**}
 \textcolor{blue}{\textbf{**SHOW PLOTS OF THE 3 CASES TUNING CURVES (Fcol-rmsBW)**}}
@@ -558,13 +579,19 @@ The NMaximise function aims to produce a global maximum, via minimising the inve
 \section{Evaluation of Optimisation Methods} 
 \label{sec:evaluation_of_optimisation_methods}
 
-\textcolor{blue}{**EVALUATE WHETHER SIMPLEX METHOD WORKS AS A GLOBAL OPTIMISER IN THIS CASE**}
+Optimisations have been performed for each of the cases in Table~\ref{tab:char_opt_electron_bunch_parameters} using the laser parameters in Table~\ref{tab:char_opt_laser_pulse_parameters} using the RB (Section~\ref{sec:RB_optimisation}), GA NRB and simplex NRB (Section~\ref{sec:NRB_optimisation} methods. Obviously, since case B electron bunch parameters don't fulfill the round beam optimisation criteria ($\epsilon_{nx} = \epsilon_{ny} = \epsilon_{n}$) it has been excluded from these methods. Within this section the optimisation methods will be compared through both single point and tuning curve optimisations, to both study the effect of optimisation hollistically on source optimisation, quantify the advantage of higher dimensional optimisation and examine the methods against eachother.   
+
+\textcolor{blue}{**EVALUATE WHETHER simplex METHOD WORKS AS A GLOBAL OPTIMISER IN THIS CASE** \\ **MENTION THAT FURTHER WORK NEEDS TO BE CONDUCTED INTO HOW ACHIEVABLE THIS IS IN AN ICS SOURCE - JITTER + ERROR STUDIES** \\}
 
 \subsection{Single Point Bandwidth Optimisations}
 
+Single point bandwidth optimisations have been used to compare optimisation methods at small \textit{rms} bandwidths, 0.5\% \texit{rms} bandwidth for case A and C and 2\% \texit{rms} bandwidth for case B, to quantify the advantage of using each method and for comparison against the standard transverse profile matching approach in Section~\ref{sec:transverse_profile_matching}. The results of the optimisations on each case in Table~\ref{tab:char_opt_electron_bunch_parameters}, with laser parameters in Table~\ref{tab:char_opt_laser_pulse_parameters}, are shown in Table~\ref{tab:single_point_optimisations}. 
+
+Comparison between the investigated optimisation methods will determine if optimising the transverse dynamics for maximal collimated flux in a narrow bandwidth is a worthwhile strategy and ascertain the benefit of using a non-round beam optimisation, beyond the obvious advantage that RB optimisation is only applicable when certain criteria are satisfied. Through examination of the variables at the optimal solution source design can be further understood and the question of whether a round transverse profile is optimal can be answered.      
+
 \begin{table}[!h]
 \centering
-\caption{Single point optimisations for the transverse profile matching (TPM), round beam (RB), non-round beam Simplex (NRB Simplex) and non-round beam genetic algorithm (NRB GA) methods of all cases. \textit{Rms} bandwidths of 0.5\% (Case A), 2\% (Case B), 0.5\% (Case C) are chosen to evaluate the single point optimisation methodologies for each individual case.}
+\caption{Single point optimisations for the transverse profile matching (TPM), round beam (RB), non-round beam simplex (NRB simplex) and non-round beam genetic algorithm (NRB GA) methods of all cases. \textit{Rms} bandwidths of 0.5\% (Case A), 2\% (Case B), 0.5\% (Case C) are chosen to evaluate the single point optimisation methodologies for each individual case.}
 \vspace{3mm}
 \resizebox{\columnwidth}{!}{
 \begin{threeparttable}
@@ -576,21 +603,21 @@ Method & \textit{rms} Bandwidth (\%)  & Collimated Flux (ph/\si{\second}) & $\be
 \hline
 TPM & 0.5 & 7.37$\times 10^{8}$ & 3.53 & 3.53 & 0.068  \\
 RB & 0.5 & 8.62$\times 10^{8}$ & 1.15 & 1.15 & 0.066 \\
-NRB Simplex & 0.5 & 8.81$\times 10^{8}$ & 1.69 & 0.88 & 0.066  \\
+NRB simplex & 0.5 & 8.81$\times 10^{8}$ & 1.69 & 0.88 & 0.066  \\
 NRB GA & 0.5 & 8.86$\times 10^{8}$ & 2.11 & 0.867 & 0.066  \\
 \hline
 \multicolumn{6}{c}{\textbf{Case B}} \\
 \hline
 TPM~\tnote{*} & -- & -- & -- & -- & --  \\
 RB~\tnote{$\dagger$} & -- & -- & -- & -- & -- \\
-NRB Simplex & 2.0 & 9.19$\times 10^{9}$ & 3.46 & 0.10 & 0.178 \\
+NRB simplex & 2.0 & 9.19$\times 10^{9}$ & 3.46 & 0.10 & 0.178 \\
 NRB GA & 2.0 & 1.04$\times 10^{10}$ & 11.05 & 0.20 & 0.194 \\
 \hline
 \multicolumn{6}{c}{\textbf{Case C}} \\
 \hline
 TPM & 0.5 & 8.35$\times 10^{7}$ & 0.45 & 0.45 & 2.63 \\
 RB & 0.5 & 1.16$\times 10^{8}$ & 0.015 & 0.015 & 2.62  \\
-NRB Simplex & 0.5 & 1.16$\times 10^{8}$ & 0.016 & 0.015 & 2.63 \\
+NRB simplex & 0.5 & 1.16$\times 10^{8}$ & 0.016 & 0.015 & 2.63 \\
 NRB GA & 0.5 & 1.17$\times 10^{8}$ & 0.029 & 0.013 & 2.64 \\
 \hline\hline
 \end{tabular}
@@ -607,5 +634,6 @@ NRB GA & 0.5 & 1.17$\times 10^{8}$ & 0.029 & 0.013 & 2.64 \\
 
 \textcolor{blue}{**4-PANE TUNING CURVE OPTIMISATION PLOTS COMPARING ALL METHODS FOR EACH CASE**}
  
+\section{Summary}
 
 \end{document}
