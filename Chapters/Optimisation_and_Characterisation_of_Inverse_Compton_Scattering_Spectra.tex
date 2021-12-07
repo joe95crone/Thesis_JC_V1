@@ -108,7 +108,7 @@ where $\frac{d\sigma}{dY}$ is given by (Eq.~\ref{eq:cross_section_Y_berestetskii
 \sigma\left(\theta_{\mathrm{col}}\right) = \int_{0}^{\theta_{\mathrm{col}}} \frac{8\pi r_{e}^{2}}{X^{2}}\left\{\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right]+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\right\}\\\frac{X\beta\sin\theta\left\{1-\beta\cos\theta+\left[1+\cos\left(\phi+\theta\right)\right]E_{L}/E_{e}\right\}-X\left(1-\beta\cos\theta\right)\left[\beta\sin\theta-\sin\left(\phi+\theta\right)E_{L}/E_{e}\right]}{\left\{1-\beta\cos\theta+\left[1+\cos\left(\phi+\theta\right)\right]E_{L}/E_{e}\right\}^{2}}d\theta,
 \label{eq:full_scattering_angle_cross_section_integral}
 \end{multline}
-where $Y, X, E_{\gamma}$ are of the forms in (Eq.~\ref{eq:Y_geometry},~\ref{eq:X_geometry},~\ref{eq:scattered_photon_energy}). Using the results derived in Sections~\ref{sec:luminosity_and_flux},~\ref{sec:angular_crossing_and_hourglass_effects} the collimated flux is given by a modified cross section (Eq.~\ref{eq:full_scattering_angle_cross_section_integral}) form of the flux equation (Eq.~\ref{eq:headon_flux}), with an angular crossing and the  hourglass effect taken into account (Eq.~\ref{eq:flux_angular_crossing_hourglass})
+where $Y, X, E_{\gamma}$ are of the forms in (Eq.~\ref{eq:Y_geometry},~\ref{eq:X_geometry},~\ref{eq:scattered_photon_energy}). Using the results derived in Sections~\ref{sec:luminosity_and_flux},~\ref{sec:geometric_luminosity_reduction} of Chapter~\ref{Photon_Production_by_Inverse_Compton_Scattering} the collimated flux is given by a modified cross section (Eq.~\ref{eq:full_scattering_angle_cross_section_integral}) form of the flux equation (Eq.~\ref{eq:headon_flux}), with an angular crossing and the  hourglass effect taken into account (Eq.~\ref{eq:flux_angular_crossing_hourglass})
 \begin{equation}
 \mathcal{F}_{\mathrm{col}} = \sigma\left(\theta_{\mathrm{col}}\right) R_{ACHG}\mathcal{L}_{\mathrm{HEAD-ON}}f.
 \label{eq:collimated_flux}
@@ -588,6 +588,8 @@ Optimisations have been performed for each of the cases in Table~\ref{tab:char_o
 Single point bandwidth optimisations have been used to compare optimisation methods at small \textit{rms} bandwidths, 0.5\% \texit{rms} bandwidth for case A and C and 2\% \texit{rms} bandwidth for case B, to quantify the advantage of using each method and for comparison against the standard transverse profile matching approach in Section~\ref{sec:transverse_profile_matching}. The results of the optimisations on each case in Table~\ref{tab:char_opt_electron_bunch_parameters}, with laser parameters in Table~\ref{tab:char_opt_laser_pulse_parameters}, are shown in Table~\ref{tab:single_point_optimisations}. 
 
 Comparison between the investigated optimisation methods will determine if optimising the transverse dynamics for maximal collimated flux in a narrow bandwidth is a worthwhile strategy and ascertain the benefit of using a non-round beam optimisation, beyond the obvious advantage that RB optimisation is only applicable when certain criteria are satisfied. Through examination of the variables at the optimal solution source design can be further understood and the question of whether a round transverse profile is optimal can be answered.      
+
+\textcolor{blue}{**INCLUDE THE FLUX IN A 0.1\% FWHM BANDWIDTH SCALED** }
 
 \begin{table}[!h]
 \centering

@@ -25,7 +25,7 @@
 \textcolor{blue}{**BLURB ABOUT PHOTON - ELECTRON INTERACTIONS**}
 % AHHHHHH THIS IS SHIT
 
-While scattering interactions, specifically inverse Compton scattering interactions, are possible from all particles, the work presented here is only concerned with electron - photon interactions, the most common form of inverse Compton scattering.  Electron - photon interactions are advantageous over other particle - photon interactions due to their low rest mass $m_{e}$, resulting in a typically large Lorentz factor, which allows for the production of high energy photons as the scattered photon energy $E_{\gamma}$ is proportional to the Lorentz factor squared ($E_{\gamma}\propto\gamma^{2}$).    
+While scattering interactions, specifically inverse Compton scattering interactions, are possible from all particles, the work presented here is only concerned with electron - photon interactions, the most commonly utilised form of inverse Compton scattering.  Electron - photon interactions are advantageous over other particle - photon interactions due to their low rest mass $m_{e}$, resulting in a typically large Lorentz factor, which allows for the production of high energy photons as the scattered photon energy $E_{\gamma}$ is proportional to the Lorentz factor squared ($E_{\gamma}\propto\gamma^{2}$).    
 
 \textcolor{blue}{**EXPLANATION OF THOMSON, COMPTON AND INVERSE COMPTON**}
 
@@ -339,9 +339,8 @@ The total flux of the photons is given by $\mathcal{F} = \sigma\mathcal{L}f$ whe
 \label{eq:headon_flux}
 \end{equation}
 
-\section{Angular Crossing and Hourglass Effects}
-\label{sec:angular_crossing_and_hourglass_effects}
-\textcolor{blue}{**DERIVATION FOR THE ANGULAR CASE, Miyahara \cite{miyahara2008luminosity} or Suzuki \cite{suzuki1976general}**}
+\section{Geometric Luminosity Reduction}
+\label{sec:geometric_luminosity_reduction}
 
 A generalization of the head-on ($\phi = 0$) luminosity in (Eq.~\ref{eq:head_luminosity}) to the case with an angular crossing ($\phi \neq 0$) can be performed, where the interaction geometry is modified and the transverse and longitudinal profiles of the interaction are adjusted. The effect of an angular crossing, which is assumed to be in the horizontal $x$ plane, can be expressed by a reduction factor $R_{AC}$ in two identical forms \cite{suzuki1976general,miyahara2008luminosity}
 
@@ -355,8 +354,6 @@ where $\sigma_{z,L} = ct_{pulse}$ with $t_{pulse}$, the laser pulse duration. Th
 \mathcal{F} = \sigma\frac{N_{e}N_{L}f\cos\phi}{2\pi\sigma_{y}\sqrt{\sigma_{x}^{2}\cos^{2}\phi + \sigma_{z}^{2}\sin^{2}\phi}}.
 \label{eq:crossing_angle_flux}    
 \end{gather}
-
-\textcolor{blue}{**DERIVATION FOR THE HOURGLASS EFFECT**}
 
 Another deleterious effect on the luminosity is the hourglass effect, in which the effect of the divergence of two colliding beams is taken into account. As the electron bunch and laser pulse overlap, they diverge and their transverse profiles increase in size which in turn reduces the luminosity. The laser pulse typically diverges quicker than the electron bunch. 
 
@@ -386,7 +383,7 @@ where $1-\Phi\left(t_{RB}\right)$ is the complementary error function of $t_{RB}
 \end{equation}
 where $t$ is the integration variable. The non-round beam cases have to be evaluated using numerical integration after inspection of the underlying $R_{HG}$ functions.
 
-The luminosity of a head-on ($\phi = 0$)collision taking the hourglass effect into account is $\mathcal{L} = R_{HG}\mathcal{L}_{HEAD-ON}$, following the methodology of the angular crossing reduction.
+The luminosity of a head-on ($\phi = 0$) collision taking the hourglass effect into account is $\mathcal{L} = R_{HG}\mathcal{L}_{HEAD-ON}$, following the methodology of the angular crossing reduction.
 
 The work of Y. Miyahara \cite{miyahara2008luminosity} builds upon the isolated descriptions of the angular crossing by T. Suzuki \cite{suzuki1976general}, and the hourglass effect by M. Furman \cite{furman1991hourglas} by looking at the combined effect of these. The combined angular crossing and hourglass effect reduction factor $R_{ACHG}$ is defined as
 \begin{equation}
@@ -447,7 +444,7 @@ The spectral density of an ICS source is a measure of the energy density of the 
 \end{equation}
 where $\mathcal{F}$ is the uncollimated total flux of the ICS source given by (Eq.~\ref{eq:flux_angular_crossing_hourglass}) and $E_{\gamma}$ is the scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}) at the Compton edge ($\theta = 0$). The spectral density can also be measured around the Compton edge energy for a particular bandwidth by replaceing the flux encompassed by that bandwidth, for example by replacing the raw flux $\mathcal{F}$ with the \textit{FWHM} flux in a 0.1\% bandwidth $\mathcal{F_{\mathrm{0.1\%}}}$. \textcolor{blue}{**NEED TO SHOW THIS SOMEWHERE**} Framed in these terms, the spectral density becomes an important performance parameter of a narrowband ICS source.  
 
-\section{Bandwidth + Investigation}
+\section{Bandwidth}
 \label{sec:bandwidth}
 
 The bandwidth, the \textit{rms} energy spread of the scattered photons, is given in the recoil corrected non-linear regime ($a_{0}\ll 1$) \cite{ranjan2018simulation} by
@@ -456,25 +453,43 @@ The bandwidth, the \textit{rms} energy spread of the scattered photons, is given
 \frac{\Delta E_{\gamma}}{E_{\gamma}} = \sqrt{\left(\frac{\sigma_{\theta}}{E_{\theta}}\right)^{2}+\left(\frac{\sigma_{e}}{E_{e}}\right)^{2}+\left(\frac{\sigma_{L}}{E_{L}}\right)^{2}+\left(\frac{\sigma_{\epsilon}}{E_{\epsilon}}\right)^{2}},
 \label{eq:RMS_bandwidth}    
 \end{equation}
-where $\frac{\sigma_{\theta}}{E_{\theta}}$ is the collimation term, $\frac{\sigma_{e}}{E_{e}}$ is the electron beam energy spread term, $\frac{\sigma_{L}}{E_{L}}$ is the laser pulse energy spread term and $\frac{\sigma_{\epsilon}}{E_{\epsilon}}$ is the emittance terms. These terms are given by
-\begin{gather}
-\frac{\sigma_{\theta}}{E_{\theta}} = \frac{1}{\sqrt{12}}\frac{\psi^{2}}{1+X+\psi^{2}/2},
+where $\frac{\sigma_{\theta}}{E_{\theta}}$ is the collimation term, $\frac{\sigma_{e}}{E_{e}}$ is the electron beam energy spread term, $\frac{\sigma_{L}}{E_{L}}$ is the laser pulse energy spread term and $\frac{\sigma_{\epsilon}}{E_{\epsilon}}$ is the emittance terms. The terms of the bandwidth are given by
+\begin{align}
+\frac{\sigma_{\theta}}{E_{\theta}} &= \frac{1}{\sqrt{12}}\frac{\Psi^{2}}{1+X+\Psi^{2}/2},
 \label{eq:collimation_term} \\
-\frac{\sigma_{e}}{E_{e}} = \frac{2+X}{1+X+\psi^{2}},
+\frac{\sigma_{e}}{E_{e}} &= \frac{2+X}{1+X+\Psi^{2}}\frac{\Delta E_{e}}{E_{e}},
 \label{eq:beam_energy_spread_term} \\
-\frac{\sigma_{L}}{E_{L}} = \frac{1+\psi^{2}}{1+X+\psi^{2}},
+\frac{\sigma_{L}}{E_{L}} &= \frac{1+\Psi^{2}}{1+X+\Psi^{2}}\frac{\Delta E_{L}}{E_{L}},
 \label{eq:laser_energy_spread_term} \\
-\frac{\sigma_{\epsilon}}{E_{\epsilon}} = \frac{\sqrt{2}\gamma^{2}}{1+X}\sqrt{\frac{\epsilon_{x}^{2}}{\beta_{x}^{*2}}+\frac{\epsilon_{y}^{2}}{\beta_{y}^{*2}}}
+\frac{\sigma_{\epsilon}}{E_{\epsilon}} &= \frac{\sqrt{2}\gamma^{2}}{1+X}\sqrt{\frac{\epsilon_{x}^{2}}{\beta_{x}^{*2}}+\frac{\epsilon_{y}^{2}}{\beta_{y}^{*2}}}
 \label{eq:emittance_term}
-\end{gather}
-where $\psi = \gamma\theta$ is the acceptance angle, $\epsilon_{x/y}$ is the emittance in the $x$ or $y$ direction and $\beta_{x/y}^{*}$ are the $\beta$ functions at the IP in both directions. This can be converted into the full width half maximum (FWHM) bandwidth 
-
+\end{align}
+where $\Psi = \gamma\theta$ is the acceptance angle, $\epsilon_{x/y}$ is the emittance in the $x$ or $y$ direction, $\beta_{x/y}^{*}$ are the $\beta$ functions at the IP in both directions, $\Delta E_{e}/E_{e}$ is the \textit{rms} relative energy spread of the electron bunch and $\Delta E_{L}/E_{L}$ is the \textit{rms} spectral bandwidth of the laser pulse. The \textit{rms} bandwidth can trivially be converted into the full width half maximum (FWHM) bandwidth 
 \begin{equation}
-\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{\mathrm{FWHM}} = 2\sqrt{2\ln{2}}\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{rms}
+\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{\mathrm{FWHM}} = 2\sqrt{2\ln{2}}\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{rms}.
 \label{eq:FWHM_bandwidth}
 \end{equation}
 
-\textcolor{blue}{**MENTION THE CURATOLO BANDWIDTH, HOW THIS DOESN'T MATCH UP-THE PLOT IN RANJAN PAPER** \\ **MENTION THE HAJIMA EXTENTION OF THIS TO RECTANGULAR COLLIMATION** }
+Other formulations of the \textit{rms} bandwidth exist such as the formulation used by Akagi et al \cite{akagi2016narrow} derived by Petrillo et al \cite{petrillo2012photon}, where notation has been standardised to that used in this text 
+\begin{equation}
+\frac{\Delta E_{\gamma}}{E_{\gamma}} = \sqrt{\Psi^{4}+4\left(\frac{\Delta E_{e}}{E_{e}}\right)^{2}+\left(\frac{\epsilon_{n}}{\sigma_{e}}\right)^{4}+\left(\frac{\Delta\nu}{\nu}\right)^{2}+\left(\frac{M^{2}\lambda}{4\pi\sigma_{L}}\right)^{4}},
+\label{eq:akagi_bandwidth}    
+\end{equation}
+where $\epsilon_{n}=\epsilon_{n,x}=\epsilon_{n,y}$ is the round beam normalised transverse emittance, $\sigma_{e}$ is the round beam electron bunch spot size, $\Delta\nu/\nu$ is the spectral bandwidth of the laser pulse defined in terms of the laser pulse frequency $\nu$ and $M^{2}$ is the quality factor of the laser pulse ($M^{2} = 1$ for a perfectly Gaussian laser pulse). In comparison to (Eq.~\ref{eq:RMS_bandwidth}), the formulation used by Akagi et al \cite{akagi2016narrow} is very simplistic in the treatment of the emittance term $\left(\epsilon_{n}/\sigma_{e}\right)^{4}$, which takes into account the only the round beam divergence, and the collimation term $\Psi^{4}$ which is only the acceptance angle. The Petrillo et al bandwidth is therefore only valid in the round beam case ($\epsilon_{n,x} = \epsilon_{n,y} = \epsilon_{n}$). Recoil of the electron bunch has also not been accounted for in any term so the Petrillo et al bandwidth is only relevant in the Thomson regime ($X \ll 1$) and angular variation is only accounted for in the collimation term not, as in (Eq.~\ref{eq:RMS_bandwidth}), for the electron bunch $4\left(\Delta E_{e}/E_{e}\right)^{2}$ and laser pulse $\left(\Delta\nu/\nu\right)^{2}$ energy spread terms. Unlike in (Eq.~\ref{eq:RMS_bandwidth}) a laser pulse quality term $\left(M^{2}\lambda/4\pi\sigma_{L}\right)^{4}$ is imposed however this term is generally negligible because miniscule foci of the laser pulses required to make this term non-negligible are beyond limits of laser science. For example, for a Gaussian ($M^{2}=1$) Nd:YAG laser ($\lambda = 1064$~\si{\nano\meter}) pulse focused to a typical small laser pulse \textit{rms} spot size of 30~\si{\micro\meter} this term makes a $7.97\times 10^{-6}$ contribution to the \textit{rms} bandwidth hence it is neglected by Ranjan et al \cite{ranjan2018simulation} in the selected \textit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}).   
+
+Another possible formulation has been suggested by Curatolo et al \cite{curatolo2017analytical}, which updates (Eq.~\ref{eq:akagi_bandwidth})
+\begin{multline}
+\frac{\Delta E_{\gamma}}{E_{\gamma}} = \left\{\left[\frac{\Psi^{2}}{\sqrt{12}\left(1+\Psi^{2}\right)}+\frac{\bar{P}^{2}}{1+\sqrt{12}\bar{P}^{2}}\right]^{2}+\left[\left(\frac{2+X}{1+X}\right)\frac{\Delta E_{e}}{E_{e}}\right]^{2}+\left(\frac{1}{1+X}\frac{\Delta E_{L}}{E_{L}}\right)^{2} \right.\\\left. +\left(\frac{M^{2}\lambda}{4\pi\sigma_{L}}\right)^{4}+\left(\frac{a_{0}^{2}/3}{1+a_{0}^{2}/2}\right)^{2}\right\}^{1/2}
+\label{eq:curatolo_bandwidth}    
+\end{multline}
+where 
+\begin{equation}
+\bar{P} = \frac{\sqrt{2}\epsilon_{n}}{\sigma_{e}\sqrt{1+X}},
+\label{eq:curatolo_p_bar}    
+\end{equation}
+is the \textit{rms} normalised transverse momentum of the electron bunch.
+
+\textcolor{blue}{**MENTION THE CURATOLO BANDWIDTH, HOW THIS DOESN'T MATCH UP-THE PLOT IN RANJAN PAPER** \\ **MENTION THE HAJIMA EXTENTION OF THIS TO RECTANGULAR COLLIMATION** \\ **Non-Gaussian skewed spectra variation** }
 
 
 \section{Peak and Average Brilliance}
