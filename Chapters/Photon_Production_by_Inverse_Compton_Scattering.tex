@@ -487,10 +487,22 @@ where
 \bar{P} = \frac{\sqrt{2}\epsilon_{n}}{\sigma_{e}\sqrt{1+X}},
 \label{eq:curatolo_p_bar}    
 \end{equation}
-is the \textit{rms} normalised transverse momentum of the electron bunch.
+is the \textit{rms} normalised transverse momentum of the electron bunch. The bandwidth formulation by Curatolo et al assumes a round transverse profile of the electron bunch as in (Eq.~\ref{eq:akagi_bandwidth}), and also includes an identical negligible beam quality term. Recoil correction is included in (Eq.~\ref{eq:curatolo_bandwidth}) but angular variation is only included in the collimation term, as the acceptance angle is present in no other term. A non-linear ponderomotive broadening term $\left(\frac{a_{0}^{2}/3}{1+a_{0}^{2}/2}\right)^{2}$ is introduced in (Eq.~\ref{eq:curatolo_bandwidth}), which is advantageous over the bandwidth by Ranjan et al \cite{ranjan2018simulation}. The bandwidth by Curatolo et al \cite{curatolo2017analytical} also includes covariance of the emittance and collimation terms for predicting the bandwidth of skewed non-Gaussian spectra \cite{ranjan2018simulation}. However skewed non-Gaussian spectra effects are also accounted for by Ranjan et al in an equation of the form
+\begin{equation}
+\frac{\Delta E_{\gamma}}{E_{\gamma}} = \sqrt{\left[\left(\frac{\sigma_{\theta}}{E_{\theta}}\right)+\left(\frac{\sigma_{\epsilon}}{E_{\epsilon}}\right)\right]^{2}+\left(\frac{\sigma_{e}}{E_{e}}\right)^{2}+\left(\frac{\sigma_{L}}{E_{L}}\right)^{2}},
+\label{eq:covariant_RMS_bandwidth}    
+\end{equation}
+where the emittance and collimation terms are covariant. The covariant form is not utilised in this work as there is a focus on Gaussian electron bunches and laser pulses, and (Eq.~\ref{eq:RMS_bandwidth}) produces the same result as (Eq.~\ref{eq:covariant_RMS_bandwidth}) for Gaussian ICS spectra. All optimisation methods in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra} can be utilised with the covariant form, however as standard (Eq.~\ref{eq:RMS_bandwidth}) is used. 
 
-\textcolor{blue}{**MENTION THE CURATOLO BANDWIDTH, HOW THIS DOESN'T MATCH UP-THE PLOT IN RANJAN PAPER** \\ **MENTION THE HAJIMA EXTENTION OF THIS TO RECTANGULAR COLLIMATION** \\ **Non-Gaussian skewed spectra variation** }
+Therefore, (Eq.~\ref{eq:RMS_bandwidth}) was selected as this is both recoil corrected and accounts for angular variation in each bandwidth term, it is valid in the linear ($a_{0}\ll 1$) region of interest and most importantly, properly accounts for non-round electron bunch transverse profiles by allowing for asymmetric emittance. The beam quality term is neglected which improves calculation speed. As shown in Fig.~1 of Ranjan et al \cite{ranjan2018simulation} (reproduced in Fig.~\ref{}), there is also an apparent discrepancy in how the collimation angle, via the acceptance angle, is accounted for in the Curatolo et al equation (Eq.~\ref{eq:curatolo_bandwidth}). Whilst the semi-analytical spectrum code \textsc{ICCS3D} \cite{krafft2016laser,ranjan2018simulation} (explained further in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}) and (Eq.~\ref{eq:RMS_bandwidth}) show good agreement, (Eq.~\ref{eq:curatolo_bandwidth}) shows a systematic variance from the simulations. The combination of these factors provided the motivation for selecting (Eq.~\ref{eq:RMS_bandwidth}) as the \textit{rms} bandwidth formulation.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.7\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/ranjan_curatolo_disagreement.pdf}
+\caption{Reproduction of Fig.~1 of Ranjan et al \cite{ranjan2018simulation}. \textit{Rms} bandwidth of an ICS source as a function of acceptance angle, using the case $A_{a}$ parameters by Ranjan et al \cite{ranjan2018simulation}, for (Eq.~\ref{eq:RMS_bandwidth}) (red, Ranjan et al \cite{ranjan2018simulation}) and (Eq.~\ref{eq:curatolo_bandwidth}) (green, Curatolo et al \cite{curatolo2017analytical}) and the \textsc{ICCS3D} simulated spectrum bandwidths (black points, Ranjan et al \cite{ranjan2018simulation}). }
+\label{fig:curatolo_ranjan_disagreement}
+\end{figure}
 
+However, there are some downsides to the Ranjan et al formulation (Eq.~\ref{eq:RMS_bandwidth}), as this is incapable of calculating the bandwidth for a non-linear ($a_{0}\sim 1$) ICS source. Circular collimation is also assumed implicitly by the inclusion of a single acceptance angle term $\Psi$, as in the rectangular collimator case the maximum collimation angle would vary in the $x$ and $y$ plane. The bandwidth in (Eq.~\ref{eq:RMS_bandwidth}) has been extended to rectangular collimation by Hajima \cite{hajima2021bandwidth}. 
 
 \section{Peak and Average Brilliance}
 \textcolor{blue}{**DERIVATION OF THE AVERAGE BRILLIANCE \\ Is this necessary?? Is it enough to say flux per area in phase space?}
