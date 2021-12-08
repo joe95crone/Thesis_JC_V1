@@ -81,7 +81,7 @@ where $\phi_{f}$ is the azimuthal angle of the scattered photon, $r_{e}$ is the 
 \end{equation} 
 with $0 \leq P_{t} \leq 1$, the degree of linear polarisation and $\tau$ the azimuthal angle of the polarisation vector. 
 
-We can then integrate over the azimuthal scattering angle $\phi_{f}$
+Integrating over the azimuthal scattering angle $\phi_{f}$ yields
 \begin{equation}
 \frac{d\sigma}{dY} = \frac{4r_{e}^{2}}{X^{2}}\int_{0}^{2\pi}\left[1+P_{t}\cos\left(2\tau-2\phi_{f}\right)\right]\left\{\left(1-\xi_{3}\right)\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right]+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\right\} d\phi_{f}, 
 \label{eq:phif_integral}
@@ -413,7 +413,21 @@ It is not practicable to calculate the flux from every combination of $\beta^{*}
 \end{equation}
 which is a modification of (Eq.~\ref{eq:beta_star_maximum limitation}). A near identical solution can also be found, using simple scaling, for the case of an \texit{FWHM} bandwidth. 
 
-The collimated flux $\mathcal{F}_{\mathrm{col}}$ (Eq.~\ref{eq:collimated_flux}) is calculated for each combination produced via this method. The maximal collimated flux is selected and the combination of $\beta^{*}$ and $\theta_{\mathrm{col}}$ corresponding to this solution is returned. The method described here is a rather brute force methodology to optimising the collimated flux within bandiwdth limits. This process can be applied to the case of a target bandwidth to determine $\theta_{\mathrm{col}}$, $\beta^{*}$, and collimated flux in the selected bandwidth. In addition, applying this method to a series of bandwidths allows us to map the possible operational settings of our ICS source, and to derive tuning curves such as the variation of the collimated flux with bandwidth.
+The collimated flux $\mathcal{F}_{\mathrm{col}}$ (Eq.~\ref{eq:collimated_flux}) is calculated for each combination produced via this method. The maximal collimated flux is selected and the combination of $\beta^{*}$ and $\theta_{\mathrm{col}}$ corresponding to this solution is returned. The method described here is a rather brute force methodology to optimising the collimated flux within bandiwdth limits. This process can be applied to the case of a target bandwidth to determine $\theta_{\mathrm{col}}$, $\beta^{*}$, and collimated flux in the selected bandwidth. In addition, applying this method to a series of bandwidths allows us to map the possible operational settings of our ICS source, and to derive tuning curves such as the variation of the collimated flux with bandwidth. For example, tuning curves in solution ($\mathcal{F}_{\mathrm{col}}$--$\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{rms}}$) and parameter ($\beta^{*}$--$\theta_{\mathrm{col}}$) space have been produced for the case A, as shown in Fig.~\ref{fig:CaseA_RB_tuning_curve}, and case C, as shown in Fig.~\ref{fig:CaseC_RB_tuning_curve}, electron bunch parameters in Table~\ref{tab:char_opt_electron_bunch_parameters} with laser parameters in Table~\ref{tab:char_opt_laser_pulse_parameters}. Case B is omitted from these studies as it does not comply with the round beam criteria ($\epsilon_{n,x}=\epsilon_{n,y}=\epsilon_{n}$).
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/Case_A_RB_Tuning_Curves.pdf}
+\caption{}
+\label{fig:CaseA_RB_tuning_curve}
+\end{figure}
+\textcolor{blue}{**TALK ABOUT CASE A RB TUNING CURVES**\\}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/Case_C_RB_Tuning_Curves.pdf}
+\caption{}
+\label{fig:CaseC_RB_tuning_curve}
+\end{figure}
+\textcolor{blue}{**TALK ABOUT CASE C RB TUNING CURVES**\\}
 
 \textcolor{blue}{\textbf{**SHOW A PLOT OF EACH CASE TUNING CURVE (Fcol-rmsBW) IN RB APPROXIMATION**}}
 

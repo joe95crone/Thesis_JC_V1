@@ -113,7 +113,7 @@ X = \frac{4\gamma E_{L}}{m_{e}c^{2}}.
 \label{eq:X_headon}
 \end{equation}
 
-The Lorentz invariant $X$ can also be termed the recoil parameter, which denotes the magnitude of the recoil of the incident electron. For the case $X \ll 1$, the recoil is small and inverse Compton scattering reduces to Thomson scattering, the interaction becomes inelastic. To illustrate, using (Eq.~\ref{eq:X_headon}) a 1\% recoil effect ($X = 0.01$) in head-on inverse Compton scattering geometry with a infrared laser (Nd:YAG, $\lambda = 1064$~\si{\nano\metres}) results in a total electron beam energy of $E_{e} = 558$~\si{\mega\electronvolt}, for a visible green laser (2nd Harmonic Nd:YAG, $\lambda = 532$~\si{\nano\metres}) a total electron beam energy $E_{e} = 279$~\si{\mega\electronvolt}. Therefore, as the sources designed in this Thesis typically use infrared lasers, only in designs for $\gamma$-ray ICS's (where the electron beam energy is 100's~\si{\mega\electronvolt}) are recoil effects expected to be non-negligible.     
+The Lorentz invariant $X$ can also be termed the recoil parameter, which denotes the magnitude of the recoil of the incident electron. For the case $X \ll 1$, the recoil is small and inverse Compton scattering reduces to Thomson scattering, the interaction becomes inelastic. To illustrate, using (Eq.~\ref{eq:X_headon}) a 1\% recoil effect ($X = 0.01$) in head-on inverse Compton scattering geometry with a infrared laser (Nd:YAG, $\lambda = 1064$~\si{\nano\metres}) results in a total electron beam energy of $E_{e} = 558$~\si{\mega\electronvolt}, for a visible green laser (2nd Harmonic Nd:YAG, $\lambda = 532$~\si{\nano\metres}) a total electron beam energy $E_{e} = 279$~\si{\mega\electronvolt}. Therefore, as the sources designed in this Thesis typically use infrared lasers, only in designs for $\gamma$-ray ICS sources (where the electron beam energy is 100's~\si{\mega\electronvolt}) are recoil effects expected to be non-negligible.     
 
 \section{Non-linear Inverse Compton Scattering}
 
@@ -244,42 +244,59 @@ which is referred to in the literature \cite{krafft2010compton} as the Compton e
 
 \textcolor{blue}{**START FROM FIRST PRINCIPLES** \\ **PUT IN THE POLARISATION STUFF TOO**}
 
-\textcolor{blue}{**THE CROSS SECTION FORMULA** \\ \textit{Where does this need to go, need to fix an order.}}
-
-The cross section for the inverse Compton scattering interaction \cite{berestetskii1982quantum} is given by \textcolor{blue}{is this excluding non-linear effects?}
-
+\begin{multline}
+\frac{d^{2}\sigma}{dYd\phi_{f}} = \frac{2r_{e}^{2}}{X}\left\{\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)  -\left(\xi_{3}+\xi_{3}'\right)\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right] \right.\\\left. +\xi_{1}\xi_{1}'\left(\frac{1}{X}-\frac{1}{Y}+\frac{1}{2}\right) + \xi_{2}\xi_{2}'\left[\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\left(1+\frac{2}{X}-\frac{2}{Y}\right)\right] \right.\\\left. + \xi_{3}\xi_{3}'\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{2}\right] \right\}
+\label{eq:polarisation_differential_cross_section}    
+\end{multline}
+where the initial incident photon Stokes parameters $\xi_{i}$ are given by \textcolor{blue}{**TRACK DOWN THE DERIVATION WITH CROSSING ANGLE, CHECK**}
+\begin{align}
+\xi_{1} &= P_{t}\sin\left(2\tau-2\phi_{f}\right)\sin\phi\\
+\xi_{2} &= P_{c} \\
+\xi_{3} &= -P_{t}\cos\left(2\tau-2\phi_{f}\right)\sin\phi
+\label{eq:incident_stokes_parameters}    
+\end{align}
+where, using the same co-ordinate system as Sun and Wu \cite{sun2009characterizations,sun2011theoretical}, $P_{t}$ is the degree of linear polarisation, $P_{c}$ is the degree of circular polarisation, $\tau$ is the azimuthal angle of the linear polarisation, $\phi_{f}$ is the azimuthal scattering angle, $\phi$ is the crossing angle in the $x$--$z$ plane and $\xi_{i}'$ are the final scattered photon Stokes parameters. Assuming we are ambivalent over the polarisation state of the scattered photons i.e scattered photons are not discriminated on the basis of polarisation from an ICS interaction, we can calculate the cross section by setting $\xi_{i}' = 0 ~\left(i=1,~2,~3\right)$. Making this assumption, the double differential cross section (Eq.~\ref{eq:polarisation_differential_cross_section}) reduces to
 \begin{equation}
- \sigma = \frac{2\pi r_{e}^{2}}{X}\left[\frac{1}{2}+\frac{8}{X}-\frac{1}{2\left(1+X\right)^{2}}+\left(1-\frac{4}{X}-\frac{8}{X^{2}}\right)\log{\left(1+X\right)}\right],
- \label{eq:compton_cross_section}
+\frac{d^{2}\sigma}{dYd\phi_{f}} =  \frac{4r_{e}^{2}}{X^{2}}\left[1+P_{t}\cos\left(2\tau-2\phi_{f}\right)\right]\left\{\left(1-\xi_{3}\right)\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right]+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\right\},
+\label{eq:double_differential_cross_section}    
 \end{equation}
-where $r_{e}$ is the classical radius of the electron. If we take the limit of this in the classical limit ($X \to 0$) we obtain
+Integrating over the full range of the azimuthal scattering angle $0 \leq \phi_{f} \leq 2\pi$ obtains the differential cross section as a function of the $Y$ Lorentz invariant (Eq.~\ref{eq:Y_geometry}) 
+\begin{align}
+ \frac{d\sigma}{dY} &= A\int_{0}^{2\pi}1+P_{t}\cos\left(2\tau-2\phi_{f}\right\sin\phi~d\phi_{f}+ B\int_{0}^{2\pi}~d\phi_{f}, \nonumber \\
+ \frac{d\sigma}{dY} &= 2\pi\left(A+B\right) = \frac{8\pi r_{e}^{2}}{X^{2}}\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\right],
+\label{eq:differential_cross_section_Y_invariant}
+\end{align}
+where $A$ and $B$ parameterise $\phi_{f}$ independent parameters in (Eq.~\ref{eq:double_differential_cross_section}) given by
+\begin{align}
+A &= \frac{4r_{e}}{X^{2}}\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right], \nonumber\\
+B &= \frac{4r_{e}^{2}}{X^{2}}\left[\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\right].
+\label{eq:phif_independent_parameters}
+\end{align}
+Through inspection of (Eq.~\ref{eq:differential_cross_section_Y_invariant}), it is clear there is no longer a dependence on the polarisation of the incident photon therefore, the flux of an ICS interaction is independent of the polarisation of the incident photons.
 
+Following the derivation of Berestetskii \cite{berestetskii1982quantum}, the Mandelstam variables for the electron--photon interaction are limited by $s\geq m_{e}c^{2}$, $t \leq 0$ and $u s \leq \left(m_{e}c^{2}\right)^{2}$ which can be rearranged to form the inequality $\frac{X}{X+1} \leq Y \leq X$ \cite{sun2009characterizations}. The total cross section for the inverse Compton scattering interaction \cite{berestetskii1982quantum} can be integrated within the range of the inequality
+\begin{align}
+\sigma &= \frac{8\pi r_{e}^{2}}{X^{2}}\int_{\frac{X}{X+1}}^{X}\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)~dY, \nonumber \\
+\sigma &= \frac{2\pi r_{e}^{2}}{X}\left[\frac{1}{2}+\frac{8}{X}-\frac{1}{2\left(1+X\right)^{2}}+\left(1-\frac{4}{X}-\frac{8}{X^{2}}\right)\ln{\left(1+X\right)}\right],
+\label{eq:compton_cross_section}
+\end{align}
+where $r_{e}$ is the classical radius of the electron. If, as in Curatolo et al \cite{curatolo2017analytical}, we take the classical limit ($X \to 0$) of the total cross section (Eq.~\ref{eq:compton_cross_section}) we obtain
 \begin{equation}
-\lim_{X \to 0} \sigma = \frac{8\pi r_{e}^{2}}{3}\left(1-X\right) = \sigma_{T}\left(1-X\right),
+\lim_{X \to ~0} \sigma = \frac{8\pi r_{e}^{2}}{3}\left(1-X\right) = \sigma_{T}\left(1-X\right),
 \label{eq:compton_cross_section_classical_limit}
 \end{equation}
-where $\sigma_{T}$ is the Thomson cross section. Where the interaction is firmly in the classical regime ($X \ll 1$), in which inverse Compton scattering becomes Thomson scattering and there is elastic scattering, the Compton cross section recovers the Thomson scattering cross section, $\sigma = \sigma_{T}$. If we take the ultra-relativistic limit ($X \to \infty$) of the cross section, the cross section becomes
-
+where $\sigma_{T}$ is the Thomson cross section. Where the interaction is firmly in the classical regime ($X \ll 1$), in which inverse Compton scattering becomes Thomson scattering and there is elastic scattering, the Compton cross section recovers the Thomson scattering cross section, $\sigma = \sigma_{T}$. If we take the ultra-relativistic limit ($X \to \infty$) of (Eq.~\ref{eq:compton_cross_section}), the cross section becomes
 \begin{equation}
-\lim_{X \to \infty} \sigma = \frac{2\pi r_{e}^{2}}{X}\left(\log{X}+\frac{1}{2}\right).
+\lim_{X \to ~\infty} \sigma = \frac{2\pi r_{e}^{2}}{X}\left(\ln{X}+\frac{1}{2}\right).
 \label{eq:compton_cross_section_ultrarelativistic_limit}
 \end{equation}
+The behaviour of the cross section as a function of electron bunch energy is shown in Fig.~\ref{} \textcolor{blue}{**PLOT REF**} 
+\textcolor{blue}{**GRAPH OF CROSS SECTION VS ENERGY + PUT LIMITS ON**}
 
-\textcolor{blue}{**WOULD IT BE WORTHWHILE HAVING A GRAPH HERE TO SHOW CROSS SECTION VS ENERGY**}
+\textcolor{blue}{**EXPLAIN THE 3/2 FACTOR IN THE F0.1\%**}
 
-Following the derevation by Berestetskii et al \cite{berestetskii1982quantum} and using the notation of Sun and Wu \cite{sun2011theoretical}, the inverse Compton scattering cross section is given by
+\textcolor{blue}{**SHOW THE SIGMA vs SCATTERED PHOTON ENERGY PLOT**\\ **HALF DIP, GEOFF HAS A FULL DERIVATION, BUT IT IS V. TRICKY**}
 
-\begin{equation}
-\frac{d\sigma}{d\Omega} = \frac{8r_{e}^{2}}{X^{2}}\left\{\left[1+P_{t}\left(2\tau-2\phi_{f}\right)\right]\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}+\frac{1}{Y}\right]+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\right\}\left(\frac{E_{\gamma}}{mc^{2}}\right)^{2},    
-\end{equation}
-where $d\Omega = \sin\theta d\theta d\phi_{f}$ is the differential solid angle, $P_{t}$ is the degree of linear polarisation, $\tau$ is the azimuthal angle of the linear polarization with respect to the $x$ axis, $\phi_{f}$ is the azimuthal angle of the scattering plane and the Lorentx invariant quatity $Y$ is given by
-
-\begin{equation}
-Y = \frac{2\gamma E_{\gamma}\left(1-\beta\cos\theta\right)}{mc^{2}}.
-\label{eq:cross_section_Y}    
-\end{equation}
-
-For a circular or unpolarised incident laser this is negligible ($P_{t}=0$), however this is non-zero for linear polarised cases ($P_{t}\neq0$). Therefore, the distribution of scattered photons is azimuthally symetric for the circularly or unpolarized case polarised case but azimuthally modulated and asymmetric for the linear polarisation case \cite{sun2011theoretical}.  
 
 \section{Luminosity and Flux}
 \label{sec:luminosity_and_flux}
@@ -413,7 +430,7 @@ The luminosity of this result is given by $\mathcal{L} = R_{ACHG}\mathcal{L}_{\m
 \textcolor{blue}{**DO I INCLUDE THE FULL INVESTIGATION HERE, i.e SHOW THE MIYAHARA REPLICATION}
 
 \section{Source Size and Divergence}
-\textcolor{blue}{**Source size derivation**}
+\textcolor{blue}{**Source size derivation - see Geoff's derivation**}
 
 The \textit{rms} source size of an inverse Compton scattering electron bunch--laser pulse interaction is 
 \begin{equation}
