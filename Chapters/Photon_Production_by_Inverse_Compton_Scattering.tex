@@ -293,10 +293,42 @@ where $\sigma_{T}$ is the Thomson cross section. Where the interaction is firmly
 The behaviour of the cross section as a function of electron bunch energy is shown in Fig.~\ref{} \textcolor{blue}{**PLOT REF**} 
 \textcolor{blue}{**GRAPH OF CROSS SECTION VS ENERGY + PUT LIMITS ON**}
 
-\textcolor{blue}{**EXPLAIN THE 3/2 FACTOR IN THE F0.1\%**}
+\textcolor{blue}{**EXPLAIN THE 3/2 FACTOR IN THE F0.1\%** \\ **EXPLAIN THE FACTOR 2 IN THE MIN AND MAX dsig/dEg** \\ **SHOW PLOT OF dsig/dEg**\\}
+Assuming a head-on ($\phi=0$) interaction in the ultra-relativistic domain ($\beta\approx1$) the Lorentz invariants can be related via
+\begin{equation}
+Y = X\frac{E_{e}-E_{\gamma}}{E_{e}-E_{L}},
+\label{eq:lorentz_relation_headon_backscatter}
+\end{equation}
+where the derivative of $Y$ with respect to scattered photon energy becomes
+\begin{equation}
+\frac{dY}{dE_{\gamma}} = -\frac{X}{E_{e}-E_{L}}.
+\label{eq:differential_lorentz_relation_headon_backscatter}
+\end{equation}
+The derivative of $Y$ with respect to the scattered photon energy $E_{\gamma}$ (Eq.~\ref{eq:differential_lorentz_relation_headon_backscatter}) is substituted into $d\sigma/dYd\phi_{f}$ (Eq.~\ref{eq:double_differential_cross_section}), which is integrated over the azimuthal angle, similarly to (Eq.~\ref{eq:differential_cross_section_Y_invariant}) to obtain the differential cross section with respect to the scattered photon energy
+\begin{equation}
+\frac{d\sigma}{dE_{\gamma}} = \frac{8\pi r_{e}^{2}}{X\left(E_{e}-E_{L}\right)}\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\right].
+\label{eq:differential_cross_section_ICS_energy}    
+\end{equation}
 
 \textcolor{blue}{**SHOW THE SIGMA vs SCATTERED PHOTON ENERGY PLOT**\\ **HALF DIP, GEOFF HAS A FULL DERIVATION, BUT IT IS V. TRICKY**}
 
+Limitations of the Lorentz $Y$ invariant can be calculated for the angular limitations of the ICS interaction ($0 \leq \theta \leq 1/\gamma$). Taking the case of $\theta = 0$, the maximum value of $Y$, the scattered photon energy is given by (Eq.~\ref{eq:headon_backscattering_scattered_photon_energy}) and $Y\approxX\left(1-X\right)$, for the case of $\theta = 1/\gamma$, the minimum value of $Y$, the scattered photon energy becomes $E_{\gamma} = \frac{2\gamma^{2}E_{L}}{1+X}$, as seen in Fig.~\ref{} \textcolor{**dsigma/dEg PLOT**} therefore $Y = X\left(1-X/2\right)$. Substituting the limitations of the $Y$ Lorentz invariant for each angular case into (Eq.~\ref{eq:differential_cross_section_ICS_energy}) yields maximum and minimum values of the differential cross section as shown by Sun et al \cite{sun2011theoretical}
+\begin{align}
+\left(\frac{d\sigma}{dE_{\gamma}}\right)_{\mathrm{max}} &= \frac{8\pi r_{e}^{2}}{X\left(E_{e}-E_{L}\right)}\frac{2+X}{4}, \nonumber \\
+\left(\frac{d\sigma}{dE_{\gamma}}\right)_{\mathrm{min}} &= \frac{8\pi r_{e}^{2}}{X\left(E_{e}-E_{L}\right)}\frac{1}{4\left(1+X\right)}.
+\label{eq:max_min_differential_cross_section_ICS_energy}    
+\end{align}
+The ratio of the maximum and minimum of the differential cross section given by 
+\begin{equation}
+\frac{\left(d\sigma/dE_{\gamma}\right)_{\mathrm{max}}}{\left(d\sigma/dE_{\gamma}\right)_{\mathrm{min}}} = \left(2+X\right)\left(1+X\right) \approx 2,
+\label{eq:max_min_cross_section_ratio}
+\end{equation}
+shows that the intensity of the radiation emission in the backscattered direction, at the Compton edge ($\theta=0$), is double the intensity than in the angular limit, at a semi-angle of $\theta=1/\gamma$. Furthermore, following Sun et al \cite{sun2011theoretical} taking the small recoil limit of the cross section (Eq.~\ref{eq:compton_cross_section_classical_limit}) with (Eq.~\ref{eq:max_min_differential_cross_section_ICS_energy}), the ratio of the cross section in an energy range $\Delta E_{\gamma}$ around the Compton edge energy $E_{\gamma}^{\mathrm{max}}$ in the case of low recoil ($X \ll 1$) is given by
+\begin{equation}
+\frac{\Delta\sigma}{\sigma} \approx \frac{3\left(2+X\right)}{4\left(1-X\right)}\frac{\Delta E_{\gamma}}{E_{\gamma}^{\mathrm{max}}} \approx \frac{3}{2}\frac{\Delta E_{\gamma}}{E_{\gamma}^{\mathrm{max}}},
+\label{eq:cross_section_factor}    
+\end{equation}
+which can be used to estimate the portion of the photon spectrum selected by a collimator aperture placed downstream of an ICS source. A full non-approximate calculation of this 'collimated flux' is developed in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}. 
 
 \section{Luminosity and Flux}
 \label{sec:luminosity_and_flux}
