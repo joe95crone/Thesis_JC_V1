@@ -295,10 +295,16 @@ where $\sigma_{T}$ is the Thomson cross section. Where the interaction is firmly
 \lim_{X \to ~\infty} \sigma = \frac{2\pi r_{e}^{2}}{X}\left(\ln{X}+\frac{1}{2}\right).
 \label{eq:compton_cross_section_ultrarelativistic_limit}
 \end{equation}
-The behaviour of the total cross section as a function of electron bunch energy is shown in Fig.~\ref{} \textcolor{blue}{**PLOT REF**} 
-\textcolor{blue}{**GRAPH OF CROSS SECTION VS ENERGY + PUT LIMITS ON**}
+The behaviour of the total cross section as a function of electron bunch energy is shown in Fig.~\ref{fig:cross_section_electron_energy}.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/Cross_Section_Electron_Bunch_Energy_NDYAG.pdf}
+\caption{Electron--Photon interaction cross section (Eq.~\ref{eq:compton_cross_section}) as a function of electron bunch energy for an Nd:YAG laser operating at the fundamental harmonic ($\lambda = 1064$~\si{\nano\meter}). Left: Comparison of the full cross section (Eq.~\ref{eq:compton_cross_section}) (black) with the cross section in the low recoil limit (Eq.~\ref{eq:compton_cross_section_classical_limit}) (red) for a 5~\si{\mega\electronvolt}--35~\si{\giga\electronvolt} electron bunch kinetic energy range. Right: Comparison of the full cross section (Eq.~\ref{eq:compton_cross_section}) with the cross section in the ultra-relativistic, high recoil limit (Eq.~\ref{eq:compton_cross_section_ultrarelativistic_limit}) (blue) for a 35~\si{\giga\electronvolt}--10~\si{\terra\electronvolt} electron bunch kinetic energy range.}
+\label{fig:cross_section_electron_energy}
+\end{figure}
 
-\textcolor{blue}{**EXPLAIN THE 3/2 FACTOR IN THE F0.1\%** \\ **EXPLAIN THE FACTOR 2 IN THE MIN AND MAX dsig/dEg** \\ **SHOW PLOT OF dsig/dEg**\\}
+\textcolor{blue}{**TALK ABOUT THE PLOTS, AROUND 90 MEV WHEN ULTRAREL IS USEFUL**}
+
 Assuming a head-on ($\phi=0$) interaction in the ultra-relativistic domain ($\beta\approx1$) the Lorentz invariants can be related via
 \begin{equation}
 Y = X\frac{E_{e}-E_{\gamma}}{E_{e}-E_{L}},
@@ -323,6 +329,7 @@ The derivative of $Y$ with respect to the scattered photon energy $E_{\gamma}$ (
 \caption{Differential cross section with respect to the scattered photon energy (Eq.~\ref{eq:differential_cross_section_ICS_energy}) as a function of scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}) in the low recoil ($X \ll 1$) regime for a head-on interaction ($\phi=0$), both parameters are normalised for generality. The maximum (blue) and minimum (green) values of the differential cross section (Eq.~\ref{eq:max_min_differential_cross_section_ICS_energy}) are shown, which differ by a factor of $\sim2$ (Eq.~\ref{eq:max_min_cross_section_ratio}).The average energy in the spectrum is $E_{\gamma}=2\gamma^{2}E_{L}$, half of the Compton edge energy (Eq.~\ref{eq:compton_edge_energy}), due to the symmetry of the spectrum.}
 \label{fig:cross_section_scattered_photon_energy}
 \end{figure}
+\textcolor{blue}{**CONSIDER PUTTING IN A ONE WITH ANGLE HERE TOO**\\}
 
 Limitations of the Lorentz $Y$ invariant can be calculated for the angular limitations of the ICS interaction ($0 \leq \theta \leq 1/\gamma$). Taking the case of $\theta = 0$, the maximum value of $Y$, the scattered photon energy is given by (Eq.~\ref{eq:headon_backscattering_scattered_photon_energy}) and $Y\approxX\left(1-X\right)$, for the case of $\theta = 1/\gamma$, the minimum value of $Y$, the scattered photon energy becomes $E_{\gamma} = \frac{2\gamma^{2}E_{L}}{1+X}$, as seen in Fig.~\ref{fig:cross_section_scattered_photon_energy}, therefore $Y = X\left(1-X/2\right)$. Substituting the limitations of the $Y$ Lorentz invariant for each angular case into (Eq.~\ref{eq:differential_cross_section_ICS_energy}) yields maximum and minimum values of the differential cross section as shown by Sun et al \cite{sun2011theoretical}
 \begin{align}
