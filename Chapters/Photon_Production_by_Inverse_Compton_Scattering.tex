@@ -238,11 +238,16 @@ where the recoil term $X$ is given by (Eq.~\ref{eq:X_headon}). Extending this to
 E_{\gamma} = \frac{4\gamma^{2}E_{L}}{1+X},
 \label{eq:headon_backscattering_scattered_photon_energy}
 \end{equation}
-which is referred to in the literature \cite{krafft2010compton} as the Compton edge. The $\gamma^{2}$ factor within this equation refers to the double Doppler shift experienced by the incident photon as it is scattered.
+which is referred to in the literature \cite{krafft2010compton} as the Compton edge. The $\gamma^{2}$ factor within this equation refers to the double Doppler shift experienced by the incident photon as it is scattered. At low recoil the Compton edge energy is given by the well known relation
+\begin{equation}
+E_{\gamma} = 4\gamma^{2}E_{L}.
+\label{eq:compton_edge_energy}    
+\end{equation}
 
 \section{Electron - Photon Interaction Cross Section}
+\label{sec:electron_photon_interaction_cross_section}
 
-\textcolor{blue}{**START FROM FIRST PRINCIPLES** \\ **PUT IN THE POLARISATION STUFF TOO**}
+\textcolor{blue}{**START FROM FIRST PRINCIPLES** \\ **PUT IN THE POLARISATION STUFF TOO**\\ **EXPLAIN CROSS SECTION ANGLE CORRESPONDENCE TOO**}
 
 \begin{multline}
 \frac{d^{2}\sigma}{dYd\phi_{f}} = \frac{2r_{e}^{2}}{X}\left\{\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)  -\left(\xi_{3}+\xi_{3}'\right)\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right] \right.\\\left. +\xi_{1}\xi_{1}'\left(\frac{1}{X}-\frac{1}{Y}+\frac{1}{2}\right) + \xi_{2}\xi_{2}'\left[\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\left(1+\frac{2}{X}-\frac{2}{Y}\right)\right] \right.\\\left. + \xi_{3}\xi_{3}'\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{2}\right] \right\}
@@ -290,7 +295,7 @@ where $\sigma_{T}$ is the Thomson cross section. Where the interaction is firmly
 \lim_{X \to ~\infty} \sigma = \frac{2\pi r_{e}^{2}}{X}\left(\ln{X}+\frac{1}{2}\right).
 \label{eq:compton_cross_section_ultrarelativistic_limit}
 \end{equation}
-The behaviour of the cross section as a function of electron bunch energy is shown in Fig.~\ref{} \textcolor{blue}{**PLOT REF**} 
+The behaviour of the total cross section as a function of electron bunch energy is shown in Fig.~\ref{} \textcolor{blue}{**PLOT REF**} 
 \textcolor{blue}{**GRAPH OF CROSS SECTION VS ENERGY + PUT LIMITS ON**}
 
 \textcolor{blue}{**EXPLAIN THE 3/2 FACTOR IN THE F0.1\%** \\ **EXPLAIN THE FACTOR 2 IN THE MIN AND MAX dsig/dEg** \\ **SHOW PLOT OF dsig/dEg**\\}
@@ -310,9 +315,16 @@ The derivative of $Y$ with respect to the scattered photon energy $E_{\gamma}$ (
 \label{eq:differential_cross_section_ICS_energy}    
 \end{equation}
 
-\textcolor{blue}{**SHOW THE SIGMA vs SCATTERED PHOTON ENERGY PLOT**\\ **HALF DIP, GEOFF HAS A FULL DERIVATION, BUT IT IS V. TRICKY**}
+\textcolor{blue}{**SHOW THE SIGMA vs SCATTERED PHOTON ENERGY PLOT**\\
+**THIS NEEDS TO MENTION THAT AVERAGE ENERGY IS 2gamma2EL** \\ **HALF DIP, GEOFF HAS A FULL DERIVATION, BUT IT IS V. TRICKY**}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/Cross_Section_Scattered_Photon_Energy.pdf}
+\caption{Differential cross section with respect to the scattered photon energy (Eq.~\ref{eq:differential_cross_section_ICS_energy}) as a function of scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}) in the low recoil ($X \ll 1$) regime for a head-on interaction ($\phi=0$), both parameters are normalised for generality. The maximum (blue) and minimum (green) values of the differential cross section (Eq.~\ref{eq:max_min_differential_cross_section_ICS_energy}) are shown, which differ by a factor of $\sim2$ (Eq.~\ref{eq:max_min_cross_section_ratio}).The average energy in the spectrum is $E_{\gamma}=2\gamma^{2}E_{L}$, half of the Compton edge energy (Eq.~\ref{eq:compton_edge_energy}), due to the symmetry of the spectrum.}
+\label{fig:cross_section_scattered_photon_energy}
+\end{figure}
 
-Limitations of the Lorentz $Y$ invariant can be calculated for the angular limitations of the ICS interaction ($0 \leq \theta \leq 1/\gamma$). Taking the case of $\theta = 0$, the maximum value of $Y$, the scattered photon energy is given by (Eq.~\ref{eq:headon_backscattering_scattered_photon_energy}) and $Y\approxX\left(1-X\right)$, for the case of $\theta = 1/\gamma$, the minimum value of $Y$, the scattered photon energy becomes $E_{\gamma} = \frac{2\gamma^{2}E_{L}}{1+X}$, as seen in Fig.~\ref{} \textcolor{**dsigma/dEg PLOT**} therefore $Y = X\left(1-X/2\right)$. Substituting the limitations of the $Y$ Lorentz invariant for each angular case into (Eq.~\ref{eq:differential_cross_section_ICS_energy}) yields maximum and minimum values of the differential cross section as shown by Sun et al \cite{sun2011theoretical}
+Limitations of the Lorentz $Y$ invariant can be calculated for the angular limitations of the ICS interaction ($0 \leq \theta \leq 1/\gamma$). Taking the case of $\theta = 0$, the maximum value of $Y$, the scattered photon energy is given by (Eq.~\ref{eq:headon_backscattering_scattered_photon_energy}) and $Y\approxX\left(1-X\right)$, for the case of $\theta = 1/\gamma$, the minimum value of $Y$, the scattered photon energy becomes $E_{\gamma} = \frac{2\gamma^{2}E_{L}}{1+X}$, as seen in Fig.~\ref{fig:cross_section_scattered_photon_energy}, therefore $Y = X\left(1-X/2\right)$. Substituting the limitations of the $Y$ Lorentz invariant for each angular case into (Eq.~\ref{eq:differential_cross_section_ICS_energy}) yields maximum and minimum values of the differential cross section as shown by Sun et al \cite{sun2011theoretical}
 \begin{align}
 \left(\frac{d\sigma}{dE_{\gamma}}\right)_{\mathrm{max}} &= \frac{8\pi r_{e}^{2}}{X\left(E_{e}-E_{L}\right)}\frac{2+X}{4}, \nonumber \\
 \left(\frac{d\sigma}{dE_{\gamma}}\right)_{\mathrm{min}} &= \frac{8\pi r_{e}^{2}}{X\left(E_{e}-E_{L}\right)}\frac{1}{4\left(1+X\right)}.
@@ -323,7 +335,7 @@ The ratio of the maximum and minimum of the differential cross section given by
 \frac{\left(d\sigma/dE_{\gamma}\right)_{\mathrm{max}}}{\left(d\sigma/dE_{\gamma}\right)_{\mathrm{min}}} = \left(2+X\right)\left(1+X\right) \approx 2,
 \label{eq:max_min_cross_section_ratio}
 \end{equation}
-shows that the intensity of the radiation emission in the backscattered direction, at the Compton edge ($\theta=0$), is double the intensity than in the angular limit, at a semi-angle of $\theta=1/\gamma$. Furthermore, following Sun et al \cite{sun2011theoretical} taking the small recoil limit of the cross section (Eq.~\ref{eq:compton_cross_section_classical_limit}) with (Eq.~\ref{eq:max_min_differential_cross_section_ICS_energy}), the ratio of the cross section in an energy range $\Delta E_{\gamma}$ around the Compton edge energy $E_{\gamma}^{\mathrm{max}}$ in the case of low recoil ($X \ll 1$) is given by
+shows that the intensity of the radiation emission in the backscattered direction, at the Compton edge ($\theta=0$), is double the intensity than in the angular limit, at a semi-angle of $\theta=1/\gamma$, which is also highlighted in Fig.~\ref{fig:cross_section_scattered_photon_energy}. Furthermore, following Sun et al \cite{sun2011theoretical} taking the small recoil limit of the cross section (Eq.~\ref{eq:compton_cross_section_classical_limit}) with (Eq.~\ref{eq:max_min_differential_cross_section_ICS_energy}), the ratio of the cross section in an energy range $\Delta E_{\gamma}$ around the Compton edge energy $E_{\gamma}^{\mathrm{max}}$ in the case of low recoil ($X \ll 1$) is given by
 \begin{equation}
 \frac{\Delta\sigma}{\sigma} \approx \frac{3\left(2+X\right)}{4\left(1-X\right)}\frac{\Delta E_{\gamma}}{E_{\gamma}^{\mathrm{max}}} \approx \frac{3}{2}\frac{\Delta E_{\gamma}}{E_{\gamma}^{\mathrm{max}}},
 \label{eq:cross_section_factor}    
@@ -365,19 +377,19 @@ where $\varepsilon_{x/y}$ is the emittance of the electron beam in the $x$ and $
 \end{equation}
 with $\sigma_{L}$ the transverse \textit{rms} spot size of the laser pulse and $z_{R} = 4\pi\sigma_{L}^{2}/\lambda$ the Rayleigh range \cite{siegmann1986lasers} of a laser pulse of wavelength $\lambda$.
 
-The head-on Gaussian luminosity of the interaction can then be separated from the other terms in (Eq.~\ref{eq:total_interaction_energy}), assuming the interaction takes place at the wi=aists of both pulse and bunch, by splitting the spatial terms from the energy spread terms in the electron bunch $f_{e}\left(\mathbf{r},\mathbf{p},t\right) = f_{e}\left(\mathbf{r},t\right)f_{e}\left(\mathbf{p}\right)$ and laser pulse $f_{L}\left(\mathbf{r},\mathbf{k},t\right) = f_{L}\left(\mathbf{r},t\right)f_{L}\left(\mathbf{f}\right)$ of the intensity functions (Eq.~\ref{eq:electron_gaussian_intensity_distribution},~\ref{eq:laser_gaussian_intensity_distribution}) 
+The head-on Gaussian luminosity of the interaction can then be separated from the other terms in (Eq.~\ref{eq:total_interaction_energy}), assuming the interaction takes place at the waists of both pulse and bunch, by splitting the spatial terms from the energy spread terms in the electron bunch $f_{e}\left(\mathbf{r},\mathbf{p},t\right) = f_{e}\left(\mathbf{r},t\right)f_{e}\left(\mathbf{p}\right)$ and laser pulse $f_{L}\left(\mathbf{r},\mathbf{k},t\right) = f_{L}\left(\mathbf{r},t\right)f_{L}\left(\mathbf{f}\right)$ of the intensity functions (Eq.~\ref{eq:electron_gaussian_intensity_distribution},~\ref{eq:laser_gaussian_intensity_distribution}) 
 \begin{gather}
 \mathcal{L}_{\mathrm{HEAD-ON}} = N_{e}N_{L}c\left(1+\beta\right)\int f_{e}\left(\mathbf{r},t\right)f_{L}\left(\mathbf{r},t\right)~dV~dt, \\
 \mathcal{L}_{\mathrm{HEAD-ON}} = \frac{N_{e}N_{L}}{2\pi\sqrt{\sigma_{x,e}^{2}+\sigma_{x,L}^{2}}\sqrt{\sigma_{y,e}^{2}+\sigma_{y,L}}} = \frac{N_{e}N_{L}}{2\pi\sigma_{x}\sigma_{y}},
 \label{eq:headon_luminosity}
 \end{gather}
-where $\sigma_{i}(i=x,y,z) = \sqrt{\sigma_{i,e}^{2}+\sigma_{i,L}^{2}}$ is the convolution of the laser pulse and electron bunch spot sizes at the IP. We can then neglect the energy spreads of the electron bunch and laser pulse as these have already been adequately taken into account by using the average cross-section $\sigma$, which already encapsulates the variation in interactions due to energy variations. Therefore, the energy radiated by the interaction of a Gaussian laser pulse and electron bunch becomes  
+where $\sigma_{i}(i=x,y,z) = \sqrt{\sigma_{i,e}^{2}+\sigma_{i,L}^{2}}$ is the convolution of the laser pulse and electron bunch spot sizes at the IP. The luminosity in (Eq.~\ref{eq:headon_luminosity}) is analogous to particle collider luminosity \cite{herr2006concept,miyahara2008luminosity}, reflecting the electron--photon collider analogy of ICS sources. We can then neglect the energy spreads of the electron bunch and laser pulse as these have already been adequately taken into account by using the average cross-section $\sigma$, which already encapsulates the variation in interactions due to energy variations. Therefore, the energy radiated by the interaction of a Gaussian laser pulse and electron bunch becomes  
 
 \begin{equation}
 U_{\gamma} = \gamma^{2}\left(1+\beta\right)\sigma\frac{N_{e}N_{L}}{2\pi\sigma_{x}\sigma_{y}}E_{L},
 \label{eq:total_interaction_energy_simplified}
 \end{equation}
-this formula also omits the hourglass effect of the two diverging beams and is also only true in the case of a head-on interaction at the waists of the laser pulse and electron bunch. The solutions for each of these cases is covered in the next section. The number of photons produced per interaction $N_{\gamma}$ can be found using the average scattered photon energy $\gamma^{2}\left(1+\beta\right)\hbar\omega$ \textcolor{blue}{should prove this elsewhere}
+this formula also omits the hourglass effect of the two diverging beams and is also only true in the case of a head-on interaction at the waists of the laser pulse and electron bunch. The solutions for each of these cases is covered in the next section. The number of photons produced per interaction $N_{\gamma}$ can be found using the average scattered photon energy $\gamma^{2}\left(1+\beta\right)\hbar\omega$ (if $\beta=1$, $E_{\gamma} = 2\gamma^{2}E_{L}$), as shown in Fig.~\ref{fig:cross_section_scattered_photon_energy} 
 \begin{equation}
 N_{\gamma} = \sigma\frac{N_{e}N_{L}}{2\pi\sigma_{x}\sigma_{y}^{2}+\sigma_{y}}.
 \label{eq:no_photon_headon}
@@ -387,6 +399,12 @@ The total flux of the photons is given by $\mathcal{F} = \sigma\mathcal{L}f$ whe
 \mathcal{F} = \frac{\sigma N_{e}N_{L}f}{2\pi\sigma_{x}\sigma_{y}}.
 \label{eq:headon_flux}
 \end{equation}
+Using the result derived in Section~\ref{sec:electron_photon_interaction_cross_section} (Eq.~\ref{eq:cross_section_factor}) for the portion of the cross section within an energy range $\Delta E_{\gamma}$ from the Compton edge (Eq.~\ref{eq:compton_edge_energy}), we can approximate the flux in a particular section of the ICS spectrum. For example, the flux in a 0.1\% ($10^{-3}$) portion or FWHM bandwidth of an ICS source, in the head-on ($\phi=0$), low recoil ($X \ll 1$) case is given by
+\begin{equation}
+\mathcal{F}_{0.1\%} = \frac{3}{2}\times 10^{-3} \mathcal{F},
+\label{eq:flux_0.1_bandwidth}    
+\end{equation}
+where the $3/2$ factor originates from (Eq.~\ref{eq:cross_section_factor}), the $10^{-3}$ is due to the 0.1\% bandwidth scaling and $\mathcal{F}$ is the flux (Eq.~\ref{eq:headon_flux}) of an ICS source. The flux in a 0.1\% FWHM bandwidth (Eq.~\ref{eq:flux_0.1_bandwidth}) is an important quantity for analysing the performance of an ICS source as a light source because it is used to calculate the brilliance, as expanded upon in Section~\ref{sec:peak_average_brilliance}. 
 
 \section{Geometric Luminosity Reduction}
 \label{sec:geometric_luminosity_reduction}
@@ -554,6 +572,8 @@ Therefore, (Eq.~\ref{eq:RMS_bandwidth}) was selected as this is both recoil corr
 However, there are some downsides to the Ranjan et al formulation (Eq.~\ref{eq:RMS_bandwidth}), as this is incapable of calculating the bandwidth for a non-linear ($a_{0}\sim 1$) ICS source. Circular collimation is also assumed implicitly by the inclusion of a single acceptance angle term $\Psi$, as in the rectangular collimator case the maximum collimation angle would vary in the $x$ and $y$ plane. The bandwidth in (Eq.~\ref{eq:RMS_bandwidth}) has been extended to rectangular collimation by Hajima \cite{hajima2021bandwidth}. 
 
 \section{Peak and Average Brilliance}
+\label{sec:peak_average_brilliance}
+
 \textcolor{blue}{**DERIVATION OF THE AVERAGE BRILLIANCE \\ Is this necessary?? Is it enough to say flux per area in phase space?}
 
 Brilliance, also termed brightness, is a quantity originally used to quantify the 6D phase space density of particle beams \cite{courant1958theory}. This concept was adopted to characterize production of radiation from accelerator driven light sources such as bending magnet or wiggler synchrotron radiation sources and undulators \cite{kim1989characteristics} where the brilliance is defined as the flux into a cone of particular spectral bandwidth (usually 0.1\%) per unit phase space area. 
