@@ -508,7 +508,7 @@ Similarly to the \textit{rms} transverse source size, the \textit{rms} source an
 \sigma_{\gamma,x/y}' = \frac{\sigma_{e,x/y}'\sigma_{L}'}{\sqrt{\sigma_{e,x/y}'^{~2}+\sigma_{L}'^{~2}}},
 \label{eq:source_divergence}
 \end{equation}
-where $\sigma_{e,x/y}' = \sqrt{\epsilon_{x}/\beta_{x}^{*}}$ is the \textit{rms} transverse electron bunch angular divergence and $\sigma_{L} = \sqrt{\lambda/4\pi}$ is the \textit{rms} transverse laser pulse angular divergence.
+where $\sigma_{e,x/y}' = \sqrt{\epsilon_{x}/\beta_{x}^{*}}$ is the \textit{rms} transverse electron bunch angular divergence for a non-diffraction limited beam and $\sigma_{L} = \sqrt{\lambda/4\pi}$ is the \textit{rms} transverse laser pulse angular divergence.
 
 A non-zero transverse source size (Eq.~\ref{eq:source_size}) suggests that photon emission from the ICS interaction can occur from any transverse position within the source size. Whilst the emission of radiation would occur mostly frequently in the centre of the bunch, due to the double Gaussian overlap, emission would be possible from the edges of the source size. A non-zero source size with possible emission from a finite transverse (Eq.~\ref{eq:source_size}) and longitudinal (Eq.~\ref{eq:longitudinal_source_size}) source size would appear to invalidate the point source approximation used in Section~\ref{sec:luminosity_and_flux}.
 
@@ -594,7 +594,7 @@ However, there are some downsides to the Ranjan et al formulation (Eq.~\ref{eq:R
 
 \textcolor{blue}{**DERIVATION OF THE AVERAGE BRILLIANCE \\ Is this necessary?? Is it enough to say flux per area in phase space?}
 
-Brilliance, also termed brightness, is a quantity originally used to quantify the 6D phase space density of particle beams \cite{courant1958theory}. This concept was adopted to characterize production of radiation from accelerator driven light sources such as bending magnet or wiggler synchrotron radiation sources and undulators \cite{kim1989characteristics} where the brilliance is defined as the flux into a cone of particular spectral bandwidth (usually 0.1\%) per unit phase space area. 
+Brilliance, also interchangeably termed brightness, is a quantity originally used to quantify the 6D phase space density of particle beams \cite{courant1958theory}. This concept was adopted to characterize radiation beams produced from accelerator driven light sources, such as bending magnet or wiggler synchrotron radiation sources and undulators \cite{kim1989characteristics}, where the brilliance is defined as the flux into a cone of particular spectral bandwidth (usually 0.1\%) per unit phase space area. The brilliance performance parameter is readily applied to free electron lasers \cite{krinsky1983undulators,kim1987brightness} and has been extended to ICS sources \cite{hartemann2005high,krafft2010compton}.  
 
 Average brilliance is time averaged, summing the contribution of all electron bunch--laser pulse interactions of the source, thereby accounting for the repetition rate of the interactions. Whereas, peak brilliance is calculated for a single bunch--pulse interaction subject to the interaction time. Experimentally, both peak and average brilliance have advantages ... \textcolor{blue}{**NEED A GOOD ARGUMENT**}. Linac driven ICS sources typically are designed to be single-shot, high peak brilliance sources whereas storage ring and recirculated electron beam based ICS sources take advantage of high repetition rates to be high average brilliance sources. Theoretically, ERL's with linac quality recirculated electron beams could dually provide high peak and average brilliance.   
 
@@ -606,14 +606,25 @@ Often ICS sources are viewed as analagous to undulator radiation, a 'laser undul
 \end{equation}
 where $\Phi_{n}$ is the total spectral flux of the $n$th undulator harmonic generate into a central cone of 0.1\% spectral bandwidth, $\Sigma_{x/y} = \sqrt{\sigma_{x/y}^{2}+\sigma_{R}^{2}}$ are the source sizes of the interaction in each plane with $\sigma_{x/y}$ the \textit{rms} source size of the electron beam and $\sigma_{R}$ the diffraction limited source size of a single electron emission \cite{kim1987brightness}, and $\Sigma_{x/y}' = \sqrt{\sigma_{x}'^{2}+\sigma_{R}'^{2}}$ the source size divergences with $\sigma_{x}'$ the \textit{rms} divergence of the electron beam and $\sigma_{R}'$ the \textit{rms} angular divergence of the single electron emission \cite{krinsky1983undulators}. 
 
-The average brilliance for an inverse Compton scattering source is defined as the average flux per unit phase space area of the interaction per 0.1\% \textit{rms} bandwidth. The ICS average brilliance, is modified from the undulator brilliance (Eq.~\ref{eq:undulator_brightness}) through replacement of the single electron emission field for the electric field of a Gaussian laser pulse \cite{krafft2010compton,deitrick2018high}, is of the form   
-
+The average brilliance for an inverse Compton scattering source is defined as the average flux per unit phase space area of the interaction per 0.1\% \textit{rms} bandwidth. The ICS average brilliance, is modified from the undulator brilliance (Eq.~\ref{eq:undulator_brightness}) through replacement of the single electron emission field for the electric field of a Gaussian laser pulse \cite{krafft2010compton,deitrick2018high}
 \begin{equation}
 \mathcal{B}_{\mathrm{avg}} = \frac{\mathcal{F}_{0.1\%}}{4\pi^{2}\sigma_{\gamma,x}\sigma_{\gamma,x}'\sigma_{\gamma,y}\sigma_{\gamma,y}'},
-\label{eq:average_brightness}
+\label{eq:average_brilliance}
 \end{equation}
-where $\mathcal{F}_{0.1\%}$ is the flux in a 0.1\%  \textcolor{blue}{FWHM?rms?} bandwidth, $\sigma_{\gamma,x/y}$ are the source sizes in each plane (Eq.~\ref{eq:source_size}) and $\sigma_{\gamma,x/y}'$ are the source angular divergences in each plane. The form of the source sizes in the ICS average brilliance 
+where $\mathcal{F}_{0.1\%}$ is the flux in a 0.1\% FWHM bandwidth (Eq.~\ref{eq:flux_0.1_bandwidth}), $\sigma_{\gamma,x/y}$ are the source sizes in each plane (Eq.~\ref{eq:source_size}) and $\sigma_{\gamma,x/y}'$ are the source angular divergences (Eq.~\ref{eq:source_divergence}) in each plane. Assuming a non-diffraction limited electron bunch and that, as is typical $\sigma_{e,x/y}' > \sigma_{L}'$ the brilliance can be roughly calculated as
+\begin{equation}
+\mathcal{B}_{\mathrm{avg}} = \frac{\mathcal{F}_{0.1\%}}{4\pi^{2}\sigma_{\gamma,x}\sqrt{\epsilon_{x}/\beta_{x}^{*}}\sigma_{\gamma,y}\sqrt{\epsilon_{y}\beta_{y}^{*}}},
+\label{eq:average_brilliance_nondiffraction}    
+\end{equation}
+simplifying (Eq.~\ref{eq:average_brilliance}) further, by conceding that for a compact ICS source the electron bunch transverse profile size typically dominates the laser spot size i.e $\sigma_{\gamma,x/y} \approx \sqrt{\epsilon_{x/y}\beta_{x/y}^{*}}$, the average brilliance becomes
+\begin{equation}
+\mathcal{B}_{\mathrm{avg}} \approx \frac{\gamma^{2}\mathcal{F}_{0.1\%}}{4\pi^{2}\epsilon_{n,x}\epsilon_{n,y}},
+\label{eq:average_brilliance_compact}    
+\end{equation}
 
+\textcolor{blue}{**DIFFERENT FORMS OF BRILLIANCE FROM KIRSTEN** \\ **EVALUATE EACH, SEE COMPTONCALCS2**}
+
+\textcolor{blue}{**FV HARTEMANN PEAK BRILLIANCE** \\ **LIMITATIONS?**}
 
 
 \end{document}
