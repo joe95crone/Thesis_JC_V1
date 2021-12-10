@@ -23,7 +23,7 @@
 \section{Electron - Photon Interactions}
 \label{sec:electron_photon_interactions}
 \textcolor{blue}{**BLURB ABOUT PHOTON - ELECTRON INTERACTIONS**}
-% AHHHHHH THIS IS SHIT
+
 
 While scattering interactions, specifically inverse Compton scattering interactions, are possible from all particles, the work presented here is only concerned with electron - photon interactions, the most commonly utilised form of inverse Compton scattering.  Electron - photon interactions are advantageous over other particle - photon interactions due to their low rest mass $m_{e}$, resulting in a typically large Lorentz factor, which allows for the production of high energy photons as the scattered photon energy $E_{\gamma}$ is proportional to the Lorentz factor squared ($E_{\gamma}\propto\gamma^{2}$).    
 
@@ -295,7 +295,7 @@ where $\sigma_{T}$ is the Thomson cross section. Where the interaction is firmly
 \lim_{X \to ~\infty} \sigma = \frac{2\pi r_{e}^{2}}{X}\left(\ln{X}+\frac{1}{2}\right).
 \label{eq:compton_cross_section_ultrarelativistic_limit}
 \end{equation}
-The behaviour of the total cross section as a function of electron bunch energy is shown in Fig.~\ref{fig:cross_section_electron_energy}.
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/Cross_Section_Electron_Bunch_Energy_NDYAG.pdf}
@@ -303,7 +303,7 @@ The behaviour of the total cross section as a function of electron bunch energy 
 \label{fig:cross_section_electron_energy}
 \end{figure}
 
-\textcolor{blue}{**TALK ABOUT THE PLOTS, AROUND 90 MEV WHEN ULTRAREL IS USEFUL**}
+The behaviour of the total cross section as a function of electron bunch energy is shown in Fig.~\ref{fig:cross_section_electron_energy}. Fig.~\ref{fig:cross_section_electron_energy} shows that a small recoil ($X \ll 1$) cross section calculation is valid up until the \si{\giga\electron}-scale, above the \si{\giga\electronvolt}-scale the small recoil approximation (Eq.~\ref{eq:compton_cross_section_classical_limit}) underestimates the electron--photon interaction cross section (Eq.~\ref{eq:compton_cross_section}). The ultra-relativistic cross section approximation (Eq.~\ref{eq:compton_cross_section_ultrarelativistic_limit}) becomes a good approximation to the full cross section calculation (Eq.~\ref{eq:compton_cross_section}) beyond  $\sim92$~\si{\giga\electronvolt}, at smaller energies the cross section is underestimated and at energies on the order of 100's~\si{\giga\electronvolt} the cross section in the ultra-relativistic approximation is negative which is clearly nonphysical.     
 
 Assuming a head-on ($\phi=0$) interaction in the ultra-relativistic domain ($\beta\approx1$) the Lorentz invariants can be related via
 \begin{equation}
@@ -321,15 +321,15 @@ The derivative of $Y$ with respect to the scattered photon energy $E_{\gamma}$ (
 \label{eq:differential_cross_section_ICS_energy}    
 \end{equation}
 
-\textcolor{blue}{**SHOW THE SIGMA vs SCATTERED PHOTON ENERGY PLOT**\\
-**THIS NEEDS TO MENTION THAT AVERAGE ENERGY IS 2gamma2EL** \\ **HALF DIP, GEOFF HAS A FULL DERIVATION, BUT IT IS V. TRICKY**}
+The scattered photon energy differential cross section (Eq.~\ref{eq:differential_cross_section_ICS_energy}) can be plotted against the scattered photon energy of a single particle ICS interaction to reveal the spectral characteristics of an ICS source. Fig.~\ref{fig:cross_section_scattered_photon_energy} shows a normalised plot of the scattered photon energy differential cross section (Eq.~\ref{eq:differential_cross_section_ICS_energy}) as a function of the scattered photon energy for a head-on collision ($\phi=0$), in the low recoil regime ($X \ll 1$). Several features are apparent in Fig.~\ref{fig:cross_section_scattered_photon_energy}, such as the double peaked spectrum -- which is peaked in the forward (low energy) and backward (high energy) directions with respect to the scattered photon bunch -- where the intensity of these peaks is double (for $X \ll 1$) the intensity of the trough at $\theta=1/\gamma$ and the average energy ($E_{\gamma} = 2\gamma^{2}E_{L}$), which is half of the maximum energy (Eq.~\ref{eq:compton_edge_energy}) at the Compton edge.   
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.6\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/Cross_Section_Scattered_Photon_Energy.pdf}
 \caption{Differential cross section with respect to the scattered photon energy (Eq.~\ref{eq:differential_cross_section_ICS_energy}) as a function of scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}) in the low recoil ($X \ll 1$) regime for a head-on interaction ($\phi=0$), both parameters are normalised for generality. The maximum (blue) and minimum (green) values of the differential cross section (Eq.~\ref{eq:max_min_differential_cross_section_ICS_energy}) are shown, which differ by a factor of $\sim2$ (Eq.~\ref{eq:max_min_cross_section_ratio}).The average energy in the spectrum is $E_{\gamma}=2\gamma^{2}E_{L}$, half of the Compton edge energy (Eq.~\ref{eq:compton_edge_energy}), due to the symmetry of the spectrum.}
 \label{fig:cross_section_scattered_photon_energy}
 \end{figure}
-\textcolor{blue}{**CONSIDER PUTTING IN A ONE WITH ANGLE HERE TOO**\\}
+\textcolor{blue}{**CONSIDER PUTTING IN A ONE WITH ANGLE HERE TOO**}
 
 Limitations of the Lorentz $Y$ invariant can be calculated for the angular limitations of the ICS interaction ($0 \leq \theta \leq 1/\gamma$). Taking the case of $\theta = 0$, the maximum value of $Y$, the scattered photon energy is given by (Eq.~\ref{eq:headon_backscattering_scattered_photon_energy}) and $Y\approxX\left(1-X\right)$, for the case of $\theta = 1/\gamma$, the minimum value of $Y$, the scattered photon energy becomes $E_{\gamma} = \frac{2\gamma^{2}E_{L}}{1+X}$, as seen in Fig.~\ref{fig:cross_section_scattered_photon_energy}, therefore $Y = X\left(1-X/2\right)$. Substituting the limitations of the $Y$ Lorentz invariant for each angular case into (Eq.~\ref{eq:differential_cross_section_ICS_energy}) yields maximum and minimum values of the differential cross section as shown by Sun et al \cite{sun2011theoretical}
 \begin{align}
@@ -487,27 +487,32 @@ The luminosity of this result is given by $\mathcal{L} = R_{ACHG}\mathcal{L}_{\m
 \textcolor{blue}{**DO I INCLUDE THE FULL INVESTIGATION HERE, i.e SHOW THE MIYAHARA REPLICATION}
 
 \section{Source Size and Divergence}
+
+The derivation of luminosity and flux in Section~\ref{sec:luminosity_and_flux} have assumed that all emission of radiation in the ICS interaction is from a point source at the centre of the interaction. However, the electron bunch--photon pulse interaction occurs in a finite spatial volume. The transverse size of this spatial volume is named the source size which is given by the overlap of the ...
 \textcolor{blue}{**Source size derivation - see Geoff's derivation**}
 
-The \textit{rms} source size of an inverse Compton scattering electron bunch--laser pulse interaction is 
+Therefore, the \textit{rms} source size of an inverse Compton scattering electron bunch--laser pulse interaction is 
 \begin{equation}
 \sigma_{\gamma,x/y} = \frac{\sigma_{e,x/y}\sigma_{L}}{\sqrt{\sigma_{e,x/y}^{2}+\sigma_{L}^{2}}}
 \label{eq:source_size}
 \end{equation}
-where $\sigma_{e,x/y}$ is the \textit{rms} transverse electron bunch spot size in each plane and $\sigma_{L}$ is the \textit{rms} transverse laser pulse spot size.  
+where $\sigma_{e,x/y}$ is the \textit{rms} transverse electron bunch spot size in each plane and $\sigma_{L}$ is the \textit{rms} transverse laser pulse spot size. In the longitudinal dimension the \textit{rms} source size is given by
+\begin{equation}
+\sigma_{\gamma,z} = \frac{\sigma_{e,z}\left(ct_{\mathrm{pulse}}\right)}{\sqrt{\sigma_{e,z}^{2}+\left(ct_{\mathrm{pulse}}\right)^{2}}},
+\label{eq:longitudinal_source_size}
+\end{equation}
+where $\sigma_{e,z}$ is the \textit{rms} electron bunch length and $t_{\mathrm{pulse}}$ is the \textit{rms} photon pulse duration. 
 
-The \textit{rms} source angular divergence of an ICS interaction is
+Similarly to the \textit{rms} transverse source size, the \textit{rms} source angular divergence of an ICS interaction is
 \begin{equation}
 \sigma_{\gamma,x/y}' = \frac{\sigma_{e,x/y}'\sigma_{L}'}{\sqrt{\sigma_{e,x/y}'^{~2}+\sigma_{L}'^{~2}}},
 \label{eq:source_divergence}
 \end{equation}
-where $\sigma_{e,x/y}' = \sqrt{\epsilon_{x}/\beta_{x}^{*}}$ is the \textit{rms} transverse electron bunch angular divergence and $\sigma_{L} = \sqrt{\lambda/4\pi}$ is the \textit{rms} transverse laser pulse angular divergence. REFERENCE?
+where $\sigma_{e,x/y}' = \sqrt{\epsilon_{x}/\beta_{x}^{*}}$ is the \textit{rms} transverse electron bunch angular divergence and $\sigma_{L} = \sqrt{\lambda/4\pi}$ is the \textit{rms} transverse laser pulse angular divergence.
 
+A non-zero transverse source size (Eq.~\ref{eq:source_size}) suggests that photon emission from the ICS interaction can occur from any transverse position within the source size. Whilst the emission of radiation would occur mostly frequently in the centre of the bunch, due to the double Gaussian overlap, emission would be possible from the edges of the source size. A non-zero source size with possible emission from a finite transverse (Eq.~\ref{eq:source_size}) and longitudinal (Eq.~\ref{eq:longitudinal_source_size}) source size would appear to invalidate the point source approximation used in Section~\ref{sec:luminosity_and_flux}.
 
-\textcolor{blue}{**State how emission can occur from any spatial point, say how it is unlikely from the edges**}
-\textcolor{blue}{**Explain how this isn't a problem transversely or longitudinally, what Balsa and I talked about**}
-
-
+However, the point source approximation holds if the scattered photon distribution is sampled a large distance from the source relative to the source size i.e $\sigma_{\gamma,z} \ll d$, where $d$ is the source to collimator/detector distance. When the $\sigma_{\gamma,z} \ll d$ approximation holds this is termed far-field collimation, as this approximation is mostly utilised during discussion of collimation in ICS sources. Far-field collimation can be stated analogously in the transverse plane via $\sigma_{\gamma,x/y} \ll a$, where $a$ is the transverse size of a collimator or detector aperture downstream of the interaction. Far-field collimation is obeyed by all ICS sources designed within this work.  
 
 \section{Spectral Density}
 
@@ -516,7 +521,13 @@ The spectral density of an ICS source is a measure of the energy density of the 
 \mathcal{S} = \frac{\mathcal{F}}{E_{\gamma}^{\mathrm{MAX}}},
 \label{eq:spectral_density}    
 \end{equation}
-where $\mathcal{F}$ is the uncollimated total flux of the ICS source given by (Eq.~\ref{eq:flux_angular_crossing_hourglass}) and $E_{\gamma}$ is the scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}) at the Compton edge ($\theta = 0$). The spectral density can also be measured around the Compton edge energy for a particular bandwidth by replaceing the flux encompassed by that bandwidth, for example by replacing the raw flux $\mathcal{F}$ with the \textit{FWHM} flux in a 0.1\% bandwidth $\mathcal{F_{\mathrm{0.1\%}}}$. \textcolor{blue}{**NEED TO SHOW THIS SOMEWHERE**} Framed in these terms, the spectral density becomes an important performance parameter of a narrowband ICS source.  
+where $\mathcal{F}$ is the uncollimated total flux of the ICS source given by (Eq.~\ref{eq:flux_angular_crossing_hourglass}) and $E_{\gamma}$ is the scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}) at the Compton edge ($\theta = 0$). The spectral density can also be measured around the Compton edge energy for a particular bandwidth by replaceing the flux encompassed by that bandwidth, for example by replacing the raw flux $\mathcal{F}$ with the \textit{FWHM} flux in a 0.1\% bandwidth $\mathcal{F_{\mathrm{0.1\%}}}$ (Eq.~\ref{eq:flux_0.1_bandwidth}).
+The spectral density around the Compton edge () in a 0.1\% FWHM bandwidth is therefore
+\begin{equation}
+\mathcal{S}_{\mathrm{0.1\%}} = \frac{\mathcal{F_{\mathrm{0.1\%}}}}{E_{\gamma}^{\mathrm{MAX}}}.
+\label{eq:spectral_density_0.1}    
+\end{equation}
+Framed in terms of a particular bandwidth, the spectral density becomes an important performance parameter of a narrowband ICS source. Utilising spectral density comparisons within a particular bandwidth around the Compton edge is a more appropriate comparative measure of ICS source performance as this enables a user to understand the energy density of photons available to a particular experiment from an ICS source.    
 
 \section{Bandwidth}
 \label{sec:bandwidth}
