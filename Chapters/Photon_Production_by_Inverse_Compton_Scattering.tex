@@ -396,31 +396,30 @@ where the $3/2$ factor originates from (Eq.~\ref{eq:cross_section_factor}), the 
 \section{Geometric Luminosity Reduction}
 \label{sec:geometric_luminosity_reduction}
 
-\textcolor{blue}{**EXAMPLE CALCULATION OF RAC AND RHG WOULD IMPROVE THIS** \\ **INCLUDE THE FULL INVESTIGATION HERE, i.e SHOW THE MIYAHARA REPLICATION}
+\textcolor{blue}{ **INCLUDE THE FULL INVESTIGATION HERE, i.e SHOW THE MIYAHARA REPLICATION}
 
-A generalization of the head-on ($\phi = 0$) luminosity in (Eq.~\ref{eq:head_luminosity}) to the case with an angular crossing ($\phi \neq 0$) can be performed, where the interaction geometry is modified and the transverse and longitudinal profiles of the interaction are adjusted. The effect of an angular crossing, which is assumed to be in the horizontal $x$ plane, can be expressed by a reduction factor $R_{AC}$ in two identical forms \cite{suzuki1976general,miyahara2008luminosity}
+A generalization of the head-on ($\phi = 0$) luminosity in (Eq.~\ref{eq:headon_luminosity}) to the case with an angular crossing ($\phi \neq 0$) can be performed, where the interaction geometry is modified and the transverse and longitudinal profiles of the interaction are adjusted. The effect of an angular crossing, which is assumed to be in the horizontal $x$ plane, can be expressed by a reduction factor $R_{AC}$ in two identical forms \cite{suzuki1976general,miyahara2008luminosity}
 
 \begin{equation}
 R_{AC} = \frac{\sigma_{x}\cos\phi}{\sqrt{\sigma_{x}^{2}\cos^{2}\phi+\sigma_{z}^{2}\sin^{2}\phi}} = \frac{1}{\sqrt{1+\left(\sigma_{z}^{2}/\sigma_{x}^{2}\right)\tan^{2}\phi}},
 \label{eq:angular_crossing_factor}    
 \end{equation}
-where $\sigma_{z,L} = ct_{pulse}$ with $t_{pulse}$, the laser pulse duration. The luminosity for an angular crossing becomes $\mathcal{L} = R_{AC}\mathcal{L}_{\mathrm{HEAD-ON}}$.Therefore, the flux in the case of an angular crossing is given by 
-\begin{gather}
-\mathcal{F} = \sigma R_{AC}\mathcal{L}_{\mathrm{HEAD-ON}}f, \\
-\mathcal{F} = \sigma\frac{N_{e}N_{L}f\cos\phi}{2\pi\sigma_{y}\sqrt{\sigma_{x}^{2}\cos^{2}\phi + \sigma_{z}^{2}\sin^{2}\phi}}.
+where $\sigma_{z,L} = ct_{pulse}$ with $t_{pulse}$, the laser pulse duration. The luminosity for an angular crossing becomes $\mathcal{L} = R_{AC}\mathcal{L}_{\mathrm{HEAD-ON}}$, therefore the flux in the case of an angular crossing is given by 
+\begin{align}
+\mathcal{F} &= \sigma R_{AC}\mathcal{L}_{\mathrm{HEAD-ON}}f, \\
+\mathcal{F} &= \sigma\frac{N_{e}N_{L}f\cos\phi}{2\pi\sigma_{y}\sqrt{\sigma_{x}^{2}\cos^{2}\phi + \sigma_{z}^{2}\sin^{2}\phi}}.
 \label{eq:crossing_angle_flux}    
-\end{gather}
+\end{align}
+For example, for a Nd:YAG laser ($\lambda = 1064$~\si{\nano\meter}) with a 5~\si{\pico\second} pulse duration and a $\sigma_{L} = 30$~\si{\micro\meter} spot size radius interacting with a 500~\si{\mega\electronvolt} kinetic energy electron bunch with a transverse \textit{rms} spot size of 10~\si{\micro\meter} with an \textit{rms} electron bunch length $\sigma_{e,z} = 0.5$~\si{\milli\meter} interaction at a 5\si{\degree} crossing angle the angular crossing luminosity factor becomes $R_{AC} = 0.22$, a factor $\sim5$ reduction in luminosity.
 
 Another deleterious effect on the luminosity is the hourglass effect, in which the effect of the divergence of two colliding beams is taken into account. As the electron bunch and laser pulse overlap, they diverge and their transverse profiles increase in size which in turn reduces the luminosity. The laser pulse typically diverges quicker than the electron bunch. 
 
 The reduction factor of the hourglass effect $R_{HG}$ for the head-on case ($\phi = 0$) as described by M. Furman \cite{furman1991hourglass} for a beam - beam collision of asymmetric beams. Here it is altered for the electron bunch - photon pulse collision, where an electron beam divergence term in $t_{x/y}$ is replaced for a photon pulse divergence term, and it is converted to defined notation 
-
 \begin{equation}
 R_{HG} = \frac{1}{\sqrt{\pi}}\int_{-\infty}^{\infty}\frac{\exp\left(-t^{2}\right)}{\sqrt{\left(1+t^{2}/t_{x}^{3}\right)\left(1+t^{2}/t_{y}^{2}\right)}}dt,
 \label{eq:furman_hourglass_reduction}    
 \end{equation}
 where $t$ is the integration variable and the $t_{x/y}$ parameters are given by
-
 \begin{equation}
 t_{x/y} = \sqrt{\frac{2\sigma_{x/y}^{2}}{\sigma_{z}^{2}\left(\sigma_{x/y,e}^{2}/\beta_{x/y}^{*2}+\sigma_{L}^{2}/z_{R}^{2}\right)}},
 \label{eq:furman_txy_parameters}    
@@ -437,9 +436,7 @@ where $1-\Phi\left(t_{RB}\right)$ is the complementary error function of $t_{RB}
 \Phi\left(x\right) = \frac{2}{\sqrt{\pi}}\int_{0}^{x}\exp\left(-t^{2}\right)dt,
 \label{eq:error_function}    
 \end{equation}
-where $t$ is the integration variable. The non-round beam cases have to be evaluated using numerical integration after inspection of the underlying $R_{HG}$ functions.
-
-The luminosity of a head-on ($\phi = 0$) collision taking the hourglass effect into account is $\mathcal{L} = R_{HG}\mathcal{L}_{HEAD-ON}$, following the methodology of the angular crossing reduction.
+where $t$ is the integration variable. Non-round electron bunch transverse profiles have to be evaluated using numerical integration after inspection of the underlying $R_{HG}$ functions. For example, for a Nd:YAG laser ($\lambda = 1064$~\si{\nano\meter}) with a 20~\si{\pico\second} pulse duration and a $\sigma_{L} = 30$~\si{\micro\meter} spot size radius interacting with a 500~\si{\mega\electronvolt} kinetic energy electron bunch with a transverse \textit{rms} spot size of 10~\si{\micro\meter} with an \textit{rms} electron bunch length $\sigma_{e,z} = 3$~\si{\milli\meter} interaction head-on the angular crossing luminosity factor becomes $R_{HG} = 0.93$, a 7\% reduction in luminosity.
 
 The work of Y. Miyahara \cite{miyahara2008luminosity} builds upon the isolated descriptions of the angular crossing by T. Suzuki \cite{suzuki1976general}, and the hourglass effect by M. Furman \cite{furman1991hourglas} by looking at the combined effect of these. The combined angular crossing and hourglass effect reduction factor $R_{ACHG}$ is defined as
 \begin{equation}
@@ -457,14 +454,17 @@ and the divergence term $\langle U_{x/y}^{2}\rangle$ of the electron bunch - las
 \begin{equation}
 \langle U_{x/y}^{2}\rangle = \frac{\left(\sigma_{x/y,e}^{2}/\beta_{x/y}^{*2}\right)+\left(\sigma_{L}^{2}/z_{R}^{2}\right)}{2}.    
 \end{equation}
-The combined reduction factor $R_{ACHG}$ must be evaluated numerically as no analytical solutions exist for this function. The flux in the case of an angular collision with non-negligible divergence of electron bunches and laser pulses (hourglass effect) is given by
+The combined reduction factor $R_{ACHG}$ must be evaluated numerically as no analytical solutions exist for this function.
+For example, for a Nd:YAG laser ($\lambda = 1064$~\si{\nano\meter}) with a 5~\si{\pico\second} pulse duration and a $\sigma_{L} = 30$~\si{\micro\meter} spot size radius interacting with a 500~\si{\mega\electronvolt} kinetic energy electron bunch with a transverse \textit{rms} spot size of 10~\si{\micro\meter} with an \textit{rms} electron bunch length $\sigma_{e,z} = 0.5$~\si{\milli\meter} interaction at a 5\si{\degree} crossing angle the angular crossing luminosity factor becomes $R_{AC} = 0.22$, a factor $\sim5$ reduction in luminosity. The reduction in luminosity for this case is identical to the angular crossing reduction $R_{ACHG}\approx R_{AC}$ as the crossing angle reduces the interaction time and is consequently the dominant factor in geometric luminosity reduction.
 
+The flux in the case of an angular collision with non-negligible divergence of electron bunches and laser pulses (hourglass effect) is given by
 \begin{equation}
 \mathcal{F} = \sigma R_{ACHG}\mathcal{L}_{\mathrm{HEAD-ON}}f.
 \label{eq:flux_angular_crossing_hourglass}
 \end{equation}
+All subsequent equations, unless explicitly stated, use (Eq.~\ref{eq:flux_angular_crossing_hourglass}) to account for the geometric luminosity reduction of a ICS source.
 
-The luminosity of this result is given by $\mathcal{L} = R_{ACHG}\mathcal{L}_{\mathrm{HEAD-ON}}$, mirroring the form of the luminosity for the isolated angular crossing and hourglass effect. Naively, one would expect the luminosity to also be appropriately modelled by $\mathcal{L} = R_{AC}R_{HG}\mathcal{L}_{\mathrm{HEAD-ON}}$, however this is incorrect as a moderate crossing angle $\phi$ will shorten the interaction time between the laser pulse and electron beam such that the interaction length is of an order at which the electron bunch and laser pulse minimally diverge and the hourglass effect is negligible. Effectively a moderate crossing angle suppresses the hourglass effect.   
+The luminosity of this result is given by $\mathcal{L} = R_{ACHG}\mathcal{L}_{\mathrm{HEAD-ON}}$, mirroring the form of the luminosity for the isolated angular crossing and hourglass effect. Naively, one would expect the luminosity to also be appropriately modelled by $\mathcal{L} = R_{AC}R_{HG}\mathcal{L}_{\mathrm{HEAD-ON}}$, however this is incorrect as a moderate crossing angle $\phi$ will shorten the interaction time between the laser pulse and electron beam such that the interaction length is of an order at which the electron bunch and laser pulse minimally diverge and the hourglass effect is negligible. Effectively, as shown by the example calculations, a moderate crossing angle suppresses the hourglass effect.   
 
 \section{Source Size and Divergence}
 \label{sec:source_size_divergence}
