@@ -22,43 +22,36 @@
 
 \section{Electron - Photon Interactions}
 \label{sec:electron_photon_interactions}
-\textcolor{blue}{**BLURB ABOUT PHOTON - ELECTRON INTERACTIONS**}
-
 
 While scattering interactions, specifically inverse Compton scattering interactions, are possible from all particles, the work presented here is only concerned with electron - photon interactions, the most commonly utilised form of inverse Compton scattering.  Electron - photon interactions are advantageous over other particle - photon interactions due to their low rest mass $m_{e}$, resulting in a typically large Lorentz factor, which allows for the production of high energy photons as the scattered photon energy $E_{\gamma}$ is proportional to the Lorentz factor squared ($E_{\gamma}\propto\gamma^{2}$).    
-
-\textcolor{blue}{**EXPLANATION OF THOMSON, COMPTON AND INVERSE COMPTON**}
 
 Thomson scattering \cite{thomson1904xxxiv}, where an incident photon accelerates a charged particle and the charged particle emits a photon of identical energy, we assume the collision is elastic and therefore $p_{1} = p_{2}$ i.e that the recoil of the electron is negligible. The criterion for the photon - electron interaction to be modelled by Thomson scattering is when the energy of the photon is much smaller than the rest mass of the electron. Thomson's electron - photon interaction model was furthered by the work of A.H. Compton \cite{compton1923quantum}. Compton scattering is the extension of Thomson scattering to the inelastic scattering case ($p_{1} \neq p_{2}$), where the electron recoils and the photon is scattered with a different wavelength to the wavelength of the incident photon.
 
 Within this section we are concerned with inverse Compton scattering, the process of scattering a photon from a relativistically-moving  electron in which the scattered photon energy is double Doppler shifted, the scattered photon parasitically gains energy from the recoiling photon.  
 
-\textcolor{blue}{**GENERAL FORM OF THE PHOTON-ELECTRON INTERACTION + FEYNMAN DIAGRAMS**}
-
 Quantum electrodynamic photon - electron interactions, in general, can be represented by the two leading order Feynman diagrams as shown in Fig.~\ref{fig:ICS_Feynman_diagrams}. 
 
 \begin{figure}[!h]
-    \centering\includegraphics[width=0.7\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/Berestetskii_ICS_Feynman.pdf}
-    \caption{Two tree-level Feynman diagrams, which contribute to the matrix element of the (inverse) Compton scattering process. Left: The scattered photon is emitted with the annihilation of the incident photon, and the incident photon is absorbed with the production of the recoiling electron. Right: The incident photon and electron are absorbed, and the scattered photon is emitted with the recoiling electron. \cite{berestetskii1982quantum}}
-    \label{fig:ICS_Feynman_diagrams}
+\centering
+\includegraphics[width=0.7\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/Berestetskii_ICS_Feynman.pdf}
+\caption{Two tree-level Feynman diagrams, which contribute to the matrix element of the (inverse) Compton scattering process. Left: The scattered photon is emitted with the annihilation of the incident photon, and the incident photon is absorbed with the production of the recoiling electron. Right: The incident photon and electron are absorbed, and the scattered photon is emitted with the recoiling electron. \cite{berestetskii1982quantum}}
+\label{fig:ICS_Feynman_diagrams}
 \end{figure}
+\textcolor{blue}{**NEED A BETTER SET OF FEYNMAN DIAGRAMS**}
 
 The general form of the electron - photon interactions can therefore be specified by
 \begin{equation}
 p_{1} + k_{1} = p_{2} + k_{2},
 \label{eq:ICS_process}
 \end{equation}
-
 where $p_{1}$ is the four-momenta of the incident electron, $k_{1}$ is the four-momenta of the incident photon, $p_{2}$ is the four-momenta of the recoiling electron, and $k_{2}$ is the four-momenta of the scattered photon. The geometry of the inverse Compton scattering interaction in a 2D plane is shown in Fig.~\ref{fig:scattered_photon_kinematics}.
 
 \begin{figure}[!h]
-    \centering
-    \includegraphics[width=\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/scatteringkinematicsdiagram.pdf}
-    \caption{Geometry of the inverse Compton scattering event at the interaction point. This geometry follows the geometry prescribed by Sun et al \cite{sun2009energy}. Here $\theta$ is the scattering angle of the photon, with $\phi' = \pi -\phi$ the angle between the incident electron and incident photon, where $\phi$ is the crossing angle of the electron and photon and $\theta' = \pi - \theta - \phi$ the angle between the incident and scattered photon. }
-    \label{fig:scattered_photon_kinematics}
+\centering
+\includegraphics[width=\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/scatteringkinematicsdiagram.pdf}
+\caption{Geometry of the inverse Compton scattering event at the interaction point. This geometry follows the geometry prescribed by Sun et al \cite{sun2009energy}. Here $\theta$ is the scattering angle of the photon, with $\phi' = \pi -\phi$ the angle between the incident electron and incident photon, where $\phi$ is the crossing angle of the electron and photon and $\theta' = \pi - \theta - \phi$ the angle between the incident and scattered photon. }
+\label{fig:scattered_photon_kinematics}
 \end{figure}
-
-\textcolor{blue}{**4-MOMENTA EQUATIONS**}
 
 Motivated by the geometry of the inverse Compton scattering process as shown in Fig. \ref{fig:scattered_photon_kinematics}, we can write the initial photon $p_{1}$ and electron $k_{1}$ four-momenta
 \begin{align}
@@ -66,17 +59,13 @@ p_{1} = \gamma m_{e}\left(c,\boldsymbol{v_{i}}\right),
 \label{eq:initial_four_vectors} \\
 k_{1} = \frac{E_{L}}{c}\left(1,\hat{n}_{i}\right), 
 \end{align}
-
 where $E_{L}$ is the energy of the incident photon, $\hat{n}_{i}$ is the unit displacement three-vector of the incident photon, $\gamma$ is the Lorentz factor, $m_{e}$ is the mass of the electron, $c$ the speed of light in a vacuum and $\boldsymbol{v_{i}}$ is the velocity three-vector of the incident electron with magnitude $v_{i}$. Similarly, we can present the final electron and scattered photon states with four-momenta 
 \begin{align}
 p_{2} = \gamma' m_{e}\left(c,\boldsymbol{v_{f}}\right), \\
 k_{2} = \frac{E_{\gamma}}{c}\left(1,\hat{n}_{f}\right), 
 \label{eq:final_four_vectors} 
 \end{align}
-
 where $E_{\gamma}$ is the scattered photon energy, $\hat{n}_{f}$ is the unit displacement three-vector of the scattered photon, $\gamma'$ is the Lorentz factor of the recoiling electron and $\boldsymbol{v_{f}}$ is the velocity three-vector of the recoiling electron with magnitude $v_{f}$.
-
-\textcolor{blue}{**DERIVATION OF MANDELSTAM VARIABLES + LORENTZ INVARIANTS }
 
 Using our four-momenta definitions (Eq.~\ref{eq:initial_four_vectors}-\ref{eq:final_four_vectors}), a  series of kinematic invariants (Mandelstam variables \cite{mandelstam1958determination}) can be determined for the photon-electron scattering process \cite{berestetskii1982quantum}
 \begin{align}
@@ -87,7 +76,6 @@ t = \left(p_{1}-p_{2}\right)^{2} = \left(k_{2}-k_{1}\right)^{2},
 u = \left(p_{1}-k_{2}\right)^{2} = \left(p_{2}-k_{1}\right)^{2}.
 \label{eq:u_Mandelstam}
 \end{align}
-
 The kinematic invariants can be used to form more convenient Lorentz invariants
 \begin{align}
 X = \frac{s-\left(m_{e}c\right)^{2}}{\left(m_{e}c\right)^{2}},
@@ -104,15 +92,11 @@ Y = \frac{2\gamma E_{\gamma}\left(1-\beta\cos\theta\right)}{m_{e}c^{2}},
 \end{align}
 where $\beta = v/c$, the Lorentz speed factor.
 
-\textcolor{blue}{Do I show the full derivation of the Mandelstam variables? I have done this but still...}
-\textcolor{blue}{**STATEMENT OF RECOIL REGIME}
-
 If we take the head-on case ($\phi = 0$) and  assume the incident electron is ultra-relativistic ($\beta \rightarrow 1$) then the $X$ simplifies to 
 \begin{equation}
 X = \frac{4\gamma E_{L}}{m_{e}c^{2}}.
 \label{eq:X_headon}
 \end{equation}
-
 The Lorentz invariant $X$ can also be termed the recoil parameter, which denotes the magnitude of the recoil of the incident electron. For the case $X \ll 1$, the recoil is small and inverse Compton scattering reduces to Thomson scattering, the interaction becomes inelastic. To illustrate, using (Eq.~\ref{eq:X_headon}) a 1\% recoil effect ($X = 0.01$) in head-on inverse Compton scattering geometry with a infrared laser (Nd:YAG, $\lambda = 1064$~\si{\nano\metres}) results in a total electron beam energy of $E_{e} = 558$~\si{\mega\electronvolt}, for a visible green laser (2nd Harmonic Nd:YAG, $\lambda = 532$~\si{\nano\metres}) a total electron beam energy $E_{e} = 279$~\si{\mega\electronvolt}. Therefore, as the sources designed in this Thesis typically use infrared lasers, only in designs for $\gamma$-ray ICS sources (where the electron beam energy is 100's~\si{\mega\electronvolt}) are recoil effects expected to be non-negligible.     
 
 \section{Non-linear Inverse Compton Scattering}
@@ -124,9 +108,9 @@ a_{0} = \frac{e\sqrt{2c\mu_{0}}}{2\pi m_{e}c^{2}}\lambda\sqrt{\frac{E_{\mathrm{p
 a_{0} = \frac{e\sqrt{2c\mu_{0}}}{2\pi m_{e}c^{2}}\lambda\sqrt{\frac{E_{\mathrm{pulse}}}{2\pi\sigma_{L}^{2}t_{\mathrm{pulse}}}},
 \label{eq:a0_flat_top}
 \end{gather}
-where $e$ is the charge of an electron, $\mu_{0}$ is the permeability of free space, $E_{\mathrm{pulse}}$ is the energy of the incident laser (or photon) pulse, $\sigma_{L}$ is the transverse \textit{rms} spot size (radius) of the laser pulse and $t_{pulse}$ is the \textit{rms} pulse duration. The normalised laser potential is sometimes expressed more empirically \textcolor{blue}{citation?} by $a_{0} \approx 0.855\times 10^{-9} \lambda\left[\mathrm{\mu m}\right]\sqrt{I\left[\mathrm{W/cm^{2}}\right]}$, where $I$ is the intensity of the incident photon pulse.
+where $e$ is the charge of an electron, $\mu_{0}$ is the permeability of free space, $E_{\mathrm{pulse}}$ is the energy of the incident laser (or photon) pulse, $\sigma_{L}$ is the transverse \textit{rms} spot size (radius) of the laser pulse and $t_{pulse}$ is the \textit{rms} pulse duration. The normalised laser potential is sometimes expressed more empirically by $a_{0} \approx 0.855\times 10^{-9} \lambda\left[\mathrm{\mu m}\right]\sqrt{I\left[\mathrm{W/cm^{2}}\right]}$, where $I$ is the intensity of the incident photon pulse \cite{li2004high}.
 
-When $a_{0} \ll 1$ the inverse Compton scattering interaction is termed linear, once this limit is encroached non-linear effects begin to have an effect on an inverse Compton scattering source. Common effects are ponderomotive broadening of the resulting spectra, harmonic generation of higher energy photons and multi-photon inverse Compton scattering \textcolor{blue}{Do these all require citations?}. Ponderomotive broadening and harmonic generation effects are possible with $a_{0}<1$ as their onset is also driven by other factors such as pulse length and shape, but for multi-photon inverse Compton scattering $a_{0}>1$. Unless explicitly stated, all equations within this work are derived for the linear regime as this is the regime the ICS sources presented are designed to operate.
+When $a_{0} \ll 1$ the inverse Compton scattering interaction is termed linear, once this limit is encroached non-linear effects begin to have an effect on an inverse Compton scattering source. Common effects are ponderomotive broadening of the resulting spectra \cite{krafft2004spectral}, harmonic generation of higher energy photons cite{sarachik1970classical,babzien2006observation} and multi-photon inverse Compton scattering \cite{bula1996observation}. Ponderomotive broadening and harmonic generation effects are possible with $a_{0}<1$ as their onset is also driven by other factors such as pulse length and shape, but for multi-photon inverse Compton scattering $a_{0}>1$. Unless explicitly stated, all equations within this work are derived for the linear regime as this is the regime the ICS sources presented are designed to operate.
 
 % Ponderomotive Broadening
 Ponderomotive broadening is a form of spectral broadening caused by the ponderomotive force of the incident photon pulse acting upon the electron bunch. During a laser pulse - electron beam interaction, the electron is decelerated, then accelerated by the ponderomotive force of the laser
@@ -140,25 +124,21 @@ Hence, mitigation of ponderomotive effects is an extensively studied topic \cite
 The laser chirp can be produced with conventional stretcher/compressor and pulse-shaper combinations \cite{ghebregziabher2013spectral}, i.e using existing conventional laser optics or via an FEL oscillator, where the substatial bunch length of the driving electron bunches are of a length where the RF-curvature energy spread is considerable, which means that the resulting laser pulse emitted by the FEL will
 also be chirped \cite{terzic2014narrow}. Solutions have been derived for a range of pulse shapes and modulation schemes up to a full 3D laser pulse description \cite{terzic2019improving}. \textcolor{blue}{Has this been demonstrated?}
 
-
 % Harmonic Generation
-\textcolor{blue}{What is Harmonic Generation? May need some work! APS papers aren't working right now!}
+\textcolor{blue}{\\**What is Harmonic Generation? May need some work!**\\}
 Harmonic generation is the non-linear inverse Compton scattering process in which the incident electron is accelerated by the electromagnetic field of the incident laser pulse. Anharmonic acceleration of the electron, as it interacts with the radiation field \cite{englert1983second}, causes non-sinusoidal transverse oscillations of the electron and induced figure-8 motion, which introduces an overall redshift in the radiation
 spectrum, with the concomitant emission of higher order harmonics \cite{sakai2015observation}. The electrodynamics of harmonic generation by free electrons was first described quantum mechanically by Brown and Kibble \cite{brown1964interaction,kibble1965frequency} with a following classical interpretation by Sarrachik and Schappert \cite{sarachik1970classical}. 
 
-The harmonic generation effect at the second harmonic was said to be demonstrated in 1983 \cite{englert1983second}, however the authors could not confirm whether this was harmonic generation or multi-photon inverse Compton scattering. Subsequently, confirmation of harmonic generation was first achieved at Brookhaven National Laboratory \cite{babzien2006observation,kumita2006observation}...\textcolor{blue}{need access to the paper} 
+The harmonic generation effect at the second harmonic was said to be demonstrated in 1983 \cite{englert1983second}, however the authors could not confirm whether this was harmonic generation or multi-photon inverse Compton scattering. Subsequently, confirmation of harmonic generation was first achieved at Brookhaven National Laboratory \cite{babzien2006observation,kumita2006observation}...\textcolor{blue}{**WRITE ABOUT THIS PAPER**} 
 
 % Multi-Photon Compton Scattering
-\textcolor{blue}{What is multi-photon inverse Compton scattering?}
+\textcolor{blue}{**What is multi-photon inverse Compton scattering?**\\}
 Another non-linear process viable when $a_{0} < 1$ is multi-photon inverse Compton scattering. Multi-photon inverse Compton scattering occurs when the incident photon pulse is of sufficient intensity that two or more incident photons interact with an individual electron simultaneously. As we have two identical photons interacting simultaneously, the total incident photon energy is doubled and consequently the scattered photon energy is doubled.
 
-This process was first conclusively demonstrated in an inverse Compton scattering source by C. Bula et al \cite{bula1996observation} at the Final Focus Test Beam at SLAC \cite{burke1994results} where inverse Compton scattering was observed with 4 incident photons.
-
-
+The multi-photon inverse Compton scattering process was first conclusively demonstrated in an inverse Compton scattering source by C. Bula et al \cite{bula1996observation} at the Final Focus Test Beam at SLAC \cite{burke1994results} where inverse Compton scattering was observed with 4 incident photons. \textcolor{blue}{**MORE!**}
 
 \section{Derivation of the Scattered Photon Energy}
 \label{sec:derivation_of_the_scattered_photon_energy}
-\textcolor{blue}{**DERIVATION OF THE ICS SCATTERED PHOTON ENERGY**}
 
 The relation in (Eq.~\ref{eq:ICS_process}) can be modified in order to calculate the scattered photon energy of an electron - photon interaction. Using the four-momenta in (Eq.~\ref{eq:initial_four_vectors}-\ref{eq:final_four_vectors}) we can create Lorentz invariant quantities from the Minkowski norms of the four-momenta 
 \begin{gather}
@@ -247,7 +227,7 @@ E_{\gamma} = 4\gamma^{2}E_{L}.
 \section{Electron - Photon Interaction Cross Section}
 \label{sec:electron_photon_interaction_cross_section}
 
-\textcolor{blue}{**START FROM FIRST PRINCIPLES** \\ **PUT IN THE POLARISATION STUFF TOO**\\ **EXPLAIN CROSS SECTION ANGLE CORRESPONDENCE TOO**}
+\textcolor{blue}{**START FROM FIRST PRINCIPLES** \\ **PUT IN THE POLARISATION STUFF TOO**\\ **EXPLAIN CROSS SECTION ANGLE CORRESPONDENCE TOO** \\ **NEED DIAGRAMS TOO + SET OUT THE CO-ORD SYSTEM**}
 
 \begin{multline}
 \frac{d^{2}\sigma}{dYd\phi_{f}} = \frac{2r_{e}^{2}}{X}\left\{\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)  -\left(\xi_{3}+\xi_{3}'\right)\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right] \right.\\\left. +\xi_{1}\xi_{1}'\left(\frac{1}{X}-\frac{1}{Y}+\frac{1}{2}\right) + \xi_{2}\xi_{2}'\left[\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\left(1+\frac{2}{X}-\frac{2}{Y}\right)\right] \right.\\\left. + \xi_{3}\xi_{3}'\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{2}\right] \right\}
@@ -351,13 +331,13 @@ which can be used to estimate the portion of the photon spectrum selected by a c
 
 \section{Luminosity and Flux}
 \label{sec:luminosity_and_flux}
-\textcolor{blue}{**DERIVATION FROM LARMOR THEOREM TO HEAD-ON LUMINOSITY**}
+
 Applying Larmor's theorem \cite{larmor1897lxiii,purcell1965electricity} in the relativistic generalization \cite{jackson1999classical} and following the derivation by Krafft and Priebe \cite{krafft2010compton}, the luminosity of an ICS source in the head-on ($\phi=0$) case can be derived. Larmor's theorem of radiated power in the relativistic generalisation is 
 \begin{equation}
 P_{rad} = \frac{\gamma^{4}e^{2}}{6\pi \epsilon_{0}c^{3}}\lvert\mathbf{\dot{v}}\rvert^{2} = \gamma\sigma\epsilon_{0}c\lvert\left(\mathbf{E}+\mathbf{v}\times\mathbf{B}\right)\mathbf{x}\left(t\right)\rvert^{2},
 \label{eq:larmor_formula}    
 \end{equation}
-where $e$ is the charge of an electron,  $\epsilon_{0}$ is the permitivity of free space, $c$ is the speed of light in a vacuum, $\lvert\mathbf{\dot{v}}\rvert$ is the acceleration of the electron in the laboratory frame, $\sigma$ is the Klein-Nishsina cross section \textcolor{blue}{**REPLACE THIS WITH LINKS TO THE CROSS SECTION SECTION**}, $\mathbf{E}$ and $\mathbf{B}$ are respectively the electric field and magnetic flux density of the incident laser, $\lvert\mathbf{v}\rvert$ is the velocity of the electron as it traverses the laser pulse and $\mathbf{x}\left(t\right)$ is the first order approximation of the orbit of the electron as it traverses the incident laser pulse. 
+where $e$ is the charge of an electron,  $\epsilon_{0}$ is the permitivity of free space, $c$ is the speed of light in a vacuum, $\lvert\mathbf{\dot{v}}\rvert$ is the acceleration of the electron in the laboratory frame, $\sigma$ is cross section of the electron--photon interaction (Eq.~\ref{eq:compton_cross_section}) as derived in Section~\ref{sec:electron_photon_interaction_cross_section}, $\mathbf{E}$ and $\mathbf{B}$ are respectively the electric field and magnetic flux density of the incident laser, $\lvert\mathbf{v}\rvert$ is the velocity of the electron as it traverses the laser pulse and $\mathbf{x}\left(t\right)$ is the first order approximation of the orbit of the electron as it traverses the incident laser pulse. 
 The total energy radiated by the electron $U_{e^{-}}$ in an electron - plane wave photon pulse interaction is given by \cite{krafft2010compton}
 
 \begin{equation}
@@ -416,7 +396,7 @@ where the $3/2$ factor originates from (Eq.~\ref{eq:cross_section_factor}), the 
 \section{Geometric Luminosity Reduction}
 \label{sec:geometric_luminosity_reduction}
 
-\textcolor{blue}{**EXAMPLE CALCULATION OF RAC AND RHG WOULD IMPROVE**}
+\textcolor{blue}{**EXAMPLE CALCULATION OF RAC AND RHG WOULD IMPROVE THIS** \\ **INCLUDE THE FULL INVESTIGATION HERE, i.e SHOW THE MIYAHARA REPLICATION}
 
 A generalization of the head-on ($\phi = 0$) luminosity in (Eq.~\ref{eq:head_luminosity}) to the case with an angular crossing ($\phi \neq 0$) can be performed, where the interaction geometry is modified and the transverse and longitudinal profiles of the interaction are adjusted. The effect of an angular crossing, which is assumed to be in the horizontal $x$ plane, can be expressed by a reduction factor $R_{AC}$ in two identical forms \cite{suzuki1976general,miyahara2008luminosity}
 
@@ -485,8 +465,6 @@ The combined reduction factor $R_{ACHG}$ must be evaluated numerically as no ana
 \end{equation}
 
 The luminosity of this result is given by $\mathcal{L} = R_{ACHG}\mathcal{L}_{\mathrm{HEAD-ON}}$, mirroring the form of the luminosity for the isolated angular crossing and hourglass effect. Naively, one would expect the luminosity to also be appropriately modelled by $\mathcal{L} = R_{AC}R_{HG}\mathcal{L}_{\mathrm{HEAD-ON}}$, however this is incorrect as a moderate crossing angle $\phi$ will shorten the interaction time between the laser pulse and electron beam such that the interaction length is of an order at which the electron bunch and laser pulse minimally diverge and the hourglass effect is negligible. Effectively a moderate crossing angle suppresses the hourglass effect.   
-
-\textcolor{blue}{**DO I INCLUDE THE FULL INVESTIGATION HERE, i.e SHOW THE MIYAHARA REPLICATION}
 
 \section{Source Size and Divergence}
 \label{sec:source_size_divergence}
@@ -639,6 +617,6 @@ The peak brilliance can also be constructed by modifying the average brilliance 
 \end{equation}
 where time averaging is introduced via the interaction time $\sigma_{\gamma,z}/c$ with $\sigma_{\gamma,z}$ the longitudinal source size (Eq.~\ref{eq:longitudinal_source_size}) and the no. photons scattered into a 0.1\% FWHM bandwidth given by $N_{0.1\%} = 3/2\times 10^{-3}\mathcal{F}$ with $\mathcal{F}$ the flux corrected for geometric luminosity reduction (Eq.~\ref{eq:flux_angular_crossing_hourglass}). The peak brilliance formula in (Eq.~\ref{eq:peak_brilliance}) is recoil corrected, applicable to a non-round transverse profile and to an angular crossing via the gemoetrical luminosity reduction (Eq.~\ref{eq:miyahara_combined_reduction}). However, unlike (Eq.~\ref{eq:hartemann_peak_brilliance}), the energy spread of the electron bunch and the spectral bandwidth of the laser pulse are neglected. 
 
-Comparison of (Eq.~\ref{eq:hartemann_peak_brilliance}) and (Eq.~\ref{eq:peak_brilliance}) has shown that the Hartemann and Brown peak brilliance is adequate for cases where interactions are head-on and recoil is small ($X \ll 1$) but unsatisfactory for non-round transverse electron bunch profiles or interactions which occur at an angle. Whilst the relative electron bunch energy spread is typically on the scale of $10^{-3}$--$10^{-4}$ (0.1--0.01\%), for example in cERL \cite{akagi2016narrow} ($\Delta E_{e}/E_{e}$ = 0.1\%) and in the MAX-III storage ring \cite{sjostrom2009max} ($\Delta E_{e}/E_{e}$ = 0.061\%), and the laser pulse is typically on the scale of $10^{-2}$--$10^{-5}$ (1--0.0001\%), for example in the cERL ICS experiment ($\Delta E_{L}/E_{L}$ = 0.006\%) \cite{akagi2016narrow} and for high-powered Ti:Sa laser systems ($\Delta E_{L}/E_{L}$ = 1.19\%) \cite{liu2021review}, this is a much smaller effects than an angular crossing, as evident from (Eq.~\ref{eq:angular_crossing_factor}) in Section~\ref{sec:geometric_luminosity_reduction}, where a 5\si{\degree} crossing angle results in a X\% reduction. Therefore, (Eq.~\ref{eq:peak_brilliance}) should be favoured in angular crossing ($\phi\neq 0$) situations unless the energy spread and spectral bandwidth are particularly large contrary to most ICS source designs. A case of asymmetric emittance can also not be handled by (Eq.~\ref{eq:hartemann_peak_brilliance}), therefore these must be calculated by (Eq.~\ref{eq:peak_brilliance}). Throughout this work the peak brillance calculation used will be noted.  
+Comparison of (Eq.~\ref{eq:hartemann_peak_brilliance}) and (Eq.~\ref{eq:peak_brilliance}) has shown that the Hartemann and Brown peak brilliance is adequate for cases where interactions are head-on and recoil is small ($X \ll 1$) but unsatisfactory for non-round transverse electron bunch profiles or interactions which occur at an angle. Whilst the relative electron bunch energy spread is typically on the scale of $10^{-3}$--$10^{-4}$ (0.1--0.01\%), for example in cERL \cite{akagi2016narrow} ($\Delta E_{e}/E_{e}$ = 0.1\%) and in the MAX-III storage ring \cite{sjostrom2009max} ($\Delta E_{e}/E_{e}$ = 0.061\%), and the laser pulse is typically on the scale of $10^{-2}$--$10^{-5}$ (1--0.001\%), for example in the cERL ICS experiment ($\Delta E_{L}/E_{L}$ = 0.006\%) \cite{akagi2016narrow} and for high-powered Ti:Sa laser systems ($\Delta E_{L}/E_{L}$ = 1.19\%) \cite{liu2021review}, this is a much smaller effects than an angular crossing, as evident from (Eq.~\ref{eq:angular_crossing_factor}) in Section~\ref{sec:geometric_luminosity_reduction}, where a 5\si{\degree} crossing angle results in a X\% reduction. Therefore, (Eq.~\ref{eq:peak_brilliance}) should be favoured in angular crossing ($\phi\neq 0$) situations unless the energy spread and spectral bandwidth are particularly large contrary to most ICS source designs. A case of asymmetric emittance can also not be handled by (Eq.~\ref{eq:hartemann_peak_brilliance}), therefore these must be calculated by (Eq.~\ref{eq:peak_brilliance}). Throughout this work the peak brillance calculation used, either (Eq.~\ref{eq:hartemann_peak_brilliance}) or(Eq.~\ref{eq:peak_brilliance}), will be noted in the footnotes of the relevant table.  
 
 \end{document}
