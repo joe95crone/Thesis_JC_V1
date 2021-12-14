@@ -55,39 +55,39 @@ where $p_{1}$ is the four-momenta of the incident electron, $k_{1}$ is the four-
 
 Motivated by the geometry of the inverse Compton scattering process as shown in Fig. \ref{fig:scattered_photon_kinematics}, we can write the initial photon $p_{1}$ and electron $k_{1}$ four-momenta
 \begin{align}
-p_{1} = \gamma m_{e}\left(c,\boldsymbol{v_{i}}\right),
+p_{1} &= \gamma m_{e}\left(c,\boldsymbol{v_{i}}\right),
 \label{eq:initial_four_vectors} \\
-k_{1} = \frac{E_{L}}{c}\left(1,\hat{n}_{i}\right), 
+k_{1} &= \frac{E_{L}}{c}\left(1,\hat{n}_{i}\right), 
 \end{align}
 where $E_{L}$ is the energy of the incident photon, $\hat{n}_{i}$ is the unit displacement three-vector of the incident photon, $\gamma$ is the Lorentz factor, $m_{e}$ is the mass of the electron, $c$ the speed of light in a vacuum and $\boldsymbol{v_{i}}$ is the velocity three-vector of the incident electron with magnitude $v_{i}$. Similarly, we can present the final electron and scattered photon states with four-momenta 
 \begin{align}
-p_{2} = \gamma' m_{e}\left(c,\boldsymbol{v_{f}}\right), \\
-k_{2} = \frac{E_{\gamma}}{c}\left(1,\hat{n}_{f}\right), 
+p_{2} &= \gamma' m_{e}\left(c,\boldsymbol{v_{f}}\right), \\
+k_{2} &= \frac{E_{\gamma}}{c}\left(1,\hat{n}_{f}\right), 
 \label{eq:final_four_vectors} 
 \end{align}
 where $E_{\gamma}$ is the scattered photon energy, $\hat{n}_{f}$ is the unit displacement three-vector of the scattered photon, $\gamma'$ is the Lorentz factor of the recoiling electron and $\boldsymbol{v_{f}}$ is the velocity three-vector of the recoiling electron with magnitude $v_{f}$.
 
 Using our four-momenta definitions (Eq.~\ref{eq:initial_four_vectors}-\ref{eq:final_four_vectors}), a  series of kinematic invariants (Mandelstam variables \cite{mandelstam1958determination}) can be determined for the photon-electron scattering process \cite{berestetskii1982quantum}
 \begin{align}
-s = \left(p_{1}+k_{1}\right)^{2} = \left(p_{2}+k_{2}\right)^{2},
+s &= \left(p_{1}+k_{1}\right)^{2} = \left(p_{2}+k_{2}\right)^{2},
 \label{eq:s_Mandelstam} \\
-t = \left(p_{1}-p_{2}\right)^{2} = \left(k_{2}-k_{1}\right)^{2},
+t &= \left(p_{1}-p_{2}\right)^{2} = \left(k_{2}-k_{1}\right)^{2},
 \label{eq:t_Mandelstam} \\
-u = \left(p_{1}-k_{2}\right)^{2} = \left(p_{2}-k_{1}\right)^{2}.
+u &= \left(p_{1}-k_{2}\right)^{2} = \left(p_{2}-k_{1}\right)^{2}.
 \label{eq:u_Mandelstam}
 \end{align}
 The kinematic invariants can be used to form more convenient Lorentz invariants
 \begin{align}
-X = \frac{s-\left(m_{e}c\right)^{2}}{\left(m_{e}c\right)^{2}},
+X &= \frac{s-\left(m_{e}c\right)^{2}}{\left(m_{e}c\right)^{2}},
 \label{eq:X_Mandelstam} \\
-Y = \frac{\left(m_{e}c\right)^{2}-u}{\left(m_{e}c\right)^{2}},
+Y &= \frac{\left(m_{e}c\right)^{2}-u}{\left(m_{e}c\right)^{2}},
 \label{eq:Y_Mandelstam}
 \end{align}
 which, when transformed into the geometry as shown in Fig.~\ref{fig:scattered_photon_kinematics}, can be re-wrote as
 \begin{align}
-X = \frac{2\gamma E_{L}\left(1-\beta\cos\phi'\right)}{m_{e}c^{2}},
+X &= \frac{2\gamma E_{L}\left(1+\beta\cos\phi\right)}{m_{e}c^{2}},
 \label{eq:X_geometry} \\
-Y = \frac{2\gamma E_{\gamma}\left(1-\beta\cos\theta\right)}{m_{e}c^{2}},
+Y &= \frac{2\gamma E_{\gamma}\left(1-\beta\cos\theta\right)}{m_{e}c^{2}},
 \label{eq:Y_geometry}
 \end{align}
 where $\beta = v/c$, the Lorentz speed factor.
@@ -102,12 +102,12 @@ The Lorentz invariant $X$ can also be termed the recoil parameter, which denotes
 \section{Non-linear Inverse Compton Scattering}
 
 The inverse Compton scattering process becomes non-linear when the the scattering is performed with a particularly intense source of incident photons. In inverse Compton scattering sources, where the scope of this work lies, the source of photons is commonly a laser pulse. The intensity of the incident photon source is typically characterised using the normalised laser vector potential $a_{0}$ which can be defined for both a Gaussian (Eq.~\ref{eq:a0_gaussian}) and flat-top (Eq.~\ref{eq:a0_flat_top}) pulse \cite{terzic2019improving}
-\begin{gather}
-a_{0} = \frac{e\sqrt{2c\mu_{0}}}{2\pi m_{e}c^{2}}\lambda\sqrt{\frac{E_{\mathrm{pulse}}}{\left(2\pi\right)^{3/2}\sigma_{L}^{2}t_{\mathrm{pulse}}}},
+\begin{align}
+a_{0} &= \frac{e\sqrt{2c\mu_{0}}}{2\pi m_{e}c^{2}}\lambda\sqrt{\frac{E_{\mathrm{pulse}}}{\left(2\pi\right)^{3/2}\sigma_{L}^{2}t_{\mathrm{pulse}}}},
 \label{eq:a0_gaussian} \\
-a_{0} = \frac{e\sqrt{2c\mu_{0}}}{2\pi m_{e}c^{2}}\lambda\sqrt{\frac{E_{\mathrm{pulse}}}{2\pi\sigma_{L}^{2}t_{\mathrm{pulse}}}},
+a_{0} &= \frac{e\sqrt{2c\mu_{0}}}{2\pi m_{e}c^{2}}\lambda\sqrt{\frac{E_{\mathrm{pulse}}}{2\pi\sigma_{L}^{2}t_{\mathrm{pulse}}}},
 \label{eq:a0_flat_top}
-\end{gather}
+\end{align}
 where $e$ is the charge of an electron, $\mu_{0}$ is the permeability of free space, $E_{\mathrm{pulse}}$ is the energy of the incident laser (or photon) pulse, $\sigma_{L}$ is the transverse \textit{rms} spot size (radius) of the laser pulse and $t_{pulse}$ is the \textit{rms} pulse duration. The normalised laser potential is sometimes expressed more empirically by $a_{0} \approx 0.855\times 10^{-9} \lambda\left[\mathrm{\mu m}\right]\sqrt{I\left[\mathrm{W/cm^{2}}\right]}$, where $I$ is the intensity of the incident photon pulse \cite{li2004high}.
 
 When $a_{0} \ll 1$ the inverse Compton scattering interaction is termed linear, once this limit is encroached non-linear effects begin to have an effect on an inverse Compton scattering source. Common effects are ponderomotive broadening of the resulting spectra \cite{krafft2004spectral}, harmonic generation of higher energy photons cite{sarachik1970classical,babzien2006observation} and multi-photon inverse Compton scattering \cite{bula1996observation}. Ponderomotive broadening and harmonic generation effects are possible with $a_{0}<1$ as their onset is also driven by other factors such as pulse length and shape, but for multi-photon inverse Compton scattering $a_{0}>1$. Unless explicitly stated, all equations within this work are derived for the linear regime as this is the regime the ICS sources presented are designed to operate.
@@ -141,26 +141,26 @@ The multi-photon inverse Compton scattering process was first conclusively demon
 \label{sec:derivation_of_the_scattered_photon_energy}
 
 The relation in (Eq.~\ref{eq:ICS_process}) can be modified in order to calculate the scattered photon energy of an electron - photon interaction. Using the four-momenta in (Eq.~\ref{eq:initial_four_vectors}-\ref{eq:final_four_vectors}) we can create Lorentz invariant quantities from the Minkowski norms of the four-momenta 
-\begin{gather}
-p_{1\mu}p_{1}^{\mu} = \gamma^{2}m_{e}^{2}\left(v^{2}-c^{2}\right) = -m_{e}^{2}c^{2},
+\begin{align}
+p_{1\mu}p_{1}^{\mu} &= \gamma^{2}m_{e}^{2}\left(v^{2}-c^{2}\right) = -m_{e}^{2}c^{2},
 \label{eq:lorentz_invariants1} \\
-k_{1\mu}k_{1}^{\mu} = 0.
+k_{1\mu}k_{1}^{\mu} &= 0.
 \label{eq:lorentz_invariants2}
-\end{gather}
+\end{align}
 
 We can multiply (Eq.~\ref{eq:ICS_process}) by the four-momentum  of the scattered photon and apply (Eq.~\ref{eq:lorentz_invariants2}) the Lorentz invariant 
-\begin{gather}
-k_{2}^{\mu}\left(p_{1\mu} + k_{1\mu}\right) = k_{2}^{\mu}\left(p_{2\mu} + k_{2\mu}\right), \\
-k_{2}^{\mu}p_{1\mu}+k_{2}^{\mu}k_{1\mu} = k_{2}^{\mu}p_{2\mu}.
+\begin{align}
+k_{2}^{\mu}\left(p_{1\mu} + k_{1\mu}\right) &= k_{2}^{\mu}\left(p_{2\mu} + k_{2\mu}\right), \\
+k_{2}^{\mu}p_{1\mu}+k_{2}^{\mu}k_{1\mu} &= k_{2}^{\mu}p_{2\mu}.
 \label{eq:apply_photon_pfinal}
-\end{gather}
+\end{align}
 
 Similarly we can construct another equation by inspecting the square of the conservation of four-momentum
-\begin{gather}
-\left(p_{1}+k_{1}\right)_{\mu}\left(p_{1}+k_{1}\right)^{\mu} = \left(p_{2}+k_{2}\right)_{\mu}\left(p_{2}+k_{2}\right)^{\mu}, \\
-p_{1\mu}p_{1}^{\mu}+k_{1\mu}p_{1}^{\mu}+k_{1\mu}p_{1}^{\mu}+k_{1\mu}k_{1}^{\mu} = p_{2\mu}p_{2}^{\mu}+k_{2\mu}p_{2}^{\mu}+p_{2\mu}k_{2}^{\mu}+k_{2\mu}k_{2}^{\mu},
+\begin{align}
+\left(p_{1}+k_{1}\right)_{\mu}\left(p_{1}+k_{1}\right)^{\mu} &= \left(p_{2}+k_{2}\right)_{\mu}\left(p_{2}+k_{2}\right)^{\mu}, \\
+p_{1\mu}p_{1}^{\mu}+k_{1\mu}p_{1}^{\mu}+k_{1\mu}p_{1}^{\mu}+k_{1\mu}k_{1}^{\mu} &= p_{2\mu}p_{2}^{\mu}+k_{2\mu}p_{2}^{\mu}+p_{2\mu}k_{2}^{\mu}+k_{2\mu}k_{2}^{\mu},
 \label{eq:apply_conservation_squared}
-\end{gather}
+\end{align}
 utilising the commutation of four-vectors ($p_{\mu}k^{\mu} = k_{\mu}p^{\mu}$) and our Lorentz invariants (Eq.~\ref{eq:lorentz_invariants1}, \ref{eq:lorentz_invariants2}) we can simplify this further 
 \begin{equation}
 p_{1\mu}k_{1}^{\mu} = p_{2\mu}k_{2}^{\mu}.
@@ -179,14 +179,14 @@ Which in three-vector notation is shown as
 \end{equation}
 
 However, (Eq.~\ref{eq:three_vector_solution}) should be presented in terms of the angles in Fig.~\ref{fig:scattered_photon_kinematics}. The dot products within this formula can be replaced using projections to introduce the angular dependencies
-\begin{gather}
-\hat{n}_{i}\cdot\hat{n}_{f} = \cos\theta',
+\begin{align}
+\hat{n}_{i}\cdot\hat{n}_{f} &= \cos\theta',
 \label{eq:projection_angle_incident_scattered_photon}\\
-\hat{n}_{f}\cdot \boldsymbol{v_{i}} = v_{i}\cos\theta,
+\hat{n}_{f}\cdot \boldsymbol{v_{i}} &= v_{i}\cos\theta,
 \label{eq:projection_scattering_angle}\\
-\hat{n}_{i}\cdot \boldsymbol{v_{i}} = v_{i}\cos\phi'.
+\hat{n}_{i}\cdot \boldsymbol{v_{i}} &= v_{i}\cos\phi'.
 \label{eq:projection_pi_minus_crossing_angle}
-\end{gather}
+\end{align}
 
 Upon introducing the projections (Eq.~\ref{eq:projection_angle_incident_scattered_photon}, \ref{eq:projection_scattering_angle}, \ref{eq:projection_pi_minus_crossing_angle}), (Eq.~\ref{eq:three_vector_solution}) becomes
 \begin{equation}
@@ -200,20 +200,16 @@ E_{\gamma} = \frac{\left(1-\beta\cos\phi'\right)E_{L}}{1-\beta\cos\theta+\left(1
 \end{equation}
   
 In the head-on case ($\phi=0$), (Eq.~\ref{eq:scattered_photon_energy}) can be simplified to 
-
 \begin{equation}
 E_{\gamma} = \frac{\left(1+\beta\right)}{1-\beta\cos\theta-\left(\beta-E_{L}/E_{e}\right)\cos\theta},
 \label{eq:headon_scattered_photon_energy}
 \end{equation}
-
 further simplification by the small angle approximation ($\theta \ll 1$) and for an ultra-relativistic electron beam ($\beta \rightarrow 1$) yields
-
 \begin{equation}
 E_{\gamma} \approx \frac{4\gamma^{2}E_{L}}{1+\gamma^{2}\theta^{2}+X},    
 \label{eq:small_angle_scattered_photon_energy}
 \end{equation}
 where the recoil term $X$ is given by (Eq.~\ref{eq:X_headon}). Extending this to backscattering of the incident photon ($\theta = 0$), the scattered photon energy becomes
-
 \begin{equation}
 E_{\gamma} = \frac{4\gamma^{2}E_{L}}{1+X},
 \label{eq:headon_backscattering_scattered_photon_energy}
@@ -229,6 +225,19 @@ E_{\gamma} = 4\gamma^{2}E_{L}.
 
 \textcolor{blue}{**START FROM FIRST PRINCIPLES** \\ **PUT IN THE POLARISATION STUFF TOO**\\ **EXPLAIN CROSS SECTION ANGLE CORRESPONDENCE TOO** \\ **NEED DIAGRAMS TOO + SET OUT THE CO-ORD SYSTEM**}
 
+The co-ordinate system in Fig.~\ref{fig:scattered_photon_kinematics} can be extended to a full 3D representation in Fig.~\ref{fig:3D_coord_system}, with an incident electron $p_{1}$ parallel to the $z$-axis interacting with an incident photon $k_{1}$ travelling anti-parallel, with a crossing angle $\phi$ in the $x$-$z$ plane, scattering a photon $k_{2}$ at a polar angle $\theta$ and azimuthal angle $\phi_{f}$.  
+\textcolor{blue}{\\**EXPLAIN LOCAL CO-ORDINATE SYSTEMS**}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/SunPolarisationScatteringDiagram.pdf}
+\caption{}
+\label{fig:3D_coord_system}
+\end{figure}
+\textcolor{blue}{**BETTER HOMEMADE DIAGRAM IS REQUIRED**}
+
+\textcolor{blue}{**EXTRA EXPLANATION ON HOW TO GET HERE**}
+The double differential cross section with respect to any polarisation of the incident and scattered photons and an unpolarised or arbitrarily polarised electron is given by 
 \begin{multline}
 \frac{d^{2}\sigma}{dYd\phi_{f}} = \frac{2r_{e}^{2}}{X}\left\{\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)  -\left(\xi_{3}+\xi_{3}'\right)\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right] \right.\\\left. +\xi_{1}\xi_{1}'\left(\frac{1}{X}-\frac{1}{Y}+\frac{1}{2}\right) + \xi_{2}\xi_{2}'\left[\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\left(1+\frac{2}{X}-\frac{2}{Y}\right)\right] \right.\\\left. + \xi_{3}\xi_{3}'\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{2}\right] \right\}
 \label{eq:polarisation_differential_cross_section}    
@@ -240,7 +249,9 @@ where the initial incident photon Stokes parameters $\xi_{i}$ are given by \text
 \xi_{3} &= -P_{t}\cos\left(2\tau-2\phi_{f}\right)\sin\phi
 \label{eq:incident_stokes_parameters}    
 \end{align}
-where, using the same co-ordinate system as Sun and Wu \cite{sun2009characterizations,sun2011theoretical}, $P_{t}$ is the degree of linear polarisation, $P_{c}$ is the degree of circular polarisation, $\tau$ is the azimuthal angle of the linear polarisation, $\phi_{f}$ is the azimuthal scattering angle, $\phi$ is the crossing angle in the $x$--$z$ plane and $\xi_{i}'$ are the final scattered photon Stokes parameters. Assuming we are ambivalent over the polarisation state of the scattered photons i.e scattered photons are not discriminated on the basis of polarisation from an ICS interaction, we can calculate the cross section by setting $\xi_{i}' = 0 ~\left(i=1,~2,~3\right)$. Making this assumption, the double differential cross section (Eq.~\ref{eq:polarisation_differential_cross_section}) reduces to
+where, using the same co-ordinate system as Sun and Wu \cite{sun2009characterizations,sun2011theoretical}, $P_{t}$ is the degree of linear polarisation, $P_{c}$ is the degree of circular polarisation, $\tau$ is the azimuthal angle of the linear polarisation, $\phi_{f}$ is the azimuthal scattering angle, $\phi$ is the crossing angle in the $x$--$z$ plane and $\xi_{i}'$ are the final scattered photon Stokes parameters. \textcolor{blue}{\\**BETTER DESCRIBE POLARISATION HERE**}
+
+Assuming, for the purposes of a general cross section formula, we are ambivalent over the polarisation state of the scattered photons i.e scattered photons are not discriminated on the basis of polarisation from an ICS interaction, the cross section can be derived by setting $\xi_{i}' = 0 ~\left(i=1,~2,~3\right)$. Making this assumption, the double differential cross section (Eq.~\ref{eq:polarisation_differential_cross_section}) reduces to
 \begin{equation}
 \frac{d^{2}\sigma}{dYd\phi_{f}} =  \frac{4r_{e}^{2}}{X^{2}}\left[1+P_{t}\cos\left(2\tau-2\phi_{f}\right)\right]\left\{\left(1-\xi_{3}\right)\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right]+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\right\},
 \label{eq:double_differential_cross_section}    
@@ -351,7 +362,7 @@ U_{\gamma} = \gamma^{2}\left(1+\beta\right)\sigma E_{L}\int c\left(1+\beta\right
 \label{eq:total_interaction_energy}
 \end{equation}
 where $n_{e}\left(\mathbf{r},\mathbf{p},t\right) = N_{e}f_{e}\left(\mathbf{r},\mathbf{p},t\right)$ is the  electron bunch intensity function as a function of the displacement vector $\mathbf{r}$ (integrated over volume $V$), momentum vector $\mathbf{p}$ and time $t$ with $N_{e}$ the number of electrons per bunch and $E_{L}n_{L} = E_{L}N_{L}f_{L}\left(\mathbf{r},\mathbf{k},t\right)$ the energy density distribution of the laser pulse where $E_{L}$ is the incident photon energy, $N_{L}$ is the number of photons in the incident laser pulse and $f_{L}\left(\mathbf{r},\mathbf{k},t\right)$ is the laser pulse intensity function as a function of the displacement vector $\mathbf{r}$, momentum vector $\mathbf{k}$ and time $t$. Within this derivation, the laser pulse and electron bunch are approximated by Gaussian intensity distributions, however any model such as flat-top laser pulses or Lorentzian distributed electron bunches could be substituted. The Gaussian intensity distributions of the electron bunch and laser pulse are given by \cite{sun2011theoretical}
-\begin{gather}
+\begin{gather} % has to be gather to fit
 f_{e}\left(\mathbf{r},\mathbf{p},t\right) = \frac{1}{\left(2\pi\right)^{3}\varepsilon_{x}\varepsilon_{y}\sigma_{p}\sigma_{z,e}}\exp\left[-\frac{\gamma_{x}x^{2}+\alpha_{x}xx'+\beta_{x}x'^{2}}{2\varepsilon_{x}}-\frac{\gamma_{y}y^{2}+2\alpha_{y}yy'+\beta_{y}y'^{2}}{2\varepsilon_{y}}\right.\\\left.-\frac{\left(p-p_{0}\right)^{2}}{2\sigma_{p}^{2}}-\frac{\left(z-ct\right)^{2}}{2\sigma_{z,e}^{2}}\right], \nonumber
 \label{eq:electron_gaussian_intensity_distribution} \\
 f_{L}\left(\mathbf{r},\mathbf{k},t\right) = \frac{1}{4\pi^{2}\sigma_{z,L}\sigma_{k}\sigma_{w}^{2}}\exp\left[-\frac{x_{L}^{2}+y_{L}^{2}}{2\sigma_{w}^{2}}-\frac{z_{L}+ct}{2\sigma_{z,L}^{2}}-\frac{\left(k-k_{0}\right)}{2\sigma_{k}^{2}}\right],
@@ -365,11 +376,11 @@ where $\varepsilon_{x/y}$ is the emittance of the electron beam in the $x$ and $
 with $\sigma_{L}$ the transverse \textit{rms} spot size of the laser pulse and $z_{R} = 4\pi\sigma_{L}^{2}/\lambda$ the Rayleigh range \cite{siegmann1986lasers} of a laser pulse of wavelength $\lambda$.
 
 The head-on Gaussian luminosity of the interaction can then be separated from the other terms in (Eq.~\ref{eq:total_interaction_energy}), assuming the interaction takes place at the waists of both pulse and bunch, by splitting the spatial terms from the energy spread terms in the electron bunch $f_{e}\left(\mathbf{r},\mathbf{p},t\right) = f_{e}\left(\mathbf{r},t\right)f_{e}\left(\mathbf{p}\right)$ and laser pulse $f_{L}\left(\mathbf{r},\mathbf{k},t\right) = f_{L}\left(\mathbf{r},t\right)f_{L}\left(\mathbf{f}\right)$ of the intensity functions (Eq.~\ref{eq:electron_gaussian_intensity_distribution},~\ref{eq:laser_gaussian_intensity_distribution}) 
-\begin{gather}
-\mathcal{L}_{\mathrm{HEAD-ON}} = N_{e}N_{L}c\left(1+\beta\right)\int f_{e}\left(\mathbf{r},t\right)f_{L}\left(\mathbf{r},t\right)~dV~dt, \\
-\mathcal{L}_{\mathrm{HEAD-ON}} = \frac{N_{e}N_{L}}{2\pi\sqrt{\sigma_{x,e}^{2}+\sigma_{x,L}^{2}}\sqrt{\sigma_{y,e}^{2}+\sigma_{y,L}}} = \frac{N_{e}N_{L}}{2\pi\sigma_{x}\sigma_{y}},
+\begin{align}
+\mathcal{L}_{\mathrm{HEAD-ON}} &= N_{e}N_{L}c\left(1+\beta\right)\int f_{e}\left(\mathbf{r},t\right)f_{L}\left(\mathbf{r},t\right)~dV~dt, \\
+\mathcal{L}_{\mathrm{HEAD-ON}} &= \frac{N_{e}N_{L}}{2\pi\sqrt{\sigma_{x,e}^{2}+\sigma_{x,L}^{2}}\sqrt{\sigma_{y,e}^{2}+\sigma_{y,L}}} = \frac{N_{e}N_{L}}{2\pi\sigma_{x}\sigma_{y}},
 \label{eq:headon_luminosity}
-\end{gather}
+\end{align}
 where $\sigma_{i}(i=x,y,z) = \sqrt{\sigma_{i,e}^{2}+\sigma_{i,L}^{2}}$ is the convolution of the laser pulse and electron bunch spot sizes at the IP. The luminosity in (Eq.~\ref{eq:headon_luminosity}) is analogous to particle collider luminosity \cite{herr2006concept,miyahara2008luminosity}, reflecting the electron--photon collider analogy of ICS sources. We can then neglect the energy spreads of the electron bunch and laser pulse as these have already been adequately taken into account by using the average cross-section $\sigma$, which already encapsulates the variation in interactions due to energy variations. Therefore, the energy radiated by the interaction of a Gaussian laser pulse and electron bunch becomes  
 
 \begin{equation}
@@ -395,8 +406,6 @@ where the $3/2$ factor originates from (Eq.~\ref{eq:cross_section_factor}), the 
 
 \section{Geometric Luminosity Reduction}
 \label{sec:geometric_luminosity_reduction}
-
-\textcolor{blue}{ **INCLUDE THE FULL INVESTIGATION HERE, i.e SHOW THE MIYAHARA REPLICATION}
 
 A generalization of the head-on ($\phi = 0$) luminosity in (Eq.~\ref{eq:headon_luminosity}) to the case with an angular crossing ($\phi \neq 0$) can be performed, where the interaction geometry is modified and the transverse and longitudinal profiles of the interaction are adjusted. The effect of an angular crossing, which is assumed to be in the horizontal $x$ plane, can be expressed by a reduction factor $R_{AC}$ in two identical forms \cite{suzuki1976general,miyahara2008luminosity}
 
@@ -444,18 +453,27 @@ R_{ACHG} = \int_{-\infty}^{\infty}\frac{H\exp\left(-hZ_{c}^{2}\right)}{\sqrt{\si
 \label{eq:miyahara_combined_reduction}    
 \end{equation}
 where $Z_{c}$ is the integration variable, the parameters $H$ and $h$ are given by
-\begin{gather}
-H = \cos\phi\sqrt{\frac{\sigma_{x}^{2}\sigma_{y}^{2}}{\pi\sigma_{z}^{2}}},
+\begin{align}
+H &= \cos\phi\sqrt{\frac{\sigma_{x}^{2}\sigma_{y}^{2}}{\pi\sigma_{z}^{2}}},
 \label{eq:miyahara_H_parameter} \\
-h = \frac{\sin^{2}\phi}{\sigma_{x}^{2}+\langle U_{x}^{2}\rangle Z_{c}^{2}}+\frac{\cos^{2}\phi}{\sigma_{z}^{2}},
+h &= \frac{\sin^{2}\phi}{\sigma_{x}^{2}+\langle U_{x}^{2}\rangle Z_{c}^{2}}+\frac{\cos^{2}\phi}{\sigma_{z}^{2}},
 \label{eq:miyahara_h_parameter}
-\end{gather}
+\end{align}
 and the divergence term $\langle U_{x/y}^{2}\rangle$ of the electron bunch - laser pulse interaction is
 \begin{equation}
 \langle U_{x/y}^{2}\rangle = \frac{\left(\sigma_{x/y,e}^{2}/\beta_{x/y}^{*2}\right)+\left(\sigma_{L}^{2}/z_{R}^{2}\right)}{2}.    
 \end{equation}
 The combined reduction factor $R_{ACHG}$ must be evaluated numerically as no analytical solutions exist for this function.
 For example, for a Nd:YAG laser ($\lambda = 1064$~\si{\nano\meter}) with a 5~\si{\pico\second} pulse duration and a $\sigma_{L} = 30$~\si{\micro\meter} spot size radius interacting with a 500~\si{\mega\electronvolt} kinetic energy electron bunch with a transverse \textit{rms} spot size of 10~\si{\micro\meter} with an \textit{rms} electron bunch length $\sigma_{e,z} = 0.5$~\si{\milli\meter} interaction at a 5\si{\degree} crossing angle the angular crossing luminosity factor becomes $R_{AC} = 0.22$, a factor $\sim5$ reduction in luminosity. The reduction in luminosity for this case is identical to the angular crossing reduction $R_{ACHG}\approx R_{AC}$ as the crossing angle reduces the interaction time and is consequently the dominant factor in geometric luminosity reduction.
+
+The geometric luminosity reduction calculation (Eq.~\ref{eq:miyahara_combined_reduction}) has been extensively benchmarked and the results of Miyahara's paper \cite{miyahara2008luminosity} have been replicated. Fig.~\ref{fig:miyahara_benchmarking} shows the replication of Fig.~6 of Miyahara's work \cite{miyahara2008luminosity} based on the Table~1 parameters, using \textsc{Mathematica} with trapezium rule integration to numerically evaluate (Eq.~\ref{eq:miyahara_combined_reduction}).
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/miyahara_benchmarking.pdf}
+\caption{Benchmarking of (Eq.~\ref{eq:miyahara_combined_reduction}) with the results of Miyahara \cite{miyahara2008luminosity}, for the Table~1 parameters and results shown in Fig.~6 of the paper. Other equations are also benchmarked such as (Eq.~\ref{eq:angular_crossing_factor}) and (Eq.~\ref{eq:furman_hourglass_reduction_analytical}). Left: Replication plot showing the angular crossing reduction $R_{AC}$ (black), hourglass reduction $R_{HG}$ (green), crudely combined reduction $R_{AC}\timesR_{HG}$ (red) and combined reduction $R_{ACHG}$ (blue). Right: Reproduction of Fig.~6 of Miyahara \cite{miyahara2008luminosity} showing the angular crossing $R_{AC}$ (red dashed circles), hourglass effect $R_{HG}$ (red dashed triangles), crude combination $R_{AC}\timesR_{HG}$ (red solid) and combined $R_{ACHG}$ (black) reduction factors.}
+\label{fig:miyahara_benchmarking}
+\end{figure}
+Inspection of the two plots in Fig.~\ref{fig:miyahara_benchmarking} shows that they are identical with no disagreement visible. Therefore, (Eq.~\ref{eq:miyahara_combined_reduction}) is a reliable method to account for the angular crossing and hourglass effect luminosity reduction factors. 
 
 The flux in the case of an angular collision with non-negligible divergence of electron bunches and laser pulses (hourglass effect) is given by
 \begin{equation}
