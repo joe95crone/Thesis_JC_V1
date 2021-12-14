@@ -597,7 +597,23 @@ The optimisation operates using the \textsc{NMaximise} maximisation routine in \
 The NMaximise function aims to produce a global maximum, via minimising the inverse of the objective function i.e. minimising $-\mathcal{F}_{\mathrm{col}}$ subject to the $\Omega = 0$ penalty function (Eq.~\ref{eq:penalty_function}) constraint with a small tolerance ($\Omega < 10^{-5}$) subject to the other bounds on the variables; the arbitrary $\beta$-function at the IP in each plane upper bounds and the collimation angle upper bound (Eq.~\ref{eq:collimation_angle_upper_bound}). The downhill simplex method, detailed earlier in this section, is applied to minimise the negative collimated flux with 200 maximum iterations. The ReflectRatio, ExpandRatio, ContractRatio and ShrinkRatio parameters \textcolor{blue}{**MENTION THAT THESE CORRESPOND TO THE CONSTANTS**} \cite{wolfram2021nmaximize} of the simplex method are set to their default values as this was found to be sufficient to optimise all of the cases in Table~\ref{tab:char_opt_electron_bunch_parameters}.
 
 \textcolor{blue}{**RESULTS**}
-\textcolor{blue}{\textbf{**SHOW PLOTS OF THE 3 CASES TUNING CURVES (Fcol-rmsBW)**}}
+\textcolor{blue}{\textbf{**SHOW PLOTS OF THE 3 CASES TUNING CURVES (Fcol-rmsBW)**} \\ **TALK ABOUT THESE PLOTS** \\ **TRY TO REMEDY THE SHIT CASE C**}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/Case_A_simplex_Tuning_Curves.pdf}
+\caption{}
+\label{fig:case_A_simplex_tuning_curves}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/Case_B_simplex_Tuning_Curves.pdf}
+\caption{}
+\label{fig:case_B_simplex_tuning_curves}
+\end{figure}
+
+\textcolor{blue}{**SORT OUT CASE C**}
 
 \section{Evaluation of Optimisation Methods} 
 \label{sec:evaluation_of_optimisation_methods}
