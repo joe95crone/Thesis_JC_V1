@@ -429,16 +429,17 @@ The collimated flux $\mathcal{F}_{\mathrm{col}}$ (Eq.~\ref{eq:collimated_flux}) 
 \caption{Case A (see Table~\ref{tab:char_opt_electron_bunch_parameters}) tuning curves in both solution space ($\mathcal{F}_{\mathrm{col}}$--$\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{rms}}$) and parameter space ($\beta^{*}$--$\theta_{\mathrm{col}}$), using the round beam optimisation method. Left: Solution space plot showing the Pareto-optimal front. Right: Parameter space plot showing the optimal variable front. Wide-band solutions favour large collimation angle and small $\beta$-function at the IP (collimation dominated), narrow-band solutions favour small collimation angle and and large $\beta$-function at the IP (emittance dominated).}
 \label{fig:CaseA_RB_tuning_curve}
 \end{figure}
+
 \textcolor{blue}{**TALK ABOUT CASE A RB TUNING CURVES**\\}
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/Case_C_RB_Tuning_Curves.pdf}
 \caption{Case C (see Table~\ref{tab:char_opt_electron_bunch_parameters}) tuning curves in both solution space ($\mathcal{F}_{\mathrm{col}}$--$\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{rms}}$) and parameter space ($\beta^{*}$--$\theta_{\mathrm{col}}$), using the round beam optimisation method. Left: Solution space plot showing the Pareto-optimal front. Right: Parameter space plot showing the variable front corresponding to the Pareto-optimal front in solution space. Narrow-band solutions favour small collimation angle and and large $\beta$-function at the IP (emittance dominated), whereas wide-band solutions favour large collimation angle and small $\beta$-function at the IP (collimation dominated).}
 \label{fig:CaseC_RB_tuning_curve}
 \end{figure}
-\textcolor{blue}{**TALK ABOUT CASE C RB TUNING CURVES**\\}
 
-\textcolor{blue}{\textbf{**SHOW A PLOT OF EACH CASE TUNING CURVE (Fcol-rmsBW) IN RB APPROXIMATION**}}
+\textcolor{blue}{**TALK ABOUT CASE C RB TUNING CURVES**\\}
 
 \section{2D Non-Round Beam Optimisation}
 \label{sec:NRB_optimisation}
@@ -628,8 +629,6 @@ Single point bandwidth optimisations have been used to compare optimisation meth
 
 Comparison between the investigated optimisation methods will determine if optimising the transverse dynamics for maximal collimated flux in a narrow bandwidth is a worthwhile strategy and ascertain the benefit of using a non-round beam optimisation, beyond the obvious advantage that RB optimisation is only applicable when certain criteria are satisfied. Through examination of the variables at the optimal solution source design can be further understood and the question of whether a round transverse profile is optimal can be answered.      
 
-\textcolor{blue}{**INCLUDE THE FLUX IN A 0.1\% FWHM BANDWIDTH SCALED** }
-
 \begin{table}[!h]
 \centering
 \caption{Single point optimisations for the transverse profile matching (TPM), round beam (RB), non-round beam simplex (NRB simplex) and non-round beam genetic algorithm (NRB GA) methods of all cases. \textit{Rms} bandwidths of 0.5\% (Case A), 2\% (Case B), 0.5\% (Case C) are chosen to evaluate the single point optimisation methodologies for each individual case.}
@@ -688,21 +687,21 @@ optimiser with a non-derivative-based heuristic optimisation method \cite{jones2
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/CaseAoptcomp.pdf}
-\caption{}
+\caption{Comparison of the three optimisation methods: RB (black), GA NRB (red) and simplex NRB (blue), trialed in high flux narrowband ICS optimisation via transverse electron bunch profile studies for the case A parameters (see Table~\ref{tab:char_opt_electron_bunch_parameters}). Top Left: Solution space ($\mathcal{F}_{\mathrm{col}}$--$\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{rms}}$) Pareto-optimal fronts. Top Right: Parameter space ($\beta_{x}^{*}$--$\beta_{y}^{*}$) variable fronts corresponding to the Pareto-optimal fronts in solution space. Bottom Left: Parameter space ($\beta_{x}^{*}$--$\theta_{\mathrm{col}}$) variable fronts corresponding to the Pareto-optimal fronts in solution space. Bottom Right: Parameter space ($\beta_{y}^{*}$--$\theta_{\mathrm{col}}$) variable fronts corresponding to the Pareto-optimal fronts in solution space.}
 \label{eq:case_A_optimisation_comparison}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/CaseBoptcomp.pdf}
-\caption{}
+\caption{\textcolor{blue}{**WROTE WITH SIMPLEX DISCOUNTED, NEED STATEMENT ON THIS?**} Comparison of the two optimisation methods: RB (black) and GA NRB (red), trialed in high flux narrowband ICS optimisation via transverse electron bunch profile studies for the case B parameters (see Table~\ref{tab:char_opt_electron_bunch_parameters}). Top Left: Solution space ($\mathcal{F}_{\mathrm{col}}$--$\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{rms}}$) Pareto-optimal fronts. Top Right: Parameter space ($\beta_{x}^{*}$--$\beta_{y}^{*}$) variable fronts corresponding to the Pareto-optimal fronts in solution space. Bottom Left: Parameter space ($\beta_{x}^{*}$--$\theta_{\mathrm{col}}$) variable fronts corresponding to the Pareto-optimal fronts in solution space. Bottom Right: Parameter space ($\beta_{y}^{*}$--$\theta_{\mathrm{col}}$) variable fronts corresponding to the Pareto-optimal fronts in solution space.}
 \label{fig:case_B_optimisation_comparison)}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/CaseCoptcomp.pdf}
-\caption{}
+\caption{Comparison of the three optimisation methods: RB (black), GA NRB (red) and simplex NRB (blue), trialed in high flux narrowband ICS optimisation via transverse electron bunch profile studies for the case C parameters (see Table~\ref{tab:char_opt_electron_bunch_parameters}). Top Left: Solution space ($\mathcal{F}_{\mathrm{col}}$--$\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{rms}}$) Pareto-optimal fronts. Top Right: Parameter space ($\beta_{x}^{*}$--$\beta_{y}^{*}$) variable fronts corresponding to the Pareto-optimal fronts in solution space. Bottom Left: Parameter space ($\beta_{x}^{*}$--$\theta_{\mathrm{col}}$) variable fronts corresponding to the Pareto-optimal fronts in solution space. Bottom Right: Parameter space ($\beta_{y}^{*}$--$\theta_{\mathrm{col}}$) variable fronts corresponding to the Pareto-optimal fronts in solution space.}
 \label{fig:case_C_optimisation_comparision}
 \end{figure}
 
