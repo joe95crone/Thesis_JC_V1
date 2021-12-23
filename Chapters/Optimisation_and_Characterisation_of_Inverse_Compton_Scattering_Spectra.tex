@@ -323,7 +323,7 @@ To benchmark the \textsc{ICARUS} spectrum code, the \textsc{ICCS3D} code \cite{k
 
 The \textsc{ICCS3D} spectrum code, a generalization of the \textsc{ICCS} code \cite{krafft2016laser,ranjan2018simulation}, computes radiation produced in ICS within the linear Compton regime (when $a_{0}\ll 1$, and electron recoil is properly accounted for). In \textsc{ICCS3D}, a 3D laser pulse model replaces the 1D plane wave model used in \textsc{ICCS}. This modification is implemented in a manner described in Terzi\'c et al \cite{terzic2019improving}; instead of all electrons experiencing the same laser field strength $a_{0}$, as they do for a 1D plane wave, their effective laser field strength is dependent on the electron's distance from the laser's center at the moment of scattering. To calculate anticipated spectral output, in addition to the laser parameters, \textsc{ICCS3D} can use either the parameters of the electron beam or an arbitrary electron distribution -- which could be tracked through the accelerator driver -- allowing start-to-end simulation of ICS sources. 
 
-\textcolor{blue}{**CASE PLOTS OF SPECTRA AGAINST ICCS3D SPECTRA** \\ **NEED CONFIRMATION OF THE CASES** \\ **SQUARE AND CIRCULAR COLLIMATION COMPARISON - CHECK THIS IS MENTIONED** \\ **NEED TO MAKE SPECTRA PLOTS** \\ **NEED TO GET THE ICCS3D PLOTS** \\ **TALK ABOUT THE PLOTS**}
+\textcolor{blue}{**CASE PLOTS OF SPECTRA AGAINST ICCS3D SPECTRA** \\ **NEED CONFIRMATION OF THE CASES** \\ **SQUARE AND CIRCULAR COLLIMATION COMPARISON - CHECK THIS IS MENTIONED** \\ **NEED TO MAKE SPECTRA PLOTS** \\ **NEED TO GET THE ICCS3D PLOTS** \\ **TALK ABOUT THE PLOTS** \\ **CREATE A BENCHMARKING TABE WHICH COMPARES METHODS F0.1\%, ME, CURATOLO, SMALL ANGLE $\mathcal{F}_{\mathrm{col}} = 3/2\mathcal{F}\gamma^{2}\theta^{2}$}
 
 \begin{figure}[!h]
 \centering
@@ -628,16 +628,15 @@ Fig.~\ref{fig:case_B_simplex_tuning_curves} shows the Pareto-optimal front in so
 
 The parameter space tuning curve of the $\beta$-functions at the interaction point corresponding to the Pareto-optimal front show that the optimal configuration for radiation production in the 0--3\% \textit{rms} bandwidth is a non-round electron bunch transverse profile. The $\beta$-function in the $x$-plane is much larger than the $\beta$-function in the $y$ plane, for example at extreme emittance dominated narrow band case ($\beta_{x}^{*}\sim87$~\si{\meter}, $\beta_{y}^{*} \sim1$~\si{\meter}) the transverse electron bunch profile radius is $\sigma_{x,e} =1.09$~\si{\milli\meter} in the $x$ plane, and $\sigma_{y,e} =13.03$~\si{\micro\meter} in the $y$ plane-- a factor of $\sim100$ smaller.
 
-\textcolor{blue}{**FINISH DESCRIBING THE ELBOW PLOTS**}
-The parameter space optimal front in Fig.~\ref{fig:case_B_simplex_tuning_curves} shows the typical elbow shape for the $\beta_{x}^{*}$--$\theta_{\mathrm{col}}$ tuning curve, however many solutions exist for $\theta_{\mathrm{col}} > 0.1$~\si{\milli\radian} which differ from the trend. The solutions that vary from the trend could be a signal of insensitivity of the optimisation to $\beta_{x}^{*}$ or are the result of local minima within the optimisations. The elbow shape is not visible due to the small optimal $\beta_{y}^{*}$ values in the $\beta_{y}^{*}$--$\theta_{\mathrm{col}}$ parameter space. Solutions are visible in $\beta_{y}^{*}$--$\theta_{\mathrm{col}}$ which are anomalies in the overall trend. 
-
+The parameter space optimal front in Fig.~\ref{fig:case_B_simplex_tuning_curves} shows the typical elbow shape for the $\beta_{x}^{*}$--$\theta_{\mathrm{col}}$ tuning curve, however many solutions exist for $\theta_{\mathrm{col}} > 0.1$~\si{\milli\radian} which differ from the trend. The solutions that vary from the trend could be a signal of insensitivity of the optimisation to $\beta_{x}^{*}$ or are the result of local minima within the optimisations. The elbow shape is not visible due to the small optimal $\beta_{y}^{*}$ values in the $\beta_{y}^{*}$--$\theta_{\mathrm{col}}$ parameter space. High $\beta_{y}^{*}$ solutions are not beneficial for producing narrowband radiation in the emittance dominated regime because the $x$-plane interaction dynamics dominate due to the larger emitttance. Solutions are visible in $\beta_{y}^{*}$--$\theta_{\mathrm{col}}$ which are anomalies in the overall trend. 
 
 \textcolor{blue}{**SORT OUT CASE C**}
 
 \section{Evaluation of Optimisation Methods} 
 \label{sec:evaluation_of_optimisation_methods}
 
-Optimisations have been performed for each of the cases in Table~\ref{tab:char_opt_electron_bunch_parameters} using the laser parameters in Table~\ref{tab:char_opt_laser_pulse_parameters} using the RB (Section~\ref{sec:RB_optimisation}), GA NRB and simplex NRB (Section~\ref{sec:NRB_optimisation} methods. Obviously, since case B electron bunch parameters don't fulfill the round beam optimisation criteria ($\epsilon_{nx} = \epsilon_{ny} = \epsilon_{n}$) it has been excluded from these methods. Within this section the optimisation methods will be compared through both single point and tuning curve optimisations, to both study the effect of optimisation hollistically on source optimisation, quantify the advantage of higher dimensional optimisation and examine the methods against eachother.   
+Optimisations have been performed for each of the cases in Table~\ref{tab:char_opt_electron_bunch_parameters} using the laser parameters in Table~\ref{tab:char_opt_laser_pulse_parameters} using the RB (Section~\ref{sec:RB_optimisation}), GA NRB and simplex NRB (Section~\ref{sec:NRB_optimisation} methods. Since case B electron bunch parameters don't fulfill the round beam optimisation criteria ($\epsilon_{nx} = \epsilon_{ny} = \epsilon_{n}$) it has been excluded from these methods. Within this section the optimisation methods will be compared through both single point and tuning curve optimisations, to study the effect of optimisation hollistically towards narrowband radiation production, quantify the advantage of higher dimensional optimisation (from round to non-round transverse profiles) and examine the feasibility of each optimisation method. The reality of applying these optimisation techniques in practice requires further studies; for example accelerator jitter may impede the achievement of the optimised electron bunch transverse profile at the interaction point and the effect of this error on source performance needs to be quantified.   
+
 
 \textcolor{blue}{**EVALUATE WHETHER simplex METHOD WORKS AS A GLOBAL OPTIMISER IN THIS CASE** \\ **MENTION THAT FURTHER WORK NEEDS TO BE CONDUCTED INTO HOW ACHIEVABLE THIS IS IN AN ICS SOURCE - JITTER + ERROR STUDIES** \\}
 
@@ -700,7 +699,11 @@ optimiser with a non-derivative-based heuristic optimisation method \cite{jones2
 
 \subsection{Tuning Curve Optimisations}
 
+Comparison of tuning curve optimisations via different optimisation methods for the three test cases in Table~\ref{tab:char_opt_electron_bunch_parameters} allows the methods themselves to be evaluated on their efficacy at mapping out the possible parameter and solution spaces of an ICS source. 
+\textcolor{blue}{**NEED A GOOD BLURB BUT STRUGGLING**}
+
 \textcolor{blue}{**4-PANE TUNING CURVE OPTIMISATION PLOTS COMPARING ALL METHODS FOR EACH CASE**}
+A comparison of the tuning curve optimisation methods for the case A parameters in Table~\ref{fig:case_A_optimisation_comparison)}. The case A solution space tuning curve shows a small increase in collimated flux flux for the NRB solutions in comparison to the RB method, the difference in collimated flux between these methods increases with a wider bandwidth. As expected, the minimum achievable bandwidth of each of the tuning curves produced by the three methods agrees as this is limited by the energy spread of the electron bunch and laser pulse spectral bandwidth.   
 
 \begin{figure}[!h]
 \centering
@@ -709,19 +712,36 @@ optimiser with a non-derivative-based heuristic optimisation method \cite{jones2
 \label{eq:case_A_optimisation_comparison}
 \end{figure}
 
+\textcolor{blue}{**CASE A PARAMETER SPACE**}
+The $\beta$-function at the IP parameter space tuning curve in Fig.~\ref{fig:case_A_optimisation_comparison} clearly shows that the non-round transverse profile solution is favoured in case A. The simplex optimisation results show good agreement with the genetic algorithm results, with the latter showing a spread of possible solutions which which is less concentrated after $\beta_{x}^{*} = 15$~\si{\meter}. The simplex optimisation shows a strongly linear relationship between the $\beta$-functions. 
+
+The $\beta_{x}^{*}$--$\theta_{\mathrm{col}}$ parameter space plot for the case A electron bunch parameters shows a series of plots which all have the characteristic elbow shape, however the NRB GA results are stratified, though the simplex method does show good agreement with the genetic algorithm method. Some anomalous points are visible in the simplex data set which closely conform to the round transverse profile optimisation solution. The $\beta_{x}^{*}$--$\theta_{\mathrm{col}}$ tuning curve of the NRB solution appears translated, with larger $\beta_{x}^{*}$ functions for the same collimation angle. Fig.~\ref{fig:case_A_optimisation_comparison} also shows the $\beta_{y}^{*}$--$\theta_{\mathrm{col}}$ plot which again shows the characteristic elbow shape. The simplex and genetic algorithm parameter space tuning curves show good agreement, with less stratification in the $\beta_{y}^{*}$ parameter than in the $\beta$-function at the IP in the $x$ plane. The variation between the round beam and non-round beam optimisations is of a smaller magnitude than the $\beta_{x}^{*}$--$\theta_{\mathrm{col}}$ tuning curve with smaller $\beta_{y}^{*}$-functions favoured.   
+
+\textcolor{blue}{**CASE B SOLUTION SPACE** \\ simplex fails at the narrowband end, lots of spureious points}
+The collimated flux against \textit{rms} bandwidth tuning curves for each of the optimisation methods are shown in Fig.~\ref{fig:case_B_optimisation_comparison)} for a 0--2\% bandwidth range. The collimated flux--\textit{rms} bandwidth tuning curve shows that the NRB optimisation methods show generally good agreement. However, there are many anomalous local minima points within the simplex data set -- the parameter space in this case may be more complicated. At the minimum bandwidth region of the tuning curve there is also a discrepancy between the simplex and genetic algorithm methods where the GA Pareto-optimal front becomes curved and non-linear whereas the simplex method remains linear. The cause of this discrepancy is unknown but is likely to arise due to the lack of individuals in the GA simulation at the narrowband end.
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/CaseBoptcomp.pdf}
-\caption{\textcolor{blue}{**WROTE WITH SIMPLEX DISCOUNTED, NEED STATEMENT ON THIS?**} Comparison of the two optimisation methods: RB (black) and GA NRB (red), trialed in high flux narrowband ICS optimisation via transverse electron bunch profile studies for the case B parameters (see Table~\ref{tab:char_opt_electron_bunch_parameters}). Top Left: Solution space ($\mathcal{F}_{\mathrm{col}}$--$\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{rms}}$) Pareto-optimal fronts. Top Right: Parameter space ($\beta_{x}^{*}$--$\beta_{y}^{*}$) variable fronts corresponding to the Pareto-optimal fronts in solution space. Bottom Left: Parameter space ($\beta_{x}^{*}$--$\theta_{\mathrm{col}}$) variable fronts corresponding to the Pareto-optimal fronts in solution space. Bottom Right: Parameter space ($\beta_{y}^{*}$--$\theta_{\mathrm{col}}$) variable fronts corresponding to the Pareto-optimal fronts in solution space.}
+\caption{Comparison of the two optimisation methods: Simplex NRB (blue) and GA NRB (red), trialed in high flux narrowband ICS optimisation via transverse electron bunch profile studies for the case B parameters (see Table~\ref{tab:char_opt_electron_bunch_parameters}). Top Left: Solution space ($\mathcal{F}_{\mathrm{col}}$--$\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{rms}}$) Pareto-optimal fronts. Top Right: Parameter space ($\beta_{x}^{*}$--$\beta_{y}^{*}$) variable fronts corresponding to the Pareto-optimal fronts in solution space. Bottom Left: Parameter space ($\beta_{x}^{*}$--$\theta_{\mathrm{col}}$) variable fronts corresponding to the Pareto-optimal fronts in solution space. Bottom Right: Parameter space ($\beta_{y}^{*}$--$\theta_{\mathrm{col}}$) variable fronts corresponding to the Pareto-optimal fronts in solution space.}
 \label{fig:case_B_optimisation_comparison)}
 \end{figure}
+
+\textcolor{blue}{**CASE B PARAMETER SPACE**}
+The $\beta$-function at the IP parameter space in Fig.~\ref{fig:case_B_optimisation_comparison)} shows that the solutions to the NRB optimisation are strongly biased toward a larger $\beta_{x}^{*}$ and smaller $\beta_{y}^{*}$. The tuning curves for the simplex and GA NRB optimisation methods agree well though there are some anomalous local minima points withing the simplex dataset and some points are clustered around $\beta_{x}^{*} = 10$~\si{\meter}.
+
+\textcolor{blue}{**CASE C SOLUTION SPACE** \\ wait until we have simplex for this}
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/CaseCoptcomp.pdf}
-\caption{Comparison of the three optimisation methods: RB (black), GA NRB (red) and simplex NRB (blue), trialed in high flux narrowband ICS optimisation via transverse electron bunch profile studies for the case C parameters (see Table~\ref{tab:char_opt_electron_bunch_parameters}). Top Left: Solution space ($\mathcal{F}_{\mathrm{col}}$--$\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{rms}}$) Pareto-optimal fronts. Top Right: Parameter space ($\beta_{x}^{*}$--$\beta_{y}^{*}$) variable fronts corresponding to the Pareto-optimal fronts in solution space. Bottom Left: Parameter space ($\beta_{x}^{*}$--$\theta_{\mathrm{col}}$) variable fronts corresponding to the Pareto-optimal fronts in solution space. Bottom Right: Parameter space ($\beta_{y}^{*}$--$\theta_{\mathrm{col}}$) variable fronts corresponding to the Pareto-optimal fronts in solution space.}
+\caption{\textcolor{blue}{**WROTE WITH SIMPLEX DISCOUNTED, NEED STATEMENT ON THIS?**}Comparison of the three optimisation methods: RB (black), GA NRB (red) and simplex NRB (blue), trialed in high flux narrowband ICS optimisation via transverse electron bunch profile studies for the case C parameters (see Table~\ref{tab:char_opt_electron_bunch_parameters}). Top Left: Solution space ($\mathcal{F}_{\mathrm{col}}$--$\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{rms}}$) Pareto-optimal fronts. Top Right: Parameter space ($\beta_{x}^{*}$--$\beta_{y}^{*}$) variable fronts corresponding to the Pareto-optimal fronts in solution space. Bottom Left: Parameter space ($\beta_{x}^{*}$--$\theta_{\mathrm{col}}$) variable fronts corresponding to the Pareto-optimal fronts in solution space. Bottom Right: Parameter space ($\beta_{y}^{*}$--$\theta_{\mathrm{col}}$) variable fronts corresponding to the Pareto-optimal fronts in solution space.}
 \label{fig:case_C_optimisation_comparision}
 \end{figure}
+
+\textcolor{blue}{**CASE C PARAMETER SPACE**}
+
+\textcolor{blue}{**SUM UP ALL OF THE METHODS**}
 
 \section{Summary}
 

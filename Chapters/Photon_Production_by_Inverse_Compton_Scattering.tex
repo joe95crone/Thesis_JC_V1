@@ -122,10 +122,9 @@ spectrum \cite{krafft2004spectral}. The broadening effect is visible in the radi
 Hence, mitigation of ponderomotive effects is an extensively studied topic \cite{ghebregziabher2013spectral,terzic2014narrow,seipt2015narrowband,rykovanov2016controlling,terzic2016combining,terzic2019improving}. Strategies to mitigate ponderomotive broadening frequently involve the 'chirping' or frequency modulation of the laser pulse, in which the laser pulse shape is controlled in order to minimize the deceleration and acceleration of the interacted electrons. This is analagous to undulator tapering in free electron lasers The local $a_{0}$ of the laser pulse is modulated by the shape of the pulse in order to accomplish control of the ponderomotive force. 
 
 The laser chirp can be produced with conventional stretcher/compressor and pulse-shaper combinations \cite{ghebregziabher2013spectral}, i.e using existing conventional laser optics or via an FEL oscillator, where the substatial bunch length of the driving electron bunches are of a length where the RF-curvature energy spread is considerable, which means that the resulting laser pulse emitted by the FEL will
-also be chirped \cite{terzic2014narrow}. Solutions have been derived for a range of pulse shapes and modulation schemes up to a full 3D laser pulse description \cite{terzic2019improving}. \textcolor{blue}{Has this been demonstrated?}
+also be chirped \cite{terzic2014narrow}. Solutions have been derived for a range of pulse shapes and modulation schemes up to a full 3D laser pulse description \cite{terzic2019improving}, however the chirping ponderomotive broadening mitigation technique is yet to be experimentally demonstrated.
 
 % Harmonic Generation
-\textcolor{blue}{\\**What is Harmonic Generation? May need some work!**\\}
 Harmonic generation is the non-linear inverse Compton scattering process in which the incident electron is accelerated by the electromagnetic field of the incident laser pulse. Anharmonic acceleration of the electron, as it interacts with the radiation field \cite{englert1983second}, causes non-sinusoidal transverse oscillations of the electron and induced figure-8 motion, which introduces an overall redshift in the radiation
 spectrum, with the concomitant emission of higher order harmonics \cite{sakai2015observation}. The electrodynamics of harmonic generation by free electrons was first described quantum mechanically by Brown and Kibble \cite{brown1964interaction,kibble1965frequency} with a following classical interpretation by Sarrachik and Schappert \cite{sarachik1970classical}. 
 
@@ -133,18 +132,15 @@ The harmonic generation effect at the second harmonic was said to be demonstrate
 
 However, the Ag foil filtering will not completely remove the fundamental harmonic, instead the transverse profile of the filtered scattered photon beam is imaged via a luminescent screen. For the second harmonic radiation a set of two off-axis intensity peaks will be observed, unlike the fundamental harmonic which shows a central intensity peak. The double peak phenomena occurs because the $\overrightarrow{v}\times\overrightarrow{B}$ term of the Loretz force of the laser pulse is comparable to the electric field term which causes an electron to oscillate in the laser field at a higher frequency, with a characteristic figure of 8 transverse motion \cite{sarachik1970classical,jackson1999classical} in the electron frame, thereby modifying the angular intensity distribution of the produced radiation from a $\sin^{2}\theta$ dependence for the fundamental harmonic to a $\cos^{2}\theta$ dependence for the second harmonic which upon transformation to the lab frame results in the double peak behaviour \cite{babzien2006observation}. The double intensity peaks for the second harmonic are separated by an angle $\Delta\theta = 1/\gamma$.   
 
-\textcolor{blue}{**EQUATION FOR NON-LINEAR ICS**}
+% Multi-Photon Compton Scattering
+Alternatively, the non-linear inverse Compton scattering process can be thought of as the simultaneous interaction of multiple incident photons with an electron and the corresponding scattering of these as a single photon. The general equation for a multi-photon interaction, modified from (Eq.~\ref{eq:ICS_process}) \cite{bula1996observation,seipt2011nonlinear}
 \begin{equation}
 p_{1} + \mathit{n}k_{1} = p_{2} + k_{2},
 \label{eq:nonlinear_electron_photon_interaction}    
 \end{equation}
+where $n$ denotes an integer value of incident photons present in the interaction. As we have two or more identical photons interacting simultaneously, the total incident photon energy is $n E_{L}$ and consequently the scattered photon energy is roughly $nE_{\gamma}$, this is not the case because of redshifting and increased recoil, as discussed previously. Demonstration of a multi-photon inverse Compton scattering source by C. Bula et al \cite{bula1996observation} at the Final Focus Test Beam at SLAC \cite{burke1994results} showed an inverse Compton scattering  interaction with 4 incident photons, using a high intensity laser pulse. Therefore, high harmonics can be achieved via this interaction. 
 
-\textcolor{blue}{**IS MULTI-PHOTON ICS THE SAME AS HARMONIC GENERATION?**}
-% Multi-Photon Compton Scattering
-\textcolor{blue}{**What is multi-photon inverse Compton scattering?**\\ **DOES IT HAVE THE SAME ANGULAR BEHAVIOUR?**}
-Another non-linear process viable when $a_{0} < 1$ is multi-photon inverse Compton scattering. Multi-photon inverse Compton scattering occurs when the incident photon pulse is of sufficient intensity that two or more incident photons interact with an individual electron simultaneously. As we have two identical photons interacting simultaneously, the total incident photon energy is doubled and consequently the scattered photon energy is doubled.
-
-The multi-photon inverse Compton scattering process was first conclusively demonstrated in an inverse Compton scattering source by C. Bula et al \cite{bula1996observation} at the Final Focus Test Beam at SLAC \cite{burke1994results} where inverse Compton scattering was observed with 4 incident photons. \textcolor{blue}{**MORE!**}
+The terms harmonic generation and multi-photon ICS are used interchangeably within the literature \cite{}, however these both encompass an identical process. Harmonic generation is typically favoured terminology by those utilising classical methods to explain the behaviour whilst multi-photon inverse Compton scattering is used when the full quantum mechanical interpretation is used. The classical theory \cite{sarachik1970classical} allows for the coarse features of the behaviour such as the figure 8 motion of the electrons in the high field pulse and the angular distribution of emission to be understood whilst the quantum treatment \cite{brown1964interaction,kibble1965frequency} allows the description of morel subtle features such as the spin effects of the interaction.    
 
 \section{Derivation of the Scattered Photon Energy}
 \label{sec:derivation_of_the_scattered_photon_energy}
@@ -229,10 +225,12 @@ E_{\gamma} = 4\gamma^{2}E_{L}.
 \label{eq:compton_edge_energy}    
 \end{equation}
 
+Upon inspection of the generalised ICS scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}), there is an explicit dependence of the scattering angle and therefore the scattered photon energy is proportional to the scattered photon energy ($E_{\gamma} \propto \theta$). The energy--angle correspondence of the scattering interaction enables scattered photon energy selection via specification of a maxmimum opening angle the radiation can traverse -- the produced radiation can be simply collimated.   
+
 \section{Electron - Photon Interaction Cross Section}
 \label{sec:electron_photon_interaction_cross_section}
 
-\textcolor{blue}{**START FROM FIRST PRINCIPLES** \\ **PUT IN THE POLARISATION STUFF TOO**\\ **EXPLAIN CROSS SECTION ANGLE CORRESPONDENCE TOO** \\ **NEED DIAGRAMS TOO + SET OUT THE CO-ORD SYSTEM**}
+\textcolor{blue}{**START FROM FIRST PRINCIPLES** \\ **PUT IN THE POLARISATION STUFF TOO**\\ **NEED DIAGRAMS TOO + SET OUT THE CO-ORD SYSTEM BETTER**}
 
 The co-ordinate system in Fig.~\ref{fig:scattered_photon_kinematics} can be extended to a full 3D representation in Fig.~\ref{fig:3D_coord_system}, with an incident electron $p_{1}$ parallel to the $z$-axis interacting with an incident photon $k_{1}$ travelling anti-parallel, with a crossing angle $\phi$ in the $x$-$z$ plane, scattering a photon $k_{2}$ at a polar angle $\theta$ and azimuthal angle $\phi_{f}$.  
 \textcolor{blue}{\\**EXPLAIN LOCAL CO-ORDINATE SYSTEMS**}
@@ -251,7 +249,7 @@ The double differential cross section with respect to any polarisation of the in
 \frac{d^{2}\sigma}{dYd\phi_{f}} = \frac{2r_{e}^{2}}{X}\left\{\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)  -\left(\xi_{3}+\xi_{3}'\right)\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right] \right.\\\left. +\xi_{1}\xi_{1}'\left(\frac{1}{X}-\frac{1}{Y}+\frac{1}{2}\right) + \xi_{2}\xi_{2}'\left[\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\left(1+\frac{2}{X}-\frac{2}{Y}\right)\right] \right.\\\left. + \xi_{3}\xi_{3}'\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{2}\right] \right\}
 \label{eq:polarisation_differential_cross_section}    
 \end{multline}
-where the initial incident photon Stokes parameters $\xi_{i}$ are given by \textcolor{blue}{**TRACK DOWN THE DERIVATION WITH CROSSING ANGLE, CHECK**}
+where the initial incident photon Stokes parameters $\xi_{i}$ are given by \textcolor{blue}{**CHECK**}
 \begin{align}
 \xi_{1} &= P_{t}\sin\left(2\tau-2\phi_{f}\right)\sin\phi\\
 \xi_{2} &= P_{c} \\
@@ -260,7 +258,7 @@ where the initial incident photon Stokes parameters $\xi_{i}$ are given by \text
 \end{align}
 where, using the same co-ordinate system as Sun and Wu \cite{sun2009characterizations,sun2011theoretical}, $P_{t}$ is the degree of linear polarisation, $P_{c}$ is the degree of circular polarisation, $\tau$ is the azimuthal angle of the linear polarisation, $\phi_{f}$ is the azimuthal scattering angle, $\phi$ is the crossing angle in the $x$--$z$ plane and $\xi_{i}'$ are the final scattered photon Stokes parameters. \textcolor{blue}{\\**BETTER DESCRIBE POLARISATION HERE**}
 
-Assuming, for the purposes of a general cross section formula, we are ambivalent over the polarisation state of the scattered photons i.e scattered photons are not discriminated on the basis of polarisation from an ICS interaction, the cross section can be derived by setting $\xi_{i}' = 0 ~\left(i=1,~2,~3\right)$. Making this assumption, the double differential cross section (Eq.~\ref{eq:polarisation_differential_cross_section}) reduces to
+Assuming, for the purposes of a general cross section formula, ambivalence over the polarisation state of the scattered photons i.e scattered photons are not discriminated on the basis of polarisation from an ICS interaction, the cross section can be derived by setting $\xi_{i}' = 0 ~\left(i=1,~2,~3\right)$. Making this assumption, the double differential cross section (Eq.~\ref{eq:polarisation_differential_cross_section}) reduces to
 \begin{equation}
 \frac{d^{2}\sigma}{dYd\phi_{f}} =  \frac{4r_{e}^{2}}{X^{2}}\left[1+P_{t}\cos\left(2\tau-2\phi_{f}\right)\right]\left\{\left(1-\xi_{3}\right)\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right]+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\right\},
 \label{eq:double_differential_cross_section}    
@@ -321,6 +319,7 @@ The derivative of $Y$ with respect to the scattered photon energy $E_{\gamma}$ (
 \label{eq:differential_cross_section_ICS_energy}    
 \end{equation}
 
+Since the differential cross section can be wrote in terms of the scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}), there is a cross section--scattering angle correspondence indirectly resulting from the scattered photon energy. The cross section--scattering angle correspondence from the scattered photon energy is also convoluted with the scattering angle dependency of the $Y$ Lorentz invariant (Eq.~\ref{eq:Y_geometry}). A full treatment of collimation and the differential cross section with respect to scattering angle is included in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}, where the angular solutions are used to derive an analytical model for the collimated flux of an ICS interaction.    
 The scattered photon energy differential cross section (Eq.~\ref{eq:differential_cross_section_ICS_energy}) can be plotted against the scattered photon energy of a single particle ICS interaction to reveal the spectral characteristics of an ICS source. Fig.~\ref{fig:cross_section_scattered_photon_energy} shows a normalised plot of the scattered photon energy differential cross section (Eq.~\ref{eq:differential_cross_section_ICS_energy}) as a function of the scattered photon energy for a head-on collision ($\phi=0$), in the low recoil regime ($X \ll 1$). Several features are apparent in Fig.~\ref{fig:cross_section_scattered_photon_energy}, such as the double peaked spectrum -- which is peaked in the forward (low energy) and backward (high energy) directions with respect to the scattered photon bunch -- where the intensity of these peaks is double (for $X \ll 1$) the intensity of the trough at $\theta=1/\gamma$ and the average energy ($E_{\gamma} = 2\gamma^{2}E_{L}$), which is half of the maximum energy (Eq.~\ref{eq:compton_edge_energy}) at the Compton edge.   
 
 \begin{figure}[!h]
@@ -636,7 +635,7 @@ where $\chi = E_{\gamma}/4\gamma^{2}E_{L}$ is the normalised Doppler up-shifted 
 
 The analytical peak brillance calculation by Hartemann and Brown \cite{hartemann2005high} is advantageous because the energy spread of the electron bunch and spectral bandwidth of the laser pulse are accounted for in the calculation. There is also an attempt to account for the geometric luminosity reduction via an overlap function in the final term of (Eq.~\ref{eq:hartemann_peak_brilliance}), which is essentially accounting for the hourglass effect \cite{furman1991hourglass} (Eq.~\ref{eq:furman_hourglass_reduction}), though the functional form is only valid for the round beam case ($\epsilon_{n,x} = \epsilon_{n,y} = \epsilon_{n}$) and doesn't account for an angular crossing either ($\phi\neq0$), unlike the Miyahara luminosity reduction \cite{miyahara2008luminosity} (Eq.~\ref{eq:miyahara_combined_reduction}) which is more general. The Hartemann and Brown equation (Eq.~\ref{eq:hartemann_peak_brilliance}) is therefore only valid in the head-on ($\phi=0$) case and for a round electron bunch transverse profile. Electron recoil arising from scattering with high kinetic energy electron bunches is also not accounted for within this model.
 
-The peak brilliance can also be constructed by modifying the average brilliance (Eq.~\ref{eq:average_brilliance}) via time averaging a single interaction, as is pursued in Curatolo et al \cite{curatolo2017analytical}. The peak bandwidth, based on the formulation (Eq.~\ref{eq:average_brilliance}) by Deitrick et al \cite{deitrick2018high}, becomes
+The peak brilliance can also be constructed by modifying the average brilliance (Eq.~\ref{eq:average_brilliance}) via time averaging a single interaction, as is pursued in Curatolo et al \cite{curatolo2017analytical}. The peak bandwidth, based on the average brilliance formulation (Eq.~\ref{eq:average_brilliance}) by Deitrick et al \cite{deitrick2018high}, becomes
 \begin{equation}
 \mathcal{B}_{\mathrm{pk}} = \frac{\sigma_{\gamma,z}}{c}\frac{N_{0.1\%}}{4\pi^{2}\sigma_{\gamma,x}\sigma_{\gamma,x}'\sigma_{\gamma,y}\sigma_{\gamma,y}'},
 \label{eq:peak_brilliance}    
