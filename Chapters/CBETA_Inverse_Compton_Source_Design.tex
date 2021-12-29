@@ -61,9 +61,9 @@ Electron bunch spot size, $\sigma_{\mathrm{electron}}$ & 6.01 & 4.42 & 3.65 & 3.
 \hline
  & \multicolumn{4}{c}{Optimised for 0.5\% \textit{rms} bandwidth} & \\
 \hline
-$\beta^*$ (at the IP) & 3.56 & 6.58 & 9.60 & 12.62 & \si{\centi\meter}\\
-Electron bunch spot size, $\sigma_{\mathrm{electron}}$ & 11.34 & 11.34 & 11.34 & 11.34  & \si{\micro\meter}\\
-Collimation angle, $\theta_{\mathrm{col}}$ & 1.533 & 0.830 & 0.569 & 0.433 & \si{\milli\radian}\\
+$\beta^*$ (at the IP) & 3.59 & 6.63 & 9.66 & 12.70 & \si{\centi\meter}\\
+Electron bunch spot size, $\sigma_{\mathrm{electron}}$ & 11.38 & 11.38 & 11.38 & 11.38  & \si{\micro\meter}\\
+Collimation angle, $\theta_{\mathrm{col}}$ & 1.533 & 0.831 & 0.570 & 0.434 & \si{\milli\radian}\\
 \hline\hline
 \end{tabular}
 \label{tab:CBETA_electron_beam_design_parameters}
@@ -79,20 +79,19 @@ The single-turn commissioning of CBETA \cite{gulliford2021measurement}, successf
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/CBETA_ICS_energy_tuning.pdf}
-\caption{An ICS source generating photons from each of the four CBETA ERL passes delivers the (fixed) scattered energies indicated here; we assume a fixed incident laser wavelength of 1064~\si{\nano\meter}. CBETA has also experimentally demonstrated tuning of single-pass acceleration from 39 to 59~\si{\mega\electronvolt} (indicated by the shaded region), which indicates the continuous tuning of scattered photon energy that an ERL in general might deliver. \textcolor{blue}{**RE-DO PLOT?**}}
+\caption{An ICS source generating photons from each of the four CBETA ERL passes delivers the (fixed) scattered energies indicated here; we assume a fixed incident laser wavelength of 1064~\si{\nano\meter}. CBETA has also experimentally demonstrated tuning of single-pass acceleration from 39 to 59~\si{\mega\electronvolt} (indicated by the shaded region), which indicates the continuous tuning of scattered photon energy that an ERL in general might deliver.}
 \label{fig:CBETA_ICS_energy_tuning}
 \end{figure}
 
-\textcolor{blue}{**NEEDS EXPANDING AND CHANGING IF I WANT TO USE THE 2D NRB OPT HERE TOO**}
-The round beam optimisation result for the $\beta^{*}$ and $\theta_{\mathrm{col}}$ trade-off of a 0.5\% \textit{rms} narrow bandwidth case are shown in Table~\ref{tab:CBETA_electron_beam_design_parameters}. These optimised parameters are the optimum electron bunch interaction point $\beta$-function and collimation angle for maximising the collimated flux of the CBETA ICS into the 0.5\% \textit{rms} bandwidth. The methodology in Section~\ref{sec:RB_optimisation} can be applied to a series of \textit{rms} bandwidth in the range 0--1\% to produce a round beam Pareto front within the $\beta^{*}-\theta_{\mathrm{col}}$ parameter space of the CBETA ICS, as shown in Fig.~\ref{fig:CBETA_beta_theta_parameter_space}.
+The round beam optimisation of the CBETA ICS, as explained in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}, for the $\beta^{*}$ and $\theta_{\mathrm{col}}$ trade-off of a 0.5\% \textit{rms} narrow bandwidth case are shown in Table~\ref{tab:CBETA_electron_beam_design_parameters}. These optimised parameters are the optimum electron bunch interaction point $\beta$-function and collimation angle for maximising the collimated flux of the CBETA ICS into the 0.5\% \textit{rms} bandwidth. A round beam optimisation is selected as this optimisation strategy was available during the design of the CBETA ICS bypass. Variables are quoted for a 0.5\% \textit{rms} bandwidth of the scattered radiation because this is an adequate demonstration of a narrow-band ICS source ($\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{rms}} < 1$). The methodology in Section~\ref{sec:RB_optimisation}, when applied to a series of \textit{rms} bandwidth in the range 0--1\%, produces tuning curve within the $\beta^{*}-\theta_{\mathrm{col}}$ parameter space of the CBETA ICS which corresponds to the maximal collimated flux solutions , as shown in Fig.~\ref{fig:CBETA_beta_theta_parameter_space}.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/CBETABetaTheta.pdf}
-\caption{Tuning curves of $\beta^{*}$ against $\theta_{\mathrm{col}}$ for each of the nominal CBETA electron beam energies satisfying the maximal flux across the 0--1\% \textit{rms} bandwidth range. The shaded area is the parameter space, while the line corresponds to the maximal flux solution for a given \textit{rms} bandwidth. Minimised bandwidth solutions in this range have large $\beta$-functions at the IP and small collimation angles $\theta_{\mathrm{col}}$; the maximal bandwidth solutions have small $\beta$-functions and larger collimation angles $\theta_{\mathrm{col}}$.}
+\caption{Tuning curves of $\beta^{*}$ against $\theta_{\mathrm{col}}$ for each of the nominal CBETA electron beam energies satisfying the maximal flux across the 0--1\% \textit{rms} bandwidth range. The shaded area is the parameter space, while the line corresponds to the maximal flux solution for a given \textit{rms} bandwidth. Minimised bandwidth solutions in this range have large $\beta$-functions at the IP and small collimation angles $\theta_{\mathrm{col}}$; the maximal bandwidth solutions have small $\beta$-functions and larger collimation angles $\theta_{\mathrm{col}}$. \textcolot{blue}{**RE-RUN**}}
 \label{fig:CBETA_beta_theta_parameter_space}
 \end{figure}
 
-Each of the Pareto fronts (for each nominal energy) of the $\beta^{*}-\theta_{\mathrm{col}}$ parameter spaces in Fig.~\ref{fig:CBETA_beta_theta_parameter_space} has a distinctive shape - a linear regime followed by non-linear regime. The Pareto front shows a linear relationship as the collimation angle increases, this part is dominated by the emittance term, until a vertex is reached and, as collimation angle increases, there is a non-linear shape, where the Pareto front is dominated by the collimation term. The termination of the Pareto fronts at the small collimation angle marks the point in which the optimal $\beta$-function at the IP becomes imaginary.
+Each of the tuning curves (for each nominal energy) of the $\beta^{*}-\theta_{\mathrm{col}}$ parameter spaces in Fig.~\ref{fig:CBETA_beta_theta_parameter_space} has a distinctive shape - a linear regime followed by non-linear regime. The Pareto front shows a linear relationship as the collimation angle increases, this part is dominated by the emittance term, until a vertex is reached and, as collimation angle increases, there is a non-linear shape, where the Pareto front is dominated by the collimation term. The termination of the Pareto fronts at the small collimation angle marks the point in which the optimal $\beta$-function at the IP becomes imaginary.
 
 The laser pulse and Fabry-Perot optical cavity parameters are specified in Table~\ref{tab:CBETA_laser_pulse_design_parameters}. For the CBETA ICS a Nd:YAG ($\lambda=1064$~\si{\nano\meter}) laser is specified, which is enhanced and re-circulated by a Fabry-Perot optical cavity. The laser pulse parameters within the optical cavity are based on the Fabry-Perot optical cavity demonstrated in the cERL inverse Compton scattering source \cite{akagi2016narrow}. An identical bow-tie 4-mirror planar cavity is envisioned for the CBETA ICS, a full design of a Fabry-Perot optical cavity was forseen as beyond the scope of this source design. 
 
@@ -102,7 +101,7 @@ The Fabry-Perot optical cavity repetition rate of the CBETA ICS is set at 162.5~
 
 An Nd:YAG laser typically operates with picosecond \textit{rms} pulse duration, here specified as 10~\si{\pico\second} which is ideal for the CBETA ICS source as this is well matched to the 3.33~\si{\pico\second} electron bunch duration. Picosecond scale pulse duration is advantageous because it diminishes the effect of the hourglass and angular crossing effects \cite{miyahara2008luminosity} whilst also avoiding the timing complexity for the ICS interaction that would be associated with shorter durations. In keeping the average laser power invariant, shorter laser pulse durations would also increase the peak power of the laser upon the Fabry-Perot cavity mirrors which increases the possibility of surface hot-spot defects which reduce average stored power in the optical cavity \cite{wang2020prior}. In addition to this reasoning, the 10~\si{\pico\second} laser pulse duration reflects the pulse duration used in the state-of-the-art 670~\si{\kilo\watt} average stored power optical cavity demonstration with a 1040~\si{\nano\meter} wavelength laser \cite{carstens2014megawatt}.     
 
-An \textit{rms} spot size at the IP of 25~\si{\micro\meter} is proposed as this has been experimentally demonstrated on the cERL ICS experiment \cite{akagi2016narrow}. The cavity used in the cERL experiment also involved a 5\si{\degree} crossing angle, with crossing angles on the degree scale common in many ICS source designs \cite{}. \textcolor{blue}{**need references: ThomX, BriXS etc.**} The proposed spectral bandwidth (relative energy spread of the laser pulse) is not directly stated within the cERL paper \cite{akagi2016narrow}, however based on the pulse duration of the laser, the characteristic small spectral bandwidth of Nd:YAG lasers and the energy selecting nature of a Fabry-Perot cavity an approximation of a 0.7~\si{\nano\meter} \cite{} \textcolor{blue}{**Laura Corner Private Communication} wavelength spread is assumed resulting in a 6.57$\times 10^{-4}$ \textit{rms} spectral bandwidth.     
+An \textit{rms} spot size at the IP of 25~\si{\micro\meter} is proposed as this has been experimentally demonstrated on the cERL ICS experiment \cite{akagi2016narrow}. The cavity used in the cERL experiment also involved a 5\si{\degree} crossing angle, with crossing angles on the degree scale common in many ICS source designs \cite{faillace2019status,variola2014thomx}. The proposed spectral bandwidth (relative energy spread of the laser pulse) is not directly stated within the cERL paper \cite{akagi2016narrow}, however based on the pulse duration of the laser, the characteristic small spectral bandwidth of Nd:YAG lasers and the energy selecting nature of a Fabry-Perot cavity an approximation of a 0.7~\si{\nano\meter} \cite{} \textcolor{blue}{**Laura Corner Private Communication} wavelength spread is assumed resulting in a 6.57$\times 10^{-4}$ \textit{rms} spectral bandwidth.     
 
 The Fabry--Perot cavity included within this source design has an average stored power of 10~\si{\kilo\watt}, which is below the state-of-the-art 670~\si{\kilo\watt} stored power demonstration by Carstens et al \cite{carstens2014megawatt}, though this was conducted outside of an accelerator environment. A stable 383~\si{\kilo\watt} average stored power demonstration outside of an accelerator environment has also recently been conducted for the ThomX ICS source \cite{liu2018optical}. In terms of operable optical cavities for ICS, the recent demonstration of the Munich Compact Light Source (MuCLS) operated with a 70~\si{\kilo\watt} average stored power \cite{eggl2016munich}, therefore our parameters are conservative.   
 \begin{table}[!h]
@@ -135,7 +134,7 @@ To utilize CBETA as an inverse Compton scattering source at the 150~\si{\mega\el
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/CBETA_schematic.pdf}
-\caption{Schematic of the CBETA ERL; existing accelerator structure including injector, main linac cryomodule, FFAG return loop, splitter and recombiner systems and beam dump, as well as supporting infrastructure such as electronic racks, vaccuum pumps and shielding. \textcolor{blue}{Who do I reference for this? Ask Kirsten!}}
+\caption{Schematic of the CBETA ERL \cite{hoffstaetter2017cbeta}; existing accelerator structure including injector, main linac cryomodule, FFAG return loop, splitter and recombiner systems and beam dump, as well as supporting infrastructure such as electronic racks, vaccuum pumps and shielding. \textcolor{blue}{Who do I reference for this? Ask Kirsten!}}
 \label{fig:CBETA_schematic}
 \end{figure}
 
@@ -182,7 +181,7 @@ The quality of the Twiss parameter matching of the bypass is limited by the comp
     \centering
     \includegraphics[width=0.5\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/twissplotx.pdf}
     \includegraphics[width=0.5\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/twissploty.pdf}
-    \caption{Twiss functions in the ICS bypass line, showing the re-matched conditions for different path length configurations $-\lambda_{\mathrm{RF}}$, $0$ and $+\lambda_{\mathrm{RF}}$. The ICS interaction point (IP) is indicated. \textcolor{blue}{Potentially worth putting the beta functions and dispersion functions side by side?}}
+    \caption{Twiss functions in the ICS bypass line, showing the re-matched conditions for different path length configurations $-\lambda_{\mathrm{RF}}$, $0$ and $+\lambda_{\mathrm{RF}}$. The ICS interaction point (IP) is indicated.}
     \label{fig:CBETA_ICS_Twiss}
 \end{figure}
 
@@ -208,13 +207,12 @@ The author favours the latter solution to this problem as common transport syste
 
 \section{Spectral Output}
 
-In order to determine the performance of the CBETA inverse Compton scattering source, the predicted spectral output of the source -- several measures quantifying the output radiation -- must be characterised using the formulae in Chapter~\ref{Photon_Production_by_Inverse_Compton_Scattering}. Anticipated spectral output of the CBETA inverse Compton scattering source is denoted in Table~\ref{tab:CBETA_spectral_output}, where the baseline and the 0.5\% \textit{rms} bandwidth optimised configurations are both shown. 
+In order to determine the performance of the CBETA inverse Compton scattering source, the predicted spectral output of the source -- several measures quantifying the output radiation -- must be characterised using the formulae in Chapter~\ref{Photon_Production_by_Inverse_Compton_Scattering}. Anticipated spectral output of the CBETA inverse Compton scattering source is denoted in Table~\ref{tab:CBETA_spectral_output}, where the baseline and the 0.5\% \textit{rms} bandwidth round-beam optimised configurations are both shown. 
 
-\textcolor{blue}{**WHAT IS THE OPTIMISED CONFIGURATION, HOW IS IT ACHIEVED + WHY IS IT CHOSEN FOR CBETA ICS**}
-The optimised configuration has been achieved using the 
-
+The round beam optimisation method developed in is chosen to optimise the CBETA ICS source because, at the time of the CBETA ICS bypass design, RB optimisation was the only developed optimisation methodology. Practical demonstration of the round beam optimisation within an ICS source is consequently favoured for the CBETA ICS design, whereas the NRB optimisation is better demonstrated with the DIANA ICS source in Chapter~\ref{DIANA_Inverse_Compton_Source_Design}. A 0.5\% \textit{rms} bandwidth is selected as this is an appropriate bandwidth for a narrowband source, which is defined as $< 1\%$ \textit{rms} bandwidth.  
 \begin{table}[!h]
 \caption{Anticipated photon output for each of the four electron beam energies in CBETA, taking into account a 5~degree crossing angle. The recoil parameter is negligible $X < 0.003$, even at  150~MeV -- the maximum electron beam energy. The collimated flux has been optimised for a 0.5\% \textit{rms} bandwidth and the baseline case focuses at the IP to $\beta^{*} =1$~\si{\centi\meter} for each nominal energy.}
+\begin{threeparttable}
 \scalebox{0.92}{
 \begin{tabular}{lccccc}
 \hline\hline
@@ -227,22 +225,24 @@ Source Size & 5.84 & 4.35 & 3.62 & 3.17 & \si{\micro\meter} \\
 Uncollimated flux & 3.16$\times10^{10}$ & 3.20$\times10^{10}$ & 3.21$\times10^{10}$ & 3.22$\times10^{10}$ & ph/\si{\second}\\
 Spectral density & 9.82$\times10^{5}$ & 2.92$\times10^{5}$ & 1.38$\times10^{5}$ & 8.00$\times10^{4}$ & ph/\si{\second} \second{\electronvolt}\\
 Average brilliance & 9.23$\times10^{10}$ & 3.19$\times10^{11}$ & 6.81$\times 10^{11}$ & 1.18$\times10^{12}$ & ph/\si{\second} \si{\milli\meter}$^{2}$-\si{\milli\radian}$^{2}$ 0.1\% bw\\
-Peak brilliance & 2.80$\times 10^{15}$ & 1.00$\times 10^{16}$ & 2.18$\times10^{16}$ & 3.80$\times 10^{16}$ & ph/\si{\second} \si{\milli\meter}$^{2}$-\si{\milli\radian}$^{2}$ 0.1\% bw\\
+Peak brilliance\tnote{*} & 1.43$\times 10^{17}$ & 3.03$\times 10^{17}$ & 5.01$\times10^{17}$ & 7.37$\times 10^{17}$ & ph/\si{\second} \si{\milli\meter}$^{2}$-\si{\milli\radian}$^{2}$ 0.1\% bw\\
 \hline
  & \multicolumn{4}{c}{0.5\% \textit{rms} bandwidth} & \\
 \hline
 Source Size & 10.25 & 10.34 & 10.32 & 10.35 & \si{\micro\meter} \\
-Collimated flux & 2.09$\times 10^{8}$ & 2.09$\times 10^{8}$ & 2.09$\times 10^{8}$ & 2.09$\times 10^{8}$ & ph/\si{\second} 0.5\% bw \\
+Collimated flux & 3.68$\times 10^{8}$ & 3.61$\times 10^{8}$ & 3.59$\times 10^{8}$ & 3.57$\times 10^{8}$ & ph/\si{\second} 0.5\% bw \\
 \hline\hline
 \end{tabular}}
+\begin{tablenotes}
+\item[*]{(Eq.~\ref{eq:peak_brilliance}) is used to calculate the peak brilliance.}
+\end{tablenotes}
+\end{threeparttable}
 \label{tab:CBETA_spectral_output}
 \end{table}
 
-\textcolor{blue}{**DECIDE WHICH OPTIMISATION METHOD TO SHOW IN THE TABLES** \\ **USE NEW PEAK BRILLIANCE**}
+From Table~\ref{tab:CBETA_spectral_output}, it is evident that uncollimated flux varies by around 2\% due to the small effect of the electron spot size. Recoil effects are negligible even at the highest electron beam energy $E_{e} = 150$~\si{\mega\electronvolt}, as $X = 2.70\times 10^{-3}$.  
 
-We can see from Table~\ref{tab:CBETA_spectral_output} that uncollimated flux varies by around 2\% due to the small effect of the electron spot size. Recoil effects are negligible even at the highest electron beam energy $E_{e} = 150$~\si{\mega\electronvolt}, as $X = 2.70\times 10^{-3}$.  
-
-The number of scattered photons is essentially independent of electron energy for a fixed electron spot size at the IP, and since both the Compton spectrum and the (relative) 0.5\% \textit{rms} bandwidth scale together with $\gamma^2$, both the optimised spot size and the predicted collimated fluxes are the same at all electron energies.
+The number of photons scattered in the interactions are essentially independent of electron energy for a fixed electron spot size at the IP, and since both the Compton spectrum and the (relative) 0.5\% \textit{rms} bandwidth scale together with $\gamma^2$, both the optimised spot size and the predicted collimated fluxes are the same at all electron energies.
 
 From Table~\ref{tab:CBETA_laser_pulse_design_parameters}, we see this deign incorporates a 5\si{\degree} crossing angle of the laser pulse with respect to the electron bunch which is necessary because of the Fabry-Perot optical cavity. The crossing angle causes only a $\sim 1$~\si{\kilo\electronvolt} reduction in the Compton edge scattered photon energy in comparison to the head-on case ($\phi = 0$). However, the crossing angle impacts the flux of the source significantly as the effective time over which the incident laser photons may interact with the electrons in the counter propagating bunch is reduced. This results in a factor of 5.5 reduction in luminosity due to a 5\si{\degree} crossing (Eq.~\ref{eq:angular_crossing_factor}) -- a substantial reduction in flux. 
 
@@ -254,7 +254,7 @@ By applying the collimated flux maximisation to the parameter space of the round
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/CBETATuningCurve.pdf}
-\caption{Tuning curve of collimated flux against \textit{rms} bandwidth for a 0--1\% \textit{rms} bandwidth range, produced by a round beam optimisation which tunes $\beta^{*}$ and $\theta_{\mathrm{col}}$. The tuning curve is independent of beam energy for scattering scenarios within the Thomson regime, hence this tuning curve applies to all energies in CBETA. The left end of tuning curve indicates the minimum possible \textit{rms} bandwidth of the ICS source, which in CBETA is $\simeq$~0.12\% and is determined by the electron beam and laser pulse energy spreads. \textcolor{blue}{**x-axis label needs to read \textit{rms} bandwidth**}}
+\caption{Tuning curve of collimated flux against \textit{rms} bandwidth for a 0--1\% \textit{rms} bandwidth range, produced by a round beam optimisation which tunes $\beta^{*}$ and $\theta_{\mathrm{col}}$. The tuning curve is independent of beam energy for scattering scenarios within the Thomson regime, hence this tuning curve applies to all energies in CBETA. The left end of tuning curve indicates the minimum possible \textit{rms} bandwidth of the ICS source, which in CBETA is $\simeq$~0.12\% and is determined by the electron beam and laser pulse energy spreads. \textcolor{blue}{**x-axis label needs to read \textit{rms} bandwidth** \\ **RE-RUN**}}
 \label{fig:CBETA_Tuning_Curve}
 \end{figure}
 
@@ -269,7 +269,7 @@ The spectrum of the scattered x-rays produced from a single head-on ($\phi = 0$)
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\textwidth]{Figures/CBETA_Inverse_Compton_Source_Design/cbetaspectrumplot_final.pdf}
-\caption{Predicted spectral output (flux) from 1064~\si{\nano\meter} photons colliding head-on with the $E_e =150$~\si{\mega\electronvolt} (kinetic energy) electrons in CBETA; this spectrum was generated using the \textsc{ICCS3D} and \textsc{ICARUS} codes. This spectrum has a peak energy of 403.3~\si{\kilo\electronvolt}; using the proposed 5\si{\degree} crossing angle, the peak energy is reduced to 402.5~\si{\kilo\electronvolt} and the spectral density is reduced by a factor $\sim$~6.}
+\caption{Predicted spectral output (flux) from 1064~\si{\nano\meter} photons colliding head-on with the $E_e =150$~\si{\mega\electronvolt} (kinetic energy) electrons in CBETA; this spectrum was generated using the \textsc{ICCS3D} and \textsc{ICARUS} codes. This spectrum has a peak energy of 403.3~\si{\kilo\electronvolt}; using the proposed 5\si{\degree} crossing angle, the peak energy is reduced to 402.5~\si{\kilo\electronvolt} and the spectral density is reduced by a factor $\sim$~6. \textcolor{blue}{**THIS PLOT IS OUTDATED - SEE ICARUS_TEST**}}
 \label{fig:CBETA_spectrum_benchmarking}
 \end{figure}
 
@@ -410,5 +410,9 @@ Another potential application of the CBETA ICS, requiring substantial end statio
 Alongside the achievement of PDC at approximately a factor of five higher energy than is currently practised \cite{schori2018ghost}, this experiment could provide exciting applications such as twin microscopy -- which promises enhanced visibility through quantum ghost imaging of otherwise inaccessible specimens -- and twin ellipsometry for the careful examination of surface structures \cite{simon2017quantum}. The ghost imaging demonstration of Schori et al \cite{schori2018ghost} was recently performed at the BL19LXU SPring-8 beamline \cite{yabashi2001design} with an input energy of 22.3~\si{\kilo\electronvolt}; using the CBETA ICS source at 100~\si{\kilo\electronvolt} would provide PDC generation according to the aforementioned scaling law with a zero point energy flux advantage of about 400 times greater.  
 
 \section{Summary}
+
+In summary, the retrofittable CBETA ICS source design study has shown that the ERL driven ICS approach is capable of delivering a high flux ($\mathcal{F}_{\mathrm{col}} =$ 3.68--3.57$\times 10^{8}$~ph/\si{\second}) of high energy x-rays ($E_{\gamma} =$ 32.2--402.5~\si{\kilo\electronvolt}) within a narrow bandwidth ($\left(\Delta E_{\gamma}/E_{\gamma}\right)_{\mathrm{rms}} = 0.5$\%). A bypass line to the CBETA multi-turn ERL has been designed for production of photons from 150~\si{\mega\electronvolt} electron bunches in CBETA, with tunable focusing which could be extended to each nominal energy of the CBETA ERL. In comparison with other designed and demonstrated ICS sources, as shown by Table~\ref{tab:xray_ICS_comparison}, the CBETA ICS is comparable in flux and extends the scattered photon energy range of conventional x-ray ICS sources. The multi-turn ERL design of CBETA has been shown to be an effective route to a multi-coulour ICS source. 
+
+At the specified design parameters, the CBETA narrowband high energy x-ray ICS source could facilitate a wide variety of experiments typically only available at a synchrotron light source, whilst allowing for experiments requiring high energy photons such as thick specimen experimentation. Comparative studies with synchrotron sources in Section~\ref{sec:synchrotron_facility_comparison} have demonstrated that above $\sim300$ synchrotron light source facilities are incapable of producing the x-ray flux available at ICS sources within this energy range. Therefore, ICS sources may offer the best route to narrowband $\gamma$-ray production, which is explored further in the DIANA ERL ICS design study in Chapter~\ref{DIANA_Inverse_Compton_Source_Design}.
 
 \end{document}

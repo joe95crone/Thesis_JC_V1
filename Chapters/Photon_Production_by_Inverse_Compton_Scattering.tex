@@ -25,11 +25,9 @@
 
 While scattering interactions, specifically inverse Compton scattering interactions, are possible from all particles, the work presented here is only concerned with electron - photon interactions, the most commonly utilised form of inverse Compton scattering.  Electron - photon interactions are advantageous over other particle - photon interactions due to their low rest mass $m_{e}$, resulting in a typically large Lorentz factor, which allows for the production of high energy photons as the scattered photon energy $E_{\gamma}$ is proportional to the Lorentz factor squared ($E_{\gamma}\propto\gamma^{2}$).    
 
-Thomson scattering \cite{thomson1904xxxiv}, where an incident photon accelerates a charged particle and the charged particle emits a photon of identical energy, we assume the collision is elastic and therefore $p_{1} = p_{2}$ i.e that the recoil of the electron is negligible. The criterion for the photon - electron interaction to be modelled by Thomson scattering is when the energy of the photon is much smaller than the rest mass of the electron. Thomson's electron - photon interaction model was furthered by the work of A.H. Compton \cite{compton1923quantum}. Compton scattering is the extension of Thomson scattering to the inelastic scattering case ($p_{1} \neq p_{2}$), where the electron recoils and the photon is scattered with a different wavelength to the wavelength of the incident photon.
+In Thomson scattering \cite{thomson1904xxxiv}, where an incident photon accelerates a charged particle and the charged particle subsequently emits a photon of identical energy, we assume the collision is elastic and therefore $p_{1} = p_{2}$ i.e that the recoil of the electron is negligible. The criterion for the photon--electron interaction to be modelled by Thomson scattering is when the energy of the photon is much smaller than the rest mass of the electron. Thomson's electron - photon interaction model was furthered by the work of A.H. Compton \cite{compton1923quantum}, in which the inelastic scattering case ($p_{1} \neq p_{2}$) is modelled, where the electron recoils and the photon is scattered with a different wavelength to the wavelength of the incident photon -- named Compton scattering. Within this Thesis, we are concerned with inverse Compton scattering -- the process of scattering a photon from a relativistically-moving electron in which the scattered photon energy is double Doppler shifted, and the scattered photon parasitically gains energy from the recoiling electron.  
 
-Within this section we are concerned with inverse Compton scattering, the process of scattering a photon from a relativistically-moving  electron in which the scattered photon energy is double Doppler shifted, the scattered photon parasitically gains energy from the recoiling photon.  
-
-Quantum electrodynamic photon - electron interactions, in general, can be represented by the two leading order Feynman diagrams as shown in Fig.~\ref{fig:ICS_Feynman_diagrams}. 
+Photon - electron interactions can be represented with complete generality by using the two quantum electrodynamic leading order Feynman diagrams as shown in Fig.~\ref{fig:ICS_Feynman_diagrams}. 
 
 \begin{figure}[!h]
 \centering
@@ -39,7 +37,7 @@ Quantum electrodynamic photon - electron interactions, in general, can be repres
 \end{figure}
 \textcolor{blue}{**NEED A BETTER SET OF FEYNMAN DIAGRAMS**}
 
-The general form of the electron - photon interactions can therefore be specified by
+The general form of the electron--photon interactions can therefore be specified by
 \begin{equation}
 p_{1} + k_{1} = p_{2} + k_{2},
 \label{eq:ICS_process}
@@ -49,11 +47,11 @@ where $p_{1}$ is the four-momenta of the incident electron, $k_{1}$ is the four-
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/scatteringkinematicsdiagram.pdf}
-\caption{Geometry of the inverse Compton scattering event at the interaction point. This geometry follows the geometry prescribed by Sun et al \cite{sun2009energy}. Here $\theta$ is the scattering angle of the photon, with $\phi' = \pi -\phi$ the angle between the incident electron and incident photon, where $\phi$ is the crossing angle of the electron and photon and $\theta' = \pi - \theta - \phi$ the angle between the incident and scattered photon. }
+\caption{Geometry of the inverse Compton scattering event at the interaction point. The interaction geometry follows the geometry prescribed by Sun et al \cite{sun2009energy}. Here $\theta$ is the scattering angle of the photon, with $\phi' = \pi -\phi$ the angle between the incident electron and incident photon, where $\phi$ is the crossing angle of the electron and photon and $\theta' = \pi - \theta - \phi$ the angle between the incident and scattered photon. }
 \label{fig:scattered_photon_kinematics}
 \end{figure}
 
-Motivated by the geometry of the inverse Compton scattering process as shown in Fig. \ref{fig:scattered_photon_kinematics}, we can write the initial photon $p_{1}$ and electron $k_{1}$ four-momenta
+Motivated by the geometry of the inverse Compton scattering process, as shown in Fig. \ref{fig:scattered_photon_kinematics}, the initial photon $p_{1}$ and electron $k_{1}$ four-momenta can be expressed by
 \begin{align}
 p_{1} &= \gamma m_{e}\left(c,\boldsymbol{v_{i}}\right),
 \label{eq:initial_four_vectors} \\
@@ -67,7 +65,7 @@ k_{2} &= \frac{E_{\gamma}}{c}\left(1,\hat{n}_{f}\right),
 \end{align}
 where $E_{\gamma}$ is the scattered photon energy, $\hat{n}_{f}$ is the unit displacement three-vector of the scattered photon, $\gamma'$ is the Lorentz factor of the recoiling electron and $\boldsymbol{v_{f}}$ is the velocity three-vector of the recoiling electron with magnitude $v_{f}$.
 
-Using our four-momenta definitions (Eq.~\ref{eq:initial_four_vectors}-\ref{eq:final_four_vectors}), a  series of kinematic invariants (Mandelstam variables \cite{mandelstam1958determination}) can be determined for the photon-electron scattering process \cite{berestetskii1982quantum}
+Using the four-momenta definitions (Eq.~\ref{eq:initial_four_vectors}-\ref{eq:final_four_vectors}), a  series of kinematic invariants (Mandelstam variables \cite{mandelstam1958determination}) can be determined for the photon-electron scattering process \cite{berestetskii1982quantum}
 \begin{align}
 s &= \left(p_{1}+k_{1}\right)^{2} = \left(p_{2}+k_{2}\right)^{2},
 \label{eq:s_Mandelstam} \\
@@ -92,12 +90,12 @@ Y &= \frac{2\gamma E_{\gamma}\left(1-\beta\cos\theta\right)}{m_{e}c^{2}},
 \end{align}
 where $\beta = v/c$, the Lorentz speed factor.
 
-If we take the head-on case ($\phi = 0$) and  assume the incident electron is ultra-relativistic ($\beta \rightarrow 1$) then the $X$ simplifies to 
+Taking the head-on case ($\phi = 0$) and assuming the incident electron is ultra-relativistic ($\beta \rightarrow 1$), the $X$ invariant simplifies to 
 \begin{equation}
 X = \frac{4\gamma E_{L}}{m_{e}c^{2}}.
 \label{eq:X_headon}
 \end{equation}
-The Lorentz invariant $X$ can also be termed the recoil parameter, which denotes the magnitude of the recoil of the incident electron. For the case $X \ll 1$, the recoil is small and inverse Compton scattering reduces to Thomson scattering, the interaction becomes inelastic. To illustrate, using (Eq.~\ref{eq:X_headon}) a 1\% recoil effect ($X = 0.01$) in head-on inverse Compton scattering geometry with a infrared laser (Nd:YAG, $\lambda = 1064$~\si{\nano\metres}) results in a total electron beam energy of $E_{e} = 558$~\si{\mega\electronvolt}, for a visible green laser (2nd Harmonic Nd:YAG, $\lambda = 532$~\si{\nano\metres}) a total electron beam energy $E_{e} = 279$~\si{\mega\electronvolt}. Therefore, as the sources designed in this Thesis typically use infrared lasers, only in designs for $\gamma$-ray ICS sources (where the electron beam energy is 100's~\si{\mega\electronvolt}) are recoil effects expected to be non-negligible.     
+The Lorentz invariant $X$ can also be termed the recoil parameter, which denotes the magnitude of the recoil of the incident electron. For the case $X \ll 1$, the recoil is small and inverse Compton scattering reduces to Thomson scattering, the interaction becomes inelastic. To illustrate, using (Eq.~\ref{eq:X_headon}) a 1\% recoil effect ($X = 0.01$) in head-on inverse Compton scattering geometry with a infrared laser (Nd:YAG, $\lambda = 1064$~\si{\nano\metres}) results in a total electron beam energy of $E_{e} = 558$~\si{\mega\electronvolt}, for a visible green laser (2nd Harmonic Nd:YAG, $\lambda = 532$~\si{\nano\metres}) a total electron beam energy $E_{e} = 279$~\si{\mega\electronvolt} is required. Therefore, as the sources designed in this Thesis typically use infrared lasers, only in designs for $\gamma$-ray ICS sources (where the electron beam energy is 100's~\si{\mega\electronvolt}) are recoil effects expected to be non-negligible.     
 
 \section{Non-linear Inverse Compton Scattering}
 
@@ -231,9 +229,8 @@ Upon inspection of the generalised ICS scattered photon energy (Eq.~\ref{eq:scat
 \label{sec:electron_photon_interaction_cross_section}
 
 \textcolor{blue}{**START FROM FIRST PRINCIPLES** \\ **PUT IN THE POLARISATION STUFF TOO**\\ **NEED DIAGRAMS TOO + SET OUT THE CO-ORD SYSTEM BETTER**}
-
-The co-ordinate system in Fig.~\ref{fig:scattered_photon_kinematics} can be extended to a full 3D representation in Fig.~\ref{fig:3D_coord_system}, with an incident electron $p_{1}$ parallel to the $z$-axis interacting with an incident photon $k_{1}$ travelling anti-parallel, with a crossing angle $\phi$ in the $x$-$z$ plane, scattering a photon $k_{2}$ at a polar angle $\theta$ and azimuthal angle $\phi_{f}$.  
-\textcolor{blue}{\\**EXPLAIN LOCAL CO-ORDINATE SYSTEMS**}
+To understand the cross section of the interaction the interaction must be viewed three dimensionally and considerations such as polarisation must be adequately accounted for. The co-ordinate system in Fig.~\ref{fig:scattered_photon_kinematics} can be extended to a full 3D representation in Fig.~\ref{fig:3D_coord_system}, with an incident electron $p_{1}$ parallel to the $z$-axis interacting with an incident photon $k_{1}$ travelling anti-parallel, with a crossing angle $\phi$ in the $x$-$z$ plane, scattering a photon $k_{2}$ at a polar angle $\theta$ and azimuthal angle $\phi_{f}$. Whilst the incident electron $z$ is used to set the right-handed global co-ordinate system ($x$,$y$,$z$), local right-handed co-ordinate systems can be developed for the incident photon ($\tilde{x}$,$\tilde{y}$,$\tilde{z}$), which propagates anti-parallel to the electron at a crossing angle($x = -\tilde{x}\sin\phi$, $z = -\tilde{z}$), and for the scattered photon ($\tilde{x}'$,$\tilde{y}'$,$\tilde{z}'$) where the variation from the electron co-ordinate system is due to the polar scattering angle $\theta$. Polarisation directions of the incident and scattered photons is typically specified in the local co-ordinate systems.  
+\textcolor{blue}{\\ **EXPLAIN POLARISATION DIRECTIONS}
 
 \begin{figure}[!h]
 \centering
@@ -637,10 +634,10 @@ The analytical peak brillance calculation by Hartemann and Brown \cite{hartemann
 
 The peak brilliance can also be constructed by modifying the average brilliance (Eq.~\ref{eq:average_brilliance}) via time averaging a single interaction, as is pursued in Curatolo et al \cite{curatolo2017analytical}. The peak bandwidth, based on the average brilliance formulation (Eq.~\ref{eq:average_brilliance}) by Deitrick et al \cite{deitrick2018high}, becomes
 \begin{equation}
-\mathcal{B}_{\mathrm{pk}} = \frac{\sigma_{\gamma,z}}{c}\frac{N_{0.1\%}}{4\pi^{2}\sigma_{\gamma,x}\sigma_{\gamma,x}'\sigma_{\gamma,y}\sigma_{\gamma,y}'},
+\mathcal{B}_{\mathrm{pk}} = \frac{c}{2\sqrt{2\ln2}\sigma_{\gamma,z}}\frac{N_{0.1\%}}{4\pi^{2}\sigma_{\gamma,x}\sigma_{\gamma,x}'\sigma_{\gamma,y}\sigma_{\gamma,y}'},
 \label{eq:peak_brilliance}    
 \end{equation}
-where time averaging is introduced via the interaction time $\sigma_{\gamma,z}/c$ with $\sigma_{\gamma,z}$ the longitudinal source size (Eq.~\ref{eq:longitudinal_source_size}) and the no. photons scattered into a 0.1\% FWHM bandwidth given by $N_{0.1\%} = 3/2\times 10^{-3}\mathcal{F}$ with $\mathcal{F}$ the flux corrected for geometric luminosity reduction (Eq.~\ref{eq:flux_angular_crossing_hourglass}). The peak brilliance formula in (Eq.~\ref{eq:peak_brilliance}) is recoil corrected, applicable to a non-round transverse profile and to an angular crossing via the gemoetrical luminosity reduction (Eq.~\ref{eq:miyahara_combined_reduction}). However, unlike (Eq.~\ref{eq:hartemann_peak_brilliance}), the energy spread of the electron bunch and the spectral bandwidth of the laser pulse are neglected. 
+where time averaging is introduced via the interaction time $\sigma_{\gamma,z}/c$ with $\sigma_{\gamma,z}$ the \textit{rms} longitudinal source size (Eq.~\ref{eq:longitudinal_source_size}) -- which is converted to FWHM -- and the no. photons scattered into a 0.1\% FWHM bandwidth given by $N_{0.1\%} = 3/2\times 10^{-3}\mathcal{F}$ with $\mathcal{F}$ the flux corrected for geometric luminosity reduction (Eq.~\ref{eq:flux_angular_crossing_hourglass}). The peak brilliance formula in (Eq.~\ref{eq:peak_brilliance}) is recoil corrected, applicable to a non-round transverse profile and to an angular crossing via the gemoetrical luminosity reduction (Eq.~\ref{eq:miyahara_combined_reduction}). However, unlike (Eq.~\ref{eq:hartemann_peak_brilliance}), the energy spread of the electron bunch and the spectral bandwidth of the laser pulse are neglected. 
 
 Comparison of (Eq.~\ref{eq:hartemann_peak_brilliance}) and (Eq.~\ref{eq:peak_brilliance}) has shown that the Hartemann and Brown peak brilliance is adequate for cases where interactions are head-on and recoil is small ($X \ll 1$) but unsatisfactory for non-round transverse electron bunch profiles or interactions which occur at an angle. Whilst the relative electron bunch energy spread is typically on the scale of $10^{-3}$--$10^{-4}$ (0.1--0.01\%), for example in cERL \cite{akagi2016narrow} ($\Delta E_{e}/E_{e}$ = 0.1\%) and in the MAX-III storage ring \cite{sjostrom2009max} ($\Delta E_{e}/E_{e}$ = 0.061\%), and the laser pulse is typically on the scale of $10^{-2}$--$10^{-5}$ (1--0.001\%), for example in the cERL ICS experiment ($\Delta E_{L}/E_{L}$ = 0.006\%) \cite{akagi2016narrow} and for high-powered Ti:Sa laser systems ($\Delta E_{L}/E_{L}$ = 1.19\%) \cite{liu2021review}, this is a much smaller effects than an angular crossing, as evident from (Eq.~\ref{eq:angular_crossing_factor}) in Section~\ref{sec:geometric_luminosity_reduction}, where a 5\si{\degree} crossing angle results in a 78\% luminosity reduction. Therefore, (Eq.~\ref{eq:peak_brilliance}) should be favoured in angular crossing ($\phi\neq 0$) situations unless the energy spread and spectral bandwidth are particularly large contrary to most ICS source designs. A case of asymmetric emittance can also not be handled by (Eq.~\ref{eq:hartemann_peak_brilliance}), therefore these must be calculated by (Eq.~\ref{eq:peak_brilliance}). Throughout this work the peak brillance calculation used, either (Eq.~\ref{eq:hartemann_peak_brilliance}) or(Eq.~\ref{eq:peak_brilliance}), will be noted in the footnotes of the relevant table.  
 
