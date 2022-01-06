@@ -86,12 +86,23 @@ where $l_{\mathrm{quad}}$ is the length of the quadrupole magnet and the normali
 k_{1} = \frac{e}{p_{0}}g.
 \label{eq:quadrupole_normalised_gradient}
 \end{equation}
-Quadrupole focusing is analogous to focusing with an optical lens, however a lens focuses simultaneously in all transverse directions whereas a quadrupole that is focusing in the horizontal plane is defocusing in the vertical plane. Consequently, a quadrupole can not be considered a true 'magnetic lens' however, taking inspiration from ray optics, the focal length of a quadrupole $f_{\mathrm{quad}}$ can be described as
+Quadrupole focusing is analogous to focusing with an optical lens, however a lens focuses simultaneously in all transverse directions whereas a quadrupole that is focusing in the horizontal plane is defocusing in the vertical plane. In the standard defined right handed co-ordinate system \textcolor{blue}{**REFERENCE CO-ORD IMAGE**}, when $k_{1} > 0$, the quadrupole is horizontally focusing (vertically defocusing) and when $k_{1} < 0$, the quadrupole is vertically focusing (horizontally defocusing). Consequently, with the transverse variation in focusing behaviour, a quadrupole can not be considered a true 'magnetic lens' however, taking inspiration from ray optics, the focal length of a quadrupole $f_{\mathrm{quad}}$ can be described as
 \begin{equation}
 \frac{1}{f_{\mathrm{quad}}} = k_{1}l_{\mathrm{quad}}.
 \label{eq:focal_length}    
 \end{equation}
 The similarities between an optical lens and a quadrupole are highlighted in Fig. \textcolor{blue}{**LENS/DOUBLET DIAGRAM**}, which shows a simple focusing defocusing scheme -- the quadrupole doublet. 
+
+\textcolor{blue}{**Higher Order Magnets + Multipoles**}
+
+\textcolor{blue}{**Combined Function magnets**}
+Both examples of previously discussed linear fields (dipole and quadrupole fields) can be utilised simultaneously in a single magnet -- named combined function magnets -- which combine a dipole bending field component and a quadrupole focusing field component. A combined function magnet can be achieved either by offsetting the pole centre of a quadrupole from the reference trajectory or by linearly varying the gap between magnetic poles transversely across the pole face of a dipole magnet. The former strategy is employed in the CBETA ERL FFA return loop, an accelerator explained in more detail in Chapter~\ref{CBETA_Multi-Pass_Commissioning}. The transverse magnetic field of a combined function dipole--quadrupole magnet, bending in the horizontal plane, is given by    
+\begin{align}
+B_{x} &= \frac{p_{0}}{e}k_{1}y, \\
+B_{y} &= \frac{p_{0}}{e}\left(k_{0}+k_{1}x\right).
+\label{eq:combined_function_field}    
+\end{align}
+
 
 \subsection{Linear Equations of Motions}
 
