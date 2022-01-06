@@ -23,6 +23,92 @@
 \textcolor{blue}{**HYWEL SUGGESTS TO FOLLOW JAMES JONES THESIS, BUT WITH LESS DETAIL**}
 \textcolor{blue}{https://www.research.manchester.ac.uk/portal/en/theses/design-of-a-novel-stacked-storage-ring-for-low-emittance-light-sources(53cedd16-ea4d-4343-abc9-78886a934a9b).html}
 
+% Follow James Jones Thesis (minus some irrelevant parts) but include sections on ERLs and  Collective Effects
+
+\section{Equations of Motion in Particle Accelerators}
+
+\subsection{Co-ordinate System}
+\textcolor{blue}{**DEFINE REFERENCE ORBIT**}
+
+\subsection{Magnetic Fields in Particle Accelerators}
+
+The motion of a charged particle in an electromagnetic field is given by the Lorentz force 
+\begin{equation}
+\overrightarrow{F} = q\left(\overrightarrow{E}+\overightarrow{v}\times\overrightarrow{B}\right),
+\label{eq:Lorentz_force}    
+\end{equation}
+where $q$ is the charge of the particle with velocity vector $\overrightarrow{v}$, subject to an electric field $\overrightarrow{E}$ and magnetic field $\overrightarrow{B}$. When an elementary particle is subject solely to a magnetic field ($\overrightarrow{E}=0$), as common in an accelerator magnet, the Lorentz force (Eq.~\ref{eq:Lorentz_force}) can be re-cast into a more appropriate form using the displacement $x$ and time $t$
+\begin{equation}
+\frac{d^{2}\overrightarrow{x}}{dt^{2}} = \frac{e}{\gamma m}\left(\overrightarrow{v}\times\overrightarrow{B}\right)
+\label{eq:displacement_Lorentz}    
+\end{equation}
+where $e$ is the elementary charge of the particle, $m$ is its rest mass and
+\begin{equation}
+\gamma = \frac{1}{\sqrt{1-\beta^{2}}} = \frac{E+m}{m},
+\label{eq:Lorentz_factor}    
+\end{equation}
+is the Lorentz factor where $\beta = v/c$ is the Lorentz speed factor and $E$ is the kinetic energy of the particle. Note that, unless explicitly stated, the ultra-relativistic approximation $pc = \sqrt{E^{2}-m^{2}c^{4}} \approx E$, valid for particles with $E \ll mc^{2}$ is used throughout this thesis as the particle energies involved consistently satisfy this approximation.   
+
+Since this thesis is concerned with re -circulated accelerators, particles typically require bending within the horizontal plane. To illustrate particle motion in a bending system we consider a pure, homogenous vertical magnetic field $B_{y}$ produced by a magnet with infinite pole width acting upon the particle of momentum $p_{0}$ (in convenient units of \si{\electronvolt}$/c$) to provide a bending radius of $\rho$ given by
+\begin{equation}
+\frac{1}{\rho} = \frac{eB_{y}}{p_{0}} = k_{0},
+\label{magnet_bending_radius}    
+\end{equation}
+where $k_{0}$ is the field strength of the magnet -- named a dipole magnet -- with no transverse co-ordinate dependence of the field. The magnetic beam rigidity $B\rho$ can therefore be defined as
+\begin{equation}
+B\rho = \frac{p_{0}}{e},
+\label{eq:magnetic_beam_rigidity}    
+\end{equation}
+and the bending angle $\alpha_{0}$ can be defined with reference to the magnetic beam rigidity
+\begin{equation}
+\alpha_{0} = \frac{\int B_{y} ds}{B\rho} = \frac{L_{eff}}{\rho}, 
+\label{eq:dipole_bending_angle}    
+\end{equation}
+where the vertical magnetic field (dipole magnetic field) is integrated over the longitudinal distance traversed -- $L_{\mathrm{eff}}$ the effective longitudinal distance traverse by the particle in the field.
+
+Accelerators are typically concerned with beams of particles -- an ensemble of particles -- which can be transversely distributed around the ideal reference orbit hence particles may be  displaced horizontally ($\Delta x$) or vertically ($\Delta y$) from the reference orbit, which can occur due to their natural divergence. Therefore, a restorative 'focusing' force is required to counter the natural divergence of these particles. Within accelerators a quadrupole magnet, a magnet with 4 alternating equidistant (from the pole centre), poles is typically used to provide the required focusing field, which takes the form of a transverse linearly varying magnetic field increasing in strength with distance from the pole centre. An azimuthal field gradient of the form $g = B_{\phi}/dr$ is pprovided, with $r$ the radial distance from the pole centre. The scalar potential of such a quadrupole field has the from
+\begin{equation}
+V = -gxy,
+\label{eq:quadrupole_potential}    
+\end{equation}
+where the partial derivatives form the linearly varying magnetic fields
+\begin{align}
+B_{x} &= -\frac{\partial V}{\partial x} = gy, \\
+B_{y} &= -\frac{\partial C}{\partial y} = gx.
+\end{align}
+Therefore, using the same formalism as (Eq.~\ref{eq:dipole_bending_angle}), the focusing angle $\alpha_{1}$ of a quadrupole can be generalised to
+\begin{equation}
+\alpha_{1} = \frac{e}{p_{0}}grl_{\mathrm{quad}} = -k_{1}rl_{quad},
+\label{eq:quadrupole_focusing_angle}    
+\end{equation}
+where $l_{\mathrm{quad}}$ is the length of the quadrupole magnet and the normalised quadrupole gradient $k_{1}$ becomes
+\begin{equation}
+k_{1} = \frac{e}{p_{0}}g.
+\label{eq:quadrupole_normalised_gradient}
+\end{equation}
+Quadrupole focusing is analogous to focusing with an optical lens, however a lens focuses simultaneously in all transverse directions whereas a quadrupole that is focusing in the horizontal plane is defocusing in the vertical plane. Consequently, a quadrupole can not be considered a true 'magnetic lens' however, taking inspiration from ray optics, the focal length of a quadrupole $f_{\mathrm{quad}}$ can be described as
+\begin{equation}
+\frac{1}{f_{\mathrm{quad}}} = k_{1}l_{\mathrm{quad}}.
+\label{eq:focal_length}    
+\end{equation}
+The similarities between an optical lens and a quadrupole are highlighted in Fig. \textcolor{blue}{**LENS/DOUBLET DIAGRAM**}, which shows a simple focusing defocusing scheme -- the quadrupole doublet. 
+
+\subsection{Linear Equations of Motions}
+
+\section{R Matricies} 
+\textcolor{blue}{**BETTER TITLE?**}
+
+\section{Twiss Parameters and Emittance}
+\textcolor{blue}{**INCLUDE DISPERSION**}
+
+\section{Tune and Chromaticity}
+
+\section{RF Acceleration}
+
+\section{Longitudinal Dynamics}
+
+\section{Linear Lattices}
+\textcolor{blue}{**FODO Lattice** \\ **MBA** \\ **FFAG**}
 
 \section{Description of an Energy Recovery Linac}
 
@@ -71,8 +157,6 @@ The requirement upon multi-pass ERLs to have multiple return beamlines which hav
 
 Within common transport, the accelerating and decelerating passes for each nominal energy that is traversed twice (i.e all but the maximum nominal energy) share a common return transport. This is possible since after the electron beam has been converted to the decelerating configuration on the maximum nominal energy pass (traversed only once) the path length condition $w\lambda_{\mathrm{RF}}$ is identical for the other nominal energies for accelerating and decelerating passes. However, the properties of the electron bunch do not remain invariant between accelerating and decelerating passes therefore the common transport return beamlines are doubly constrained. The advantage of this approach is that only $n$ transport beamlines are required, which reduces cost and the difficulty in design of spreader switch-yards where the beamlines feed into the entrance and exit of the linac.   
 Another solution exists wherein multiple nominal energy electron beams in both accelerating and decelerating configuration are transported within the same beamline. To distinguish this from common transport we term this approach multi-energy common transport, This has been demonstrated \cite{bartnik2020cbeta} using a fixed field alternating gradient beamline. However, to operate a multi-pass ERL with a multi-energy common transport the matching constraints of this beamline are $m-1$ fold and the required phase change must be designed into the beamline. There is little room for error in this approach as correction or path length or optics has consequences for every other return pass. Hence, these are often utilised with a common transport spreader arrangement at the entrance and exit of the linac, though these are also highly constrained beamlines. The multi-energy common transport approach is advantageous as potentially only a single beamline need be afforded and theoretically, if all constraints can be satisfied, this avoids the need of a spreader system.  
-
-\section{Fixed Field Alternating Gradient Beamlines}
 
 \section{Collective Effects}
 
