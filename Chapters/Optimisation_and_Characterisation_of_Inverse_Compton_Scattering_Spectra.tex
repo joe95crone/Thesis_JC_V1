@@ -323,12 +323,12 @@ To benchmark the \textsc{ICARUS} spectrum code, the \textsc{ICCS3D} code \cite{k
 
 The \textsc{ICCS3D} spectrum code, a generalization of the \textsc{ICCS} code \cite{krafft2016laser,ranjan2018simulation}, computes radiation produced in ICS within the linear Compton regime (when $a_{0}\ll 1$, and electron recoil is properly accounted for). In \textsc{ICCS3D}, a 3D laser pulse model replaces the 1D plane wave model used in \textsc{ICCS}. This modification is implemented in a manner described in Terzi\'c et al \cite{terzic2019improving}; instead of all electrons experiencing the same laser field strength $a_{0}$, as they do for a 1D plane wave, their effective laser field strength is dependent on the electron's distance from the laser's center at the moment of scattering. To calculate anticipated spectral output, in addition to the laser parameters, \textsc{ICCS3D} can use either the parameters of the electron beam or an arbitrary electron distribution -- which could be tracked through the accelerator driver -- allowing start-to-end simulation of ICS sources. 
 
-\textcolor{blue}{**CASE PLOTS OF SPECTRA AGAINST ICCS3D SPECTRA** \\ **NEED CONFIRMATION OF THE CASES** \\ **SQUARE AND CIRCULAR COLLIMATION COMPARISON - CHECK THIS IS MENTIONED** \\ **NEED TO MAKE SPECTRA PLOTS** \\ **NEED TO GET THE ICCS3D PLOTS** \\ **TALK ABOUT THE PLOTS** \\ **CREATE A BENCHMARKING TABE WHICH COMPARES METHODS F0.1\%, ME, CURATOLO, SMALL ANGLE $\mathcal{F}_{\mathrm{col}} = 3/2\mathcal{F}\gamma^{2}\theta^{2}$}
+\textcolor{blue}{**CASE PLOTS OF SPECTRA AGAINST ICCS3D SPECTRA** \\ **SQUARE AND CIRCULAR COLLIMATION COMPARISON - CHECK THIS IS MENTIONED** \\ **NEED TO MAKE SPECTRA PLOTS** \\ **NEED TO GET THE ICCS3D PLOTS** \\ **TALK ABOUT THE PLOTS** \\ **CREATE A BENCHMARKING TABE WHICH COMPARES METHODS F0.1\%, ME, CURATOLO, SMALL ANGLE $\mathcal{F}_{\mathrm{col}} = 3/2\mathcal{F}\gamma^{2}\theta^{2}$}
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/ICARUS_optimised_benchmark.pdf}
-\caption{}
+\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/ICARUS_ICCS3D_cases_comparison.pdf}
+\caption{Comparison of ICS head-on ($\phi=0$) single electron bunch--laser pulse interaction spectra using circular collimation for each case in Table~\ref{tab:char_opt_electron_bunch_parameters}, produced by the semi-analytical codes \textsc{ICARUS} (red) and \textsc{ICCS3D} (blue) for 0.5\% \textit{rms} bandwidth, with configuration optimised by the single point GA non-round beam (see Section~\ref{sec:NRB_optimisation}) optimisation. All \textsc{ICARUS} spectra are produced using $150\times 10^{6}$ QMC points and sampled at 150 points across the energy range. Top Left: Case A. Top Right: Case B. Bottom Left: Case C.}
 \label{fig:ICARUS_optimised_benchmarking}
 \end{figure}
 

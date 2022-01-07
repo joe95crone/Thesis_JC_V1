@@ -47,14 +47,14 @@ where $e$ is the elementary charge of the particle, $m$ is its rest mass and
 \gamma = \frac{1}{\sqrt{1-\beta^{2}}} = \frac{E+m}{m},
 \label{eq:Lorentz_factor}    
 \end{equation}
-is the Lorentz factor where $\beta = v/c$ is the Lorentz speed factor and $E$ is the kinetic energy of the particle. Note that, unless explicitly stated, the ultra-relativistic approximation $pc = \sqrt{E^{2}-m^{2}c^{4}} \approx E$, valid for particles with $E \ll mc^{2}$ is used throughout this thesis as the particle energies involved consistently satisfy this approximation.   
+is the Lorentz factor where $\beta = v/c$ is the Lorentz speed factor and $E$ is the kinetic energy of the particle. Note that, unless explicitly stated, the ultra-relativistic approximation $pc = \sqrt{E^{2}-m^{2}c^{4}} \approx E$, valid for particles with $E \gg mc^{2}$ is used throughout this thesis as the particle energies involved consistently satisfy this approximation.   
 
 Since this thesis is concerned with re -circulated accelerators, particles typically require bending within the horizontal plane. To illustrate particle motion in a bending system we consider a pure, homogenous vertical magnetic field $B_{y}$ produced by a magnet with infinite pole width acting upon the particle of momentum $p_{0}$ (in convenient units of \si{\electronvolt}$/c$) to provide a bending radius of $\rho$ given by
 \begin{equation}
 \frac{1}{\rho} = \frac{eB_{y}}{p_{0}} = k_{0},
 \label{magnet_bending_radius}    
 \end{equation}
-where $k_{0}$ is the field strength of the magnet -- named a dipole magnet -- with no transverse co-ordinate dependence of the field. The magnetic beam rigidity $B\rho$ can therefore be defined as
+where $k_{0}$ is the field strength of the magnet -- named a dipole magnet -- with no transverse co-ordinate dependence of the field. By convention of $n$th order magnets, we classify this as the zeroth-order magnet ($n=0$). The magnetic beam rigidity $B\rho$ can therefore be defined as
 \begin{equation}
 B\rho = \frac{p_{0}}{e},
 \label{eq:magnetic_beam_rigidity}    
@@ -66,14 +66,14 @@ and the bending angle $\alpha_{0}$ can be defined with reference to the magnetic
 \end{equation}
 where the vertical magnetic field (dipole magnetic field) is integrated over the longitudinal distance traversed -- $L_{\mathrm{eff}}$ the effective longitudinal distance traverse by the particle in the field.
 
-Accelerators are typically concerned with beams of particles -- an ensemble of particles -- which can be transversely distributed around the ideal reference orbit hence particles may be  displaced horizontally ($\Delta x$) or vertically ($\Delta y$) from the reference orbit, which can occur due to their natural divergence. Therefore, a restorative 'focusing' force is required to counter the natural divergence of these particles. Within accelerators a quadrupole magnet, a magnet with 4 alternating equidistant (from the pole centre), poles is typically used to provide the required focusing field, which takes the form of a transverse linearly varying magnetic field increasing in strength with distance from the pole centre. An azimuthal field gradient of the form $g = B_{\phi}/dr$ is pprovided, with $r$ the radial distance from the pole centre. The scalar potential of such a quadrupole field has the from
+Accelerators are typically concerned with beams of particles -- an ensemble of particles -- which can be transversely distributed around the ideal reference orbit hence particles may be  displaced horizontally ($\Delta x$) or vertically ($\Delta y$) from the reference orbit, which can occur due to their natural divergence. Therefore, a restorative 'focusing' force is required to counter the natural divergence of these particles. Within accelerators a quadrupole magnet, a magnet with 4 alternating equidistant (from the pole centre), poles is typically used to provide the required focusing field, which takes the form of a transverse linearly varying magnetic field increasing in strength with distance from the pole centre. We term this a first order magnet ($n=1$). An azimuthal field gradient of the form $g = B_{\phi}/dr$ is pprovided, with $r$ the radial distance from the pole centre. The scalar potential of such a quadrupole field has the from
 \begin{equation}
 V = -gxy,
 \label{eq:quadrupole_potential}    
 \end{equation}
 where the partial derivatives form the linearly varying magnetic fields
 \begin{align}
-B_{x} &= -\frac{\partial V}{\partial x} = gy, \\
+B_{x} &= -\frac{\partial V}{\partial x} = gy, \nonumber\\
 B_{y} &= -\frac{\partial C}{\partial y} = gx.
 \end{align}
 Therefore, using the same formalism as (Eq.~\ref{eq:dipole_bending_angle}), the focusing angle $\alpha_{1}$ of a quadrupole can be generalised to
@@ -94,15 +94,44 @@ Quadrupole focusing is analogous to focusing with an optical lens, however a len
 The similarities between an optical lens and a quadrupole are highlighted in Fig. \textcolor{blue}{**LENS/DOUBLET DIAGRAM**}, which shows a simple focusing defocusing scheme -- the quadrupole doublet. 
 
 \textcolor{blue}{**Higher Order Magnets + Multipoles**}
-
-\textcolor{blue}{**Combined Function magnets**}
-Both examples of previously discussed linear fields (dipole and quadrupole fields) can be utilised simultaneously in a single magnet -- named combined function magnets -- which combine a dipole bending field component and a quadrupole focusing field component. A combined function magnet can be achieved either by offsetting the pole centre of a quadrupole from the reference trajectory or by linearly varying the gap between magnetic poles transversely across the pole face of a dipole magnet. The former strategy is employed in the CBETA ERL FFA return loop, an accelerator explained in more detail in Chapter~\ref{CBETA_Multi-Pass_Commissioning}. The transverse magnetic field of a combined function dipole--quadrupole magnet, bending in the horizontal plane, is given by    
+The computation of the magnetic field of an arbitrary $n$th order magnet typically uses a multipole expansion of the scalar potential of the magnetic field, which for convenience is presented in cylindrical polar co-ordinates \cite{} \textcolor{blue}{**BEN SHEPHERD**}
+\begin{equation}
+V = \sum_{n=0}^{\infty} J_{n+1}r^{n+1}\cos\left[\left(n+1\right)\theta\theta\right]+K_{n+1}r^{n+1}\sin\left[\left(n+1\right)\theta\right],
+\label{eq:multipole_scalar_potential}    
+\end{equation}
+where $n \geq 0$ is the order of the magnet, $\theta$ is the polar angle from the horizontal plane  $x$--$z$ plane, and the coefficients $J_{n+1}$ and $K_{n+1}$ relate to the geometry of the magnet and its normalised field strength, for example for a quadrupole magnet ($n=1$) $K_{2}=0$ means this is a skew quadrupole rotated 90\si{\degree} around the pole axis and $J_{2}=0$ relates to a normal quadrupole field. The corresponding magnetic flux density of the magnet can be calculated for the radial $B_{r}$ or polar angle $B_{\theta}$ case by    
 \begin{align}
-B_{x} &= \frac{p_{0}}{e}k_{1}y, \\
+B_{r} &= -\frac{\partial V}{\partial r}, & B_{\theta} &= -\frac{\partial V}{\partial \theta},
+\label{eq:multipole_magnetic_field_cylindrical}    
+\end{align}
+and similarly in Cartesian co-ordinates, with proper transformation the magnetic flux density in each transverse plane is
+\begin{align}
+B_{x} &= -\frac{\partial V}{\partial x}, & B_{y} &= -\frac{\partial V}{\partial y}.
+\label{eq:multipole_magnetic_field_cartesian}
+\end{align}
+The normalised field gradient of an $n$th order magnet is generalised to
+\begin{equation}
+k_{n} = \frac{e}{p_{0}}\frac{\partial^{n} B_{y}}{\partial x^{n}}.
+\label{eq:multipole_normalised_field_gradient}    
+\end{equation}
+For example, for a sextupole ($n=2$) magnet with 6 poles the magnetic flux density is given by
+\begin{align}
+B_{x} &= k_{2}xy, \nonumber \\
+B_{y} &= \frac{k_{2}}{2}\left(x^{2}-y^{2}\right),
+\label{eq:sextupole_magnetic_field}    
+\end{align}
+wiith the normalised field gradient given by 
+\begin{equation}
+k_{2} = \frac{e}{p_{0}}\frac{\partial^{2}B_{y}}{\partial x^{2}}.
+\label{eq:sextupole_field_gradient}    
+\end{equation}
+
+A magnet may have more than a single order field simultaneously. For example, a magnet utilising both linear fields (dipole and quadrupole fields) can be constructed -- named a combined function magnet -- which in this case would combine a dipole bending field component and a quadrupole focusing field component. A linear combined function magnet of can be achieved either by offsetting the pole centre of a quadrupole from the reference trajectory or by linearly varying the gap between magnetic poles transversely across the pole face of a dipole magnet. The former strategy is employed in the CBETA ERL FFA return loop, an accelerator explained in more detail in Chapter~\ref{CBETA_Multi-Pass_Commissioning}. The transverse magnetic field of a combined function dipole--quadrupole magnet, bending in the horizontal plane, is given by 
+\begin{align}
+B_{x} &= \frac{p_{0}}{e}k_{1}y, \nonumber\\
 B_{y} &= \frac{p_{0}}{e}\left(k_{0}+k_{1}x\right).
 \label{eq:combined_function_field}    
 \end{align}
-
 
 \subsection{Linear Equations of Motions}
 
