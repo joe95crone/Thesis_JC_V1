@@ -30,6 +30,10 @@
 \subsection{Co-ordinate System}
 \textcolor{blue}{**DEFINE REFERENCE ORBIT**}
 
+In particle accelerators bending fields are often used to direct the particles to a certain experimental station downstream of the particle sources, and many particle accelerators re-circulate particle beams. The particles are directed along an ideal trajectory named -- since in a recirculated machine the trajectory is closed -- a reference orbit. Therefore, since bending forces are introduced, the motion of particles within an accelerator environment can best be described by a right handed rotating co-moving co-ordinate system \cite{wille2000physics}. The right handed co-moving co-ordinate system is shown in Fig. \textcolor{blue}{**DIAGRAM OF CIRCULAR CO-ORD**}   
+
+The co-ordinate system in Fig. \textcolor{blue}{**REF DIAGRAM COORD**} used to describe motion in particle accelerators within this thesis is of the form $\Kappa = \left\{x,y,s\right\}$, describing the local co-ordinate system where the transverse motion along the horizontal direction is in the $x$-axis and the vertical axis in $y$ is orthogonal to this and the direction of longitudinal motion $s$. Within this thesis, the $\Kappa = \left\{x,y,s\right\}$ co-ordinate system is maintained in situations with no bending magnets, such as linear accelerators.     
+
 \subsection{Magnetic Fields in Particle Accelerators}
 
 The motion of a charged particle in an electromagnetic field is given by the Lorentz force 
@@ -94,7 +98,7 @@ Quadrupole focusing is analogous to focusing with an optical lens, however a len
 The similarities between an optical lens and a quadrupole are highlighted in Fig. \textcolor{blue}{**LENS/DOUBLET DIAGRAM**}, which shows a simple focusing defocusing scheme -- the quadrupole doublet. 
 
 \textcolor{blue}{**Higher Order Magnets + Multipoles**}
-The computation of the magnetic field of an arbitrary $n$th order magnet typically uses a multipole expansion of the scalar potential of the magnetic field, which for convenience is presented in cylindrical polar co-ordinates \cite{} \textcolor{blue}{**BEN SHEPHERD**}
+The computation of the magnetic field of an arbitrary $n$th order magnet typically uses a multipole expansion of the scalar potential of the magnetic field, which for convenience is presented in cylindrical polar co-ordinates \cite{shepherd2016magnet}
 \begin{equation}
 V = \sum_{n=0}^{\infty} J_{n+1}r^{n+1}\cos\left[\left(n+1\right)\theta\theta\right]+K_{n+1}r^{n+1}\sin\left[\left(n+1\right)\theta\right],
 \label{eq:multipole_scalar_potential}    
@@ -134,6 +138,75 @@ B_{y} &= \frac{p_{0}}{e}\left(k_{0}+k_{1}x\right).
 \end{align}
 
 \subsection{Linear Equations of Motions}
+
+The linear equations of motion for a particle follow the derivation of Rossbach and Schmuser \cite{rossbach1993basic} and K. Willie \cite{wille2000physics}, using the co-ordinate system presented in Fig. \textcolor{blue}{**CO-ORD SYS DIAG**}. Here an equation of particle motion due to the Lorentz force (Eq.~\ref{eq:Lorentz_force}) is developed for the co-ordinate system which rotates due to bending forces, which we limit to the horizontal $x$--$s$ plane. We define the position vector of a particle at an arbitrary point in it's trajectory, in the global cyclindrical co-ordinate system $\left\{r,\alpha,z\right\}$ as
+\begin{equation}
+\boldsymbol{R} = \boldsymbol{R}_{0} + r\boldsymbol{u}_{r} + z\boldsymbol{u}_{z},    
+\label{eq:particle_position_vector}
+\end{equation}
+where $R_{0}$ is the distance of the particle from an arbitrary origin point and $\boldsymbol{u}_{r}$, $\boldsymbol{u}_{\alpha}$, $\boldsymbol{u}_{z}$ are unit vectors describing the motion of the particle. Assuming a small variation in azimuthal angle $d\theta$, the relations between the unit vectors become
+\begin{align}
+\frac{d\boldsymbol{u}_{r}}{d\alpha} &= \boldsymbol{u}_{\alpha}, & \frac{d\boldsymbol{u}_{\alpha}}{d\alpha} &= -\boldsymbol{u}_{r}, & \frac{d\boldsymbol{u}_{z}}{d\alpha} &= 0.
+\label{eq:unit_vector_angular_derivatives}    
+\end{align}
+The velocity of the particle is given by
+\begin{align}
+\frac{d\boldsymbol{R}}{dt} &= \frac{dr}{dt}\boldsymbol{u}_{r}+r\frac{d\boldsymbol{u}_{r}}{dt} +\frac{dz}{dt}\boldsymbol{u}_{z}, \nonumber \\
+\frac{d\boldsymbol{R}}{dt} &= \frac{dr}{dt}\boldsymbol{u}_{r} + r\frac{d\alpha}{dt}\boldsymbol{u}_{\alpha} + \frac{dz}{dt}\boldsymbol{u}_{z},
+\label{eq:unit_vector_velocity}    
+\end{align}
+and differentiating within respect to time, the acceleration becomes
+\begin{equation}
+\frac{d^{2}\boldsymbol{E}}{dt^{2}} = \left(\frac{d^{2}r}{dt^{2}}-r\frac{d^{2}\alpha}{dt^{2}}\right)\boldsymbol{u}_{r} + \left(2\frac{dr}{dt}\frac{d\alpha}{dt}\right)\boldsymbol{u}_{\alpha} + \frac{d^{2}z}{dt^{2}}\boldsymbol{u}_{z},
+\label{eq:unit_vector_acceleration}    
+\end{equation}
+within the first $\boldsymbol{u}_{r}$ term, the first part describes the effect of the variation of bending on the acceleration and the second part relates to the centrifugal acceleration of the particle. The force of the particle of mass $m$, using the acceleration (Eq.~\ref{eq:unit_vector_acceleration}), can be equated with the Lorentz force (Eq.~\ref{eq:Lorentz_force}) of the magnetic field due to the accelerator magnets ($\overightarrow{E}=0$)
+\begin{equation}
+m\frac{d^{2}\boldsymbol{R}}{dt^{2}}=-e\left(\overightarrow{v}\times\overightarrow{B}\right),
+\label{eq:Lorentz_particle_equating_forces}
+\end{equation}
+which, by describing the magnetic flux density vector in cylindrical co-ordinates $\overightarrow{B} = \left(B_{r},B_{\alpha},B_{z}\right)$, can be expanded to
+\begin{equation}
+m\frac{d^{2}\boldsymbol{R}}{dt^{2}} = -e\left[\left(r\frac{d\alpha}{dt}B_{z}-\frac{dz}{dt}B_{\alpha}\right)\boldsymbol{u}_{r}+\left(\frac{dz}{dt}B_{r}-\frac{dr}{dt}B_{z}\right)\boldsymbol{u}_{\alpha}+\left(\frac{dr}{dt}B_{\alpha}-r\frac{d\alpha}{dt}B_{r}\right)\boldsymbol{u}_{z}\right].
+\label{eq:Lorentz_particle_equating_forces_expanded}    
+\end{equation}
+Assuming that $B_{\alpha}=0$, as there is no longitudinally applied magnetic field -- as this would be in the direction of motion of the particle -- we obtain a set of two differential equations
+\begin{align}
+m\left(\frac{d^{2}r}{dt^{2}}-r\frac{d^{2}\alpha}{dt^{2}}\right)=-er\frac{d\alpha}{dt}B_{z},
+\label{eq:radial_differential_equation} \\
+m\frac{d^{2}z}{dt^{2}}=-er\frac{d\alpha}{dt}B_{r}.
+\label{eq:angular_differential_equation}
+\end{align}
+Assuming a combination of focusing and bending magnets within the accelerator, we approximate these fields by using a the field of a combined function magnet (Eq.~\ref{eq:combined_function_field}). The defined field of a combined function magnet (Eq.~\ref{eq:combined_function_field}) in the local co-ordinate system can be simply equated to the field in the global cylindrical co-ordinate system  because the radial direction of the global co-ordinate system is the same as the horizontal $x$ direction of the local co-ordinate system and the vertical $y$ local co-ordinate direction is analogous to the global $z$ direction. The equivalence of the fields in each co-ordinate system can be expressed as
+\begin{align}
+B_{r} = B_{x} &= \frac{p_{0}}{e}k_{1}y, \\
+B_{z} = B_{y} &= \frac{p_{0}}{e}\left(k_{0}+k_{1}x\right),
+\label{eq:equivalent_combined_function_field}
+\end{align}
+Substituting the combined function magnetic flux density (Eq.~\ref{eq:equivalent_combined_function_field}) into the differential equations (Eqs.~\ref{eq:radial_differential_equation}, \ref{eq:angula_differential_equation}) and making the substitution $r=\rho+x$ to account for varying transverse position around the reference orbit yields
+\begin{align}
+m\left(\frac{d^{2}x}{dt^{2}}-\left(p+x\right)\frac{d^{2}\alpha}{dt^{2}}\right) &=-p_{0}\left(\rho+x\right)\frac{d\alpha}{dt}\left(k_{0}+k_{1}\right), 
+\label{eq:horizontal_differential_equation}\\   
+m\frac{d^{2}z}{dt^{2}} &= -p_{0}\left(\rho+x\right)\frac{d\alpha}{dt}k_{1}z.
+\label{eq:vertical_differential_equation}
+\end{align}
+The azimuthal component of the velocity has the form
+\begin{equation}
+v_{\alpha} = \left(\rho+x\right)\frac{d\alpha}{dt},
+\label{eq:azimuthal_velocity}    
+\end{equation}
+which is typically much larger than the radial and vertical component ($v_{\alpha}\gg v_{r},~v_{z}$), which enables the approximation $v\approx v_{\alpha}$ that the azimuthal velocity is the velocity of the particle. Using this approximation a series of variables can be replaced using
+\begin{align}
+s&=vt, & \frac{d^{2}x}{dt^{2}} &= v^{2}\frac{d^{2}x}{ds^{2}},
+\label{eq:velocity_approximation_replacing_variables}    
+\end{align}
+which can then be used to re-cast (Eqs.~\ref{eq:horizontal_differential_equation}, \ref{eq:vertical_differential_equation}) to obtain
+\begin{align}
+\frac{d^{2}x}{ds^{2}} &= -\frac{p_{0}}{mv}\frac{1}{\rho+x}\left(k_{0}+k_{1}x\right),
+\label{eq:horizontal_recast_differential_equation} \\
+\frac{d^{2}z}{ds^{2}} &= -\frac{p_{0}}{mv}k_{1}z
+\label{eq:vertical_recast_differential_equation}
+\end{align}
 
 \section{R Matricies} 
 \textcolor{blue}{**BETTER TITLE?**}
