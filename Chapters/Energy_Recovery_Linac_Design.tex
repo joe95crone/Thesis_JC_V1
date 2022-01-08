@@ -204,8 +204,25 @@ which can then be used to re-cast (Eqs.~\ref{eq:horizontal_differential_equation
 \begin{align}
 \frac{d^{2}x}{ds^{2}} &= -\frac{p_{0}}{mv}\frac{1}{\rho+x}\left(k_{0}+k_{1}x\right),
 \label{eq:horizontal_recast_differential_equation} \\
-\frac{d^{2}z}{ds^{2}} &= -\frac{p_{0}}{mv}k_{1}z
+\frac{d^{2}z}{ds^{2}} &= -\frac{p_{0}}{mv}k_{1}z.
 \label{eq:vertical_recast_differential_equation}
+\end{align}
+Variation in the design momentum $\Delta p$ is introduced via
+\begin{equation}
+mv = p = p_{0}\left(1+\frac{\Delta p}{p_{0}}\right),
+\label{eq:design_momentum_variation}    
+\end{equation}
+which means the transverse $r$ co-ordinate can be re-cast, when $\rho \gg x$, as
+\begin{equation}
+\frac{1}{r}\approx \frac{1}{\rho}\left(1-\frac{x}{\rho}\right). 
+\label{eq:r_rho_relation}
+\end{equation}
+By introducing the momentum variation (Eq.~\ref{eq:design_momentum_variation}) and the approximation of the radial component (Eq.~\ref{eq:r_rho_relation}), the equations of motion can be shown in their familiar form \cite{rossbach1993basic,wille2000physics}
+\begin{align}
+\frac{d^{2}x}{ds^{2}} -\left(k_{1}-\frac{1}{\rho^{2}}\right)x &= \frac{1}{\rho}\frac{\Delta p}{p_{0}},
+\label{eq:horizontal_equation_of_motion} \\
+\frac{d^{2}z}{ds^{2}} + k_{1}z &= 0
+\label{eq:vertical_equation_of_motion}
 \end{align}
 
 \section{R Matricies} 
