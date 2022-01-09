@@ -219,14 +219,75 @@ which means the transverse $r$ co-ordinate can be re-cast, when $\rho \gg x$, as
 \end{equation}
 By introducing the momentum variation (Eq.~\ref{eq:design_momentum_variation}) and the approximation of the radial component (Eq.~\ref{eq:r_rho_relation}), the equations of motion can be shown in their familiar form \cite{rossbach1993basic,wille2000physics}
 \begin{align}
-\frac{d^{2}x}{ds^{2}} -\left(k_{1}-\frac{1}{\rho^{2}}\right)x &= \frac{1}{\rho}\frac{\Delta p}{p_{0}},
+\frac{d^{2}x}{ds^{2}} +\left(k_{1}+\frac{1}{\rho^{2}}\right)x &= \frac{1}{\rho}\frac{\Delta p}{p_{0}},
 \label{eq:horizontal_equation_of_motion} \\
-\frac{d^{2}z}{ds^{2}} + k_{1}z &= 0
+\frac{d^{2}z}{ds^{2}} - k_{1}z &= 0,
 \label{eq:vertical_equation_of_motion}
 \end{align}
+where the focusing terms of the equations of motion, arising from the focusing component $k_{1}$ and the bending component $1/\rho^{2}$ can be combined into a single term
+\begin{align}
+\frac{d^{2}x}{ds^{2}} + K_{x}x &= \frac{1}{\rho}\frac{\Delta p}{p_{0}},
+\label{eq:horizontal_equation_of_motion_simplified} \\
+\frac{d^{2}z}{ds^{2}} + K_{z}z &= 0,
+\label{eq:vertical_equation_of_motion_simplified}
+\end{align}
+where
+\begin{align}
+K_{x} &= k_{1} + \frac{1}{\rho^{2}}. \nonumber\\
+K_{z} &= -k_{1}.
+\label{eq:focusing_equation_of_motion}    
+\end{align}
+The equations of motion (Eqs.~\ref{eq:horizontal_equation_of_motion_simplified}, \ref{eq:vertical_equation_of_motion_simplified}) have the form of a harmonic oscillator.
 
-\section{R Matricies} 
-\textcolor{blue}{**BETTER TITLE?**}
+Solutions to the equations of motion (Eqs.~\ref{eq:horizontal_equation_of_motion_simplified}, \ref{eq:vertical_equation_of_motion_simplified}) can therefore be found by linear combinations of sine and cosine terms which, for the focusing case ($K>0$) have the form
+\begin{align}
+C\left(s\right) &= \cos\left(\sqrt{K}s\right), \nonumber\\
+S\left(s\right) &= \frac{1}{\sqrt{K}}\sin\left(\sqrt{K}s\right),
+\label{eq:focusing_solution_equation_of_motion}
+\end{align}
+and for the defocusing case ($K<0$) become
+\begin{align}
+C\left(s\right) &= \cosh\left(\left|K\right|s\right), \nonumber \\
+S\left(s\right) &= \frac{1}{\sqrt{\left|K\right|}}\sinh\left(\left|K\right|s\right).
+\label{eq:defocusing_solution_equation_of_motion}    
+\end{align}
+Generalising for each plane $u\left(s\right)\equiv x\left(s\right) \parallel z\left(s\right)$ the solutions become
+\begin{align}
+u\left(s\right) &= aC\left(s\right) + bS\left(s\right) + \frac{\Delta p}{p_{0}}D\left(s\right), \nonumber \\
+u'\left(s\right) &= aC'\left(s\right) + bS'\left(s\right) + \frac{\Delta p}{p_{0}}D\left(s\right),
+\label{eq:generalised_solution}
+\end{align}
+where $D\left(s\right)$ is the dispersion function (see Section \textcolor{blue}{**LINK**}), which accounts for the effect of momentum on particle trajectories and $a$, $b$ are coefficients related to the initial conditions of the particles. Commonly, for convenience, the solution (Eq.~\ref{eq:generalised_solution}) to the equations of motion is expressed in matrix formalism
+\begin{equation}
+\begin{pmatrix}
+u\left(s\right) \\
+u'\left(s\right) \\
+\Delta p/p_{0}
+\end{pmatrix} = 
+\begin{pmatrix}
+C\left(s\right) & S\left(s\right) & D\left(s\right) \\
+C'\left(s\right) & S'\left(s\right) & D'\left(s\right) \\
+0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+u\left(s_{0}\right) \\
+u'\left(s_{0}\right) \\
+\Delta p/p_{0}
+\end{pmatrix},
+\label{eq:general_solution_matrix}    
+\end{equation}
+where $s_{0}$ is the initial longitudinal position of the particle.
+
+\section{Transport Matricies} 
+\textcolor{blue}{**EXPLAIN 6D CO-ORDINATE SYSTEM**\\}
+
+\subsection{Drift Space}
+
+\subsection{Quadrupole Magnet}
+
+
+
+\subsection{Dipole Magnet}
 
 \section{Twiss Parameters and Emittance}
 \textcolor{blue}{**INCLUDE DISPERSION**}
