@@ -279,15 +279,74 @@ u'\left(s_{0}\right) \\
 where $s_{0}$ is the initial longitudinal position of the particle.
 
 \section{Transport Matricies} 
-\textcolor{blue}{**EXPLAIN 6D CO-ORDINATE SYSTEM**\\}
+
+Previously, the solution to the equations of motion within a periodic focusing and bending particle accelerator () have been derived and presented using a matrix formalism (). By considering the dynamics in both transverse planes ($x$ and $z$) simulataneously, the effect of momentum deviation from the design momentum $\Delta p/p_{0},$ as well as accounting for the longitudinal position of the particle $s=ct$ with $t$ the time-of-flight of the particle we see that a 6D co-ordinate system is required. Therefore, within a particle accelerator the position of a particle can be adequately described using a 6D vector 
+\begin{equation}
+\boldsymbol{X} = 
+\begin{bmatrix}
+x \\
+x' \\
+y \\
+y' \\
+ct \\
+\Delta p/p
+\end{bmatrix},
+\label{eq:6D_vector}
+\end{equation}
+where $x$, $y$, $ct$ are the horizontal, vertical and longitudinal positions of the particle and $x'$, $y'$ are the divergence of the particle in either plane.
+
+Within an accelerator, the particle is typically subjected to a series of magnet elements, such as dipoles, quadrupoles etc. the effect of which can be described overall by a $6~\times~6$ transform or transport matricies $\boldsymbol{R}$ to first order. With an initial particle vector $\boldsymbol{X}_{0}$ of the form (Eq.~\ref{eq:6D_vector}), the transport matrix can relate the initial state to a final state $\boldsymbol{X}$, where the particle has traversed a distance $s-s_{0}$ i.e
+\begin{equation}
+\boldsymbol{X}_{1} = \boldsymbol{R}\boldsymbol{X}_{0}.
+\label{eq:overall_transport_matrix}
+\end{equation}
+The transport matrix is typically constructed from a series of magnetic elements and drift spaces, therefore the transport matrix has the form
+\begin{equation}
+\boldsymbol{R} = \boldsymbol{R}_{n}\boldsymbol{R}_{n-1}\ldots\boldsymbol{R_{1}},
+\label{eq:subseries_transport_matrix}    
+\end{equation}
+where $R_{n}$ are the transport matricies of each individual element. A full series of magnetic elements is termed a beamline, where a subset of elements is named a cell -- cells can be repeated several times to form a periodic beamline. Within the following subsections, the individual transport matricies of linear magnets are described. 
+
 
 \subsection{Drift Space}
 
+\begin{equation}
+\boldsymbol{R}_{\mathrm{drift}} =
+\begin{pmatrix}
+1 & L_{\mathrm{drift}} & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & L_{\mathrm{drift}} & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1
+\end{pmatrix},
+\label{eq:drift_matrix}    
+\end{equation}
+
 \subsection{Quadrupole Magnet}
 
+\resizebox{\columnwidth}{!}{
+\begin{equation}
+\boldsymbol{R}_{\mathrm{quad}} = 
+\begin{pmatrix}
+\cos\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & \frac{1}{\sqrt{k_{1}}}\sin\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & 0 & 0 & 0 & 0 \\
+-\sqrt{k_{1}}\sin\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & \cos\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & 0 & 0 & 0 & 0\\
+0 & 0 & \cosh\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & \frac{1}{\sqrt{k_{1}}}\sinh\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & 0 & 0 \\
+0 & 0 & \sqrt{k_{1}}\sinh\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) &  \cosh\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 0 & 1
+\end{pmatrix},
+\label{eq:quadrupole_matrix_thick}    
+\end{equation}}
 
+\begin{equation}
+\boldsymbol{R}_{\mathrm{quad, thin}}
+\label{eq:quadrupole_matrix_thin}    
+\end{equation}
 
 \subsection{Dipole Magnet}
+
+\subsection{Quadrupole Doublet}
 
 \section{Twiss Parameters and Emittance}
 \textcolor{blue}{**INCLUDE DISPERSION**}
