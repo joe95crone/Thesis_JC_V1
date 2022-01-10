@@ -482,11 +482,10 @@ where the area of the phase space ellipse is given by
 A=\pi\epsilon,
 \label{eq:phase_space_area}    
 \end{equation} 
-and $\epsilon$ is defined as the single particle emittance or action. The form in (Eq.~\ref{eq:phase_space_ellipse}) is that of the equation of an ellipse; consequently the motion of a single particle arount an orbit maps out an ellipse in phase space. Phase space ellipses are observed in each of the three planes as the results here are general. An example of the phase space ellipse in the $x$--$x'$ plane is shown in Fig.~\textcolor{blue}{**PHASE SPACE ELLIPSE DIAGRAM**}.
+and $\epsilon$ is defined as the single particle emittance or action. The form in (Eq.~\ref{eq:phase_space_ellipse}) is that of the equation of an ellipse; consequently the motion of a single particle arount an orbit maps out an ellipse in phase space. The parameters ($\beta\left(s\right)$, $\alpha\left(s\right)$, $\gamma\left(s\right)$) we have defined to interpret the phase space of a particle are collectively known as the Twiss parameters. Phase space ellipses are observed in each of the three planes as the results here are general. An example of the phase space ellipse in the $x$--$x'$ plane is shown in Fig.~\textcolor{blue}{**PHASE SPACE ELLIPSE DIAGRAM**}.
 
-\textcolor{blue}{**LOUIVILLES THEOREM**}
-
-Since the phase space ellipse is for a single particle trajectory, the emittance is the single particle emittance. This is unsatisfactory for describing an ensemble of particles, therefore the concept of emittance requires extension to a many-particle ensemble. In an electron accelerator, which is the focus of this work, the equilibrium distribution of particles can be well approximated by a Gaussian distribution \cite{}, which has a transverse charge density distribution $\rho\left(x,z\right)$ at the longitudinal centroid of the electron bunch of the form
+\textcolor{blue}{**MAYBE SHOULD RE-THINK SECTION ON EMITTANCE**}
+Since the phase space ellipse is for a single particle trajectory, the emittance is the single particle emittance. This is unsatisfactory for describing an ensemble of particles, therefore the concept of emittance requires extension to a many-particle ensemble. In an electron accelerator, which is the focus of this work, the equilibrium distribution of particles can be well approximated by a Gaussian distribution \cite{wille2000physics}, which has a transverse charge density distribution $\rho\left(x,z\right)$ at the longitudinal centroid of the electron bunch of the form
 \begin{equation}
 \rho\left(x,z\right) = \frac{N_{e}}{2\pi\sigma_{x}\sigma_{z}}\exp\left(\right),
 \label{eq:Gaussian_transverse_charge_distribution}    
@@ -499,6 +498,44 @@ where $N_{e}$ is the no. electrons in the distribution, $\sigma_{x}$ and $\sigma
 \label{eq:vertical_emittance}
 \end{align}
 where $\beta_{x/y}$ are the betatron amplitude functions in each plane. A similar treatment can be applied to the longitudinal plane.
+
+Liouville's theorem \cite{liouville1838note}, as commonly applied in statistical mechanics \cite{gibbs1902elementary}, maintains that the phase-space density of a system remains unchanged under conservative forces applied to the system. Applied to the accelerator situation of harmonic oscillation around a reference orbit due to conserved magnetic forces, Liouville's theorem implies that the emittance is conserved throughout the beamline unless the beam of particles is acted upon by a non-conservative force. Therefore, under conservative forces, the propagation of Twiss parameters can be accomplished similarly to the transform of phase space co-ordinates. For example, in the horizontal plane phase space co-ordinates can be transformed from an initial state ($x_{0}$, $x'_{0}$) to a final state ($x_{1}$, $x'_{1}$) via transport matricies such that
+\begin{equation}
+\begin{pmatrix}
+x_{1} \\
+x'_{1}
+\end{pmatrix}
+=
+\begin{pmatrix}
+\boldsymbol{R}_{1,1} & \boldsymbol{R}_{1,2} \\
+\boldsymbol{R}_{2,1} & \boldsymbol{R}_{2,2}
+\end{pmatrix}
+\begin{pmatrix}
+x_{0} \\
+x'_{0}
+\end{pmatrix}.
+\label{eq:general_phase_space_transform}
+\end{equation}
+Expanding the matricies in (Eq.~\ref{eq:general_phase_space_transform}) and re-casting the equations for substitution into (Eq.~\ref{eq:phase_space_ellipse}), the analagous transform of the Twiss parameters from initial state ($\beta_{0}$, $\alpha_{0}$, $\gamma_{0}$) to final state ($\beta_{1}$, $\alpha_{1}$, $\gamma_{1}$) becomes 
+\begin{equation}
+\begin{pmatrix}
+\beta_{1} \\
+\alpha_{1} \\
+\gamma_{1} 
+\end{pmatrix}
+=
+\begin{pmatrix}
+\boldsymbol{R}_{1,1}^{2} & -2\boldsymbol{R}_{1,1}\boldsymbol{R}_{1,2} & \boldsymbol{R}_{1,2}^{2} \\
+-\boldsymbol{R}_{1,1}\boldsymbol{R}_{2,1} & \boldsymbol{R}_{1,2}\boldsymbol{R_{2,1}}+\boldsymbol{R}_{1,1}\boldsymbol{R}_{2,2} & -\boldsymbol{R}_{1,2}\boldsymbol{R}_{2,2} \\
+\boldsymbol{R}_{2,1}^{2} & -2\boldsymbol{R}_{2,1}\boldsymbol{R}_{2,2} & \boldsymbol{R}_{2,2}^{2} 
+\end{pmatrix}
+\begin{pmatrix}
+\beta_{0} \\
+\alpha_{0} \\
+\gamma_{0}
+\end{pmatrix}.
+\label{eq:general_Twiss_transform}
+\end{equation}
 
 \textcolor{blue}{**PROPAGATION OF TWISS PARAMETERS + STABILITY**}
 
