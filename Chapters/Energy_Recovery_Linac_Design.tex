@@ -93,7 +93,7 @@ k_{1} = \frac{e}{p_{0}}g.
 Quadrupole focusing is analogous to focusing with an optical lens, however a lens focuses simultaneously in all transverse directions whereas a quadrupole that is focusing in the horizontal plane is defocusing in the vertical plane. In the standard defined right handed co-ordinate system \textcolor{blue}{**REFERENCE CO-ORD IMAGE**}, when $k_{1} > 0$, the quadrupole is horizontally focusing (vertically defocusing) and when $k_{1} < 0$, the quadrupole is vertically focusing (horizontally defocusing). Consequently, with the transverse variation in focusing behaviour, a quadrupole can not be considered a true 'magnetic lens' however, taking inspiration from ray optics, the focal length of a quadrupole $f_{\mathrm{quad}}$ can be described as
 \begin{equation}
 \frac{1}{f_{\mathrm{quad}}} = k_{1}l_{\mathrm{quad}}.
-\label{eq:focal_length}    
+\label{eq:focal_length_quadrupole}    
 \end{equation}
 The similarities between an optical lens and a quadrupole are highlighted in Fig. \textcolor{blue}{**LENS/DOUBLET DIAGRAM**}, which shows a simple focusing defocusing scheme -- the quadrupole doublet. 
 
@@ -280,7 +280,7 @@ where $s_{0}$ is the initial longitudinal position of the particle.
 
 \section{Transport Matricies} 
 
-Previously, the solution to the equations of motion within a periodic focusing and bending particle accelerator () have been derived and presented using a matrix formalism (). By considering the dynamics in both transverse planes ($x$ and $z$) simulataneously, the effect of momentum deviation from the design momentum $\Delta p/p_{0},$ as well as accounting for the longitudinal position of the particle $s=ct$ with $t$ the time-of-flight of the particle we see that a 6D co-ordinate system is required. Therefore, within a particle accelerator the position of a particle can be adequately described using a 6D vector 
+Previously, the solution to the equations of motion within a periodic focusing and bending particle accelerator (Eqs.~\ref{eq:horizontal_equation_of_motion_simplified}, \ref{eq:vertical_equation_of_motion_simplified}) have been derived and presented using a matrix formalism (Eq.~\ref{eq:general_solution_matrix}). By considering the dynamics in both transverse planes ($x$ and $z$) simulataneously, the effect of momentum deviation from the design momentum $\Delta p/p_{0},$ as well as accounting for the longitudinal position of the particle $s=ct$ with $t$ the time-of-flight of the particle we see that a 6D co-ordinate system is required. Therefore, within a particle accelerator the position of a particle can be adequately described using a 6D vector 
 \begin{equation}
 \boldsymbol{X} = 
 \begin{bmatrix}
@@ -310,6 +310,7 @@ where $R_{n}$ are the transport matricies of each individual element. A full ser
 
 \subsection{Drift Space}
 
+A drift space within an accelerator is a section of beamline in which no magnets are placed -- the particles traverse through a vaccuum chamber subject to negligible external magnetic forces. As such, the beam is not bent or focused, therefore the position of the particles transforms only due to their divergence $u_{1} = u_{0} + L_{\mathrm{drift}}u_{0}'$, with $L_{\mathrm{drift}}$ the length of the drift space. The $\boldsymbol{R}$ matrix for a drift space is consequently given by  
 \begin{equation}
 \boldsymbol{R}_{\mathrm{drift}} =
 \begin{pmatrix}
@@ -319,12 +320,13 @@ where $R_{n}$ are the transport matricies of each individual element. A full ser
 0 & 0 & 0 & 1 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 & 1
-\end{pmatrix},
+\end{pmatrix}.
 \label{eq:drift_matrix}    
 \end{equation}
 
 \subsection{Quadrupole Magnet}
 
+The quadrupole element focuses a particle over a magnetic length $L_{\mathrm{quad}}$, which is identical to the width of the magnet for a hard-edged field model in which the field terminated at the end of the magnet yoke. The quadrupole element is focusing in one plane and defocusing in another plane, as shown in (Eqs.~\ref{eq:focusing_solution_equation_of_motion}, \ref{eq:defocusing_solution_equation_of_motion}), which is encapsulated within the $\boldsymbol{R}$ matrix of this element. The quadrupole has a normalised field strength $k_{1}$ (Eq.~\ref{eq:quadrupole_normalised_gradient}), which is used to characterise the focusing in this transport matrix. The $\boldsymbol{R}$ matrix for a focusing quadrupole is given by
 \resizebox{\columnwidth}{!}{
 \begin{equation}
 \boldsymbol{R}_{\mathrm{quad}} = 
@@ -335,21 +337,155 @@ where $R_{n}$ are the transport matricies of each individual element. A full ser
 0 & 0 & \sqrt{k_{1}}\sinh\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) &  \cosh\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & 0 & 0\\
 0 & 0 & 0 & 0 & 1 & 0\\
 0 & 0 & 0 & 0 & 0 & 1
-\end{pmatrix},
+\end{pmatrix}.
 \label{eq:quadrupole_matrix_thick}    
 \end{equation}}
-
+The $\boldsymbol{R}$ matrix of a quadrupole (Eq.~\ref{eq:quadrupole_matrix_thick}) can be simplified using the thin lens approximation, which states that the focal length of the quadrupole (Eq.~\ref{eq:focal_length_quadrupole}) is much larger than the magnetic length of the quadrupole $f \gg L_{\mathrm{quad}}$. The transport matrix for a thin lens quadrupole becomes
 \begin{equation}
-\boldsymbol{R}_{\mathrm{quad, thin}}
+\boldsymbol{R}_{\mathrm{quad, thin}} = 
+\begin{pmatrix}
+1 & 0 & 0 & 0 & 0 & 0 \\
+-\sqrt{k_{1}}\sin\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 &  \sqrt{k_{1}}\sinh\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 
+\end{pmatrix}.
 \label{eq:quadrupole_matrix_thin}    
 \end{equation}
+The thin lens approximation is describing a quadrupole field in the zero-length regime i.e $L_{\mathrm{quad}}\rightarrow 0$\cite{rossbach1993basic}.
 
 \subsection{Dipole Magnet}
 
+\textcolor{blue}{**NEEDS DIAGRAM OF A DIPOLE** \\ **INCLUDE POLE FACES**\\}
+Here we assume a sector dipole magnet with no focusing terms i.e the magnetic field is homogenous transversely throughout dipole magnet. The sector dipole is assumed to have exit and entrance pole faces that are perpendicular to the direction of the reference orbit ($\beta_{1}=0$, $\beta_{2}=0$). A dipole is characterised in its simplest form by two parameters: the bending radius $\rho$ and the magnetic length of the dipole $L_{\mathrm{dip}}$, which is defined as the path length along the central trajectory. Therefore, the $\boldsymbol{R}$ matrix of a non-focusing sector dipole is given by 
+\resizebox{\columnwidth}{!}{
+\begin{equation}
+\boldsymbol{R}_{\mathrm{dip}} =  
+\begin{pmatrix}
+\cos\left(L_{\mathrm{dip}}/\rho\right) & \frac{1}{\rho}\sin\left(L_{\mathrm{dip}}/\rho\right) & 0 & 0 & 0 & \rho\left[1-\cos\left(L_{\mathrm{dip}}/\rho\right)\right] \\
+-\frac{1}{\rho}\sin\left(L_{\mathrm{dip}}/\rho\right) & \sin\left(L_{\mathrm{dip}}/\rho\right) & 0 & 0 & 0 & \sin\left(L_{\mathrm{dip}}/\rho\right) \\
+0 & 0 & 1 & L_{\mathrm{dip}} & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 \\
+\sin\left(L_{\mathrm{dip}}/\rho\right) & \rho\left[1-\cos\left(L_{\mathrm{drift}}/\rho\right)\right] & 0 & 0 & 1 & \rho\left[\left(L_{\mathrm{dip}}/\rho\right)-\sin\left(L_{\mathrm{dip}}/\rho\right)\right] \\
+0 & 0 & 0 & 0 & 0 & 1
+\end{pmatrix}.
+\label{eq:dipole_matrix}
+\end{equation}}
+Dipoles are also commonly available with pole faces that are perpendicular to the reference orbit at the centre of the dipole ($\beta_{1}=\alpha_{0}/2$, $\beta_{2}=\alpha_{0}/2$), where $a_{0}$ is the bending angle of the dipole (Eq.~\ref{eq:dipole_bending_angle}), which are termed rectangular dipoles. The rotated pole faces act like thin quadrupoles (Eq.~\ref{eq:quadrupole_matrix_thin}), providing transverse focusing and there effect of the dynamics of a particle beam can be expressed via the $\boldsymbol{R}$ matrix
+\begin{equation}
+\boldsymbol{R}_{\mathrm{pole}} =
+\begin{pmatrix}
+1 & 0 & 0 & 0 & 0 & 0 \\
+\frac{1}{\rho}\tan\beta & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & -\frac{1}{\rho}\tan\left(\beta-\psi\right) & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1
+\end{pmatrix},
+\label{eq:pole_face_matrix}    
+\end{equation}
+where $\beta$ is the angle of the pole face and $\psi = k\left(h/\rho\right)\frac{1+\sin^{2}\beta}{\cos\beta}$, where $h$ is the gap between the poles of the magnet -- the $\psi$ term is typically negligible. 
+
 \subsection{Quadrupole Doublet}
 
+A quadrupole doublet is considered here to demonstrate how a beamline is constructed from multiple elements using (Eq.~\ref{eq:subseries_transport_matrix}). For simplicity, thin lens quadrupoles (Eq.~\ref{eq:quadrupole_matrix_thin}) with identical magnitude field gradient and length are used for the calculation. The quadrupole doublet, of the form shown in Fig.~\textcolor{blue}{**QUADRUPOLE DOUBLET DIAGRAM**}, is constructed from a defocusing and focusing quadrupole separated by a drift space; the overall $\boldsymbol{R}$ matrix has the form
+\begin{equation}
+\boldsymbol{R} = \boldsymbol{R}_{\mathrm{F, quad}}\boldsymbol{R}_{\mathrm{drift}}\boldsymbol{},
+\label{eq:doublet_R_matrix}
+\end{equation}
+where $\boldsymbol{R}_{\mathrm,{F, quad}}$ is a focusing quadrupole (Eq.~\ref{eq:quadrupole_matrix_thin}) and $\boldsymbol{R}_{\mathrm{drift}}$ is a drift space (Eq.~\ref{eq:drift_matrix}) and $\boldsybol{R}_{\mathrm{D, quad}}$ is a defocusing quadrupole with thin lens transport matrix
+\begin{equation}
+\boldsymbol{R}_{\mathrm{D, quad}} =
+\begin{pmatrix}
+1 & 0 & 0 & 0 & 0 & 0\\
+\sqrt{k_{1}}\sinh\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & -\sqrt{k_{1}}\sin\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1
+\end{pmatrix}.
+\label{eq:defocusing_quadrupole_matrix}    
+\end{equation}
+Therefore, using (Eq.~\ref{eq:doublet_R_matrix}) the transport matrix of a quadrupole doublet becomes 
+\textcolor{blue}{**CHECK TRANSPORT MATRICIES + CALCULATE**}
+
 \section{Twiss Parameters and Emittance}
-\textcolor{blue}{**INCLUDE DISPERSION**}
+\textcolor{blue}{**INCLUDE DISPERSION**\\}
+
+\subsection{Generalisation of the Equations of Motion}
+
+The equations of motion currently derived (Eqs.~) have only been appropriate for a single test particle, however as we aim to understand the dynamics of a bunch of many particles the equations of motion must be generalised to the many particle scenario. Generalisation of the equations of motion () is achieved via setting $1/\rho=0$, assuming a very large bending radius, and $\Delta p/p_{0}=0$, which assumes the bunch is monoenergetic, which reveals a longitudinal dependence within the quadrupole focusing term. Generalisation by these assumptions yields Hill's equation
+\begin{equation}
+x''\left(s\right)-k\left(s\right)x\left(s\right) = 0,
+\label{eq:Hills_equation}    
+\end{equation}
+where $x\left(s\right)$ describes the trajectory of the particles which is an oscillation about the reference orbit named a betatron oscillation. Whilst $x\left(s\right)$ is used as an example, Hill's equation can be generalised to either transverse plane. The amplitude and phase of the betatron oscillation are dependent on $s$, the longitudinal position around the reference orbit. Therefore, a trial solution to Hill's equation is developed 
+\begin{equation}
+x\left(s\right) = \sqrt{\epsilon\beta\left(s\right)}\cos\left[\Psi\left(s\right)+\phi\right],
+\label{eq:Hills_trial_solution}    
+\end{equation}
+where $\sqrt{\epsilon\beta\left(s\right)}$ is an amplitude function with a constant amplitude $\epsilon$ termed the emittance and $\beta\left(s\right)$ termed the $\beta$-function which accounts for the oscillatory amplitude of the betatron oscillation and $\Psi\left(s\right)$ is the phase of the oscillation with $\phi$ the phase offset -- an integration constant resulting from initial conditions. The amplitude function of the trial solution is given by
+\begin{equation}
+E\left(s\right) = \sqrt{\epsilon\beta\left(s\right)},
+\label{eq:envelope_function}    
+\end{equation}
+which defines a beam envelope, as shown diagrammatically in Fig.~\textcolor{blue}{**BEAM ENVELOPE DIAGRAM**}, which defines the bounds of the trajectories of each of the many particles within a bunch. 
+
+The derivative of the trial solution (Eq.~\ref{eq:Hills_trial_solution}) shows the divergence of the particle trajectory with respect to time and is given by
+\begin{equation}
+x'\left(s\right) = -\frac{\sqrt{\epsilon}}{\sqrt{\beta\left(s\right)}}\left\{\alpha\left(s\right)\cos\left[\Psi\left(s\right)+\phi\right]+\sin\left[\Psi\left(s\right)+\phi\right]\right\}
+\label{eq:Hills_trial_solution_derivative}    
+\end{equation}
+where the $\alpha\left(s\right)$ function, which relates to the orientation of the beam in phase space, is given by
+\begin{equation}
+\alpha\left(s\right) = -\frac{\beta'\left(s\right)}{2}.
+\label{eq:alpha_function}    
+\end{equation}
+Taking the second derivative of the trial solution and substituting the trial solution (Eq.~\ref{eq:Hills_trial_solution}) and it's derivatives into Hill's equation (Eq.~\ref{eq:Hills_equation}) whilst understanding that the phase varies continually around the orbit and has a different value at each point on the trajectory \cite{wille2000physics}, the betatron phase can be calculated by
+\begin{equation}
+\Psi\left(s\right) = \int_{0}^{s}\frac{1}{\beta\left(s\right)}ds.
+\label{eq:betatron_phase}    
+\end{equation}
+
+\subsection{Phase Space}
+
+The phase space of a collection of particles represents the possible states of the dynamical system in a 6D representation, with each point in phase space illustrating a singular particle \cite{jones2016design}. The 6D phase space is presented within the horizontal ($x$--$x'$), vertical ($y$--$y'$) and longitudinal ($z$--$z'$) planes. The phase space planes are position--divergence planes, in which the divergence of particle is closely related to it's momentum ($x' \propto p_{x}$). The previously derived solution to Hill's equation (Eq.~\ref{eq:Hills_trial_solution}) and it's derivative (Eq.~\ref{eq:Hills_trial_solution_derivative}) can be used to map the behaviour of a collection of particles within this phase space. 
+
+Firstly, the trial solution and its derivative must be re-arranged to eliminate the betatron phase $\Psi\left(s\right)$ dependence. Re-arranging (Eq.~\ref{eq:Hills_trial_solution}) we obtain
+\begin{equation}
+\cos\left[\Psi\left(s\right)+\phi\right] = \frac{x\left(s\right)}{\sqrt{\epsilon\beta\left(s\right)}},
+\label{eq:trial_phase_rearrangement}    
+\end{equation}
+which can be substituted into (Eq.~\ref{eq:Hills_trial_solution_derivative}) and re-arranged to yield
+\begin{equation}
+\sin\left[\Psi\left(s\right)+\phi\right] = \frac{\sqrt{\beta\left(s\right)}x'\left(s\right)}{\sqrt{\epsilon}} + \frac{\alpha\left(s\right)x\left(s\right)}{\sqrt{\epsilon\beta\left(s\right)}}.
+\label{eq:trial_derivative_phase_rearrangement}    
+\end{equation}
+Using the well-known trigonometric identity $\sin^{2}x+\cos^{2}x=1$, with (Eqs.~\ref{eq:trial_phase_rearrangement}, \ref{eq:trial_derivative_phase_rearrangement}) the phase space variables can be represented by
+\begin{equation}
+\frac{x\left(s\right)^{2}}{\beta\left(s\right)}+\left[\frac{\alpha\left(s\right)}{\sqrt{\beta\left(s\right)}}x\left(s\right)+\sqrt{\beta\left(s\right)}x'\left(s\right)\right]^{2} = \epsilon,    
+\label{eq:phase_space_trigonometry}
+\end{equation}
+which when expanded and then simplified using the definition
+\begin{equation}
+\gamma\left(s\right) = \frac{1+\alpha\left(s\right)^{2}}{\beta\left(s\right)},
+\label{eq:gamma_twiss}    
+\end{equation}
+which relates to the angular size of the beam, becomes
+\begin{equation}
+\epsilon = \gamma\left(s\right)x\left(s\right)^{2}+2\alpha\left(s\right)x\left(s\right)x'\left(s\right)+\beta\left(s\right)x'\left(s\right)^{2}.
+\label{eq:phase_space_ellipse}    
+\end{equation}
+The form in (Eq.~\ref{eq:phase_space_ellipse}) is that of the equation of an ellipse; consequently the collection of particles map out an ellipse in phase space. Phase space ellipses are observed in each of the three planes as the results here are general. An example of the phase space ellipse in the $x$--$x'$ plane is shown in Fig.~\textcolor{blue}{**PHASE SPACE ELLIPSE DIAGRAM**}.
+
+\textcolor{blue}{**EMITTANCE**}
+
+\textcolor{blue}{**LOUIVILLES THEOREM**}
+
+\textcolor{blue}{**PROPAGATION OF TWISS PARAMETERS**}
+
+\subsection{Dispersion and Off-Momenta Particles} 
 
 \section{Tune and Chromaticity}
 
