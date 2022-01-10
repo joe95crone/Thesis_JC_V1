@@ -118,7 +118,7 @@
 % Contents Page
 %--------------------------------------------------------
 \setcounter{tocdepth}{1}       % Put subsubsections in the table of contents
-\setcounter{secnumdepth}{1}    % Number subsubsections in the chapters
+\setcounter{secnumdepth}{2}    % Number subsubsections in the chapters
 
 
 % Word Count
