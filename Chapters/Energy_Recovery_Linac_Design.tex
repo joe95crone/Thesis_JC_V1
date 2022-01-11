@@ -640,7 +640,48 @@ An extension to the definition of the phase space ellipse (Eq.~\ref{eq:phase_spa
 \mathcal{H} = \beta\eta'^{2}+2\alpha\eta\eta'+\gamma\eta^{2},
 \label{eq:dispersive_phase_space_ellipse}    
 \end{equation}
-where $\mathcal{H}$ is analagous to the emittance in defining the area of the phase space ellipse for a dispersive beam.
+where $\mathcal{H}$ is analogous to the emittance in defining the area of the phase space ellipse for a dispersive beam.
+
+\subsection{Momentum Compaction}
+
+The path length $L$ of a particle trajectory as a function of momentum variation can be wrote as a Maclaurin series 
+\begin{equation}
+L = L_{0}\left[1+\alpha_{p}\frac{\Delta p}{p_{0}}+\frac{1}{2}\alpha_{p}^{\left(2\right)}\left(\frac{\Delta p}{p_{0}}\right)^{2}\right],
+\label{eq:path_length_expansion}    
+\end{equation}
+where $L_{0}$ is the path length of the reference particle ($\Delta p/p_{0}=0$). Whilst higher order momentum compaction terms are present in the expansion (Eq.~), such as $\alpha_{p}^{\left(2\right)}$, to first order this can be simplified to
+\begin{equation}
+\alpha_{p} = \frac{1}{L}\frac{dL}{\Delta p/p_{0}},
+\label{eq:momentum_compaction_first_order}    
+\end{equation}
+where $\alpha_{p}$ is the linear momentum compaction. Consider the trajectory of a particle through a curved reference trajectory -- subject to a dipole bending field -- moving with a displacement $x$ from the reference trajectory, the path length of this element is given by
+\begin{equation}
+dL = \left(\rho+x\right)d\theta = \left(1+\frac{x}{\rho}\right)ds.
+\label{eq:displaced_bend_trajectory}    
+\end{equation}
+The total path length of the displaced trajectory through the bending field is given by the integral of (Eq.~\ref{eq:displaced_bend_trajectory})
+\begin{equation}
+L = \int_{0}^{L_{0}} 1+\frac{x}{\rho} ds = L_{0} + \int_{0}^{L_{0}}\frac{x}{\rho}ds, 
+\label{eq:displaced_bend_path_length}    
+\end{equation}
+If we consider the displacement of $x$ to arise purely because of dispersive motion, then $x$ becomes
+\begin{equation}
+x = \eta_{x}\frac{\Delta p}{p} + \frac{1}{2}\eta_{x}^{\left(2\right)}\left(\frac{\Delta p}{p}\right)^{2},
+\label{eq:dispersive_displacement}    
+\end{equation}
+where the higher order dispersion terms $\eta_{x}^{\left(2\right)}$ are neglected. The displacement due to dispersive motion (Eq.~\ref{eq:dispersive_displacement}) is substituted into the path length of the curved trajectory (Eq.~\ref{eq:displaced_bend_path_length}) yielding
+\begin{align}
+L &= L_{0} + \frac{\Delta p}{p_{0}}\int_{0}^{L_{0}}\frac{\eta_{x}}{\rho}ds,
+\Delta L &= \frac{\Delta p}{p_{0}}\int_{0}^{L_{0}}\frac{\eta_{s}}{\rho}ds,
+\label{eq:dispersive_path_length_variation}
+\end{align}
+which via substitution into (Eq.~\ref{eq:momentum_compaction_first_order}) and re-arrangement yields the momentum compaction in terms of dispersion
+\begin{equation}
+\alpha_{p} = \frac{1}{L_{0}}\int_{0}^{L_{0}}\frac{\eta_{x}}{\rho}ds.
+\label{eq:momentum_compaction_dispersion}    
+\end{equation}
+
+Inspection of (Eq.~\ref{eq:momentum_compaction_dispersion}), demonstrates that momentum compaction only arises in dispersive sections where the reference trajectory is curved, such as in dipoles, because in straight sections $\rho\rightarrow\infty$ and therefore the contribution of these terms are negligible. 
 
 \section{Tune and Chromaticity}
 
@@ -699,7 +740,22 @@ A particle, or collection of particles, can be accelerated by an electric field 
 \end{equation}
 which (in our local co-ordinate system) is applied in the longitudinal direction. Most modern accelerators use powerful radio-frequency systems, or RF cavities, to produce the requisite strong electric fields, with frequencies from \si{\kilo\hertz} to \si{\giga\hertz} \cite{wille2000physics}, required to accelerate the particles to energies on the \si{\mega\electronvolt} to \si{\terra\electronvolt} scale. Whilst other acceleration methods exist such as electrostatic acceleration \cite{}, dielectric wakefield acceleration \cite{} and laser plasma wakefield acceleration, we limit our discussion to RF acceleration.
 
-The solution to (Eq.~\ref{eq:electromagnetic_wave_equation}) for an RF cavity is of the form
+The solution to (Eq.~\ref{eq:electromagnetic_wave_equation}) for an RF cavity, where the local ($x$, $y$, $z$) co-ordinate system is used, is of the form
+\begin{equation}
+\boldsymbol{E}\left(z,t\right) = E_{0}\exp\left[i\left(kz-\omega t\right)\right],
+\label{eq:RF_cavity_electric_field}    
+\end{equation}
+where the phase of the electric field is encapsulated by the synchronous phase $\psi = kz-\omega t$. The energy gain of a particle in an electric field, re-cast in terms of the phase, is subsequently given by 
+\begin{equation}
+\Delta E = e \int E_{0}\exp\left(i\psi\right)dz = eV\left(\psi\right),
+\label{eq:particle_energy_gain_RF}    
+\end{equation}
+where $V\left(\psi\right)$ is the RF voltage as a function of phase. Therefore, to maintain a constant energy gain within all subsequent RF cavities, the phase must remain constant at the RF cavity i.e
+\begin{equation}
+\frac{d\psi}{dt} = k\beta c-\omega = 0. 
+\label{eq:synchronicity_condition}   
+\end{equation}
+
 
 \textcolor{blue}{**MOMENTUM COMPACTION**}
 \tetxcolor{blue}{**R56**}
