@@ -538,6 +538,8 @@ Expanding the matricies in (Eq.~\ref{eq:general_phase_space_transform}) and re-c
 \label{eq:general_Twiss_transform}
 \end{equation}
 
+\subsection{Periodic Lattices and Stability}
+
 A periodic lattice, for example a repeating series of beamline elements, named cells, with length $L_{\mathrm{cell}}$, which adheres to the property $\boldsymbol{R}\left(s\right) = \boldsymbol{R}\left(s+L_{\mathrm{cell}}\right)$, in which the Twiss parameters are unchanged ($\beta_{0}=\beta_{1}=\beta$, $\alpha_{0}=\alpha_{1}=\alpha$, $\gamma_{0}=\gamma_{1}=\gamma$) has the single plane transport matrix of the form
 \begin{equation}
 \boldsymbol{R} =
@@ -642,9 +644,65 @@ where $\mathcal{H}$ is analagous to the emittance in defining the area of the ph
 
 \section{Tune and Chromaticity}
 
-The tune of an accelerator relates to the 
+The tune of an accelerator is typically defined as the number of betatron oscillations per revolution around the circumference of a re-circulated accelerator
+\begin{equation}
+Q=\frac{N\mu}{2\pi} = \frac{1}{2\pi}\oint\frac{1}{\beta}ds,
+\label{eq:accelerator_tune}    
+\end{equation}
+where $N$ is the no. periodic cells within the accelerator, and the integral $\oint$ relates to an integral around the circumference of the accelerator. However, often accelerator beamlines aren't entirely periodic. For example, areas of the beamline can be devoted to focusing to a small spot size for a collider and inverse Compton scattering source or be subject to insertion devices such as undulator magnets. Therefore, it is often more useful to define the tune per cell of a section of the beamline with length $L_{\mathrm{cell}}$
+\begin{equation}
+Q=\frac{\mu}{2\pi} = \frac{1}{2\pi}\int_{s_{0}}^{s_{0}+L_{\mathrm{cell}}}\frac{1}{\beta}ds. 
+\label{eq:tune_per_cell}    
+\end{equation}
+
+In re-circulated accelerators such as storage rings, the particle beam is subject to the same collection of magnetic elements many times. For example, in the MAX-III storage ring the beam lifetime at 250~\si{\milli\ampere} is 11.3~\si{\hour} with a 36~\si{\meter} circumference (120~\si{\nano\second} revolution time) resulting in $\sim3.4\times 10^{11}$ revolutions per bunch. Therefore, the beam is acted upon by periodic transverse forces causing transverse oscillations of the beam which, under certain conditions, may result in the circulating beam resonating \cite{wille2000physics}. A transversely resonating beam oscillation -- known as an optical resonance -- could cause large beam amplitudes which would result in beam sizes that could not be contained within the beampipe and the particles would be lost.
+
+A full discussion and derivation of the conditions required for optical resonances is beyond the scope of this thesis, instead for brevity the discussion by K. Willie \cite{wille2000physics} is recommended and we utilise the result for the relationship between expected optical resonance behaviour and tune
+\begin{equation}
+mQ_{x}+nQ_{y} = p,
+\label{eq:tune_resonances}    
+\end{equation}
+where $m$, $n$ and $p$ are integers. Resonances in accelerators occur at integer and fractional-integer tunes ($p = n + 1/3, 1/2, 1, 2$ etc.) and can be coupled resonances, hence why the tunes in both transverse planes are included in (Eq.~\ref{eq:tune_resonance}). The order of the resonance is found via $\left|m\right| + \left|n\right|$, and the strength of the resonance decreases rapidly as a function of order. Consequently, the tunes in an accelerator must be chosen to avoid optical resonances, which is fundamental at the design stage and is often named the working point. The working point is often displayed in a $Q_{x}$--$Q_{y}$ tune diagram, as shown in Fig.~\textcolor{blue}{**TUNE DIAGRAM**}, where the resonances up to $n$th order are typically displayed.  
+
+\textcolor{blue}{**TUNE DIAGRAM**}
+
+Chromaticity is defined as the variation in tune due to the variation in momentum within an accelerator as given by
+\begin{equation}
+\xi = \frac{\Delta Q}{\Delta p/p_{0}},
+\label{eq:accelerator_chromaticity}    
+\end{equation}
+where the variation in tune is driven by the chromatic aberration focusing errors that occur when off-momentum particles traverse focusing magnets, as presented for a quadrupole in Fig.~\textcolor{blue}{**CHROMATIC ABERRATION DIAGRAM**}
+
+The chromatic effect of a quadrupole magnet can there for be considered as
+\begin{align}
+\xi_{x} &= -\frac{1}{4\pi}\int\beta_{x}k_{1}ds, \\
+\xi_{y} &= \frac{1}{4\pi}\int\beta_{y}k_{1}ds.
+\label{eq:quadrupole_chromaticity}
+\end{align}
+where it is noted that for periodic focusing the $\beta_{x}$-function is typically larger upon entrance to the focusing quadrupole and the $\beta_{y}$ function is larger in the defocusing quadrupole, therefore the natural chromaticity throughout a periodic focusing accelerator is negative. 
+
+Correction of chromaticity is typically conducted by sextupole ($n=3$) magnets with fields as described by (Eq.~\ref{eq:sextupole_magnetic_field}, that consequently have focusing dependent on transverse beam position. Sextupoles are placed in dispersive sections of the accelerator where the transverse position of the particles is dependent upon the momentum of the particle so the transverse field dependence can be used to correct the aberrations. 
 
 \section{Longitudinal Dynamics and RF Acceleration}
+
+Previous discussions within this section have currently been focused on the transverse motion of particles throughout the accelerator beamline. However a similar analysis can also be applied to the longitudinal dimension where instead of magnetic bending and focusing fields, electric fields used in the acceleration of particles dominate the dynamics. Analysis of longitudinal dynamics focuses on the energy of the particles, their longitudinal position relative to the centroid of the ensemble as well as the stability and phase of the longitudinal motion.  
+
+\subsection{RF Acceleration}
+
+\textcolor{blue}{**RF CAVITY + FIELD GRADIENT**}
+\textcolor{blue}{**PHASE FOCUSING + STABILITY}
+
+A particle, or collection of particles, can be accelerated by an electric field $\boldsymbol{E}$ satisfying the wave equation, displayed here in vacuum
+\begin{equation}
+\nabla^{2}\boldsymbol{E}-\frac{1}{c^{2}}\frac{\partial^{2}\boldsymbol{E}}{\partial t^{2}},
+\label{eq:electromagnetic_wave_equation}    
+\end{equation}
+which (in our local co-ordinate system) is applied in the longitudinal direction. Most modern accelerators use powerful radio-frequency systems, or RF cavities, to produce the requisite strong electric fields, with frequencies from \si{\kilo\hertz} to \si{\giga\hertz} \cite{wille2000physics}, required to accelerate the particles to energies on the \si{\mega\electronvolt} to \si{\terra\electronvolt} scale. Whilst other acceleration methods exist such as electrostatic acceleration \cite{}, dielectric wakefield acceleration \cite{} and laser plasma wakefield acceleration, we limit our discussion to RF acceleration.
+
+The solution to (Eq.~\ref{eq:electromagnetic_wave_equation}) for an RF cavity is of the form
+
+\textcolor{blue}{**MOMENTUM COMPACTION**}
+\tetxcolor{blue}{**R56**}
 
 \section{Linear Lattices}
 \textcolor{blue}{**FODO Lattice** \\ **MBA** \\ **FFAG**}
