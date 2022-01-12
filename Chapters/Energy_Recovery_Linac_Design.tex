@@ -643,8 +643,9 @@ An extension to the definition of the phase space ellipse (Eq.~\ref{eq:phase_spa
 where $\mathcal{H}$ is analogous to the emittance in defining the area of the phase space ellipse for a dispersive beam.
 
 \subsection{Momentum Compaction}
+\label{sec:momentum_compaction}
 
-The path length $L$ of a particle trajectory as a function of momentum variation can be wrote as a Maclaurin series 
+The path length $L$ of a particle trajectory as a function of momentum variation can be wrote as a Maclaurin series \cite{wolski2012longitudinal}
 \begin{equation}
 L = L_{0}\left[1+\alpha_{p}\frac{\Delta p}{p_{0}}+\frac{1}{2}\alpha_{p}^{\left(2\right)}\left(\frac{\Delta p}{p_{0}}\right)^{2}\right],
 \label{eq:path_length_expansion}    
@@ -692,7 +693,7 @@ Q=\frac{N\mu}{2\pi} = \frac{1}{2\pi}\oint\frac{1}{\beta}ds,
 \end{equation}
 where $N$ is the no. periodic cells within the accelerator, and the integral $\oint$ relates to an integral around the circumference of the accelerator. However, often accelerator beamlines aren't entirely periodic. For example, areas of the beamline can be devoted to focusing to a small spot size for a collider and inverse Compton scattering source or be subject to insertion devices such as undulator magnets. Therefore, it is often more useful to define the tune per cell of a section of the beamline with length $L_{\mathrm{cell}}$
 \begin{equation}
-Q=\frac{\mu}{2\pi} = \frac{1}{2\pi}\int_{s_{0}}^{s_{0}+L_{\mathrm{cell}}}\frac{1}{\beta}ds. 
+Q=\frac{\mu}{2\pi} = \frac{1}{2\pi}\int_{0}^{L_{\mathrm{cell}}}\frac{1}{\beta}ds. 
 \label{eq:tune_per_cell}    
 \end{equation}
 
@@ -738,7 +739,7 @@ A particle, or collection of particles, can be accelerated by an electric field 
 \nabla^{2}\boldsymbol{E}-\frac{1}{c^{2}}\frac{\partial^{2}\boldsymbol{E}}{\partial t^{2}},
 \label{eq:electromagnetic_wave_equation}    
 \end{equation}
-which (in our local co-ordinate system) is applied in the longitudinal direction. Most modern accelerators use powerful radio-frequency systems, or RF cavities, to produce the requisite strong electric fields, with frequencies from \si{\kilo\hertz} to \si{\giga\hertz} \cite{wille2000physics}, required to accelerate the particles to energies on the \si{\mega\electronvolt} to \si{\terra\electronvolt} scale. Whilst other acceleration methods exist such as electrostatic acceleration \cite{}, dielectric wakefield acceleration \cite{} and laser plasma wakefield acceleration, we limit our discussion to RF acceleration.
+which (in our local co-ordinate system) is applied in the longitudinal direction. Most modern accelerators use powerful radio-frequency systems, or RF cavities, to produce the requisite strong electric fields, with frequencies from \si{\kilo\hertz} to \si{\giga\hertz} \cite{wille2000physics}, required to accelerate the particles to energies on the \si{\mega\electronvolt} to \si{\tera\electronvolt} scale. Whilst other acceleration methods exist such as electrostatic acceleration \cite{}, dielectric wakefield acceleration \cite{} and laser plasma wakefield acceleration, we limit our discussion to RF acceleration.
 
 The solution to (Eq.~\ref{eq:electromagnetic_wave_equation}) for an RF cavity, where the local ($x$, $y$, $z$) co-ordinate system is used, is of the form
 \begin{equation}
@@ -755,12 +756,101 @@ where $V\left(\psi\right)$ is the RF voltage as a function of phase. Therefore, 
 \frac{d\psi}{dt} = k\beta c-\omega = 0. 
 \label{eq:synchronicity_condition}   
 \end{equation}
+The transit time between RF cavities and revolution frequency of the particle must therefore remain constant for subsequent acceleration at identical phase. For an accelerator of path length $L$, the solution is of the form $k=2\pi/L$ where $\omega=\omega_{\mathrm{rev}}$ is the revolution frequency. The RF frequency can operate at any integer value of this revolution frequency, named the harmonic number $h$, and still satisfy the synchronicity condition (Eq.~\ref{eq:synchronicity_condition}), therefore the wavenumber and frequency of the accelerating RF waveform have the form
+\begin{align}
+k_{h} = \frac{2\pi h}{L_{0}},
+\label{eq:RF_wavenumber} \\
+f_{RF} = \frac{h\omega_{\mathrm{rev}}}{2\pi}.
+\label{eq:RF_frequency}
+\end{align}
+
+The transit time $T$ between RF cavities is affected by off-momenta particles, as in the case of the path length in momnetum compaction studies (see Section~\ref{sec:momentum_compaction}), similarly the transit time with respect to the reference particle ($\Delta p/p_{0}$=0) can be expanded via a Maclaurin series to account for the momentum variation
+\begin{equation}
+T = T_{0}\left[1+\eta_{p}\frac{\Delta p}{p_{0}}+\frac{1}{2}\eta_{p}^{\left(2\right)}\left(\frac{\Delta p}{p_{0}}\right)^{2}\right],
+\label{eq:transit_time_expansion}    
+\end{equation}
+where $\eta_{p}$ is named the phase slip factor. Neglecting non-linear terms and re-arranging (Eq.~\ref{eq:transit_time_expansion}) becomes
+\begin{equation}
+\eta_{p} = \frac{\Delta T/T}{\Delta p/p_{}0},
+\label{eq:phase_slip_factor_transit_time}    
+\end{equation}
+where the transit time is a function of path length $L$, $T = L/\beta c$, which can be used to re-cast the phase slip factor (Eq.~\ref{eq:phase_slip_factor_transit_times}) as  
+\begin{equation}
+\eta_{p} = \frac{\Delta T/T}{\Delta p/p} = \frac{\Delta L/L_{0}}{\Delta p/p_{0}}-\frac{\Delta\beta/\beta}{\Delta p/p_{0}}.
+\label{eq:phase_slip_factor_expansion}    
+\end{equation}
+The Lorentz speed factor term in (Eq.~\ref{eq:phase_slip_factor_expansion}) can be related to the Lorentz factor \cite{wolski2012longitudinal} by 
+\begin{equation}
+\frac{\Delta \beta}{\Delta p/p_{0}} = \frac{1}{\gamma^{2}},
+\label{eq:phase_slip_Lorentz_relation}    
+\end{equation}
+therefore using the definition of the momentum compaction factor (Eq.~\ref{eq:momentum_compaction_first_order}) and the relationship for the Lorentz speed factor term (Eq.~\ref{eq:phase_slip_factor_expansion}), the phase slip factor becomes
+\begin{equation}
+\eta_{p} = \alpha_{p} - \frac{1}{\gamma^{2}}.
+\label{eq:phase_slip_factor}    
+\end{equation}
+
+Three distinct regimes exist within the longitudinal dynamics relating to the phase slip factor (Eq.~\ref{eq:phase_slip_factor}), relating to the transition between relativistic motion:
+\begin{itemize}
+    \item{Below transition ($\eta_{p}<0$), where $\alpha_{p}<0 \parallel \alpha_{p}<1/\gamma^{2}$ and the synchronous phase is $0<\psi<\pi/2$.
+    \begin{itemize}
+        \item{The revolution frequency increases with increasing energy.}
+        \item{Higher energy particles arrive at the RF cavity first due to their higher velocity.}
+    \end{itemize}}
+    \item{At transition ($\eta_{p}=0$), where $\alpha_{p}=1/\gamma^{2}$.
+    \begin{itemize}
+        \item{The revolution frequency is independent of energy.} 
+    \end{itemize}}
+    \item{Above transition ($\eta_{p}$, where $\alpha_{p}>1/\gamma^{2}$) and the synchronous phase is $\pi/2<\psi<\pi$.
+    \begin{itemize}
+        \item{The revolution frequency decreases with increasing energy.}
+        \item{Higher energy particles arrive at the the RF cavity last because they traverse a longer path and their higher velocity is of no advantage since $\beta\approx1$.}
+    \end{itemize}}
+\end{itemize}
+The longitudinal dynamics above and below transition are shown diagrammatically in Fig.~\textcolor{blue}{**PHASE FOCUSING DIAGRAM**} At first glance, the reason for the mandated synchronous phases above and below transition is unclear however, this is to take advantage of longitudinal phase focusing. 
+
+\textcolor{blue}{**PHASE FOCUSING DIAGRAM HERE**}
+
+Longitudinal phase focusing takes advantage of the sinusoidal nature of the accelerating electric field (Eq.~\ref{eq:RF_cavity_electric_field}) to bias the acceleration of off-momenta particles, with varying transit times, to restore their phase toward the synchronous phase. The longitudinal phase focusing technique is shown in Fig.~\textcolor{}{}. Above transition, a particle with reduced momentum ($\Delta p/p_{0}<0$) will arrive at the RF cavity earlier, and receiving a larger energy gain will reduce its transit time  as its path length will reduce. However, a particle that arrives late ($\Delta p/p_{0}>0$)...
+The voltage, and therefore the energy gain, vary sinusoidally as a function of phase where maximum energy gain is at $\psi=\pi/2$ -- the crest of the electromagnetic wave in the RF cavity. However, setting the synchronous phase to an off-crest position in the range $\pi/2<\psi<\pi$, the slope of the RF voltage around this point is near-linear which is appropriate to achieve the varying energy gain required for longitudinal phase focusing.  
+
+Following the example of Jones \cite{jones2016design}, if the variation in energy and other related beam parameters within a recirculated accelerator is small with relation to phase then the longitudinal equation of motion is of the form 
+\begin{equation}
+\frac{d^{2}\psi}{dt^{2}} + \beta ck_{h}\eta_{p}\frac{\partial}{\partial t}\left(c\frac{\Delta p}{p_{0}}\right) = 0,
+\label{eq:longitudinal_equation_of_motion}
+\end{equation}
+which can be simplified by assuming a linear expansion of the synchronous phase, and expressed in terms of either the phase or the momentum deviation
+\begin{align}
+\frac{d^{2}\psi}{dt^{2}} + \Omega^{2}\psi = 0,
+\label{eq:longitudinal_equation_of_motion_phase} \\
+\frac{d^{2}\left(\Delta p/p_{0}\right)}{dt^{2}} + \Omega^{2}\frac{\Delta p}{p_{0}} = 0,
+\label{eq:longitudinal_equation_of_motion_momentum}
+\end{align}
+where the synchronous phase and momentum are related via
+\begin{equation}
+\frac{\Delta p}{p_{0}} = -\frac{1}{h\omega_{\mathrm{RF}}\eta_{p}}\frac{d\psi}{dt},
+\label{eq:momentum_synchronous_phase_relation}    
+\end{equation}
+and assuming the RF frequency is a harmonic of the revolution frequency $\omega_{\mathrm{rev}}=2\pi f_{\mathrm{RF}}/h$ and that the RF cavity produces a sinusoidal RF wave $V=V_{0}\sin\psi$, with RF voltage $V$, the synchrotron oscillation frequency is given by
+\begin{equation}
+\Omega^{2} = \frac{\omega_{\mathrm{rev}}^{2}h\eta_{p}eV_{0}\cos\psi}{2\pi\beta cp_{0}}.
+\label{eq:synchrotron_oscillation_frequency}    
+\end{equation}
+Synchrotron oscillations in the longitudinal plane typically have a lower frequency than the aforementioned betatron oscillations in the transverse planes. The equation of motion in the longitudinal plane () consequently produces a stable $\psi$--$\Delta p/p$ phase space ellipse when motion is damped ($\Omega^{2}>0$) and is described by a hyperbola in phase pace when motion is unstable and anti-damped ($\Omega^{2}<0$). The equation of motion therefore generates a series of ellipses separated by regions of unstable hyperbolic regions which form separatrixes in phase space, as displayed in Fig.~\textcolor{blue}{**LONGITUDINAL PHASE SPACE DIAGRAM**}
+
+\textcolor{blue}{**LONGITUDINAL PHASE SPACE DIAGRAM**}
+
+The region of stable motion within the separatrix is named the RF bucket, and particles within an RF bucket form a bunch with bunch length proportional to the size of the RF bucket transformed to the longitudinal position. The maximum momentum deviation of an RF bucket is given by \cite{wolski2012longitudinal}
+\begin{equation}
+\left(\frac{\Delta p}{p_{0}}\right)_{\mathrm{max}} = \frac{2\Omega}{\omega_{\mathrm{rev}}\beta h\eta_{p}}\sqrt{1+\left(\psi+\frac{\pi}{2}\right)\tan\psi},
+\label{eq:RF_bucket_momentum_deviation}    
+\end{equation}
 
 
-\textcolor{blue}{**MOMENTUM COMPACTION**}
-\tetxcolor{blue}{**R56**}
 
-\section{Linear Lattices}
+\textcolor{blue}{**R56**}
+
+\section{Linear Transport Lattices}
 \textcolor{blue}{**FODO Lattice** \\ **MBA** \\ **FFAG**}
 
 \section{Description of an Energy Recovery Linac}
