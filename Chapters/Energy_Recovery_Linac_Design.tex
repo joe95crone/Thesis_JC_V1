@@ -642,48 +642,6 @@ An extension to the definition of the phase space ellipse (Eq.~\ref{eq:phase_spa
 \end{equation}
 where $\mathcal{H}$ is analogous to the emittance in defining the area of the phase space ellipse for a dispersive beam.
 
-\subsection{Momentum Compaction}
-\label{sec:momentum_compaction}
-
-The path length $L$ of a particle trajectory as a function of momentum variation can be wrote as a Maclaurin series \cite{wolski2012longitudinal}
-\begin{equation}
-L = L_{0}\left[1+\alpha_{p}\frac{\Delta p}{p_{0}}+\frac{1}{2}\alpha_{p}^{\left(2\right)}\left(\frac{\Delta p}{p_{0}}\right)^{2}\right],
-\label{eq:path_length_expansion}    
-\end{equation}
-where $L_{0}$ is the path length of the reference particle ($\Delta p/p_{0}=0$). Whilst higher order momentum compaction terms are present in the expansion (Eq.~), such as $\alpha_{p}^{\left(2\right)}$, to first order this can be simplified to
-\begin{equation}
-\alpha_{p} = \frac{1}{L}\frac{dL}{\Delta p/p_{0}},
-\label{eq:momentum_compaction_first_order}    
-\end{equation}
-where $\alpha_{p}$ is the linear momentum compaction. Consider the trajectory of a particle through a curved reference trajectory -- subject to a dipole bending field -- moving with a displacement $x$ from the reference trajectory, the path length of this element is given by
-\begin{equation}
-dL = \left(\rho+x\right)d\theta = \left(1+\frac{x}{\rho}\right)ds.
-\label{eq:displaced_bend_trajectory}    
-\end{equation}
-The total path length of the displaced trajectory through the bending field is given by the integral of (Eq.~\ref{eq:displaced_bend_trajectory})
-\begin{equation}
-L = \int_{0}^{L_{0}} 1+\frac{x}{\rho} ds = L_{0} + \int_{0}^{L_{0}}\frac{x}{\rho}ds, 
-\label{eq:displaced_bend_path_length}    
-\end{equation}
-If we consider the displacement of $x$ to arise purely because of dispersive motion, then $x$ becomes
-\begin{equation}
-x = \eta_{x}\frac{\Delta p}{p} + \frac{1}{2}\eta_{x}^{\left(2\right)}\left(\frac{\Delta p}{p}\right)^{2},
-\label{eq:dispersive_displacement}    
-\end{equation}
-where the higher order dispersion terms $\eta_{x}^{\left(2\right)}$ are neglected. The displacement due to dispersive motion (Eq.~\ref{eq:dispersive_displacement}) is substituted into the path length of the curved trajectory (Eq.~\ref{eq:displaced_bend_path_length}) yielding
-\begin{align}
-L &= L_{0} + \frac{\Delta p}{p_{0}}\int_{0}^{L_{0}}\frac{\eta_{x}}{\rho}ds,
-\Delta L &= \frac{\Delta p}{p_{0}}\int_{0}^{L_{0}}\frac{\eta_{s}}{\rho}ds,
-\label{eq:dispersive_path_length_variation}
-\end{align}
-which via substitution into (Eq.~\ref{eq:momentum_compaction_first_order}) and re-arrangement yields the momentum compaction in terms of dispersion
-\begin{equation}
-\alpha_{p} = \frac{1}{L_{0}}\int_{0}^{L_{0}}\frac{\eta_{x}}{\rho}ds.
-\label{eq:momentum_compaction_dispersion}    
-\end{equation}
-
-Inspection of (Eq.~\ref{eq:momentum_compaction_dispersion}), demonstrates that momentum compaction only arises in dispersive sections where the reference trajectory is curved, such as in dipoles, because in straight sections $\rho\rightarrow\infty$ and therefore the contribution of these terms are negligible. 
-
 \section{Tune and Chromaticity}
 
 The tune of an accelerator is typically defined as the number of betatron oscillations per revolution around the circumference of a re-circulated accelerator
@@ -727,12 +685,51 @@ Correction of chromaticity is typically conducted by sextupole ($n=3$) magnets w
 
 \section{Longitudinal Dynamics and RF Acceleration}
 
-Previous discussions within this section have currently been focused on the transverse motion of particles throughout the accelerator beamline. However a similar analysis can also be applied to the longitudinal dimension where instead of magnetic bending and focusing fields, electric fields used in the acceleration of particles dominate the dynamics. Analysis of longitudinal dynamics focuses on the energy of the particles, their longitudinal position relative to the centroid of the ensemble as well as the stability and phase of the longitudinal motion.  
+Previous discussions within this section have currently been focused on the transverse motion of particles throughout the accelerator beamline. However a similar analysis can also be applied to the longitudinal dimension where instead of magnetic bending and focusing fields, electric fields used in the acceleration of particles dominate the dynamics. Analysis of longitudinal dynamics focuses on the energy of the particles, their longitudinal position relative to the centroid of the ensemble as well as the stability and phase of the longitudinal motion. This section focuses on the effect of bending and dispersive motion upon the longitudinal dynamics, then upon investigation of the longitudinal equations of motion and phase space and finally the effect of magnetic elements upon the longitudinal dimensions of the beam is explored.
+
+\subsection{Momentum Compaction}
+\label{sec:momentum_compaction}
+
+The path length $L$ of a particle trajectory as a function of momentum variation can be wrote as a Maclaurin series \cite{wolski2012longitudinal}
+\begin{equation}
+L = L_{0}\left[1+\alpha_{p}\frac{\Delta p}{p_{0}}+\frac{1}{2}\alpha_{p}^{\left(2\right)}\left(\frac{\Delta p}{p_{0}}\right)^{2}\right],
+\label{eq:path_length_expansion}    
+\end{equation}
+where $L_{0}$ is the path length of the reference particle ($\Delta p/p_{0}=0$). Whilst higher order momentum compaction terms are present in the expansion (Eq.~), such as $\alpha_{p}^{\left(2\right)}$, to first order this can be simplified to
+\begin{equation}
+\alpha_{p} = \frac{1}{L}\frac{dL}{\Delta p/p_{0}},
+\label{eq:momentum_compaction_first_order}    
+\end{equation}
+where $\alpha_{p}$ is the linear momentum compaction. Consider the trajectory of a particle through a curved reference trajectory -- subject to a dipole bending field -- moving with a displacement $x$ from the reference trajectory, the path length of this element is given by
+\begin{equation}
+dL = \left(\rho+x\right)d\theta = \left(1+\frac{x}{\rho}\right)ds.
+\label{eq:displaced_bend_trajectory}    
+\end{equation}
+The total path length of the displaced trajectory through the bending field is given by the integral of (Eq.~\ref{eq:displaced_bend_trajectory})
+\begin{equation}
+L = \int_{0}^{L_{0}} 1+\frac{x}{\rho} ds = L_{0} + \int_{0}^{L_{0}}\frac{x}{\rho}ds, 
+\label{eq:displaced_bend_path_length}    
+\end{equation}
+If we consider the displacement of $x$ to arise purely because of dispersive motion, then $x$ becomes
+\begin{equation}
+x = \eta_{x}\frac{\Delta p}{p} + \frac{1}{2}\eta_{x}^{\left(2\right)}\left(\frac{\Delta p}{p}\right)^{2},
+\label{eq:dispersive_displacement}    
+\end{equation}
+where the higher order dispersion terms $\eta_{x}^{\left(2\right)}$ are neglected. The displacement due to dispersive motion (Eq.~\ref{eq:dispersive_displacement}) is substituted into the path length of the curved trajectory (Eq.~\ref{eq:displaced_bend_path_length}) yielding
+\begin{align}
+L &= L_{0} + \frac{\Delta p}{p_{0}}\int_{0}^{L_{0}}\frac{\eta_{x}}{\rho}ds,
+\Delta L &= \frac{\Delta p}{p_{0}}\int_{0}^{L_{0}}\frac{\eta_{s}}{\rho}ds,
+\label{eq:dispersive_path_length_variation}
+\end{align}
+which via substitution into (Eq.~\ref{eq:momentum_compaction_first_order}) and re-arrangement yields the momentum compaction in terms of dispersion
+\begin{equation}
+\alpha_{p} = \frac{1}{L_{0}}\int_{0}^{L_{0}}\frac{\eta_{x}}{\rho}ds.
+\label{eq:momentum_compaction_dispersion}    
+\end{equation}
+
+Inspection of (Eq.~\ref{eq:momentum_compaction_dispersion}), demonstrates that momentum compaction only arises in dispersive sections where the reference trajectory is curved, such as in dipoles, because in straight sections $\rho\rightarrow\infty$ and therefore the contribution of these terms are negligible. 
 
 \subsection{RF Acceleration}
-
-\textcolor{blue}{**RF CAVITY + FIELD GRADIENT**}
-\textcolor{blue}{**PHASE FOCUSING + STABILITY}
 
 A particle, or collection of particles, can be accelerated by an electric field $\boldsymbol{E}$ satisfying the wave equation, displayed here in vacuum
 \begin{equation}
@@ -846,12 +843,38 @@ The region of stable motion within the separatrix is named the RF bucket, and pa
 \label{eq:RF_bucket_momentum_deviation}    
 \end{equation}
 
+\subsection{Magnetic Bunch Compression and $\boldsymbol{R}_{56}$}
 
+The longitudinal dimensions of a particle bunch can be adjusted via combinations of magnetic focusing elements, which can be useful in generating radiation from accelerators such as 3rd generation synchrotron sources and free electron lasers to achieve properties such as short duration and high brilliance. Here two methods of varying the longitudinal dynamics, specifically the bunch length, are investigated in detail: the simple chicane and the dog leg lattices.
 
-\textcolor{blue}{**R56**}
+A simple dogleg lattice can consist of a pair of dipoles with bending angle $\alpha_{1}$ and $-\alpha_{1}$ respectively, separated by a drift of length $L_{\mathrm{drift}}$, as shown in Fig.~\textcolor{blue}{**DIAGRAM OF DOGLEG**}.
+
+The dogleg therefore has a transport matrix of the form
+\begin{equation}
+\boldsymbol{R}_{\mathrm{dog}} = \boldsymbol{R}_{\mathrm{dip,2}}\boldsymbol{R}_{\mathrm{drift}}\boldsymbol{R}_{\mathrm{dip,1}},
+\label{eq:dogleg_transport_matrix_simple}    
+\end{equation}
+which yields 
+\textcolor{blue}{**FULL 6D TRANSPORT MATRIX**}
+In the longitudinal co-ordinates ($z$,$\Deltap/p_{0}$), this yields the relations
+\textcolor{blue}{**DOGLEG CO-ORD TRANSFORMS**}
+where the $\boldsymbol{R}_{56}$ matrix element is given by
+\begin{equation}
+\boldsymbol{R}_{56} = L_{\mathrm{drift}}\left(1+\sin^{2}\alpha_{1}\right),
+\label{eq:dogleg_R56}    
+\end{equation}
+therefore $\boldsymbol{R}_{56}>0$ for a dogleg lattice. 
+\textcolor{blue}{**WHAT HAPPENS TO Z CO-ORD THEN? DOES THE BUNCH GET LARGER?}
+
 
 \section{Linear Transport Lattices}
-\textcolor{blue}{**FODO Lattice** \\ **MBA** \\ **FFAG**}
+
+\subsection{FODO Lattice}
+
+\subsection{Multi-Bend Achromat}
+
+\subsection{Fixed Field Accelerating Gradient}
+
 
 \section{Description of an Energy Recovery Linac}
 
