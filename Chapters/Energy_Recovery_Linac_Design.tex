@@ -900,6 +900,7 @@ Many other types of bunch compression devices can be designed such as arc-like b
 Transport lattices for accelerators typically consist of repeated cells, to produce periodic motion of the accelerated particles, these repeated cells differ in design based on the desired beam properties in each case. However, magnetic lattices for particle accelerators can come in many forms and designs, therefore a comprehensive review is beyond the scope of this thesis. Consequently, A review of the cell structure of the linear transport lattices most relevant to ERL design and the work in further chapters is pursued here via three lattice types: the FODO lattice, a multi-bend achromat and the fixed field alternating gradient (FFA) approach. 
 
 \subsection{FODO Lattice}
+\label{sec:FODO_lattice}
 
 A FODO lattice consists of a series of alternatively focusing quadrupoles separated by drifts, as shown in Fig.~\textcolor{blue}{**FODO DIAGRAM**}. The FODO lattice aims to provide periodic focusing, which requires that the Twiss parameters remain unchanged from the entrance to exit of the cell. For simplicity, thin lens quadrupoles (Eq.~\ref{eq:quadrupole_matrix_thin}) are considered, the dynamics is limited to the $x$--$x'$ phase space plane and the focusing fields are considered to be of equal magnitude.
 
@@ -953,6 +954,18 @@ f=\frac{L}{2\sqrt{2}}.
 \end{equation}
 
 \subsection{Multi-Bend Achromat}
+
+An achromat lattice has cells in which the dispersion of the particle beam is zero at the entrance and exit of the lattice cell, whilst bending occurs in the central portion of the cell. In the simplest form -- known as a double bend achromat -- a single quadrupole focusing magnet is placed between two dipoles where additional quadrupoles are placed outside of this central region to maintain periodic focusing, as in the FODO cell in Section~\ref{sec:FODO_lattice}. The central section of a double bend achromat and the corresponding dispersion function are shown in Fig.~\textcolor{blue}{**DBA DIAGRAM**}
+
+The requirement of zero dispersion as the entrance and exit of this cell means that the required magnet strengths can be derived from (Eq.~\ref{eq:\label{eq:periodic_dispersion}}), with $\eta_{x,0}=0$.
+The full derivation is beyond the scope of this thesis but is shown by Steffen \cite{steffen1983periodic} and Fakhiri et al \cite{fakhri2015analytical} to be
+\begin{equation}
+\frac{1}{\sqrt{k_{1}}}\cot\left(\frac{\sqrt{k_{1}}L_{\mathrm{quad}}}{2}\right) = L_{\mathrm{drift}} + \rho\tan\left(\alpha_{1}/2\right),
+\label{eq:DBA_magnets}
+\end{equation}
+where $k_{1}$ is the normalised quadrupole gradient, $L_{mathrm{quad}}$ is the magnetic length of the quadrupole with $\rho$ and $\alpha_{1}$ the bending radius and bending angle of the dipoles respectively. 
+
+The order $n$ of the achromat can be extended by replacing the central achromat section with $n$ dipoles with quadrupoles between each yielding $n-1$ quadrupoles total, as evident in the diagram of a triple bend achromat central section in Fig~\ref{blue}{**TBA DIAGRAM**}. This generalistion can be followed to the $n$th order where the lattice structure is named a multi-bend achromat (MBA). Benefits to higher order achromats involve the avoidance of tune resonances, due to the decoupling of constraints on tune, lower emittance, potentially smaller dispersion peaks and generally a more flexible transport lattice \cite{jackson1986comparison} at the cost of an increased number of magnets and potentially larger circumference.  
 
 \subsection{Fixed Field Accelerating Gradient}
 
