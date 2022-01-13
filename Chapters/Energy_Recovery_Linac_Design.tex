@@ -319,7 +319,7 @@ A drift space within an accelerator is a section of beamline in which no magnets
 0 & 1 & 0 & 0 & 0 & 0 \\
 0 & 0 & 1 & L_{\mathrm{drift}} & 0 & 0 \\
 0 & 0 & 0 & 1 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 \\
 0 & 0 & 0 & 0 & 0 & 1
 \end{pmatrix}.
 \label{eq:drift_matrix}    
@@ -328,8 +328,9 @@ A drift space within an accelerator is a section of beamline in which no magnets
 \subsection{Quadrupole Magnet}
 
 The quadrupole element focuses a particle over a magnetic length $L_{\mathrm{quad}}$, which is identical to the width of the magnet for a hard-edged field model in which the field terminated at the end of the magnet yoke. The quadrupole element is focusing in one plane and defocusing in another plane, as shown in (Eqs.~\ref{eq:focusing_solution_equation_of_motion}, \ref{eq:defocusing_solution_equation_of_motion}), which is encapsulated within the $\boldsymbol{R}$ matrix of this element. The quadrupole has a normalised field strength $k_{1}$ (Eq.~\ref{eq:quadrupole_normalised_gradient}), which is used to characterise the focusing in this transport matrix. The $\boldsymbol{R}$ matrix for a focusing quadrupole is given by
-\resizebox{\columnwidth}{!}{
+
 \begin{equation}
+\resizebox{\columnwidth}{!}{
 \boldsymbol{R}_{\mathrm{quad}} = 
 \begin{pmatrix}
 \cos\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & \frac{1}{\sqrt{k_{1}}}\sin\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & 0 & 0 & 0 & 0 \\
@@ -338,9 +339,9 @@ The quadrupole element focuses a particle over a magnetic length $L_{\mathrm{qua
 0 & 0 & \sqrt{k_{1}}\sinh\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) &  \cosh\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & 0 & 0\\
 0 & 0 & 0 & 0 & 1 & 0\\
 0 & 0 & 0 & 0 & 0 & 1
-\end{pmatrix}.
+\end{pmatrix}.}
 \label{eq:quadrupole_matrix_thick}    
-\end{equation}}
+\end{equation}
 The $\boldsymbol{R}$ matrix of a quadrupole (Eq.~\ref{eq:quadrupole_matrix_thick}) can be simplified using the thin lens approximation, which states that the focal length of the quadrupole (Eq.~\ref{eq:focal_length_quadrupole}) is much larger than the magnetic length of the quadrupole $f \gg L_{\mathrm{quad}}$. The transport matrix for a thin lens quadrupole becomes
 \begin{equation}
 \boldsymbol{R}_{\mathrm{quad, thin}} = 
@@ -360,19 +361,22 @@ The thin lens approximation is describing a quadrupole field in the zero-length 
 
 \textcolor{blue}{**NEEDS DIAGRAM OF A DIPOLE** \\ **INCLUDE POLE FACES**\\}
 Here we assume a sector dipole magnet with no focusing terms i.e the magnetic field is homogenous transversely throughout dipole magnet. The sector dipole is assumed to have exit and entrance pole faces that are perpendicular to the direction of the reference orbit ($\beta_{1}=0$, $\beta_{2}=0$). A dipole is characterised in its simplest form by two parameters: the bending radius $\rho$ and the magnetic length of the dipole $L_{\mathrm{dip}}$, which is defined as the path length along the central trajectory. Therefore, the $\boldsymbol{R}$ matrix of a non-focusing sector dipole is given by 
-\resizebox{\columnwidth}{!}{
+
+
 \begin{equation}
+\resizebox{\columnwidth}{!}{
 \boldsymbol{R}_{\mathrm{dip}} =  
 \begin{pmatrix}
 \cos\left(L_{\mathrm{dip}}/\rho\right) & \frac{1}{\rho}\sin\left(L_{\mathrm{dip}}/\rho\right) & 0 & 0 & 0 & \rho\left[1-\cos\left(L_{\mathrm{dip}}/\rho\right)\right] \\
--\frac{1}{\rho}\sin\left(L_{\mathrm{dip}}/\rho\right) & \sin\left(L_{\mathrm{dip}}/\rho\right) & 0 & 0 & 0 & \sin\left(L_{\mathrm{dip}}/\rho\right) \\
+-\frac{1}{\rho}\sin\left(L_{\mathrm{dip}}/\rho\right) & \cos\left(L_{\mathrm{dip}}/\rho\right) & 0 & 0 & 0 & \sin\left(L_{\mathrm{dip}}/\rho\right) \\
 0 & 0 & 1 & L_{\mathrm{dip}} & 0 & 0 \\
 0 & 0 & 0 & 1 & 0 & 0 \\
-\sin\left(L_{\mathrm{dip}}/\rho\right) & \rho\left[1-\cos\left(L_{\mathrm{drift}}/\rho\right)\right] & 0 & 0 & 1 & \rho\left[\left(L_{\mathrm{dip}}/\rho\right)-\sin\left(L_{\mathrm{dip}}/\rho\right)\right] \\
+-\sin\left(L_{\mathrm{dip}}/\rho\right) & -\rho\left[1-\cos\left(L_{\mathrm{drift}}/\rho\right)\right] & 0 & 0 & 1 & -\rho\left[\left(L_{\mathrm{dip}}/\rho\right)-\sin\left(L_{\mathrm{dip}}/\rho\right)\right] \\
 0 & 0 & 0 & 0 & 0 & 1
-\end{pmatrix}.
+\end{pmatrix}.}
 \label{eq:dipole_matrix}
-\end{equation}}
+\end{equation}
+
 Dipoles are also commonly available with pole faces that are perpendicular to the reference orbit at the centre of the dipole ($\beta_{1}=\alpha_{0}/2$, $\beta_{2}=\alpha_{0}/2$), where $a_{0}$ is the bending angle of the dipole (Eq.~\ref{eq:dipole_bending_angle}), which are termed rectangular dipoles. The rotated pole faces act like thin quadrupoles (Eq.~\ref{eq:quadrupole_matrix_thin}), providing transverse focusing and there effect of the dynamics of a particle beam can be expressed via the $\boldsymbol{R}$ matrix
 \begin{equation}
 \boldsymbol{R}_{\mathrm{pole}} =
@@ -387,29 +391,6 @@ Dipoles are also commonly available with pole faces that are perpendicular to th
 \label{eq:pole_face_matrix}    
 \end{equation}
 where $\beta$ is the angle of the pole face and $\psi = k\left(h/\rho\right)\frac{1+\sin^{2}\beta}{\cos\beta}$, where $h$ is the gap between the poles of the magnet -- the $\psi$ term is typically negligible. 
-
-\subsection{Quadrupole Doublet}
-
-A quadrupole doublet is considered here to demonstrate how a beamline is constructed from multiple elements using (Eq.~\ref{eq:subseries_transport_matrix}). For simplicity, thin lens quadrupoles (Eq.~\ref{eq:quadrupole_matrix_thin}) with identical magnitude field gradient and length are used for the calculation. The quadrupole doublet, of the form shown in Fig.~\textcolor{blue}{**QUADRUPOLE DOUBLET DIAGRAM**}, is constructed from a defocusing and focusing quadrupole separated by a drift space; the overall $\boldsymbol{R}$ matrix has the form
-\begin{equation}
-\boldsymbol{R} = \boldsymbol{R}_{\mathrm{F, quad}}\boldsymbol{R}_{\mathrm{drift}}\boldsymbol{},
-\label{eq:doublet_R_matrix}
-\end{equation}
-where $\boldsymbol{R}_{\mathrm,{F, quad}}$ is a focusing quadrupole (Eq.~\ref{eq:quadrupole_matrix_thin}) and $\boldsymbol{R}_{\mathrm{drift}}$ is a drift space (Eq.~\ref{eq:drift_matrix}) and $\boldsybol{R}_{\mathrm{D, quad}}$ is a defocusing quadrupole with thin lens transport matrix
-\begin{equation}
-\boldsymbol{R}_{\mathrm{D, quad}} =
-\begin{pmatrix}
-1 & 0 & 0 & 0 & 0 & 0\\
-\sqrt{k_{1}}\sinh\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & 1 & 0 & 0 & 0 & 0 \\
-0 & 0 & 1 & 0 & 0 & 0 \\
-0 & 0 & -\sqrt{k_{1}}\sin\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right) & 1 & 0 & 0 \\
-0 & 0 & 0 & 0 & 1 & 0 \\
-0 & 0 & 0 & 0 & 0 & 1
-\end{pmatrix}.
-\label{eq:defocusing_quadrupole_matrix}    
-\end{equation}
-Therefore, using (Eq.~\ref{eq:doublet_R_matrix}) the transport matrix of a quadrupole doublet becomes 
-\textcolor{blue}{**CHECK TRANSPORT MATRICIES + CALCULATE**}
 
 \section{Twiss Parameters and Emittance}
 \textcolor{blue}{**INCLUDE DISPERSION**\\}
@@ -847,29 +828,129 @@ The region of stable motion within the separatrix is named the RF bucket, and pa
 
 The longitudinal dimensions of a particle bunch can be adjusted via combinations of magnetic focusing elements, which can be useful in generating radiation from accelerators such as 3rd generation synchrotron sources and free electron lasers to achieve properties such as short duration and high brilliance. Here two methods of varying the longitudinal dynamics, specifically the bunch length, are investigated in detail: the simple chicane and the dog leg lattices.
 
-A simple dogleg lattice can consist of a pair of dipoles with bending angle $\alpha_{1}$ and $-\alpha_{1}$ respectively, separated by a drift of length $L_{\mathrm{drift}}$, as shown in Fig.~\textcolor{blue}{**DIAGRAM OF DOGLEG**}.
+A simple dogleg lattice can consist of a pair of dipoles with bending angle $\alpha_{1}$ and $-\alpha_{1}$ respectively, separated by a drift of length $L_{\mathrm{drift}}$, as shown in Fig.~\textcolor{blue}{**DIAGRAM OF DOGLEG + POTENTIALLY THE CHICANE TOO?**}.
 
 The dogleg therefore has a transport matrix of the form
 \begin{equation}
-\boldsymbol{R}_{\mathrm{dog}} = \boldsymbol{R}_{\mathrm{dip,2}}\boldsymbol{R}_{\mathrm{drift}}\boldsymbol{R}_{\mathrm{dip,1}},
+\boldsymbol{R}_{\mathrm{dog}} = \boldsymbol{R}_{\mathrm{dip,2}}\cdot\boldsymbol{R}_{\mathrm{drift}}\cdot\boldsymbol{R}_{\mathrm{dip,1}},
 \label{eq:dogleg_transport_matrix_simple}    
 \end{equation}
 which yields 
-\textcolor{blue}{**FULL 6D TRANSPORT MATRIX**}
-In the longitudinal co-ordinates ($z$,$\Deltap/p_{0}$), this yields the relations
-\textcolor{blue}{**DOGLEG CO-ORD TRANSFORMS**}
-where the $\boldsymbol{R}_{56}$ matrix element is given by
+\begin{equation}
+\resizebox{\columnwidth}{!}{
+\boldsymbol{R}_{\mathrm{dogleg}} = 
+\begin{pmatrix}
+1+\frac{L}{\rho}\cos\alpha_{1}\sin\alpha_{1} & L_{\mathrm{drift}}\cos^{2}\alpha_{1} & 0 & 0 & 0 & -L_{\mathrm{drift}}\cos\alpha_{1}\sin\alpha_{1} \\
+-\frac{L_{drift}}{\rho^{2}}\sin^{2}\alpha_{1} & 1-\frac{L_{\mathrm{drift}}}{\rho}\cos\alpha_{1}\sin\alpha_{1} & 0 & 0 & 0 \frac{L_{\mathrm{drift}}}{\rho}\sin^{2}\alpha_{1} \\
+0 & 0 & 1 & L_{\mathrm{drift}}+2\rho\alpha_{1} & 0 & 0 \\
+-\frac{L}{\rho}\sin^{2}\alpha_{1} & -L_{\mathrm{drift}}\sin\alpha_{1}\cos\alpha_{1} & 0 & 0 & 1 & L_{\mathrm{drift}}\left(1+\sin^{2}\alpha_{1}\right) \\
+0 & 0 & 0 & 0 & 0 & 1
+\end{pmatrix}
+\label{eq:6D_dogleg_matrix}}    
+\end{equation}
+where the path length of the dogleg is $L=L_{\mathrm{drift}}+2L_{\mathrm{dip}}$ and the $\boldsymbol{R}_{56}$ matrix element is given by
 \begin{equation}
 \boldsymbol{R}_{56} = L_{\mathrm{drift}}\left(1+\sin^{2}\alpha_{1}\right),
 \label{eq:dogleg_R56}    
 \end{equation}
-therefore $\boldsymbol{R}_{56}>0$ for a dogleg lattice. 
-\textcolor{blue}{**WHAT HAPPENS TO Z CO-ORD THEN? DOES THE BUNCH GET LARGER?}
+therefore $\boldsymbol{R}_{56}>0$ for a dogleg lattice. In the longitudinal co-ordinates ($z$,$\Deltap/p_{0}$), the transformation from the particles entrance to the dogleg ($z_{0}$, $\left(\Delta p/p_{0}\right)_{0}$) to its exit ($z_{1}$, $\left(\Delta p/p_{0}\right)$) yields the relations
+\begin{align}
+z_{1} &= z_{0}+\boldsymbol{R}_{56}\left(\frac{\Delta p}{p_{0}}\right)_{0} = z_{0} + L_{\mathrm{drift}}\left(1+\sin^{2}\alpha_{1}\right)\left(\frac{\Delta p}{p_{0}}\right)_{0}, \\
+\left(\frac{\Delta p}{p_{0}}\right)_{1} &= \left(\frac{\Delta p}{p_{0}}\right)_{0} = \frac{\Delta p}{p_{0}},
+\label{eq:longitudinal_dogleg_transform}    
+\end{align}
+where the momentum spread is, as expected, unchanged and throughout the dogleg lattice the bunch will be longitudinally spread by a factor $\Delta z=\boldsymbol{R_{56}}\frac{\Delta p}{p_{0}}$.
 
+Similarly, a chicane bunch compressor can be constructed from a dogleg and a reverse dogleg (the reflection of the dogleg shown in Fig.~\textcolor{blue}{**DOGLEG IMAGE**}) separated by a drift. The path length of this chicane is $L = 4L_{\mathrm{dip}}+2L_{\mathrm{drift,1}}+L_{\mathrm{drift,2}}$, where each dipole is of identical length and $L_{\mathrm{drift,1}}\neq L_{\mathrm{drift,2}}$. The resulting lattice is shown in Fig.~\textcolor{blue}{**CHICANE DIAGRAM**}. 
+
+The transport matrix of this lattice is of the form
+\begin{equation}
+\boldsymbol{R}_{\mathrm{chicane}} = \boldsymbol{R}_{\mathrm{dip,2}}\cdot\boldsymbol{R}_{\mathrm{drift,1}}\cdot\boldsymbol{R}_{\mathrm{dip,1}}\cdot\boldsymbol{R}_{\mathrm{drift,2}}\cdot\boldsymbol{R}_{\mathrm{dip,1}}\cdot\boldsymbol{R}_{\mathrm{drift,1}}\cdot\boldsymbol{R}_{\mathrm{dip,2}},
+\label{eq:chicane_transport_matrix}    
+\end{equation}
+where, for brevity, the full 6D transport matrix is not shown. The $\boldsymbol{R}_{56}$ matrix element of the chicane becomes
+\begin{equation}
+\boldsymbol{R}_{56} = -2L_{\mathrm{drift,1}}\frac{\alpha_{1}\sin\alpha_{1}}{\cos^{2}\alpha_{1}},
+\label{eq:chicane_R56}    
+\end{equation}
+therefore, $\boldsymbol{R}_{56}<0$ for a chicane. The longitudinal co-ordinates transform in a chicane such that
+\begin{align}
+z_{1} &= z_{0} + \boldsymbol{R}_{56}\left(\frac{\Delta p}{p_{0}}\right)_{1} = z_{0} + 2L_{\mathrm{drift,1}}\frac{\alpha_{1}\sin\alpha_{1}}{\cos^{2}\alpha_{1}}\left(\frac{\Delta p}{p_{0}}\right), \\
+\left(\frac{\Delta p}{p_{0}}\right)_{1} &= \left(\frac{\Delta p}{p_{0}}\right)_{0} = \frac{\Delta p}{p_{0}}. 
+\label{eq:longitudinal_chicane_transform}    
+\end{align}
+
+As proven for a dogleg (Eq.~\ref{eq:longitudinal_dogleg_transform}), the chicane transform has a similar form with unchanged momentum variation and a variation in the longitudinal co-ordinate of $\Delta z = \boldsymbol{R}_{56}\frac{\Delta p}{p_{0}}$, which here is a compression due to $\boldsymbol{R}_{56}<0$.
+
+Upon examination of the momentum compaction factor (Eq.~\ref{eq:momentum_compaction_first_order}), the path length variation can be re-cast using the longitudinal relationship \cite{wolski2012longitudinal} derived in the chicane (Eq.~\ref{eq:longitudinal_chicane_transform}) and dogleg (Eq.~\ref{eq:longitudinal_dogleg_transform}) examples yielding 
+\begin{equation}
+\alpha_{p} = \frac{\boldsymbol{R}_{56}}{L},
+\label{eq:momentum_compaction_R56}
+\end{equation}
+which can be used to re-define the $\boldsymbol{R}_{56}$ using (Eq.~\ref{eq:momentum_compaction_dispersion})
+\begin{equation}
+\boldsymbol{R}_{56} = \int_{0}^{s}\frac{\eta_{x}}{\rho}ds.    
+\label{eq:R56_dispersion_relation}
+\end{equation}
+
+Many other types of bunch compression devices can be designed such as arc-like bunch compressors \cite{williams2020arclike} with $\boldsymbol{R}_{56}>0$ , and the introduction here is not intended to be comprehensive. 
 
 \section{Linear Transport Lattices}
 
+Transport lattices for accelerators typically consist of repeated cells, to produce periodic motion of the accelerated particles, these repeated cells differ in design based on the desired beam properties in each case. However, magnetic lattices for particle accelerators can come in many forms and designs, therefore a comprehensive review is beyond the scope of this thesis. Consequently, A review of the cell structure of the linear transport lattices most relevant to ERL design and the work in further chapters is pursued here via three lattice types: the FODO lattice, a multi-bend achromat and the fixed field alternating gradient (FFA) approach. 
+
 \subsection{FODO Lattice}
+
+A FODO lattice consists of a series of alternatively focusing quadrupoles separated by drifts, as shown in Fig.~\textcolor{blue}{**FODO DIAGRAM**}. The FODO lattice aims to provide periodic focusing, which requires that the Twiss parameters remain unchanged from the entrance to exit of the cell. For simplicity, thin lens quadrupoles (Eq.~\ref{eq:quadrupole_matrix_thin}) are considered, the dynamics is limited to the $x$--$x'$ phase space plane and the focusing fields are considered to be of equal magnitude.
+
+The FODO cell has a transport matrix of the form
+\begin{equation}
+\boldsymbol{R}_{\mathrm{FODO}} = \boldsymbol{R}_{\mathrm{quad,F}}\cdot\boldsymbol{R}_{\mathrm{drift}}\cdot\boldsymbol{R}_{\mathrm{quad,D}}\cdot\boldsymbol{R}_{\mathrm{drift}},
+\label{eq:FODO_transport}    
+\end{equation}
+where the $x$--$x'$ plane transport matricies are
+\begin{align}
+\boldsymbol{R}_{\mathrm{quad,F}} &= 
+\begin{pmatrix}
+1 & 0 \\
+-\frac{1}{f} & 0
+\end{pmatrix}, & \boldsymbol{R}_{\mathrm{quad,D}} &= 
+\begin{pmatrix}
+1 & 0 \\
+\frac{1}{f} & 1
+\end{pmatrix}, & \boldsymbol{R}_{\mathrm{drift}} &= 
+\begin{pmatrix}
+1 & \frac{L}{2} \\
+0 & 1
+\end{pmatrix},
+\label{eq:FODO_component_matricies}    
+\end{align}
+such that the transport matrix for a FODO cell becomes
+\begin{equation}
+\boldsymbol{R}_{\mathrm{FODO}} =
+\begin{pmatrix}
+1+\frac{L}{2f} & L+\frac{L^{2}}{4f} \\
+-\frac{L^{2}}{4f} & 1-\frac{L}{2f}-\frac{L^{2}}{4f}
+\end{pmatrix}.
+\label{eq:FODO_matrix}
+\end{equation}
+Through using the general matrix of periodic transport (Eq.~\ref{eq:periodic_transport_matrix}) for a single turn, we can relate the phase advance $\mu$ to the parameters of the FODO cell
+\begin{align}
+\cos\mu &= \frac{1}{2}\boldsymbol{\mathrm{Tr}}\left(\boldsymbol{R}_{\mathrm{FODO}}\right) = 1-\frac{L^{2}}{8f^{2}}, \\
+\cos\mu &= 1-2\sin^{2}\left(\frac{\mu}{2}\right), \\
+\left|\sin\left(\frac{\mu}{2}\right)\right| &= \frac{L}{4f}.
+\label{eq:phase_advance_FODO}
+\end{align}
+Using the previously defined stability criterion (Eq.~\ref{eq:stability_criterion}), the FODO cell is therefore only stable under the condition
+\begin{equation}
+1>\frac{L}{4f},
+\label{eq:FODO_stability}    
+\end{equation}
+which for a typical phase advance $\mu=90$\si{\degree}, means the focal length is given by
+\begin{equation}
+f=\frac{L}{2\sqrt{2}}.
+\label{eq:FODO_focal_90}    
+\end{equation}
 
 \subsection{Multi-Bend Achromat}
 
