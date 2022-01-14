@@ -969,10 +969,36 @@ The order $n$ of the achromat can be extended by replacing the central achromat 
 
 \subsection{Fixed Field Accelerating Gradient}
 
+Fixed field alternating gradient transport is designed using constant field magnets. like cylotrons, with alternating gradient focusing, like synchrotrons \cite{machida2013fixed}. The magnet fields are not varied in order to account for higher energies, instead the lattice is designed such that varying momentum particles are contained within tolerable displacements from the reference orbit. 
 
-\section{Description of an Energy Recovery Linac}
+FFA transport is particularly advantageous due to the high momentum variation, or acceptance, that the lattice can tolerate, as in an FFA an orbit can be defined at any particle momentum \cite{barlow2010emma}. \textcolor{blue}{**WHAT ARE THE ADVANTAGES OF AN FFAG**} There are two forms of FFA transport: scaling and non-scaling, which relate to the relationship between the magnetic field gradient of the magnets and the radial position of a magnet.
 
-\textcolor{blue}{**HOLZER'S TRASVERSE BEAM DYNAMICS A GOOD STARTING POINT**}
+In a scaling FFA the main design consideration is to keep the tune of the orbit constant with respect to energy to avoid optical resonances via crossing integer tunes \cite{symon1956fixed}. Constant tune is satisfied by having geometrically similar magnetic fields for different energies $E$ and orbital radii $R$ ($E\propto R$), which can be expressed by
+\begin{equation}
+\left.\frac{\partial}{\partial p} \left(\frac{\rho}{\rho_{0}}\right)\right|_{\alpha_{1}=\mathrm{const}}=0,
+\label{eq:scaling_condition}    
+\end{equation}
+where $\rho$ is the local radius of curvature and $\rho_{0}$ is the average radius of curvature. The scaling condition (Eq.~\ref{eq:scaling_condition}) is satisfied by magnetic field profiles of the form \cite{symon1956fixed}, which are for two varying designs: a radial sector FFA (Eq.~\ref{eq:radial_FFA_field}) and a spiral sector FFA (Eq.~\ref{eq:spiral_FFA_field})
+\begin{align}
+B &= B_{0}\left(\frac{r}{r_{0}}\right)^{k}, 
+\label{eq:radial_FFA_field} \\
+B &= B_{0}\left(\frac{r}{r_{0}}\right)^{k}\left\{1+f\cos\right[N\alpha_{1}-N\tan\left(\zeta\right)\log\left(\frac{r}{r_{0}}\right)\left]\right\},
+\label{eq:spiral_FFA_field}
+\end{align}
+where generally, $r$ is the radial distance from the centre of the accelerator and $k$ is the field index
+\begin{equation}
+k=-\frac{r_{0}}{B_{z}\left(r_{0}\right)}\left(\frac{\partial B_{z}}{\partial r}\right)_{r=r_{0}},
+\label{eq:FFAG_field_index}
+\end{equation}
+and, applying to spiral sector FFA, $f$ is the flutter factor, $N$ the number of sectors and $\zeta$ the spiral angle between the locus of the maximum field and the radius. Variation between the scaling FFA designs is not investigated here as the focus is on non-scaling FFA, a further discussion of scaling FFA is presented by Symon et al \cite{symon1956fixed}. However, we note that the scaling FFA design is limited as it is constrained by constant tune to obey the scaling condition (Eq.~\ref{eq:scaling_condition}), which limits the flexibility of the optics, can only be satisfied by complicated magnets with specific field profiles (Eqs.~\ref{eq:radial_FFA_field}, \ref{eq:spiral_FFA_field}) and requires a large radius accelerator for high energy electrons. The alternative is non-scaling FFA lattices, in which the scaling condition (Eq.~\ref{eq:scaling_condition}) is disobeyed.
+
+Once the scaling condition is not met, phase advance varies with momentum and the tune of the accelerator can cross an optical resonance, however resonance crossing may be tolerable if this crossing occurs rapidly as the blow-up of the beam size may be limited \cite{mills1997nsffa,johnstone1997nsffa}. Therefore, the scaling FFA condition may be abandoned with rapid crossing of the optical resonances, and the working point of the transport optics can be allowed to vary. This has been demonstrated in simulation, where it was found that random dipole and quadrupole kicks were responsible to a greater extent for orbit distortion than optical resonance crossing \cite{machida2007orbit}. Removal of the scaling condition allows the radial variation of the magnetic field to be simplified to a linear relationship \cite{johnstone1999fixed}, hence complicated magnet design is no longer required and linear magnets are sufficient for non-scaling FFA transport.
+
+A proof-of-principle demonstration of ns-FFA was performed with the EMMA accelerator \cite{barlow2010emma,machida2012acceleration}, and transport involving ns-FFA has been demonstrated at the CBETA ERL \cite{hoffstaetter2017cbeta,bartnik2020cbeta} with subsequent designs for accelerator driven sub-critical reactors \cite{tygier2011high} and radiotherapy gantries \cite{trbojevic2009ffags,} based on such an approach. Linear non-scaling FFAG transport typically consists of a lattice made of many cells in which two focusing magnets, are separated by drifts. Typically linear non-scaling FFA can be accomplished using at least one combined function magnet (bending and focusing) with a quadrupole or combined function magnet, where quadrupoles with transversely shifted pole centres are often utilised. An example non-scaling FFA cell is shown in Fig.~\textcolor{blue}{**FFA CELL DIAGRAM**}.
+
+\section{Energy Recovery Linacs}
+
+An energy recovery linac is a form of re-circulated accelerator, invented by Tigner \cite{tigner1965possible}, which is capable of providing the high-quality particle bunch properties of a linac with the high duty factor (bunch repetition rate) of a storage ring. 
 
 \textcolor{blue}{\begin{itemize}
     \item{Need to explain a photoinjector and an injector cryomodule}
