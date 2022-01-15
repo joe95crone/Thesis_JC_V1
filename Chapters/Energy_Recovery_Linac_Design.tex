@@ -20,19 +20,20 @@
 \chapter{Energy Recovery Linac Design}
 \label{Energy_Recovery_Linac_Design} % to reference use \ref{ChapterTemplate}
 
-\textcolor{blue}{**HYWEL SUGGESTS TO FOLLOW JAMES JONES THESIS, BUT WITH LESS DETAIL**}
-\textcolor{blue}{https://www.research.manchester.ac.uk/portal/en/theses/design-of-a-novel-stacked-storage-ring-for-low-emittance-light-sources(53cedd16-ea4d-4343-abc9-78886a934a9b).html}
-
-% Follow James Jones Thesis (minus some irrelevant parts) but include sections on ERLs and  Collective Effects
-
 \section{Equations of Motion in Particle Accelerators}
 
 \subsection{Co-ordinate System}
-\textcolor{blue}{**DEFINE REFERENCE ORBIT**}
 
-In particle accelerators bending fields are often used to direct the particles to a certain experimental station downstream of the particle sources, and many particle accelerators re-circulate particle beams. The particles are directed along an ideal trajectory named -- since in a recirculated machine the trajectory is closed -- a reference orbit. Therefore, since bending forces are introduced, the motion of particles within an accelerator environment can best be described by a right handed rotating co-moving co-ordinate system \cite{wille2000physics}. The right handed co-moving co-ordinate system is shown in Fig. \textcolor{blue}{**DIAGRAM OF CIRCULAR CO-ORD**}   
+In particle accelerators bending fields are often used to direct the particles to a certain experimental station downstream of the particle sources, and many particle accelerators re-circulate particle beams. The particles are directed along an ideal trajectory named -- since in a recirculated machine the trajectory is closed -- a reference orbit. Therefore, since bending forces are introduced, the motion of particles within an accelerator environment can best be described by a right handed rotating co-moving co-ordinate system \cite{wille2000physics}. The right handed co-moving co-ordinate system is shown in Fig.~\ref{fig:accelerator_coord_system}.   
 
-The co-ordinate system in Fig. \textcolor{blue}{**REF DIAGRAM COORD**} used to describe motion in particle accelerators within this thesis is of the form $\Kappa = \left\{x,y,s\right\}$, describing the local co-ordinate system where the transverse motion along the horizontal direction is in the $x$-axis and the vertical axis in $y$ is orthogonal to this and the direction of longitudinal motion $s$. Within this thesis, the $\Kappa = \left\{x,y,s\right\}$ co-ordinate system is maintained in situations with no bending magnets, such as linear accelerators.     
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/Accelerator_Coord_System_fixed.pdf}
+\caption{}
+\label{fig:accelerator_coord_system}
+\end{figure}
+
+The co-ordinate system in Fig.~\ref{fig:accelerator_coord_system} used to describe motion in particle accelerators within this thesis is of the form $\Kappa = \left\{x,y,s\right\}$, describing the local co-ordinate system where the transverse motion along the horizontal direction is in the $x$-axis and the vertical axis in $y$ is orthogonal to this and the direction of longitudinal motion $s$. Within this thesis, the $\Kappa = \left\{x,y,s\right\}$ co-ordinate system is maintained in situations with no bending magnets, such as linear accelerators.     
 
 \subsection{Magnetic Fields in Particle Accelerators}
 
@@ -90,14 +91,14 @@ where $l_{\mathrm{quad}}$ is the length of the quadrupole magnet and the normali
 k_{1} = \frac{e}{p_{0}}g.
 \label{eq:quadrupole_normalised_gradient}
 \end{equation}
-Quadrupole focusing is analogous to focusing with an optical lens, however a lens focuses simultaneously in all transverse directions whereas a quadrupole that is focusing in the horizontal plane is defocusing in the vertical plane. In the standard defined right handed co-ordinate system \textcolor{blue}{**REFERENCE CO-ORD IMAGE**}, when $k_{1} > 0$, the quadrupole is horizontally focusing (vertically defocusing) and when $k_{1} < 0$, the quadrupole is vertically focusing (horizontally defocusing). Consequently, with the transverse variation in focusing behaviour, a quadrupole can not be considered a true 'magnetic lens' however, taking inspiration from ray optics, the focal length of a quadrupole $f_{\mathrm{quad}}$ can be described as
+Quadrupole focusing is analogous to focusing with an optical lens, however a lens focuses simultaneously in all transverse directions whereas a quadrupole that is focusing in the horizontal plane is defocusing in the vertical plane. In the standard defined right handed co-ordinate system (see Fig.~\ref{fig:accelerator_coord_system}), when $k_{1} > 0$, the quadrupole is horizontally focusing (vertically defocusing) and when $k_{1} < 0$, the quadrupole is vertically focusing (horizontally defocusing). Consequently, with the transverse variation in focusing behaviour, a quadrupole can not be considered a true 'magnetic lens' however, taking inspiration from ray optics, the focal length of a quadrupole $f_{\mathrm{quad}}$ can be described as
 \begin{equation}
 \frac{1}{f_{\mathrm{quad}}} = k_{1}l_{\mathrm{quad}}.
 \label{eq:focal_length_quadrupole}    
 \end{equation}
 The similarities between an optical lens and a quadrupole are highlighted in Fig. \textcolor{blue}{**LENS/DOUBLET DIAGRAM**}, which shows a simple focusing defocusing scheme -- the quadrupole doublet. 
 
-\textcolor{blue}{**Higher Order Magnets + Multipoles**}
+
 The computation of the magnetic field of an arbitrary $n$th order magnet typically uses a multipole expansion of the scalar potential of the magnetic field, which for convenience is presented in cylindrical polar co-ordinates \cite{shepherd2016magnet}
 \begin{equation}
 V = \sum_{n=0}^{\infty} J_{n+1}r^{n+1}\cos\left[\left(n+1\right)\theta\theta\right]+K_{n+1}r^{n+1}\sin\left[\left(n+1\right)\theta\right],
@@ -140,7 +141,7 @@ B_{y} &= \frac{p_{0}}{e}\left(k_{0}+k_{1}x\right).
 \subsection{Linear Equations of Motions}
 \label{sec:equations_of_motion}
 
-The linear equations of motion for a particle follow the derivation of Rossbach and Schmuser \cite{rossbach1993basic} and K. Willie \cite{wille2000physics}, using the co-ordinate system presented in Fig. \textcolor{blue}{**CO-ORD SYS DIAG**}. Here an equation of particle motion due to the Lorentz force (Eq.~\ref{eq:Lorentz_force}) is developed for the co-ordinate system which rotates due to bending forces, which we limit to the horizontal $x$--$s$ plane. We define the position vector of a particle at an arbitrary point in it's trajectory, in the global cyclindrical co-ordinate system $\left\{r,\alpha,z\right\}$ as
+The linear equations of motion for a particle follow the derivation of Rossbach and Schmuser \cite{rossbach1993basic} and K. Willie \cite{wille2000physics}, using the co-ordinate system presented in Fig.~\ref{fig:accelerator_coord_system}. Here an equation of particle motion due to the Lorentz force (Eq.~\ref{eq:Lorentz_force}) is developed for the co-ordinate system which rotates due to bending forces, which we limit to the horizontal $x$--$s$ plane. We define the position vector of a particle at an arbitrary point in it's trajectory, in the global cyclindrical co-ordinate system $\left\{r,\alpha,z\right\}$ as
 \begin{equation}
 \boldsymbol{R} = \boldsymbol{R}_{0} + r\boldsymbol{u}_{r} + z\boldsymbol{u}_{z},    
 \label{eq:particle_position_vector}
@@ -359,8 +360,16 @@ The thin lens approximation is describing a quadrupole field in the zero-length 
 
 \subsection{Dipole Magnet}
 
-\textcolor{blue}{**NEEDS DIAGRAM OF A DIPOLE** \\ **INCLUDE POLE FACES**\\}
-Here we assume a sector dipole magnet with no focusing terms i.e the magnetic field is homogenous transversely throughout dipole magnet. The sector dipole is assumed to have exit and entrance pole faces that are perpendicular to the direction of the reference orbit ($\beta_{1}=0$, $\beta_{2}=0$). A dipole is characterised in its simplest form by two parameters: the bending radius $\rho$ and the magnetic length of the dipole $L_{\mathrm{dip}}$, which is defined as the path length along the central trajectory. Therefore, the $\boldsymbol{R}$ matrix of a non-focusing sector dipole is given by 
+Here we assume a sector dipole magnet with no focusing terms i.e the magnetic field is homogenous transversely throughout dipole magnet. The sector dipole is assumed to have exit and entrance pole faces that are perpendicular to the direction of the reference orbit ($\beta_{1}=0$, $\beta_{2}=0$). A diagram of a sector dipole is shown in Fig.~\ref{fig:dipole_magnet_diagram}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/Dipole_magnet_fixed.pdf}
+\caption{Bent trajectory of a particle (red) as it traverses a sector dipole of magnetic length $L$, with radius of curvature $\rho$ and bend angle $\alpha_{1}$ in the horizontal $x$--$s$ plane.}
+\label{fig:dipole_magnet_diagram}
+\end{figure}
+
+A dipole is characterised in its simplest form by two parameters: the bending radius $\rho$ and the magnetic length of the dipole $L_{\mathrm{dip}}$, which is defined as the path length along the central trajectory. Therefore, the $\boldsymbol{R}$ matrix of a non-focusing sector dipole is given by 
 
 
 \begin{equation}
@@ -393,11 +402,11 @@ Dipoles are also commonly available with pole faces that are perpendicular to th
 where $\beta$ is the angle of the pole face and $\psi = k\left(h/\rho\right)\frac{1+\sin^{2}\beta}{\cos\beta}$, where $h$ is the gap between the poles of the magnet -- the $\psi$ term is typically negligible. 
 
 \section{Twiss Parameters and Emittance}
-\textcolor{blue}{**INCLUDE DISPERSION**\\}
+\textcolor{blue}{**BLURB NEEDED**\\}
 
 \subsection{Generalisation of the Equations of Motion}
 
-The equations of motion currently derived (Eqs.~) have only been appropriate for a single test particle, however as we aim to understand the dynamics of a bunch of many particles the equations of motion must be generalised to the many particle scenario. Generalisation of the equations of motion () is achieved via setting $1/\rho=0$, assuming a very large bending radius, and $\Delta p/p_{0}=0$, which assumes the bunch is monoenergetic, which reveals a longitudinal dependence within the quadrupole focusing term. Generalisation by these assumptions yields Hill's equation
+The equations of motion currently derived (Eqs.~\ref{eq:horizontal_equation_of_motion_simplified}, \ref{eq:vertical_equation_of_motion_simplified}) have only been appropriate for a single test particle, however as we aim to understand the dynamics of a bunch of many particles the equations of motion must be generalised to the many particle scenario. Generalisation of the equations of motion is achieved via setting $1/\rho=0$, assuming a very large bending radius, and $\Delta p/p_{0}=0$, which assumes the bunch is monoenergetic, which reveals a longitudinal dependence within the quadrupole focusing term. Generalisation by these assumptions yields Hill's equation
 \begin{equation}
 x''\left(s\right)-k\left(s\right)x\left(s\right) = 0,
 \label{eq:Hills_equation}    
@@ -1017,9 +1026,15 @@ An energy recovery linac is a form of re-circulated accelerator, invented by Tig
 % Same cell energy recovery 
 % DIAGRAM
 
-Firstly, for simplicity, we consider a single turn energy recovery linac with a single electron bunch, which consists of a high repetition rate, high-brightness (low emittance, high bunch charge) photo-injector \cite{} \textcolor{blue}{*CITE WHAT? Illan Ben-Zvi review?} and injection beamline, a linac section containing several RF cavities, a re-circulating transport beamline from the exit of the linac to its entrance and a beam dump. A schematic off the simplest form of single turn ERL is shown in Fig~\textcolor{blue}{**SINGLE TURN ERL DIAGRAM}  
+Firstly, for simplicity, we consider a single turn energy recovery linac with a single electron bunch, which consists of a high repetition rate, high-brightness (low emittance, high bunch charge) photo-injector \cite{} \textcolor{blue}{*CITE WHAT? Illan Ben-Zvi review?} and injection beamline, a linac section containing several RF cavities, a re-circulating transport beamline from the exit of the linac to its entrance and a beam dump. A schematic off the simplest form of single turn ERL is shown in Fig~\ref{fig:ERL_schematics}. 
 
-\textcolor{blue}{**SINGLE TURN ERL DIAGRAM + ADD 2 TURN?**}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Energy_Recovery_Linac_Design/single_multi_turn_ERL.pdf}
+\caption{}
+\label{fig:ERL_schematics}
+\end{figure}
+
 
 Within the single turn ERL, the electron bunch is generated via the photo-injector at some kinetic energy $E_{\mathrm{inj}}$ and transported to the linac, where its arrival is timed to an accelerating phase of the RF waveform (see Section~\ref{sec:RF_acceleration}), as shown in Fig.~\ref{eq:ERL_RF_acceleration_phase}. The electron bunch is consequently accelerated to some kinetic energy $E_{e}$ and is transported via the re-circulating transport beamline until at the entrance to the linac. Upon re-entry into the linac, the electron bunch is decelerated and must be timed to a decelerating phase of the RF waveform -- a trough in the RF waveform. 
 
@@ -1042,7 +1057,7 @@ Through the simplistic description of a single turn ERL it is clear that there a
 % complexity introduced due to many varying energy beams and therefore transport considerations
 % DIAGRAM
 
-A multi-turn ERL operates on a similar principle to the single turn ERL, however a multi-turn ERL takes advantage of multiple accelerations by the RF cavity. As an example, we consider a 2 turn ERL with a single linac accelerating section, a photo-injector and beam dump as well as 2 re-circulating beamlines. A schematic of a simple 2 turn ERL, outlined here, is shown in Fig.~\ref{} \textcolor{blue}{**2 TURN ERL DIAGRAM**}.  
+A multi-turn ERL operates on a similar principle to the single turn ERL, however a multi-turn ERL takes advantage of multiple accelerations by the RF cavity. As an example, we consider a 2 turn ERL with a single linac accelerating section, a photo-injector and beam dump as well as 2 re-circulating beamlines. A schematic of a simple 2 turn ERL, outlined here, is shown in Fig.~\ref{fig:ERL_schematics}.  
 
 The electron bunch is generated via the photo-injector with energy $E_{\mathrm{inj}}$ and transported to the linac, arriving with accelerating phase, and is accelerated with energy gain $E_{\mathrm{gain}}$ to a kinetic energy $E_{e,1}$, the first turn nominal energy. The electron bunch is then transported to the entrance of the linac, via the first re-circulating beamline, in accelerating phase and is re-accelerated to $E_{e,2}=2E_{\mathrm{gain}+E_{\mathrm{inj}}}$, (see Fig.~\ref{eq:ERL_RF_acceleration_phase}) the larger second turn nominal energy. For acceleration, the first re-circulating beamline must have a path length of $L = n\lambda_{\mathrm{RF}}$ to return to the same phase as the initial acceleration. The scheme thus far is identical to a re-circulating linac machine first demonstrated at MUSL-2 \cite{axel1977status}.
 
