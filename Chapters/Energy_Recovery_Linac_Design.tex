@@ -473,7 +473,14 @@ where the area of the phase space ellipse is given by
 A=\pi\epsilon,
 \label{eq:phase_space_area}    
 \end{equation} 
-and $\epsilon$ is defined as the single particle emittance or action. The form in (Eq.~\ref{eq:phase_space_ellipse}) is that of the equation of an ellipse; consequently the motion of a single particle arount an orbit maps out an ellipse in phase space. The parameters ($\beta\left(s\right)$, $\alpha\left(s\right)$, $\gamma\left(s\right)$) we have defined to interpret the phase space of a particle are collectively known as the Twiss parameters. Phase space ellipses are observed in each of the three planes as the results here are general. An example of the phase space ellipse in the $x$--$x'$ plane is shown in Fig.~\textcolor{blue}{**PHASE SPACE ELLIPSE DIAGRAM**}.
+and $\epsilon$ is defined as the single particle emittance or action. The form in (Eq.~\ref{eq:phase_space_ellipse}) is that of the equation of an ellipse; consequently the motion of a single particle arount an orbit maps out an ellipse in phase space. The parameters ($\beta\left(s\right)$, $\alpha\left(s\right)$, $\gamma\left(s\right)$) we have defined to interpret the phase space of a particle are collectively known as the Twiss parameters. Phase space ellipses are observed in each of the three planes as the results here are general. An example of the phase space ellipse in the $x$--$x'$ plane is shown in Fig.~\ref{fig:phase_space_diagram}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/phase_space_fixed.pdf}
+\caption{}
+\label{fig:phase_space_diagram}
+\end{figure}
 
 \textcolor{blue}{**MAYBE SHOULD RE-THINK SECTION ON EMITTANCE**}
 Since the phase space ellipse is for a single particle trajectory, the emittance is the single particle emittance. This is unsatisfactory for describing an ensemble of particles, therefore the concept of emittance requires extension to a many-particle ensemble. In an electron accelerator, which is the focus of this work, the equilibrium distribution of particles can be well approximated by a Gaussian distribution \cite{wille2000physics}, which has a transverse charge density distribution $\rho\left(x,z\right)$ at the longitudinal centroid of the electron bunch of the form
@@ -843,7 +850,14 @@ The region of stable motion within the separatrix is named the RF bucket, and pa
 
 The longitudinal dimensions of a particle bunch can be adjusted via combinations of magnetic focusing elements, which can be useful in generating radiation from accelerators such as 3rd generation synchrotron sources and free electron lasers to achieve properties such as short duration and high brilliance. Here two methods of varying the longitudinal dynamics, specifically the bunch length, are investigated in detail: the simple chicane and the dog leg lattices.
 
-A simple dogleg lattice can consist of a pair of dipoles with bending angle $\alpha_{1}$ and $-\alpha_{1}$ respectively, separated by a drift of length $L_{\mathrm{drift}}$, as shown in Fig.~\textcolor{blue}{**DIAGRAM OF DOGLEG + POTENTIALLY THE CHICANE TOO?**}.
+A simple dogleg lattice can consist of a pair of dipoles with bending angle $\alpha_{1}$ and $-\alpha_{1}$ respectively, separated by a drift of length $L_{\mathrm{drift}}$, as shown in Fig.~\ref{fig:chicane_dogleg_schematic}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Energy_Recovery_Linac_Design/chicane_dogleg.pdf}
+\caption{}
+\label{fig:chicane_dogleg_schematic}
+\end{figure}
 
 The dogleg therefore has a transport matrix of the form
 \begin{equation}
@@ -876,7 +890,7 @@ z_{1} &= z_{0}+\boldsymbol{R}_{56}\left(\frac{\Delta p}{p_{0}}\right)_{0} = z_{0
 \end{align}
 where the momentum spread is, as expected, unchanged and throughout the dogleg lattice the bunch will be longitudinally spread by a factor $\Delta z=\boldsymbol{R_{56}}\frac{\Delta p}{p_{0}}$.
 
-Similarly, a chicane bunch compressor can be constructed from a dogleg and a reverse dogleg (the reflection of the dogleg shown in Fig.~\textcolor{blue}{**DOGLEG IMAGE**}) separated by a drift. The path length of this chicane is $L = 4L_{\mathrm{dip}}+2L_{\mathrm{drift,1}}+L_{\mathrm{drift,2}}$, where each dipole is of identical length and $L_{\mathrm{drift,1}}\neq L_{\mathrm{drift,2}}$. The resulting lattice is shown in Fig.~\textcolor{blue}{**CHICANE DIAGRAM**}. 
+Similarly, a chicane bunch compressor can be constructed from a dogleg and a reverse dogleg (the reflection of the dogleg shown in Fig.~\ref{fig:chicane_dogleg_schematic}) separated by a drift. The path length of this chicane is $L = 4L_{\mathrm{dip}}+2L_{\mathrm{drift,1}}+L_{\mathrm{drift,2}}$, where each dipole is of identical length and $L_{\mathrm{drift,1}}\neq L_{\mathrm{drift,2}}$. The resulting lattice is shown in Fig.~\ref{fig:chicane_dogleg_schematic}. 
 
 The transport matrix of this lattice is of the form
 \begin{equation}
