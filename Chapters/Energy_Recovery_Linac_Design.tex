@@ -96,8 +96,14 @@ Quadrupole focusing is analogous to focusing with an optical lens, however a len
 \frac{1}{f_{\mathrm{quad}}} = k_{1}l_{\mathrm{quad}}.
 \label{eq:focal_length_quadrupole}    
 \end{equation}
-The similarities between an optical lens and a quadrupole are highlighted in Fig. \textcolor{blue}{**LENS/DOUBLET DIAGRAM**}, which shows a simple focusing defocusing scheme -- the quadrupole doublet. 
+The similarities between an optical lens and a quadrupole are highlighted in Fig.~\ref{fig:quad_doublet}, which shows a simple focusing defocusing scheme -- the quadrupole doublet. 
 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/Quad_Doublet_fixed.pdf}
+\caption{}
+\label{fig:quad_doublet}
+\end{figure}
 
 The computation of the magnetic field of an arbitrary $n$th order magnet typically uses a multipole expansion of the scalar potential of the magnetic field, which for convenience is presented in cylindrical polar co-ordinates \cite{shepherd2016magnet}
 \begin{equation}
@@ -668,7 +674,14 @@ Chromaticity is defined as the variation in tune due to the variation in momentu
 \xi = \frac{\Delta Q}{\Delta p/p_{0}},
 \label{eq:accelerator_chromaticity}    
 \end{equation}
-where the variation in tune is driven by the chromatic aberration focusing errors that occur when off-momentum particles traverse focusing magnets, as presented for a quadrupole in Fig.~\textcolor{blue}{**CHROMATIC ABERRATION DIAGRAM**}
+where the variation in tune is driven by the chromatic aberration focusing errors that occur when off-momentum particles traverse focusing magnets, as presented for a quadrupole in Fig.~\ref{fig:chromatic_aberration}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/Chromatic_Aberration_fixed.pdf}
+\caption{}
+\label{fig:chromatic_aberration}
+\end{figure}
 
 The chromatic effect of a quadrupole magnet can there for be considered as
 \begin{align}
@@ -931,7 +944,7 @@ Transport lattices for accelerators typically consist of repeated cells, to prod
 \subsection{FODO Lattice}
 \label{sec:FODO_lattice}
 
-A FODO lattice consists of a series of alternatively focusing quadrupoles separated by drifts, as shown in Fig.~\textcolor{blue}{**FODO DIAGRAM**}. The FODO lattice aims to provide periodic focusing, which requires that the Twiss parameters remain unchanged from the entrance to exit of the cell. For simplicity, thin lens quadrupoles (Eq.~\ref{eq:quadrupole_matrix_thin}) are considered, the dynamics is limited to the $x$--$x'$ phase space plane and the focusing fields are considered to be of equal magnitude.
+A FODO lattice consists of a series of alternatively focusing quadrupoles separated by drifts -- a form of quadrupole doublet -- as shown in Fig.~\ref{fig:quad_doublet}. The FODO lattice aims to provide periodic focusing, which requires that the Twiss parameters remain unchanged from the entrance to exit of the cell. For simplicity, thin lens quadrupoles (Eq.~\ref{eq:quadrupole_matrix_thin}) are considered, the dynamics is limited to the $x$--$x'$ phase space plane and the focusing fields are considered to be of equal magnitude.
 
 The FODO cell has a transport matrix of the form
 \begin{equation}
@@ -1030,9 +1043,9 @@ A proof-of-principle demonstration of ns-FFA was performed with the EMMA acceler
 
 An energy recovery linac is a form of re-circulated accelerator, invented by Tigner \cite{tigner1965possible} and first demonstrated at Stanford \cite{smith1987development}, which is capable of providing the high-quality particle bunch properties of a linac with the high duty factor (bunch repetition rate) of a storage ring. Characteristically, in an ERL the energy used to accelerate a particle bunch is recovered by the accelerating structure upon deceleration of the bunch when it is re-circulated and returned to the accelerating structure. The energy recovery linac scheme has numerous advantages which will be presented in this section whilst possible designs and considerations of ERLs are explained with a focus on electron machines. A full review of current and past ERL projects is not shown here and is instead used to contextualise the CBETA ERL -- a unique, world leading ERL project -- in Chapter~\ref{CBETA_Multi-Pass_Commissioning}. 
 
-\textcolor{blue}{**CHECK THE OLD STUFF AFTER WRITING**}
 
 \subsection{Single Turn ERL}
+\label{sec:single_turn_ERL}
 % description of a simple 1 turn 1 linac ERL
 % ADV: Dumping beam at low energy + neutron threshold
 % Turn + Passes definition
@@ -1041,7 +1054,7 @@ An energy recovery linac is a form of re-circulated accelerator, invented by Tig
 % Same cell energy recovery 
 % DIAGRAM
 
-Firstly, for simplicity, we consider a single turn energy recovery linac with a single electron bunch, which consists of a high repetition rate, high-brightness (low emittance, high bunch charge) photo-injector \cite{} \textcolor{blue}{*CITE WHAT? Illan Ben-Zvi review?} and injection beamline, a linac section containing several RF cavities, a re-circulating transport beamline from the exit of the linac to its entrance and a beam dump. A schematic off the simplest form of single turn ERL is shown in Fig~\ref{fig:ERL_schematics}. 
+Firstly, for simplicity, we consider a single turn energy recovery linac with a single electron bunch, which consists of a high repetition rate, high-brightness (low emittance, high bunch charge) photo-injector \cite{ben2016superconducting} and injection beamline, a linac section containing several RF cavities, a re-circulating transport beamline from the exit of the linac to its entrance and a beam dump. A schematic off the simplest form of single turn ERL is shown in Fig~\ref{fig:ERL_schematics}. 
 
 \begin{figure}[!h]
 \centering
@@ -1065,6 +1078,7 @@ For a decelerating phase at the linac re-entrance the phase must be altered by 1
 Through the simplistic description of a single turn ERL it is clear that there are numerous advantageous features. Firstly, the electron bunch in the dump has been decelerated to $E_{\mathrm{inj}}$, avoiding the necessity of a high-energy beam dump and, if this is below $\sim10$~\si{\mega\electronvolt}, neutron activation of the dump may be avoided. The energy required to accelerate the electron bunch is returned to the RF cavities for acceleration of a future bunch meaning that the beam power of the electron bunch is not lost and the RF system efficiently accelerates electron bunches. Also, as the bunch is dumped after a single turn, the electron bunch emittance is high quality and has not equilibriated -- as in a storage ring \cite{} -- and is replaced, at a high repetition rate, by another electron bunch. Therefore, from an ERL, small emittances are achievable at high repetition rate -- the advantageous facets of both a linac and storage ring -- with the additional bonus of an efficient RF system, without the necessity of a high energy beam dump. 
 
 \subsection{Multi-Turn ERL}
+\label{sec:multi_turn_ERL}
 % Accelerating phase condition + re-circulated linacs
 % ADV: reach high energy with small RF outlay
 % relations between no. passes + turns
@@ -1123,12 +1137,29 @@ Theoretical studies of regenerative BBU in ERL's were conducted by Hoffstaetter 
 High average current in ERLs is also limited by beam halo, in which a low density collection of particles is situated outside of the core of the particle bunch. Beam halo in ERLs can be generated by myriad factors, such as the design of optics, magnetic field errors and non-linearities as well as photo-cathode choice, the photo-injection system and vaccum issues such as residual gas scattering \cite{neil2006jlab,tanaka2018new}. Mitigation can be achieved through optics studies and correction as well as photo-cathode choice and design of RF accelerating structures, many of which are active areas of study. Beam halo provides challenges for high current operation as the beam halo particles can be lost within transport, producing radiation doses above safety limits and damaging sensitive components such as magnets. At high current the particle loss is increased and becomes intolerable.
 
 \subsection{Alternative ERL Designs}
+% Dogbone ERL
 % Dual Linac ERL
 % - more energies available 
 % - more flexibility
 % - difficulty in optics as more spreaders required
 % Asymmetric linacs + Effects
-% Push - Pull ERLs 
+% Push - Pull ERLs (BriXS)
+
+So far, within Sections~\ref{sec:single_turn_ERL}, \ref{sec:multi_turn_ERL}, only the most simple ERL designs have been mentioned. Within this section more complex ERL designs are shown, with their advantages explained. A particular focus is on dual linac ERLs which can provide several advantages over more simple designs. A series of more complex ERL designs are shown in Fig.~\ref{fig:novel_ERL_designs}, which are the subject of the discussion here. 
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Energy_Recovery_Linac_Design/novel_ERL_designs.pdf}
+\caption{A series of alternative, more complex energy recovery linac design schematics. Basic components such as photo-injector (green), linac (red), beam dump (purple) and transport (black) are shown. Top Left: Symmetric dual linac ERL. Top Right: Asymmetric dual linac ERL. Bottom Left: Dogbone ERL. Bottom Right: Push-pull ERL.}
+\label{fig:novel_ERL_designs}
+\end{figure}
+
+Within a dual linac symmetric ERL the electron bunch is accelerated or decelerated twice by two separate linac passes on each pass of the machine -- there are $n$ turns, $2n-1$ passes and $2\left(n-1\right)$ traversals of linacs. A dual linac symmetric ERL involves two linacs which each provide half of the energy gain per turn enabling $2n$ nominal kinetic energies of the particles from an $n$ turn ERL, which may be particularly useful for the design of a multi-colour light source from an ERL. The dual linac also allows the size of the accelerating section to be shortened, since two linacs are utilised, which may provide an option for more compact high energy ERLs. Added complexity arises from the additional two sets of spreaders required for on-axis acceleration in additional linac and from meeting the required phases for acceleration and deceleration in these linacs. 
+
+The dual asymmetric ERL offers similar flexibility and advantages to the symmetric dual linac ERL with the notable variation that the kinetic energy of the accelerated particles does not increase in uniformly step-wise. For example, with a total energy gain per turn of 50~\si{\mega\electronvolt}, a injection energy of $E_{\mathrm{inj}}=5$~\si{\mega\electronvolt} and a 2 turn ERL the energies available in the symmetric case per linac pass would be 30, 55, 80, 105~\si{\mega\electronvolt} whereas a similar ERL but with a $4:1$ asymmetric linac energy gain ratio could provide energies 45, 55, 95, 105~\si{mega\electronvolt}. Asymmetric linacs providing varying bunch kinetic energy may make spreader design easier, as the bend angles required in spreader septa would no longer be uniformly spaced, and provides greater design flexibility.
+
+A dogbone ERL 
+
 
 
 
