@@ -227,9 +227,7 @@ Upon inspection of the generalised ICS scattered photon energy (Eq.~\ref{eq:scat
 \section{Electron - Photon Interaction Cross Section}
 \label{sec:electron_photon_interaction_cross_section}
 
-\textcolor{blue}{**START FROM FIRST PRINCIPLES** \\ **PUT IN THE POLARISATION STUFF TOO**\\ **SET OUT THE CO-ORD SYSTEM BETTER**}
 To understand the cross section of the interaction the interaction must be viewed three dimensionally and considerations such as polarisation must be adequately accounted for. The co-ordinate system in Fig.~\ref{fig:scattered_photon_kinematics} can be extended to a full 3D representation in Fig.~\ref{fig:3D_coord_system}, with an incident electron $p_{1}$ parallel to the $z$-axis interacting with an incident photon $k_{1}$ travelling anti-parallel, with a crossing angle $\phi$ in the $x$-$z$ plane, scattering a photon $k_{2}$ at a polar angle $\theta$ and azimuthal angle $\phi_{f}$. Whilst the incident electron is used to set the right-handed global co-ordinate system ($x$, $y$, $z$), local right-handed co-ordinate systems can be attached to the incident photon ($\tilde{x}$, $\tilde{y}$, $\tilde{z}$), which propagates anti-parallel to the electron at a crossing angle $\phi$ ($x = -\tilde{x}\sin\phi$, $z = -\tilde{z}$), and to the scattered photon ($\tilde{x}'$,$\tilde{y}'$,$\tilde{z}'$) where the variation from the electron co-ordinate system is due to the polar scattering angle $\theta$. Polarisation directions of the incident and scattered photons is typically specified in the local co-ordinate systems.  
-\textcolor{blue}{\\ **EXPLAIN POLARISATION DIRECTIONS}
 
 \begin{figure}[!h]
 \centering
@@ -238,20 +236,27 @@ To understand the cross section of the interaction the interaction must be viewe
 \label{fig:3D_coord_system}
 \end{figure}
 
-\textcolor{blue}{**EXTRA EXPLANATION ON HOW TO GET HERE**}
-The double differential cross section with respect to any polarisation of the incident and scattered photons and an unpolarised or arbitrarily polarised electron is given by 
+Following the derivation by Berestetskii, Lifshitz and Pitaevskii \cite{berestetskii1982quantum}, using the amplitude arising from the Feynman diagrams in Fig.~\ref{fig:ICS_Feynman_diagrams}, the double differential cross section with respect to any polarisation of the incident and scattered photons and an unpolarised or arbitrarily polarised electron is given by 
 \begin{multline}
 \frac{d^{2}\sigma}{dYd\phi_{f}} = \frac{2r_{e}^{2}}{X}\left\{\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)  -\left(\xi_{3}+\xi_{3}'\right)\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right] \right.\\\left. +\xi_{1}\xi_{1}'\left(\frac{1}{X}-\frac{1}{Y}+\frac{1}{2}\right) + \xi_{2}\xi_{2}'\left[\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\left(1+\frac{2}{X}-\frac{2}{Y}\right)\right] \right.\\\left. + \xi_{3}\xi_{3}'\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{2}\right] \right\}
 \label{eq:polarisation_differential_cross_section}    
 \end{multline}
-where the initial incident photon Stokes parameters $\xi_{i}$ are given by \textcolor{blue}{**CHECK**}
+where the incident photon pulse Stokes parameters $\xi_{i}$, in the electron frame (global) co-ordinate system, are given by
 \begin{align}
 \xi_{1} &= P_{t}\sin\left(2\tau-2\phi_{f}\right)\sin\phi\\
 \xi_{2} &= P_{c} \\
 \xi_{3} &= -P_{t}\cos\left(2\tau-2\phi_{f}\right)\sin\phi
 \label{eq:incident_stokes_parameters}    
 \end{align}
-where, using the same co-ordinate system as Sun and Wu \cite{sun2009characterizations,sun2011theoretical}, $P_{t}$ is the degree of linear polarisation, $P_{c}$ is the degree of circular polarisation, $\tau$ is the azimuthal angle of the linear polarisation, $\phi_{f}$ is the azimuthal scattering angle, $\phi$ is the crossing angle in the $x$--$z$ plane and $\xi_{i}'$ are the final scattered photon Stokes parameters. \textcolor{blue}{\\**BETTER DESCRIBE POLARISATION HERE**}
+where, using the same co-ordinate system as Sun and Wu \cite{sun2009characterizations,sun2011theoretical}, $-1 \geq P_{t} \geq 1$ is the degree of linear polarisation of the incident pulse ($P_{t}=-1$, full anti-parallel polarisation), $-1 \geq P_{c} \geq 1$ is the degree of circular polarisation of the incident pulse ($P_{c}=-1$, full anticlockwise polarisation), $\tau$ is the azimuthal angle of the linear polarisation, $\phi_{f}$ is the azimuthal scattering angle, $\phi$ is the crossing angle in the $x$--$z$ plane.
+
+The Stokes parameters $\xi'$ of a single scattered photon  for a small polar scattering angle ($\theta \ll 1$) in the electron frame can be similarly defined
+\begin{align}
+\xi'_{1} &\approx -\bar{\xi'_{1}}\cos\left(2\phi_{f}\right)+\bar{\xi'_{3}}\sin\left(2\phi_{f}\right), \\
+\xi'_{2} &\approx \bar{\xi'_{2}}, \\
+\xi'_{3} &\approx -\bar{\xi'_{1}}\sin\left(2\phi_{f}\right)-\bar{\xi'_{3}}\cos\left(2\phi_{f}\right),
+\end{align}
+where $\bar{\xi'_{i}}$ are the scattered photon Stokes parameters of the scattered photon in its attached local co-ordinate system. For example $\bar{xi'_{i}} = \left(0, 0, 1\right)$, corresponds to a horizontally polarised scattered photon aligned to $\tilde{x}$. 
 
 Assuming, for the purposes of a general cross section formula, ambivalence over the polarisation state of the scattered photons i.e scattered photons are not discriminated on the basis of polarisation from an ICS interaction, the cross section can be derived by setting $\xi_{i}' = 0 ~\left(i=1,~2,~3\right)$. Making this assumption, the double differential cross section (Eq.~\ref{eq:polarisation_differential_cross_section}) reduces to
 \begin{equation}
@@ -341,6 +346,11 @@ shows that the intensity of the radiation emission in the backscattered directio
 \label{eq:cross_section_factor}    
 \end{equation}
 which can be used to estimate the portion of the photon spectrum selected by a collimator aperture placed downstream of an ICS source. A full calculation of this 'collimated flux' is developed in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}. 
+
+\section{Lasers and Fabry--Perot Optical Re-circulation Cavities}
+\label{sec:lasers_fabry_perot}
+
+\textcolor{blue}{**WRITE THIS SECTION**}
 
 \section{Luminosity and Flux}
 \label{sec:luminosity_and_flux}
