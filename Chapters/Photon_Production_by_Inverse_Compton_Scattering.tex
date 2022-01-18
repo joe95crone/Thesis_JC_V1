@@ -31,11 +31,10 @@ Photon - electron interactions can be represented with complete generality by us
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.7\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/Berestetskii_ICS_Feynman.pdf}
-\caption{Two tree-level Feynman diagrams, which contribute to the matrix element of the (inverse) Compton scattering process. Left: The scattered photon is emitted with the annihilation of the incident photon, and the incident photon is absorbed with the production of the recoiling electron. Right: The incident photon and electron are absorbed, and the scattered photon is emitted with the recoiling electron. \cite{berestetskii1982quantum}}
+\includegraphics[width=0.65\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/ICS_feynman_fixed.pdf}
+\caption{Two tree-level Feynman diagrams of photon (dashed)--electron (solid) interactions, which contribute to the matrix element of the (inverse) Compton scattering process \cite{berestetskii1982quantum}. Left: The scattered photon is emitted with the annihilation of the incident photon, and the incident photon is absorbed with the production of the recoiling electron. Right: The incident photon and electron are absorbed, and the scattered photon is emitted with the recoiling electron. }
 \label{fig:ICS_Feynman_diagrams}
 \end{figure}
-\textcolor{blue}{**NEED A BETTER SET OF FEYNMAN DIAGRAMS**}
 
 The general form of the electron--photon interactions can therefore be specified by
 \begin{equation}
@@ -229,7 +228,7 @@ Upon inspection of the generalised ICS scattered photon energy (Eq.~\ref{eq:scat
 \label{sec:electron_photon_interaction_cross_section}
 
 \textcolor{blue}{**START FROM FIRST PRINCIPLES** \\ **PUT IN THE POLARISATION STUFF TOO**\\ **SET OUT THE CO-ORD SYSTEM BETTER**}
-To understand the cross section of the interaction the interaction must be viewed three dimensionally and considerations such as polarisation must be adequately accounted for. The co-ordinate system in Fig.~\ref{fig:scattered_photon_kinematics} can be extended to a full 3D representation in Fig.~\ref{fig:3D_coord_system}, with an incident electron $p_{1}$ parallel to the $z$-axis interacting with an incident photon $k_{1}$ travelling anti-parallel, with a crossing angle $\phi$ in the $x$-$z$ plane, scattering a photon $k_{2}$ at a polar angle $\theta$ and azimuthal angle $\phi_{f}$. Whilst the incident electron $z$ is used to set the right-handed global co-ordinate system ($x$, $y$, $z$), local right-handed co-ordinate systems can be developed for the incident photon ($\tilde{x}$, $\tilde{y}$, $\tilde{z}$), which propagates anti-parallel to the electron at a crossing angle ($x = -\tilde{x}\sin\phi$, $z = -\tilde{z}$), and for the scattered photon ($\tilde{x}'$,$\tilde{y}'$,$\tilde{z}'$) where the variation from the electron co-ordinate system is due to the polar scattering angle $\theta$. Polarisation directions of the incident and scattered photons is typically specified in the local co-ordinate systems.  
+To understand the cross section of the interaction the interaction must be viewed three dimensionally and considerations such as polarisation must be adequately accounted for. The co-ordinate system in Fig.~\ref{fig:scattered_photon_kinematics} can be extended to a full 3D representation in Fig.~\ref{fig:3D_coord_system}, with an incident electron $p_{1}$ parallel to the $z$-axis interacting with an incident photon $k_{1}$ travelling anti-parallel, with a crossing angle $\phi$ in the $x$-$z$ plane, scattering a photon $k_{2}$ at a polar angle $\theta$ and azimuthal angle $\phi_{f}$. Whilst the incident electron is used to set the right-handed global co-ordinate system ($x$, $y$, $z$), local right-handed co-ordinate systems can be attached to the incident photon ($\tilde{x}$, $\tilde{y}$, $\tilde{z}$), which propagates anti-parallel to the electron at a crossing angle $\phi$ ($x = -\tilde{x}\sin\phi$, $z = -\tilde{z}$), and to the scattered photon ($\tilde{x}'$,$\tilde{y}'$,$\tilde{z}'$) where the variation from the electron co-ordinate system is due to the polar scattering angle $\theta$. Polarisation directions of the incident and scattered photons is typically specified in the local co-ordinate systems.  
 \textcolor{blue}{\\ **EXPLAIN POLARISATION DIRECTIONS}
 
 \begin{figure}[!h]
@@ -336,12 +335,12 @@ The ratio of the maximum and minimum of the differential cross section given by
 \frac{\left(d\sigma/dE_{\gamma}\right)_{\mathrm{max}}}{\left(d\sigma/dE_{\gamma}\right)_{\mathrm{min}}} = \left(2+X\right)\left(1+X\right) \approx 2,
 \label{eq:max_min_cross_section_ratio}
 \end{equation}
-shows that the intensity of the radiation emission in the backscattered direction, at the Compton edge ($\theta=0$), is double the intensity than in the angular limit, at a semi-angle of $\theta=1/\gamma$, which is also highlighted in Fig.~\ref{fig:cross_section_scattered_photon_energy}. Furthermore, following Sun et al \cite{sun2011theoretical} taking the small recoil limit of the cross section (Eq.~\ref{eq:compton_cross_section_classical_limit}) with (Eq.~\ref{eq:max_min_differential_cross_section_ICS_energy}), the ratio of the cross section in an energy range $\Delta E_{\gamma}$ around the Compton edge energy $E_{\gamma}^{\mathrm{max}}$ in the case of low recoil ($X \ll 1$) is given by
+shows that the intensity of the radiation emission in the backscattered direction, at the Compton edge ($\theta=0$), is double the intensity than in the angular limit, at a semi-angle of $\theta=1/\gamma$, which is also highlighted in Fig.~\ref{fig:cross_section_scattered_photon_energy}. Furthermore, following Sun et al \cite{sun2011theoretical} taking the small recoil limit of the cross section (Eq.~\ref{eq:compton_cross_section_classical_limit}) with (Eq.~\ref{eq:max_min_differential_cross_section_ICS_energy}), the ratio of the cross section in an energy range $\Delta E_{\gamma}$ around the Compton edge energy $E_{\gamma}^{\mathrm{max}}$ (Eq.~\ref{eq:compton_edge_energy}) in the case of low recoil ($X \ll 1$) is given by
 \begin{equation}
 \frac{\Delta\sigma}{\sigma} \approx \frac{3\left(2+X\right)}{4\left(1-X\right)}\frac{\Delta E_{\gamma}}{E_{\gamma}^{\mathrm{max}}} \approx \frac{3}{2}\frac{\Delta E_{\gamma}}{E_{\gamma}^{\mathrm{max}}},
 \label{eq:cross_section_factor}    
 \end{equation}
-which can be used to estimate the portion of the photon spectrum selected by a collimator aperture placed downstream of an ICS source. A full non-approximate calculation of this 'collimated flux' is developed in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}. 
+which can be used to estimate the portion of the photon spectrum selected by a collimator aperture placed downstream of an ICS source. A full calculation of this 'collimated flux' is developed in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}. 
 
 \section{Luminosity and Flux}
 \label{sec:luminosity_and_flux}
