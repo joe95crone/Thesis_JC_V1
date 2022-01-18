@@ -665,9 +665,14 @@ A full discussion and derivation of the conditions required for optical resonanc
 mQ_{x}+nQ_{y} = p,
 \label{eq:tune_resonances}    
 \end{equation}
-where $m$, $n$ and $p$ are integers. Resonances in accelerators occur at integer and fractional-integer tunes ($p = n + 1/3, 1/2, 1, 2$ etc.) and can be coupled resonances, hence why the tunes in both transverse planes are included in (Eq.~\ref{eq:tune_resonance}). The order of the resonance is found via $\left|m\right| + \left|n\right|$, and the strength of the resonance decreases rapidly as a function of order. Consequently, the tunes in an accelerator must be chosen to avoid optical resonances, which is fundamental at the design stage and is often named the working point. The working point is often displayed in a $Q_{x}$--$Q_{y}$ tune diagram, as shown in Fig.~\textcolor{blue}{**TUNE DIAGRAM**}, where the resonances up to $n$th order are typically displayed.  
+where $m$, $n$ and $p$ are integers. Resonances in accelerators occur at integer and fractional-integer tunes ($p = n + 1/3, 1/2, 1, 2$ etc.) and can be coupled resonances, hence why the tunes in both transverse planes are included in (Eq.~\ref{eq:tune_resonance}). The order of the resonance is found via $\left|m\right| + \left|n\right|$, and the strength of the resonance decreases rapidly as a function of order. Consequently, the tunes in an accelerator must be chosen to avoid optical resonances, which is fundamental at the design stage and is often named the working point. The working point is often displayed in a $Q_{x}$--$Q_{y}$ tune diagram, as shown in Fig.~\ref{fig:tune_diagram}, where the resonances up to $n$th order are typically displayed.  
 
-\textcolor{blue}{**TUNE DIAGRAM**}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/Tune_Diagram_fixed.pdf}
+\caption{Tune diagram up to 3rd order showing possible locations of optical resonances \cite{wille2000physics}. A possible working point (red) is located away from lines of optical resonance.}
+\label{fig:tune_diagram}
+\end{figure}
 
 Chromaticity is defined as the variation in tune due to the variation in momentum within an accelerator as given by
 \begin{equation}
@@ -849,9 +854,14 @@ and assuming the RF frequency is a harmonic of the revolution frequency $\omega_
 \Omega^{2} = \frac{\omega_{\mathrm{rev}}^{2}h\eta_{p}eV_{0}\cos\psi}{2\pi\beta cp_{0}}.
 \label{eq:synchrotron_oscillation_frequency}    
 \end{equation}
-Synchrotron oscillations in the longitudinal plane typically have a lower frequency than the aforementioned betatron oscillations in the transverse planes. The equation of motion in the longitudinal plane () consequently produces a stable $\psi$--$\Delta p/p$ phase space ellipse when motion is damped ($\Omega^{2}>0$) and is described by a hyperbola in phase pace when motion is unstable and anti-damped ($\Omega^{2}<0$). The equation of motion therefore generates a series of ellipses separated by regions of unstable hyperbolic regions which form separatrixes in phase space, as displayed in Fig.~\textcolor{blue}{**LONGITUDINAL PHASE SPACE DIAGRAM**}
+Synchrotron oscillations in the longitudinal plane typically have a lower frequency than the aforementioned betatron oscillations in the transverse planes. The equation of motion in the longitudinal plane () consequently produces a stable $\psi$--$\Delta p/p$ phase space ellipse when motion is damped ($\Omega^{2}>0$) and is described by a hyperbola in phase pace when motion is unstable and anti-damped ($\Omega^{2}<0$). The equation of motion therefore generates a series of ellipses separated by regions of unstable hyperbolic regions which form separatrixes in phase space, as displayed in Fig.~\ref{fig:longitudinal_dynamics}.
 
-\textcolor{blue}{**LONGITUDINAL PHASE SPACE DIAGRAM**}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.7\textwidth]{Figures/Energy_Recovery_Linac_Design/Longitudinal_Dynamics_fixed.pdf}
+\caption{\cite{wolski2012longitudinal}}
+\label{fig:loingitudinal_dynamics}
+\end{figure}
 
 The region of stable motion within the separatrix is named the RF bucket, and particles within an RF bucket form a bunch with bunch length proportional to the size of the RF bucket transformed to the longitudinal position. The maximum momentum deviation of an RF bucket is given by \cite{wolski2012longitudinal}
 \begin{equation}
@@ -997,7 +1007,7 @@ f=\frac{L}{2\sqrt{2}}.
 
 \subsection{Multi-Bend Achromat}
 
-An achromat lattice has cells in which the dispersion of the particle beam is zero at the entrance and exit of the lattice cell, whilst bending occurs in the central portion of the cell. In the simplest form -- known as a double bend achromat -- a single quadrupole focusing magnet is placed between two dipoles where additional quadrupoles are placed outside of this central region to maintain periodic focusing, as in the FODO cell in Section~\ref{sec:FODO_lattice}. The central section of a double bend achromat and the corresponding dispersion function are shown in Fig.~\textcolor{blue}{**DBA DIAGRAM**}
+An achromat lattice has cells in which the dispersion of the particle beam is zero at the entrance and exit of the lattice cell, whilst bending occurs in the central portion of the cell. In the simplest form -- known as a double bend achromat -- a single quadrupole focusing magnet is placed between two dipoles where additional quadrupoles are placed outside of this central region to maintain periodic focusing, as in the FODO cell in Section~\ref{sec:FODO_lattice}. The central section of a double bend achromat and the corresponding dispersion function are shown in Fig.~\textcolor{blue}{**DBA DIAGRAM + TBA**}
 
 The requirement of zero dispersion as the entrance and exit of this cell means that the required magnet strengths can be derived from (Eq.~\ref{eq:\label{eq:periodic_dispersion}}), with $\eta_{x,0}=0$.
 The full derivation is beyond the scope of this thesis but is shown by Steffen \cite{steffen1983periodic} and Fakhiri et al \cite{fakhri2015analytical} to be
@@ -1007,14 +1017,14 @@ The full derivation is beyond the scope of this thesis but is shown by Steffen \
 \end{equation}
 where $k_{1}$ is the normalised quadrupole gradient, $L_{mathrm{quad}}$ is the magnetic length of the quadrupole with $\rho$ and $\alpha_{1}$ the bending radius and bending angle of the dipoles respectively. 
 
-The order $n$ of the achromat can be extended by replacing the central achromat section with $n$ dipoles with quadrupoles between each yielding $n-1$ quadrupoles total, as evident in the diagram of a triple bend achromat central section in Fig~\ref{blue}{**TBA DIAGRAM**}. This generalistion can be followed to the $n$th order where the lattice structure is named a multi-bend achromat (MBA). Benefits to higher order achromats involve the avoidance of tune resonances, due to the decoupling of constraints on tune, lower emittance, potentially smaller dispersion peaks and generally a more flexible transport lattice \cite{jackson1986comparison} at the cost of an increased number of magnets and potentially larger circumference.  
+The order $n$ of the achromat can be extended by replacing the central achromat section with $n$ dipoles with quadrupoles between each yielding $n-1$ quadrupoles total, as evident in the diagram of a triple bend achromat central section in Fig~\textcolor{blue}{**TBA DIAGRAM**}. This generalistion can be followed to the $n$th order where the lattice structure is named a multi-bend achromat (MBA). Benefits to higher order achromats involve the avoidance of tune resonances, due to the decoupling of constraints on tune, lower emittance, potentially smaller dispersion peaks and generally a more flexible transport lattice \cite{jackson1986comparison} at the cost of an increased number of magnets and potentially larger circumference.  
 
 \subsection{Fixed Field Alternating Gradient}
 \label{sec:FFA}
 
 Fixed field alternating gradient transport is designed using constant field magnets. like cylotrons, with alternating gradient focusing, like synchrotrons \cite{machida2013fixed}. The magnet fields are not varied in order to account for higher energies, instead the lattice is designed such that varying momentum particles are contained within tolerable displacements from the reference orbit. 
 
-FFA transport is particularly advantageous due to the high momentum variation, or acceptance, that the lattice can tolerate, as in an FFA an orbit can be defined at any particle momentum \cite{barlow2010emma}. \textcolor{blue}{**WHAT ARE THE ADVANTAGES OF AN FFAG**} There are two forms of FFA transport: scaling and non-scaling, which relate to the relationship between the magnetic field gradient of the magnets and the radial position of a magnet.
+FFA transport is particularly advantageous due to the high momentum variation, or acceptance, that the lattice can tolerate, as in an FFA an orbit can be defined at any particle momentum \cite{barlow2010emma}. There are two forms of FFA transport: scaling and non-scaling, which relate to the relationship between the magnetic field gradient of the magnets and the radial position of a magnet.
 
 In a scaling FFA the main design consideration is to keep the tune of the orbit constant with respect to energy to avoid optical resonances via crossing integer tunes \cite{symon1956fixed}. Constant tune is satisfied by having geometrically similar magnetic fields for different energies $E$ and orbital radii $R$ ($E\propto R$), which can be expressed by
 \begin{equation}
