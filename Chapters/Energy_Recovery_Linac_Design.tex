@@ -29,7 +29,8 @@ In particle accelerators bending fields are often used to direct the particles t
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/Accelerator_Coord_System_fixed.pdf}
-\caption{}
+\caption{The right handed curvilinear co-ordinate system used to describe particle motion in a re-circulating particle accelerator. The particles traverse around a right handed global co-ordinate system $\left\{x,~y,~s\right\}$ with the longitudinal direction $s$, the horizontal direction $x$ and vertical direction $y$ defined around a circular reference orbit (blue) with a radius of curvature $\rho$. Particle trajectories (red)
+are defined with reference to the global co-ordinate system by an attached local co-ordinate system $\left\{x,~z,~s\right\}$ where $x$ is the horizontal position, $z$ is the vertical position and $s$ is the longitudinal position with reference to the reference orbit.}
 \label{fig:accelerator_coord_system}
 \end{figure}
 
@@ -426,7 +427,14 @@ where $\sqrt{\epsilon\beta\left(s\right)}$ is an amplitude function with a const
 E\left(s\right) = \sqrt{\epsilon\beta\left(s\right)},
 \label{eq:envelope_function}    
 \end{equation}
-which defines a beam envelope, as shown diagrammatically in Fig.~\textcolor{blue}{**BEAM ENVELOPE DIAGRAM**}, which defines the bounds of the trajectories of each of the many particles within a bunch. 
+which defines a beam envelope, as shown in Fig.~\ref{fig:beam_envelope}, which defines the bounds of the trajectories of each of the many particles within a bunch. 
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/Beam_Envelope_fixed.pdf}
+\caption{Beam envelope (black) defined by a series of particle trajectories with size given by (Eq.~\ref{eq:envelope_function}). A possible single particle trajectory (red) in this beam of particles is highlighted.}
+\label{fig:beam_envelope}
+\end{figure}
 
 The derivative of the trial solution (Eq.~\ref{eq:Hills_trial_solution}) shows the divergence of the particle trajectory with respect to time and is given by
 \begin{equation}
