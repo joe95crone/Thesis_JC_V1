@@ -24,26 +24,28 @@
 
 \subsection{Co-ordinate System}
 
-In particle accelerators bending fields are often used to direct the particles to a certain experimental station downstream of the particle sources, and many particle accelerators re-circulate particle beams. The particles are directed along an ideal trajectory named -- since in a recirculated machine the trajectory is closed -- a reference orbit. Therefore, since bending forces are introduced, the motion of particles within an accelerator environment can best be described by a right handed rotating co-moving co-ordinate system \cite{wille2000physics}. The right handed co-moving co-ordinate system is shown in Fig.~\ref{fig:accelerator_coord_system}.   
+In particle accelerators bending fields are often used to direct the particles to an experimental station downstream of the particle sources, and many particle accelerators re-circulate particle beams. The particles are directed along an ideal trajectory named a reference orbit -- since in a re-circulated machine the trajectory is closed -- with a radius of curvature $\rho$. As bending forces are introduced, the motion of particles within an accelerator environment can best be described by a right handed rotating co-moving co-ordinate system \cite{wille2000physics}. The right handed curvilinear co-ordinate system is shown in Fig.~\ref{fig:accelerator_coord_system}.   
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/Accelerator_Coord_System_fixed.pdf}
-\caption{The right handed curvilinear co-ordinate system used to describe particle motion in a re-circulating particle accelerator. The particles traverse around a right handed global co-ordinate system $\left\{x,~y,~s\right\}$ with the longitudinal direction $s$, the horizontal direction $x$ and vertical direction $y$ defined around a circular reference orbit (blue) with a radius of curvature $\rho$. Particle trajectories (red)
-are defined with reference to the global co-ordinate system by an attached local co-ordinate system $\left\{x,~z,~s\right\}$ where $x$ is the horizontal position, $z$ is the vertical position and $s$ is the longitudinal position with reference to the reference orbit.}
+\caption{The right handed curvilinear co-ordinate system used to describe particle motion in a re-circulating particle accelerator. The particles traverse around a right handed global co-ordinate system $\kappa=\left\{x,~y,~s\right\}$ with the longitudinal direction $s$, the horizontal direction $x$ and vertical direction $y$ defined around a circular reference orbit (blue) with a radius of curvature $\rho$. Particle trajectories (red)
+are defined with reference to the global co-ordinate system by an attached local co-ordinate system $\iota=\left\{x,~z,~s\right\}$ where $x$ is the horizontal position, $z$ is the vertical position and $s$ is the longitudinal position with reference to the reference orbit.}
 \label{fig:accelerator_coord_system}
 \end{figure}
 
-The co-ordinate system in Fig.~\ref{fig:accelerator_coord_system} used to describe motion in particle accelerators within this thesis is of the form $\Kappa = \left\{x,y,s\right\}$, describing the local co-ordinate system where the transverse motion along the horizontal direction is in the $x$-axis and the vertical axis in $y$ is orthogonal to this and the direction of longitudinal motion $s$. Within this thesis, the $\Kappa = \left\{x,y,s\right\}$ co-ordinate system is maintained in situations with no bending magnets, such as linear accelerators.     
+The global co-ordinate system used to describe motion in particle accelerators within this thesis is of the form $\kappa = \left\{x,y,s\right\}$, describing the global co-ordinate system where the transverse motion along the horizontal direction is in the $x$-axis and the vertical axis in $y$ is orthogonal to this and the direction of longitudinal motion $s$. Within this thesis, the $\kappa = \left\{x,y,s\right\}$ co-ordinate system is maintained in situations with no bending magnets, such as linear accelerators.  
+
+A local co-ordinate system $\iota=\left\{x,~z,~s\right\}$, is attached to the trajectory of particles through the accelerator where the displacement of the particle from the reference orbit in the horizontal plane is given by $x$ and in the vertical plane is given by $y$, whilst the $s$ co-ordinate follows the global $s$ co-ordinate. The local co-ordinate system is useful for examining the dynamics of single particles with respect to the reference orbit.
 
 \subsection{Magnetic Fields in Particle Accelerators}
 
 The motion of a charged particle in an electromagnetic field is given by the Lorentz force 
 \begin{equation}
-\overrightarrow{F} = q\left(\overrightarrow{E}+\overightarrow{v}\times\overrightarrow{B}\right),
+\overrightarrow{F} = q\left(\overrightarrow{E}+\overrightarrow{v}\times\overrightarrow{B}\right),
 \label{eq:Lorentz_force}    
 \end{equation}
-where $q$ is the charge of the particle with velocity vector $\overrightarrow{v}$, subject to an electric field $\overrightarrow{E}$ and magnetic field $\overrightarrow{B}$. When an elementary particle is subject solely to a magnetic field ($\overrightarrow{E}=0$), as common in an accelerator magnet, the Lorentz force (Eq.~\ref{eq:Lorentz_force}) can be re-cast into a more appropriate form using the displacement $x$ and time $t$
+where $q$ is the charge of the particle with velocity vector $\overrightarrow{v}$, subject to an electric field $\overrightarrow{E}$ and magnetic field $\overrightarrow{B}$. When an elementary particle is acted upon solely by a magnetic field ($\overrightarrow{E}=0$), as common in an accelerator magnet, the Lorentz force (Eq.~\ref{eq:Lorentz_force}) can be re-cast into a more appropriate form using the displacement $x$ and time $t$
 \begin{equation}
 \frac{d^{2}\overrightarrow{x}}{dt^{2}} = \frac{e}{\gamma m}\left(\overrightarrow{v}\times\overrightarrow{B}\right)
 \label{eq:displacement_Lorentz}    
@@ -53,14 +55,14 @@ where $e$ is the elementary charge of the particle, $m$ is its rest mass and
 \gamma = \frac{1}{\sqrt{1-\beta^{2}}} = \frac{E+m}{m},
 \label{eq:Lorentz_factor}    
 \end{equation}
-is the Lorentz factor where $\beta = v/c$ is the Lorentz speed factor and $E$ is the kinetic energy of the particle. Note that, unless explicitly stated, the ultra-relativistic approximation $pc = \sqrt{E^{2}-m^{2}c^{4}} \approx E$, valid for particles with $E \gg mc^{2}$ is used throughout this thesis as the particle energies involved consistently satisfy this approximation.   
+is the Lorentz factor, where $\beta = v/c$ is the Lorentz speed factor and $E$ is the kinetic energy of the particle. Note that, unless explicitly stated, the ultra-relativistic approximation $pc = \sqrt{E^{2}-m^{2}c^{4}} \approx E$, valid for particles with $E \gg mc^{2}$ is used throughout this thesis as the particle energies discussed consistently satisfy this approximation.   
 
-Since this thesis is concerned with re -circulated accelerators, particles typically require bending within the horizontal plane. To illustrate particle motion in a bending system we consider a pure, homogenous vertical magnetic field $B_{y}$ produced by a magnet with infinite pole width acting upon the particle of momentum $p_{0}$ (in convenient units of \si{\electronvolt}$/c$) to provide a bending radius of $\rho$ given by
+Since this thesis is concerned with re -circulated accelerators, particles typically require bending within the horizontal plane. To illustrate particle motion in a bending system we consider a homogenous vertical magnetic field $B_{y}$ produced by a magnet with infinite pole width acting upon the particle of momentum $p_{0}$ (in convenient units of \si{\electronvolt}$/c$) to provide a bending radius of $\rho$ given by
 \begin{equation}
 \frac{1}{\rho} = \frac{eB_{y}}{p_{0}} = k_{0},
 \label{magnet_bending_radius}    
 \end{equation}
-where $k_{0}$ is the field strength of the magnet -- named a dipole magnet -- with no transverse co-ordinate dependence of the field. By convention of $n$th order magnets, we classify this as the zeroth-order magnet ($n=0$). The magnetic beam rigidity $B\rho$ can therefore be defined as
+where $k_{0}$ is the normalised field strength of the magnet -- named a dipole magnet -- with no transverse co-ordinate dependence of the field. We classify the dipole as the zeroth-order magnet ($n=0$), where magnets have normalised field strengths $k_{n}$. The magnetic beam rigidity $B\rho$ can therefore be defined as
 \begin{equation}
 B\rho = \frac{p_{0}}{e},
 \label{eq:magnetic_beam_rigidity}    
@@ -70,9 +72,9 @@ and the bending angle $\alpha_{0}$ can be defined with reference to the magnetic
 \alpha_{0} = \frac{\int B_{y} ds}{B\rho} = \frac{L_{eff}}{\rho}, 
 \label{eq:dipole_bending_angle}    
 \end{equation}
-where the vertical magnetic field (dipole magnetic field) is integrated over the longitudinal distance traversed -- $L_{\mathrm{eff}}$ the effective longitudinal distance traverse by the particle in the field.
+where the vertical magnetic field (dipole field) is integrated over the longitudinal distance traversed i.e the effective longitudinal distance traverse by the particle in the field $L_{\mathrm{eff}}$.
 
-Accelerators are typically concerned with beams of particles -- an ensemble of particles -- which can be transversely distributed around the ideal reference orbit hence particles may be  displaced horizontally ($\Delta x$) or vertically ($\Delta y$) from the reference orbit, which can occur due to their natural divergence. Therefore, a restorative 'focusing' force is required to counter the natural divergence of these particles. Within accelerators a quadrupole magnet, a magnet with 4 alternating equidistant (from the pole centre), poles is typically used to provide the required focusing field, which takes the form of a transverse linearly varying magnetic field increasing in strength with distance from the pole centre. We term this a first order magnet ($n=1$). An azimuthal field gradient of the form $g = B_{\phi}/dr$ is pprovided, with $r$ the radial distance from the pole centre. The scalar potential of such a quadrupole field has the from
+Accelerators are typically concerned with ensembles of particles -- named beams -- which can be transversely distributed around the ideal reference orbit, hence particles may be displaced horizontally or vertically from the reference orbit, which can occur due to their natural divergence. Therefore, a restorative focusing force is required to counter the natural divergence of these particles. Within accelerators a quadrupole magnet, a magnet with 4 alternating equidistant (from the pole centre) poles is typically used to provide the required focusing field; a transverse linearly varying magnetic field increasing in strength with distance from the pole centre. A quadrupole is a first order magnet ($n=1$). An azimuthal field gradient of the form $g = B_{\phi}/dr$ is provided, with $r$ the radial distance from the pole centre. The scalar potential of such a quadrupole field has the from
 \begin{equation}
 V = -gxy,
 \label{eq:quadrupole_potential}    
@@ -84,15 +86,15 @@ B_{y} &= -\frac{\partial C}{\partial y} = gx.
 \end{align}
 Therefore, using the same formalism as (Eq.~\ref{eq:dipole_bending_angle}), the focusing angle $\alpha_{1}$ of a quadrupole can be generalised to
 \begin{equation}
-\alpha_{1} = \frac{e}{p_{0}}grl_{\mathrm{quad}} = -k_{1}rl_{quad},
+\alpha_{1} = \frac{e}{p_{0}}grL_{\mathrm{quad}} = -k_{1}rL_{quad},
 \label{eq:quadrupole_focusing_angle}    
 \end{equation}
-where $l_{\mathrm{quad}}$ is the length of the quadrupole magnet and the normalised quadrupole gradient $k_{1}$ becomes
+where $L_{\mathrm{quad}}$ is the length of the quadrupole magnet and the normalised quadrupole gradient $k_{1}$ becomes
 \begin{equation}
 k_{1} = \frac{e}{p_{0}}g.
 \label{eq:quadrupole_normalised_gradient}
 \end{equation}
-Quadrupole focusing is analogous to focusing with an optical lens, however a lens focuses simultaneously in all transverse directions whereas a quadrupole that is focusing in the horizontal plane is defocusing in the vertical plane. In the standard defined right handed co-ordinate system (see Fig.~\ref{fig:accelerator_coord_system}), when $k_{1} > 0$, the quadrupole is horizontally focusing (vertically defocusing) and when $k_{1} < 0$, the quadrupole is vertically focusing (horizontally defocusing). Consequently, with the transverse variation in focusing behaviour, a quadrupole can not be considered a true 'magnetic lens' however, taking inspiration from ray optics, the focal length of a quadrupole $f_{\mathrm{quad}}$ can be described as
+Quadrupole focusing is analogous to focusing with an optical lens, however a lens focuses simultaneously in all transverse directions whereas a quadrupole that is focusing in the horizontal plane is defocusing in the vertical plane. In the standard defined right handed co-ordinate system (see Fig.~\ref{fig:accelerator_coord_system}), when $k_{1} > 0$, the quadrupole is horizontally focusing (vertically defocusing) and when $k_{1} < 0$, the quadrupole is vertically focusing (horizontally defocusing). Consequently, with the transverse variation in focusing behaviour, a quadrupole can not be considered a true `magnetic lens' however, taking inspiration from ray optics, the focal length of a quadrupole $f_{\mathrm{quad}}$ can be described as
 \begin{equation}
 \frac{1}{f_{\mathrm{quad}}} = k_{1}l_{\mathrm{quad}}.
 \label{eq:focal_length_quadrupole}    
@@ -102,7 +104,7 @@ The similarities between an optical lens and a quadrupole are highlighted in Fig
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/Quad_Doublet_fixed.pdf}
-\caption{Particle trajectories (black) through a quadrupole (red) doublet consisting of a defocusing quadrupole followed by focusing quadrupole.}
+\caption{Particle trajectories (black) through a quadrupole (red) doublet consisting of a defocusing quadrupole followed by focusing quadrupole. Trajectories are bent similar to rays in conventional optics.}
 \label{fig:quad_doublet}
 \end{figure}
 
@@ -111,12 +113,12 @@ The computation of the magnetic field of an arbitrary $n$th order magnet typical
 V = \sum_{n=0}^{\infty} J_{n+1}r^{n+1}\cos\left[\left(n+1\right)\theta\theta\right]+K_{n+1}r^{n+1}\sin\left[\left(n+1\right)\theta\right],
 \label{eq:multipole_scalar_potential}    
 \end{equation}
-where $n \geq 0$ is the order of the magnet, $\theta$ is the polar angle from the horizontal plane  $x$--$z$ plane, and the coefficients $J_{n+1}$ and $K_{n+1}$ relate to the geometry of the magnet and its normalised field strength, for example for a quadrupole magnet ($n=1$) $K_{2}=0$ means this is a skew quadrupole rotated 90\si{\degree} around the pole axis and $J_{2}=0$ relates to a normal quadrupole field. The corresponding magnetic flux density of the magnet can be calculated for the radial $B_{r}$ or polar angle $B_{\theta}$ case by    
+where $n \geq 0$ is the order of the magnet, $\theta$ is the polar angle from the horizontal plane  $x$--$z$ plane, and the coefficients $J_{n+1}$ and $K_{n+1}$ relate to the geometry of the magnet and its normalised field strength. For example, a quadrupole magnet ($n=1$) with $K_{2}=0$ is a skew quadrupole rotated 90\si{\degree} around the pole axis and with $J_{2}=0$ a normal quadrupole field  is obtained. The corresponding magnetic flux density of the magnet can be calculated for the radial $B_{r}$ or polar angle $B_{\theta}$ case by    
 \begin{align}
 B_{r} &= -\frac{\partial V}{\partial r}, & B_{\theta} &= -\frac{\partial V}{\partial \theta},
 \label{eq:multipole_magnetic_field_cylindrical}    
 \end{align}
-and similarly in Cartesian co-ordinates, with proper transformation the magnetic flux density in each transverse plane is
+and similarly in Cartesian co-ordinates, with proper transformation, the magnetic flux density in each transverse plane is
 \begin{align}
 B_{x} &= -\frac{\partial V}{\partial x}, & B_{y} &= -\frac{\partial V}{\partial y}.
 \label{eq:multipole_magnetic_field_cartesian}
@@ -126,7 +128,7 @@ The normalised field gradient of an $n$th order magnet is generalised to
 k_{n} = \frac{e}{p_{0}}\frac{\partial^{n} B_{y}}{\partial x^{n}}.
 \label{eq:multipole_normalised_field_gradient}    
 \end{equation}
-For example, for a sextupole ($n=2$) magnet with 6 poles the magnetic flux density is given by
+For example, for a sextupole magnet ($n=2$) with 6 poles the magnetic flux density is given by
 \begin{align}
 B_{x} &= k_{2}xy, \nonumber \\
 B_{y} &= \frac{k_{2}}{2}\left(x^{2}-y^{2}\right),
@@ -138,7 +140,7 @@ k_{2} = \frac{e}{p_{0}}\frac{\partial^{2}B_{y}}{\partial x^{2}}.
 \label{eq:sextupole_field_gradient}    
 \end{equation}
 
-A magnet may have more than a single order field simultaneously. For example, a magnet utilising both linear fields (dipole and quadrupole fields) can be constructed -- named a combined function magnet -- which in this case would combine a dipole bending field component and a quadrupole focusing field component. A linear combined function magnet of can be achieved either by offsetting the pole centre of a quadrupole from the reference trajectory or by linearly varying the gap between magnetic poles transversely across the pole face of a dipole magnet. The former strategy is employed in the CBETA ERL FFA return loop, an accelerator explained in more detail in Chapter~\ref{CBETA_Multi-Pass_Commissioning}. The transverse magnetic field of a combined function dipole--quadrupole magnet, bending in the horizontal plane, is given by 
+A magnet may have more than a single order field simultaneously. For example, a magnet utilising both linear fields (dipole and quadrupole fields) can be constructed -- named a combined function magnet -- which combines dipole bending and a quadrupole focusing field components. A linear combined function magnet of can be achieved either by offsetting the pole centre of a quadrupole from the reference trajectory or by linearly varying the gap between magnetic poles transversely across the pole face of a dipole magnet. The former strategy is employed in the CBETA ERL FFA return loop, an accelerator explained in more detail in Chapter~\ref{CBETA_Multi-Pass_Commissioning}. The transverse magnetic field of a combined function dipole--quadrupole magnet, bending in the horizontal plane, is given by 
 \begin{align}
 B_{x} &= \frac{p_{0}}{e}k_{1}y, \nonumber\\
 B_{y} &= \frac{p_{0}}{e}\left(k_{0}+k_{1}x\right).
@@ -976,7 +978,7 @@ A FODO lattice consists of a series of alternatively focusing quadrupoles separa
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Energy_Recovery_Linac_Design/FODO_cell_finished.pdf}
-\caption{Left: FODO cell schematic. Alternating focusing quadrupole (red) arrangements, separated by drifts of length $L_{\mathrm{drift}}$. Focusing quadrupoles of length $L_{\mathrm{quad}}/2$ and defocusing quadrupole of length $L_{\mathrm{quad}}$. Right: $\beta$-functions in each plane of a FODO cell created using Tao \cite{TaoManual}.}
+\caption{Left: FODO cell schematic. Alternating focusing quadrupole (red) arrangements, separated by drifts of length $L_{\mathrm{drift}}$. Focusing quadrupoles of length $L_{\mathrm{quad}}/2$ and defocusing quadrupole of length $L_{\mathrm{quad}}$. Right: $\beta$-functions in each plane of a FODO cell created using \textsc{Tao} \cite{TaoManual}.}
 \label{fig:FODO_cell}
 \end{figure}
 
@@ -1036,7 +1038,7 @@ An achromat lattice has cells in which the dispersion of the particle beam is ze
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Energy_Recovery_Linac_Design/DBA_diagram.pdf}
-\caption{Left: Cell central region of double bend achromat, consisting of a a quadrupole (red) of length $L_{\mathrm{quad}}$ placed between two dipoles (blue) of length $L_{\mathrm{dipole}}$ with magnets separated by drift $L_{\mathrm{drift}}$. Right: dispersion function in the $x$ plane $\eta_{x}$ as a function of longitudinal distance $s$. Dispersion peaks within the centre of a DBA and is zeroed at the start and end of the central section.}
+\caption{Left: Cell central region of double bend achromat, consisting of a a quadrupole (red) of length $L_{\mathrm{quad}}$ placed between two dipoles (blue) of length $L_{\mathrm{dipole}}$ with magnets separated by drift $L_{\mathrm{drift}}$. Right: Dispersion function $\eta_{x}$ in the $x$ plane $\eta_{x}$ as a function of longitudinal distance $s$. Dispersion peaks within the centre of a DBA and is zeroed at the start and end of the central section of a DBA created using \textsc{Tao} \cite{TaoManual}}
 \label{fig:DBA_diagram}
 \end{figure}
 
