@@ -150,7 +150,7 @@ B_{y} &= \frac{p_{0}}{e}\left(k_{0}+k_{1}x\right).
 \subsection{Linear Equations of Motions}
 \label{sec:equations_of_motion}
 
-The linear equations of motion for a particle follow the derivation of Rossbach and Schmuser \cite{rossbach1993basic} and K. Willie \cite{wille2000physics}, using the co-ordinate system presented in Fig.~\ref{fig:accelerator_coord_system}. Here an equation of particle motion due to the Lorentz force (Eq.~\ref{eq:Lorentz_force}) is developed for the co-ordinate system which rotates due to bending forces, which we limit to the horizontal $x$--$s$ plane. We define the position vector of a particle at an arbitrary point in it's trajectory, in the global cyclindrical co-ordinate system $\left\{r,\alpha,z\right\}$ as
+The linear equations of motion for a particle follow the derivation of Rossbach and Schmuser \cite{rossbach1993basic} and K. Willie \cite{wille2000physics}, using the co-ordinate system presented in Fig.~\ref{fig:accelerator_coord_system}. An equation of particle motion due to the Lorentz force (Eq.~\ref{eq:Lorentz_force}) is developed for the co-ordinate system which rotates due to bending forces, which we limit to the horizontal $x$--$s$ plane. We define the position vector of a particle at an arbitrary point in it's trajectory, in the global cylindrical co-ordinate system $\left\{r,\alpha,z\right\}$ as
 \begin{equation}
 \boldsymbol{R} = \boldsymbol{R}_{0} + r\boldsymbol{u}_{r} + z\boldsymbol{u}_{z},    
 \label{eq:particle_position_vector}
@@ -171,7 +171,7 @@ and differentiating within respect to time, the acceleration becomes
 \frac{d^{2}\boldsymbol{E}}{dt^{2}} = \left(\frac{d^{2}r}{dt^{2}}-r\frac{d^{2}\alpha}{dt^{2}}\right)\boldsymbol{u}_{r} + \left(2\frac{dr}{dt}\frac{d\alpha}{dt}\right)\boldsymbol{u}_{\alpha} + \frac{d^{2}z}{dt^{2}}\boldsymbol{u}_{z},
 \label{eq:unit_vector_acceleration}    
 \end{equation}
-within the first $\boldsymbol{u}_{r}$ term, the first part describes the effect of the variation of bending on the acceleration and the second part relates to the centrifugal acceleration of the particle. The force of the particle of mass $m$, using the acceleration (Eq.~\ref{eq:unit_vector_acceleration}), can be equated with the Lorentz force (Eq.~\ref{eq:Lorentz_force}) of the magnetic field due to the accelerator magnets ($\overightarrow{E}=0$)
+the first part of the $\boldsymbol{u}_{r}$ term describes the effect of the variation of bending on the acceleration and the second part relates to the centrifugal acceleration of the particle. The force of the particle of mass $m$, using the acceleration (Eq.~\ref{eq:unit_vector_acceleration}), can be equated with the Lorentz force (Eq.~\ref{eq:Lorentz_force}) of the magnetic field due to the accelerator magnets ($\overightarrow{E}=0$)
 \begin{equation}
 m\frac{d^{2}\boldsymbol{R}}{dt^{2}}=-e\left(\overightarrow{v}\times\overightarrow{B}\right),
 \label{eq:Lorentz_particle_equating_forces}
@@ -194,7 +194,7 @@ B_{r} = B_{x} &= \frac{p_{0}}{e}k_{1}y, \\
 B_{z} = B_{y} &= \frac{p_{0}}{e}\left(k_{0}+k_{1}x\right),
 \label{eq:equivalent_combined_function_field}
 \end{align}
-Substituting the combined function magnetic flux density (Eq.~\ref{eq:equivalent_combined_function_field}) into the differential equations (Eqs.~\ref{eq:radial_differential_equation}, \ref{eq:angula_differential_equation}) and making the substitution $r=\rho+x$ to account for varying transverse position around the reference orbit yields
+Substituting the combined function magnetic flux density (Eq.~\ref{eq:equivalent_combined_function_field}) into the differential equations (Eqs.~\ref{eq:radial_differential_equation}, \ref{eq:angular_differential_equation}) and making the substitution $r=\rho+x$ to account for varying transverse position around the reference orbit yields
 \begin{align}
 m\left(\frac{d^{2}x}{dt^{2}}-\left(p+x\right)\frac{d^{2}\alpha}{dt^{2}}\right) &=-p_{0}\left(\rho+x\right)\frac{d\alpha}{dt}\left(k_{0}+k_{1}\right), 
 \label{eq:horizontal_differential_equation}\\   
@@ -268,7 +268,7 @@ u\left(s\right) &= aC\left(s\right) + bS\left(s\right) + \frac{\Delta p}{p_{0}}D
 u'\left(s\right) &= aC'\left(s\right) + bS'\left(s\right) + \frac{\Delta p}{p_{0}}D\left(s\right),
 \label{eq:generalised_solution}
 \end{align}
-where $D\left(s\right)$ is the dispersion function (see Section~\ref{sec:sec:dispersion_off_momentum_particles}), which accounts for the effect of momentum on particle trajectories and $a$, $b$ are coefficients related to the initial conditions of the particles. Commonly, for convenience, the solution (Eq.~\ref{eq:generalised_solution}) to the equations of motion is expressed in matrix formalism
+where $D\left(s\right)$ is the dispersion function (see Section~\ref{sec:dispersion_off_momentum_particles}), which accounts for the effect of momentum on particle trajectories and $a$, $b$ are coefficients related to the initial conditions of the particles. Commonly, for convenience, the solution (Eq.~\ref{eq:generalised_solution}) to the equations of motion is expressed in matrix formalism
 \begin{equation}
 \begin{pmatrix}
 u\left(s\right) \\
@@ -291,7 +291,7 @@ where $s_{0}$ is the initial longitudinal position of the particle.
 
 \section{Transport Matricies} 
 
-Previously, the solution to the equations of motion within a periodic focusing and bending particle accelerator (Eqs.~\ref{eq:horizontal_equation_of_motion_simplified}, \ref{eq:vertical_equation_of_motion_simplified}) have been derived and presented using a matrix formalism (Eq.~\ref{eq:general_solution_matrix}). By considering the dynamics in both transverse planes ($x$ and $z$) simulataneously, the effect of momentum deviation from the design momentum $\Delta p/p_{0},$ as well as accounting for the longitudinal position of the particle $s=ct$ with $t$ the time-of-flight of the particle we see that a 6D co-ordinate system is required. Therefore, within a particle accelerator the position of a particle can be adequately described using a 6D vector 
+Previously, the solution to the equations of motion within a periodic focusing and bending particle accelerator (Eqs.~\ref{eq:horizontal_equation_of_motion_simplified}, \ref{eq:vertical_equation_of_motion_simplified}) have been derived and presented using a matrix formalism (Eq.~\ref{eq:general_solution_matrix}). Considering the dynamics in both transverse planes ($x$ and $z$) simulataneously, the effect of momentum deviation from the design momentum $\Delta p/p_{0},$ as well as accounting for the longitudinal position of the particle $s=ct$, with $t$ the time-of-flight of the particle, a 6D co-ordinate system is required to describe the motion. Therefore, within a particle accelerator, the position of a particle can be adequately described using a 6D vector 
 \begin{equation}
 \boldsymbol{X} = 
 \begin{bmatrix}
@@ -306,7 +306,7 @@ ct \\
 \end{equation}
 where $x$, $y$, $ct$ are the horizontal, vertical and longitudinal positions of the particle and $x'$, $y'$ are the divergence of the particle in either plane.
 
-Within an accelerator, the particle is typically subjected to a series of magnet elements, such as dipoles, quadrupoles etc. the effect of which can be described overall by a $6~\times~6$ transform or transport matricies $\boldsymbol{R}$ to first order. With an initial particle vector $\boldsymbol{X}_{0}$ of the form (Eq.~\ref{eq:6D_vector}), the transport matrix can relate the initial state to a final state $\boldsymbol{X}$, where the particle has traversed a distance $s-s_{0}$ i.e
+Within an accelerator, the particle is typically subjected to a series of magnetic elements, such as dipoles, quadrupoles etc. which can be described by a $6~\times~6$ transform or transport matrix $\boldsymbol{R}$ (to first order). With an initial particle vector $\boldsymbol{X}_{0}$ of the form (Eq.~\ref{eq:6D_vector}), the transport matrix can relate the initial state to a final state $\boldsymbol{X}$, where the particle has traversed a distance $s-s_{0}$ i.e
 \begin{equation}
 \boldsymbol{X}_{1} = \boldsymbol{R}\boldsymbol{X}_{0}.
 \label{eq:overall_transport_matrix}
@@ -321,7 +321,7 @@ where $R_{n}$ are the transport matricies of each individual element. A full ser
 
 \subsection{Drift Space}
 
-A drift space within an accelerator is a section of beamline in which no magnets are placed -- the particles traverse through a vaccuum chamber subject to negligible external magnetic forces. As such, the beam is not bent or focused, therefore the position of the particles transforms only due to their divergence $u_{1} = u_{0} + L_{\mathrm{drift}}u_{0}'$, with $L_{\mathrm{drift}}$ the length of the drift space. The $\boldsymbol{R}$ matrix for a drift space is consequently given by  
+A drift space within an accelerator is a section of beamline in which no magnets are placed -- the particles traverse through a vaccuum chamber subject to negligible external magnetic forces. The beam is not bent or focused, therefore the position of the particles transforms only due to their divergence $u_{1} = u_{0} + L_{\mathrm{drift}}u_{0}'$, with $L_{\mathrm{drift}}$ the length of the drift space. The $\boldsymbol{R}$ matrix for a drift space is consequently given by  
 \begin{equation}
 \boldsymbol{R}_{\mathrm{drift}} =
 \begin{pmatrix}
@@ -337,7 +337,7 @@ A drift space within an accelerator is a section of beamline in which no magnets
 
 \subsection{Quadrupole Magnet}
 
-The quadrupole element focuses a particle over a magnetic length $L_{\mathrm{quad}}$, which is identical to the width of the magnet for a hard-edged field model in which the field terminated at the end of the magnet yoke. The quadrupole element is focusing in one plane and defocusing in another plane, as shown in (Eqs.~\ref{eq:focusing_solution_equation_of_motion}, \ref{eq:defocusing_solution_equation_of_motion}), which is encapsulated within the $\boldsymbol{R}$ matrix of this element. The quadrupole has a normalised field strength $k_{1}$ (Eq.~\ref{eq:quadrupole_normalised_gradient}), which is used to characterise the focusing in this transport matrix. The $\boldsymbol{R}$ matrix for a focusing quadrupole is given by
+The quadrupole element focuses a particle over a magnetic length $L_{\mathrm{quad}}$, which is identical to the width of the magnet for a hard-edged field model where the field terminates at the end of the magnet yoke. The quadrupole element is focusing in one plane and defocusing in another plane, as shown in (Eqs.~\ref{eq:focusing_solution_equation_of_motion}, \ref{eq:defocusing_solution_equation_of_motion}), which is encapsulated within the $\boldsymbol{R}$ matrix of this element. The quadrupole has a normalised field strength $k_{1}$ (Eq.~\ref{eq:quadrupole_normalised_gradient}), which is used to characterise the focusing in this transport matrix. The $\boldsymbol{R}$ matrix for a focusing quadrupole is given by
 
 \begin{equation}
 \resizebox{\columnwidth}{!}{
@@ -369,7 +369,7 @@ The thin lens approximation is describing a quadrupole field in the zero-length 
 
 \subsection{Dipole Magnet}
 
-Here we assume a sector dipole magnet with no focusing terms i.e the magnetic field is homogenous transversely throughout dipole magnet. The sector dipole is assumed to have exit and entrance pole faces that are perpendicular to the direction of the reference orbit ($\beta_{1}=0$, $\beta_{2}=0$). A diagram of a sector dipole is shown in Fig.~\ref{fig:dipole_magnet_diagram}
+A sector dipole magnet with no focusing terms i.e the magnetic field is homogenous transversely throughout dipole magnet is assumed. The sector dipole is assumed to have exit and entrance pole faces that are perpendicular to the direction of the reference orbit ($\beta_{1}=0$, $\beta_{2}=0$). A diagram of a sector dipole is shown in Fig.~\ref{fig:dipole_magnet_diagram}.
 
 \begin{figure}[!h]
 \centering
@@ -379,7 +379,6 @@ Here we assume a sector dipole magnet with no focusing terms i.e the magnetic fi
 \end{figure}
 
 A dipole is characterised in its simplest form by two parameters: the bending radius $\rho$ and the magnetic length of the dipole $L_{\mathrm{dip}}$, which is defined as the path length along the central trajectory. Therefore, the $\boldsymbol{R}$ matrix of a non-focusing sector dipole is given by 
-
 
 \begin{equation}
 \resizebox{\columnwidth}{!}{
@@ -395,7 +394,7 @@ A dipole is characterised in its simplest form by two parameters: the bending ra
 \label{eq:dipole_matrix}
 \end{equation}
 
-Dipoles are also commonly available with pole faces that are perpendicular to the reference orbit at the centre of the dipole ($\beta_{1}=\alpha_{0}/2$, $\beta_{2}=\alpha_{0}/2$), where $a_{0}$ is the bending angle of the dipole (Eq.~\ref{eq:dipole_bending_angle}), which are termed rectangular dipoles. The rotated pole faces act like thin quadrupoles (Eq.~\ref{eq:quadrupole_matrix_thin}), providing transverse focusing and there effect of the dynamics of a particle beam can be expressed via the $\boldsymbol{R}$ matrix
+Rectangular dipoles are also commonly available, with pole faces that are perpendicular to the reference orbit at the centre of the dipole ($\beta_{1}=\alpha_{0}/2$, $\beta_{2}=\alpha_{0}/2$),  where $a_{0}$ is the bending angle of the dipole (Eq.~\ref{eq:dipole_bending_angle}). The rotated pole faces act like thin quadrupoles (Eq.~\ref{eq:quadrupole_matrix_thin}), providing transverse focusing and there effect of the dynamics of a particle beam can be expressed via the $\boldsymbol{R}$ matrix
 \begin{equation}
 \boldsymbol{R}_{\mathrm{pole}} =
 \begin{pmatrix}
@@ -414,22 +413,22 @@ where $\beta$ is the angle of the pole face and $\psi = k\left(h/\rho\right)\fra
 
 \subsection{Generalisation of the Equations of Motion}
 
-The equations of motion currently derived (Eqs.~\ref{eq:horizontal_equation_of_motion_simplified}, \ref{eq:vertical_equation_of_motion_simplified}) have only been appropriate for a single test particle, however as we aim to understand the dynamics of a bunch of many particles the equations of motion must be generalised to the many particle scenario. Generalisation of the equations of motion is achieved via setting $1/\rho=0$, assuming a very large bending radius, and $\Delta p/p_{0}=0$, which assumes the bunch is monoenergetic, which reveals a longitudinal dependence within the quadrupole focusing term. Generalisation by these assumptions yields Hill's equation
+The equations of motion (Eqs.~\ref{eq:horizontal_equation_of_motion_simplified}, \ref{eq:vertical_equation_of_motion_simplified}) are only appropriate for a single test particle however, as we aim to understand the dynamics of a beam of many particles, the equations of motion must be generalised to the many particle scenario. Generalisation of the equations of motion is achieved via setting $1/\rho=0$, assuming a very large bending radius, and $\Delta p/p_{0}=0$, assumption of a monoenergetic beam, which reveals a longitudinal dependence within the quadrupole focusing term. Generalisation by these assumptions yields Hill's equation
 \begin{equation}
 x''\left(s\right)-k\left(s\right)x\left(s\right) = 0,
 \label{eq:Hills_equation}    
 \end{equation}
-where $x\left(s\right)$ describes the trajectory of the particles which is an oscillation about the reference orbit named a betatron oscillation. Whilst $x\left(s\right)$ is used as an example, Hill's equation can be generalised to either transverse plane. The amplitude and phase of the betatron oscillation are dependent on $s$, the longitudinal position around the reference orbit. Therefore, a trial solution to Hill's equation is developed 
+where $x\left(s\right)$ describes the trajectory of the particles; an oscillation about the reference orbit named a betatron oscillation. Whilst $x\left(s\right)$ is used as an example, Hill's equation can be generalised to either transverse plane. The amplitude and phase of the betatron oscillation are dependent on $s$, the longitudinal position around the reference orbit. Therefore, a trial solution to Hill's equation is developed 
 \begin{equation}
-x\left(s\right) = \sqrt{\epsilon\beta\left(s\right)}\cos\left[\Psi\left(s\right)+\phi\right],
+x\left(s\right) = \sqrt{\varepsilon\beta\left(s\right)}\cos\left[\Psi\left(s\right)+\phi\right],
 \label{eq:Hills_trial_solution}    
 \end{equation}
-where $\sqrt{\epsilon\beta\left(s\right)}$ is an amplitude function with a constant amplitude $\epsilon$ termed the emittance and $\beta\left(s\right)$ termed the $\beta$-function which accounts for the oscillatory amplitude of the betatron oscillation and $\Psi\left(s\right)$ is the phase of the oscillation with $\phi$ the phase offset -- an integration constant resulting from initial conditions. The amplitude function of the trial solution is given by
+where $\sqrt{\varepsilon\beta\left(s\right)}$ is an amplitude function with a constant amplitude $\varepsilon$ termed the emittance and $\beta\left(s\right)$ termed the $\beta$-function which accounts for the oscillatory amplitude of the betatron oscillation and $\Psi\left(s\right)$ is the phase of the oscillation with $\phi$ the phase offset -- an integration constant resulting from initial conditions. The amplitude function of the trial solution is given by
 \begin{equation}
-E\left(s\right) = \sqrt{\epsilon\beta\left(s\right)},
+E\left(s\right) = \sqrt{\varepsilon\beta\left(s\right)},
 \label{eq:envelope_function}    
 \end{equation}
-which defines a beam envelope, as shown in Fig.~\ref{fig:beam_envelope}, which defines the bounds of the trajectories of each of the many particles within a bunch. 
+which defines a beam envelope, as shown in Fig.~\ref{fig:beam_envelope}, which defines the bounds of the trajectories of each of the particles within a beam. 
 
 \begin{figure}[!h]
 \centering
@@ -440,7 +439,7 @@ which defines a beam envelope, as shown in Fig.~\ref{fig:beam_envelope}, which d
 
 The derivative of the trial solution (Eq.~\ref{eq:Hills_trial_solution}) shows the divergence of the particle trajectory with respect to time and is given by
 \begin{equation}
-x'\left(s\right) = -\frac{\sqrt{\epsilon}}{\sqrt{\beta\left(s\right)}}\left\{\alpha\left(s\right)\cos\left[\Psi\left(s\right)+\phi\right]+\sin\left[\Psi\left(s\right)+\phi\right]\right\}
+x'\left(s\right) = -\frac{\sqrt{\varepsilon}}{\sqrt{\beta\left(s\right)}}\left\{\alpha\left(s\right)\cos\left[\Psi\left(s\right)+\phi\right]+\sin\left[\Psi\left(s\right)+\phi\right]\right\}
 \label{eq:Hills_trial_solution_derivative}    
 \end{equation}
 where the $\alpha\left(s\right)$ function, which relates to the orientation of the beam in phase space, is given by
@@ -473,22 +472,22 @@ Using the well-known trigonometric identity $\sin^{2}x+\cos^{2}x=1$, with (Eqs.~
 \frac{x\left(s\right)^{2}}{\beta\left(s\right)}+\left[\frac{\alpha\left(s\right)}{\sqrt{\beta\left(s\right)}}x\left(s\right)+\sqrt{\beta\left(s\right)}x'\left(s\right)\right]^{2} = \varepsilon,    
 \label{eq:phase_space_trigonometry}
 \end{equation}
-which when expanded and then simplified using the definition
+which when expanded and then simplified, using the definition
 \begin{equation}
 \gamma\left(s\right) = \frac{1+\alpha\left(s\right)^{2}}{\beta\left(s\right)},
 \label{eq:gamma_twiss}    
 \end{equation}
-which relates to the angular size of the beam, becomes
+relating to the angular size of the beam becomes
 \begin{equation}
 \varepsilon = \gamma\left(s\right)x\left(s\right)^{2}+2\alpha\left(s\right)x\left(s\right)x'\left(s\right)+\beta\left(s\right)x'\left(s\right)^{2},
 \label{eq:phase_space_ellipse}    
 \end{equation}
-where the area of the phase space ellipse is given by
+and $\varepsilon$ is defined as the single particle emittance or action. The form in (Eq.~\ref{eq:phase_space_ellipse}) is that of the equation of an ellipse; consequently the motion of a single particle around an orbit maps out an ellipse in phase space with area
 \begin{equation}
-A=\pi\varepsilon,
+A=\pi\varepsilon.
 \label{eq:phase_space_area}    
-\end{equation} 
-and $\varepsilon$ is defined as the single particle emittance or action. The form in (Eq.~\ref{eq:phase_space_ellipse}) is that of the equation of an ellipse; consequently the motion of a single particle arount an orbit maps out an ellipse in phase space. The parameters ($\beta\left(s\right)$, $\alpha\left(s\right)$, $\gamma\left(s\right)$) we have defined to interpret the phase space of a particle are collectively known as the Twiss parameters. Phase space ellipses are observed in each of the three planes as the results here are general. An example of the phase space ellipse in the $x$--$x'$ plane is shown in Fig.~\ref{fig:phase_space_diagram}.
+\end{equation}
+The parameters ($\beta\left(s\right)$, $\alpha\left(s\right)$, $\gamma\left(s\right)$) defined to interpret the phase space of a particle are collectively known as the Twiss parameters. Phase space ellipses are observed in each of the three planes as the results here are general. An example of the phase space ellipse in the $x$--$x'$ plane is shown in Fig.~\ref{fig:phase_space_diagram}.
 
 \begin{figure}[!h]
 \centering
@@ -530,8 +529,8 @@ x'_{1}
 \end{pmatrix}
 =
 \begin{pmatrix}
-\boldsymbol{R}_{1,1} & \boldsymbol{R}_{1,2} \\
-\boldsymbol{R}_{2,1} & \boldsymbol{R}_{2,2}
+\boldsymbol{R}_{11} & \boldsymbol{R}_{12} \\
+\boldsymbol{R}_{21} & \boldsymbol{R}_{22}
 \end{pmatrix}
 \begin{pmatrix}
 x_{0} \\
@@ -548,9 +547,9 @@ Expanding the matricies in (Eq.~\ref{eq:general_phase_space_transform}) and re-c
 \end{pmatrix}
 =
 \begin{pmatrix}
-\boldsymbol{R}_{1,1}^{2} & -2\boldsymbol{R}_{1,1}\boldsymbol{R}_{1,2} & \boldsymbol{R}_{1,2}^{2} \\
--\boldsymbol{R}_{1,1}\boldsymbol{R}_{2,1} & \boldsymbol{R}_{1,2}\boldsymbol{R_{2,1}}+\boldsymbol{R}_{1,1}\boldsymbol{R}_{2,2} & -\boldsymbol{R}_{1,2}\boldsymbol{R}_{2,2} \\
-\boldsymbol{R}_{2,1}^{2} & -2\boldsymbol{R}_{2,1}\boldsymbol{R}_{2,2} & \boldsymbol{R}_{2,2}^{2} 
+\boldsymbol{R}_{11}^{2} & -2\boldsymbol{R}_{11}\boldsymbol{R}_{12} & \boldsymbol{R}_{12}^{2} \\
+-\boldsymbol{R}_{11}\boldsymbol{R}_{21} & \boldsymbol{R}_{12}\boldsymbol{R_{21}}+\boldsymbol{R}_{11}\boldsymbol{R}_{22} & -\boldsymbol{R}_{12}\boldsymbol{R}_{22} \\
+\boldsymbol{R}_{21}^{2} & -2\boldsymbol{R}_{21}\boldsymbol{R}_{22} & \boldsymbol{R}_{22}^{2} 
 \end{pmatrix}
 \begin{pmatrix}
 \beta_{0} \\
@@ -562,7 +561,7 @@ Expanding the matricies in (Eq.~\ref{eq:general_phase_space_transform}) and re-c
 
 \subsection{Periodic Lattices and Stability}
 
-A periodic lattice, for example a repeating series of beamline elements, named cells, with length $L_{\mathrm{cell}}$, which adheres to the property $\boldsymbol{R}\left(s\right) = \boldsymbol{R}\left(s+L_{\mathrm{cell}}\right)$, in which the Twiss parameters are unchanged ($\beta_{0}=\beta_{1}=\beta$, $\alpha_{0}=\alpha_{1}=\alpha$, $\gamma_{0}=\gamma_{1}=\gamma$) has the single plane transport matrix of the form
+A periodic lattice, for example a repeating series of beamline elements, named cells, with length $L_{\mathrm{cell}}$, which adheres to the property $\boldsymbol{R}\left(s\right) = \boldsymbol{R}\left(s+L_{\mathrm{cell}}\right)$, where the Twiss parameters are unchanged ($\beta_{0}=\beta_{1}=\beta$, $\alpha_{0}=\alpha_{1}=\alpha$, $\gamma_{0}=\gamma_{1}=\gamma$). Therefore, a periodic cell has the single plane transport matrix of the form
 \begin{equation}
 \boldsymbol{R} =
 \begin{pmatrix}
@@ -571,20 +570,20 @@ A periodic lattice, for example a repeating series of beamline elements, named c
 \end{pmatrix}
 \label{eq:periodic_transport_matrix}    
 \end{equation}
-where $\mu$ is the phase advance per cell. The Twiss parameters of the periodic lattice can therefore be related to the transport matrix in each plane via re-arrangement of the periodic transport matrix (Eq.~\ref{eq:periodic_transport_matrix})
+where $\mu$ is the phase advance per cell. The Twiss parameters of the periodic lattice can be related to the transport matrix via re-arrangement of the periodic transport matrix (Eq.~\ref{eq:periodic_transport_matrix})
 \begin{align}
-\beta &= \frac{\boldsymbol{R}_{1,2}}{\sin\mu}, 
+\beta &= \frac{\boldsymbol{R}_{12}}{\sin\mu}, 
 \label{eq:periodic_beta_function} \\
-\alpha & = \frac{\boldsymbol{R}_{1,1}-\boldsymbol{R}_{2,2}}{2\sin\mu},
+\alpha & = \frac{\boldsymbol{R}_{11}-\boldsymbol{R}_{22}}{2\sin\mu},
 \label{eq:periodic_alpha} \\
-\gamma &= \frac{1+\left(\boldsymbol{R}_{1,1}-\boldsymbol{R}_{2,2}\right)^{2}}{4\boldsymbol{R}_{1,2}\sin\mu},
+\gamma &= \frac{1+\left(\boldsymbol{R}_{11}-\boldsymbol{R}_{22}\right)^{2}}{4\boldsymbol{R}_{12}\sin\mu},
 \label{eq:periodic_gamma} \\
-\mu &= \cos^{-1}\left(\frac{\boldsymbol{R}_{1,1}-\boldsymbol{R}_{2,2}}{2}\right),
+\mu &= \cos^{-1}\left(\frac{\boldsymbol{R}_{11}-\boldsymbol{R}_{22}}{2}\right),
 \label{eq:periodic_phase_advance}
 \end{align}
 and the periodic $\gamma$ function is defined by (Eq.~\ref{eq:gamma_twiss}).
 
-The periodic focusing system within an accelerator is stable if the eigenvectors of the transport matrix remain real for many passes through the accelerator beamline because when this condition is met the phase of the particles remains real. Therefore, the eigenvectors of the transport matrix can be found through the well known equation
+The periodic focusing system within an accelerator is stable if the eigenvectors of the transport matrix remain real for many passes through the accelerator beamline because the phase of the particles remains real. Therefore, the eigenvectors of the transport matrix can be found through the equation
 \begin{equation}
 \left(\boldsymbol{R}-\lambda\boldsymbol{I}\right)\boldsymbol{X} = 0,
 \label{eq:eigenvalues_equation}    
@@ -609,7 +608,7 @@ Dispersion is defined as the variation in position of a particle due to the vari
 \boldsymbol{X}_{1} = \boldsymbol{R}\boldsymbol{X}_{\beta} + \boldsymbol{R}\boldsymbol{X}_{\Delta p/p_{0}},
 \label{eq:dispersive_transport_matrix_propagation}    
 \end{equation}
-which, taking the $x$--$x'$ plane as an example can be accounted for using a transform including the dispersive motion
+which, taking the $x$--$x'$ plane as an example, can be accounted for using a transform including the dispersive motion
 \begin{equation}
 \begin{pmatrix}
 x_{1} \\
@@ -644,15 +643,15 @@ x'_{0} \\
 \end{pmatrix}.
 \label{eq:dispersion_function}    
 \end{equation}
-The periodic dispersion ($\eta_{x}\left(s\right)=\eta_{x}$, $\eta'_{x}\left(s\right)=\eta'_{x}$) can therefore be found via re-arrangement of (Eq.~\ref{eq:dispersion_function}) using the transport matrix of the form in (Eq.~\ref{eq:dispersive_transport_simplified}) in terms of the transport matrix elements
+The periodic dispersion ($\eta_{x}\left(s\right)=\eta_{x}$, $\eta'_{x}\left(s\right)=\eta'_{x}$) can be found via re-arrangement of (Eq.~\ref{eq:dispersion_function}) using the transport matrix in (Eq.~\ref{eq:dispersive_transport_simplified}) in terms of the transport matrix elements
 \begin{align}
-\eta_{x} &= \frac{\boldsymbol{R}_{1,3}\left(1-\boldsymbol{R}_{2,2}\right)+\boldsymbol{R}_{R}_{1,2}\boldsymbol{R}_{2,3}}{\left(1-\boldsymbol{R}_{1,1}\right)\left(1-\boldsymbol{R}_{2,2}\right)-\boldsymbol{R}_{2,1}\boldsymbol{R}_{1,2}},
+\eta_{x} &= \frac{\boldsymbol{R}_{13}\left(1-\boldsymbol{R}_{22}\right)+\boldsymbol{R}_{12}\boldsymbol{R}_{23}}{\left(1-\boldsymbol{R}_{11}\right)\left(1-\boldsymbol{R}_{22}\right)-\boldsymbol{R}_{21}\boldsymbol{R}_{12}},
 \label{eq:periodic_dispersion} \\
-\eta'_{x} &= \frac{\boldsymbol{R}_{2,3}\left(1-\boldsymbol{R}_{1,1}\right)+\boldsymbol{R}_{2,1}\boldsymbol{R}_{1,3}}{\left(1-\boldsymbol{R}_{1,1}\right)\left(1-\boldsymbol{R}_{2,2}\right)-\boldsymbol{R}_{2,1}\boldsymbol{R}_{1,2}}.
+\eta'_{x} &= \frac{\boldsymbol{R}_{23}\left(1-\boldsymbol{R}_{11}\right)+\boldsymbol{R}_{21}\boldsymbol{R}_{13}}{\left(1-\boldsymbol{R}_{11}\right)\left(1-\boldsymbol{R}_{22}\right)-\boldsymbol{R}_{21}\boldsymbol{R}_{12}}.
 \label{eq:periodic_dispersion_prime}
 \end{align}
 
-The beam size of a dispersive ensemble of particles (here for a periodic lattice) can be defined, baring similarity to (Eq.~\ref{eq:dispersive_transport_matrix_propagation}), through an extension of the beam size due to betatron motion (Eq.~\ref{eq:horizontal_emittance})
+The beam size of a dispersive particle beam (for a periodic lattice) can be defined, baring similarity to (Eq.~\ref{eq:dispersive_transport_matrix_propagation}), through an extension of the beam size due to betatron motion (Eq.~\ref{eq:horizontal_emittance})
 \begin{equation}
 \sigma_{x} = \sqrt{\epsilon_{x}\beta_{x}} + \eta_{x}\frac{\Delta p}{p_{0}}.
 \label{eq:dispersive_beam_size}    
@@ -666,7 +665,9 @@ where $\mathcal{H}$ is analogous to the emittance in defining the area of the ph
 
 \section{Tune and Chromaticity}
 
-The tune of an accelerator is typically defined as the number of betatron oscillations per revolution around the circumference of a re-circulated accelerator
+\subsection{Tune}
+
+The tune of an accelerator is defined as the number of betatron oscillations per revolution around the circumference of a re-circulated accelerator
 \begin{equation}
 Q=\frac{N\mu}{2\pi} = \frac{1}{2\pi}\oint\frac{1}{\beta}ds,
 \label{eq:accelerator_tune}    
@@ -689,9 +690,11 @@ where $m$, $n$ and $p$ are integers. Resonances in accelerators occur at integer
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/Tune_Diagram_fixed.pdf}
-\caption{Tune diagram up to 3rd order showing possible locations of optical resonances \cite{wille2000physics}. A possible working point (red) is located away from lines of optical resonance.}
+\caption{Tune diagram up to 3rd order showing possible locations of optical resonances \cite{wille2000physics} (black). A possible working point (red) is located away from lines of optical resonance.}
 \label{fig:tune_diagram}
 \end{figure}
+
+\subsection{Chromaticity}
 
 Chromaticity is defined as the variation in tune due to the variation in momentum within an accelerator as given by
 \begin{equation}
@@ -703,7 +706,7 @@ where the variation in tune is driven by the chromatic aberration focusing error
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/Chromatic_Aberration_fixed.pdf}
-\caption{particle trajectories of a reference particle (black), a particle with higher energy ($\Delta p/p_{0}>0$) (green, dashed) and a particle with lower energy ($\Delta P/P_{0}<0$) through a focusing quadrupole (red). Focal lengths are increased for particles with higher energy and decreased for lower energy particles, hence a chromatic aberration occurs. }
+\caption{Particle trajectories of a reference particle (black), a particle with higher energy ($\Delta p/p_{0}>0$) (green, dashed) and a particle with lower energy ($\Delta p/p_{0}<0$) through a focusing quadrupole (red). Focal lengths are increased for particles with higher energy and decreased for lower energy particles, hence a chromatic aberration occurs. }
 \label{fig:chromatic_aberration}
 \end{figure}
 
@@ -715,11 +718,11 @@ The chromatic effect of a quadrupole magnet can there for be considered as
 \end{align}
 where it is noted that for periodic focusing the $\beta_{x}$-function is typically larger upon entrance to the focusing quadrupole and the $\beta_{y}$ function is larger in the defocusing quadrupole, therefore the natural chromaticity throughout a periodic focusing accelerator is negative. 
 
-Correction of chromaticity is typically conducted by sextupole ($n=3$) magnets with fields as described by (Eq.~\ref{eq:sextupole_magnetic_field}, that consequently have focusing dependent on transverse beam position. Sextupoles are placed in dispersive sections of the accelerator where the transverse position of the particles is dependent upon the momentum of the particle so the transverse field dependence can be used to correct the aberrations. 
+Correction of chromaticity is typically conducted by sextupole ($n=3$) magnets with fields described by (Eq.~\ref{eq:sextupole_magnetic_field}),with focusing dependent on transverse beam position. Sextupoles are placed in dispersive sections of the accelerator where the transverse position of the particles is dependent upon the momentum of the particle so the transverse field dependence can be used to correct the aberrations. 
 
 \section{Longitudinal Dynamics and RF Acceleration}
 
-Previous discussions within this section have currently been focused on the transverse motion of particles throughout the accelerator beamline. However a similar analysis can also be applied to the longitudinal dimension where instead of magnetic bending and focusing fields, electric fields used in the acceleration of particles dominate the dynamics. Analysis of longitudinal dynamics focuses on the energy of the particles, their longitudinal position relative to the centroid of the ensemble as well as the stability and phase of the longitudinal motion. This section focuses on the effect of bending and dispersive motion upon the longitudinal dynamics, then upon investigation of the longitudinal equations of motion and phase space and finally the effect of magnetic elements upon the longitudinal dimensions of the beam is explored.
+Previous discussions within this section have been focused on the transverse motion of particles throughout the accelerator beamline. However a similar analysis can also be applied to the longitudinal dimension where, instead of magnetic bending and focusing fields, electric fields used in the acceleration of particles dominate the dynamics. Analysis of longitudinal dynamics focuses on the energy of the particles, their longitudinal position relative to the centroid of the ensemble as well as the stability and phase of the longitudinal motion. This section focuses on the effect of bending and dispersive motion upon the longitudinal dynamics, then upon investigation of the longitudinal equations of motion and phase space and finally the effect of magnetic elements upon the longitudinal dimensions of the beam is explored.
 
 \subsection{Momentum Compaction}
 \label{sec:momentum_compaction}
@@ -744,14 +747,14 @@ The total path length of the displaced trajectory through the bending field is g
 L = \int_{0}^{L_{0}} 1+\frac{x}{\rho} ds = L_{0} + \int_{0}^{L_{0}}\frac{x}{\rho}ds, 
 \label{eq:displaced_bend_path_length}    
 \end{equation}
-If we consider the displacement of $x$ to arise purely because of dispersive motion, then $x$ becomes
+If we consider the displacement in $x$ to arise purely because of dispersive motion, then $x$ becomes
 \begin{equation}
 x = \eta_{x}\frac{\Delta p}{p} + \frac{1}{2}\eta_{x}^{\left(2\right)}\left(\frac{\Delta p}{p}\right)^{2},
 \label{eq:dispersive_displacement}    
 \end{equation}
 where the higher order dispersion terms $\eta_{x}^{\left(2\right)}$ are neglected. The displacement due to dispersive motion (Eq.~\ref{eq:dispersive_displacement}) is substituted into the path length of the curved trajectory (Eq.~\ref{eq:displaced_bend_path_length}) yielding
 \begin{align}
-L &= L_{0} + \frac{\Delta p}{p_{0}}\int_{0}^{L_{0}}\frac{\eta_{x}}{\rho}ds,
+L &= L_{0} + \frac{\Delta p}{p_{0}}\int_{0}^{L_{0}}\frac{\eta_{x}}{\rho}ds, &
 \Delta L &= \frac{\Delta p}{p_{0}}\int_{0}^{L_{0}}\frac{\eta_{s}}{\rho}ds,
 \label{eq:dispersive_path_length_variation}
 \end{align}
@@ -766,29 +769,29 @@ Inspection of (Eq.~\ref{eq:momentum_compaction_dispersion}), demonstrates that m
 \subsection{RF Acceleration}
 \label{sec:RF_acceleration}
 
-A particle, or collection of particles, can be accelerated by an electric field $\boldsymbol{E}$ satisfying the wave equation, displayed here in vacuum
+A particle, or collection of particles, can be accelerated by an electric field $\overrightarrow{E}$ satisfying the wave equation, displayed here in vacuum
 \begin{equation}
-\nabla^{2}\boldsymbol{E}-\frac{1}{c^{2}}\frac{\partial^{2}\boldsymbol{E}}{\partial t^{2}},
+\nabla^{2}\overrightarrow{E}-\frac{1}{c^{2}}\frac{\partial^{2}\overrightarrow{E}}{\partial t^{2}},
 \label{eq:electromagnetic_wave_equation}    
 \end{equation}
-which (in our local co-ordinate system) is applied in the longitudinal direction. Most modern accelerators use powerful radio-frequency systems, or RF cavities, to produce the requisite strong electric fields, with frequencies from \si{\kilo\hertz} to \si{\giga\hertz} \cite{wille2000physics}, required to accelerate the particles to energies on the \si{\mega\electronvolt} to \si{\tera\electronvolt} scale. Whilst other acceleration methods exist such as electrostatic acceleration \cite{}, dielectric wakefield acceleration \cite{} and laser plasma wakefield acceleration, we limit our discussion to RF acceleration.
+which (in our local co-ordinate system) is applied in the longitudinal direction. Most modern accelerators use powerful radio-frequency systems, or RF cavities, to produce the requisite strong electric fields, with frequencies from \si{\kilo\hertz} to \si{\giga\hertz} \cite{wille2000physics}, required to accelerate the particles to energies on the \si{\mega\electronvolt} to \si{\tera\electronvolt} scale. Whilst other acceleration methods exist such as electrostatic acceleration \cite{bromley1974development}, dielectric wakefield acceleration \cite{mtingwa1990theory} and laser plasma wakefield acceleration \cite{sprangle1988laser}, we limit our discussion to RF acceleration.
 
 The solution to (Eq.~\ref{eq:electromagnetic_wave_equation}) for an RF cavity, where the local ($x$, $y$, $z$) co-ordinate system is used, is of the form
 \begin{equation}
-\boldsymbol{E}\left(z,t\right) = E_{0}\exp\left[i\left(kz-\omega t\right)\right],
+\overrightarrow{E}\left(z,t\right) = E_{0}\exp\left[i\left(kz-\omega t\right)\right],
 \label{eq:RF_cavity_electric_field}    
 \end{equation}
-where the phase of the electric field is encapsulated by the synchronous phase $\psi = kz-\omega t$. The energy gain of a particle in an electric field, re-cast in terms of the phase, is subsequently given by 
+where the phase of the electric field is encapsulated by the synchronous phase $\psi = kz-\omega t$. The energy gain of a particle in an electric field, re-cast in terms of the phase, is given by 
 \begin{equation}
 \Delta E = e \int E_{0}\exp\left(i\psi\right)dz = eV\left(\psi\right),
 \label{eq:particle_energy_gain_RF}    
 \end{equation}
-where $V\left(\psi\right)$ is the RF voltage as a function of phase. Therefore, to maintain a constant energy gain within all subsequent RF cavities, the phase must remain constant at the RF cavity i.e
+where $V\left(\psi\right)$ is the RF voltage as a function of phase. Therefore, to maintain a constant energy gain within all subsequent RF cavities, the phase must remain constant at the RF cavity
 \begin{equation}
 \frac{d\psi}{dt} = k\beta c-\omega = 0. 
 \label{eq:synchronicity_condition}   
 \end{equation}
-The transit time between RF cavities and revolution frequency of the particle must therefore remain constant for subsequent acceleration at identical phase. For an accelerator of path length $L$, the solution is of the form $k=2\pi/L$ where $\omega=\omega_{\mathrm{rev}}$ is the revolution frequency. The RF frequency can operate at any integer value of this revolution frequency, named the harmonic number $h$, and still satisfy the synchronicity condition (Eq.~\ref{eq:synchronicity_condition}), therefore the wavenumber and frequency of the accelerating RF waveform have the form
+Consequently, the transit time between RF cavities and revolution frequency of the particle must remain constant for subsequent acceleration at identical phase. For an accelerator of path length $L$, the solution is of the form $k=2\pi/L$ where $\omega=\omega_{\mathrm{rev}}$ is the revolution frequency. The RF frequency can operate at any integer value of this revolution frequency, named the harmonic number $h$, and still satisfy the synchronicity condition (Eq.~\ref{eq:synchronicity_condition}), therefore the wavenumber and frequency of the accelerating RF waveform have the form
 \begin{align}
 k_{h} = \frac{2\pi h}{L_{0}},
 \label{eq:RF_wavenumber} \\
@@ -796,7 +799,7 @@ f_{RF} = \frac{h\omega_{\mathrm{rev}}}{2\pi}.
 \label{eq:RF_frequency}
 \end{align}
 
-The transit time $T$ between RF cavities is affected by off-momenta particles, as in the case of the path length in momnetum compaction studies (see Section~\ref{sec:momentum_compaction}), similarly the transit time with respect to the reference particle ($\Delta p/p_{0}$=0) can be expanded via a Maclaurin series to account for the momentum variation
+The transit time $T$ between RF cavities is affected by off-momenta particles, similarly to the path length in momentum compaction studies (see Section~\ref{sec:momentum_compaction}), therefore the transit time with respect to the reference particle ($\Delta p/p_{0}$=0) can be expanded via a Maclaurin series to account for the momentum variation
 \begin{equation}
 T = T_{0}\left[1+\eta_{p}\frac{\Delta p}{p_{0}}+\frac{1}{2}\eta_{p}^{\left(2\right)}\left(\frac{\Delta p}{p_{0}}\right)^{2}\right],
 \label{eq:transit_time_expansion}    
@@ -813,7 +816,7 @@ where the transit time is a function of path length $L$, $T = L/\beta c$, which 
 \end{equation}
 The Lorentz speed factor term in (Eq.~\ref{eq:phase_slip_factor_expansion}) can be related to the Lorentz factor \cite{wolski2012longitudinal} by 
 \begin{equation}
-\frac{\Delta \beta}{\Delta p/p_{0}} = \frac{1}{\gamma^{2}},
+\frac{\Delta\beta/\beta}{\Delta p/p_{0}} = \frac{1}{\gamma^{2}},
 \label{eq:phase_slip_Lorentz_relation}    
 \end{equation}
 therefore using the definition of the momentum compaction factor (Eq.~\ref{eq:momentum_compaction_first_order}) and the relationship for the Lorentz speed factor term (Eq.~\ref{eq:phase_slip_factor_expansion}), the phase slip factor becomes
@@ -833,13 +836,13 @@ Three distinct regimes exist within the longitudinal dynamics relating to the ph
     \begin{itemize}
         \item{The revolution frequency is independent of energy.} 
     \end{itemize}}
-    \item{Above transition ($\eta_{p}$, where $\alpha_{p}>1/\gamma^{2}$) and the synchronous phase is $\pi/2<\psi<\pi$.
+    \item{Above transition ($\eta_{p}>0$), where $\alpha_{p}>1/\gamma^{2}$ and the synchronous phase is $\pi/2<\psi<\pi$.
     \begin{itemize}
         \item{The revolution frequency decreases with increasing energy.}
         \item{Higher energy particles arrive at the the RF cavity last because they traverse a longer path and their higher velocity is of no advantage since $\beta\approx1$.}
     \end{itemize}}
 \end{itemize}
-The longitudinal dynamics above transition are shown diagrammatically in Fig.~\ref{fig:phase_focusing_above_transition}. At first glance, the reason for the mandated synchronous phases above and below transition is unclear however, this is to take advantage of longitudinal phase focusing. 
+The longitudinal dynamics above transition are shown in Fig.~\ref{fig:phase_focusing_above_transition}. At first glance, the reason for the mandated synchronous phases above and below transition is unclear however, this is to take advantage of longitudinal phase focusing. 
 
 \begin{figure}[!h]
 \centering
@@ -873,16 +876,16 @@ and assuming the RF frequency is a harmonic of the revolution frequency $\omega_
 \Omega^{2} = \frac{\omega_{\mathrm{rev}}^{2}h\eta_{p}eV_{0}\cos\psi}{2\pi\beta cp_{0}}.
 \label{eq:synchrotron_oscillation_frequency}    
 \end{equation}
-Synchrotron oscillations in the longitudinal plane typically have a lower frequency than the aforementioned betatron oscillations in the transverse planes. The equation of motion in the longitudinal plane (Eq.~\ref{eq:longitudinal_equation_of_motion_phase}) consequently produces a stable $\psi$--$\Delta p/p$ phase space ellipse when motion is damped ($\Omega^{2}>0$) and is described by a hyperbola in phase pace when motion is unstable and anti-damped ($\Omega^{2}<0$). The equation of motion therefore generates a series of ellipses separated by regions of unstable hyperbolic regions which form separatrixes in phase space, as displayed in Fig.~\ref{fig:longitudinal_dynamics}.
+Synchrotron oscillations in the longitudinal plane typically have a lower frequency than the aforementioned betatron oscillations in the transverse planes. The equation of motion in the longitudinal plane (Eq.~\ref{eq:longitudinal_equation_of_motion_phase}) produces a stable $\psi$--$\Delta p/p$ phase space ellipse when motion is damped ($\Omega^{2}>0$) and is described by a hyperbola in phase space when motion is unstable and anti-damped ($\Omega^{2}<0$). The equation of motion therefore generates a series of ellipses separated by regions of unstable hyperbolic regions which form separatrixes in phase space, as displayed in Fig.~\ref{fig:longitudinal_dynamics}.
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\textwidth]{Figures/Energy_Recovery_Linac_Design/Longitudinal_Dynamics_fixed.pdf}
 \caption{Longitudinal phase space diagram, with the fractional variation in momentum as a function of longitudinal displacement. Closed ellipses represent stable regions ($\Omega^{2}>0$) of longitudinal phase space whereas hyperbolic regions represent unstable ($\Omega^{2}<0$) particle trajectories. Separatrixes show the limits of an RF bucket. Reproduction of longitudinal phase space diagram by A. Wolski \cite{wolski2012longitudinal}.}
-\label{fig:loingitudinal_dynamics}
+\label{fig:longitudinal_dynamics}
 \end{figure}
 
-The region of stable motion within the separatrix is named the RF bucket, and particles within an RF bucket form a bunch with bunch length proportional to the size of the RF bucket transformed to the longitudinal position. The maximum momentum deviation of an RF bucket is given by \cite{wolski2012longitudinal}
+The region of stable motion within the separatrix is named the RF bucket, and particles within an RF bucket form a bunch with bunch length proportional to the size of the RF bucket transformed to the longitudinal position. Bunches are sub-divisions of accelerator beams. The maximum momentum deviation of an RF bucket is given by \cite{wolski2012longitudinal}
 \begin{equation}
 \left(\frac{\Delta p}{p_{0}}\right)_{\mathrm{max}} = \frac{2\Omega}{\omega_{\mathrm{rev}}\beta h\eta_{p}}\sqrt{1+\left(\psi+\frac{\pi}{2}\right)\tan\psi},
 \label{eq:RF_bucket_momentum_deviation}    
@@ -890,7 +893,7 @@ The region of stable motion within the separatrix is named the RF bucket, and pa
 
 \subsection{Magnetic Bunch Compression and $\boldsymbol{R}_{56}$}
 
-The longitudinal dimensions of a particle bunch can be adjusted via combinations of magnetic focusing elements, which can be useful in generating radiation from accelerators such as 3rd generation synchrotron sources and free electron lasers to achieve properties such as short duration and high brilliance. Here two methods of varying the longitudinal dynamics, specifically the bunch length, are investigated in detail: the simple chicane and the dog leg lattices.
+The longitudinal dimensions of a particle bunch can be adjusted via combinations of magnetic focusing elements, which can be useful in generating short duration, high peak brilliance radiation from accelerators such as 3rd generation synchrotron sources and free electron lasers. Two methods of varying the longitudinal dynamics, specifically the bunch length, are investigated in detail: the simple chicane and the dogleg lattices.
 
 A simple dogleg lattice can consist of a pair of dipoles with bending angle $\alpha_{1}$ and $-\alpha_{1}$ respectively, separated by a drift of length $L_{\mathrm{drift}}$, as shown in Fig.~\ref{fig:chicane_dogleg_schematic}.
 
@@ -912,7 +915,7 @@ which yields
 \boldsymbol{R}_{\mathrm{dogleg}} = 
 \begin{pmatrix}
 1+\frac{L}{\rho}\cos\alpha_{1}\sin\alpha_{1} & L_{\mathrm{drift}}\cos^{2}\alpha_{1} & 0 & 0 & 0 & -L_{\mathrm{drift}}\cos\alpha_{1}\sin\alpha_{1} \\
--\frac{L_{drift}}{\rho^{2}}\sin^{2}\alpha_{1} & 1-\frac{L_{\mathrm{drift}}}{\rho}\cos\alpha_{1}\sin\alpha_{1} & 0 & 0 & 0 \frac{L_{\mathrm{drift}}}{\rho}\sin^{2}\alpha_{1} \\
+-\frac{L_{\mathrm{drift}}}{\rho^{2}}\sin^{2}\alpha_{1} & 1-\frac{L_{\mathrm{drift}}}{\rho}\cos\alpha_{1}\sin\alpha_{1} & 0 & 0 & 0 \frac{L_{\mathrm{drift}}}{\rho}\sin^{2}\alpha_{1} \\
 0 & 0 & 1 & L_{\mathrm{drift}}+2\rho\alpha_{1} & 0 & 0 \\
 -\frac{L}{\rho}\sin^{2}\alpha_{1} & -L_{\mathrm{drift}}\sin\alpha_{1}\cos\alpha_{1} & 0 & 0 & 1 & L_{\mathrm{drift}}\left(1+\sin^{2}\alpha_{1}\right) \\
 0 & 0 & 0 & 0 & 0 & 1
@@ -924,7 +927,7 @@ where the path length of the dogleg is $L=L_{\mathrm{drift}}+2L_{\mathrm{dip}}$ 
 \boldsymbol{R}_{56} = L_{\mathrm{drift}}\left(1+\sin^{2}\alpha_{1}\right),
 \label{eq:dogleg_R56}    
 \end{equation}
-therefore $\boldsymbol{R}_{56}>0$ for a dogleg lattice. In the longitudinal co-ordinates ($z$,$\Deltap/p_{0}$), the transformation from the particles entrance to the dogleg ($z_{0}$, $\left(\Delta p/p_{0}\right)_{0}$) to its exit ($z_{1}$, $\left(\Delta p/p_{0}\right)$) yields the relations
+therefore $\boldsymbol{R}_{56}>0$ for a dogleg lattice. In the longitudinal co-ordinates ($z$,$\Deltap/p_{0}$), the transformation from the particles entrance to the dogleg ($z_{0}$, $\left(\Delta p/p_{0}\right)_{0}$) to its exit ($z_{1}$, $\left(\Delta p/p_{0}\right)_{1}$) yields the relations
 \begin{align}
 z_{1} &= z_{0}+\boldsymbol{R}_{56}\left(\frac{\Delta p}{p_{0}}\right)_{0} = z_{0} + L_{\mathrm{drift}}\left(1+\sin^{2}\alpha_{1}\right)\left(\frac{\Delta p}{p_{0}}\right)_{0}, \\
 \left(\frac{\Delta p}{p_{0}}\right)_{1} &= \left(\frac{\Delta p}{p_{0}}\right)_{0} = \frac{\Delta p}{p_{0}},
@@ -1043,7 +1046,7 @@ An achromat lattice has cells in which the dispersion of the particle beam is ze
 \end{figure}
 
 The requirement of zero dispersion as the entrance and exit of the double bend achromat cell means that the required magnet strengths can be derived from (Eq.~\ref{eq:periodic_dispersion}), with $\eta_{x,0}=0$.
-The full derivation is beyond the scope of this thesis but is shown by Steffen \cite{steffen1983periodic} and Fakhiri et al \cite{fakhri2015analytical} to be
+A full derivation is beyond the scope of this thesis, but is shown by Steffen \cite{steffen1983periodic} and Fakhiri et al \cite{fakhri2015analytical} to be
 \begin{equation}
 \frac{1}{\sqrt{k_{1}}}\cot\left(\frac{\sqrt{k_{1}}L_{\mathrm{quad}}}{2}\right) = L_{\mathrm{drift}} + \rho\tan\left(\alpha_{1}/2\right),
 \label{eq:DBA_magnets}
@@ -1055,16 +1058,14 @@ The order $n$ of the achromat can be extended by replacing the central achromat 
 \subsection{Fixed Field Alternating Gradient}
 \label{sec:FFA}
 
-Fixed field alternating gradient transport is designed using constant field magnets. like cylotrons, with alternating gradient focusing, like synchrotrons \cite{machida2013fixed}. The magnet fields are not varied in order to account for higher energies, instead the lattice is designed such that varying momentum particles are contained within tolerable displacements from the reference orbit. 
-
-FFA transport is particularly advantageous due to the high momentum variation, or acceptance, that the lattice can tolerate, as in an FFA an orbit can be defined at any particle momentum \cite{barlow2010emma}. There are two forms of FFA transport: scaling and non-scaling, which relate to the relationship between the magnetic field gradient of the magnets and the radial position of a magnet.
+Fixed field alternating gradient transport is designed using constant field magnets, like cylotrons, with alternating gradient focusing, like synchrotrons \cite{machida2013fixed}. The magnet fields are not varied in order to account for higher energies, instead the lattice is designed such that varying momentum particles are contained within tolerable displacements from the reference orbit. FFA transport is particularly advantageous due to the high momentum variation, or acceptance, that the lattice can tolerate, as in an FFA an orbit can be defined at any particle momentum \cite{barlow2010emma}. There are two forms of FFA transport: scaling and non-scaling, which relate to the relationship between the magnetic field gradient of the magnets and the radial position of a magnet.
 
 In a scaling FFA the main design consideration is to keep the tune of the orbit constant with respect to energy to avoid optical resonances via crossing integer tunes \cite{symon1956fixed}. Constant tune is satisfied by having geometrically similar magnetic fields for different energies $E$ and orbital radii $R$ ($E\propto R$), which can be expressed by
 \begin{equation}
 \left.\frac{\partial}{\partial p} \left(\frac{\rho}{\rho_{0}}\right)\right|_{\alpha_{1}=\mathrm{const}}=0,
 \label{eq:scaling_condition}    
 \end{equation}
-where $\rho$ is the local radius of curvature and $\rho_{0}$ is the average radius of curvature. The scaling condition (Eq.~\ref{eq:scaling_condition}) is satisfied by magnetic field profiles of the form \cite{symon1956fixed}, which are for two varying designs: a radial sector FFA (Eq.~\ref{eq:radial_FFA_field}) and a spiral sector FFA (Eq.~\ref{eq:spiral_FFA_field})
+where $\rho$ is the local radius of curvature and $\rho_{0}$ is the average radius of curvature. The scaling condition (Eq.~\ref{eq:scaling_condition}) is satisfied by magnetic field profiles for two varying designs: a radial sector FFA (Eq.~\ref{eq:radial_FFA_field}) and a spiral sector FFA (Eq.~\ref{eq:spiral_FFA_field}) of the form \cite{symon1956fixed}
 \begin{align}
 B &= B_{0}\left(\frac{r}{r_{0}}\right)^{k}, 
 \label{eq:radial_FFA_field} \\
@@ -1076,11 +1077,11 @@ where generally, $r$ is the radial distance from the centre of the accelerator a
 k=-\frac{r_{0}}{B_{z}\left(r_{0}\right)}\left(\frac{\partial B_{z}}{\partial r}\right)_{r=r_{0}},
 \label{eq:FFAG_field_index}
 \end{equation}
-and, applying to spiral sector FFA, $f$ is the flutter factor, $N$ the number of sectors and $\zeta$ the spiral angle between the locus of the maximum field and the radius. Variation between the scaling FFA designs is not investigated here as the focus is on non-scaling FFA, a further discussion of scaling FFA is presented by Symon et al \cite{symon1956fixed}. However, we note that the scaling FFA design is limited as it is constrained by constant tune to obey the scaling condition (Eq.~\ref{eq:scaling_condition}), which limits the flexibility of the optics, can only be satisfied by complicated magnets with specific field profiles (Eqs.~\ref{eq:radial_FFA_field}, \ref{eq:spiral_FFA_field}) and requires a large radius accelerator for high energy electrons. The alternative is non-scaling FFA lattices, in which the scaling condition (Eq.~\ref{eq:scaling_condition}) is disobeyed.
+and, applying to spiral sector FFA, $f$ is the flutter factor, $N$ the number of sectors and $\zeta$ the spiral angle between the locus of the maximum field and the radius. Variation between the scaling FFA designs is not investigated here as the focus is on non-scaling FFA; a further discussion of scaling FFA is presented by Symon et al \cite{symon1956fixed}. However, we note that the scaling FFA design is limited as it is constrained by constant tune to obey the scaling condition (Eq.~\ref{eq:scaling_condition}), which limits the flexibility of the optics, can only be satisfied by complicated magnets with specific field profiles (Eqs.~\ref{eq:radial_FFA_field}, \ref{eq:spiral_FFA_field}) and requires a large radius accelerator for high energy electrons. The alternative is non-scaling FFA lattices, in which the scaling condition (Eq.~\ref{eq:scaling_condition}) is disobeyed.
 
-Once the scaling condition is not met, phase advance varies with momentum and the tune of the accelerator can cross an optical resonance, however resonance crossing may be tolerable if this crossing occurs rapidly as the blow-up of the beam size may be limited \cite{mills1997nsffa,johnstone1997nsffa}. Therefore, the scaling FFA condition may be abandoned with rapid crossing of the optical resonances, and the working point of the transport optics can be allowed to vary. This has been demonstrated in simulation, where it was found that random dipole and quadrupole kicks were responsible to a greater extent for orbit distortion than optical resonance crossing \cite{machida2007orbit}. Removal of the scaling condition allows the radial variation of the magnetic field to be simplified to a linear relationship \cite{johnstone1999fixed}, hence complicated magnet design is no longer required and linear magnets are sufficient for non-scaling FFA transport.
+Once the scaling condition is not met, phase advance varies with momentum and the tune of the accelerator can cross an optical resonance, however resonance crossing may be tolerable for rapid crossings as the blow-up of the beam size may be limited \cite{mills1997nsffa,johnstone1997nsffa}. Therefore, the scaling FFA condition may be abandoned with rapid crossing of the optical resonances, and the working point of the transport optics can be allowed to vary. This has been demonstrated in simulation, where it was found that random dipole and quadrupole kicks were responsible to a greater extent for orbit distortion than optical resonance crossing \cite{machida2007orbit}. Removal of the scaling condition allows the radial variation of the magnetic field to be simplified to a linear relationship \cite{johnstone1999fixed}, hence complicated magnet design is no longer required and linear magnets are sufficient for non-scaling FFA transport.
 
-A proof-of-principle demonstration of ns-FFA was performed with the EMMA accelerator \cite{barlow2010emma,machida2012acceleration}, and transport involving ns-FFA has been demonstrated at the CBETA ERL \cite{hoffstaetter2017cbeta,bartnik2020cbeta} with subsequent designs for accelerator driven sub-critical reactors \cite{tygier2011high} and radiotherapy gantries \cite{trbojevic2009ffags,} based on such an approach. Linear non-scaling FFAG transport typically consists of a lattice made of many cells in which two focusing magnets, are separated by drifts. Typically linear non-scaling FFA can be accomplished using at least one combined function magnet (bending and focusing) with a quadrupole or combined function magnet, where quadrupoles with transversely shifted pole centres are often utilised. An example non-scaling FFA cell is shown in Fig.~\ref{fig:FFA_cell}.
+A proof-of-principle demonstration of non-scaling FFA was performed with the EMMA accelerator \cite{barlow2010emma,machida2012acceleration}, and transport involving non-scaling FFA has been demonstrated at the CBETA ERL \cite{hoffstaetter2017cbeta,bartnik2020cbeta} with subsequent designs for accelerator driven sub-critical reactors \cite{tygier2011high} and radiotherapy gantries \cite{trbojevic2009ffags,} based on such an approach. Linear non-scaling FFAG transport typically consists of a lattice made of many cells in which two focusing magnets, are separated by drifts. Typically linear non-scaling FFA can be accomplished using at least one combined function magnet (bending and focusing) with a quadrupole or combined function magnet, where quadrupoles with transversely shifted pole centres are often utilised. An example non-scaling FFA cell is shown in Fig.~\ref{fig:FFA_cell}.
 
 \begin{figure}[!h]
 \centering
@@ -1091,7 +1092,7 @@ A proof-of-principle demonstration of ns-FFA was performed with the EMMA acceler
 
 \section{Energy Recovery Linacs}
 
-An energy recovery linac is a form of re-circulated accelerator, invented by Tigner \cite{tigner1965possible} and first demonstrated at Stanford \cite{smith1987development}, which is capable of providing the high-quality particle bunch properties of a linac with the high duty factor (bunch repetition rate) of a storage ring. Characteristically, in an ERL the energy used to accelerate a particle bunch is recovered by the accelerating structure upon deceleration of the bunch when it is re-circulated and returned to the accelerating structure. The energy recovery linac scheme has numerous advantages which will be presented in this section whilst possible designs and considerations of ERLs are explained with a focus on electron machines. A full review of current and past ERL projects is not shown here and is instead used to contextualise the CBETA ERL -- a unique, world leading ERL project -- in Chapter~\ref{CBETA_Multi-Pass_Commissioning}. 
+An energy recovery linac is a form of re-circulated accelerator, invented by Tigner \cite{tigner1965possible} and first demonstrated at Stanford \cite{smith1987development}, which is capable of providing the high-quality particle bunch properties of a linac with the high duty factor (bunch repetition rate) of a storage ring. Characteristically, in an ERL the energy used to accelerate a particle bunch is recovered by the accelerating structure upon deceleration of the bunch when it is re-circulated and returned to the accelerating structure. The energy recovery linac scheme has numerous advantages which will be presented in this section whilst possible designs and considerations of ERLs are explained with a focus on electron machines. A full review of current and past ERL projects is not shown here and is instead used to contextualise the CBETA ERL in Chapter~\ref{CBETA_Multi-Pass_Commissioning}. 
 
 
 \subsection{Single Turn ERL}
@@ -1104,7 +1105,7 @@ An energy recovery linac is a form of re-circulated accelerator, invented by Tig
 % Same cell energy recovery 
 % DIAGRAM
 
-Firstly, for simplicity, we consider a single turn energy recovery linac with a single electron bunch, which consists of a high repetition rate, high-brightness (low emittance, high bunch charge) photo-injector \cite{ben2016superconducting} and injection beamline, a linac section containing several RF cavities, a re-circulating transport beamline from the exit of the linac to its entrance and a beam dump. A schematic off the simplest form of single turn ERL is shown in Fig~\ref{fig:ERL_schematics}. 
+Firstly, we consider a single turn energy recovery linac with a single electron bunch, which consists of a high repetition rate, high-brightness (low emittance, high bunch charge) photo-injector \cite{ben2016superconducting} and injection beamline, a linac section containing several RF cavities, a re-circulating transport beamline from the exit of the linac to its entrance and a beam dump. A schematic off the simplest form of single turn ERL is shown in Fig~\ref{fig:ERL_schematics}. 
 
 \begin{figure}[!h]
 \centering
@@ -1122,9 +1123,9 @@ Within the single turn ERL, the electron bunch is generated via the photo-inject
 \label{eq:ERL_RF_acceleration_phase}
 \end{figure}
 
-For a decelerating phase at the linac re-entrance the phase must be altered by 180\si{degrees}, which is achieved by configuring the path length of the re-circulating transport line to be $L= \lambda_{\mathrm{RF}}\left(n+\frac{1}{2}\right)$ i.e some integer $n$ RF wavelengths plus half an RF wavelength (for the 180\si{\degree} phase change), as shown in Fig.~\ref{eq:ERL_RF_acceleration_phase}. The electron bunch is therefore decelerated to a kinetic energy $E_{\mathrm{inj}}$ and the energy from the decelerated bunch is transferred to the RF cavity for acceleration of the next particle to traverse the accelerating structure. When the energy of the electron bunch is transferred, via deceleration, to the same RF cavity that accelerated the bunch this is termed same cell energy recovery, however more elaborate systems are possible. The electron bunch is then transported to the beam dump. In our convention, the electron bunch has undergone a single turn but passes the linac twice.
+For a decelerating phase at the linac re-entrance the phase must be altered by 180\si{\degree} by configuring the path length of the re-circulating transport line to have a path length of $L= \lambda_{\mathrm{RF}}\left(n+\frac{1}{2}\right)$ i.e some integer $n$ RF wavelengths plus half an RF wavelength (for the 180\si{\degree} phase change), as shown in Fig.~\ref{eq:ERL_RF_acceleration_phase}. The electron bunch is then decelerated to a kinetic energy $E_{\mathrm{inj}}$ and the energy from the decelerated bunch is transferred to the RF cavity for acceleration of the next particle to traverse the accelerating structure. When the energy of the electron bunch is transferred, via deceleration, to the same RF cavity that accelerated the bunch this is termed same cell energy recovery, however more elaborate systems are possible. The electron bunch is then transported to the beam dump. In our convention, the electron bunch has undergone a single turn but passes the linac twice.
 
-Through the simplistic description of a single turn ERL it is clear that there are numerous advantageous features. Firstly, the electron bunch in the dump has been decelerated to $E_{\mathrm{inj}}$, avoiding the necessity of a high-energy beam dump and, if this is below $\sim10$~\si{\mega\electronvolt}, neutron activation of the dump may be avoided. The energy required to accelerate the electron bunch is returned to the RF cavities for acceleration of a future bunch meaning that the beam power of the electron bunch is not lost and the RF system efficiently accelerates electron bunches. Also, as the bunch is dumped after a single turn, the electron bunch emittance is high quality and has not equilibriated -- as in a storage ring \cite{} -- and is replaced, at a high repetition rate, by another electron bunch. Therefore, from an ERL, small emittances are achievable at high repetition rate -- the advantageous facets of both a linac and storage ring -- with the additional bonus of an efficient RF system, without the necessity of a high energy beam dump. 
+Through the simplistic description of a single turn ERL it is clear that there are numerous advantageous features. Firstly, the electron bunch in the dump has been decelerated to $E_{\mathrm{inj}}$, avoiding the necessity of a high-energy beam dump and, if this is below $\sim10$~\si{\mega\electronvolt}, neutron activation of the dump may be avoided. The energy required to accelerate the electron bunch is returned to the RF cavities for acceleration of a future bunch meaning that the beam power of the electron bunch is not lost and the RF system efficiently accelerates electron bunches. Also, as the bunch is dumped after a single turn, the electron bunch emittance  has not equilibriated -- as in a storage ring \cite{owen2013nonequilibrium} -- and is replaced, at a high repetition rate, by another electron bunch. Therefore, from an ERL, small emittances are achievable at high repetition rate -- the advantageous facets of both a linac and storage ring -- with the additional bonus of an efficient RF system, without the necessity of a high energy beam dump. 
 
 \subsection{Multi-Turn ERL}
 \label{sec:multi_turn_ERL}
@@ -1135,9 +1136,9 @@ Through the simplistic description of a single turn ERL it is clear that there a
 % complexity introduced due to many varying energy beams and therefore transport considerations
 % DIAGRAM
 
-A multi-turn ERL operates on a similar principle to the single turn ERL, however a multi-turn ERL takes advantage of multiple accelerations by the RF cavity. As an example, we consider a 2 turn ERL with a single linac accelerating section, a photo-injector and beam dump as well as 2 re-circulating beamlines. A schematic of a simple 2 turn ERL, outlined here, is shown in Fig.~\ref{fig:ERL_schematics}.  
+Multi-turn ERLs are similar to the single turn ERL, however a multi-turn ERL takes advantage of multiple accelerations by the RF cavity. As an example, consider a 2 turn ERL with a single linac accelerating section, a photo-injector and beam dump as well as 2 re-circulating beamlines. A schematic of this simple 2 turn ERL is shown in Fig.~\ref{fig:ERL_schematics}.  
 
-The electron bunch is generated via the photo-injector with energy $E_{\mathrm{inj}}$ and transported to the linac, arriving with accelerating phase, and is accelerated with energy gain $E_{\mathrm{gain}}$ to a kinetic energy $E_{e,1}$, the first turn nominal energy. The electron bunch is then transported to the entrance of the linac, via the first re-circulating beamline, in accelerating phase and is re-accelerated to $E_{e,2}=2E_{\mathrm{gain}+E_{\mathrm{inj}}}$, (see Fig.~\ref{eq:ERL_RF_acceleration_phase}) the larger second turn nominal energy. For acceleration, the first re-circulating beamline must have a path length of $L = n\lambda_{\mathrm{RF}}$ to return to the same phase as the initial acceleration. The scheme thus far is identical to a re-circulating linac machine first demonstrated at MUSL-2 \cite{axel1977status}.
+The electron bunch is generated via the photo-injector with energy $E_{\mathrm{inj}}$ and transported to the linac, arriving with accelerating phase, and is accelerated with energy gain $\DeltaE$ (Eq.~\ref{eq:particle_energy_gain_RF}) to a kinetic energy $E_{e,1}$, the first turn nominal energy. The electron bunch is then transported to the entrance of the linac, via the first re-circulating beamline, in accelerating phase and is re-accelerated to $E_{e,2}=2\Delta E+E_{\mathrm{inj}}$, an increased second turn nominal energy. For acceleration, the first re-circulating beamline must have a path length of $L = n\lambda_{\mathrm{RF}}$ to return to the same phase as the initial acceleration. The scheme thus far is identical to a re-circulating linac machine first demonstrated at MUSL-2 \cite{axel1977status}.
 
 The electron bunch then enters the second re-circulating beamline which re-circulates the electron bunch to the entrance of the linac. The second re-circulating beamline must conduct the 180\si{\degree} phase change and therefore the path length is of the form $L=\lambda_{\mathrm{RF}}\left(n+\frac{1}{2}\right)$. On the third pass of the linac the electron bunch is decelerated to $E_{e,1}$, and is subsequently transported around the first recirculating beamline with path length of the form $L=n\lambda_{\mathrm{RF}}$, which maintains the decelerating phase of the electron bunch upon arrival at the entrance to the linac for the 4th pass. The 4th pass of the linac decelerates the electron bunch from $E_{1}$ to $E_{\mathrm{inj}}$, which is subsequently transported to the beam dump. Therefore, a single linac 2 turn ERL consists of 4 linac passes and 3 traversals of a re-circulating beamline; in general a $n$ turn ERL requires $2n$ linac passes and $2n-1$ traversals of a re-circulating beamline.
 
@@ -1149,44 +1150,43 @@ A multi-turn ERL is advantageous over a single turn ERL as, with a limited accel
 % Common Transport
 % Multi-energy Common Transport
 
-The multi-turn ERL has three main possible forms of transport design: single transport, common transport and multi-energy common transport, which are explained within this section. Transport is ERLs is subject to many constraints such as the path length condition for acceleration, typical transport matching considerations (beam optics matching, momentum acceptance etc.) and, dependent on the experimental requirements of users, any interaction region or insertion device constraints -- like the final focus systems of ICS sources investigated in this thesis. Therefore, the ERL transport options are also evaluated on their applicability in the situation of ERL driven radiation generation (ICS, FEL) as well as their general properties.
+The multi-turn ERL has three main possible forms of transport design: single transport, common transport and multi-energy common transport, which are explained within this section. Transport in ERLs is subject to many constraints such as the path length condition for acceleration, typical transport matching considerations (beam optics matching, momentum acceptance etc.) and, dependent on the experimental requirements of users, any interaction region or insertion device constraints -- like the final focus systems of ICS sources investigated in this thesis. Therefore, the ERL transport options are also evaluated on their applicability in the situation of ERL driven radiation generation (ICS, FEL) as well as their general properties.
 
-The conceptually simplest transport design for the multi-turn ERL is single transport, in which each accelerating and decelerating pass of the linac (at each nominal energy) is transported by a dedicated re-circulating beamline. Within this scheme there is $2n-1$, where $n$ is the no. turns, re-circulating beamlines in the ERL. Single transport therefore benefits from the most flexible optics, as the constraints for the bunch are only satisfied for a single bunch configuration and has a dedicated set of magnets. Flexible optics allow for the introduction of an integrated interaction region for radiation experiments etc. which can be easily imposed in loosely constrained optics. 
+Conceptually, the simplest transport design for the multi-turn ERL is single transport, where each accelerating and decelerating pass of the linac (at each nominal turn energy) is transported by a dedicated re-circulating beamline. There are $2n-1$, where $n$ is the no. turns, re-circulating beamlines in the ERL. As the constraints for the bunch are only satisfied for a single bunch configuration in each beamline single transport benefits from the most flexible optics. Less constrained optics allow for an integrated interaction region for radiation experiments etc. which can be more easily imposed. 
 
-However, with $2n-1$ recirculating beamlines a vast quantity of magnets would be necessary adding additional cost into a design. Since during acceleration and deceleration bunches commonly must traverse the axis of the linac, complex beamline regions -- named spreader/recombiners -- must be designed to accomplish this resulting in spatially complex beamline designs with many nearby magnets. Nearby magnets mean beamlines can be subject to the fields generated in neighbouring beamlines, creating a cross-talk between passes.
+However, with $2n-1$ recirculating beamlines the quantity of magnets required is vast, adding additional cost into a design. During acceleration and deceleration bunches must traverse the axis of the linac, therefore complex beamline regions -- named spreader/recombiners -- are required to make all turns traverse the linac axis. Consequently, spreaders are typically spatially complex beamline designs with many nearby magnets. Nearby magnets mean beamlines can be subject to the fields generated in neighbouring beamlines, creating a cross-talk between passes.
 
-Common transport design, as shown for the 2 turn ERL in Fig~\ref{fig:ERL_schematics}, uses identical beamlines for the accelerating and decelerating passes therefore $n-1$ re-circulating passes are required. In a multi-turn ERL the $n$th pass is traversed a single time by the highest kinetic energy bunch in a decelerating configuration whereas each other re-circulating beamline is traversed twice. Consequently, a dedicated beamline can be constructed for the required 180\si{\degree} phase change from acceleration to deceleration.
+Common transport design, shown for the 2 turn ERL in Fig~\ref{fig:ERL_schematics}, uses identical beamlines for accelerating and decelerating passes therefore $n-1$ re-circulating passes are required. In a multi-turn ERL, the $n$th pass is traversed a single time by the highest kinetic energy bunch in a decelerating configuration whereas each other re-circulating beamline is traversed twice (accelerating and decelerating). Consequently, a dedicated beamline can be constructed for the required 180\si{\degree} phase change from acceleration to deceleration.
 
-The common transport requirement for $n-1$ beamlines in contrast to single transport ($2n-1$ beamlines), reduces the complexity of spreader/recombiner designs and theoretically requires less accelerator magnets. Yet, the individual re-circulating beamlines must satisfy the constraints of two passes and are less flexible. Correction of the optics becomes more difficult as any correction affects both the accelerating and decelerating traversal. Design of interaction regions for radiation generation also becomes more difficult as at the interaction point both acceleration and decelerating bunches must have identical properties as radiation generation is sensitive to the bunch distribution which further constrains the optics.
+The common transport requirement for $n-1$ beamlines (in contrast to single transports $2n-1$ beamlines), reduces the complexity of spreader/recombiner designs and theoretically requires less accelerator magnets. Yet, the individual re-circulating beamlines must satisfy the constraints of two passes and are less adjustable (more constrained). Correction of the transport optics becomes more difficult as any correction affects both the accelerating and decelerating traversal. Design of interaction regions for radiation generation also becomes more difficult as at the interaction point both acceleration and decelerating bunches must have identical properties as radiation generation is sensitive to the bunch distribution, further constraining the optics.
 
-Common transport design can be extended such that a single beamline transports each energy -- termed multi-energy common transport -- where all energies in both accelerating and decelerating configuration are transported by the same re-circulating beamline. Therefore, only a single beamline is required which much be constructed of optics able to transport multiple varying energy beams such as the non-scaling FFA in Section~\ref{sec:FFA}. The single re-circulating beamline is highly constrained and orbits much be designed to accommodate for the path length variation (180\si{\degree} RF phase change) required in the $n$th pass, to satisfy all optical matching conditions and allow for on-axis linac traversal. 
+Common transport design can be extended such that a single beamline transports each energy -- termed multi-energy common transport -- where all nominal beam energies, in both accelerating and decelerating configuration, are transported by the same re-circulating beamline. Only a single beamline is required, constructed of optics able to transport multiple varying energy beams -- such as the non-scaling FFA in Section~\ref{sec:FFA}. The single re-circulating beamline is highly constrained and orbits must be designed to accommodate for the path length variation (180\si{\degree} RF phase change) required in the $n$th pass, to satisfy all optical matching conditions and allow for on-axis linac traversal. 
 
-When all constraints can be satisfied in the single re-circulating beamline, spreader/recombiner systems are not required. However, a fully multi-energy common transport multi-turn ERL scheme has not been demonstrated -- the CBETA ERL \cite{hoffstaetter2017cbeta,bartnik2020cbeta} which uses this transport option uses common-transport spreader designs to provide additional path length correction and linac matching. The number of accelerator magnets required can also be reduced, however optics like non-scaling FFA are magnet dense.
+When all constraints can be satisfied in the single re-circulating beamline, spreader/recombiner systems are not required. However, a fully multi-energy common transport multi-turn ERL scheme has not been demonstrated -- the CBETA ERL \cite{hoffstaetter2017cbeta,bartnik2020cbeta} which uses multi-energy common transport uses common transport spreader designs to provide additional path length correction and linac matching. The number of accelerator magnets required can also be reduced, however optics like non-scaling FFA are magnet dense.
 
-Correction of multi-energy common transport systems is difficult as variation in any magnet affects all $2n-1$ passes of the re-circulating beamline, therefore design specifications must be met to high tolerance. Considering the use of a multi-turn common transport system for radiation production there are several issues; the lattices are magnet dense so incorporating an interaction region is difficult and interaction region design is inflexible with bunches requiring different focusing and off-orbit trajectories for particles in FFA. The constraints on the design of an interaction region in a multi-energy common transport system are increased $2n-1$ fold from the single transport case.   
+Correction of multi-energy common transport systems is difficult as variation in any magnet affects all $2n-1$ passes of the re-circulating beamline. Considering the use of a multi-turn common transport system for radiation production there are several issues; the lattices are magnet dense so incorporating an interaction region is difficult and interaction region design is not easily adjustable, with bunches requiring different focusing and off-orbit trajectories for particles in FFA. The constraints on the design of an interaction region in a multi-energy common transport system are increased $2n-1$ fold from the single transport case.   
 
 \subsection{High Current ERL Operation}
 % Beam current limitations
 % Continuous wave operation vs pulsed
 % normal vs superconducting RF
 
-Operating with high current is advantageous for an ERL as high current will allow for delivery of a large number of particles to users of the accelerator and is beneficial in both colliders and radiation generating light sources -- two touted applications of ERLs. However, as in all accelerators, the current can be limited in numerous ways for example by operating in a pulsed mode with a series of bunch trains or due to collective effects such as beam breakup instability. 
+Operating with high current is advantageous for an ERL as high current will allow for delivery of a large number of particles to users of the accelerator; beneficial in both colliders and radiation generating light sources -- two touted applications of ERLs. However, the current can be limited in numerous ways, for example by operating in a pulsed mode with a series of bunch trains or due to collective effects such as beam breakup instability. 
 
-Within an ERL, the bunch generation can occur in two modes of operation: pulsed beam or continuous wave (CW) operation. In pulsed beam operation a series of bunches are generated and accelerated in a bunch train, with a pause before another bunch is generated. In continuous wave operation bunches are continually generated and accelerated with all RF buckets of the accelerator filled. The duty factor is maximised in the CW case, which means a higher current can be achieved. There are also other benefits as it is much easier to
-create very stable beam energy and very low energy spread
-with cw resonant systems rather than pulsed systems \cite{reece2016continuous}. However, high acceleration gradients are required for high energy ERL operation in order to keep the footprint of the ERL small but have large power consumption during CW operation. Continuous wave acceleration gradients of above 5~\si{\mega\volt}/\si{\meter} are not sustainable with normal conducting accelerating structures \cite{reece2016continuous} as resistive wall losses become challenging thermally, and the
-associated required power becomes infeasible. Therefore, for high energy ERLs with high duty factor, achieved by CW operation, superconducting RF structures are the most viable solution. 
+Within an ERL, the bunch generation can occur in two modes of operation: pulsed beam or continuous wave (CW) operation. In pulsed beam operation a series of bunches are generated and accelerated in a bunch train, with a pause before another bunch is generated. In continuous wave operation bunches are continually generated and accelerated with all RF buckets of the accelerator filled which means a higher current can be achieved. Additionally,
+creation of a very stable beam (in energy) and very low energy spread
+is easier with CW resonant systems rather than pulsed systems \cite{reece2016continuous}. However, high acceleration gradients are required for high energy ERL operation to reduce the footprint of the ERL but have large power consumption during CW operation. Continuous wave acceleration gradients of above 5~\si{\mega\volt}/\si{\meter} are not sustainable with normal conducting accelerating structures \cite{reece2016continuous} as resistive wall losses become challenging thermally, and the associated required power becomes infeasible. Therefore, for high energy ERLs with CW operation superconducting RF (SRF) structures are the most viable solution. 
 
-The average beam current off energy recovery linacs can be seriously limited by the effects of the beam breakup instability (BBU). In the beam breakup instability, the electron bunch interacts with a higher order mode (HOM) of the accelerating structure and is subsequently deflected. Electron bunches with a transverse offset traverse an RF cavity and excite a HOM within the cavity. The electron bunch subsequently receives a transverse kick, thereby generating a further higher order mode due to the transverse offset the kick generates. Beyond some threshold current value $I_{\mathrm{th}}$ this process becomes exponential in nature resulting in beam loss.
+The average beam current off energy recovery linacs can be limited by the effects of the beam breakup instability (BBU). In the beam breakup instability, the electron bunch interacts with a higher order mode (HOM) of the accelerating structure and is deflected. Electron bunches with a transverse offset traverse an RF cavity and excite a HOM within the cavity. The electron bunch subsequently receives a transverse kick, thereby generating a further higher order mode due to the transverse offset the kick generates. Beyond some threshold current value $I_{\mathrm{th}}$ this process becomes exponential in nature resulting in beam loss.
 
-Two forms of beam breakup exist; cumulative BBU in which the instability builds up over a series of RF accelerating structures, for example a long (100's~\si{\meter}) linac, and regenerative BBU where the effect build up via multiple passes of the same RF cavity. The former of these was the observed first, with experimentation at SLAC \cite{panofsky1966electrons,altenmueller1966beam} and LLNL \cite{neil1970coherent} and analytically modelled by Panofsky and Bander et al \cite{panofsky1968asymptotic}. However, for ERLs -- especially multi-turn ERLs -- regenerative beam breakup instability is of greater concern due to the recirculated nature of the accelerator in which a short linac section is typical. Regenerative BBU is particularly present in multi-turn ERLs in comparison to circular machines such as synchrotrons for several reasons for example, the multiple energy bunches in the ERL are deflected differently for the same HOM voltage causing variation in bunch transverse offsets and the change in revolution time for the first decelerating bunch in which the phase is modulated by 180\si{\degree} \cite{setiniyaz2021filling}.
+Two forms of beam breakup exist; cumulative BBU in which the instability builds up over a series of RF accelerating structures, for example a long (100's~\si{\meter}) linac, and regenerative BBU where the effect build up via multiple passes of the same RF cavity. The former of these was the observed first, with experimentation at SLAC \cite{panofsky1966electrons,altenmueller1966beam} and LLNL \cite{neil1970coherent} and analytically modelled by Panofsky and Bander et al \cite{panofsky1968asymptotic}. However, for ERLs -- especially multi-turn ERLs -- regenerative beam breakup instability is of greater concern due to the recirculated nature of the accelerator in which a short linac section is typical. Regenerative BBU is particularly present in multi-turn ERLs in comparison to circular machines such as synchrotrons because the multiple energy bunches in the ERL are deflected differently for the same HOM voltage causing variation in bunch transverse offsets and a change in revolution time for the first decelerating bunch, in which the phase is modulated by 180\si{\degree} \cite{setiniyaz2021filling}.
 
 Theoretical studies of regenerative BBU in ERL's were conducted by Hoffstaetter and Bazarov \cite{hoffstaetter2004beam} for uncoupled optics, then furthered for the case of coupled optics \cite{hoffstaetter2007recirculating}. The focus is typically on the excitation of dipole higher order modes, as these are typically the easiest to excite. Experimentally, regenerative BBU was observed and studied in an ERL at the Jefferson Laboratory FEL \cite{tennant2005first,douglas2006experimental}. Conventional methods of suppressing BBU \cite{tennant2004methods} in an ERL include HOM dampeners, as well as accelerator optics based solutions \cite{rand1980beam}. Recently BBU studies have been performed for the CBETA ERL \cite{lou2019beam} which have predicted a restrictive average beam current limitation of $I_{\mathrm{th}} = 40$~\si{\milli\ampere}. However, mitigation of regenerative BBU remains an active field exemplified by the proposal of a bunch filling pattern which could increase the threshold current limitation by up to a factor of 5 for a 3-turn ERL \cite{setiniyaz2021filling}.    
 
 High average current in ERLs is also limited by beam halo, in which a low density collection of particles is situated outside of the core of the particle bunch. Beam halo in ERLs can be generated by myriad factors, such as the design of optics, magnetic field errors and non-linearities as well as photo-cathode choice, the photo-injection system and vaccum issues such as residual gas scattering \cite{neil2006jlab,tanaka2018new}. Mitigation can be achieved through optics studies and correction as well as photo-cathode choice and design of RF accelerating structures, many of which are active areas of study. Beam halo provides challenges for high current operation as the beam halo particles can be lost within transport, producing radiation doses above safety limits and damaging sensitive components such as magnets. At high current the particle loss is increased and becomes intolerable.
 
 \subsection{Dual Linac ERLs}
-So far, within Sections~\ref{sec:single_turn_ERL}, \ref{sec:multi_turn_ERL}, only the most simple ERL designs have been mentioned. Within this section dual linac ERLs are explored, which can provide several advantages over more simple designs. Two dual linac designs are shown in Fig.~\ref{fig:dual_linac_ERL_designs}, which are the subject of the discussion here. 
+So far, within Sections~\ref{sec:single_turn_ERL}, \ref{sec:multi_turn_ERL}, only the most simple ERL designs have been mentioned. Within this section dual linac ERLs are explored with two designs shown in Fig.~\ref{fig:dual_linac_ERL_designs}.
 
 \begin{figure}[!h]
 \centering
@@ -1195,11 +1195,8 @@ So far, within Sections~\ref{sec:single_turn_ERL}, \ref{sec:multi_turn_ERL}, onl
 \label{fig:dual_linac_ERL_designs}
 \end{figure}
 
-Within a dual linac symmetric ERL the electron bunch is accelerated or decelerated twice by two separate linac passes on each pass of the machine -- there are $n$ turns, $2n-1$ passes and $2\left(n-1\right)$ traversals of linacs. A dual linac symmetric ERL involves two linacs which each provide half of the energy gain per turn enabling $2n$ nominal kinetic energies of the particles from an $n$ turn ERL, which may be particularly useful for the design of a multi-colour light source from an ERL. The dual linac also allows the size of the accelerating section to be shortened, since two linacs are utilised, which may provide an option for more compact high energy ERLs. Added complexity arises from the additional two sets of spreaders required for on-axis acceleration in additional linac and from meeting the required phases for acceleration and deceleration in these linacs. 
+In a symmetric dual linac ERL, the electron bunch is accelerated or decelerated twice by two separate linac passes on each pass of the machine -- there are $n$ turns, $2n-1$ passes and $2\left(n-1\right)$ traversals of linacs. A symmetric dual linac ERL has two identical linacs, which each provide half of the energy gain per turn meaning $2n$ nominal kinetic energies of the particles circulate from an $n$ turn ERL. Additional electron bunch energies may be beneficial to the design of a multi-colour light source from an ERL. Dual linacs also allow the size of the accelerating section to be shortened, since two linacs are utilised, which may provide an option for more compact high energy ERLs. Added complexity arises from the additional two sets of spreaders required for on-axis acceleration in the additional linac and from matching the additional phases for acceleration and deceleration. 
 
-The dual asymmetric ERL offers similar flexibility and advantages to the symmetric dual linac ERL with the notable variation that the kinetic energy of the accelerated particles does not increase in uniformly step-wise. For example, with a total energy gain per turn of 50~\si{\mega\electronvolt}, a injection energy of $E_{\mathrm{inj}}=5$~\si{\mega\electronvolt} and a 2 turn ERL the energies available in the symmetric case per linac pass would be 30, 55, 80, 105~\si{\mega\electronvolt} whereas a similar ERL but with a $4:1$ asymmetric linac energy gain ratio could provide energies 45, 55, 95, 105~\si{\mega\electronvolt}. Asymmetric linacs providing varying bunch kinetic energy may make spreader design easier, as the bend angles required in spreader septa would no longer be uniformly spaced, and provides greater design flexibility.
-
-
-
+The dual asymmetric ERL offers similar flexibility and advantages to the symmetric dual linac ERL, but the kinetic energy of the accelerated particles does not increase uniformly step-wise. For example, with a total energy gain per turn of 50~\si{\mega\electronvolt}, a injection energy of $E_{\mathrm{inj}}=5$~\si{\mega\electronvolt} and a 2 turn ERL the energies available in the symmetric case per linac pass would be 30, 55, 80, 105~\si{\mega\electronvolt}. Whereas, a similar ERL but with a $4:1$ asymmetric linac energy gain ratio could provide energies 45, 55, 95, 105~\si{\mega\electronvolt}. Asymmetric linacs providing varying bunch kinetic energy may simplify spreader design, as the bend angles required in spreader septa would no longer be uniformly spaced.
 
 \end{document}
