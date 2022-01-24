@@ -463,12 +463,12 @@ Firstly, the trial solution and its derivative must be re-arranged to eliminate 
 \end{equation}
 which can be substituted into (Eq.~\ref{eq:Hills_trial_solution_derivative}) and re-arranged to yield
 \begin{equation}
-\sin\left[\Psi\left(s\right)+\phi\right] = \frac{\sqrt{\beta\left(s\right)}x'\left(s\right)}{\sqrt{\epsilon}} + \frac{\alpha\left(s\right)x\left(s\right)}{\sqrt{\epsilon\beta\left(s\right)}}.
+\sin\left[\Psi\left(s\right)+\phi\right] = \frac{\sqrt{\beta\left(s\right)}x'\left(s\right)}{\sqrt{\epsilon}} + \frac{\alpha\left(s\right)x\left(s\right)}{\sqrt{\varepsilon\beta\left(s\right)}}.
 \label{eq:trial_derivative_phase_rearrangement}    
 \end{equation}
 Using the well-known trigonometric identity $\sin^{2}x+\cos^{2}x=1$, with (Eqs.~\ref{eq:trial_phase_rearrangement}, \ref{eq:trial_derivative_phase_rearrangement}) the phase space variables can be represented by
 \begin{equation}
-\frac{x\left(s\right)^{2}}{\beta\left(s\right)}+\left[\frac{\alpha\left(s\right)}{\sqrt{\beta\left(s\right)}}x\left(s\right)+\sqrt{\beta\left(s\right)}x'\left(s\right)\right]^{2} = \epsilon,    
+\frac{x\left(s\right)^{2}}{\beta\left(s\right)}+\left[\frac{\alpha\left(s\right)}{\sqrt{\beta\left(s\right)}}x\left(s\right)+\sqrt{\beta\left(s\right)}x'\left(s\right)\right]^{2} = \varepsilon,    
 \label{eq:phase_space_trigonometry}
 \end{equation}
 which when expanded and then simplified using the definition
@@ -478,37 +478,47 @@ which when expanded and then simplified using the definition
 \end{equation}
 which relates to the angular size of the beam, becomes
 \begin{equation}
-\epsilon = \gamma\left(s\right)x\left(s\right)^{2}+2\alpha\left(s\right)x\left(s\right)x'\left(s\right)+\beta\left(s\right)x'\left(s\right)^{2},
+\varepsilon = \gamma\left(s\right)x\left(s\right)^{2}+2\alpha\left(s\right)x\left(s\right)x'\left(s\right)+\beta\left(s\right)x'\left(s\right)^{2},
 \label{eq:phase_space_ellipse}    
 \end{equation}
 where the area of the phase space ellipse is given by
 \begin{equation}
-A=\pi\epsilon,
+A=\pi\varepsilon,
 \label{eq:phase_space_area}    
 \end{equation} 
-and $\epsilon$ is defined as the single particle emittance or action. The form in (Eq.~\ref{eq:phase_space_ellipse}) is that of the equation of an ellipse; consequently the motion of a single particle arount an orbit maps out an ellipse in phase space. The parameters ($\beta\left(s\right)$, $\alpha\left(s\right)$, $\gamma\left(s\right)$) we have defined to interpret the phase space of a particle are collectively known as the Twiss parameters. Phase space ellipses are observed in each of the three planes as the results here are general. An example of the phase space ellipse in the $x$--$x'$ plane is shown in Fig.~\ref{fig:phase_space_diagram}.
+and $\varepsilon$ is defined as the single particle emittance or action. The form in (Eq.~\ref{eq:phase_space_ellipse}) is that of the equation of an ellipse; consequently the motion of a single particle arount an orbit maps out an ellipse in phase space. The parameters ($\beta\left(s\right)$, $\alpha\left(s\right)$, $\gamma\left(s\right)$) we have defined to interpret the phase space of a particle are collectively known as the Twiss parameters. Phase space ellipses are observed in each of the three planes as the results here are general. An example of the phase space ellipse in the $x$--$x'$ plane is shown in Fig.~\ref{fig:phase_space_diagram}.
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/phase_space_fixed.pdf}
-\caption{Phase space ellipse (red) in horizontal $x$--$x'$ phase space. Dimensions of the phase space ellipse are highlighted, the tilt of the ellipse relates to the $\alpha$ parameter. Particles traverse within the phase space ellipse with phase advance $\mu$.}
+\caption{Phase space ellipse (red) in horizontal $x$--$x'$ phase space. Dimensions of the phase space ellipse are highlighted, the tilt of the ellipse relates to the $\alpha$ parameter. Particles traverse within the phase space ellipse with phase advance $\mu$ with area $\pi\varepsilon$.}
 \label{fig:phase_space_diagram}
 \end{figure}
 
-\textcolor{blue}{**MAYBE SHOULD RE-THINK SECTION ON EMITTANCE**}
-Since the phase space ellipse is for a single particle trajectory, the emittance is the single particle emittance. This is unsatisfactory for describing an ensemble of particles, therefore the concept of emittance requires extension to a many-particle ensemble. In an electron accelerator, which is the focus of this work, the equilibrium distribution of particles can be well approximated by a Gaussian distribution \cite{wille2000physics}, which has a transverse charge density distribution $\rho\left(x,z\right)$ at the longitudinal centroid of the electron bunch of the form
+
+Since the phase space ellipse is for a single particle trajectory, the emittance is the single particle emittance. This is unsatisfactory for describing an ensemble of particles, therefore the concept of emittance requires extension to a many-particle ensemble -- the \textit{rms} emittance of a particle beam. To extend the single particle emittance $\varepsilon$ to the \textit{rms} emittance $\epsilon$, the \textit{rms} emittance must be of the form
 \begin{equation}
-\rho\left(x,z\right) = \frac{N_{e}}{2\pi\sigma_{x}\sigma_{z}}\exp\left(\right),
-\label{eq:Gaussian_transverse_charge_distribution}    
+\epsilon_{rms} = \sqrt{\frac{1}{m}\sum_{i}^{i=m}\varepsilon_{i}} = \sqrt{\frac{1}{m}\left(\varepsilon_{1}+\varepsilon_{2}+\ldots+\varepsilon_{m}\right)},
+\label{eq:rms_emittance_transform}    
 \end{equation}
-where $N_{e}$ is the no. electrons in the distribution, $\sigma_{x}$ and $\sigma_{z}$ are the \textit{rms} horizontal vertical beam sizes of the distribution and we define the emittance in each plane as
+where $m$ is the no. particles. The \textit{rms} emittance $\epsilon$ is an average of the single particle emittances of the bunch with the typical \textit{rms} transform and consequently can be re-cast, by inspection of (Eq.~\ref{eq:phase_space_ellipse}), as a function of the average position and divergence of the particles
+\begin{equation}
+\epsilon = \sqrt{\langle x^{2}\rangle\langle x'^{2}\rangle-\langle xx'\rangle^{2}},
+\label{eq:rms_emittance}    
+\end{equation}
+where the average position $\langle x\rangle$ and divergence $\langle x'\rangle$ terms can be expressed in terms of the Twiss parameters
 \begin{align}
-\sigma_{x}\left(s\right) &= \sqrt{\epsilon_{x}\beta_{x}\left(s\right)}, 
-\label{eq:horizontal_emittance} \\
-\sigma_{z}\left(s\right) &= \sqrt{\epsilon_{z}\beta_{z}\left(s\right)},
-\label{eq:vertical_emittance}
+\langle x^{2}\rangle &= \beta_{x}\epsilon_{x}, \nonumber\\
+\langle x'^{2}\rangle &= \gamma_{x}\epsilon_{x}, \nonumber\\
+\langle xx'\rangle &= -\alpha_{x}\epsilon_{x}.
+\label{eq:rms_emittance_twiss}    
 \end{align}
-where $\beta_{x/y}$ are the betatron amplitude functions in each plane. A similar treatment can be applied to the longitudinal plane.
+Whilst the discussion here is for the $x$ (horizontal) plane, the description is analagous in the $y$ (vertical) plane. The \textit{rms} horizontal spot size of the particle beam becomes
+\begin{equation}
+\sigma_{x} = \sqrt{\beta_{x}\epsilon_{x}},
+\label{eq:spot_size_particle}    
+\end{equation}
+following the description of the envelope function (Eq.~\ref{eq:envelope_function}).
 
 Liouville's theorem \cite{liouville1838note}, as commonly applied in statistical mechanics \cite{gibbs1902elementary}, maintains that the phase-space density of a system remains unchanged under conservative forces applied to the system. Applied to the accelerator situation of harmonic oscillation around a reference orbit due to conserved magnetic forces, Liouville's theorem implies that the emittance is conserved throughout the beamline unless the beam of particles is acted upon by a non-conservative force. Therefore, under conservative forces, the propagation of Twiss parameters can be accomplished similarly to the transform of phase space co-ordinates. For example, in the horizontal plane phase space co-ordinates can be transformed from an initial state ($x_{0}$, $x'_{0}$) to a final state ($x_{1}$, $x'_{1}$) via transport matricies such that
 \begin{equation}
