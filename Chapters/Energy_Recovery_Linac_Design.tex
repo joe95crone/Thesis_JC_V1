@@ -966,7 +966,7 @@ A FODO lattice consists of a series of alternatively focusing quadrupoles separa
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Energy_Recovery_Linac_Design/FODO_cell_finished.pdf}
-\caption{Left: FODO cell schematic. Alternating focusing quadrupole (red) arrangements, separated by drifts. Focusing quadrupoles of length $L_{\mathrm{quad}}/2$ and defocusing quadrupole of length $L_{\mathrm{quad}}$. Right: $\beta$-functions in each plane of a FODO cell created using Tao \cite{TaoManual}.}
+\caption{Left: FODO cell schematic. Alternating focusing quadrupole (red) arrangements, separated by drifts of length $L_{\mathrm{drift}}$. Focusing quadrupoles of length $L_{\mathrm{quad}}/2$ and defocusing quadrupole of length $L_{\mathrm{quad}}$. Right: $\beta$-functions in each plane of a FODO cell created using Tao \cite{TaoManual}.}
 \label{fig:FODO_cell}
 \end{figure}
 
@@ -1023,13 +1023,20 @@ f=\frac{L}{2\sqrt{2}}.
 
 An achromat lattice has cells in which the dispersion of the particle beam is zero at the entrance and exit of the lattice cell, whilst bending occurs in the central portion of the cell. In the simplest form -- known as a double bend achromat -- a single quadrupole focusing magnet is placed between two dipoles where additional quadrupoles are placed outside of this central region to maintain periodic focusing, as in the FODO cell in Section~\ref{sec:FODO_lattice}. The central section of a double bend achromat and the corresponding dispersion function are shown in Fig.~\ref{fig:DBA_diagram}.
 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Energy_Recovery_Linac_Design/DBA_diagram.pdf}
+\caption{Left: Cell central region of double bend achromat, consisting of a a quadrupole (red) of length $L_{\mathrm{quad}}$ placed between two dipoles (blue) of length $L_{\mathrm{dipole}}$ with magnets separated by drift $L_{\mathrm{drift}}$. Right: dispersion function in the $x$ plane $\eta_{x}$ as a function of longitudinal distance $s$. Dispersion peaks within the centre of a DBA and is zeroed at the start and end of the central section.}
+\label{fig:DBA_diagram}
+\end{figure}
+
 The requirement of zero dispersion as the entrance and exit of the double bend achromat cell means that the required magnet strengths can be derived from (Eq.~\ref{eq:periodic_dispersion}), with $\eta_{x,0}=0$.
 The full derivation is beyond the scope of this thesis but is shown by Steffen \cite{steffen1983periodic} and Fakhiri et al \cite{fakhri2015analytical} to be
 \begin{equation}
 \frac{1}{\sqrt{k_{1}}}\cot\left(\frac{\sqrt{k_{1}}L_{\mathrm{quad}}}{2}\right) = L_{\mathrm{drift}} + \rho\tan\left(\alpha_{1}/2\right),
 \label{eq:DBA_magnets}
 \end{equation}
-where $k_{1}$ is the normalised quadrupole gradient, $L_{mathrm{quad}}$ is the magnetic length of the quadrupole with $\rho$ and $\alpha_{1}$ the bending radius and bending angle of the dipoles respectively. 
+where $k_{1}$ is the normalised quadrupole gradient, $L_{\mathrm{quad}}$ is the magnetic length of the quadrupole with $\rho$ and $\alpha_{1}$ the bending radius and bending angle of the dipoles respectively. 
 
 The order $n$ of the achromat can be extended by replacing the central achromat section with $n$ dipoles with at least a single quadrupole between each yielding $n-1$ minimum quadrupoles. This generalistion can be followed to the $n$th order where the lattice structure is named a multi-bend achromat (MBA). Benefits to higher order achromats involve the avoidance of tune resonances, due to the decoupling of constraints on tune, lower emittance, potentially smaller dispersion peaks and generally a more flexible transport lattice \cite{jackson1986comparison} at the cost of an increased number of magnets and potentially larger circumference.  
 
@@ -1061,7 +1068,14 @@ and, applying to spiral sector FFA, $f$ is the flutter factor, $N$ the number of
 
 Once the scaling condition is not met, phase advance varies with momentum and the tune of the accelerator can cross an optical resonance, however resonance crossing may be tolerable if this crossing occurs rapidly as the blow-up of the beam size may be limited \cite{mills1997nsffa,johnstone1997nsffa}. Therefore, the scaling FFA condition may be abandoned with rapid crossing of the optical resonances, and the working point of the transport optics can be allowed to vary. This has been demonstrated in simulation, where it was found that random dipole and quadrupole kicks were responsible to a greater extent for orbit distortion than optical resonance crossing \cite{machida2007orbit}. Removal of the scaling condition allows the radial variation of the magnetic field to be simplified to a linear relationship \cite{johnstone1999fixed}, hence complicated magnet design is no longer required and linear magnets are sufficient for non-scaling FFA transport.
 
-A proof-of-principle demonstration of ns-FFA was performed with the EMMA accelerator \cite{barlow2010emma,machida2012acceleration}, and transport involving ns-FFA has been demonstrated at the CBETA ERL \cite{hoffstaetter2017cbeta,bartnik2020cbeta} with subsequent designs for accelerator driven sub-critical reactors \cite{tygier2011high} and radiotherapy gantries \cite{trbojevic2009ffags,} based on such an approach. Linear non-scaling FFAG transport typically consists of a lattice made of many cells in which two focusing magnets, are separated by drifts. Typically linear non-scaling FFA can be accomplished using at least one combined function magnet (bending and focusing) with a quadrupole or combined function magnet, where quadrupoles with transversely shifted pole centres are often utilised. An example non-scaling FFA cell is shown in Fig.~\textcolor{blue}{**FFA CELL DIAGRAM**}.
+A proof-of-principle demonstration of ns-FFA was performed with the EMMA accelerator \cite{barlow2010emma,machida2012acceleration}, and transport involving ns-FFA has been demonstrated at the CBETA ERL \cite{hoffstaetter2017cbeta,bartnik2020cbeta} with subsequent designs for accelerator driven sub-critical reactors \cite{tygier2011high} and radiotherapy gantries \cite{trbojevic2009ffags,} based on such an approach. Linear non-scaling FFAG transport typically consists of a lattice made of many cells in which two focusing magnets, are separated by drifts. Typically linear non-scaling FFA can be accomplished using at least one combined function magnet (bending and focusing) with a quadrupole or combined function magnet, where quadrupoles with transversely shifted pole centres are often utilised. An example non-scaling FFA cell is shown in Fig.~\ref{fig:FFA_cell}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.7\textwidth]{Figures/Energy_Recovery_Linac_Design/FFA_cell_fixed.pdf}
+\caption{Schematic of a FFA cell containing a focusing quadrupole $Q_{\mathrm{f}}$ (red) and combined function magnet $BD$ (blue and red), with reference trajectory (black). Particles with varying energies $E_{1}$ (green) and $E_{2}$ (orange) traverse the cell with varying trajectories.}
+\label{fig:FFA_cell}
+\end{figure}
 
 \section{Energy Recovery Linacs}
 
@@ -1171,7 +1185,7 @@ So far, within Sections~\ref{sec:single_turn_ERL}, \ref{sec:multi_turn_ERL}, onl
 
 Within a dual linac symmetric ERL the electron bunch is accelerated or decelerated twice by two separate linac passes on each pass of the machine -- there are $n$ turns, $2n-1$ passes and $2\left(n-1\right)$ traversals of linacs. A dual linac symmetric ERL involves two linacs which each provide half of the energy gain per turn enabling $2n$ nominal kinetic energies of the particles from an $n$ turn ERL, which may be particularly useful for the design of a multi-colour light source from an ERL. The dual linac also allows the size of the accelerating section to be shortened, since two linacs are utilised, which may provide an option for more compact high energy ERLs. Added complexity arises from the additional two sets of spreaders required for on-axis acceleration in additional linac and from meeting the required phases for acceleration and deceleration in these linacs. 
 
-The dual asymmetric ERL offers similar flexibility and advantages to the symmetric dual linac ERL with the notable variation that the kinetic energy of the accelerated particles does not increase in uniformly step-wise. For example, with a total energy gain per turn of 50~\si{\mega\electronvolt}, a injection energy of $E_{\mathrm{inj}}=5$~\si{\mega\electronvolt} and a 2 turn ERL the energies available in the symmetric case per linac pass would be 30, 55, 80, 105~\si{\mega\electronvolt} whereas a similar ERL but with a $4:1$ asymmetric linac energy gain ratio could provide energies 45, 55, 95, 105~\si{mega\electronvolt}. Asymmetric linacs providing varying bunch kinetic energy may make spreader design easier, as the bend angles required in spreader septa would no longer be uniformly spaced, and provides greater design flexibility.
+The dual asymmetric ERL offers similar flexibility and advantages to the symmetric dual linac ERL with the notable variation that the kinetic energy of the accelerated particles does not increase in uniformly step-wise. For example, with a total energy gain per turn of 50~\si{\mega\electronvolt}, a injection energy of $E_{\mathrm{inj}}=5$~\si{\mega\electronvolt} and a 2 turn ERL the energies available in the symmetric case per linac pass would be 30, 55, 80, 105~\si{\mega\electronvolt} whereas a similar ERL but with a $4:1$ asymmetric linac energy gain ratio could provide energies 45, 55, 95, 105~\si{\mega\electronvolt}. Asymmetric linacs providing varying bunch kinetic energy may make spreader design easier, as the bend angles required in spreader septa would no longer be uniformly spaced, and provides greater design flexibility.
 
 
 
