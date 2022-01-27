@@ -289,7 +289,7 @@ u'\left(s_{0}\right) \\
 \end{equation}
 where $s_{0}$ is the initial longitudinal position of the particle.
 
-\section{Transport Matricies} 
+\section{Transport Matrices} 
 
 Previously, the solution to the equations of motion within a periodic focusing and bending particle accelerator (Eqs.~\ref{eq:horizontal_equation_of_motion_simplified}, \ref{eq:vertical_equation_of_motion_simplified}) have been derived and presented using a matrix formalism (Eq.~\ref{eq:general_solution_matrix}). Considering the dynamics in both transverse planes ($x$ and $z$) simulataneously, the effect of momentum deviation from the design momentum $\Delta p/p_{0},$ as well as accounting for the longitudinal position of the particle $s=ct$, with $t$ the time-of-flight of the particle, a 6D co-ordinate system is required to describe the motion. Therefore, within a particle accelerator, the position of a particle can be adequately described using a 6D vector 
 \begin{equation}
@@ -316,8 +316,7 @@ The transport matrix is typically constructed from a series of magnetic elements
 \boldsymbol{R} = \boldsymbol{R}_{n}\boldsymbol{R}_{n-1}\ldots\boldsymbol{R_{1}},
 \label{eq:subseries_transport_matrix}    
 \end{equation}
-where $R_{n}$ are the transport matricies of each individual element. A full series of magnetic elements is termed a beamline, where a subset of elements is named a cell -- cells can be repeated several times to form a periodic beamline. Within the following subsections, the individual transport matricies of linear magnets are described. 
-
+where $R_{n}$ are the transport matrices of each individual element. A full series of magnetic elements is termed a beamline, where a subset of elements is named a cell -- cells can be repeated several times to form a periodic beamline. Within the following subsections, the individual transport matrices of linear magnets are described. 
 
 \subsection{Drift Space}
 
@@ -410,6 +409,7 @@ Rectangular dipoles are also commonly available, with pole faces that are perpen
 where $\beta$ is the angle of the pole face and $\psi = k\left(h/\rho\right)\frac{1+\sin^{2}\beta}{\cos\beta}$, where $h$ is the gap between the poles of the magnet -- the $\psi$ term is typically negligible. 
 
 \section{Twiss Parameters and Emittance}
+\label{sec:twiss_emittance}
 
 \subsection{Generalisation of the Equations of Motion}
 
@@ -521,7 +521,7 @@ Whilst the discussion here is for the $x$ (horizontal) plane, the description is
 \end{equation}
 following the description of the envelope function (Eq.~\ref{eq:envelope_function}).
 
-Liouville's theorem \cite{liouville1838note}, as commonly applied in statistical mechanics \cite{gibbs1902elementary}, maintains that the phase-space density of a system remains unchanged under conservative forces applied to the system. Applied to the accelerator situation of harmonic oscillation around a reference orbit due to conserved magnetic forces, Liouville's theorem implies that the emittance is conserved throughout the beamline unless the beam of particles is acted upon by a non-conservative force. Therefore, under conservative forces, the propagation of Twiss parameters can be accomplished similarly to the transform of phase space co-ordinates. For example, in the horizontal plane phase space co-ordinates can be transformed from an initial state ($x_{0}$, $x'_{0}$) to a final state ($x_{1}$, $x'_{1}$) via transport matricies such that
+Liouville's theorem \cite{liouville1838note}, as commonly applied in statistical mechanics \cite{gibbs1902elementary}, maintains that the phase-space density of a system remains unchanged under conservative forces applied to the system. Applied to the accelerator situation of harmonic oscillation around a reference orbit due to conserved magnetic forces, Liouville's theorem implies that the emittance is conserved throughout the beamline unless the beam of particles is acted upon by a non-conservative force. Therefore, under conservative forces, the propagation of Twiss parameters can be accomplished similarly to the transform of phase space co-ordinates. For example, in the horizontal plane phase space co-ordinates can be transformed from an initial state ($x_{0}$, $x'_{0}$) to a final state ($x_{1}$, $x'_{1}$) via transport matrices such that
 \begin{equation}
 \begin{pmatrix}
 x_{1} \\
@@ -538,7 +538,7 @@ x'_{0}
 \end{pmatrix}.
 \label{eq:general_phase_space_transform}
 \end{equation}
-Expanding the matricies in (Eq.~\ref{eq:general_phase_space_transform}) and re-casting the equations for substitution into (Eq.~\ref{eq:phase_space_ellipse}), the analagous transform of the Twiss parameters from initial state ($\beta_{0}$, $\alpha_{0}$, $\gamma_{0}$) to final state ($\beta_{1}$, $\alpha_{1}$, $\gamma_{1}$) becomes 
+Expanding the matrices in (Eq.~\ref{eq:general_phase_space_transform}) and re-casting the equations for substitution into (Eq.~\ref{eq:phase_space_ellipse}), the analagous transform of the Twiss parameters from initial state ($\beta_{0}$, $\alpha_{0}$, $\gamma_{0}$) to final state ($\beta_{1}$, $\alpha_{1}$, $\gamma_{1}$) becomes 
 \begin{equation}
 \begin{pmatrix}
 \beta_{1} \\
@@ -991,7 +991,7 @@ The FODO cell has a transport matrix of the form
 \boldsymbol{R}_{\mathrm{FODO}} = \boldsymbol{R}_{\mathrm{quad,F}}\cdot\boldsymbol{R}_{\mathrm{drift}}\cdot\boldsymbol{R}_{\mathrm{quad,D}}\cdot\boldsymbol{R}_{\mathrm{drift}},
 \label{eq:FODO_transport}    
 \end{equation}
-where the $x$--$x'$ plane transport matricies are
+where the $x$--$x'$ plane transport matrices are
 \begin{align}
 \boldsymbol{R}_{\mathrm{quad,F}} &= 
 \begin{pmatrix}
@@ -1006,7 +1006,7 @@ where the $x$--$x'$ plane transport matricies are
 1 & \frac{L}{2} \\
 0 & 1
 \end{pmatrix},
-\label{eq:FODO_component_matricies}    
+\label{eq:FODO_component_matrices}    
 \end{align}
 such that the transport matrix for a FODO cell becomes
 \begin{equation}
