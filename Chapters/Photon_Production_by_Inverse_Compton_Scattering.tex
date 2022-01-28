@@ -40,7 +40,6 @@ p_{1} + k_{1} = p_{2} + k_{2},
 \label{eq:ICS_process}
 \end{equation}
 where $p_{1}$ is the four-momenta of the incident electron, $k_{1}$ is the four-momenta of the incident photon, $p_{2}$ is the four-momenta of the recoiling electron, and $k_{2}$ is the four-momenta of the scattered photon. The geometry of the inverse Compton scattering interaction in a 2D plane is shown in Fig.~\ref{fig:scattered_photon_kinematics}.
-
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/scatteringkinematicsdiagram.pdf}
@@ -54,7 +53,7 @@ p_{1} &= \gamma m_{e}\left(c,\boldsymbol{v_{i}}\right),
 \label{eq:initial_four_vectors} \\
 k_{1} &= \frac{E_{L}}{c}\left(1,\hat{n}_{i}\right), 
 \end{align}
-where $E_{L}$ is the energy of the incident photon, $\hat{n}_{i}$ is the unit displacement three-vector of the incident photon, $\gamma$ is the Lorentz factor, $m_{e}$ is the mass of the electron, $c$ the speed of light in a vacuum and $\boldsymbol{v_{i}}$ is the velocity three-vector of the incident electron with magnitude $v_{i}$. Similarly, we can present the final electron and scattered photon states with four-momenta 
+where $E_{L}$ is the energy of the incident photon, $\hat{n}_{i}$ is the unit displacement three-vector of the incident photon, $\gamma$ is the Lorentz factor, $m_{e}$ is the mass of the electron, $c$ the speed of light in a vacuum and $\boldsymbol{v_{i}}$ is the velocity three-vector of the incident electron with magnitude $v_{i}$. Similarly, we can present the final electron and scattered photon states with four-momenta
 \begin{align}
 p_{2} &= \gamma' m_{e}\left(c,\boldsymbol{v_{f}}\right), \\
 k_{2} &= \frac{E_{\gamma}}{c}\left(1,\hat{n}_{f}\right), 
@@ -100,7 +99,6 @@ The Lorentz invariant $X$ can also be termed the recoil parameter, which denotes
 Inverse Compton scattering sources, which use the inverse Compton scattering process to produce beams of Doppler-shifter scattered radiation, require a source of incident photons. Ideally the incident photon beam will be monochromatic, have a high power and be of small physical dimensions upon interaction (as explained in future sections) to produce a scattered photon beam with identical characteristics. The incident photon beam criteria is satisfied for two photon sources: accelerator produced radiation, such as synchrotron radiation and free electron lasers, and lasers. Within this thesis only lasers are considered as incident photon sources for ICS sources, as accelerator produced radiation can only be attained on particle accelerators already utilised as radiation sources.
 
 ICS sources can be designed using two approaches we term `single shot' and `re-circulated pulse', which relate to design of the optical system -- A schematic of each is shown in Fig.~\ref{fig:single_shot_4mirror}. In `single shot' ICS sources each incident photon pulse is used once; typically a high peak power laser pulse, with up to Joule-scale laser pulse energies and pulse durations in the range 1~\si{\pico\second}--10~\si{\femto\second}, is interacted with an electron bunch to scatter photons. The limitation on the interaction rate (repetition rate) of the source is due to the repetition rate of the laser pulse, which is often limited to the \si{\hertz} to \si{\kilo\hertz} scale. However, re-circulated accelerators have 10--100~\si{\mega\hertz} bunch repetition rates and linear accelerators typically operate with bunch repetition rates on the \si{\kilo\hertz}-scale, so the `single shot' approach is most advantageous for linear accelerators. As detailed in Section~\ref{sec:nonlinear_ICS}, high energy laser pulses can cause non-linear ICS interactions, which may be beneficial for ICS source development and is most achievable with this configuration. 
-
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/single_shot_4_mirror.pdf}
@@ -256,7 +254,6 @@ Subbing (Eq.~\ref{eq:end_conservation_squared}) into (Eq.~\ref{eq:apply_photon_p
 k_{2}^{\mu}p_{1\mu}+k_{2}^{\mu}k_{1\mu} = k_{1}^{\mu}p_{1\mu}
 \label{eq:substitution_four_vector}
 \end{equation}
-
 Which in three-vector notation is shown as
 \begin{equation}
 \frac{E_{L}E_{\gamma}}{c^{2}}\left(\hat{n}_{i}\cdot\hat{n}_{f}-1\right)+\frac{E_{\gamma}}{c}\gamma m_{e}\left(\hat{n}_{f}\cdot \boldsymbol{v_{i}}-c\right) = \frac{E_{L}}{c}\gamma m_{e}\left(\hat{n}_{i}\cdot \boldsymbol{v_{i}} -c\right)
@@ -272,7 +269,6 @@ However, (Eq.~\ref{eq:three_vector_solution}) should be presented in terms of th
 \hat{n}_{i}\cdot \boldsymbol{v_{i}} &= v_{i}\cos\phi'.
 \label{eq:projection_pi_minus_crossing_angle}
 \end{align}
-
 Upon introducing the projections (Eqs.~\ref{eq:projection_angle_incident_scattered_photon}, \ref{eq:projection_scattering_angle}, \ref{eq:projection_pi_minus_crossing_angle}), (Eq.~\ref{eq:three_vector_solution}) becomes
 \begin{equation}
 E_{L}E_{\gamma}\left(\cos\theta'-1\right)+E_{\gamma}\gamma m_{e}c^{2}\left(\frac{v_{i}}{c}\cos\theta-1\right) = E_{L}\gamma m_{e}c^{2}\left( \frac{v_{i}}{c}\cos\phi'-1\right)
@@ -292,7 +288,7 @@ E_{\gamma} = \frac{\left(1+\beta\right)}{1-\beta\cos\theta-\left(\beta-E_{L}/E_{
 \end{equation}
 further simplification by the small angle approximation ($\theta \ll 1$) and for an ultra-relativistic electron beam ($\beta \rightarrow 1$) yields
 \begin{equation}
-E_{\gamma} \approx \frac{4\gamma^{2}E_{L}}{1+\gamma^{2}\theta^{2}+X},    
+E_{\gamma} \approx \frac{4\gamma^{2}E_{L}}{1+\gamma^{2}\theta^{2}+X},   
 \label{eq:small_angle_scattered_photon_energy}
 \end{equation}
 where the recoil term $X$ is given by (Eq.~\ref{eq:X_headon}). Extending this to backscattering of the incident photon ($\theta = 0$), the scattered photon energy becomes
@@ -312,7 +308,6 @@ Upon inspection of the generalised ICS scattered photon energy (Eq.~\ref{eq:scat
 \label{sec:electron_photon_interaction_cross_section}
 
 To understand the cross section of the electron--photon interaction, the interaction must be viewed three dimensionally and considerations such as polarisation must be adequately accounted for. The co-ordinate system in Fig.~\ref{fig:scattered_photon_kinematics} can be extended to a full 3D representation in Fig.~\ref{fig:3D_coord_system}, with an incident electron $p_{1}$ parallel to the $z$-axis interacting with an incident photon $k_{1}$ travelling anti-parallel, with a crossing angle $\phi$ in the $x$-$z$ plane, scattering a photon $k_{2}$ at a polar angle $\theta$ and azimuthal angle $\phi_{f}$. Whilst the incident electron is used to set the right-handed global co-ordinate system ($x$, $y$, $z$), local right-handed co-ordinate systems can be attached to the incident photon ($\tilde{x}$, $\tilde{y}$, $\tilde{z}$), which propagates anti-parallel to the electron at a crossing angle $\phi$ ($x = -\tilde{x}\sin\phi$, $z = -\tilde{z}$), and to the scattered photon ($\tilde{x}'$,$\tilde{y}'$,$\tilde{z}'$) where the variation from the electron co-ordinate system is due to the polar scattering angle $\theta$. Polarisation directions of the incident and scattered photons is typically specified in the local co-ordinate systems.  
-
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/ICS_interaction_polarisation.pdf}
@@ -384,7 +379,6 @@ where $\sigma_{T}$ is the Thomson cross section. When the interaction is firmly 
 \caption{Electron--photon interaction cross section (Eq.~\ref{eq:compton_cross_section}) as a function of electron bunch energy for an Nd:YAG laser operating at the fundamental harmonic ($\lambda = 1064$~\si{\nano\meter}). Left: Comparison of the full cross section (Eq.~\ref{eq:compton_cross_section}) (black) with the cross section in the low recoil limit (Eq.~\ref{eq:compton_cross_section_classical_limit}) (red) for a 5~\si{\mega\electronvolt}--35~\si{\giga\electronvolt} electron bunch kinetic energy range. Right: Comparison of the full cross section (Eq.~\ref{eq:compton_cross_section}) with the cross section in the ultra-relativistic, high recoil limit (Eq.~\ref{eq:compton_cross_section_ultrarelativistic_limit}) (blue) for a 35~\si{\giga\electronvolt}--10~\si{\terra\electronvolt} electron bunch kinetic energy range.}
 \label{fig:cross_section_electron_energy}
 \end{figure}
-
 The behaviour of the total cross section as a function of electron bunch energy is shown in Fig.~\ref{fig:cross_section_electron_energy}, with the low-recoil (Eq.~\ref{eq:compton_cross_section_classical_limit}) and ultra-relativistic (Eq.~\ref{eq:compton_cross_section_ultrarelativistic_limit}) limits shown. A small recoil ($X \ll 1$) cross section calculation is valid up until the \si{\giga\electronvolt}-scale, above the \si{\giga\electronvolt}-scale the small recoil approximation (Eq.~\ref{eq:compton_cross_section_classical_limit}) underestimates the electron--photon interaction cross section (Eq.~\ref{eq:compton_cross_section}). The ultra-relativistic cross section approximation (Eq.~\ref{eq:compton_cross_section_ultrarelativistic_limit}) becomes a good approximation to the full cross section calculation (Eq.~\ref{eq:compton_cross_section}) beyond  $\sim92$~\si{\giga\electronvolt}, at smaller energies the cross section is underestimated and at energies on the order of 100's~\si{\giga\electronvolt} the cross section in the ultra-relativistic approximation is negative which is clearly non-physical.     
 
 Assuming a head-on ($\phi=0$) interaction in the ultra-relativistic domain ($\beta\approx1$) the Lorentz invariants can be related via
@@ -405,7 +399,6 @@ The derivative of $Y$ with respect to the scattered photon energy $E_{\gamma}$ (
 
 Since the differential cross section can be wrote in terms of the scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}), there is a cross section--scattering angle correspondence indirectly resulting from the scattered photon energy. The cross section--scattering angle correspondence from the scattered photon energy is also convoluted with the scattering angle dependency of the $Y$ Lorentz invariant (Eq.~\ref{eq:Y_geometry}). A full treatment of collimation and the differential cross section with respect to scattering angle is included in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}, where the angular solutions are used to derive an analytical model for the collimated flux of an ICS interaction.    
 The scattered photon energy differential cross section (Eq.~\ref{eq:differential_cross_section_ICS_energy}) can be plotted against the scattered photon energy of a single particle ICS interaction to reveal the spectral characteristics of an ICS source. Fig.~\ref{fig:cross_section_scattered_photon_energy} shows a normalised plot of the scattered photon energy differential cross section (Eq.~\ref{eq:differential_cross_section_ICS_energy}) as a function of the scattered photon energy for a head-on collision ($\phi=0$), in the low recoil regime ($X \ll 1$). Several features are apparent in Fig.~\ref{fig:cross_section_scattered_photon_energy}, such as the double peaked spectrum -- which is peaked in the forward (low energy) and backward (high energy) directions with respect to the incident photon pulse -- where the intensity of these peaks is double (for $X \ll 1$) the intensity of the trough at $\theta=1/\gamma$ and the average energy ($E_{\gamma} = 2\gamma^{2}E_{L}$), which is half of the maximum energy (Eq.~\ref{eq:compton_edge_energy}) at the Compton edge.   
-
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.6\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/Cross_Section_Scattered_Photon_Energy.pdf}
@@ -446,7 +439,6 @@ P_{rad} = \frac{\gamma^{4}e^{2}\sigma}{6\pi \epsilon_{0}c^{3}}\lvert\dot{\overri
 \end{equation}
 where $e$ is the charge of an electron,  $\epsilon_{0}$ is the permittivity of free space, $c$ is the speed of light in a vacuum, $\lvert\dot{\overrightarrow{v}}\rvert$ is the acceleration of the electron in the laboratory frame, $\sigma$ is cross section of the electron--photon interaction (Eq.~\ref{eq:compton_cross_section}) as derived in Section~\ref{sec:electron_photon_interaction_cross_section}, $\overrightarrow{E}$ and $\overrightarrow{B}$ are respectively the electric field and magnetic flux density of the incident laser, $\lvert\overrightarrow{v}\rvert$ is the velocity of the electron as it traverses the laser pulse and $\overrightarrow{x}\left(t\right)$ is the first order approximation of the trajectory of the electron as it traverses the incident laser pulse. 
 The total energy radiated by the electron $U_{e^{-}}$ in an electron--plane wave photon pulse interaction is given by \cite{krafft2010compton}
-
 \begin{equation}
 U_{e^{-}} = \int P\left(t\right)dt = \gamma^{2}\left(1+\beta\right)^{2}\sigma\epsilon_{0}c\int\lvert\overrightarrow{E}\left(x,y,\left[\beta+1\right]ct\right)\rvert^{2}dt,
 \label{eq:electron_radiated_energy}
@@ -478,7 +470,6 @@ The luminosity of the head-on interaction becomes
 \label{eq:headon_luminosity}
 \end{align}
 where $\sigma_{i}(i=x,y,z) = \sqrt{\sigma_{i,e}^{2}+\sigma_{i,L}^{2}}$ is the convolution of the laser pulse and electron bunch spot sizes at the IP. The luminosity in (Eq.~\ref{eq:headon_luminosity}) is analogous to particle collider luminosity \cite{herr2006concept,miyahara2008luminosity}, reflecting the electron--photon collider analogy of ICS sources. We can then neglect the energy spreads of the electron bunch and laser pulse as these have already been adequately taken into account by using the average cross-section $\sigma$, which already encapsulates the variation in interactions due to energy variations. Therefore, the energy radiated by the interaction of a Gaussian laser pulse and electron bunch becomes  
-
 \begin{equation}
 U_{\gamma} = \gamma^{2}\left(1+\beta\right)\sigma\frac{N_{e}N_{L}}{2\pi\sigma_{x}\sigma_{y}}E_{L},
 \label{eq:total_interaction_energy_simplified}
@@ -504,7 +495,6 @@ where the $3/2$ factor originates from (Eq.~\ref{eq:cross_section_factor}), the 
 \label{sec:geometric_luminosity_reduction}
 
 A generalization of the head-on ($\phi = 0$) luminosity in (Eq.~\ref{eq:headon_luminosity}) to the case with an angular crossing ($\phi \neq 0$) can be performed, where the interaction geometry is modified and the transverse and longitudinal profiles of the interaction are adjusted. The effect of an angular crossing, which is assumed to be in the horizontal $x$ plane, can be expressed by a reduction factor $R_{AC}$ \cite{suzuki1976general,miyahara2008luminosity}
-
 \begin{equation}
 R_{AC} = \frac{\sigma_{x}\cos\phi}{\sqrt{\sigma_{x}^{2}\cos^{2}\phi+\sigma_{z}^{2}\sin^{2}\phi}} = \frac{1}{\sqrt{1+\left(\sigma_{z}^{2}/\sigma_{x}^{2}\right)\tan^{2}\phi}},
 \label{eq:angular_crossing_factor}    
@@ -640,7 +630,6 @@ Framed in terms of a particular bandwidth, the spectral density becomes an impor
 \label{sec:bandwidth}
 
 The bandwidth -- the \textit{rms} energy spread of the scattered photons -- of an ICS source is given in the recoil corrected non-linear regime ($a_{0}\ll 1$) \cite{ranjan2018simulation} by
-
 \begin{equation}
 \frac{\Delta E_{\gamma}}{E_{\gamma}} = \sqrt{\left(\frac{\sigma_{\theta}}{E_{\theta}}\right)^{2}+\left(\frac{\sigma_{e}}{E_{e}}\right)^{2}+\left(\frac{\sigma_{L}}{E_{L}}\right)^{2}+\left(\frac{\sigma_{\epsilon}}{E_{\epsilon}}\right)^{2}},
 \label{eq:RMS_bandwidth}    
