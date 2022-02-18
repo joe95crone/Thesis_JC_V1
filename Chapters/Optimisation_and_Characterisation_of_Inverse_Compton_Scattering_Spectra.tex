@@ -305,19 +305,23 @@ In Fig.~\ref{fig:curatolo_collimated_flux_comparison}, the derived analytical ca
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/Opt_Char_Fcol_Curatolo_Comp_FINAL.pdf}
+\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/Fcol_PSI_Cases_Curatolo_Analytical_ICARUS.pdf}
 \caption{Comparison of the derived analytical calculation in this work (Eq.~\ref{eq:collimated_flux}) (blue) with the Curatolo et al \cite{curatolo2017analytical} calculation (Eq.~\ref{eq:curatolo_collimated_flux}) (red) within an acceptance angle $0 \geq \Psi \geq 1$ (a $1/\gamma$ cone). Electron bunch and laser pulse spot sizes are matched ($\sigma_{e}=\sigma_{L}=30$~\si{\micro\meter}). Left: (Eq.~\ref{eq:collimated_flux}) includes hourglass effect ($R_{ACHG}\neq 1$). Right: (Eq.~\ref{eq:collimated_flux}) neglects the angular crossing and hourglass effect ($R_{ACHG} = 1$). Top: Case A. Middle: Case B. Bottom: Case C. \textcolor{blue}{**ADD THE ICARUS RUNS TO THESE PLOTS, LIKE BALSA HAS WITH THE BW COMPARISON**}}
 \label{fig:curatolo_collimated_flux_comparison}
 \end{figure}
 
 With reference to Fig.~\ref{fig:curatolo_collimated_flux_comparison}, it is clear that the two analytical models disagree substantially, with a systematic reduction in collimated flux observed for the calculation by Curatolo et al. \cite{curatolo2017analytical}, for all cases except case B with the hourglass effect. The reason for this discrepancy is because the hourglass reduction (Eq.~\ref{eq:miyahara_combined_reduction}) is large ($R_{ACHG} = 0.274$; a 72.\% luminosity reduction) for case B due to the long 93~\si{\pico\second} electron bunch duration. With the hourglass effect removed, this discrepancy seems to have the same functional form -- the discrepancy increases non-linearly as a function of acceptance angle.
 
+\textcolor{blue}{**NO SCALING FACTOR - ADDS NOTHING**}
 A scaling factor is introduced 
 \begin{equation}
 \mathrm{SF} = \frac{\mathcal{F}_{\mathrm{col}}\left[\mathrm{This~ Work}\right]}{\mathcal{F}_{\mathrm{col}}\left[\mathrm{Curatolo~et~ al}\right]},
 \label{eq:curatolo_scaling_factor}
 \end{equation}
 between this work (Eq.~\ref{eq:collimated_flux}) and the Curatolo calculation (Eq.~\ref{eq:curatolo_collimated_flux}) in order to show this relationship more explicitly. The scaling factor is plotted against acceptance angle in Fig.~\ref{fig:curatolo_scaling_factor_comparison}. At small acceptance angles, as shown by Fig.~\ref{fig:curatolot_scaling_factor_comparison}, there appears to be a constant offset then at larger acceptance angles ($\Psi > 0.4$) the difference between calculations and therefore the scale factor increases. The behaviour as a function of acceptance angle suggests a small angle approximation has been used in the derivation of Curatolo et al's \cite{curatolo2017analytical} calculation. When the hourglass effect is neglected in Fig.~\ref{fig:curatolo_scaling_factor_comparison}, the scaling factor increase with acceptance angle becomes more apparent and it is evident that this relationship is similar for each case which would be expected of a small angle approximation. However, the constant offset can't be explained by the hourglass effect introduced in (Eq.~\ref{eq:collimated_flux}), as this is still evident after the hourglass effect is neglected. Therefore, the appearance of a constant offset between the two analytical models but a difference in constant offset between cases could only be explained via variation of electron bunch energy, a systematic error in the accounting of the collimation angle or emittance/spot size effects in each calculation, as the laser parameters are invariant between the cases. The origin of this discrepancy remains unknown and can not be understood because of the lack of a derivation of Curatolo et al's calculation (Eq.~\ref{eq:curatolo_collimated_flux}) \cite{curatolo2017analytical}. 
+
+\begin{table}
+\end{table}
 
 \textcolor{blue}{**NEED TO ADD ICARUS vs ANALYTICAL DISCUSSION HERE**}
 
@@ -330,6 +334,25 @@ between this work (Eq.~\ref{eq:collimated_flux}) and the Curatolo calculation (E
 
 In addition, as shown in Section~\ref{sec:bandwidth}, the relationships between the two analytical collimated flux calculations resembles the relationships between the two analytical bandwidth models in Fig.~1 of Ranjan et al \cite{ranjan2018simulation} which shows a similar underestimation by Curatolo et al \cite{curatolo2017analytical}, as observed in Fig.~\ref{fig:curatolo_collimated_flux_comparison}.
 
+\begin{table}[!h]
+\centering
+\caption{}
+\vspace{3mm}
+\begin{tabular}{lccc}
+\hline\hline
+ & \multicolumn{3}{c}{Collimated Flux (ph/\si{\second})} \\
+\hline
+Method & Case A & Case B & Case C \\
+\hline 
+Small Angle & $7.22 \times 10^{9}$ & $3.83 \times 10^{10}$ & $8.65\times 10^{8}$ \\
+Curatolo et al & $4.43 \times 10^{9}$ & $4.54\times 10^{10}$ & $6.31\times 10^{8}$ \\
+Analytical & $8.86 \times 10^{8}$ & $1.04 \times 10^{10}$ & $1.17\times 10^{8}$ \\
+\textsc{ICARUS} & $8.76\times 10^{8}$ & $1.04\times 10^{10}$ & $1.14\times 10^{8}$ \\
+\textsc{ICCS3D} & $8.75\times 10^{8}$ & $1.02\times 10^{10}$ & $1.16\times 10^{8}$  \\
+\hline\hline
+\end{tabular}
+\label{eq:collimated_flux_calculations}
+\end{table}
 
 
 \section{Motivation for Narrowband Optimisation of ICS Sources}
@@ -648,7 +671,7 @@ Comparison between the investigated optimisation methods will determine if optim
 
 \begin{table}[!h]
 \centering
-\caption{Single point optimisations for the transverse profile matching (TPM), round beam (RB), non-round beam simplex (NRB simplex) and non-round beam genetic algorithm (NRB GA) methods of all cases. \textit{Rms} bandwidths of 0.5\% (Case A), 2\% (Case B), 0.5\% (Case C) are chosen to evaluate the single point optimisation methodologies for each individual case.}
+\caption{\textcolor{blue}{**RE-JIG THIS TABLE - Parameters in column, methods in row**} Single point optimisations for the transverse profile matching (TPM), round beam (RB), non-round beam simplex (NRB simplex) and non-round beam genetic algorithm (NRB GA) methods of all cases. \textit{Rms} bandwidths of 0.5\% (Case A), 2\% (Case B), 0.5\% (Case C) are chosen to evaluate the single point optimisation methodologies for each individual case.}
 \vspace{3mm}
 \resizebox{\columnwidth}{!}{
 \begin{threeparttable}
