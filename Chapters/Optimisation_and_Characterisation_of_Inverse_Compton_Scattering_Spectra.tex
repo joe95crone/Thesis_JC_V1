@@ -154,10 +154,10 @@ The polarisation term $2\cos^{2}\left(\tau-\phi_{f}\right)$ in (Eq.~\ref{eq:ICAR
 
 The \textsc{ICARUS} spectrum code functions as a \textsc{Mathematica} script with pre-input of ICS source parameters (electron bunch and laser pulse parameters), often from the optimisations later in this chapter, and post-processing which produces plots of spectra from the developed model and calculates the spectral yield (collimated flux) from the produced spectrum. The spectral yield (collimated flux) is calculated by 
 \begin{equation}
-\mathcal{F}_{\mathrm{col}} = R_{AC}f\mathcal{F}^{\mathrm{ICARUS}}_{\mathrm{col}}    
+\mathcal{F}_{\mathrm{col}} = R_{AC}f\mathcal{F}^{\mathrm{spec}}_{\mathrm{col}}    
 \label{eq:spectral_yield}
 \end{equation}
-where $R_{AC}$ is the crossing angle luminosity reduction factor (Eq.~\ref{eq:angular_crossing_factor}), used to adjust the head-on spectrum flux for the crossing angle of the interaction as \textsc{ICARUS} only simulates head-on interactions, $f$ is the repetition rate of interactions of the source, included because the \textsc{ICARUS} simulation only simulates a single electron bunch--laser pulse interaction and $\mathcal{F}^{\mathrm{ICARUS}}_{\mathrm{col}}$ is the spectral yield (collimated flux) of a single electron bunch--laser pulse interaction -- the area under the \textsc{ICARUS} spectrum. 
+where $R_{AC}$ is the crossing angle luminosity reduction factor (Eq.~\ref{eq:angular_crossing_factor}), used to adjust the head-on spectrum flux for the crossing angle of the interaction as \textsc{ICARUS} only simulates head-on interactions, $f$ is the repetition rate of interactions of the source, included because the \textsc{ICARUS} simulation only simulates a single electron bunch--laser pulse interaction and $\mathcal{F}^{\mathrm{spec}}_{\mathrm{col}}$ is the spectral yield (collimated flux) of a single electron bunch--laser pulse interaction -- the area under the \textsc{ICARUS} spectrum. The spectral yield can be applied more generally to calculate the collimated flux of any head-on spectrum. 
 
 The \textsc{ICARUS} simulation evaluates (Eq.~\ref{eq:ICARUS_equation}) at a series of scattered photon energy points to determine the number of photons produced at scattered photon energy intervals thereby building up a spectrum. The maximum scattered photon energy to sample for the spectrum calculation is calculated for the head-on case with $E_{e}+3\sigma_{e}$ as the electron bunch energy, however this neglects the laser pulse spectral bandwidth. The electron bunch energy has a squared dependence on scattered photon energy ($E_{\gamma}\propto\gamma^{2}$), in comparison to scattered photon energies linear relationship with laser wavelength, therefore it is a reasonable assumption to neglect the spectral bandwidth of the laser pulse unless the spectral bandwidth of the laser is large. The minimum sampled scattered photon energy is approximated as
 \begin{equation}
@@ -192,7 +192,7 @@ Parameter & Case A & Case B & Case C & Unit \\
 Kinetic Energy, $E_{e}$ & 1000 & 700 & 25 & \si{\mega\electronvolt} \\
 Repetition Rate, $f$ & 100 & 83.33 & 100 & \si{\mega\hertz} \\
 Bunch Charge, $Q$ & 100 & 3000 & 10 & \si{\pico\coulomb} \\
-Normalised Transverse Emittance, $\epsilon_{n,x}/\epsilon_{n,y}$ & 0.50/0.50 & 18.78/0.233 & 0.10/0.10 & \si{\milli\meter}-\si{\milli\radian} \\
+Norm. Transverse Emittance, $\epsilon_{n,x}/\epsilon_{n,y}$ & 0.50/0.50 & 18.78/0.233 & 0.10/0.10 & \si{\milli\meter}-\si{\milli\radian} \\
 Bunch Length, $\sigma_{e,z}$ & 1.00 & 27.9 & 0.38 & \si{\milli\meter} \\
 Relative Energy Spread, $\Delta E_{e}/E_{e}$ & $10^{-4}$ & $6.07\times 10^{-4}$ & $3.00\times 10^{-4}$ & \\
 \hline\hline
@@ -246,6 +246,7 @@ The optical cavity envisioned to deliver these laser parameters has an average s
 \label{sec:benchmarking_of_the_characterisation_methods}
 
 \subsection{ICARUS Spectrum Code}
+\label{sec:ICARUS_benchmarking}
 
 In addition to \textsc{ICARUS}, several other codes are available to produce spectra of ICS sources, using either semi-analytical or MonteCarlo approaches. Two codes have been considered for benchmarking the \textsc{ICARUS} code: \textsc{CAIN} \cite{chen1995cain}, a MonteCarlo electromagnetic interactions code, and \textsc{ICCS3D} a semi-analytical inverse Compton scattering code. \textsc{CAIN} simulation is currently viewed as the 'standard` method of simulating ICS source spectra however, the \textsc{ICCS3D} code has demonstrated some advantages for the simulation of re-circulated ICS sources with collimation, as discussed in this section. 
 % CAIN - what is it + how does it work + what effects
@@ -267,14 +268,18 @@ Therefore, the \textsc{ICCS3D} code \cite{krafft2016laser,ranjan2018simulation} 
 \label{fig:ICARUS_optimised_benchmarking}
 \end{figure}
 
-The \textsc{ICARUS} and \textsc{ICCS3D} spectra for cases A, B and C in Fig.~\ref{fig:ICARUS_optimised_benchmarking} show good agreement. The spectra in each case produced via \textsc{ICARUS} and \textsc{ICCS3D} are near-identical in shape, with identical peak spectral density and Compton edge energies (Eq.~\ref{eq:compton_edge_energy}) -- the scattered photon energy at peak spectral density -- in both of the spectra for each case. Consequently, the spectral yield (collimated flux) is in good agreement between the two codes -- an agreement in collimated flux of $< 1\%$ is noted for each of the benchmarking cases. However, oscillatory behaviour or 'roughness` -- quickly varying amplitude of the spectral density -- is present in the shape of the \textsc{ICARUS} spectra because of the highly oscillatory integrals involved in the electron bunch energy spread term of (Eq.~\ref{eq:ICARUS_equation})
+The \textsc{ICARUS} and \textsc{ICCS3D} spectra for cases A, B and C in Fig.~\ref{fig:ICARUS_optimised_benchmarking} show good agreement. The spectra in each case produced via \textsc{ICARUS} and \textsc{ICCS3D} are near-identical in shape, with identical peak spectral density and Compton edge energies (Eq.~\ref{eq:compton_edge_energy}) -- the scattered photon energy at peak spectral density -- in both of the spectra for each case. Consequently, the spectral yield (collimated flux) is in good agreement between the two codes -- an agreement in collimated flux of $< 2\%$ is noted for each of the benchmarking cases.
+
+\textcolor{blue}{**NOTE THE BENEFITS THAT HAVE CAME THROUGH THIS COLLABORATION HERE** - INTEGRATION PROBLEM NOTED IN ICCS AND PROPER UNITS**}
+
+However, oscillatory behaviour or 'roughness` -- quickly varying amplitude of the spectral density -- is present in the shape of the \textsc{ICARUS} spectra because of the highly oscillatory integrals involved in the electron bunch energy spread term of (Eq.~\ref{eq:ICARUS_equation})
 \begin{equation}
 \frac{dN_{\gamma}}{dE_{\gamma}} &\propto \exp\left[\frac{\left(\gamma-\gamma_{0}\right)^{2}}{2\sigma_{\gamma}^{2}}\right],
 \label{eq:ICARUS_electron_energy_spread_term}
 \end{equation}
 which causes errors in the quasi-Monte Carlo integration. The 'roughness` effect appears unphysical and, upon further investigation, seems related to the number of quasi-Monte Carlo integration points used in the simulation. 
 
-Therefore, two simulation parameters which could affect the quality of the \textsc{ICARUS} simulation have been further investigated: the number of simulation points the model (Eq.~\ref{eq:ICARUS_equation}) is evaluated for and the number of quasi-Monte Carlo points used in the integration. Both have been investigated using case A  in Table~\ref{tab:char_opt_electron_bunch_parameters}, with collimation and $\beta$-functions at the IP specified by a 0.5\% \textit{rms} bandwidth optimisation using the non-round beam genetic algorithm method ($\theta_{\mathrm{col}}=0.066$~\si{\milli\radian}, $\beta_{x}^{*}=2.11$~\si{\meter}, $\beta_{y}^{*}=0.867$~\si{\meter}), as is used in Fig.~\ref{fig:ICARUS_optimised_benchmarking}. The investigation into the study of the number of simulation points produces \textsc{ICARUS} spectra with a range of 10--300 simulation points and a constant $5\times 10^{7}$ QMC points. Whereas the study of the number of QMC points produces \textsc{ICARUS} spectra with 100 simulation points and 10--100 million QMC points. The results of the simulation and QMC point investigations are shown in Fig.~\ref{fig:ICARUS_sim_qmc_points}.    
+Therefore, two simulation parameters which could affect the quality of the \textsc{ICARUS} simulation have been further investigated: the number of simulation points the model (Eq.~\ref{eq:ICARUS_equation}) is evaluated for and the number of quasi-Monte Carlo points used in the integration. Both have been investigated using case A  in Table~\ref{tab:char_opt_electron_bunch_parameters}, with collimation and $\beta$-functions at the IP specified by a 0.5\% \textit{rms} bandwidth optimisation using the non-round beam genetic algorithm method ($\theta_{\mathrm{col}}=0.066$~\si{\milli\radian}, $\beta_{x}^{*}=2.11$~\si{\meter}, $\beta_{y}^{*}=0.867$~\si{\meter}), as is used in Fig.~\ref{fig:ICARUS_optimised_benchmarking}. The investigation into the study of the number of simulation points produces \textsc{ICARUS} spectra with a range of 10--300 simulation points and a constant $5\times 10^{7}$ QMC points. Whereas the study of the number of QMC points produces \textsc{ICARUS} spectra with 100 simulation points and 10--100 million QMC points. The results of the simulation and QMC point investigations are shown in Fig.~\ref{fig:ICARUS_sim_qmc_points}
 
 \begin{figure}[!h]
 \centering
@@ -290,70 +295,63 @@ In Fig.~\ref{fig:ICARUS_sim_qmc_points}, the \textsc{ICARUS} spectra are shown f
 
 \subsection{Analytical Collimated Flux}
 
-\textcolor{blue}{ **Add on the ICARUS data for these** // **CREATE A BENCHMARKING TABE WHICH COMPARES METHODS F0.1\%, ME, CURATOLO, SMALL ANGLE $\mathcal{F}_{\mathrm{col}} = 3/2\mathcal{F}\gamma^{2}\theta^{2}$**}
-
-The analytical collimated flux derivation (Eq.~\ref{eq:collimated_flux}) in Section~\ref{sec:analytical_collimated_flux} has been compared against both the developed \textsc{ICARUS} code (Section~\ref{sec:development_of_the_ICARUS_spectrum_code}) and an analytical collimated flux method by Curatolo et al \cite{curatolo2017analytical}, using the test case parameters (Tables~\ref{tab:char_opt_electron_bunch_parameters} and \ref{tab:char_opt_laser_pulse_parameters}) as described in Section~\ref{sec:benchmarking_cases_characterisation_optimisation}. All methods should be capable of calculating the flux within a particular collimation angle; agreement of the derived analytical collimated flux calculation (Eq.~\ref{eq:collimated_flux}) is expected to be within $\sim10$\% of the full spectral yield calculation from the \textsc{ICARUS} spectrum code as the only differences between these models are a neglect of the energy spread of the electron bunch, spectral bandwidth and point source approximation. 
-
-The analytical calculation of collimated flux by Curatolo et al \cite{curatolo2017analytical} in 'natural units' is given by  
+The analytical collimated flux (Eq.~\ref{eq:collimated_flux}) derived in Section~\ref{sec:analytical_collimated_flux} has been compared against numerous methods including the analytical formulation by Curatolo et al \cite{curatolo2017analytical} as well as the collimated flux (spectral yield) calculated from the \textsc{ICARUS} and \textsc{ICCS3D} \cite{krafft2016laser,ranjan2018simulation} spectrum codes. The collimated flux is calculated by Curatolo et al, in 'natural units` as 
 \begin{equation}
-\mathcal{F}_{\mathrm{col}} = 6.25\times 10^{8}\frac{E_{\mathrm{pulse}}\left(\mathrm{\si{\joule}}\right)Q\left(\si{\pico\coulomb}\right)f\left(\si{\hertz}\right)}{E_{L}\left(\si{\electronvolt}\right)\left[\sigma_{x}^{2}\left(\si{\micro\meter}\right)+\sigma_{L}^{2}\left(\si{\micro\meter}\right)\right]}\times\frac{\left(1+\sqrt[3]{X}\Psi^{2}/3\right)\Psi^{2}}{\left[1+\left(1+X/2\right)\Psi^{2}\right]\left(1+\Psi^{2}\right)},
+\mathcal{F}_{\mathrm{col}} = 6.25\times 10^{8}\frac{E_{\mathrm{pulse}}\left(\mathrm{\si{\joule}}\right)Q\left(\si{\pico\coulomb}\right)f\left(\si{\hertz}\right)}{E_{L}\left(\si{\electronvolt}\right)\left[\sigma_{e}^{2}\left(\si{\micro\meter}\right)+\sigma_{L}^{2}\left(\si{\micro\meter}\right)\right]}\times\frac{\left(1+\sqrt[3]{X}\Psi^{2}/3\right)\Psi^{2}}{\left[1+\left(1+X/2\right)\Psi^{2}\right]\left(1+\Psi^{2}\right)},
 \label{eq:curatolo_collimated_flux}
 \end{equation}
-where all symbols are consistent with the exception of $\sigma_{x}$, which in the work of Curatolo et al is the \textit{rms} spot size of the electron bunch at the IP and $\Psi = \gamma\theta_{\mathrm{col}}$, the acceptance angle. The collimated flux calculation by Curatolo et al \cite{curatolo2017analytical} apparently uses the Berestetskii, Pitaevskii and Lifshitz \cite{berestetskii1982quantum} differential cross section as is used in the derivation in Section~\ref{sec:analytical_collimated_flux} however, an explicit derivation is not shown or referenced. Upon inspection of (Eq.~\ref{eq:curatolo_collimated_flux}), it is evident that this is only valid for a head-on ($\phi=0$) interaction, for round electron spot sizes, where the $x$ and $y$ plane spot sizes are identical, doesn't take into account the hourglass effect \cite{furman1991hourglass,miyahara2008luminosity} and it appears the cross section is assumed to be the Thomson cross section, not the recoil corrected cross section unlike the calculation in (Eq.~\ref{eq:collimated_flux}).   
+where all units are consistent with those in (Eq.~\ref{eq:collimated_flux}), $\Psi-\gamma\theta_{\mathrm{col}}$ is the acceptance angle and $\sigma_{e} = \sqrt{\sigma_{x}^{2}+\sigma_{y}^{2}}$ is the \texit{rms} spot size of the electron bunch at the IP, with $\sigma_{x/y}$ the \textit{rms} spot size in each plane.
 
-In Fig.~\ref{fig:curatolo_collimated_flux_comparison}, the derived analytical calculation (Eq.~\ref{eq:collimated_flux}), and (Eq.~\ref{eq:curatolo_collimated_flux}) with neglected hourglass effect and a head-on interaction ($\phi = 0$), is compared with the calculation by Curatolo et al \cite{curatolo2017analytical} (Eq.~\ref{eq:curatolo_collimated_flux}) and the spectral yield (collimated flux) of the \textsc{ICARUS} spectrum code. The comparison is made in Fig.~\ref{fig:curatolo_collimated_flux_comparison} through calculation of the collimated flux against the acceptance angle $\Psi = \gamma\theta_{\mathrm{col}}$ for each of the cases in Table~\ref{tab:char_opt_electron_bunch_parameters} with the transverse profile matching condition ($\sigma_{e} = \sigma_{L}$, see Section~\ref{sec:transverse_profile_matching}) applied -- where the laser pulse \textit{rms} spot size and electron bunch \textit{rms} spot size are identical ($\sigma_{e} = \sigma_{L} = 30$~\si{\micro\meter}), which in this case is set by the laser pulse \textit{rms} spot size in Table~\ref{tab:char_opt_laser_pulse_parameters}.    
+The collimated flux calculation by Curatolo et al \cite{curatolo2017analytical} (Eq.~\ref{eq:curatolo_collimated_flux}) uses the Berestetskii, Pitaevskii and Lifshitz \cite{berestetskii1982quantum} differential cross section (Eq.~\ref{eq:differential_cross_section_Y_invariant}) as in the derivation presented here in Section~\ref{sec:analytical_collimated_flux} however, an explicit derivation is not shown or referenced. Upon inspection of (Eq.~\ref{eq:curatolo_collimated_flux}), it is evident that this is only valid for a head-on ($\phi=0$) interaction and doesn't account for the  hourglass effect \cite{furman1991hourglass,miyahara2008luminosity} -- the luminosity reduction due to interaction of a diverging laser pulse and electron bunch -- outlined in Section~\ref{sec:geometric_luminosity_reduction}. Therefore, to align the Curatolo et al calculations (Eq.~\ref{eq:curatolo_collimated_flux}), the angular crossing and hourglass effect luminosity reduction factor $R_{ACHG}$ \cite{miyahara2008luminosity} (Eq.~\ref{eq:miyahara_combined_reduction}) must be introduced.  The cross section in (Eq.~\ref{eq:curatolo_collimated_flux}) appears to assume the Thomson cross section, not the recoil corrected cross section, unlike the calculation in (Eq.~\ref{eq:collimated_flux}).
 
-\begin{figure}[!h]
-\centering
-\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/Fcol_PSI_Cases_Curatolo_Analytical_ICARUS.pdf}
-\caption{Comparison of the derived analytical calculation in this work (Eq.~\ref{eq:collimated_flux}) (blue) with the Curatolo et al \cite{curatolo2017analytical} calculation (Eq.~\ref{eq:curatolo_collimated_flux}) (red) within an acceptance angle $0 \geq \Psi \geq 1$ (a $1/\gamma$ cone). Electron bunch and laser pulse spot sizes are matched ($\sigma_{e}=\sigma_{L}=30$~\si{\micro\meter}). Left: (Eq.~\ref{eq:collimated_flux}) includes hourglass effect ($R_{ACHG}\neq 1$). Right: (Eq.~\ref{eq:collimated_flux}) neglects the angular crossing and hourglass effect ($R_{ACHG} = 1$). Top: Case A. Middle: Case B. Bottom: Case C. \textcolor{blue}{**ADD THE ICARUS RUNS TO THESE PLOTS, LIKE BALSA HAS WITH THE BW COMPARISON**}}
-\label{fig:curatolo_collimated_flux_comparison}
-\end{figure}
-
-With reference to Fig.~\ref{fig:curatolo_collimated_flux_comparison}, it is clear that the two analytical models disagree substantially, with a systematic reduction in collimated flux observed for the calculation by Curatolo et al. \cite{curatolo2017analytical}, for all cases except case B with the hourglass effect. The reason for this discrepancy is because the hourglass reduction (Eq.~\ref{eq:miyahara_combined_reduction}) is large ($R_{ACHG} = 0.274$; a 72.\% luminosity reduction) for case B due to the long 93~\si{\pico\second} electron bunch duration. With the hourglass effect removed, this discrepancy seems to have the same functional form -- the discrepancy increases non-linearly as a function of acceptance angle.
-
-\textcolor{blue}{**NO SCALING FACTOR - ADDS NOTHING**}
-A scaling factor is introduced 
-\begin{equation}
-\mathrm{SF} = \frac{\mathcal{F}_{\mathrm{col}}\left[\mathrm{This~ Work}\right]}{\mathcal{F}_{\mathrm{col}}\left[\mathrm{Curatolo~et~ al}\right]},
-\label{eq:curatolo_scaling_factor}
-\end{equation}
-between this work (Eq.~\ref{eq:collimated_flux}) and the Curatolo calculation (Eq.~\ref{eq:curatolo_collimated_flux}) in order to show this relationship more explicitly. The scaling factor is plotted against acceptance angle in Fig.~\ref{fig:curatolo_scaling_factor_comparison}. At small acceptance angles, as shown by Fig.~\ref{fig:curatolot_scaling_factor_comparison}, there appears to be a constant offset then at larger acceptance angles ($\Psi > 0.4$) the difference between calculations and therefore the scale factor increases. The behaviour as a function of acceptance angle suggests a small angle approximation has been used in the derivation of Curatolo et al's \cite{curatolo2017analytical} calculation. When the hourglass effect is neglected in Fig.~\ref{fig:curatolo_scaling_factor_comparison}, the scaling factor increase with acceptance angle becomes more apparent and it is evident that this relationship is similar for each case which would be expected of a small angle approximation. However, the constant offset can't be explained by the hourglass effect introduced in (Eq.~\ref{eq:collimated_flux}), as this is still evident after the hourglass effect is neglected. Therefore, the appearance of a constant offset between the two analytical models but a difference in constant offset between cases could only be explained via variation of electron bunch energy, a systematic error in the accounting of the collimation angle or emittance/spot size effects in each calculation, as the laser parameters are invariant between the cases. The origin of this discrepancy remains unknown and can not be understood because of the lack of a derivation of Curatolo et al's calculation (Eq.~\ref{eq:curatolo_collimated_flux}) \cite{curatolo2017analytical}. 
-
-\begin{table}
-\end{table}
-
-\textcolor{blue}{**NEED TO ADD ICARUS vs ANALYTICAL DISCUSSION HERE**}
-
-\begin{figure}[!h]
-\centering
-\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/Opt_Char_Fcol_Curatolo_SF_FINAL.pdf}
-\caption{Scaling factor between the analytical collimated flux equation developed in this work (Eq.~\ref{eq:collimated_flux}) and Curatolo et al's \cite{curatolo2017analytical} calculation (Eq.~\ref{eq:curatolo_collimated_flux}) against acceptance angle for case A (red), case B (blue) and case C (orange) presented in Table~\ref{tab:char_opt_electron_bunch_parameters}. Left: (Eq.~\ref{eq:collimated_flux}) includes hourglass effect ($R_{ACHG}\neq 1$). Right: (Eq.~\ref{eq:collimated_flux}) neglects the hourglass effect ($R_{ACHG} = 1$).}
-\label{fig:curatolo_scaling_factor_comparison}
-\end{figure}
-
-In addition, as shown in Section~\ref{sec:bandwidth}, the relationships between the two analytical collimated flux calculations resembles the relationships between the two analytical bandwidth models in Fig.~1 of Ranjan et al \cite{ranjan2018simulation} which shows a similar underestimation by Curatolo et al \cite{curatolo2017analytical}, as observed in Fig.~\ref{fig:curatolo_collimated_flux_comparison}.
+The collimated flux calculation methods are compared using the benchmarking cases in Section~\ref{sec:benchmarking_cases_characterisation_optimisation} with the electron bunch parameters in Table~\ref{tab:char_opt_electron_bunch_parameters} and laser pulse parameters in Table \ref{tab:char_opt_laser_pulse_parameters}). The calculations have been conducted using the genetic algorithm single point bandwidth optimisation, as outlined in Section~\ref{sec:NRB_optimisation}, for a 0.5\% \textit{rms} bandwidth (2\% \textit{rms} bandwidth case B) which yields the values for the $\beta$-functions at the IP and collimation angle shown later in this chapter in Table~\ref{tab:single_point_optimisations}. The results of the collimated flux calculations, by each method, for each of the benchmarking cases A, B and C are shown in Table~\ref{tab:collimated_flux_calculations}
 
 \begin{table}[!h]
 \centering
-\caption{}
+\caption{\textcolor{blue}{**CAPTION TO DO**}}
 \vspace{3mm}
+\begin{threeparttable}
 \begin{tabular}{lccc}
 \hline\hline
  & \multicolumn{3}{c}{Collimated Flux (ph/\si{\second})} \\
 \hline
 Method & Case A & Case B & Case C \\
 \hline 
-Small Angle & $7.22 \times 10^{9}$ & $3.83 \times 10^{10}$ & $8.65\times 10^{8}$ \\
-Curatolo et al & $4.43 \times 10^{9}$ & $4.54\times 10^{10}$ & $6.31\times 10^{8}$ \\
-Analytical & $8.86 \times 10^{8}$ & $1.04 \times 10^{10}$ & $1.17\times 10^{8}$ \\
-\textsc{ICARUS} & $8.76\times 10^{8}$ & $1.04\times 10^{10}$ & $1.14\times 10^{8}$ \\
-\textsc{ICCS3D} & $8.75\times 10^{8}$ & $1.02\times 10^{10}$ & $1.16\times 10^{8}$  \\
+Curatolo et al~\tnote{*} (Eq.~\ref{eq:curatolo_collimated_flux}) \cite{curatolo2017analytical} & $6.03 \times 10^{8}$ & $5.95\times 10^{9}$ & $7.35\times 10^{7}$ \\
+Analytical (Eq.~\ref{eq:collimated_flux}) & $8.86 \times 10^{8}$ & $1.04 \times 10^{10}$ & $1.17\times 10^{8}$ \\
+\textsc{ICARUS}~\tnote{$\dagger$} (Eq.~\ref{eq:spectral_yield}) & $8.76\times 10^{8}$ & $1.04\times 10^{10}$ & $1.14\times 10^{8}$ \\
+\textsc{ICCS3D}~\tnote{$\dagger$} (Eq.~\ref{eq:spectral_yield}) \cite{krafft2016laser,ranjan2018simulation} & $8.75\times 10^{8}$ & $1.02\times 10^{10}$ & $1.16\times 10^{8}$  \\
 \hline\hline
 \end{tabular}
-\label{eq:collimated_flux_calculations}
+\begin{tablenotes}
+\item[*]{The Curatolo et al collimated flux (Eq.~\ref{eq:curatolo_collimated_flux}) has been multiplied by the combined angular crossing and hourglass effect luminosity reduction factor (Eq.~\ref{eq:miyahara_combined_reduction}) for comparison with other collimated flux calculations.}
+\item[$\dagger$]{The \textsc{ICARUS} and \textsc{ICCS3D} spectra used in the calculation of the collimated flux (spectral yield) are shown in Fig.~\ref{fig:ICARUS_optimised_benchmarking}.}
+\end{tablenotes}
+\end{threeparttable}
+\label{tab:collimated_flux_calculations}
 \end{table}
 
+The collimated flux calculations in Table~\ref{tab:collimated_flux_calculations} show good agreement between the spectrum code calculations, as \textsc{ICARUS} and \textsc{ICCS3D} agree to within $< 2\%$ in all cases. Good agreement was shown qualitatively between these two codes in Fig.~\ref{fig:ICARUS_optimised_benchmarking}, therefore good quantitative agreement was expected. Between the \textsc{ICARUS} code and the analytical collimated flux calculation (Eq.~\ref{eq:collimated_flux}), a maximum discrepancy of 1.14\% is observed. Percentage scale discrepancies between these two calculations can be expected because the analytical calculation neglects the energy spread of the electron bunch and the spectral bandwidth of the laser pulse and the \textsc{ICARUS} code is not exact because of oscillatory integration errors, as discussed in Section~\ref{sec:ICARUS_benchmarking}. 
+
+However, the collimated flux calculation by Curatolo et al \cite{curatolo2017analytical} (Eq.~\ref{eq:curatolo_collimated_flux}) shows large discrepancies from both the analytical collimated flux derived in Section~\ref{sec:analytical_collimated_flux} and the spectrum codes. Table~\ref{tab:collimated_flux_calculations} shows the Curatolo et al collimated flux (Eq.~\ref{eq:curatolo_collimated_flux}) is consistently reduced with reference to the analytical (Eq.~\ref{eq:collimated_flux}) and spectrum code collimated flux, which is also observed in Fig.~\ref{fig:curatolo_collimated_flux_comparison}. For example, in Table~\ref{tab:collimated_flux_calculations}, a factor $\sim 1.75$ reduction in collimated flux is observed between (Eq.~\ref{eq:collimated_flux}) and (Eq.~\ref{eq:curatolo_collimated_flux}) for case B. The discrepancy must originate in the angular term of (Eq.~\ref{eq:curatolo_collimated_flux})
+\begin{equation*}
+\mathcal{F}_{\mathrm{col}}\propto\frac{\left(1+\sqrt[3]{X}\Psi^{2}/3\right)\Psi^{2}}{\left[1+\left(1+X/2\right)\Psi^{2}\right]\left(1+\Psi^{2}\right)}    
+\end{equation*}
+because the head-on luminosity is equivalent in both equations, the geometric luminosity reduction is applied identically and the cross section variation of Case A (the maximum electron bunch energy case, $E_{e}=1$~\si{\giga\electronvolt}) is small -- a 1.2\% reduction in the ICS cross section (Eq.~\ref{eq:compton_cross_section_classical_limit}). The cross section variation with electron energy is illustrated in Fig.~\ref{fig:cross_section_electron_energy}. However, the origin of the discrepancy in the angular term of the Curatolo et al \cite{curatolo2017analytical} calculation (Eq.~\ref{eq:curatolo_collimated_flux}) remains unknown because no adequate derivation is shown within the literature.   
+
+To further investigate the angular dependency of the collimated flux calculations the collimated flux, via the two analytical methods (Eqs.~\ref{eq:collimated_flux}, \ref{eq:curatolo_collimated_flux}) and the \textsc{ICARUS} spectrum code, has been calculated as a function of the acceptance angle in Fig.~\ref{fig:curatolo_collimated_flux_comparison}. 
+% mention where the parameters are from
+  
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/Fcol_PSI_Cases_Curatolo_Analytical_ICARUS.pdf}
+\caption{\textcolor{blue}{**re-write caption**}Comparison of the derived analytical calculation in this work (Eq.~\ref{eq:collimated_flux}) (blue) with the Curatolo et al \cite{curatolo2017analytical} calculation (Eq.~\ref{eq:curatolo_collimated_flux}) (red) within an acceptance angle $0 \geq \Psi \geq 1$ (a $1/\gamma$ cone). Electron bunch and laser pulse spot sizes are matched ($\sigma_{e}=\sigma_{L}=30$~\si{\micro\meter}). Left: (Eq.~\ref{eq:collimated_flux}) includes hourglass effect ($R_{ACHG}\neq 1$). Right: (Eq.~\ref{eq:collimated_flux}) neglects the angular crossing and hourglass effect ($R_{ACHG} = 1$). Top: Case A. Middle: Case B. Bottom: Case C. \textcolor{blue}{**ADD THE ICARUS RUNS TO THESE PLOTS, LIKE BALSA HAS WITH THE BW COMPARISON**}}
+\label{fig:curatolo_collimated_flux_comparison}
+\end{figure}
+
+\textcolor{blue}{**WRITE ABOUT THE COL FLUX ANGLE PLOTS**}
+
+The analytical calculation (Eq.~\ref{eq:collimated_flux}) is proficient at calculating the yield of ICS spectrum codes within energy spread and spectral bandwidth tolerances and consequently is a valid alternative to spectrum code collimated flux calculations. The analytical collimated flux calculation is advantageous in terms of simulation time, as the collimated flux is calculated analytically on a sub-second timescale whereas the spectrum codes at 100 million QMC points and 100 simulation points require hours to run. Consequently, the analytical collimated flux is a useful calculation method for computing the many collimated flux values required in the optimisations detailed in the rest of this chapter.   
 
 \section{Motivation for Narrowband Optimisation of ICS Sources}
 \label{sec:motivation_optimisation}
