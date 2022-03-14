@@ -17,16 +17,70 @@
 
 % Title
 %--------------------------------------------------------
-\chapter{CBETA Multi-Pass Commissioning}
+\chapter{CBETA Multi-Turn Commissioning}
 \label{CBETA_Multi-Pass_Commissioning} % to reference use \ref{ChapterTemplate}
 
-\section{CBETA ERL}
+\section{Energy Recovery Linacs}
 
-% Section here about commissioning
-% Potentially do an ERL literature review?
-\textcolor{blue}{**NRF + SRF, DIFFERENCES + STATUS FOR ERL**}
+\section{Multi-Turn ERLs}
 
-\section{Multi-pass FFA Chromaticity Measurement}
+\section{CBETA Commissioning}
+% CBETA motivation, USP + context
+\subsection{CBETA Motivation and Context}
+The Cornell University (CU) Brookhaven National Laboratory (BNL) Energy Recovery Linac Test Accelerator (CBETA) is a 4-turn superconducting RF ERL test facility, which utilises a novel non-scaling FFA (ns-FFA) return loop for re-circulation and energy recovery of electron bunches \cite{hoffstaetter2017cbeta,bartnik2020cbeta}. The 4-turn (8-pass) ERL was built in collaboration with BNL and hosted at Cornell University -- the birthplace of the ERL concept \cite{tigner1965possible}. 
+
+The CBETA ERL was originally envisioned as a test-bed of the ERL approach to a coherent electron cooler \cite{derbenev1991coherent,litvinenko2009coherent} required to improve the luminosity of the forthcoming electron--ion collider (EIC) \cite{willeke2021electron}.
+
+% light source ERL @ Cornell
+% towards the EIC
+
+\subsection{The CBETA ERL}
+% how does CBETA work + why is it special
+
+In the CBETA ERL the electron bunch is injected from a high repetition rate continuous wave photoinjector, capable of delivering high brightness electron bunches with small transverse emittance ($\epsilon_{n} = 0.3$~\si{\milli\meter}--\si{\milli\radian}) at an electron energy of 6~\si{\mega\electronvolt}. Electron bunches are produced at 325~\si{\mega\hertz} repetition rate, with the photoinjector providing an electron beam current as high as 75~\si{\milli\ampere}. The Cornell DC photo-emission gun and injector cryomodule is world-leading in both small emittance and average beam current; ideal for a high brightness ERL. The electron bunch is then accelerated by the superconducting RF main linac cryomodule (MLC), which accelerates the electron bunch to 42~\si{\mega\electronvolt} kinetic energy -- an energy gain of $\pm 36$~\si{\mega\electronvolt} per pass. The MLC is 9.8~\si{\meter} long and comprised of six 7-cell 1.3~\si{\giga\hertz} superconducting cavities providing an accelerating field of up to 16~\si{\mega\volt}/\si{\meter} \cite{hoffstaetter2017cbeta}.
+
+% splitter re-combiner sections
+
+Post-acceleration the electron bunch is then re-circulated via the non-scaling FFA return loop, as shown in the schematic of the CBETA ERL in Fig.~\ref{fig:CBETA_ICS_Layout}. The non-scaling FFA optics scheme is explained in Section~\ref{sec:FFA}, and in CBETA the ns-FFA return loop is used to transport the multiple energy electron beams (42, 78, 114, 150~\si{\mega\electronvolt}) using a series of Hallbach permanent magnet quadrupoles. The arcs of the ns-FFA return loop contain a periodic combined function--defocusing quadrupole doublet (FA/FB), the straight is comprised of a focusing--defocusing quadrupole doublet (ZX) and the transition sections (TA/TB) are comprised of quadrupole doublets which are offset from the reference orbit to slowly conform the electron bunch in the arcs to the reference trajectory in the straight sections (TA) and the reverse (TB) for straight to arc transition. Further information on design of the complex transition sections is presented by Hoffstaetter et al \cite{hoffstaetter2017cbeta}.  
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/CBETA_4turn.pdf}
+\caption{}
+\label{fig:CBETA_layout}
+\end{figure}
+
+% multi-turn + decelerations
+Upon arrival at the linac for the second pass, the electron bunch coincides with the accelerating phase of the MLC, as shown in Fig.~, and is further accelerated to 78~\si{\mega\electronvolts}. Two further re-circulations (accelerating passes) occur until the electron bunch has reached the maximum 150~\si{\mega\electronvolt} kinetic energy. The electron bunch is then decelerated from 150~\si{\mega\electronvolt} to 114~\si{\mega\electronvolt} as the path length, fine tuned by the path length adjustment system in the spreaders, means the electron bunch arrives for the 5th pass of the MLC at a decelerating phase of the linac (as shown in Fig.~) and energy is recovered by the SRF cavities. Three further decelerating passes occur until the electron bunch is returned to the injection energy ($E_{\mathrm{inj}} = 6$~\si{\mega\electronvolt}) and transported to the beam stop. CBETA passes the MLC a total of 8 times, with 4 accelerating passes and 4 decelerating passes -- a total of 4 turns.
+
+Design parameters of the CBETA ERL \cite{hoffstaetter2017cbeta} are shown in Table~\ref{tab:CBETA_ERL_design_parameters}.
+
+\begin{table}[!h]
+\centering
+\caption{Design parameters of the CBETA ERL from the technical design report \cite{hoffstaetter2017cbeta}.}
+\vspace{3mm}
+\begin{tabular}{lcc}
+\hline\hline
+Parameter & Design Value & Unit \\
+\hline
+No. turns & 4 & \\
+Injection energy, $E_{\mathrm{inj}}$ & 6 & \si{\mega\electronvolt} \\
+Nominal electron kinetic energy, $E_{e}$ & 42, 78, 114, 150 & \si{\mega\electronvolt} \\
+Bunch charge, $Q$ & 1--123 & \si{\pico\coulomb} \\
+Average beam current, $I$ & 40 & \si{\milli\ampere} \\
+Trans. norm. \textit{rms} emittance, $\epsilon_{n}$ & 0.3--1 & \si{\milli\meter}--\si{\milli\radian} \\
+\textit{Rms} bunch length (duration), $\Delta\tau$ & 1.2 (4) & \si{\milli\meter} (\si{\pico\second}) \\
+Bunch frequency, $f_{\mathrm{bunch}}$ & 325 & \si{\mega\hertz} \\
+Rel. energy spread, $\Delta E_{e}/E_{e}$ & $5\times 10^{-4}$ & \\
+\hline
+\end{tabular}
+\label{tab:CBETA_ERL_design_parameters}
+\end{table}
+
+\subsection{Multi-Turn Commissioning Results}
+% results + commissioning achievements
+
+\section{Multi-Turn FFA Chromaticity Measurement}
 
 \textcolor{blue}{**THIS NEEDS TO REFERENCE THE ERL THEORY CHAPTER**}
 
