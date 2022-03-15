@@ -27,37 +27,37 @@
 \section{CBETA Commissioning}
 % CBETA motivation, USP + context
 \subsection{CBETA Motivation and Context}
-The Cornell University (CU) Brookhaven National Laboratory (BNL) Energy Recovery Linac Test Accelerator (CBETA) is a 4-turn superconducting RF ERL test facility, which utilises a novel non-scaling FFA (ns-FFA) return loop for re-circulation and energy recovery of electron bunches \cite{hoffstaetter2017cbeta,bartnik2020cbeta}. The 4-turn (8-pass) ERL was built in collaboration with BNL and hosted at Cornell University -- the birthplace of the ERL concept \cite{tigner1965possible}. 
 
-The CBETA ERL was originally envisioned as a test-bed of the ERL approach to a coherent electron cooler \cite{derbenev1991coherent,litvinenko2009coherent} required to improve the luminosity of the forthcoming electron--ion collider (EIC) \cite{willeke2021electron}.
+The Cornell University (CU) Brookhaven National Laboratory (BNL) Energy Recovery Linac Test Accelerator (CBETA) is a 4-turn superconducting RF ERL test facility, which utilises a novel non-scaling FFA (ns-FFA) return loop for re-circulation and energy recovery of electron bunches \cite{hoffstaetter2017cbeta,bartnik2020cbeta}. The 4-turn (8-pass) ERL was built in collaboration with BNL and hosted at Cornell University -- the birthplace of the ERL concept \cite{tigner1965possible}. A schematic of the CBETA ERL is shown in Fig.~\ref{fig:CBETA_Layout}
 
-% light source ERL @ Cornell
-% towards the EIC
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/CBETA_4turn.pdf}
+\caption{Schematic of the CBETA ERL. The electron bunch is produced by the photo-injector ($E_{\mathrm{inj}} = 6$~\si{\mega\electronvolt}), accelerated by the main linac ($\Delta E_{e} = \pm 36$~\si{\mega\electronvolt}) and re-circulated by the FFA return loop (FA--FB) for 4 successive passes until the maximum electron energy is reached ($E_{e} = 150$~\si{\mega\electronvolt}). The designed path length induces a phase change of 180\si{\degree} on the 5th pass such that the electron beam is decelerated for the next 4 passes, where the electron bunch is returned to the injection energy on the 8th pass and transported to the beam stop.}
+\label{fig:CBETA_layout}
+\end{figure}
+
+The CBETA ERL was originally envisioned as a test-bed of the ERL approach to a coherent electron cooler \cite{derbenev1991coherent,litvinenko2009coherent} required to improve the luminosity of the forthcoming electron--ion collider (EIC) \cite{willeke2021electron}. The multi-turn ERL concept is a favoured approach for coherent electron cooling because high brightness electron bunches of moderate kinetic energy ($E_{e} = 149.8$~\si{\mega\electronvolt} \cite{willeke2021electron}) may be delivered in a compact footprint; CBETA has a circumference of 79.1~\si{\meter}. 
+
+An ERL driven free electron laser \cite{bazarov2003lattice,gruner2001study,bilderback2006status} was originally proposed at Cornell University to provide a hard x-ray facility, expanding the energy range of the existing CHESS synchrotron radiation facility \cite{batterman1979chess,CHESSstructuralmaterialsbeamline}. The Cornell ERL light source design consists of a 5~\si{\giga\electonvolt} single turn ERL with an average electron beam current of 100~\si{\milli\ampere} \cite{bazarov2003lattice,gruner2001study,bilderback2006status}, driving a 25~\si{\meter} free electron laser for the production of $\lambda = 6$~\si{\pico\meter} ($E_{\gamma} = 207.2$~\si{\kilo\electronvolt}) at high x-ray brilliance $\mathcal{B}_{\mathrm{avg}}\sim 10^{23}$~ph/\si{\second}~\si{\milli\meter}$^{2}$--\si{\milli\radian}$^{2}$ 0.1\% bw \cite{bilderback2006status}. Whilst the CBETA ERL is much smaller scale and energy than the Cornell ERL light source, the high electron brightness, moderate energy from the compact CBETA accelerator is advantageous toward alight source. Hence, the CBETA ERL is suggested as a electron beam driver of a hard x-ray ($E_{\gamma} = 402.5$~\si{\kilo\electronvolt}) inverse Compton scattering source in Chapter~\ref{CBETA_Inverse_Compton_Scattering_Source_Design}, providing a high energy extension to the CHESS SR facility.
 
 \subsection{The CBETA ERL}
 % how does CBETA work + why is it special
 
 In the CBETA ERL the electron bunch is injected from a high repetition rate continuous wave photoinjector, capable of delivering high brightness electron bunches with small transverse emittance ($\epsilon_{n} = 0.3$~\si{\milli\meter}--\si{\milli\radian}) at an electron energy of 6~\si{\mega\electronvolt}. Electron bunches are produced at 325~\si{\mega\hertz} repetition rate, with the photoinjector providing an electron beam current as high as 75~\si{\milli\ampere}. The Cornell DC photo-emission gun and injector cryomodule is world-leading in both small emittance and average beam current; ideal for a high brightness ERL. The electron bunch is then accelerated by the superconducting RF main linac cryomodule (MLC), which accelerates the electron bunch to 42~\si{\mega\electronvolt} kinetic energy -- an energy gain of $\pm 36$~\si{\mega\electronvolt} per pass. The MLC is 9.8~\si{\meter} long and comprised of six 7-cell 1.3~\si{\giga\hertz} superconducting cavities providing an accelerating field of up to 16~\si{\mega\volt}/\si{\meter} \cite{hoffstaetter2017cbeta}.
 
-% splitter re-combiner sections
-
 Post-acceleration the electron bunch is then re-circulated via the non-scaling FFA return loop, as shown in the schematic of the CBETA ERL in Fig.~\ref{fig:CBETA_ICS_Layout}. The non-scaling FFA optics scheme is explained in Section~\ref{sec:FFA}, and in CBETA the ns-FFA return loop is used to transport the multiple energy electron beams (42, 78, 114, 150~\si{\mega\electronvolt}) using a series of Hallbach permanent magnet quadrupoles. The arcs of the ns-FFA return loop contain a periodic combined function--defocusing quadrupole doublet (FA/FB), the straight is comprised of a focusing--defocusing quadrupole doublet (ZX) and the transition sections (TA/TB) are comprised of quadrupole doublets which are offset from the reference orbit to slowly conform the electron bunch in the arcs to the reference trajectory in the straight sections (TA) and the reverse (TB) for straight to arc transition. Further information on design of the complex transition sections is presented by Hoffstaetter et al \cite{hoffstaetter2017cbeta}.  
 
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.8\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/CBETA_4turn.pdf}
-\caption{}
-\label{fig:CBETA_layout}
-\end{figure}
+The splitter (SX) and recombiner (RX) spreader sections merge the linac with the FFA return loop via a common transport arrangement -- both accelerating and decelerating electron beams traverse the same spreader beamline -- however, each energy has a dedicated beamline (S1--4, R1--4). The spreader sections consist of a series of linear electromagnets (quadrupoles and dipoles) and a set of bellows which adjust the path length of each turn, consequently varying the time-of-flight of the electron beam, for fine adjustment in the phase witnessed by the electron bunch upon arrival in the MLC. Adjustment of the MLC arrival phase is required for acceleration or deceleration of the electron bunch as explained in Section~\ref{sec:ERL_theory}. Since permanent magnets are used for the return loop, and electromagnets for the spreaders, the spreaders must also be used for any electron beam orbit correction.
 
 % multi-turn + decelerations
-Upon arrival at the linac for the second pass, the electron bunch coincides with the accelerating phase of the MLC, as shown in Fig.~, and is further accelerated to 78~\si{\mega\electronvolts}. Two further re-circulations (accelerating passes) occur until the electron bunch has reached the maximum 150~\si{\mega\electronvolt} kinetic energy. The electron bunch is then decelerated from 150~\si{\mega\electronvolt} to 114~\si{\mega\electronvolt} as the path length, fine tuned by the path length adjustment system in the spreaders, means the electron bunch arrives for the 5th pass of the MLC at a decelerating phase of the linac (as shown in Fig.~) and energy is recovered by the SRF cavities. Three further decelerating passes occur until the electron bunch is returned to the injection energy ($E_{\mathrm{inj}} = 6$~\si{\mega\electronvolt}) and transported to the beam stop. CBETA passes the MLC a total of 8 times, with 4 accelerating passes and 4 decelerating passes -- a total of 4 turns.
+Upon arrival at the linac for the second pass, the electron bunch coincides with the accelerating phase of the MLC, as shown in Fig.~, and is further accelerated to 78~\si{\mega\electronvolts}. Two further re-circulations (accelerating passes) occur until the electron bunch has reached the maximum 150~\si{\mega\electronvolt} kinetic energy. The electron bunch is then decelerated from 150~\si{\mega\electronvolt} to 114~\si{\mega\electronvolt} as the path length, fine tuned by the path length adjustment system in the spreaders, means the electron bunch arrives for the 5th pass of the MLC at a decelerating phase of the linac (as shown in Fig.~) and energy is recovered by the SRF cavities. The energy recovered by the SRF cavity can be used to accelerated the next electron bunch, thereby reducing the RF power required by the MLC. Three further decelerating passes occur until the electron bunch is returned to the injection energy ($E_{\mathrm{inj}} = 6$~\si{\mega\electronvolt}) and transported to the beam stop. CBETA passes the MLC a total of 8 times, with 4 accelerating passes and 4 decelerating passes -- a total of 4 turns. The FFA return loop is traversed a total of 7 times.
 
-Design parameters of the CBETA ERL \cite{hoffstaetter2017cbeta} are shown in Table~\ref{tab:CBETA_ERL_design_parameters}.
+CBETA aimed to demonstrate a high brightness electron beam within a multi-turn ERL, hence a high average beam current of 40~\si{\milli\ampere} was targeted, with a small emittance of 0.3~\si{\milli\meter}--\si{\milli\radian} exiting the photoinjector. Continuous wave operation is utilised with a high bunch repetition of 325~\si{\mega\hertz}, limited by the 4-turns and 1.3~\si{\giga\hertz} RF frequency of the MLC. Design parameters of the CBETA ERL \cite{hoffstaetter2017cbeta} are shown in Table~\ref{tab:CBETA_ERL_design_parameters}.
 
 \begin{table}[!h]
 \centering
-\caption{Design parameters of the CBETA ERL from the technical design report \cite{hoffstaetter2017cbeta}.}
+\caption{Electron beam design parameters of the CBETA ERL from the technical design report \cite{hoffstaetter2017cbeta}.}
 \vspace{3mm}
 \begin{tabular}{lcc}
 \hline\hline
@@ -76,6 +76,9 @@ Rel. energy spread, $\Delta E_{e}/E_{e}$ & $5\times 10^{-4}$ & \\
 \end{tabular}
 \label{tab:CBETA_ERL_design_parameters}
 \end{table}
+
+\textcolor{blue}{**why is the CBETA ERL special? Parameter wise - May be worth leaving until lit review**}
+The design parameters of the CBETA ERL are at the forefront of ERL developments...
 
 \subsection{Multi-Turn Commissioning Results}
 % results + commissioning achievements
