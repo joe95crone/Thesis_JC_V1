@@ -87,7 +87,7 @@ The design parameters of the CBETA ERL are at the forefront of ERL developments.
 
 The CBETA ERL was first commissioned as a single turn ERL, where 99.4\% energy recovery was demonstrated \cite{gulliford2021measurement} on 24/06/2019 via a beam loading measurement of the electron beam power recovered in the RF cavities of the MLC. A maximum average beam current of 70~\si{\micro\ampere} was demonstrated, limited because of machine protection concerns -- a fast machine shutdown system was not yet implemented -- not by the ERL itself. Commissioning proceeded to multi-turn ERL demonstration, the focus of the CBETA project, before the maximal parameters of the CBETA single turn ERL could be measured.
 
-Multi-turn energy recovery was demonstrated \cite{bartnik2020cbeta} on 24/12/2019, with 4-turns (8-passes) of the CBETA ERL using a 5~\si{\pico\coulomb} electron bunch with a 1.2~\si{\milli\meter} (4~\si{\pico\second}) bunch length (duration). Electron beam parameters measured during 4-turn operation of the CBETA ERL are tabulated in Table~\ref{tab:CBETA_ERL_commissioning_parameters}. 
+Multi-turn energy recovery was demonstrated \cite{bartnik2020cbeta} on 24/12/2019, with 4-turns (8-passes) of the CBETA ERL using a 5~\si{\pico\coulomb} electron bunch with a 1.2~\si{\milli\meter} (4~\si{\pico\second}) bunch length (duration). Electron beam parameters measured during 4-turn operation of the CBETA ERL are tabulated in Table~\ref{tab:CBETA_ERL_commissioning_parameters}. Comparison with Table~\ref{tab:CBETA_electron_beam_design_parameters} shows design parameters such as the number of turns, the nominal electron bunch energies of the ERL, the bunch length and the bunch charge have been achieved and successfully measured. Some parameters such as the transverse emittance and relative energy spread of the electron bunch have not been measured within commissioning and design parameters such as the average beam current and bunch frequency have not been met during this commissioning run.
 
 \begin{table}[!h]
 \centering
@@ -115,6 +115,10 @@ Bunch frequency\tnote{$\dagger$}~, $f_{\mathrm{bunch}}$ & $< 1$ & \si{\kilo\hert
 \label{tab:CBETA_ERL_commissioning_parameters}
 \end{table}
 
+The multi-turn orbit throughout the 4-turns of the CBETA ERL has been measured by BPMs placed periodically around the CBETA FFA return loop, as shown in Fig.~\ref{fig:CBETA_horizontal_vertical_orbit}, and is compared with the simulated orbit. Multi-turn orbit measurement and correction, with multi-energy common transport optics is challenging because a total of 8 electron bunches are propagated through the FFA return loop simultaneously; correction of individual passes affects other passes and timing of BPMs must be well calibrated to see only the bunch of interest. However, propagation of the electron bunches is clearly measured throughout the 8 passes of the ERL.
+
+The horizontal position of the electron bunch within the FFA arcs varies as a function of energy, as expected for FFA transport with multiple energies (see Section~\ref{sec:FFA}), and the measured BPM positions of both the accelerating and decelerating passes agree well with simulation in Fig.~\ref{fig:CBETA_horizontal_vertical_orbit}. However, the simulated and measured vertical orbits differ; the measured vertical orbit is not flat as expected in simulation and required correction.  
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/horizontal_vertical_orbit.pdf}
@@ -124,18 +128,17 @@ Bunch frequency\tnote{$\dagger$}~, $f_{\mathrm{bunch}}$ & $< 1$ & \si{\kilo\hert
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/dump_beam_phases.pdf}
-\caption{}
-\label{fig:CBETA_phases_dump_bunch}
-\end{figure}
-
-\begin{figure}[!h]
-\centering
 \includegraphics[width=0.6\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/transmission.pdf}
 \caption{}
 \label{fig:CBETA_transmission}
 \end{figure}
 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/dump_beam_phases.pdf}
+\caption{}
+\label{fig:CBETA_phases_dump_bunch}
+\end{figure}
 
 \section{Multi-Turn FFA Chromaticity Measurement}
 \textcolor{blue}{**THIS NEEDS TO REFERENCE THE ERL THEORY CHAPTER**}
