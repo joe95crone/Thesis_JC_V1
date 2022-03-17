@@ -115,30 +115,40 @@ Bunch frequency\tnote{$\dagger$}~, $f_{\mathrm{bunch}}$ & $< 1$ & \si{\kilo\hert
 \label{tab:CBETA_ERL_commissioning_parameters}
 \end{table}
 
-The multi-turn orbit throughout the 4-turns of the CBETA ERL has been measured by BPMs placed periodically around the CBETA FFA return loop, as shown in Fig.~\ref{fig:CBETA_horizontal_vertical_orbit}, and is compared with the simulated orbit. Multi-turn orbit measurement and correction, with multi-energy common transport optics is challenging because a total of 8 electron bunches are propagated through the FFA return loop simultaneously; correction of individual passes affects other passes and timing of BPMs must be well calibrated to see only the bunch of interest. However, propagation of the electron bunches is clearly measured throughout the 8 passes of the ERL.
-
-The horizontal position of the electron bunch within the FFA arcs varies as a function of energy, as expected for FFA transport with multiple energies (see Section~\ref{sec:FFA}), and the measured BPM positions of both the accelerating and decelerating passes agree well with simulation in Fig.~\ref{fig:CBETA_horizontal_vertical_orbit}. However, the simulated and measured vertical orbits differ; the measured vertical orbit is not flat as expected in simulation and required correction.  
+The multi-turn orbit throughout the 4-turns of the CBETA ERL has been measured by BPMs placed periodically around the CBETA FFA return loop, as shown in Fig.~\ref{fig:CBETA_horizontal_vertical_orbit}, and is compared with the \textsc{Bmad} \cite{BmadManual} simulated orbit. Multi-turn orbit measurement and correction, with multi-energy common transport optics is challenging because a total of 8 electron bunches are propagated through the FFA return loop simultaneously; correction of individual passes affects other passes and timing of BPMs must be well calibrated to see only the bunch of interest. However, propagation of the electron bunches is clearly measured throughout the 8 passes of the ERL.
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/horizontal_vertical_orbit.pdf}
-\caption{}
+\caption{Measured (bold) and simulated (light) orbits of the FFA return loop of the CBETA ERL for each of the nonminal electron beam energies: 42~\si{\mega\electonvolt} (red), 78~\si{\mega\electronvolt} (orange), 114~\si{\mega\electronvolt} (green), 150~\si{\mega\electonvolt} (blue). Measurements are separated between accelerating (round marker) and decelerating (square marker) passes of the ERL. Plot courtesy of the CBETA collaboration. Left: Horizontal orbit. Right: Vertical orbit.}
 \label{fig:CBETA_horizontal_vertical_orbit}
 \end{figure}
+
+The horizontal position of the electron bunch within the FFA arcs varies as a function of energy, as expected for FFA transport with multiple energies (see Section~\ref{sec:FFA}), and the measured BPM positions of both the accelerating and decelerating passes agree well with simulation in Fig.~\ref{fig:CBETA_horizontal_vertical_orbit}. However, the simulated and measured vertical orbits differ; the measured vertical orbit is not flat as expected in simulation and required correction.  
+
+Previously shown in Table~\ref{tab:CBETA_ERL_commissioning_parameters}, the demonstrated average beam current of 1~\si{\nano\ampere} is reduced by seven orders of magnitude with respect to the design average beam current of 40~\si{\milli\ampere}. Average beam current was limited by poor transmission of electron bunches throughout the 7 passes of the FFA return loop and spreaders. High current operation was consequently prohibited because of machine protection concerns. 
+
+The measured transmission of the electron beam throughout the CBETA return loop on each of the 7 passes is shown in Fig.~\ref{fig:CBETA_transmission}. Transmission is measured through a comparison of the BPM signal intensities at each BPM around the CBETA return loop to an averaged intensity of the BPM signals from each of the BPMs in the first pass -- a normalised BPM intensity. Good transmission in the first pass of the return loop has been demonstrated by the single turn commissioning \cite{gulliford2021measurement}, with 99.4\% energy recovery of the electron beam.       
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.6\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/transmission.pdf}
-\caption{}
+\caption{Transmission (normalised BPM intensity) of the electron beam as a function of the distance traversed around the CBETA ERL.  Each individual BPM intensity measurement, from each BPM in the return loop and spreaders, is represented by a single bar (blue) with a per pass average transmission (red) shown. Each distinct block corresponds to one of the 7 FFA return loop and spreader passes of CBETA.}
 \label{fig:CBETA_transmission}
 \end{figure}
+
+The transmission of the electron bunch decreases slowly during passes 2 to 6, with an approximate reduction in intensity of $\sim 2$\% per pass of the FFA return loop and spreaders. Upon the 6th pass of the FFA return loop, with a 78~\si{\mega\electronvolt} electron bunch in the decelerating configuration the transmission is reduced to 36\% -- a reduction of 52\% intensity. The cause of the large beam loss is unknown, but occurs before the entrance to the linac on the 7th pass. Preliminary investigations have shown myriad beam optics issues within this region, though further investigation is required. A total of 36\% of the initial electron bunch is transported throughout the CBETA ERL and energy recovered, however with 64\% beam loss high current operation is not possible.
+
+Transmission losses pose problems for measuring energy recovery of the electron beam because the threshold current for a beam loading measurement can not be achieved, and quantification of the electron beam energy recovery would be scaled by the electron beam transmission. Therefore, multi-turn energy recovery of the CBETA ERL can not be quantitatively measured. Energy recovery is therefore demonstrated by two other measurements: the arrival of the electron bunch in the electron beam stop and the agreement between simulation and measurement of the arrival time (converted to phases) of the electron beam at the entrance and exit of the linac, as shown in Fig.~\ref{fig:CBETA_phases_dump_bunch}.    
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/CBETA_Multi-Pass_Commissioning/dump_beam_phases.pdf}
-\caption{}
+\caption{Left: Multi-turn energy recovered electron bunch profile before the beam stop. Right: MLC entrance (red) and exit (blue) phases of the measured (bold, error bars) and simulated (light) electron beam in CBETA as a function of MLC passes.}
 \label{fig:CBETA_phases_dump_bunch}
 \end{figure}
+
+In order for the electron bunch profile to be measured at the beam stop of the CBETA ERL, the kinetic energy of the electron bunch must match the injection energy, with a $\pm 7$\% tolerance ($E_{\mathrm{BS}} = 6\pm 0.42$~\si{\mega\electronvolt}) which can only be achieved if the electron bunch is energy recovered within the four decelerating passes. The measured orbit matches the predicted orbit for each accelerating pass, as shown in Fig.~\ref{fig:CBETA_horizontal_vertical_orbit}, therefore the electron bunch must be decelerated to be present on the beam stop screen. Also, MLC entrance and exit phases for the electron beam agree well between simulation and measurement, as shown in Fig.~\ref{fig:CBETA_phases_dump_bunch}, therefore the electron bunches must be decelerated by the MLC on passes 5--8. Collectively, these measurements provide evidence for multi-turn energy recovery within CBETA, though a full beam loading measurement is required for full quantification of energy recovery at CBETA.
 
 \section{Multi-Turn FFA Chromaticity Measurement}
 \textcolor{blue}{**THIS NEEDS TO REFERENCE THE ERL THEORY CHAPTER**}
