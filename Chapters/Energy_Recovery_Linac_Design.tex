@@ -24,19 +24,19 @@
 
 \subsection{Co-ordinate System}
 
-In particle accelerators bending fields are often used to direct the particles to an experimental station downstream of the particle sources, and many particle accelerators re-circulate particle beams. The particles are directed along an ideal trajectory named a reference orbit -- since in a re-circulated machine the trajectory is closed -- with a radius of curvature $\rho$. As bending forces are introduced, the motion of particles within an accelerator environment can best be described by a right handed rotating co-moving co-ordinate system \cite{wille2000physics}. The right handed curvilinear co-ordinate system is shown in Fig.~\ref{fig:accelerator_coord_system}.   
+In particle accelerators bending fields are often used to direct the particles to an experimental station downstream of the particle sources, and many particle accelerators re-circulate particle beams. In a circular accelerator particles are directed along an ideal trajectory named a reference orbit -- since in a re-circulated machine the trajectory is closed -- with a radius of curvature $\rho$. As bending forces are introduced, the motion of particles within an accelerator environment can best be described by a right handed rotating co-moving co-ordinate system \cite{wille2000physics}. The right handed curvilinear co-ordinate system is shown in Fig.~\ref{fig:accelerator_coord_system}.   
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/Accelerator_Coord_System_fixed.pdf}
+\includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/Accelerator_Coord_System_fixed_V2.pdf}
 \caption{The right handed curvilinear co-ordinate system used to describe particle motion in a re-circulating particle accelerator. The particles traverse around a right handed global co-ordinate system $\kappa=\left\{x,~y,~s\right\}$ with the longitudinal direction $s$, the horizontal direction $x$ and vertical direction $y$ defined around a circular reference orbit (blue) with a radius of curvature $\rho$. Particle trajectories (red)
-are defined with reference to the global co-ordinate system by an attached local co-ordinate system $\iota=\left\{x,~z,~s\right\}$ where $x$ is the horizontal position, $z$ is the vertical position and $s$ is the longitudinal position with reference to the reference orbit.}
+are defined with reference to the global co-ordinate system by an attached local co-ordinate system $\iota=\left\{x,~y,~z\right\}$ where $x$ is the horizontal position, $y$ is the vertical position and $z$ is the longitudinal position with reference to the reference orbit.}
 \label{fig:accelerator_coord_system}
 \end{figure}
 
 The global co-ordinate system used to describe motion in particle accelerators within this thesis is of the form $\kappa = \left\{x,y,s\right\}$, describing the global co-ordinate system where the transverse motion along the horizontal direction is in the $x$-axis and the vertical axis in $y$ is orthogonal to this and the direction of longitudinal motion $s$. Within this thesis, the $\kappa = \left\{x,y,s\right\}$ co-ordinate system is maintained in situations with no bending magnets, such as linear accelerators.  
 
-A local co-ordinate system $\iota=\left\{x,~z,~s\right\}$, is attached to the trajectory of particles through the accelerator where the displacement of the particle from the reference orbit in the horizontal plane is given by $x$ and in the vertical plane is given by $y$, whilst the $s$ co-ordinate follows the global $s$ co-ordinate. The local co-ordinate system is useful for examining the dynamics of single particles with respect to the reference orbit.
+A local co-ordinate system $\iota=\left\{x,~y,~z\right\}$, is attached to the trajectory of particles through the accelerator where the displacement of the particle from the reference orbit in the horizontal plane is given by $x$ and in the vertical plane is given by $y$, whilst the $z$ co-ordinate follows the global $s$ co-ordinate. The local co-ordinate system is useful for examining the dynamics of single particles with respect to the reference orbit. Calculations of the effects of beamline elements, such as magnets, upon the particle beam are also typically conducted in the local co-ordinate system.
 
 \subsection{Magnetic Fields in Particle Accelerators}
 
@@ -45,7 +45,7 @@ The motion of a charged particle in an electromagnetic field is given by the Lor
 \overrightarrow{F} = q\left(\overrightarrow{E}+\overrightarrow{v}\times\overrightarrow{B}\right),
 \label{eq:Lorentz_force}    
 \end{equation}
-where $q$ is the charge of the particle with velocity vector $\overrightarrow{v}$, subject to an electric field $\overrightarrow{E}$ and magnetic field $\overrightarrow{B}$. When an elementary particle is acted upon solely by a magnetic field ($\overrightarrow{E}=0$), as common in an accelerator magnet, the Lorentz force (Eq.~\ref{eq:Lorentz_force}) can be re-cast into a more appropriate form using the displacement $x$ and time $t$
+where $q$ is the charge of the particle with velocity vector $\overrightarrow{v}$, subject to an electric field $\overrightarrow{E}$ and magnetic field $\overrightarrow{B}$. When an elementary particle is acted upon solely by a magnetic field ($\overrightarrow{E}=0$), as common in an accelerator magnet, the Lorentz force (Eq.~\ref{eq:Lorentz_force}) can be re-cast into a more appropriate form using the transverse displacement $x$ and time $t$
 \begin{equation}
 \frac{d^{2}\overrightarrow{x}}{dt^{2}} = \frac{e}{\gamma m}\left(\overrightarrow{v}\times\overrightarrow{B}\right)
 \label{eq:displacement_Lorentz}    
@@ -57,7 +57,7 @@ where $e$ is the elementary charge of the particle, $m$ is its rest mass and
 \end{equation}
 is the Lorentz factor, where $\beta = v/c$ is the Lorentz speed factor and $E$ is the kinetic energy of the particle. Note that, unless explicitly stated, the ultra-relativistic approximation $pc = \sqrt{E^{2}-m^{2}c^{4}} \approx E$, valid for particles with $E \gg mc^{2}$ is used throughout this thesis as the particle energies discussed consistently satisfy this approximation.   
 
-Since this thesis is concerned with re -circulated accelerators, particles typically require bending within the horizontal plane. To illustrate particle motion in a bending system we consider a homogenous vertical magnetic field $B_{y}$ produced by a magnet with infinite pole width acting upon the particle of momentum $p_{0}$ (in convenient units of \si{\electronvolt}$/c$) to provide a bending radius of $\rho$ given by
+Since this thesis is concerned with re-circulated accelerators, particles typically require bending within the horizontal plane. To illustrate particle motion in a bending system, using the local co-ordinate system in Fig.~\ref{fig:accelerator_coord_system}, we consider a homogenous vertical magnetic field $B_{y}$ produced by a magnet with infinite pole width acting upon the particle of momentum $p_{0}$ (in convenient units of \si{\electronvolt}$/c$) to provide a bending radius of $\rho$ given by
 \begin{equation}
 \frac{1}{\rho} = \frac{eB_{y}}{p_{0}} = k_{0},
 \label{magnet_bending_radius}    
