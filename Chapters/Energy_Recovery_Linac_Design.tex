@@ -150,7 +150,9 @@ B_{y} &= \frac{p_{0}}{e}\left(k_{0}+k_{1}x\right).
 \subsection{Linear Equations of Motions}
 \label{sec:equations_of_motion}
 
-The linear equations of motion for a particle follow the derivation of Rossbach and Schmuser \cite{rossbach1993basic} and K. Willie \cite{wille2000physics}, using the co-ordinate system presented in Fig.~\ref{fig:accelerator_coord_system}. An equation of particle motion due to the Lorentz force (Eq.~\ref{eq:Lorentz_force}) is developed for the co-ordinate system which rotates due to bending forces, which we limit to the horizontal $x$--$s$ plane. We define the position vector of a particle at an arbitrary point in it's trajectory, in the global cylindrical co-ordinate system $\left\{r,\alpha,z\right\}$ as
+\textcolor{blue}{**RE-DO THIS LATER - BIT COMPLICATED**}
+
+The linear equations of motion for a particle follow the derivation of Rossbach and Schm\"{u}ser \cite{rossbach1993basic} and K. Willie \cite{wille2000physics}, using the co-ordinate system presented in Fig.~\ref{fig:accelerator_coord_system}. An equation of particle motion due to the Lorentz force (Eq.~\ref{eq:Lorentz_force}) is developed for the co-ordinate system which rotates due to bending forces, which we limit to the horizontal $x$--$s$ plane. We define the position vector of a particle at an arbitrary point in it's trajectory, in the global cylindrical co-ordinate system $\left\{r,\alpha,z\right\}$ as
 \begin{equation}
 \boldsymbol{R} = \boldsymbol{R}_{0} + r\boldsymbol{u}_{r} + z\boldsymbol{u}_{z},    
 \label{eq:particle_position_vector}
@@ -291,7 +293,7 @@ where $s_{0}$ is the initial longitudinal position of the particle.
 
 \section{Transport Matrices} 
 
-Previously, the solution to the equations of motion within a periodic focusing and bending particle accelerator (Eqs.~\ref{eq:horizontal_equation_of_motion_simplified}, \ref{eq:vertical_equation_of_motion_simplified}) have been derived and presented using a matrix formalism (Eq.~\ref{eq:general_solution_matrix}). Considering the dynamics in both transverse planes ($x$ and $z$) simulataneously, the effect of momentum deviation from the design momentum $\Delta p/p_{0},$ as well as accounting for the longitudinal position of the particle $s=ct$, with $t$ the time-of-flight of the particle, a 6D co-ordinate system is required to describe the motion. Therefore, within a particle accelerator, the position of a particle can be adequately described using a 6D vector 
+Previously, the solution to the equations of motion with a periodically focusing and bending particle accelerator (Eqs.~\ref{eq:horizontal_equation_of_motion_simplified}, \ref{eq:vertical_equation_of_motion_simplified}) have been derived and presented using a matrix formalism (Eq.~\ref{eq:general_solution_matrix}). Considering the dynamics in both transverse planes ($x$ and $y$) simulataneously, the effect of momentum deviation from the design momentum $\Delta p/p_{0}$ and accounting for the longitudinal position of the particle $s=ct$, with $t$ the time-of-flight of the particle, six co-ordinates are required to describe the motion. Therefore, the position of a particle in an accelerator is adequately described using a 6D vector 
 \begin{equation}
 \boldsymbol{X} = 
 \begin{bmatrix}
@@ -306,7 +308,7 @@ ct \\
 \end{equation}
 where $x$, $y$, $ct$ are the horizontal, vertical and longitudinal positions of the particle and $x'$, $y'$ are the divergence of the particle in either plane.
 
-Within an accelerator, the particle is typically subjected to a series of magnetic elements, such as dipoles, quadrupoles etc. which can be described by a $6~\times~6$ transform or transport matrix $\boldsymbol{R}$ (to first order). With an initial particle vector $\boldsymbol{X}_{0}$ of the form (Eq.~\ref{eq:6D_vector}), the transport matrix can relate the initial state to a final state $\boldsymbol{X}$, where the particle has traversed a distance $s-s_{0}$ i.e
+The beamline of an accelerator traversed by a particle consists of a series of magnetic elements, such as dipoles, quadrupoles etc. where their effect on the particle collectively can be described by a $6~\times~6$ transform or transport matrix $\boldsymbol{R}$ (to first order). With an initial particle vector $\boldsymbol{X}_{0}$ of the form (Eq.~\ref{eq:6D_vector}), the transport matrix can relate the initial state of a particle to its final state $\boldsymbol{X}$, where a distance $s-s_{0}$ is traversed
 \begin{equation}
 \boldsymbol{X}_{1} = \boldsymbol{R}\boldsymbol{X}_{0}.
 \label{eq:overall_transport_matrix}
@@ -316,11 +318,11 @@ The transport matrix is typically constructed from a series of magnetic elements
 \boldsymbol{R} = \boldsymbol{R}_{n}\boldsymbol{R}_{n-1}\ldots\boldsymbol{R_{1}},
 \label{eq:subseries_transport_matrix}    
 \end{equation}
-where $R_{n}$ are the transport matrices of each individual element. A full series of magnetic elements is termed a beamline, where a subset of elements is named a cell -- cells can be repeated several times to form a periodic beamline. Within the following subsections, the individual transport matrices of linear magnets are described. 
+where $R_{n}$ are the transport matrices of each individual element. A periodic beamline is constructed from a subset of repeated  elements, named a cell, which is repeated several times. Within the following subsections, the individual transport matrices of linear magnets are described. 
 
 \subsection{Drift Space}
 
-A drift space within an accelerator is a section of beamline in which no magnets are placed -- the particles traverse through a vaccuum chamber subject to negligible external magnetic forces. The beam is not bent or focused, therefore the position of the particles transforms only due to their divergence $u_{1} = u_{0} + L_{\mathrm{drift}}u_{0}'$, with $L_{\mathrm{drift}}$ the length of the drift space. The $\boldsymbol{R}$ matrix for a drift space is consequently given by  
+A drift space within an accelerator is a section of beamline in which no magnets are placed -- the particles traverse through a vaccuum chamber subject to negligible external magnetic forces. The beam is not bent or focused, therefore the position of the particles transforms only due to their divergence. For example, in the horizontal direction $x_{1} = x_{0} + L_{\mathrm{drift}}x_{0}'$, with $L_{\mathrm{drift}}$ the length of the drift space. The $\boldsymbol{R}$ matrix for a drift space is consequently given by  
 \begin{equation}
 \boldsymbol{R}_{\mathrm{drift}} =
 \begin{pmatrix}
@@ -336,7 +338,7 @@ A drift space within an accelerator is a section of beamline in which no magnets
 
 \subsection{Quadrupole Magnet}
 
-The quadrupole element focuses a particle over a magnetic length $L_{\mathrm{quad}}$, which is identical to the width of the magnet for a hard-edged field model where the field terminates at the end of the magnet yoke. The quadrupole element is focusing in one plane and defocusing in another plane, as shown in (Eqs.~\ref{eq:focusing_solution_equation_of_motion}, \ref{eq:defocusing_solution_equation_of_motion}), which is encapsulated within the $\boldsymbol{R}$ matrix of this element. The quadrupole has a normalised field strength $k_{1}$ (Eq.~\ref{eq:quadrupole_normalised_gradient}), which is used to characterise the focusing in this transport matrix. The $\boldsymbol{R}$ matrix for a focusing quadrupole is given by
+The quadrupole element focuses a particle over a magnetic length $L_{\mathrm{quad}}$ identical to the width of the magnet for a hard-edged field model where the field terminates at the end of the magnet yoke. Quadrupole focusing in one plane and defocusing in another plane, as shown in (Eqs.~\ref{eq:focusing_solution_equation_of_motion}, \ref{eq:defocusing_solution_equation_of_motion}), is encapsulated within the $\boldsymbol{R}$ matrix of this element. The quadrupole has a normalised field strength $k_{1}$ (Eq.~\ref{eq:quadrupole_normalised_gradient}), which is used to characterise the magnitude of the focusing in the transport matrix. The $\boldsymbol{R}$ matrix for a quadrupole is given by
 
 \begin{equation}
 \resizebox{\columnwidth}{!}{
