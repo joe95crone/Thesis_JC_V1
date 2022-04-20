@@ -370,17 +370,16 @@ The thin lens approximation is describing a quadrupole field in the zero-length 
 
 \subsection{Dipole Magnet}
 
-A sector dipole magnet with no focusing terms i.e the magnetic field is homogenous transversely throughout dipole magnet is assumed. The sector dipole is assumed to have exit and entrance pole faces that are perpendicular to the direction of the reference orbit ($\beta_{1}=0$, $\beta_{2}=0$). A diagram of a sector dipole is shown in Fig.~\ref{fig:dipole_magnet_diagram}.
+Here we assume a sector dipole magnet with no focusing terms, where the magnetic field is homogenous transversely throughout the dipole magnet. The sector dipole is assumed to have exit and entrance pole faces, defined by the angles $\beta_{1}$ and $\beta_{2}$ respectively, that are perpendicular to the direction of the reference orbit ($\beta_{1}=0$, $\beta_{2}=0$). A diagram of a sector dipole is shown in Fig.~\ref{fig:dipole_magnet_diagram}.
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/Dipole_magnet_fixed.pdf}
-\caption{Bent trajectory of a particle (red) as it traverses a sector dipole of magnetic length $L$, with radius of curvature $\rho$ and bend angle $\alpha_{1}$ in the horizontal $x$--$s$ plane.}
+\includegraphics[width=0.8\textwidth]{Figures/Energy_Recovery_Linac_Design/Dipole_magnet_V2_fixed.pdf}
+\caption{Bent trajectory of a particle (red) as it traverses a sector dipole of magnetic length $L_{\mathrm{dip}}$, with radius of curvature $\rho$ and bend angle $\alpha_{1}$ in the horizontal $x$--$s$ plane. The angles of the pole faces at the entrance ($\beta_{1}$) and exit ($\beta_{2}$) are shown.}
 \label{fig:dipole_magnet_diagram}
 \end{figure}
 
-A dipole is characterised in its simplest form by two parameters: the bending radius $\rho$ and the magnetic length of the dipole $L_{\mathrm{dip}}$, which is defined as the path length along the central trajectory. Therefore, the $\boldsymbol{R}$ matrix of a non-focusing sector dipole is given by 
-
+A dipole is characterised in its simplest form by two parameters: the bending radius $\rho$ and the magnetic length of the dipole $L_{\mathrm{dip}}$, which is defined as the path length along the central trajectory. Therefore, the $\boldsymbol{R}$ matrix of a sector dipole is given by 
 \begin{equation}
 \resizebox{\columnwidth}{!}{
 \boldsymbol{R}_{\mathrm{dip}} =  
@@ -395,7 +394,7 @@ A dipole is characterised in its simplest form by two parameters: the bending ra
 \label{eq:dipole_matrix}
 \end{equation}
 
-Rectangular dipoles are also commonly available, with pole faces that are perpendicular to the reference orbit at the centre of the dipole ($\beta_{1}=\alpha_{0}/2$, $\beta_{2}=\alpha_{0}/2$),  where $a_{0}$ is the bending angle of the dipole (Eq.~\ref{eq:dipole_bending_angle}). The rotated pole faces act like thin quadrupoles (Eq.~\ref{eq:quadrupole_matrix_thin}), providing transverse focusing and there effect of the dynamics of a particle beam can be expressed via the $\boldsymbol{R}$ matrix
+Rectangular dipoles are also commonly available, with pole faces that are perpendicular to the reference orbit at the centre of the dipole ($\beta_{1}=\alpha_{1}/2$, $\beta_{2}=\alpha_{1}/2$),  where $a_{1}$ is the bending angle of the dipole (Eq.~\ref{eq:dipole_bending_angle}). The rotated pole faces act like thin quadrupoles (Eq.~\ref{eq:quadrupole_matrix_thin}), providing transverse focusing and their effect upon the dynamics of a particle beam can be expressed via the $\boldsymbol{R}$ matrix
 \begin{equation}
 \boldsymbol{R}_{\mathrm{pole}} =
 \begin{pmatrix}
@@ -415,22 +414,22 @@ where $\beta$ is the angle of the pole face and $\psi = k\left(h/\rho\right)\fra
 
 \subsection{Generalisation of the Equations of Motion}
 
-The equations of motion (Eqs.~\ref{eq:horizontal_equation_of_motion_simplified}, \ref{eq:vertical_equation_of_motion_simplified}) are only appropriate for a single test particle however, as we aim to understand the dynamics of a beam of many particles, the equations of motion must be generalised to the many particle scenario. Generalisation of the equations of motion is achieved via setting $1/\rho=0$, assuming a very large bending radius, and $\Delta p/p_{0}=0$, assumption of a monoenergetic beam, which reveals a longitudinal dependence within the quadrupole focusing term. Generalisation by these assumptions yields Hill's equation
+The equations of motion (Eqs.~\ref{eq:horizontal_equation_of_motion_simplified}, \ref{eq:vertical_equation_of_motion_simplified}) are only appropriate for a single reference particle, therefore these require generalisation for many particles as the dynamics of a particle beam (ensemble) are to be modelled. Generalisation of the equations of motion is achieved via setting $1/\rho=0$, assuming a very large bending radius, and $\Delta p/p_{0}=0$, a monoenergetic beam assumption, which reveals a longitudinal dependence within the quadrupole focusing term. Generalisation by these assumptions yields Hill's equation
 \begin{equation}
 x''\left(s\right)-k\left(s\right)x\left(s\right) = 0,
 \label{eq:Hills_equation}    
 \end{equation}
-where $x\left(s\right)$ describes the trajectory of the particles; an oscillation about the reference orbit named a betatron oscillation. Whilst $x\left(s\right)$ is used as an example, Hill's equation can be generalised to either transverse plane. The amplitude and phase of the betatron oscillation are dependent on $s$, the longitudinal position around the reference orbit. Therefore, a trial solution to Hill's equation is developed 
+where $x\left(s\right)$ describes the trajectory of the particles. The trajectory oscillates about the reference orbit, which is termed a betatron oscillation. Whilst $x\left(s\right)$ is used as an example, Hill's equation can be generalised to either transverse plane. The amplitude and phase of the betatron oscillation are dependent on $s$, the longitudinal position around the reference orbit. Therefore, a trial solution to Hill's equation is developed 
 \begin{equation}
 x\left(s\right) = \sqrt{\varepsilon\beta\left(s\right)}\cos\left[\Psi\left(s\right)+\phi\right],
 \label{eq:Hills_trial_solution}    
 \end{equation}
-where $\sqrt{\varepsilon\beta\left(s\right)}$ is an amplitude function with a constant amplitude $\varepsilon$ termed the emittance and $\beta\left(s\right)$ termed the $\beta$-function which accounts for the oscillatory amplitude of the betatron oscillation and $\Psi\left(s\right)$ is the phase of the oscillation with $\phi$ the phase offset -- an integration constant resulting from initial conditions. The amplitude function of the trial solution is given by
+where $\sqrt{\varepsilon\beta\left(s\right)}$ is an amplitude function with a constant amplitude $\varepsilon$ termed the emittance, the $\beta$-function $\beta\left(s\right)$ which accounts for the oscillatory amplitude of the betatron oscillation and $\Psi\left(s\right)$ the phase of the oscillation with $\phi$ the phase offset -- an integration constant resulting from initial conditions. The amplitude function of the trial solution is given by
 \begin{equation}
 E\left(s\right) = \sqrt{\varepsilon\beta\left(s\right)},
 \label{eq:envelope_function}    
 \end{equation}
-which defines a beam envelope, as shown in Fig.~\ref{fig:beam_envelope}, which defines the bounds of the trajectories of each of the particles within a beam. 
+which defines a beam envelope, as shown in Fig.~\ref{fig:beam_envelope}, that bounds the trajectories of each of the particles within a beam. 
 
 \begin{figure}[!h]
 \centering
@@ -439,7 +438,7 @@ which defines a beam envelope, as shown in Fig.~\ref{fig:beam_envelope}, which d
 \label{fig:beam_envelope}
 \end{figure}
 
-The derivative of the trial solution (Eq.~\ref{eq:Hills_trial_solution}) shows the divergence of the particle trajectory with respect to time and is given by
+The derivative of the trial solution (Eq.~\ref{eq:Hills_trial_solution}) shows the divergence of the particle trajectory with respect to $s$ and is given by
 \begin{equation}
 x'\left(s\right) = -\frac{\sqrt{\varepsilon}}{\sqrt{\beta\left(s\right)}}\left\{\alpha\left(s\right)\cos\left[\Psi\left(s\right)+\phi\right]+\sin\left[\Psi\left(s\right)+\phi\right]\right\}
 \label{eq:Hills_trial_solution_derivative}    
@@ -457,7 +456,7 @@ Taking the second derivative of the trial solution and substituting the trial so
 
 \subsection{Phase Space}
 
-The phase space of a collection of particles represents the possible states of the dynamical system in a 6D representation, with each point in phase space illustrating a singular particle \cite{jones2016design}. The 6D phase space is presented within the horizontal ($x$--$x'$), vertical ($y$--$y'$) and longitudinal ($z$--$z'$) planes. The phase space planes are position--divergence planes, in which the divergence of particle is closely related to it's momentum ($x' \propto p_{x}$). The previously derived solution to Hill's equation (Eq.~\ref{eq:Hills_trial_solution}) and it's derivative (Eq.~\ref{eq:Hills_trial_solution_derivative}) can be used to map the behaviour of a collection of particles within this phase space. 
+The phase space of a collection of particles represents the possible states of the dynamical system in a 6D representation, with each point in phase space illustrating a single particle \cite{jones2016design}. The 6D phase space is presented within the horizontal ($x$--$x'$), vertical ($y$--$y'$) and longitudinal ($z$--$z'$) planes. The phase space planes are position--divergence planes, in which the divergence of particle is closely related to it's momentum ($x' \propto p_{x}$). The solution to Hill's equation (Eq.~\ref{eq:Hills_trial_solution}) and it's derivative (Eq.~\ref{eq:Hills_trial_solution_derivative}) can be used to map the behaviour of a collection of particles within this phase space. 
 
 Firstly, the trial solution and its derivative must be re-arranged to eliminate the betatron phase $\Psi\left(s\right)$ dependence. Re-arranging (Eq.~\ref{eq:Hills_trial_solution}) we obtain
 \begin{equation}
