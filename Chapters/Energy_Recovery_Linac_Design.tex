@@ -627,7 +627,7 @@ x'_{0} \\
 \end{pmatrix}
 \label{eq:dispersive_transport_simplified}
 \end{equation}
-where the index 6 is used as this is the column of a 6D transport matrix that would include these dispersive terms. A dispersion function $\eta\left(s\right)$ can be defined for the motion of the particle by neglecting the betatron motion and setting $\Delta p/p_{0} =1$
+where the index 6 denotes the column in a 6D transport matrix that includes the dispersive terms. A dispersion function $\eta\left(s\right)$ can be defined for the motion of the particle by neglecting the betatron motion and setting $\Delta p/p_{0}=1$
 \begin{equation}
 \begin{pmatrix}
 \eta_{x}\left(s\right) \\
@@ -642,7 +642,7 @@ x'_{0} \\
 \end{pmatrix}.
 \label{eq:dispersion_function}    
 \end{equation}
-The periodic dispersion ($\eta_{x}\left(s\right)=\eta_{x}$, $\eta'_{x}\left(s\right)=\eta'_{x}$) can be found via re-arrangement of (Eq.~\ref{eq:dispersion_function}) using the transport matrix in (Eq.~\ref{eq:dispersive_transport_simplified}) in terms of the transport matrix elements
+The periodic dispersion and its derivative ($\eta_{x}\left(s\right)=\eta_{x}$, $\eta'_{x}\left(s\right)=\eta'_{x}$) can be found via re-arrangement of (Eq.~\ref{eq:dispersion_function}) using the transport matrix in (Eq.~\ref{eq:dispersive_transport_simplified}) in terms of the transport matrix elements
 \begin{align}
 \eta_{x} &= \frac{\boldsymbol{R}_{13}\left(1-\boldsymbol{R}_{22}\right)+\boldsymbol{R}_{12}\boldsymbol{R}_{23}}{\left(1-\boldsymbol{R}_{11}\right)\left(1-\boldsymbol{R}_{22}\right)-\boldsymbol{R}_{21}\boldsymbol{R}_{12}},
 \label{eq:periodic_dispersion} \\
@@ -650,7 +650,7 @@ The periodic dispersion ($\eta_{x}\left(s\right)=\eta_{x}$, $\eta'_{x}\left(s\ri
 \label{eq:periodic_dispersion_prime}
 \end{align}
 
-The beam size of a dispersive particle beam (for a periodic lattice) can be defined, baring similarity to (Eq.~\ref{eq:dispersive_transport_matrix_propagation}), through an extension of the beam size due to betatron motion (Eq.~\ref{eq:horizontal_emittance})
+The beam size of a dispersive particle beam (for a periodic lattice) can be defined similarly to (Eq.~\ref{eq:dispersive_transport_matrix_propagation}) through an extension of the beam size due to betatron motion (Eq.~\ref{eq:horizontal_emittance})
 \begin{equation}
 \sigma_{x} = \sqrt{\epsilon_{x}\beta_{x}} + \eta_{x}\frac{\Delta p}{p_{0}}.
 \label{eq:dispersive_beam_size}    
@@ -671,20 +671,19 @@ The tune of an accelerator is defined as the number of betatron oscillations per
 Q=\frac{N\mu}{2\pi} = \frac{1}{2\pi}\oint\frac{1}{\beta}ds,
 \label{eq:accelerator_tune}    
 \end{equation}
-where $N$ is the no. periodic cells within the accelerator, and the integral $\oint$ relates to an integral around the circumference of the accelerator. However, often accelerator beamlines aren't entirely periodic. For example, areas of the beamline can be devoted to focusing to a small spot size for a collider and inverse Compton scattering source or be subject to insertion devices such as undulator magnets. Therefore, it is often more useful to define the tune per cell of a section of the beamline with length $L_{\mathrm{cell}}$
+where $N$ is the number of periodic cells within the accelerator, and the integral $\oint$ relates to an integral around the circumference of the accelerator. Tune can be calculated for either transverse plane. However accelerator beamlines frequently aren't fully periodic, for example areas of the beamline can be devoted to focusing to a small spot size for a collider and inverse Compton scattering source or be subject to insertion devices such as undulator magnets. Therefore, it is often more useful to define the tune per cell of a section of the beamline with length $L_{\mathrm{cell}}$
 \begin{equation}
 Q=\frac{\mu}{2\pi} = \frac{1}{2\pi}\int_{0}^{L_{\mathrm{cell}}}\frac{1}{\beta}ds. 
 \label{eq:tune_per_cell}    
 \end{equation}
+In re-circulated accelerators such as storage rings, the particle beam is subject to the same collection of magnetic elements many times. For example, in the MAX-III storage ring the beam lifetime at 250~\si{\milli\ampere} is 11.3~\si{\hour} with a 36~\si{\meter} circumference (120~\si{\nano\second} revolution time) resulting in $\sim3.4\times 10^{11}$ revolutions per bunch. Therefore, the beam is acted upon by periodic transverse forces many times causing transverse oscillations of the beam which, under certain conditions, may result in the circulating beam resonating \cite{wille2000physics}. A transversely resonating beam oscillation -- known as an optical resonance -- could cause large beam amplitudes resulting in beam sizes exceeding the beampipe dimensions and the particles would be lost.
 
-In re-circulated accelerators such as storage rings, the particle beam is subject to the same collection of magnetic elements many times. For example, in the MAX-III storage ring the beam lifetime at 250~\si{\milli\ampere} is 11.3~\si{\hour} with a 36~\si{\meter} circumference (120~\si{\nano\second} revolution time) resulting in $\sim3.4\times 10^{11}$ revolutions per bunch. Therefore, the beam is acted upon by periodic transverse forces causing transverse oscillations of the beam which, under certain conditions, may result in the circulating beam resonating \cite{wille2000physics}. A transversely resonating beam oscillation -- known as an optical resonance -- could cause large beam amplitudes which would result in beam sizes that could not be contained within the beampipe and the particles would be lost.
-
-A full discussion and derivation of the conditions required for optical resonances is beyond the scope of this thesis, instead for brevity the discussion by K. Willie \cite{wille2000physics} is recommended and we utilise the result for the relationship between expected optical resonance behaviour and tune
+A full discussion and derivation of the conditions required for optical resonances is beyond the scope of this thesis and the discussion by K. Willie \cite{wille2000physics} is recommended. We utilise the result for the relationship between expected optical resonance behaviour and tune
 \begin{equation}
 mQ_{x}+nQ_{y} = p,
 \label{eq:tune_resonances}    
 \end{equation}
-where $m$, $n$ and $p$ are integers. Resonances in accelerators occur at integer and fractional-integer tunes ($p = n + 1/3, 1/2, 1, 2$ etc.) and can be coupled resonances, hence why the tunes in both transverse planes are included in (Eq.~\ref{eq:tune_resonance}). The order of the resonance is found via $\left|m\right| + \left|n\right|$, and the strength of the resonance decreases rapidly as a function of order. Consequently, the tunes in an accelerator must be chosen to avoid optical resonances, which is fundamental at the design stage and is often named the working point. The working point is often displayed in a $Q_{x}$--$Q_{y}$ tune diagram, as shown in Fig.~\ref{fig:tune_diagram}, where the resonances up to $n$th order are typically displayed.  
+where $m$, $n$ and $p$ are integers, $Q_{x}$ is the horizontal tune and $Q_{y}$ the vertical tune. Resonances in accelerators occur at integer and fractional-integer tunes ($p = n + 1/3, 1/2, 1, 2$ etc.) and resonances can result from coupling between planes, hence why the tunes in both transverse planes are included in (Eq.~\ref{eq:tune_resonance}). The order of the resonance is found via $\left|m\right| + \left|n\right|$, and the strength of the resonance decreases rapidly as a function of order. Consequently, the tunes in an accelerator must be chosen at the design stage to avoid optical resonances, often named the working point. The working point is often displayed in a $Q_{x}$--$Q_{y}$ tune diagram, as shown in Fig.~\ref{fig:tune_diagram}, where the resonances up to $n$th order are typically displayed.  
 
 \begin{figure}[!h]
 \centering
@@ -695,13 +694,12 @@ where $m$, $n$ and $p$ are integers. Resonances in accelerators occur at integer
 
 \subsection{Chromaticity}
 
-Chromaticity is defined as the variation in tune due to the variation in momentum within an accelerator as given by
+Chromaticity $\xi$ is defined as the variation in tune $\Delta Q$ due to the variation in reference momentum $\Delta p/p_{0}$ within an accelerator as given by
 \begin{equation}
 \xi = \frac{\Delta Q}{\Delta p/p_{0}},
 \label{eq:accelerator_chromaticity}    
 \end{equation}
-where the variation in tune is driven by the chromatic aberration focusing errors that occur when off-momentum particles traverse focusing magnets, as presented for a quadrupole in Fig.~\ref{fig:chromatic_aberration}.
-
+where the variation in tune is driven by the chromatic aberration focusing errors that occur when off-momentum particles traverse focusing magnets, as presented for a quadrupole in Fig.~\ref{fig:chromatic_aberration}. Like tune, chromaticity can occur in either transverse plane. Chromatic aberration is where variation in particle energy causes a variation in quadrupole focusing and is analogous to chromatic aberrations in optics. 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/Chromatic_Aberration_fixed.pdf}
@@ -709,46 +707,47 @@ where the variation in tune is driven by the chromatic aberration focusing error
 \label{fig:chromatic_aberration}
 \end{figure}
 
-The chromatic effect of a quadrupole magnet can there for be considered as
+Consequently, the chromatic effect of a quadrupole magnet is given by
 \begin{align}
-\xi_{x} &= -\frac{1}{4\pi}\int\beta_{x}k_{1}ds, \\
+\xi_{x} &= -\frac{1}{4\pi}\int\beta_{x}k_{1}ds, &
 \xi_{y} &= \frac{1}{4\pi}\int\beta_{y}k_{1}ds.
 \label{eq:quadrupole_chromaticity}
 \end{align}
-where it is noted that for periodic focusing the $\beta_{x}$-function is typically larger upon entrance to the focusing quadrupole and the $\beta_{y}$ function is larger in the defocusing quadrupole, therefore the natural chromaticity throughout a periodic focusing accelerator is negative. 
+where, for periodic focusing, the $\beta_{x}$-function is typically larger upon entrance to the focusing quadrupole and the $\beta_{y}$ function is larger in the defocusing quadrupole, therefore the natural chromaticity throughout a periodic focusing accelerator is negative. 
 
-Correction of chromaticity is typically conducted by sextupole ($n=3$) magnets with fields described by (Eq.~\ref{eq:sextupole_magnetic_field}),with focusing dependent on transverse beam position. Sextupoles are placed in dispersive sections of the accelerator where the transverse position of the particles is dependent upon the momentum of the particle so the transverse field dependence can be used to correct the aberrations. 
+Correction of chromaticity is typically conducted by sextupole ($n=3$) magnets with fields described by (Eq.~\ref{eq:sextupole_magnetic_field}), with focusing dependent on transverse beam position. Sextupoles are placed in dispersive sections ($\eta \neq 0$) of the accelerator where the transverse position of the particles is dependent upon the momentum of the particle, so the transverse field dependence can be used to correct the aberrations. 
 
 \section{Longitudinal Dynamics and RF Acceleration}
 
-Previous discussions within this section have been focused on the transverse motion of particles throughout the accelerator beamline. However a similar analysis can also be applied to the longitudinal dimension where, instead of magnetic bending and focusing fields, electric fields used in the acceleration of particles dominate the dynamics. Analysis of longitudinal dynamics focuses on the energy of the particles, their longitudinal position relative to the centroid of the ensemble as well as the stability and phase of the longitudinal motion. This section focuses on the effect of bending and dispersive motion upon the longitudinal dynamics, then upon investigation of the longitudinal equations of motion and phase space and finally the effect of magnetic elements upon the longitudinal dimensions of the beam is explored.
+Previous discussions within this section have been focused on the transverse motion of particles throughout the accelerator beamline. However a similar analysis can also be applied to the longitudinal dimension where, instead of magnetic bending and focusing fields, electric fields used in the acceleration of particles dominate the dynamics. Analysis of longitudinal dynamics focuses on the energy of the particles, their longitudinal position relative to the centroid of the ensemble as well as the stability and phase of the longitudinal motion hence dispersive motion is paramount.
 
 \subsection{Momentum Compaction}
 \label{sec:momentum_compaction}
 
-The path length $L$ of a particle trajectory as a function of momentum variation can be wrote as a Maclaurin series \cite{wolski2012longitudinal}
+The path length $L$ of a particle trajectory as a function of momentum variation can be written as a Maclaurin series \cite{wolski2012longitudinal}
 \begin{equation}
-L = L_{0}\left[1+\alpha_{p}\frac{\Delta p}{p_{0}}+\frac{1}{2}\alpha_{p}^{\left(2\right)}\left(\frac{\Delta p}{p_{0}}\right)^{2}\right],
+L = L_{0}\left[1+\alpha_{p}\frac{\Delta p}{p_{0}}+\frac{1}{2}\alpha_{p}^{\left(2\right)}\left(\frac{\Delta p}{p_{0}}\right)^{2}+\ldots\right],
 \label{eq:path_length_expansion}    
 \end{equation}
-where $L_{0}$ is the path length of the reference particle ($\Delta p/p_{0}=0$). Whilst higher order momentum compaction terms are present in the expansion (Eq.~), such as $\alpha_{p}^{\left(2\right)}$, to first order this can be simplified to
+where $L_{0}$ is the path length of the reference particle ($\Delta p/p_{0}=0$). Whilst higher order momentum compaction terms are present in the expansion (Eq.~\ref{eq:path_length_expansion}), such as $\alpha_{p}^{\left(2\right)}$, to first order the linear momentum compaction $\alpha_{p}$ can be simplified to
 \begin{equation}
-\alpha_{p} = \frac{1}{L}\frac{dL}{\Delta p/p_{0}},
+\alpha_{p} = \frac{1}{L}\frac{dL}{\Delta p/p_{0}}.
 \label{eq:momentum_compaction_first_order}    
 \end{equation}
-where $\alpha_{p}$ is the linear momentum compaction. Consider the trajectory of a particle through a curved reference trajectory -- subject to a dipole bending field -- moving with a displacement $x$ from the reference trajectory, the path length of this element is given by
+Consider the trajectory of a particle through a curved reference trajectory in cylindrical polar co-ordinates -- subject to a dipole bending field -- moving with a displacement $x$ from the reference trajectory, the path length of this element is given by
 \begin{equation}
-dL = \left(\rho+x\right)d\theta = \left(1+\frac{x}{\rho}\right)ds.
+dL = \left(\rho+x\right)d\theta = \left(1+\frac{x}{\rho}\right)ds
 \label{eq:displaced_bend_trajectory}    
-\end{equation}
+\end{equation},
+where $d\theta$ is the polar angle variation, $\rho$ is the bending radius of the 
 The total path length of the displaced trajectory through the bending field is given by the integral of (Eq.~\ref{eq:displaced_bend_trajectory})
 \begin{equation}
 L = \int_{0}^{L_{0}} 1+\frac{x}{\rho} ds = L_{0} + \int_{0}^{L_{0}}\frac{x}{\rho}ds, 
 \label{eq:displaced_bend_path_length}    
 \end{equation}
-If we consider the displacement in $x$ to arise purely because of dispersive motion, then $x$ becomes
+If we consider the displacement in $x$ to arise purely because of dispersive motion, then the $x$ position becomes a Maclaurin series
 \begin{equation}
-x = \eta_{x}\frac{\Delta p}{p} + \frac{1}{2}\eta_{x}^{\left(2\right)}\left(\frac{\Delta p}{p}\right)^{2},
+x = \eta_{x}\frac{\Delta p}{p} + \frac{1}{2}\eta_{x}^{\left(2\right)}\left(\frac{\Delta p}{p}\right)^{2}+\ldots,
 \label{eq:dispersive_displacement}    
 \end{equation}
 where the higher order dispersion terms $\eta_{x}^{\left(2\right)}$ are neglected. The displacement due to dispersive motion (Eq.~\ref{eq:dispersive_displacement}) is substituted into the path length of the curved trajectory (Eq.~\ref{eq:displaced_bend_path_length}) yielding
@@ -762,25 +761,24 @@ which via substitution into (Eq.~\ref{eq:momentum_compaction_first_order}) and r
 \alpha_{p} = \frac{1}{L_{0}}\int_{0}^{L_{0}}\frac{\eta_{x}}{\rho}ds.
 \label{eq:momentum_compaction_dispersion}    
 \end{equation}
-
-Inspection of (Eq.~\ref{eq:momentum_compaction_dispersion}), demonstrates that momentum compaction only arises in dispersive sections where the reference trajectory is curved, such as in dipoles, because in straight sections $\rho\rightarrow\infty$ and therefore the contribution of these terms are negligible. 
+Inspection of (Eq.~\ref{eq:momentum_compaction_dispersion}), demonstrates that momentum compaction only arises in dispersive sections where the reference trajectory is curved, such as in dipoles, because in straight sections where $\rho\rightarrow\infty$ (Eq.~\ref{eq:momentum_compaction_dispersion}) becomes zero.
 
 \subsection{RF Acceleration}
 \label{sec:RF_acceleration}
 
-A particle, or collection of particles, can be accelerated by an electric field $\overrightarrow{E}$ satisfying the wave equation, displayed here in vacuum
+A particle, or collection of particles, can be accelerated by an electric field $\overrightarrow{E}$ satisfying the wave equation, shown for the in-vacuum case 
 \begin{equation}
 \nabla^{2}\overrightarrow{E}-\frac{1}{c^{2}}\frac{\partial^{2}\overrightarrow{E}}{\partial t^{2}},
 \label{eq:electromagnetic_wave_equation}    
 \end{equation}
-which (in our local co-ordinate system) is applied in the longitudinal direction. Most modern accelerators use powerful radio-frequency systems, or RF cavities, to produce the requisite strong electric fields, with frequencies from \si{\kilo\hertz} to \si{\giga\hertz} \cite{wille2000physics}, required to accelerate the particles to energies on the \si{\mega\electronvolt} to \si{\tera\electronvolt} scale. Whilst other acceleration methods exist such as electrostatic acceleration \cite{bromley1974development}, dielectric wakefield acceleration \cite{mtingwa1990theory} and laser plasma wakefield acceleration \cite{sprangle1988laser,esarey2009physics}, we limit our discussion to RF acceleration.
+which (in our local co-ordinate system) is applied in the longitudinal $z$ direction. Most modern accelerators use powerful radio-frequency systems, or RF cavities, to produce the requisite strong electric fields, with frequencies from \si{\kilo\hertz} to \si{\giga\hertz} \cite{wille2000physics}, required to accelerate the particles to energies on the \si{\mega\electronvolt} to \si{\tera\electronvolt} scale. Whilst other acceleration methods exist such as electrostatic acceleration \cite{bromley1974development}, dielectric wakefield acceleration \cite{mtingwa1990theory} and laser plasma wakefield acceleration \cite{sprangle1988laser,esarey2009physics}, we limit our discussion to RF acceleration.
 
-The solution to (Eq.~\ref{eq:electromagnetic_wave_equation}) for an RF cavity, where the local ($x$, $y$, $z$) co-ordinate system is used, is of the form
+The solution to the wave equation (Eq.~\ref{eq:electromagnetic_wave_equation}) for an RF cavity is of the form
 \begin{equation}
 \overrightarrow{E}\left(z,t\right) = E_{0}\exp\left[i\left(kz-\omega t\right)\right],
 \label{eq:RF_cavity_electric_field}    
 \end{equation}
-where the phase of the electric field is encapsulated by the synchronous phase $\psi = kz-\omega t$. The energy gain of a particle in an electric field, re-cast in terms of the phase, is given by 
+where $E_{0}$ is the amplitude of the electric field, $k$ is the wavenumber and $\omega$ is the angular frequency. The synchronous phase of the electric field is $\psi = kz-\omega t$ and the energy gain of a particle in an electric field, re-cast in terms of the phase, is given by 
 \begin{equation}
 \Delta E = e \int E_{0}\exp\left(i\psi\right)dz = eV\left(\psi\right),
 \label{eq:particle_energy_gain_RF}    
@@ -792,23 +790,22 @@ where $V\left(\psi\right)$ is the RF voltage as a function of phase. Therefore, 
 \end{equation}
 Consequently, the transit time between RF cavities and revolution frequency of the particle must remain constant for subsequent acceleration at identical phase. For an accelerator of path length $L$, the solution is of the form $k=2\pi/L$ where $\omega=\omega_{\mathrm{rev}}$ is the revolution frequency. The RF frequency can operate at any integer value of this revolution frequency, named the harmonic number $h$, and still satisfy the synchronicity condition (Eq.~\ref{eq:synchronicity_condition}), therefore the wavenumber and frequency of the accelerating RF waveform have the form
 \begin{align}
-k_{h} = \frac{2\pi h}{L_{0}},
-\label{eq:RF_wavenumber} \\
+k_{h} = \frac{2\pi h}{L_{0}}, &
 f_{RF} = \frac{h\omega_{\mathrm{rev}}}{2\pi}.
-\label{eq:RF_frequency}
+\label{eq:RF_wavenumber_frequency}
 \end{align}
 
 The transit time $T$ between RF cavities is affected by off-momenta particles, similarly to the path length in momentum compaction studies (see Section~\ref{sec:momentum_compaction}), therefore the transit time with respect to the reference particle ($\Delta p/p_{0}$=0) can be expanded via a Maclaurin series to account for the momentum variation
 \begin{equation}
-T = T_{0}\left[1+\eta_{p}\frac{\Delta p}{p_{0}}+\frac{1}{2}\eta_{p}^{\left(2\right)}\left(\frac{\Delta p}{p_{0}}\right)^{2}\right],
+T = T_{0}\left[1+\eta_{p}\frac{\Delta p}{p_{0}}+\frac{1}{2}\eta_{p}^{\left(2\right)}\left(\frac{\Delta p}{p_{0}}\right)^{2}+\ldots\right],
 \label{eq:transit_time_expansion}    
 \end{equation}
 where $\eta_{p}$ is named the phase slip factor. Neglecting non-linear terms and re-arranging (Eq.~\ref{eq:transit_time_expansion}) becomes
 \begin{equation}
-\eta_{p} = \frac{\Delta T/T}{\Delta p/p_{}0},
+\eta_{p} = \frac{\Delta T/T}{\Delta p/p_{0}},
 \label{eq:phase_slip_factor_transit_time}    
 \end{equation}
-where the transit time is a function of path length $L$, $T = L/\beta c$, which can be used to re-cast the phase slip factor (Eq.~\ref{eq:phase_slip_factor_transit_times}) as  
+where the transit time is a function of path length $L$, $T = L/\beta c$, which can be used to re-cast the phase slip factor (Eq.~\ref{eq:phase_slip_factor_transit_time}) as  
 \begin{equation}
 \eta_{p} = \frac{\Delta T/T}{\Delta p/p} = \frac{\Delta L/L_{0}}{\Delta p/p_{0}}-\frac{\Delta\beta/\beta}{\Delta p/p_{0}}.
 \label{eq:phase_slip_factor_expansion}    
@@ -841,8 +838,7 @@ Three distinct regimes exist within the longitudinal dynamics relating to the ph
         \item{Higher energy particles arrive at the the RF cavity last because they traverse a longer path and their higher velocity is of no advantage since $\beta\approx1$.}
     \end{itemize}}
 \end{itemize}
-The longitudinal dynamics above transition are shown in Fig.~\ref{fig:phase_focusing_above_transition}. At first glance, the reason for the mandated synchronous phases above and below transition is unclear however, this is to take advantage of longitudinal phase focusing. 
-
+The longitudinal dynamics above transition are shown in Fig.~\ref{fig:phase_focusing_above_transition}. At first glance, the chosen synchronous phase (at $\Deltap/p_{0}$) beyond the voltage peak in Fig.~\ref{fig:phase_focusing_above_transition} appears arbitrary but a phase beyond the peak allows us to take  advantage of longitudinal phase focusing
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\textwidth]{Figures/Energy_Recovery_Linac_Design/Above_Transition_Phase_Focusing.pdf}
@@ -850,7 +846,7 @@ The longitudinal dynamics above transition are shown in Fig.~\ref{fig:phase_focu
 \label{fig:phase_focusing_above_transition}
 \end{figure}
 
-Longitudinal phase focusing takes advantage of the sinusoidal nature of the accelerating electric field (Eq.~\ref{eq:RF_cavity_electric_field}) to bias the acceleration of off-momenta particles, with varying transit times, to restore their phase toward the synchronous phase. The longitudinal phase focusing technique is shown in Fig.~\ref{fig:phase_focusing_above_transition}. Above transition, a particle with reduced momentum ($\Delta p/p_{0}<0$) will arrive at the RF cavity earlier, and receiving a larger energy gain will increase its transit time  as its path length will increase. However, a particle that arrives late ($\Delta p/p_{0}>0$) will receive a smaller energy gain and therefore traverse a shorter path length, arriving earlier next revolution.
+Longitudinal phase focusing takes advantage of the sinusoidal nature of the accelerating electric field (Eq.~\ref{eq:RF_cavity_electric_field}) to bias the acceleration of off-momenta particles, with varying arrival times at the RF cavity, to restore their phase toward the synchronous phase. The longitudinal phase focusing technique is shown in Fig.~\ref{fig:phase_focusing_above_transition}. Above transition, a particle with reduced momentum ($\Delta p/p_{0}<0$) will arrive at the RF cavity earlier, and receiving a larger energy gain will increase its transit time  as its path length will increase. However, a particle that arrives late ($\Delta p/p_{0}>0$) will receive a smaller energy gain and therefore traverse a shorter path length, arriving earlier next revolution.
 The voltage, and therefore the energy gain, vary sinusoidally as a function of phase where maximum energy gain is at $\psi=\pi/2$ -- the crest of the electromagnetic wave in the RF cavity. However, setting the synchronous phase to an off-crest position in the range $\pi/2<\psi<\pi$, the slope of the RF voltage around this point is near-linear which is appropriate to achieve the varying energy gain required for longitudinal phase focusing.  
 
 Following the example of Jones \cite{jones2016design}, if the variation in energy and other related beam parameters within a recirculated accelerator is small with relation to phase then the longitudinal equation of motion is of the form 
@@ -870,7 +866,7 @@ where the synchronous phase and momentum are related via
 \frac{\Delta p}{p_{0}} = -\frac{1}{h\omega_{\mathrm{RF}}\eta_{p}}\frac{d\psi}{dt},
 \label{eq:momentum_synchronous_phase_relation}    
 \end{equation}
-and assuming the RF frequency is a harmonic of the revolution frequency $\omega_{\mathrm{rev}}=2\pi f_{\mathrm{RF}}/h$ and that the RF cavity produces a sinusoidal RF wave $V=V_{0}\sin\psi$, with RF voltage $V$, the synchrotron oscillation frequency is given by
+and, assuming the RF frequency is a harmonic of the revolution frequency $\omega_{\mathrm{rev}}=2\pi f_{\mathrm{RF}}/h$ and that the RF cavity produces a sinusoidal RF wave $V=V_{0}\sin\psi$ with RF voltage $V$, the synchrotron oscillation frequency is given by
 \begin{equation}
 \Omega^{2} = \frac{\omega_{\mathrm{rev}}^{2}h\eta_{p}eV_{0}\cos\psi}{2\pi\beta cp_{0}}.
 \label{eq:synchrotron_oscillation_frequency}    
@@ -884,7 +880,7 @@ Synchrotron oscillations in the longitudinal plane typically have a lower freque
 \label{fig:longitudinal_dynamics}
 \end{figure}
 
-The region of stable motion within the separatrix is named the RF bucket, and particles within an RF bucket form a bunch with bunch length proportional to the size of the RF bucket transformed to the longitudinal position. Bunches are sub-divisions of accelerator beams. The maximum momentum deviation of an RF bucket is given by \cite{wolski2012longitudinal}
+The region of stable motion within the separatrix is named the RF bucket, and particles within an RF bucket are bunched together in this stable region. A particle beam typically consists of many bunches, where the bunches are separated due to the unstable longitudinal phase space region outside of the separatrixes, as in Fig.~\ref{fig:longitudinal_dynamics}. The bunch length is proportional to the size of the RF bucket in the longitudinal $z$ position. The maximum momentum deviation of an RF bucket is given by \cite{wolski2012longitudinal}
 \begin{equation}
 \left(\frac{\Delta p}{p_{0}}\right)_{\mathrm{max}} = \frac{2\Omega}{\omega_{\mathrm{rev}}\beta h\eta_{p}}\sqrt{1+\left(\psi+\frac{\pi}{2}\right)\tan\psi},
 \label{eq:RF_bucket_momentum_deviation}    
@@ -971,13 +967,12 @@ Many other types of bunch compression devices can be designed such as arc-like b
 
 \section{Linear Transport Lattices}
 
-Transport lattices for accelerators typically consist of repeated cells, to produce periodic motion of the accelerated particles, these repeated cells differ in design based on the desired beam properties in each case. However, magnetic lattices for particle accelerators can come in many forms and designs, therefore a comprehensive review is beyond the scope of this thesis. Consequently, A review of the cell structure of the linear transport lattices most relevant to ERL design and the work in further chapters is pursued here via three lattice types: the FODO lattice, a multi-bend achromat and the fixed field alternating gradient (FFA) approach. 
+Transport lattices for accelerators typically consist of repeated cells, to produce periodic motion of the accelerated particles, these repeated cells differ in design based on the desired beam properties in each case. However, many designs of magnetic lattices for particle accelerators exist, therefore a comprehensive review is beyond the scope of this thesis. Consequently, A review of the cell structure of the transport lattices -- using only linear magnets (dipoles and quadrupoles) -- most relevant to ERL design and the work in further chapters is limited to three lattice types: the FODO lattice, a multi-bend achromat and the fixed field alternating gradient (FFA) approach.
 
 \subsection{FODO Lattice}
 \label{sec:FODO_lattice}
 
-A FODO lattice consists of a series of alternatively focusing quadrupoles separated by drifts as shown in Fig.~\ref{fig:FODO_cell}. The FODO lattice aims to provide periodic focusing, which requires that the Twiss parameters remain unchanged from the entrance to exit of the cell. For simplicity, thin lens quadrupoles (Eq.~\ref{eq:quadrupole_matrix_thin}) are considered, the dynamics is limited to the $x$--$x'$ phase space plane and the focusing fields are considered to be of equal magnitude.
-
+A FODO lattice consists of a series of alternatively focusing quadrupoles separated by drifts as shown in Fig.~\ref{fig:FODO_cell}. The FODO lattice aims to provide periodic focusing, which requires that the Twiss parameters remain unchanged from the entrance to exit of the cell. For simplicity, thin lens quadrupoles (Eq.~\ref{eq:quadrupole_matrix_thin}) are considered, the dynamics is limited to the $x$--$x'$ phase space plane and the focusing fields are considered to be of equal magnitude, though none of these conditions are required.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Energy_Recovery_Linac_Design/FODO_cell_finished.pdf}
@@ -990,7 +985,7 @@ The FODO cell has a transport matrix of the form
 \boldsymbol{R}_{\mathrm{FODO}} = \boldsymbol{R}_{\mathrm{quad,F}}\cdot\boldsymbol{R}_{\mathrm{drift}}\cdot\boldsymbol{R}_{\mathrm{quad,D}}\cdot\boldsymbol{R}_{\mathrm{drift}},
 \label{eq:FODO_transport}    
 \end{equation}
-where the $x$--$x'$ plane transport matrices are
+where the $x$--$x'$ plane transport matrices of each element (thin lens focusing and defocusing quadrupoles and drifts) are
 \begin{align}
 \boldsymbol{R}_{\mathrm{quad,F}} &= 
 \begin{pmatrix}
@@ -1016,19 +1011,18 @@ such that the transport matrix for a FODO cell becomes
 \end{pmatrix}.
 \label{eq:FODO_matrix}
 \end{equation}
-Through using the general matrix of periodic transport (Eq.~\ref{eq:periodic_transport_matrix}) for a single turn, we can relate the phase advance $\mu$ to the parameters of the FODO cell
+The general matrix of periodic transport (Eq.~\ref{eq:periodic_transport_matrix}) for a single turn allows the phase advance $\mu$ to be related to the parameters of the FODO cell
 \begin{align}
-\cos\mu &= \frac{1}{2}\boldsymbol{\mathrm{Tr}}\left(\boldsymbol{R}_{\mathrm{FODO}}\right) = 1-\frac{L^{2}}{8f^{2}}, \\
-\cos\mu &= 1-2\sin^{2}\left(\frac{\mu}{2}\right), \\
+\cos\mu = \frac{1}{2}\boldsymbol{\mathrm{Tr}}\left(\boldsymbol{R}_{\mathrm{FODO}}\right) &= 1-\frac{L^{2}}{8f^{2}} = 1-2\sin^{2}\left(\frac{\mu}{2}\right) \nonumber\\
 \left|\sin\left(\frac{\mu}{2}\right)\right| &= \frac{L}{4f}.
 \label{eq:phase_advance_FODO}
 \end{align}
-Using the previously defined stability criterion (Eq.~\ref{eq:stability_criterion}), the FODO cell is therefore only stable under the condition
+Using the stability criterion (Eq.~\ref{eq:stability_criterion}), the FODO cell is therefore only stable under the condition
 \begin{equation}
 1>\frac{L}{4f},
 \label{eq:FODO_stability}    
 \end{equation}
-which for a typical phase advance $\mu=90$\si{\degree}, means the focal length is given by
+which for a typical phase advance of $\mu=90$\si{\degree}, means the focal length must be given by
 \begin{equation}
 f=\frac{L}{2\sqrt{2}}.
 \label{eq:FODO_focal_90}    
