@@ -468,9 +468,9 @@ which can be substituted into (Eq.~\ref{eq:Hills_trial_solution_derivative}) and
 \sin\left[\Psi\left(s\right)+\phi\right] = \frac{\sqrt{\beta\left(s\right)}x'\left(s\right)}{\sqrt{\epsilon}} + \frac{\alpha\left(s\right)x\left(s\right)}{\sqrt{\varepsilon\beta\left(s\right)}}.
 \label{eq:trial_derivative_phase_rearrangement}    
 \end{equation}
-Using the well-known trigonometric identity $\sin^{2}x+\cos^{2}x=1$, with (Eqs.~\ref{eq:trial_phase_rearrangement}, \ref{eq:trial_derivative_phase_rearrangement}) the phase space variables can be represented by
+Using $\sin^{2}x+\cos^{2}x=1$, with (Eqs.~\ref{eq:trial_phase_rearrangement}, \ref{eq:trial_derivative_phase_rearrangement}) the phase space variables can be represented by
 \begin{equation}
-\frac{x\left(s\right)^{2}}{\beta\left(s\right)}+\left[\frac{\alpha\left(s\right)}{\sqrt{\beta\left(s\right)}}x\left(s\right)+\sqrt{\beta\left(s\right)}x'\left(s\right)\right]^{2} = \varepsilon,    
+\frac{x\left(s\right)^{2}}{\beta\left(s\right)}+\left[\frac{\alpha\left(s\right)}{\sqrt{\beta\left(s\right)}}x\left(s\right)+\sqrt{\beta\left(s\right)}x'\left(s\right)\right]^{2} = \varepsilon,  
 \label{eq:phase_space_trigonometry}
 \end{equation}
 which when expanded and then simplified, using the definition
@@ -478,7 +478,7 @@ which when expanded and then simplified, using the definition
 \gamma\left(s\right) = \frac{1+\alpha\left(s\right)^{2}}{\beta\left(s\right)},
 \label{eq:gamma_twiss}    
 \end{equation}
-relating to the angular size of the beam becomes
+which relates to the angular size of the beam, (Eq.~\ref{eq:phase_space_trigonometry}) becomes
 \begin{equation}
 \varepsilon = \gamma\left(s\right)x\left(s\right)^{2}+2\alpha\left(s\right)x\left(s\right)x'\left(s\right)+\beta\left(s\right)x'\left(s\right)^{2},
 \label{eq:phase_space_ellipse}    
@@ -488,8 +488,7 @@ and $\varepsilon$ is defined as the single particle emittance or action. The for
 A=\pi\varepsilon.
 \label{eq:phase_space_area}    
 \end{equation}
-The parameters ($\beta\left(s\right)$, $\alpha\left(s\right)$, $\gamma\left(s\right)$) defined to interpret the phase space of a particle are collectively known as the Twiss parameters. Phase space ellipses are observed in each of the three planes as the results here are general. An example of the phase space ellipse in the $x$--$x'$ plane is shown in Fig.~\ref{fig:phase_space_diagram}.
-
+The parameters ($\beta\left(s\right)$, $\alpha\left(s\right)$, $\gamma\left(s\right)$), defined to interpret the phase space of a particle, are collectively known as the Twiss parameters. Phase space ellipses are observed in each of the three planes as the elliptical form of (Eq.~\ref{eq:phase_space_ellipse}) is maintained in the $y$ and $z$ plane. An example of the phase space ellipse in the $x$--$x'$ plane is shown in Fig.~\ref{fig:phase_space_diagram}.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.6\textwidth]{Figures/Energy_Recovery_Linac_Design/phase_space_fixed.pdf}
@@ -497,10 +496,9 @@ The parameters ($\beta\left(s\right)$, $\alpha\left(s\right)$, $\gamma\left(s\ri
 \label{fig:phase_space_diagram}
 \end{figure}
 
-
-Since the phase space ellipse is for a single particle trajectory, the emittance is the single particle emittance. This is unsatisfactory for describing an ensemble of particles, therefore the concept of emittance requires extension to a many-particle ensemble -- the \textit{rms} emittance of a particle beam. To extend the single particle emittance $\varepsilon$ to the \textit{rms} emittance $\epsilon$, the \textit{rms} emittance must be of the form
+Since the phase space ellipse in (Eq.~\ref{eq:phase_space_ellipse}) is for a single particle trajectory, the emittance is the single particle emittance which is unsatisfactory for describing an ensemble of particles. Therefore, the concept of emittance requires extension to a many-particle ensemble by utilising the \textit{rms} emittance of a particle beam. To extend the single particle emittance $\varepsilon$ to the \textit{rms} emittance $\epsilon$, the \textit{rms} emittance must be of the form
 \begin{equation}
-\epsilon_{rms} = \sqrt{\frac{1}{m}\sum_{i}^{i=m}\varepsilon_{i}} = \sqrt{\frac{1}{m}\left(\varepsilon_{1}+\varepsilon_{2}+\ldots+\varepsilon_{m}\right)},
+\epsilon = \sqrt{\frac{1}{m}\sum_{i}^{i=m}\varepsilon_{i}} = \sqrt{\frac{1}{m}\left(\varepsilon_{1}+\varepsilon_{2}+\ldots+\varepsilon_{m}\right)},
 \label{eq:rms_emittance_transform}    
 \end{equation}
 where $m$ is the no. particles. The \textit{rms} emittance $\epsilon$ is an average of the single particle emittances of the bunch with the typical \textit{rms} transform and consequently can be re-cast, by inspection of (Eq.~\ref{eq:phase_space_ellipse}), as a function of the average position and divergence of the particles
@@ -510,19 +508,23 @@ where $m$ is the no. particles. The \textit{rms} emittance $\epsilon$ is an aver
 \end{equation}
 where the average position $\langle x\rangle$ and divergence $\langle x'\rangle$ terms can be expressed in terms of the Twiss parameters
 \begin{align}
-\langle x^{2}\rangle &= \beta_{x}\epsilon_{x}, \nonumber\\
-\langle x'^{2}\rangle &= \gamma_{x}\epsilon_{x}, \nonumber\\
+\langle x^{2}\rangle &= \beta_{x}\epsilon_{x}, &
+\langle x'^{2}\rangle &= \gamma_{x}\epsilon_{x}, &
 \langle xx'\rangle &= -\alpha_{x}\epsilon_{x}.
 \label{eq:rms_emittance_twiss}    
 \end{align}
-Whilst the discussion here is for the $x$ (horizontal) plane, the description is analagous in the $y$ (vertical) plane. The \textit{rms} horizontal spot size of the particle beam becomes
+However, $\epsilon_{x}$ is only the horizontal emittance and the emittance can be analogously described in each plane by replacing $x$ with $y$ and $z$ in (Eq.~\ref{eq:rms_emittance}) and (Eq.~\ref{eq:rms_emittance_twiss}). The emittance is frequently normalised with respect to energy \begin{equation}
+\epsilon_{n} = \frac{\epsilon}{\gamma},    
+\label{eq:normalised_emittance}
+\end{equation}
+where $\gamma$ is the Lorentz factor. While this description focuses on the $x$ (horizontal plane), the $y$ (vertical) plane is analagous. The \textit{rms} horizontal spot size of the particle beam becomes
 \begin{equation}
 \sigma_{x} = \sqrt{\beta_{x}\epsilon_{x}},
 \label{eq:spot_size_particle}    
 \end{equation}
 following the description of the envelope function (Eq.~\ref{eq:envelope_function}).
 
-Liouville's theorem \cite{liouville1838note}, as commonly applied in statistical mechanics \cite{gibbs1902elementary}, maintains that the phase-space density of a system remains unchanged under conservative forces applied to the system. Applied to the accelerator situation of harmonic oscillation around a reference orbit due to conserved magnetic forces, Liouville's theorem implies that the emittance is conserved throughout the beamline unless the beam of particles is acted upon by a non-conservative force. Therefore, under conservative forces, the propagation of Twiss parameters can be accomplished similarly to the transform of phase space co-ordinates. For example, in the horizontal plane phase space co-ordinates can be transformed from an initial state ($x_{0}$, $x'_{0}$) to a final state ($x_{1}$, $x'_{1}$) via transport matrices such that
+Liouville's theorem \cite{liouville1838note}, as commonly applied in statistical mechanics \cite{gibbs1902elementary}, maintains that the phase-space density of a system remains unchanged under conservative forces applied to the system. Applied to the accelerator situation of harmonic oscillation around a reference orbit due to conserved magnetic forces, Liouville's theorem implies that the emittance is conserved throughout the beamline unless the beam of particles is acted upon by a non-conservative force, such as an accelerating field in an RF cavity. Therefore, under conservative forces, the propagation of Twiss parameters can be accomplished similarly to the transform of phase space co-ordinates. For example, in the horizontal plane phase space co-ordinates can be transformed from an initial state ($x_{0}$, $x'_{0}$) to a final state ($x_{1}$, $x'_{1}$) via transport matrices such that
 \begin{equation}
 \begin{pmatrix}
 x_{1} \\
@@ -562,7 +564,7 @@ Expanding the matrices in (Eq.~\ref{eq:general_phase_space_transform}) and re-ca
 
 \subsection{Periodic Lattices and Stability}
 
-A periodic lattice, for example a repeating series of beamline elements, named cells, with length $L_{\mathrm{cell}}$, which adheres to the property $\boldsymbol{R}\left(s\right) = \boldsymbol{R}\left(s+L_{\mathrm{cell}}\right)$, where the Twiss parameters are unchanged ($\beta_{0}=\beta_{1}=\beta$, $\alpha_{0}=\alpha_{1}=\alpha$, $\gamma_{0}=\gamma_{1}=\gamma$). Therefore, a periodic cell has the single plane transport matrix of the form
+A periodic lattice with cells of length $L_{\mathrm{cell}}$ adheres to the periodicity condition $\boldsymbol{R}\left(s\right) = \boldsymbol{R}\left(s+L_{\mathrm{cell}}\right)$ where the Twiss parameters are unchanged under periodic translation ($\beta_{0}=\beta_{1}=\beta$, $\alpha_{0}=\alpha_{1}=\alpha$, $\gamma_{0}=\gamma_{1}=\gamma$) . Therefore, a periodic cell has the single plane transport matrix of the form
 \begin{equation}
 \boldsymbol{R} =
 \begin{pmatrix}
@@ -571,25 +573,21 @@ A periodic lattice, for example a repeating series of beamline elements, named c
 \end{pmatrix}
 \label{eq:periodic_transport_matrix}    
 \end{equation}
-where $\mu$ is the phase advance per cell. The Twiss parameters of the periodic lattice can be related to the transport matrix via re-arrangement of the periodic transport matrix (Eq.~\ref{eq:periodic_transport_matrix})
+where $\mu$ is the phase advance per cell. The Twiss parameters of the periodic lattice can be related to the transport matrix via re-arrangement of the periodic transport matrix (Eq.~\ref{eq:periodic_transport_matrix}) and the $\gamma$ function  (Eq.~\ref{eq:gamma_twiss})
 \begin{align}
-\beta &= \frac{\boldsymbol{R}_{12}}{\sin\mu}, 
-\label{eq:periodic_beta_function} \\
+\beta &= \frac{\boldsymbol{R}_{12}}{\sin\mu}, &
 \alpha & = \frac{\boldsymbol{R}_{11}-\boldsymbol{R}_{22}}{2\sin\mu},
-\label{eq:periodic_alpha} \\
-\gamma &= \frac{1+\left(\boldsymbol{R}_{11}-\boldsymbol{R}_{22}\right)^{2}}{4\boldsymbol{R}_{12}\sin\mu},
-\label{eq:periodic_gamma} \\
-\mu &= \cos^{-1}\left(\frac{\boldsymbol{R}_{11}-\boldsymbol{R}_{22}}{2}\right),
-\label{eq:periodic_phase_advance}
+ \nonumber\\
+\gamma &= \frac{1+\left(\boldsymbol{R}_{11}-\boldsymbol{R}_{22}\right)^{2}}{4\boldsymbol{R}_{12}\sin\mu}, &
+\mu &= \cos^{-1}\left(\frac{\boldsymbol{R}_{11}-\boldsymbol{R}_{22}}{2}\right).
+\label{eq:periodic_twiss}
 \end{align}
-and the periodic $\gamma$ function is defined by (Eq.~\ref{eq:gamma_twiss}).
-
-The periodic focusing system within an accelerator is stable if the eigenvectors of the transport matrix remain real for many passes through the accelerator beamline because the phase of the particles remains real. Therefore, the eigenvectors of the transport matrix can be found through the equation
+The periodic focusing arrangement within an accelerator is stable if the eigenvectors of the transport matrix remain real for many passes through the accelerator beamline because the phase of the particles remains real. Therefore, the eigenvectors of the transport matrix can be found through the equation
 \begin{equation}
 \left(\boldsymbol{R}-\lambda\boldsymbol{I}\right)\boldsymbol{X} = 0,
 \label{eq:eigenvalues_equation}    
 \end{equation}
-where $\boldsymbol{R}$ is the transport matrix, $\lambda$ are the eigenvalues of the system, $\boldsymbol{I}$ is the identity matrix and $\boldsymbol{X}$ is a vector of the relevant phase space variables. It follows from the periodic transport matrix that the sum of the eigenvalues of $\boldsymbol{R}$ must satisfy
+where $\boldsymbol{R}$ is the transport matrix, $\lambda$ are the eigenvalues of the system, $\boldsymbol{I}$ is the identity matrix and $\boldsymbol{X}$ is a vector of the relevant phase space variables. It follows from the periodic transport matrix (Eq.~\ref{eq:periodic_transport_matrix}) that the sum of the eigenvalues of $\boldsymbol{R}$ must satisfy
 \begin{equation}
 \sum\lambda = \boldsymbol{\mathrm{Tr}}\left(\boldsymbol{R}\right) = 2\cos\mu,
 \label{eq:eigenvalue_stability}
