@@ -150,27 +150,32 @@ B_{y} &= \frac{p_{0}}{e}\left(k_{0}+k_{1}x\right).
 \subsection{Linear Equations of Motions}
 \label{sec:equations_of_motion}
 
-\textcolor{blue}{**RE-DO THIS LATER - BIT COMPLICATED**}
-
-The linear equations of motion for a particle follow the derivation of Rossbach and Schm\"{u}ser \cite{rossbach1993basic} and K. Willie \cite{wille2000physics}, using the co-ordinate system presented in Fig.~\ref{fig:accelerator_coord_system}. An equation of particle motion due to the Lorentz force (Eq.~\ref{eq:Lorentz_force}) is developed for the co-ordinate system which rotates due to bending forces, which we limit to the horizontal $x$--$s$ plane. We define the position vector of a particle at an arbitrary point in it's trajectory, in the global cylindrical co-ordinate system $\left\{r,\alpha,z\right\}$ as
+The linear equations of motion for a particle are derived following the derivation of Rossbach and Schm\"{u}ser \cite{rossbach1993basic} and K. Willie \cite{wille2000physics}, using the co-ordinate system presented in Fig.~\ref{fig:polar_coord_system} which is analagous to Fig.~\ref{fig:accelerator_coord_system}.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.7\textwidth]{Figures/Energy_Recovery_Linac_Design/polar_coord_system_fixed.pdf}
+\caption{The right handed curvilinear co-ordinate system in cylindrical polar co-ordinates used to describe particle motion in a re-circulating particle accelerator analogous to Fig.~\ref{fig:accelerator_coord_system}. Particles traverse around a circular reference orbit (blue) in the longitudinal $s$ direction, traversing a polar angle $\alpha$, with radius of curvature $\rho$. The local co-ordinate of the particle motion is described by the unit vector $u = \left\{u_{r},~u_{y},~u_{\alpha}\right\}$.}
+\label{fig:polar_coord_system}
+\end{figure}
+An equation of particle motion due to the Lorentz force (Eq.~\ref{eq:Lorentz_force}) is developed for the co-ordinate system in Fig.~\ref{fig:polar_coord_system}. We define the position vector of a particle at an arbitrary point in it's trajectory, in the cylindrical co-ordinate system $u=\left\{u_{r},~u_{y},~u_{\alpha}\right\}$ as
 \begin{equation}
-\boldsymbol{R} = \boldsymbol{R}_{0} + r\boldsymbol{u}_{r} + z\boldsymbol{u}_{z},    
+\boldsymbol{R} = \boldsymbol{R}_{0} + r\boldsymbol{u}_{r} + z\boldsymbol{u}_{y},    
 \label{eq:particle_position_vector}
 \end{equation}
-where $R_{0}$ is the distance of the particle from an arbitrary origin point and $\boldsymbol{u}_{r}$, $\boldsymbol{u}_{\alpha}$, $\boldsymbol{u}_{z}$ are unit vectors describing the motion of the particle. Assuming a small variation in azimuthal angle $d\theta$, the relations between the unit vectors become
+where $R_{0}$ is the distance of the particle from an arbitrary origin point and $\boldsymbol{u}_{r}$, $\boldsymbol{u}_{\alpha}$, $\boldsymbol{u}_{y}$ are unit vectors describing the motion of the particle. Assuming a small variation in azimuthal angle $d\alpha$, the relations between the unit vectors become
 \begin{align}
-\frac{d\boldsymbol{u}_{r}}{d\alpha} &= \boldsymbol{u}_{\alpha}, & \frac{d\boldsymbol{u}_{\alpha}}{d\alpha} &= -\boldsymbol{u}_{r}, & \frac{d\boldsymbol{u}_{z}}{d\alpha} &= 0.
+\frac{d\boldsymbol{u}_{r}}{d\alpha} &= \boldsymbol{u}_{\alpha}, & \frac{d\boldsymbol{u}_{\alpha}}{d\alpha} &= -\boldsymbol{u}_{r}, & \frac{d\boldsymbol{u}_{y}}{d\alpha} &= 0.
 \label{eq:unit_vector_angular_derivatives}    
 \end{align}
 The velocity of the particle is given by
 \begin{align}
-\frac{d\boldsymbol{R}}{dt} &= \frac{dr}{dt}\boldsymbol{u}_{r}+r\frac{d\boldsymbol{u}_{r}}{dt} +\frac{dz}{dt}\boldsymbol{u}_{z}, \nonumber \\
-\frac{d\boldsymbol{R}}{dt} &= \frac{dr}{dt}\boldsymbol{u}_{r} + r\frac{d\alpha}{dt}\boldsymbol{u}_{\alpha} + \frac{dz}{dt}\boldsymbol{u}_{z},
+\frac{d\boldsymbol{R}}{dt} &= \frac{dr}{dt}\boldsymbol{u}_{r}+r\frac{d\boldsymbol{u}_{r}}{dt} +\frac{dz}{dt}\boldsymbol{u}_{y}, \nonumber \\
+\frac{d\boldsymbol{R}}{dt} &= \frac{dr}{dt}\boldsymbol{u}_{r} + r\frac{d\alpha}{dt}\boldsymbol{u}_{\alpha} + \frac{dz}{dt}\boldsymbol{u}_{y},
 \label{eq:unit_vector_velocity}    
 \end{align}
 and differentiating within respect to time, the acceleration becomes
 \begin{equation}
-\frac{d^{2}\boldsymbol{E}}{dt^{2}} = \left(\frac{d^{2}r}{dt^{2}}-r\frac{d^{2}\alpha}{dt^{2}}\right)\boldsymbol{u}_{r} + \left(2\frac{dr}{dt}\frac{d\alpha}{dt}\right)\boldsymbol{u}_{\alpha} + \frac{d^{2}z}{dt^{2}}\boldsymbol{u}_{z},
+\frac{d^{2}\boldsymbol{R}}{dt^{2}} = \left(\frac{d^{2}r}{dt^{2}}-r\frac{d^{2}\alpha}{dt^{2}}\right)\boldsymbol{u}_{r} + \left(2\frac{dr}{dt}\frac{d\alpha}{dt}\right)\boldsymbol{u}_{\alpha} + \frac{d^{2}z}{dt^{2}}\boldsymbol{u}_{y},
 \label{eq:unit_vector_acceleration}    
 \end{equation}
 the first part of the $\boldsymbol{u}_{r}$ term describes the effect of the variation of bending on the acceleration and the second part relates to the centrifugal acceleration of the particle. The force of the particle of mass $m$, using the acceleration (Eq.~\ref{eq:unit_vector_acceleration}), can be equated with the Lorentz force (Eq.~\ref{eq:Lorentz_force}) of the magnetic field due to the accelerator magnets ($\overightarrow{E}=0$)
@@ -178,29 +183,29 @@ the first part of the $\boldsymbol{u}_{r}$ term describes the effect of the vari
 m\frac{d^{2}\boldsymbol{R}}{dt^{2}}=-e\left(\overightarrow{v}\times\overightarrow{B}\right),
 \label{eq:Lorentz_particle_equating_forces}
 \end{equation}
-which, by describing the magnetic flux density vector in cylindrical co-ordinates $\overightarrow{B} = \left(B_{r},B_{\alpha},B_{z}\right)$, can be expanded to
+which, by describing the magnetic flux density vector in cylindrical co-ordinates $\overightarrow{B} = \left(B_{r},B_{\alpha},B_{y}\right)$, can be expanded to
 \begin{equation}
-m\frac{d^{2}\boldsymbol{R}}{dt^{2}} = -e\left[\left(r\frac{d\alpha}{dt}B_{z}-\frac{dz}{dt}B_{\alpha}\right)\boldsymbol{u}_{r}+\left(\frac{dz}{dt}B_{r}-\frac{dr}{dt}B_{z}\right)\boldsymbol{u}_{\alpha}+\left(\frac{dr}{dt}B_{\alpha}-r\frac{d\alpha}{dt}B_{r}\right)\boldsymbol{u}_{z}\right].
+m\frac{d^{2}\boldsymbol{R}}{dt^{2}} = -e\left[\left(r\frac{d\alpha}{dt}B_{y}-\frac{dy}{dt}B_{\alpha}\right)\boldsymbol{u}_{r}+\left(\frac{dy}{dt}B_{r}-\frac{dr}{dt}B_{y}\right)\boldsymbol{u}_{\alpha}+\left(\frac{dr}{dt}B_{\alpha}-r\frac{d\alpha}{dt}B_{r}\right)\boldsymbol{u}_{y}\right].
 \label{eq:Lorentz_particle_equating_forces_expanded}    
 \end{equation}
 Assuming that $B_{\alpha}=0$, as there is no longitudinally applied magnetic field -- as this would be in the direction of motion of the particle -- we obtain a set of two differential equations
 \begin{align}
-m\left(\frac{d^{2}r}{dt^{2}}-r\frac{d^{2}\alpha}{dt^{2}}\right)=-er\frac{d\alpha}{dt}B_{z},
+m\left(\frac{d^{2}r}{dt^{2}}-r\frac{d^{2}\alpha}{dt^{2}}\right)=-er\frac{d\alpha}{dt}B_{y},
 \label{eq:radial_differential_equation} \\
-m\frac{d^{2}z}{dt^{2}}=-er\frac{d\alpha}{dt}B_{r}.
+m\frac{d^{2}y}{dt^{2}}=-er\frac{d\alpha}{dt}B_{r}.
 \label{eq:angular_differential_equation}
 \end{align}
-Assuming a combination of focusing and bending magnets within the accelerator, we approximate these fields by using a the field of a combined function magnet (Eq.~\ref{eq:combined_function_field}). The defined field of a combined function magnet (Eq.~\ref{eq:combined_function_field}) in the local co-ordinate system can be simply equated to the field in the global cylindrical co-ordinate system  because the radial direction of the global co-ordinate system is the same as the horizontal $x$ direction of the local co-ordinate system and the vertical $y$ local co-ordinate direction is analogous to the global $z$ direction. The equivalence of the fields in each co-ordinate system can be expressed as
+Assuming a combination of focusing and bending magnets within the accelerator, we approximate these fields by using a the field of a combined function magnet (Eq.~\ref{eq:combined_function_field}). The defined field of a combined function magnet (Eq.~\ref{eq:combined_function_field}) in the local co-ordinate system can be simply equated to the field in the global cylindrical co-ordinate system  because the radial direction of the global co-ordinate system is the same as the horizontal $x$ direction of the local co-ordinate system. The equivalence of the fields in each co-ordinate system can be expressed as
 \begin{align}
 B_{r} = B_{x} &= \frac{p_{0}}{e}k_{1}y, \\
-B_{z} = B_{y} &= \frac{p_{0}}{e}\left(k_{0}+k_{1}x\right),
+B_{y} &= \frac{p_{0}}{e}\left(k_{0}+k_{1}x\right),
 \label{eq:equivalent_combined_function_field}
 \end{align}
 Substituting the combined function magnetic flux density (Eq.~\ref{eq:equivalent_combined_function_field}) into the differential equations (Eqs.~\ref{eq:radial_differential_equation}, \ref{eq:angular_differential_equation}) and making the substitution $r=\rho+x$ to account for varying transverse position around the reference orbit yields
 \begin{align}
 m\left(\frac{d^{2}x}{dt^{2}}-\left(p+x\right)\frac{d^{2}\alpha}{dt^{2}}\right) &=-p_{0}\left(\rho+x\right)\frac{d\alpha}{dt}\left(k_{0}+k_{1}\right), 
 \label{eq:horizontal_differential_equation}\\   
-m\frac{d^{2}z}{dt^{2}} &= -p_{0}\left(\rho+x\right)\frac{d\alpha}{dt}k_{1}z.
+m\frac{d^{2}y}{dt^{2}} &= -p_{0}\left(\rho+x\right)\frac{d\alpha}{dt}k_{1}y.
 \label{eq:vertical_differential_equation}
 \end{align}
 The azimuthal component of the velocity has the form
@@ -208,17 +213,16 @@ The azimuthal component of the velocity has the form
 v_{\alpha} = \left(\rho+x\right)\frac{d\alpha}{dt},
 \label{eq:azimuthal_velocity}    
 \end{equation}
-which is typically much larger than the radial and vertical component ($v_{\alpha}\gg v_{r},~v_{z}$), which enables the approximation $v\approx v_{\alpha}$ that the azimuthal velocity is the velocity of the particle. Using this approximation a series of variables can be replaced using
+which is typically much larger than the radial and vertical component ($v_{\alpha}\gg v_{r},~v_{y}$), which enables the approximation $v\approx v_{\alpha}$ that the azimuthal velocity is the velocity of the particle. Using this approximation a series of variables can be replaced using
 \begin{align}
 s&=vt, & \frac{d^{2}x}{dt^{2}} &= v^{2}\frac{d^{2}x}{ds^{2}},
 \label{eq:velocity_approximation_replacing_variables}    
 \end{align}
 which can then be used to re-cast (Eqs.~\ref{eq:horizontal_differential_equation}, \ref{eq:vertical_differential_equation}) to obtain
 \begin{align}
-\frac{d^{2}x}{ds^{2}} &= -\frac{p_{0}}{mv}\frac{1}{\rho+x}\left(k_{0}+k_{1}x\right),
-\label{eq:horizontal_recast_differential_equation} \\
-\frac{d^{2}z}{ds^{2}} &= -\frac{p_{0}}{mv}k_{1}z.
-\label{eq:vertical_recast_differential_equation}
+\frac{d^{2}x}{ds^{2}} &= -\frac{p_{0}}{mv}\frac{1}{\rho+x}\left(k_{0}+k_{1}x\right), &
+\frac{d^{2}y}{ds^{2}} &= -\frac{p_{0}}{mv}k_{1}y.
+\label{eq:horizontal_vertical_recast_differential_equation}
 \end{align}
 Variation in the design momentum $\Delta p$ is introduced via
 \begin{equation}
@@ -232,41 +236,39 @@ which means the transverse $r$ co-ordinate can be re-cast, when $\rho \gg x$, as
 \end{equation}
 By introducing the momentum variation (Eq.~\ref{eq:design_momentum_variation}) and the approximation of the radial component (Eq.~\ref{eq:r_rho_relation}), the equations of motion can be shown in their familiar form \cite{rossbach1993basic,wille2000physics}
 \begin{align}
-\frac{d^{2}x}{ds^{2}} +\left(k_{1}+\frac{1}{\rho^{2}}\right)x &= \frac{1}{\rho}\frac{\Delta p}{p_{0}},
-\label{eq:horizontal_equation_of_motion} \\
-\frac{d^{2}z}{ds^{2}} - k_{1}z &= 0,
-\label{eq:vertical_equation_of_motion}
+\frac{d^{2}x}{ds^{2}} +\left(k_{1}+\frac{1}{\rho^{2}}\right)x &= \frac{1}{\rho}\frac{\Delta p}{p_{0}}, &
+\frac{d^{2}y}{ds^{2}} - k_{1}y &= 0,
+\label{eq:horizontal_vertical_equation_of_motion}
 \end{align}
 where the focusing terms of the equations of motion, arising from the focusing component $k_{1}$ and the bending component $1/\rho^{2}$ can be combined into a single term
 \begin{align}
-\frac{d^{2}x}{ds^{2}} + K_{x}x &= \frac{1}{\rho}\frac{\Delta p}{p_{0}},
-\label{eq:horizontal_equation_of_motion_simplified} \\
-\frac{d^{2}z}{ds^{2}} + K_{z}z &= 0,
-\label{eq:vertical_equation_of_motion_simplified}
+\frac{d^{2}x}{ds^{2}} + K_{x}x &= \frac{1}{\rho}\frac{\Delta p}{p_{0}}, &
+\frac{d^{2}y}{ds^{2}} + K_{y}y &= 0,
+\label{eq:horizontal_vertical_equation_of_motion_simplified}
 \end{align}
 where
 \begin{align}
-K_{x} &= k_{1} + \frac{1}{\rho^{2}}. \nonumber\\
-K_{z} &= -k_{1}.
+K_{x} &= k_{1} + \frac{1}{\rho^{2}}. &
+K_{y} &= -k_{1}.
 \label{eq:focusing_equation_of_motion}    
 \end{align}
-The equations of motion (Eqs.~\ref{eq:horizontal_equation_of_motion_simplified}, \ref{eq:vertical_equation_of_motion_simplified}) have the form of a harmonic oscillator.
+The equations of motion (Eq.~, \ref{eq:horizontal_vertical_equation_of_motion_simplified}) have the form of a harmonic oscillator.
 
-Solutions to the equations of motion (Eqs.~\ref{eq:horizontal_equation_of_motion_simplified}, \ref{eq:vertical_equation_of_motion_simplified}) can therefore be found by linear combinations of sine and cosine terms which, for the focusing case ($K>0$) have the form
+Solutions to the equations of motion (Eqs.~ \ref{eq:horizontal_vertical_equation_of_motion_simplified}) can therefore be found by linear combinations of sine and cosine terms which, for the focusing case ($K>0$) have the form
 \begin{align}
-C\left(s\right) &= \cos\left(\sqrt{K}s\right), \nonumber\\
+C\left(s\right) &= \cos\left(\sqrt{K}s\right), &
 S\left(s\right) &= \frac{1}{\sqrt{K}}\sin\left(\sqrt{K}s\right),
 \label{eq:focusing_solution_equation_of_motion}
 \end{align}
 and for the defocusing case ($K<0$) become
 \begin{align}
-C\left(s\right) &= \cosh\left(\left|K\right|s\right), \nonumber \\
+C\left(s\right) &= \cosh\left(\left|K\right|s\right), &
 S\left(s\right) &= \frac{1}{\sqrt{\left|K\right|}}\sinh\left(\left|K\right|s\right).
 \label{eq:defocusing_solution_equation_of_motion}    
 \end{align}
 Generalising for each plane $u\left(s\right)\equiv x\left(s\right) \parallel z\left(s\right)$ the solutions become
 \begin{align}
-u\left(s\right) &= aC\left(s\right) + bS\left(s\right) + \frac{\Delta p}{p_{0}}D\left(s\right), \nonumber \\
+u\left(s\right) &= aC\left(s\right) + bS\left(s\right) + \frac{\Delta p}{p_{0}}D\left(s\right), &
 u'\left(s\right) &= aC'\left(s\right) + bS'\left(s\right) + \frac{\Delta p}{p_{0}}D\left(s\right),
 \label{eq:generalised_solution}
 \end{align}
@@ -293,7 +295,7 @@ where $s_{0}$ is the initial longitudinal position of the particle.
 
 \section{Transport Matrices} 
 
-Previously, the solution to the equations of motion with a periodically focusing and bending particle accelerator (Eqs.~\ref{eq:horizontal_equation_of_motion_simplified}, \ref{eq:vertical_equation_of_motion_simplified}) have been derived and presented using a matrix formalism (Eq.~\ref{eq:general_solution_matrix}). Considering the dynamics in both transverse planes ($x$ and $y$) simulataneously, the effect of momentum deviation from the design momentum $\Delta p/p_{0}$ and accounting for the longitudinal position of the particle $s=ct$, with $t$ the time-of-flight of the particle, six co-ordinates are required to describe the motion. Therefore, the position of a particle in an accelerator is adequately described using a 6D vector 
+Previously, the solution to the equations of motion with a periodically focusing and bending particle accelerator (Eq.~ \ref{eq:horizontal_vertical_equation_of_motion_simplified}) have been derived and presented using a matrix formalism (Eq.~\ref{eq:general_solution_matrix}). Considering the dynamics in both transverse planes ($x$ and $y$) simulataneously, the effect of momentum deviation from the design momentum $\Delta p/p_{0}$ and accounting for the longitudinal position of the particle $s=ct$, with $t$ the time-of-flight of the particle, six co-ordinates are required to describe the motion. Therefore, the position of a particle in an accelerator is adequately described using a 6D vector 
 \begin{equation}
 \boldsymbol{X} = 
 \begin{bmatrix}
@@ -1132,7 +1134,7 @@ Multi-turn ERLs function similarly to the single turn ERL, however a multi-turn 
 
 The electron bunch is generated via the photo-injector with energy $E_{\mathrm{inj}}$ and transported to the linac, arriving with accelerating phase, and is accelerated with energy gain $\DeltaE$ (Eq.~\ref{eq:particle_energy_gain_RF}) to a kinetic energy $E_{e,1}$, the first turn nominal energy. The electron bunch is then transported to the entrance of the linac, via the first re-circulating beamline, in accelerating phase and is re-accelerated to $E_{e,2}=2\Delta E+E_{\mathrm{inj}}$, an increased second turn nominal energy. For acceleration, the first re-circulating beamline must have a path length of $L = n\lambda_{\mathrm{RF}}$ to return to the same phase as the initial acceleration. The scheme thus far is identical to a re-circulating linac, which was first demonstrated at MUSL-2 \cite{axel1977status}.
 
-The electron bunch then enters the second re-circulating beamline which re-circulates the electron bunch to the entrance of the linac. The second re-circulating beamline must conduct the 180\si{\degree} phase change and therefore the path length is $L=\lambda_{\mathrm{RF}}\left(n+\frac{1}{2}\right)$. On the third pass of the linac the electron bunch is decelerated to $E_{e,1}$, and the bunch is then transported around the first recirculating beamline with path length $L=n\lambda_{\mathrm{RF}}$, which maintains the decelerating phase of the electron bunch upon arrival at the entrance to the linac for the 4th pass. The 4th pass of the linac decelerates the electron bunch from $E_{1}$ to $E_{\mathrm{inj}}$ and the electron bunch is transported to the beam stop. Therefore, a two turn ERL with a single linac consists of four linac passes and three traversals of a re-circulating beamline. In general a $n$ turn single linac ERL requires $2n$ linac passes and $2n-1$ traversals of a re-circulating beamline.
+The electron bunch then enters the second re-circulating beamline which re-circulates the electron bunch to the entrance of the linac. The second re-circulating beamline must conduct the 180\si{\degree} phase change and therefore the path length is $L=\lambda_{\mathrm{RF}}\left(n+\frac{1}{2}\right)$. On the third pass of the linac the electron bunch is decelerated to $E_{e,1}$, and the bunch is then transported around the first recirculating beamline with path length $L=n\lambda_{\mathrm{RF}}$, which maintains the decelerating phase of the electron bunch upon arrival at the entrance to the linac for the 4th pass. The 4th pass of the linac decelerates the electron bunch from $E_{1}$ to $E_{\mathrm{inj}}$ and the electron bunch is transported to the beam stop. Therefore, a two turn ERL with a single linac consists of four linac passes and three traversals of a re-circulating beamline. In general a $n$ turn single linac ERL requires at least $2n$ linac passes and $2n-1$ traversals of a re-circulating beamline.
 
 A multi-turn ERL is advantageous over a single turn ERL as, with a limited accelerating section, a high electron bunch kinetic energy can be achieved via multiple passes. The multi-turn ERL can achieve higher energy electron beams without a larger RF system and typically without a large increase in the circumference of the re-circulation transport, hence higher electron energies may be attained within a similar accelerator footprint. All advantages of the single turn ERL listed in Section~\ref{sec:single_turn_ERL} are also maintained for a multi-turn ERL. However,transport design is more complex in the multi-turn ERL because with multiple nominal energies existing within the ERL.
 
@@ -1144,7 +1146,7 @@ Multiple electron beam energies can be transported by multiple re-circulation be
 % Common Transport
 % Multi-energy Common Transport
 
-The multi-turn ERL has three main possible forms of transport design: single transport, common transport and multi-energy common transport, which are explained within this section. Topologies of both single transport and common transport three turn ERLs are shown in Figure~\ref{fig:single_common_transport}. Transport in ERLs is subject to many constraints such as the path length condition for acceleration, typical transport matching considerations (beam optics matching, momentum acceptance etc.) and, dependent on the experimental requirements of users, any interaction region or insertion device constraints -- like the final focus systems of ICS sources investigated in this thesis. Therefore, the ERL transport options are also evaluated on their applicability in the situation of ERL driven radiation generation (ICS, FEL) as well as their general properties.
+Transports designs multi-turn ERLs typically adhere to one of three main forms: single transport, common transport and multi-energy common transport, which are explained within this section. Topologies of both single transport and common transport three turn ERLs are shown in Figure~\ref{fig:single_common_transport}. Transport in ERLs is subject to many constraints such as the path length condition for acceleration, standard transport matching considerations (beam optics matching, momentum acceptance etc.) and, dependent on the experimental requirements of users, any interaction region or insertion device constraints -- for example the final focus configurations for ICS sources investigated in this thesis. Therefore, the ERL transport options are also evaluated on their applicability to ERL driven radiation generation (ICS, FEL) as well as their general properties.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Energy_Recovery_Linac_Design/Single_Common_Transport.pdf}
@@ -1152,19 +1154,19 @@ The multi-turn ERL has three main possible forms of transport design: single tra
 \label{fig:single_common_transport}
 \end{figure}
 
-Conceptually, the simplest transport design for the multi-turn ERL is single transport, where each accelerating and decelerating pass of the linac (at each nominal turn energy) is transported by a dedicated re-circulating beamline. There are $2n-1$, where $n$ is the no. turns, re-circulating beamlines in the ERL. As the constraints for the bunch are only satisfied for a single bunch configuration in each beamline single transport benefits from the most flexible optics. Less constrained optics allow for an integrated interaction region for radiation experiments etc. which can be more easily imposed. 
+Conceptually, the simplest transport design for the multi-turn ERL is single transport, where each accelerating and decelerating pass of the linac (for the nominal electron energy of each turn) is transported by a dedicated re-circulating beamline. There are $2n-1$  re-circulating beamlines in the ERL, where $n$ is the number of turns. As the constraints for the bunch are only satisfied for a single bunch configuration in each beamline single transport benefits from the most flexible optics. Less constrained optics allow for an integrated interaction region, for example for radiation production, to be more easily imposed. However, with the required $2n$ re-circulating beamlines the quantity of magnets required is vast, adding additional cost into a design. During acceleration and deceleration bunches must traverse the axis of the linac, therefore complex beamline regions -- named spreader/recombiners -- are required to make all turns traverse the linac axis. Consequently, spreaders are typically spatially complex beamline designs with many nearby magnets. Nearby magnets mean beamlines can be subject to the fields generated in neighbouring beamlines, creating a cross-talk between passes.
 
-However, with $2n-1$ recirculating beamlines the quantity of magnets required is vast, adding additional cost into a design. During acceleration and deceleration bunches must traverse the axis of the linac, therefore complex beamline regions -- named spreader/recombiners -- are required to make all turns traverse the linac axis. Consequently, spreaders are typically spatially complex beamline designs with many nearby magnets. Nearby magnets mean beamlines can be subject to the fields generated in neighbouring beamlines, creating a cross-talk between passes.
+Common transport ERL designs, as shown in Figs.~\ref{fig:ERL_schematics}, \ref{fig:single_common_transport}, use the same beamline for accelerating and decelerating passes therefore $n$ re-circulating passes are required. For example, in a 3 turn single linac ERL three beamlines are used to transport the $n$ nominal electron energies, transporting both accelerating and decelerating bunches. In a multi-turn ERL, the $n$th pass is traversed a single time by the highest kinetic energy bunch in a decelerating configuration whereas each other re-circulating beamline is traversed twice (accelerating and decelerating). Consequently, a dedicated beamline can be constructed for the required 180\si{\degree} phase change from acceleration to deceleration.
 
-Common transport design, shown for the 2 turn ERL in Fig~\ref{fig:ERL_schematics}, uses identical beamlines for accelerating and decelerating passes therefore $n-1$ re-circulating passes are required. In a multi-turn ERL, the $n$th pass is traversed a single time by the highest kinetic energy bunch in a decelerating configuration whereas each other re-circulating beamline is traversed twice (accelerating and decelerating). Consequently, a dedicated beamline can be constructed for the required 180\si{\degree} phase change from acceleration to deceleration.
+The common transport requirement for $n$ beamlines (in contrast to single transports $2n$ beamlines), reduces the complexity of spreader/recombiner designs and theoretically requires less accelerator magnets. Yet, the individual re-circulating beamlines must satisfy the constraints of two passes and are less adjustable (more constrained). Correction of the transport optics becomes more difficult as any correction affects both the accelerating and decelerating traversal. Design of interaction regions for radiation generation also becomes more difficult as at the interaction point both accelerating and decelerating bunches must have identical properties to generate an identical radiation spectrum because radiation production is sensitive to the bunch distribution, further constraining the optics.
 
-The common transport requirement for $n-1$ beamlines (in contrast to single transports $2n-1$ beamlines), reduces the complexity of spreader/recombiner designs and theoretically requires less accelerator magnets. Yet, the individual re-circulating beamlines must satisfy the constraints of two passes and are less adjustable (more constrained). Correction of the transport optics becomes more difficult as any correction affects both the accelerating and decelerating traversal. Design of interaction regions for radiation generation also becomes more difficult as at the interaction point both acceleration and decelerating bunches must have identical properties as radiation generation is sensitive to the bunch distribution, further constraining the optics.
+Common transport design can be extended such that a single beamline transports each of the $n$ nominal electron energies in both accelerating and decelerating configuration -- named multi-energy common transport. Only a single beamline is required which is constructed using an optics design able to transport multiple varying energy beams such as the non-scaling FFA in Section~\ref{sec:FFA}. The single re-circulating beamline is highly constrained: orbits must be designed to accommodate for the path length variation (180\si{\degree} RF phase change) required in the $n$th pass, to satisfy all optical matching conditions and allow for on-axis linac traversal. 
 
-Common transport design can be extended such that a single beamline transports each energy -- termed multi-energy common transport -- where all nominal beam energies, in both accelerating and decelerating configuration, are transported by the same re-circulating beamline. Only a single beamline is required, constructed of optics able to transport multiple varying energy beams -- such as the non-scaling FFA in Section~\ref{sec:FFA}. The single re-circulating beamline is highly constrained and orbits must be designed to accommodate for the path length variation (180\si{\degree} RF phase change) required in the $n$th pass, to satisfy all optical matching conditions and allow for on-axis linac traversal. 
+When all constraints can be satisfied in the single re-circulating beamline, spreader/recombiner systems are not required. However, a multi-energy common transport multi-turn ERL scheme without spreaders has not been demonstrated. However, a partial solution has been demonstrated the CBETA ERL \cite{hoffstaetter2017cbeta,bartnik2020cbeta} which uses multi-energy common transport for re-circulation and common transport spreader designs to provide additional path length correction and linac matching. Multi-energy common transport can reduce the number of accelerator magnets required, however optics like non-scaling FFA can be magnet dense.
 
-When all constraints can be satisfied in the single re-circulating beamline, spreader/recombiner systems are not required. However, a fully multi-energy common transport multi-turn ERL scheme has not been demonstrated -- the CBETA ERL \cite{hoffstaetter2017cbeta,bartnik2020cbeta} which uses multi-energy common transport uses common transport spreader designs to provide additional path length correction and linac matching. The number of accelerator magnets required can also be reduced, however optics like non-scaling FFA are magnet dense.
+Correction of multi-energy common transport systems is difficult as variation in any magnet affects all $2n-1$ passes of the re-circulating beamline. 
 
-Correction of multi-energy common transport systems is difficult as variation in any magnet affects all $2n-1$ passes of the re-circulating beamline. Considering the use of a multi-turn common transport system for radiation production there are several issues; the lattices are magnet dense so incorporating an interaction region is difficult and interaction region design is not easily adjustable, with bunches requiring different focusing and off-orbit trajectories for particles in FFA. The constraints on the design of an interaction region in a multi-energy common transport system are increased $2n-1$ fold from the single transport case.   
+Several issues arise when considering use of a multi-turn common transport system for radiation production or other applications because the re-circulating beamline is magnet dense and not easily adjustable. For example, for an ICS experiment sufficient space is required for a final focus and laser optics. Also in FFA lattices, typically used for multi-energy common transport, the bunches are offset transversely with respect to momentum (see Section~\ref{sec:FFA}) so creating a final focus to interact the various energy electron bunches is difficult. The constraints on the design of an interaction region in a multi-energy common transport system are increased $2n-1$ fold from the single transport case.   
 
 \subsection{High Current ERL Operation}
 \label{sec:high_current_ERL}
@@ -1172,34 +1174,31 @@ Correction of multi-energy common transport systems is difficult as variation in
 % Continuous wave operation vs pulsed
 % normal vs superconducting RF
 
-Operating with high current is advantageous for an ERL as high current will allow for delivery of a large number of particles to users of the accelerator; beneficial in both colliders and radiation generating light sources -- two touted applications of ERLs. However, the current can be limited in numerous ways, for example by operating in a pulsed mode with a series of bunch trains or due to collective effects such as beam breakup instability. 
+Operating with high average beam current is advantageous for an ERL as high current delivers a large number of particles to user experiments as a function of time, which is beneficial in the two often touted applications of ERLs: particle colliders \cite{valloni2013strawman,bruning2019exploring,holzer2021accelerator} and radiation generating light sources \cite{neil2006jlab,priebe2010first}. However, average beam current can be limited in numerous ways, for example by operating the ERL in a pulsed mode, where a series of electron bunches are generated in trains with overall reduced average beam current, or due to collective effects such as beam breakup instability. Many other limitations for high average beam current exist, however this section aims to explore only those most relevant to the ERL.  
 
-Within an ERL, the bunch generation can occur in two modes of operation: pulsed beam or continuous wave (CW) operation. In pulsed beam operation a series of bunches are generated and accelerated in a bunch train, with a pause before another bunch is generated. In continuous wave operation bunches are continually generated and accelerated with all RF buckets of the accelerator filled which means a higher current can be achieved. Additionally,
-creation of a very stable beam (in energy) and very low energy spread
-is easier with CW resonant systems rather than pulsed systems \cite{reece2016continuous}. However, high acceleration gradients are required for high energy ERL operation to reduce the footprint of the ERL but have large power consumption during CW operation. Continuous wave acceleration gradients of above 5~\si{\mega\volt}/\si{\meter} are not sustainable with normal conducting accelerating structures \cite{reece2016continuous} as resistive wall losses become challenging thermally, and the associated required power becomes infeasible. Therefore, for high energy ERLs with CW operation superconducting RF (SRF) structures are the most viable solution. 
+Within an ERL, the bunch generation can occur in two modes of operation: pulsed beam, such as the first demonstrated SCA/FEL \cite{smith1987development}, or continuous wave (CW) operation, for example the J-Lab FEL \cite{neil2006jlab}. In pulsed beam operation a series of bunches are generated and accelerated in a bunch train, with a pause before another bunch is generated. Whereas, in continuous wave operation bunches are continually generated and accelerated with all RF buckets of the accelerator filled, resulting in a higher average beam current. Additionally, creation of a very stable beam (in energy) and very low energy spread is easier with CW resonant systems rather than pulsed systems \cite{reece2016continuous}. However, high acceleration gradients are required for high energy ERL operation to reduce the footprint of the ERL but RF cavities with high acceleration gradients have large power consumption during CW operation. Therefore, continuous wave acceleration gradients of above 5~\si{\mega\volt}/\si{\meter} are not sustainable with normal conducting accelerating structures \cite{reece2016continuous} because resistive wall losses become challenging thermally, and the associated required power becomes infeasible. Therefore, for high energy ERLs with CW operation superconducting RF (SRF) structures are the most viable solution. 
 
-The average beam current off energy recovery linacs can be limited by the effects of the beam breakup instability (BBU). In the beam breakup instability, the electron bunch interacts with a higher order mode (HOM) of the accelerating structure and is deflected. Electron bunches with a transverse offset traverse an RF cavity and excite a HOM within the cavity. The electron bunch subsequently receives a transverse kick, thereby generating a further higher order mode due to the transverse offset the kick generates. Beyond some threshold current value $I_{\mathrm{th}}$ this process becomes exponential in nature resulting in beam loss.
+The average beam current off energy recovery linacs can be limited by the effects of the beam breakup instability (BBU). In the beam breakup instability, the electron bunch interacts with a higher order mode (HOM) of the accelerating structure and is deflected. A higher order mode is any mode that differs from the accelerating mode of an RF cavity that also has a higher frequency. Electron bunches with a transverse offset traverse an RF cavity and excite a HOM within the cavity. The electron bunch subsequently receives a transverse kick when the cavity is traversed next, thereby generating a further higher order mode due to the transverse offset the kick generates. Beyond some threshold current value $I_{\mathrm{th}}$ this process becomes exponential in nature resulting in beam loss.
 
-Two forms of beam breakup exist; cumulative BBU in which the instability builds up over a series of RF accelerating structures, for example a long (100's~\si{\meter}) linac, and regenerative BBU where the effect build up via multiple passes of the same RF cavity. The former of these was the observed first, with experimentation at SLAC \cite{panofsky1966electrons,altenmueller1966beam} and LLNL \cite{neil1970coherent} and analytically modelled by Panofsky and Bander et al \cite{panofsky1968asymptotic}. However, for ERLs -- especially multi-turn ERLs -- regenerative beam breakup instability is of greater concern due to the recirculated nature of the accelerator in which a short linac section is typical. Regenerative BBU is particularly present in multi-turn ERLs in comparison to circular machines such as synchrotrons because the multiple energy bunches in the ERL are deflected differently for the same HOM voltage causing variation in bunch transverse offsets and a change in revolution time for the first decelerating bunch, in which the phase is modulated by 180\si{\degree} \cite{setiniyaz2021filling}.
+Two forms of beam breakup exist; cumulative BBU in which the instability builds up over a series of RF accelerating structures, for example a long (100's~\si{\meter}) linac, and regenerative BBU where the effect build up via multiple passes of the same RF cavity. The former of these was observed first, with experimentation at SLAC \cite{panofsky1966electrons,altenmueller1966beam} and LLNL \cite{neil1970coherent} and analytically modelled by Panofsky and Bander \cite{panofsky1968asymptotic}. However, for ERLs -- especially multi-turn ERLs -- regenerative beam breakup instability is of greater concern due to the re-circulated nature of the accelerator in which a short linac is common. Regenerative BBU is particularly present in multi-turn ERLs in comparison to circular machines such as synchrotrons because the multiple energy bunches in the ERL are deflected differently for the same HOM voltage causing variation in bunch transverse offsets and a change in revolution time for the first decelerating bunch, in which the phase is modulated by 180\si{\degree} \cite{setiniyaz2021filling}.
 
-Theoretical studies of regenerative BBU in ERL's were conducted by Hoffstaetter and Bazarov \cite{hoffstaetter2004beam} for uncoupled optics, then furthered for the case of coupled optics \cite{hoffstaetter2007recirculating}. The focus is typically on the excitation of dipole higher order modes, as these are typically the easiest to excite. Experimentally, regenerative BBU was observed and studied in an ERL at the Jefferson Laboratory FEL \cite{tennant2005first,douglas2006experimental}. Conventional methods of suppressing BBU \cite{tennant2004methods} in an ERL include HOM dampeners, as well as accelerator optics based solutions \cite{rand1980beam}. Recently BBU studies have been performed for the CBETA ERL \cite{lou2019beam} which have predicted a restrictive average beam current limitation of $I_{\mathrm{th}} = 40$~\si{\milli\ampere}. However, mitigation of regenerative BBU remains an active field exemplified by the proposal of a bunch filling pattern which could increase the threshold current limitation by up to a factor of 5 for a 3-turn ERL \cite{setiniyaz2021filling}.    
+Theoretical studies of regenerative BBU in ERLs were conducted by Hoffstaetter and Bazarov \cite{hoffstaetter2004beam} for uncoupled optics, then furthered for the case of coupled optics \cite{hoffstaetter2007recirculating}. The focus is typically on the excitation of dipole higher order modes, as these are typically the easiest to excite. Experimentally, regenerative BBU was observed and studied in an ERL at the Jefferson Laboratory FEL \cite{tennant2005first,douglas2006experimental}. Conventional methods of suppressing BBU \cite{tennant2004methods} in an ERL include HOM dampeners, as well as accelerator optics based solutions \cite{rand1980beam}. Recently BBU studies have been performed for the CBETA multi-turn ERL \cite{lou2019beam} which predict an average beam current limitation of $I_{\mathrm{th}} = 40$~\si{\milli\ampere}. However, mitigation of regenerative BBU remains an active field exemplified by the proposal of a bunch filling pattern which could increase the threshold current limitation by up to a factor of 5 for a 3-turn ERL \cite{setiniyaz2021filling}.    
 
-High average current in ERLs is also limited by beam halo, in which a low density collection of particles is situated outside of the core of the particle bunch. Beam halo in ERLs can be generated by myriad factors, such as the design of optics, magnetic field errors and non-linearities as well as photo-cathode choice, the photo-injection system and vaccum issues such as residual gas scattering \cite{neil2006jlab,tanaka2018new}. Mitigation can be achieved through optics studies and correction as well as photo-cathode choice and design of RF accelerating structures, many of which are active areas of study. Beam halo provides challenges for high current operation as the beam halo particles can be lost within transport, producing radiation doses above safety limits and damaging sensitive components such as magnets. At high current the particle loss is increased and becomes intolerable.
+High average current in ERLs is also limited by beam halo, where a low density ensemble of particles are situated outside of the core of the particle bunch radially. Beam halo in ERLs can be generated by myriad factors, such as the design of optics, magnetic field errors and non-linearities as well as photo-cathode choice, the photo-injection system and vaccum issues such as residual gas scattering \cite{neil2006jlab,tanaka2018new}. The exact causes of beam halo are not fully understood and are myriad. Mitigation can be achieved through optics studies and correction as well as photo-cathode choice and design of RF accelerating structures; many of which are active areas of study. Beam halo provides challenges for high current operation because at high average beam current the particle loss within the transport is increased and becomes intolerable; producing radiation doses above safety limits and damaging sensitive components such as magnets. .  
 
 \subsection{Dual Linac ERLs}
 \label{sec:dual_linac_ERL}
 
-So far, within Sections~\ref{sec:single_turn_ERL}, \ref{sec:multi_turn_ERL}, only the most simple ERL designs have been mentioned. Within this section dual linac ERLs are explored with two designs shown in Fig.~\ref{fig:dual_linac_ERL_designs}.
-
+So far, within Sections~\ref{sec:single_turn_ERL}, \ref{sec:multi_turn_ERL}, only the most simple ERL designs have been mentioned. Within this section dual linac ERLs, like those used to explore transport options in Fig.~\ref{fig:single_common_transport}, are explored with two simple designs shown in Fig.~\ref{fig:dual_linac_ERL_designs}.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Energy_Recovery_Linac_Design/dual_linac_ERLs.pdf}
-\caption{A series of alternative, more complex energy recovery linac design schematics. Basic components such as photo-injector (green), linac (red), beam stop (purple) and transport (black) are shown. Left: Symmetric dual linac ERL. Right: Asymmetric dual linac ERL.}
+\caption{A series of dual linac energy recovery linac design schematics. Basic components such as photo-injector (green), linac (red), beam stop (purple) and transport (black) are shown. Left: Symmetric dual linac ERL. Right: Asymmetric dual linac ERL.}
 \label{fig:dual_linac_ERL_designs}
 \end{figure}
 
-In a symmetric dual linac ERL, the electron bunch is accelerated or decelerated twice by two separate linac passes on each pass of the machine -- there are $n$ turns, $2n-1$ passes and $2\left(n-1\right)$ traversals of linacs. A symmetric dual linac ERL has two identical linacs, which each provide half of the energy gain per turn meaning $2n$ nominal kinetic energies of the particles circulate from an $n$ turn ERL. Additional electron bunch energies may be beneficial to the design of a multi-colour light source from an ERL. Dual linacs also allow the size of the accelerating section to be shortened, since two linacs are utilised, which may provide an option for more compact high energy ERLs. Added complexity arises from the additional two sets of spreaders required for on-axis acceleration in the additional linac and from matching the additional phases for acceleration and deceleration. 
+In a symmetric dual linac ERL, the electron bunch is accelerated or decelerated twice per pass of the machine by each linac in turn. In a dual linac ERL there are $n$ turns, $2n-1$ passes of the re-circulated beamline and $n$ traversals of each linac ($2n$ linac traversals total). A symmetric dual linac ERL has two identical linacs where each linac provides half of the energy gain per turn, meaning $2n$ nominal kinetic energies of the particles circulate from an $n$ turn ERL. For example, 6 unique electron energies are available in a three turn ERL but these are spaced at fixed intervals. Additional electron bunch energies may be beneficial to the design of a multi-colour light source from an ERL as more energies means more wavelengths can be generated. Dual linacs also allow the size of the accelerating section to be shortened, since two linacs are utilised, therefore ERLs can be built more compactly. However, added complexity arises from the additional two sets of spreaders required for on-axis acceleration in the additional linac and from matching the additional $n$ phases for acceleration and deceleration. 
 
-The dual asymmetric ERL offers similar flexibility and advantages to the symmetric dual linac ERL, but the kinetic energy of the accelerated particles does not increase uniformly step-wise. For example, with a total energy gain per turn of 50~\si{\mega\electronvolt}, a injection energy of $E_{\mathrm{inj}}=5$~\si{\mega\electronvolt} and a 2 turn ERL the energies available in the symmetric case per linac pass would be 30, 55, 80, 105~\si{\mega\electronvolt}. Whereas, a similar ERL but with a $4:1$ asymmetric linac energy gain ratio could provide energies 45, 55, 95, 105~\si{\mega\electronvolt}. Asymmetric linacs providing varying bunch kinetic energy may simplify spreader design, as the bend angles required in spreader septa would no longer be uniformly spaced.
+The dual asymmetric ERL offers similar flexibility and advantages to the symmetric dual linac ERL, but the kinetic energy of the accelerated particles does not increase uniformly step-wise. For example, with a total energy gain per turn of $\Delta E_{e} = 50$~\si{\mega\electronvolt}, a injection energy of $E_{\mathrm{inj}}=5$~\si{\mega\electronvolt} and a two turn ERL the energies available in the symmetric case per linac pass would be 30, 55, 80, 105~\si{\mega\electronvolt}. Whereas, a similar ERL but with a $4:1$ asymmetric linac energy gain ratio could provide energies 45, 55, 95, 105~\si{\mega\electronvolt}. Asymmetric linacs providing varying bunch kinetic energy may simplify spreader design, as the bend angles required in spreader septa would no longer be uniformly spaced \cite{segurana2020}, however this approach is yet to be investigated theoretically or demonstrated experimentally.
 
 \end{document}
