@@ -933,7 +933,6 @@ z_{1} &= z_{0}+\boldsymbol{R}_{56}\left(\frac{\Delta p}{p_{0}}\right)_{0} = z_{0
 \end{align}
 where the momentum spread is, as expected, unchanged and throughout the dogleg lattice the bunch will be longitudinally spread by a factor $\Delta z=\boldsymbol{R_{56}}\frac{\Delta p}{p_{0}}$.
 
-\textcolor{blue}{**BUNCH COMPRESSOR** \\ Never really say how they work or why they are used...}
 % Ivan Bazarov ERL02-2.pdf from Brunos literature
 Similarly, a chicane bunch compressor can be constructed from four dipoles of equal length $L_{\mathrm{dip}}$ separated by two drifts of varying length ($L_{\mathrm{drift,~1}}$ and $L_{\mathrm{drift,~2}}$) as shown in Fig.~\ref{fig:chicane_schematic}. The first two and last two dipoles are separated by $L_{\mathrm{drift,~1}}$ whilst $L_{\mathrm{drift,~2}}$ is the drift space between the inner dipoles (2nd and 3rd dipoles). The outer dipoles have opposite polarity to the inner dipoles.
 \begin{figure}[!h]
@@ -942,8 +941,6 @@ Similarly, a chicane bunch compressor can be constructed from four dipoles of eq
 \caption{Schematic of a 4-dipole (blue) chicane with dipoles of length $L_{\mathrm{dip}}$ separated by drifts of two different lengths $L_{\mathrm{drift,~1}}$ and $L_{\mathrm{drift,~2}}$. The inner dipoles are of opposite polarity to the outside dipoles, with the bending angles $\alpha_{1}$ reversed.}
 \label{fig:chicane_schematic}
 \end{figure}
-
-\textcolor{blue}{**HOW DO BUNCH COMPRESSORS COMPRESS THE BUNCH**}
 
 The transport matrix of this lattice is of the form
 \begin{equation}
@@ -964,16 +961,15 @@ Therefore, as well as bunch compression, path length (time of flight) adjustment
 
 The $\boldsymbol{R}_{56}$ matrix element of the chicane is given by
 \begin{equation}
-\boldsymbol{R}_{56} = -\frac{4L_{\mathrm{dip}}}{\cos\alpha_{1}}-\frac{2L_{\mathrm{dip}}L_{\mathrm{drift,~1}}}{\rho\cos^{3}\alpha_{1}+4\rho\alpha_{1}},
+\boldsymbol{R}_{56} = -\frac{4L_{\mathrm{dip}}}{\cos\alpha_{1}}-\frac{2L_{\mathrm{dip}}^{2}L_{\mathrm{drift,~1}}}{\rho\cos^{3}\alpha_{1}}+4\rho\alpha_{1},
 \label{eq:chicane_R56}    
 \end{equation}
-therefore, $\boldsymbol{R}_{56}<0$ for a chicane \textcolor{blue}{**TRUE?**}. The longitudinal co-ordinates transform in a chicane such that
+therefore, $\boldsymbol{R}_{56}<0$ for a chicane. The longitudinal co-ordinates transform in a chicane such that
 \begin{align}
-z_{1} &= z_{0} + \boldsymbol{R}_{56}\left(\frac{\Delta p}{p_{0}}\right)_{1} = z_{0} + 2L_{\mathrm{drift,1}}\frac{\alpha_{1}\sin\alpha_{1}}{\cos^{2}\alpha_{1}}\left(\frac{\Delta p}{p_{0}}\right), \\
+z_{1} &= z_{0} + \boldsymbol{R}_{56}\left(\frac{\Delta p}{p_{0}}\right)_{1} = z_{0} + 2L_{\mathrm{drift,1}}\frac{\alpha_{1}\sin\alpha_{1}}{\cos^{2}\alpha_{1}}\left(\frac{\Delta p}{p_{0}}\right), \nonumber \\
 \left(\frac{\Delta p}{p_{0}}\right)_{1} &= \left(\frac{\Delta p}{p_{0}}\right)_{0} = \frac{\Delta p}{p_{0}}. 
 \label{eq:longitudinal_chicane_transform}    
 \end{align}
-As proven for a dogleg (Eq.~\ref{eq:longitudinal_dogleg_transform}), the chicane transform has a similar form with unchanged momentum variation and a variation in the longitudinal co-ordinate of $\Delta z = \boldsymbol{R}_{56}\frac{\Delta p}{p_{0}}$, which here is a compression due to $\boldsymbol{R}_{56}<0$.
 
 Upon examination of the momentum compaction factor (Eq.~\ref{eq:momentum_compaction_first_order}), the path length variation can be re-cast using the longitudinal relationship \cite{wolski2012longitudinal} derived in the chicane (Eq.~\ref{eq:longitudinal_chicane_transform}) and dogleg (Eq.~\ref{eq:longitudinal_dogleg_transform}) examples yielding 
 \begin{equation}
@@ -986,7 +982,15 @@ which can be used to re-define the $\boldsymbol{R}_{56}$ using (Eq.~\ref{eq:mome
 \label{eq:R56_dispersion_relation}
 \end{equation}
 
-Many other types of bunch compression devices can be designed such as arc-like bunch compressors \cite{williams2020arclike} with $\boldsymbol{R}_{56}>0$ , and the introduction here is not intended to be comprehensive. 
+A chicane can compress a particle bunch longitudinally (in the local $z$ co-ordinate in Fig.~\ref{fig:accelerator_coord_system}) if the particle bunch has the correct particle energy--time configuration, known as the `chirp', at the entrance of the chicane. For compression the particle bunch should be chirped such that the high energy particles are at the tail of the bunch and arrive later in time. The time of flight through a chicane is increased for lower energy particles because these are deflected by a larger bending angle (Eq.~\ref{eq:dipole_bending_angle}) by the chicane dipoles than higher energy particles which increases their path length (Eq.~\ref{eq:chicane_path_length}). Since the trajectory of higher energy particles is shorter these catch up to the lower energy particles and the length of the bunch is compressed overall. Following the convention of Williams et al \cite{williams2020arclike}, this is a chicanelike bunch compressor.
+
+Many other types of bunch compression devices can be designed other than the simple chicane demonstrated here, such as arc-like bunch compressors \cite{williams2020arclike}. Arc-like bunch compressors have (by our convention) an $\boldsymbol{R}_{56}>0$, where the bunch is compressed if the higher energy particles are at the head of the bunch. In an arc the higher energy particles are deflected less by the dipole magnets and consequently their trajectory is longer. Therefore, the lower energy particles, which traverse a shorter trajectory through the arc, can catch up to the higher energy particles and the bunch is compressed.
+
+Bunch compressors are typically used in light sources such as FELs to increase the brightness of the electron bunch, which is defined as the charge density of particles within the 6D phase space \cite{di2018bunch}
+\begin{equation}
+\mathcal{B}_{e} = \frac{Q}{\epsilon_{n,x}\epsilon_{n,y}\epsilon_{n,z}}, \label{eq:electron_brightness}   
+\end{equation}
+For high peak brilliance radiation production (see Section~\ref{sec:peak_average_brilliance}) a high peak current is favourable because a high peak current means a large quantity of radiation is produced within a short time. A high peak current can be achieved by compressing the electron bunch longitudinally before the interaction that produces the radiation, such as photon--electron interactions in an ICS source or synchrotron radiation production in an undulator. In addition, a shorter electron bunch can typically generate shorter wavelength radiation as described for in inverse Compton scattering in Section~\ref{sec:source_size_divergence}. 
 
 \section{Linear Transport Lattices}
 
