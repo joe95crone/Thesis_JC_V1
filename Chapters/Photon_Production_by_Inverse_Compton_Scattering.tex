@@ -224,7 +224,11 @@ The terms harmonic generation and multi-photon ICS are used interchangeably with
 \section{Derivation of the Scattered Photon Energy}
 \label{sec:derivation_of_the_scattered_photon_energy}
 
-The relation in (Eq.~\ref{eq:ICS_process}) can be modified in order to calculate the scattered photon energy of an electron--photon interaction. Using the four-momenta in (Eq.~\ref{eq:initial_four_vectors}-\ref{eq:final_four_vectors}) we can create Lorentz invariant quantities from the Minkowski norms of the four-momenta 
+The electron--photon interaction relation (Eq.~\ref{eq:ICS_process})
+\begin{equation*}
+p_{1} + k_{1} = p_{2} + k_{2},    
+\end{equation*}
+can be modified in order to calculate the scattered photon energy of an electron--photon interaction. Using the four-momenta in (Eq.~\ref{eq:initial_four_vectors}-\ref{eq:final_four_vectors}) we can create Lorentz invariant quantities from the Minkowski norms of the four-momenta 
 \begin{align}
 p_{1\mu}p_{1}^{\mu} &= \gamma^{2}m_{e}^{2}\left(v^{2}-c^{2}\right) = -m_{e}^{2}c^{2},
 \label{eq:lorentz_invariants1} \\
@@ -271,22 +275,22 @@ However, (Eq.~\ref{eq:three_vector_solution}) should be presented in terms of th
 \end{align}
 Upon introducing the projections (Eqs.~\ref{eq:projection_angle_incident_scattered_photon}, \ref{eq:projection_scattering_angle}, \ref{eq:projection_pi_minus_crossing_angle}), (Eq.~\ref{eq:three_vector_solution}) becomes
 \begin{equation}
-E_{L}E_{\gamma}\left(\cos\theta'-1\right)+E_{\gamma}\gamma m_{e}c^{2}\left(\frac{v_{i}}{c}\cos\theta-1\right) = E_{L}\gamma m_{e}c^{2}\left( \frac{v_{i}}{c}\cos\phi'-1\right)
+E_{L}E_{\gamma}\left(\cos\theta'-1\right)+E_{\gamma}\gamma m_{e}c^{2}\left(\frac{v_{i}}{c}\cos\theta-1\right) = E_{L}\gamma m_{e}c^{2}\left( \frac{v_{i}}{c}\cos\phi'-1\right),
 \label{eq:three_vector_solution_projections}
 \end{equation}
-Using the Lorentz speed factor $\beta = v/c$ and the total electron beam energy $E_{e} = \gamma m_{e}c^{2}$ and re-arranging, we arrive at the general linear, recoil-corrected form for the scattered photon energy resulting from inverse Compton scattering 
+where $E_{L}$ is the incident photon energy and $E_{\gamma}$ is the scattered photon energy. Using the Lorentz speed factor $\beta = v/c$ and the total electron beam energy $E_{e} = \gamma m_{e}c^{2}$ and re-arranging, we arrive at the general linear, recoil-corrected form for the scattered photon energy resulting from inverse Compton scattering 
 \begin{equation}
 E_{\gamma} = \frac{\left(1-\beta\cos\phi'\right)E_{L}}{1-\beta\cos\theta+\left(1-\cos\theta'\right)\frac{E_{L}}{E_{e}}} = \frac{\left(1+\beta\cos\phi\right)E_{L}}{1-\beta\cos\theta+\left(1-\cos\theta'\right)\frac{E_{L}}{E_{e}}},
 \label{eq:scattered_photon_energy}
 \end{equation}
-where subbing in $\phi'=\pi-\phi$ yields a more convenient form for ICS sources.   
+where a using the definition of the crossing angle $\phi=\pi-\phi'$, as shown in Fig.~\ref{fig:scattered_photon_kinematics}, yields a more convenient form for ICS sources.   
   
 In the head-on case ($\phi=0$), the scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}) can be simplified to 
 \begin{equation}
 E_{\gamma} = \frac{\left(1+\beta\right)}{1-\beta\cos\theta-\left(\beta-E_{L}/E_{e}\right)\cos\theta},
 \label{eq:headon_scattered_photon_energy}
 \end{equation}
-further simplification by the small angle approximation ($\theta \ll 1$) and for an ultra-relativistic electron beam ($\beta \rightarrow 1$) yields
+further simplification by the small angle approximation ($\theta \ll 1$) and for an ultra-relativistic electron beam ($\beta \approx 1$) yields
 \begin{equation}
 E_{\gamma} \approx \frac{4\gamma^{2}E_{L}}{1+\gamma^{2}\theta^{2}+X},   
 \label{eq:small_angle_scattered_photon_energy}
@@ -296,13 +300,13 @@ where the recoil term $X$ is given by (Eq.~\ref{eq:X_headon}). Extending this to
 E_{\gamma} = \frac{4\gamma^{2}E_{L}}{1+X},
 \label{eq:headon_backscattering_scattered_photon_energy}
 \end{equation}
-which is referred to in the literature \cite{krafft2010compton} as the Compton edge. The $\gamma^{2}$ factor within this equation refers to the double Doppler shift experienced by the incident photon as it is scattered. At low recoil the Compton edge energy is given by the well known relation
+which is referred to in the literature \cite{krafft2010compton} as the Compton edge as it is the highest possible scattered photon energy from a electron--photon interaction in inverse Compton scattering. The $\gamma^{2}$ factor within (Eq.~\ref{eq:headon_backscattering_scattered_photon_energy}) is due to the double Doppler shift experienced by the incident photon as it is scattered, which is best explained using the classical picture in Section~\ref{sec:intro_ICS}. At low recoil the Compton edge energy is given by the well known relation
 \begin{equation}
 E_{\gamma} = 4\gamma^{2}E_{L}.
 \label{eq:compton_edge_energy}    
 \end{equation}
 
-Upon inspection of the generalised ICS scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}), there is an explicit dependence of the scattering angle and therefore the scattered photon energy is proportional to the scattered photon energy ($E_{\gamma}=\left(\theta\right)$). The energy--angle correspondence of the scattering interaction enables scattered photon energy selection via specification of a maximum scattering angle the radiation can traverse -- the produced radiation can be simply collimated.   
+Upon inspection of the generalised ICS scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}), there is an explicit dependence of the scattered photon energy $E_{\gamma}$ on the scattering angle $\theta$. The scattering angle dependence of the scattered photon energy enables scattered photon energy discrimination through specification of a maximum scattering angle the radiation can traverse. By setting a maximum scattering angle $\theta_{\mathrm{max}}$ photons with lower energy, inherently scattered at angles $\theta > \theta_{mathrm{max}}$, will be excluded -- the produced radiation can be simply collimated.   
 
 \section{Electron--Photon Interaction Cross Section}
 \label{sec:electron_photon_interaction_cross_section}
@@ -629,12 +633,14 @@ Framed in terms of a particular bandwidth, the spectral density becomes an impor
 \section{Bandwidth}
 \label{sec:bandwidth}
 
-The bandwidth -- the \textit{rms} energy spread of the scattered photons -- of an ICS source is given in the recoil corrected non-linear regime ($a_{0}\ll 1$) \cite{ranjan2018simulation} by
+\subsection{Bandwidth of an ICS Source}
+
+The bandwidth -- the \textit{rms} energy spread of the scattered photons -- of an ICS source as derived by Ranjan et al \cite{ranjan2018simulation} is given by
 \begin{equation}
 \frac{\Delta E_{\gamma}}{E_{\gamma}} = \sqrt{\left(\frac{\sigma_{\theta}}{E_{\theta}}\right)^{2}+\left(\frac{\sigma_{e}}{E_{e}}\right)^{2}+\left(\frac{\sigma_{L}}{E_{L}}\right)^{2}+\left(\frac{\sigma_{\epsilon}}{E_{\epsilon}}\right)^{2}},
 \label{eq:RMS_bandwidth}    
 \end{equation}
-where $\sigma_{\theta}/E_{\theta}$ is the collimation term, $\sigma_{e}/E_{e}$ is the electron beam energy spread term, $\sigma_{L}/E_{L}$ is the laser pulse energy spread term and $\sigma_{\epsilon}/E_{\epsilon}$ is the emittance terms. The terms of the bandwidth are given by
+where $\sigma_{\theta}/E_{\theta}$ is a collimation term, $\sigma_{e}/E_{e}$ is an electron beam energy spread term, $\sigma_{L}/E_{L}$ is a laser pulse energy spread term and $\sigma_{\epsilon}/E_{\epsilon}$ is an emittance term. The Ranjan et al bandwidth (Eq.~\ref{eq:RMS_bandwidth}) is valid for the recoil corrected ($X\sim 1$) non-linear regime ($a_{0}\ll 1$) and the terms of the bandwidth are given by
 \begin{align}
 \frac{\sigma_{\theta}}{E_{\theta}} &= \frac{1}{\sqrt{12}}\frac{\Psi^{2}}{1+X+\Psi^{2}/2},
 \label{eq:collimation_term} \\
@@ -645,20 +651,26 @@ where $\sigma_{\theta}/E_{\theta}$ is the collimation term, $\sigma_{e}/E_{e}$ i
 \frac{\sigma_{\epsilon}}{E_{\epsilon}} &= \frac{\sqrt{2}\gamma^{2}}{1+X}\sqrt{\frac{\epsilon_{x}^{2}}{\beta_{x}^{*2}}+\frac{\epsilon_{y}^{2}}{\beta_{y}^{*2}}}
 \label{eq:emittance_term}
 \end{align}
-where $\Psi = \gamma\theta$ is the acceptance angle, $\epsilon_{x/y}$ is the emittance in the $x$ or $y$ direction, $\beta_{x/y}^{*}$ are the $\beta$ functions at the IP in both directions, $\Delta E_{e}/E_{e}$ is the \textit{rms} relative energy spread of the electron bunch and $\Delta E_{L}/E_{L}$ is the \textit{rms} spectral bandwidth of the laser pulse. Conversion of he \textit{rms} bandwidth to the full width half maximum (FWHM) bandwidth is trivial, given by 
+where $\Psi = \gamma\theta$ is the acceptance angle, $\epsilon_{x/y}$ is the emittance in the $x$ or $y$ direction, $\beta_{x/y}^{*}$ are the $\beta$ functions at the IP in both directions, $\Delta E_{e}/E_{e}$ is the \textit{rms} relative energy spread of the electron bunch and $\Delta E_{L}/E_{L}$ is the \textit{rms} spectral bandwidth of the laser pulse.
+
+The electron bunch energy spread term (Eq.~\ref{eq:beam_energy_spread_term}) and laser pulse energy spread term (Eq.~\ref{eq:}) describe how the energy spreads of the electron bunch and spectral bandwidth of the laser pulse transform to the energy spread of the scattered radiation. Off-momentum electrons in the electron beam are interacted with the laser and are scattered to produce higher or lower energy scattered photons, the analogous situation happens with incident photons of variable energy. The collimation term (Eq.~\ref{eq:collimation_term}) arises because photons emitted with different scattering angle have different energies, so for a particular maximum scattering angle (collimation angle) there is an associated energy spread in the scattered radiation. Emittance of the electron beam corresponds to an associated energy spread in the scattered photons because electrons can interact off-axis in the collision, which means they can pass through the collimator with a larger scattering angle and lower energy. Ranjan et al \cite{ranjan2018simulation} present a full derivation of the emittance broadening of the scattered photon energy.  The effect of off-axis electrons is encapsulated in the emittance term (Eq.~\ref{eq:emittance_term}). 
+
+Conversion of the \textit{rms} bandwidth to the full width half maximum (FWHM) bandwidth is trivial and is given by 
 \begin{equation}
-\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{\mathrm{FWHM}} = 2\sqrt{2\ln{2}}\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{rms}.
+\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{\mathrm{FWHM}} = 2\sqrt{2\ln{2}}\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{rms} \approx 2.355\left(\frac{\Delta E_{\gamma}}{E_{\gamma}}\right)_{rms}.
 \label{eq:FWHM_bandwidth}
 \end{equation}
 
-Other formulations of the \textit{rms} bandwidth exist such as the formulation derived by Petrillo et al \cite{petrillo2012photon,akagi2016narrow}
+\subsection{Other Bandwidth Formulations}
+
+Other formulations of the \textit{rms} bandwidth exist such as the formulation derived by Petrillo et al \cite{petrillo2012photon,akagi2016narrow}:
 \begin{equation}
 \frac{\Delta E_{\gamma}}{E_{\gamma}} = \sqrt{\Psi^{4}+4\left(\frac{\Delta E_{e}}{E_{e}}\right)^{2}+\left(\frac{\epsilon_{n}}{\sigma_{e}}\right)^{4}+\left(\frac{\Delta\nu}{\nu}\right)^{2}+\left(\frac{M^{2}\lambda}{4\pi\sigma_{L}}\right)^{4}},
 \label{eq:akagi_bandwidth}    
 \end{equation}
 where $\epsilon_{n}=\epsilon_{n,x}=\epsilon_{n,y}$ is the round beam normalised transverse emittance, $\sigma_{e}$ is the round beam electron bunch spot size, $\Delta\nu/\nu$ is the spectral bandwidth of the laser pulse defined in terms of the laser pulse frequency $\nu$ and $M^{2}$ is the quality factor of the laser pulse ($M^{2} = 1$ for a perfectly Gaussian laser pulse). In comparison to (Eq.~\ref{eq:RMS_bandwidth}), the formulation used by Akagi et al \cite{akagi2016narrow} is simplistic in the treatment of the emittance term $\left(\epsilon_{n}/\sigma_{e}\right)^{4}$, by solely accounting for the round beam divergence, and the collimation term $\Psi^{4}$ where the recoil dependence is neglected. The Petrillo et al bandwidth is consequently only valid in the round beam case ($\epsilon_{n,x} = \epsilon_{n,y} = \epsilon_{n}$). Recoil of the electron bunch has also not been accounted for in any term, so the Petrillo et al bandwidth is only relevant in the Thomson regime ($X \ll 1$) and angular variation is only accounted for in the collimation term not, as in (Eq.~\ref{eq:RMS_bandwidth}), for the electron bunch $4\left(\Delta E_{e}/E_{e}\right)^{2}$ and laser pulse $\left(\Delta\nu/\nu\right)^{2}$ energy spread terms. Unlike in (Eq.~\ref{eq:RMS_bandwidth}), a laser pulse quality term $\left(M^{2}\lambda/4\pi\sigma_{L}\right)^{4}$ is imposed but this term is generally negligible. For example, for a Gaussian ($M^{2}=1$) Nd:YAG laser ($\lambda = 1064$~\si{\nano\meter}) pulse focused to a typical small laser pulse \textit{rms} spot size of 30~\si{\micro\meter} this term makes a $7.97\times 10^{-6}$ contribution to the \textit{rms} bandwidth hence it is neglected by Ranjan et al \cite{ranjan2018simulation} in the selected \textit{rms} bandwidth (Eq.~\ref{eq:RMS_bandwidth}).   
 
-Another possible formulation has been suggested by Curatolo et al \cite{curatolo2017analytical}, which updates (Eq.~\ref{eq:akagi_bandwidth})
+Another possible formulation has been suggested by Curatolo et al \cite{curatolo2017analytical}, which updates (Eq.~\ref{eq:akagi_bandwidth}) to be
 \begin{multline}
 \frac{\Delta E_{\gamma}}{E_{\gamma}} = \left\{\left[\frac{\Psi^{2}}{\sqrt{12}\left(1+\Psi^{2}\right)}+\frac{\bar{P}^{2}}{1+\sqrt{12}\bar{P}^{2}}\right]^{2}+\left[\left(\frac{2+X}{1+X}\right)\frac{\Delta E_{e}}{E_{e}}\right]^{2}+\left(\frac{1}{1+X}\frac{\Delta E_{L}}{E_{L}}\right)^{2} \right.\\\left. +\left(\frac{M^{2}\lambda}{4\pi\sigma_{L}}\right)^{4}+\left(\frac{a_{0}^{2}/3}{1+a_{0}^{2}/2}\right)^{2}\right\}^{1/2}
 \label{eq:curatolo_bandwidth}    
@@ -668,14 +680,16 @@ where
 \bar{P} = \frac{\sqrt{2}\epsilon_{n}}{\sigma_{e}\sqrt{1+X}},
 \label{eq:curatolo_p_bar}    
 \end{equation}
-is the \textit{rms} normalised transverse momentum of the electron bunch. The bandwidth formulation by Curatolo et al assumes a round transverse profile of the electron bunch as in (Eq.~\ref{eq:akagi_bandwidth}), and also includes an identical negligible beam quality term. Recoil correction is included in (Eq.~\ref{eq:curatolo_bandwidth}) but angular variation is only included in the collimation term, as the acceptance angle is present in no other term. A non-linear ponderomotive broadening term $\left(\frac{a_{0}^{2}/3}{1+a_{0}^{2}/2}\right)^{2}$ is introduced in (Eq.~\ref{eq:curatolo_bandwidth}), which is advantageous over the bandwidth by Ranjan et al \cite{ranjan2018simulation}. The bandwidth by Curatolo et al \cite{curatolo2017analytical} also includes covariance of the emittance and collimation terms for predicting the bandwidth of skewed non-Gaussian spectra \cite{ranjan2018simulation}. However skewed non-Gaussian spectra effects are also accounted for by Ranjan et al in an equation of the form
+is the \textit{rms} normalised transverse momentum of the electron bunch. The bandwidth formulation by Curatolo et al assumes a round transverse profile of the electron bunch as in (Eq.~\ref{eq:akagi_bandwidth}), and also includes an identical beam quality term, which is previously shown to be generally negligible. Recoil correction is included in (Eq.~\ref{eq:curatolo_bandwidth}) but angular variation is only included in the collimation term, as the acceptance angle is present in no other term. A non-linear ponderomotive broadening term $\left(\frac{a_{0}^{2}/3}{1+a_{0}^{2}/2}\right)^{2}$ is introduced in (Eq.~\ref{eq:curatolo_bandwidth}), which is advantageous over the bandwidth by Ranjan et al \cite{ranjan2018simulation} where non-linear effects are not accounted for. 
+
+The bandwidth by Curatolo et al \cite{curatolo2017analytical} also includes covariance of the emittance and collimation terms for predicting the bandwidth of skewed non-Gaussian scattered photon spectra \cite{ranjan2018simulation} produced when the ICS interaction is not between a Gaussian electron bunch and laser pulse. However, skewed non-Gaussian spectra effects can also be accounted for using a modified version of Ranjan et al's bandwidth
 \begin{equation}
 \frac{\Delta E_{\gamma}}{E_{\gamma}} = \sqrt{\left[\left(\frac{\sigma_{\theta}}{E_{\theta}}\right)+\left(\frac{\sigma_{\epsilon}}{E_{\epsilon}}\right)\right]^{2}+\left(\frac{\sigma_{e}}{E_{e}}\right)^{2}+\left(\frac{\sigma_{L}}{E_{L}}\right)^{2}},
 \label{eq:covariant_RMS_bandwidth}    
 \end{equation}
-where the emittance and collimation terms are covariant. The covariant form is not utilised in this work as there is a focus on Gaussian electron bunches and laser pulses, and (Eq.~\ref{eq:RMS_bandwidth}) produces the same result as (Eq.~\ref{eq:covariant_RMS_bandwidth}) for Gaussian ICS spectra. All optimisation methods in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra} can be utilised with the covariant form, however as standard (Eq.~\ref{eq:RMS_bandwidth}) is used. 
+where the emittance and collimation terms are covariant. The covariant form (Eq.~\ref{eq:covariant_RMS_bandwidth}), whilst more general, is not utilised in this work because there is a focus on Gaussian electron bunches and laser pulses, and (Eq.~\ref{eq:RMS_bandwidth}) produces the same result as (Eq.~\ref{eq:covariant_RMS_bandwidth}) for Gaussian ICS spectra. All optimisation methods in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra} can be utilised with the covariant form, however as standard (Eq.~\ref{eq:RMS_bandwidth}) is used. 
 
-Therefore, (Eq.~\ref{eq:RMS_bandwidth}) was selected as this is both recoil corrected and accounts for angular variation in each bandwidth term, it is valid in the linear ($a_{0}\ll 1$) region of interest and most importantly, properly accounts for non-round electron bunch transverse profiles by allowing for asymmetric emittance ($\epsilon_{n,x}\neq\epsilon_{n,y}$).  As shown in Fig.~1 of Ranjan et al \cite{ranjan2018simulation} (reproduced in Fig.~\ref{fig:curatolo_ranjan_disagreement}), there is also an apparent discrepancy in how the collimation angle, via the acceptance angle, is accounted for in the Curatolo et al equation (Eq.~\ref{eq:curatolo_bandwidth}). Whilst the semi-analytical spectrum code \textsc{ICCS3D} \cite{krafft2016laser,ranjan2018simulation} (explained further in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}) and (Eq.~\ref{eq:RMS_bandwidth}) show good agreement, (Eq.~\ref{eq:curatolo_bandwidth}) shows a systematic variance from the simulations. The combination of these factors provided the motivation for selecting (Eq.~\ref{eq:RMS_bandwidth}) as the \textit{rms} bandwidth formulation.
+Therefore, (Eq.~\ref{eq:RMS_bandwidth}) was selected as this is both recoil--corrected and accounts for angular variation in each bandwidth term; it is valid in the linear ($a_{0}\ll 1$) region of interest and most importantly, properly accounts for non-round electron bunch transverse profiles by allowing for asymmetric emittance ($\epsilon_{n,x}\neq\epsilon_{n,y}$).  As shown in Fig.~1 of Ranjan et al \cite{ranjan2018simulation} (reproduced in Fig.~\ref{fig:curatolo_ranjan_disagreement}), there is also an apparent discrepancy in how the collimation angle, via the acceptance angle $\psi = \gamma\theta$, is accounted for in the Curatolo et al equation (Eq.~\ref{eq:curatolo_bandwidth}). Whilst the semi-analytical spectrum code \textsc{ICCS3D} \cite{krafft2016laser,ranjan2018simulation} (explained further in Chapter~\ref{Optimisation_and_Characterisation_of_Inverse_Compton Scattering_Spectra}) and (Eq.~\ref{eq:RMS_bandwidth}) show good agreement, (Eq.~\ref{eq:curatolo_bandwidth}) shows a systematic difference from these simulations. The combination of these factors provided the motivation for selecting (Eq.~\ref{eq:RMS_bandwidth}) as the \textit{rms} bandwidth formulation.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/ranjan_curatolo_disagreement.pdf}
@@ -683,7 +697,7 @@ Therefore, (Eq.~\ref{eq:RMS_bandwidth}) was selected as this is both recoil corr
 \label{fig:curatolo_ranjan_disagreement}
 \end{figure}
 
-However, there are some downsides to the Ranjan et al formulation (Eq.~\ref{eq:RMS_bandwidth}), as this is incapable of calculating the bandwidth for a non-linear ($a_{0}\sim 1$) ICS source. Circular collimation is also assumed implicitly by the inclusion of a single acceptance angle term $\Psi$, as in the rectangular collimator case the maximum collimation angle would vary in the $x$ and $y$ plane. However, the bandwidth in (Eq.~\ref{eq:RMS_bandwidth}) has been extended to rectangular collimation by Hajima \cite{hajima2021bandwidth}. 
+However, there are some downsides to the Ranjan et al formulation (Eq.~\ref{eq:RMS_bandwidth}), as this is incapable of calculating the bandwidth for a non-linear ($a_{0}\sim 1$) ICS source. Circular collimation is also assumed implicitly by the inclusion of a single acceptance angle term $\Psi$, as in the case of a rectangular collimator the maximum collimation angle would vary in each plane. However, the bandwidth in (Eq.~\ref{eq:RMS_bandwidth}) has been extended to rectangular collimation by Hajima \cite{hajima2021bandwidth}, though the ICS sources within this thesis only employ circular collimation so Ranjan et al \cite{ranjan2018simulation} (Eq.~\ref{eq:RMS_bandwidth}) is used. 
 
 \section{Peak and Average Brilliance}
 \label{sec:peak_average_brilliance}
