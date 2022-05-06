@@ -888,53 +888,61 @@ The region of stable motion within the separatrix is named the RF bucket, and pa
 \label{eq:RF_bucket_momentum_deviation}    
 \end{equation}
 
-\subsection{Magnetic Bunch Compression and $\boldsymbol{R}_{56}$}
+\subsection{Doglegs, Chicanes and Magnetic Bunch Compression}
 \label{sec:magnetic_bunch_compression}
 
 The longitudinal dimensions of a particle bunch can be adjusted via combinations of magnetic focusing elements, which can be useful in generating short duration, high peak brilliance radiation from accelerators such as 3rd generation synchrotron sources and free electron lasers. Two methods of varying the longitudinal dynamics, specifically the bunch length, are investigated in detail: the simple chicane and the dogleg lattices.
 
-\textcolor{blue}{**DOGLEG NOT DONE**}
-A simple dogleg lattice can consist of a pair of dipoles with bending angle $\alpha_{1}$ and $-\alpha_{1}$ respectively, separated by a drift of length $L_{\mathrm{drift}}$, as shown in Fig.~\ref{fig:chicane_dogleg_schematic}.
+\subsubsection{Dogleg}
+
+A simple dogleg lattice can consist of a pair of dipoles with bending angle $\alpha_{1}$ and $-\alpha_{1}$ respectively, separated by a drift of length $L_{\mathrm{drift}}$. With the introduction of two quadrupoles in the drift space between the dipoles for dispersion control, as shown in Fig.~\ref{fig:dogleg_schematic}. This is the simplest layout of a non-dispersive dogleg, here we consider bending in the horizontal $x$ plane.
 \begin{figure}[!h]
 \centering
-\includegraphics[width=\textwidth]{Figures/Energy_Recovery_Linac_Design/chicane_dogleg.pdf}
-\caption{Lattice schematics with dipoles (blue) and drifts (black, line). Left: Dogleg lattice. Right: Chicane lattice. }
-\label{fig:chicane_dogleg_schematic}
+\includegraphics[width=0.9\textwidth]{Figures/Energy_Recovery_Linac_Design/dispersion_dogleg_fixed.pdf}
+\caption{Schematic of a 2-dipole (blue) dogleg of path length $L$ with a pair of quadrupoles (red) of length $L_{\mathrm{quad}}$ between the dipoles of length $L_{\mathrm{dip}}$ for dispersion control. The quadrupoles are separated from the nearest dipole by length $L_{\mathrm{drift,~1}}$ and from each other by $L_{\mathrm{drift,2}}$. The dipoles have bending angles of $\alpha_{1}$ and $-\alpha_{1}$ respectively. }
+\label{fig:dogleg_schematic}
 \end{figure}
 
-The dogleg therefore has a transport matrix of the form
+The non-dispersive dogleg consequently has a transport matrix of the form
 \begin{equation}
-\boldsymbol{R}_{\mathrm{dog}} = \boldsymbol{R}_{\mathrm{dip,2}}\cdot\boldsymbol{R}_{\mathrm{drift}}\cdot\boldsymbol{R}_{\mathrm{dip,1}},
+\boldsymbol{R}_{\mathrm{dog}} = \boldsymbol{R}_{\mathrm{dip,2}}\cdot\boldsymbol{R}_{\mathrm{drift,1}}\cdot\boldsymbol{R}_{\mathrm{quad,2}}\cdot\boldsymbol{R_{\mathrm{drift,2}}}\cdot\boldsymbol{R}_{\mathrm{quad,1}}\cdot\boldsymbol{R}_\mathrm{drift,1}\cdot\boldsymbol{R}_{\mathrm{dip,1}},
 \label{eq:dogleg_transport_matrix_simple}    
 \end{equation}
-which yields 
+where $\boldsymbol{R}_{\mathrm{dip,1}}$ and $\boldsymbol{R}_{\mathrm{dip,2}}$ are the transport matrices of the dipole (Eq.~\ref{eq:dipole_matrix}) with bending angles $\alpha_{1}$ and $-\alpha_{1}$, $\boldsymbol{R}_{\mathrm{quad,1}}$ and $\boldsymbol{R}_{\mathrm{quad,2}}$ are the quadrupole transport matrices (Eq.~\ref{eq:quadrupole_matrix_thick}) with quad,1 the quadrupole to the left of Fig.~\ref{fig:dogleg_schematic} and $\boldsymbol{R}_{\mathrm{drift,i}}$ the drift space transport matrices (Eq.~\ref{eq:drift_matrix}) where $i=1,2$ is the index of the drift corresponding to Fig.~\ref{fig:dogleg_schematic}.  
+
+The path length of the dogleg is given by 
 \begin{equation}
-\resizebox{\columnwidth}{!}{
-\boldsymbol{R}_{\mathrm{dogleg}} = 
-\begin{pmatrix}
-1+\frac{L}{\rho}\cos\alpha_{1}\sin\alpha_{1} & L_{\mathrm{drift}}\cos^{2}\alpha_{1} & 0 & 0 & 0 & -L_{\mathrm{drift}}\cos\alpha_{1}\sin\alpha_{1} \\
--\frac{L_{\mathrm{drift}}}{\rho^{2}}\sin^{2}\alpha_{1} & 1-\frac{L_{\mathrm{drift}}}{\rho}\cos\alpha_{1}\sin\alpha_{1} & 0 & 0 & 0 & \frac{L_{\mathrm{drift}}}{\rho}\sin^{2}\alpha_{1} \\
-0 & 0 & 1 & L_{\mathrm{drift}}+2\rho\alpha_{1} & 0 & 0 \\
--\frac{L}{\rho}\sin^{2}\alpha_{1} & -L_{\mathrm{drift}}\sin\alpha_{1}\cos\alpha_{1} & 0 & 0 & 1 & L_{\mathrm{drift}}\left(1+\sin^{2}\alpha_{1}\right) \\
-0 & 0 & 0 & 0 & 0 & 1
-\end{pmatrix}
-\label{eq:6D_dogleg_matrix}}    
+L = 2L_{\mathrm{dip}} +\frac{2\left(L_{\mathrm{quad}}+L_{\mathrm{drift,~1}}\right)+L_{\mathrm{drift,~2}}}{\cos\alpha_{1}},
+\label{eq:dogleg_pathlength}    
 \end{equation}
-where the path length of the dogleg is $L=L_{\mathrm{drift}}+2L_{\mathrm{dip}}$ and the $\boldsymbol{R}_{56}$ matrix element is given by
+and at the exit of the dogleg, the horizontal position of the particle beam has been offset by
 \begin{equation}
-\boldsymbol{R}_{56} = L_{\mathrm{drift}}\left(1+\sin^{2}\alpha_{1}\right),
+\Delta x = \frac{2\left(L_{\mathrm{quad}}+L_{\mathrm{drift,~1}}\right)+L_{\mathrm{drift,~2}}}{\tan\alpha_{1}},
+\label{eq:dogleg_horizontal_offset}
+\end{equation}
+which is equivalent if the bending is in the vertical $y$ plane. Consequently, the $\boldsymbol{R}_{56}$ matrix element is given by \cite{verzilov2004note}
+\begin{equation}
+\boldsymbol{R}_{56} = 2\rho\left(\alpha_{1}-\sin\alpha_{1}\right),
 \label{eq:dogleg_R56}    
 \end{equation}
-therefore $\boldsymbol{R}_{56}>0$ for a dogleg lattice. In the longitudinal co-ordinates ($z$,$\Deltap/p_{0}$), the transformation from the particles entrance to the dogleg ($z_{0}$, $\left(\Delta p/p_{0}\right)_{0}$) to its exit ($z_{1}$, $\left(\Delta p/p_{0}\right)_{1}$) yields the relations
+therefore, since $\alpha_{1} > \sin\alpha_{1}$, $\boldsymbol{R}_{56}>0$ for a dogleg lattice. In the longitudinal co-ordinates ($z$,$\Deltap/p_{0}$), the transformation from the particles entrance to the dogleg ($z_{0}$, $\left(\Delta p/p_{0}\right)_{0}$) to its exit ($z_{1}$, $\left(\Delta p/p_{0}\right)_{1}$) yields the relations
 \begin{align}
-z_{1} &= z_{0}+\boldsymbol{R}_{56}\left(\frac{\Delta p}{p_{0}}\right)_{0} = z_{0} + L_{\mathrm{drift}}\left(1+\sin^{2}\alpha_{1}\right)\left(\frac{\Delta p}{p_{0}}\right)_{0}, \\
+z_{1} &= z_{0}+\boldsymbol{R}_{56}\left(\frac{\Delta p}{p_{0}}\right)_{0} = z_{0} + 2\rho\left(\alpha_{1}-\sin\alpha_{1}\right)\left(\frac{\Delta p}{p_{0}}\right)_{0}, \\
 \left(\frac{\Delta p}{p_{0}}\right)_{1} &= \left(\frac{\Delta p}{p_{0}}\right)_{0} = \frac{\Delta p}{p_{0}},
 \label{eq:longitudinal_dogleg_transform}    
 \end{align}
-where the momentum spread is, as expected, unchanged and throughout the dogleg lattice the bunch will be longitudinally spread by a factor $\Delta z=\boldsymbol{R_{56}}\frac{\Delta p}{p_{0}}$.
+where the momentum spread is, as expected, unchanged.  
+
+The dogleg arrangement in Fig.~\ref{fig:dogleg_schematic} can zero horizontal dispersion and its derivative if the quadrupole and central drift length ($L_{\mathrm{drift,~2}}$) satisfy the equation \cite{verzilov2004note}
+\begin{equation}
+\cos\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right)\left[\eta_{x}+\frac{\eta'_{x}L_{\mathrm{drift,~2}}}{2}\right]+\frac{\sin\left(\sqrt{k_{1}}L_{\mathrm{quad}}\right)}{\sqrt{k_{1}}}\left[\eta'_{x}-\frac{\eta_{x}k_{1}L_{\mathrm{drift,~2}}}{2}\right]=0.
+\label{eq:dogleg_zero_dispersion}    
+\end{equation}
+
+\subsubsection{Chicane}
 
 % Ivan Bazarov ERL02-2.pdf from Brunos literature
-Similarly, a chicane bunch compressor can be constructed from four dipoles of equal length $L_{\mathrm{dip}}$ separated by two drifts of varying length ($L_{\mathrm{drift,~1}}$ and $L_{\mathrm{drift,~2}}$) as shown in Fig.~\ref{fig:chicane_schematic}. The first two and last two dipoles are separated by $L_{\mathrm{drift,~1}}$ whilst $L_{\mathrm{drift,~2}}$ is the drift space between the inner dipoles (2nd and 3rd dipoles). The outer dipoles have opposite polarity to the inner dipoles.
+A chicane bunch compressor can be constructed from four dipoles of equal length $L_{\mathrm{dip}}$ separated by two drifts of varying length ($L_{\mathrm{drift,~1}}$ and $L_{\mathrm{drift,~2}}$) as shown in Fig.~\ref{fig:chicane_schematic}. The first two and last two dipoles are separated by $L_{\mathrm{drift,~1}}$ whilst $L_{\mathrm{drift,~2}}$ is the drift space between the inner dipoles (2nd and 3rd dipoles). The outer dipoles have opposite polarity to the inner dipoles.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\textwidth]{Figures/Energy_Recovery_Linac_Design/chicane_bunch_compressor_fixed.pdf}
@@ -944,10 +952,10 @@ Similarly, a chicane bunch compressor can be constructed from four dipoles of eq
 
 The transport matrix of this lattice is of the form
 \begin{equation}
-\boldsymbol{R}_{\mathrm{chicane}} = \boldsymbol{R}_{\mathrm{dip,2}}\cdot\boldsymbol{R}_{\mathrm{drift,1}}\cdot\boldsymbol{R}_{\mathrm{dip,1}}\cdot\boldsymbol{R}_{\mathrm{drift,2}}\cdot\boldsymbol{R}_{\mathrm{dip,1}}\cdot\boldsymbol{R}_{\mathrm{drift,1}}\cdot\boldsymbol{R}_{\mathrm{dip,2}},
+\boldsymbol{R}_{\mathrm{chicane}} = \boldsymbol{R}_{\mathrm{dip,1}}\cdot\boldsymbol{R}_{\mathrm{drift,1}}\cdot\boldsymbol{R}_{\mathrm{dip,2}}\cdot\boldsymbol{R}_{\mathrm{drift,2}}\cdot\boldsymbol{R}_{\mathrm{dip,2}}\cdot\boldsymbol{R}_{\mathrm{drift,1}}\cdot\boldsymbol{R}_{\mathrm{dip,1}},
 \label{eq:chicane_transport_matrix}    
 \end{equation}
-where, for brevity, the full 6D transport matrix is not shown. The maximum excursion of the reference orbit, assuming bending in the horizontal $x$ plane is given by \cite{bazarovmemo,steffen1965high}
+where $\boldsymbol{R}_{dip,1}$ and $\boldsymbol{R}_{dip,2}$ are the transport matrix of the dipole (Eq.~\ref{eq:dipole_matrix}) with positive bending angle $\alpha_{1}$ and negative bending angle $\alpha_{2}$ respectively and $\boldsymbol{R}_{\mathrm{drift,i}}$ are the drift matrices (Eq.~\ref{eq:drift_matrix}) where $i$ corresponds to the relevant drift in Fig.~\ref{fig:chicane_schematic}. For brevity, the expaneded 6D transport matrix is not shown. The maximum excursion of the reference orbit, assuming bending in the horizontal $x$ plane is given by \cite{bazarovmemo,steffen1965high}
 \begin{equation}
 x_{\mathrm{max}} = 2\rho\left(1-\cos\alpha_{1}\right)+L_{\mathrm{drift,~1}}\tan\alpha_{1},
 \label{eq:chicane_excursion}    
@@ -982,15 +990,17 @@ which can be used to re-define the $\boldsymbol{R}_{56}$ using (Eq.~\ref{eq:mome
 \label{eq:R56_dispersion_relation}
 \end{equation}
 
+\subsubsection{Bunch Compression}
+
 A chicane can compress a particle bunch longitudinally (in the local $z$ co-ordinate in Fig.~\ref{fig:accelerator_coord_system}) if the particle bunch has the correct particle energy--time configuration, known as the `chirp', at the entrance of the chicane. For compression the particle bunch should be chirped such that the high energy particles are at the tail of the bunch and arrive later in time. The time of flight through a chicane is increased for lower energy particles because these are deflected by a larger bending angle (Eq.~\ref{eq:dipole_bending_angle}) by the chicane dipoles than higher energy particles which increases their path length (Eq.~\ref{eq:chicane_path_length}). Since the trajectory of higher energy particles is shorter these catch up to the lower energy particles and the length of the bunch is compressed overall. Following the convention of Williams et al \cite{williams2020arclike}, this is a chicanelike bunch compressor.
 
-Many other types of bunch compression devices can be designed other than the simple chicane demonstrated here, such as arc-like bunch compressors \cite{williams2020arclike}. Arc-like bunch compressors have (by our convention) an $\boldsymbol{R}_{56}>0$, where the bunch is compressed if the higher energy particles are at the head of the bunch. In an arc the higher energy particles are deflected less by the dipole magnets and consequently their trajectory is longer. Therefore, the lower energy particles, which traverse a shorter trajectory through the arc, can catch up to the higher energy particles and the bunch is compressed.
+Many other types of bunch compression devices can be designed other than the simple chicane demonstrated here, such as arc-like bunch compressors \cite{williams2020arclike}. Arc-like bunch compressors have (by our convention) an $\boldsymbol{R}_{56}>0$, where the bunch is compressed if the higher energy particles are at the head of the bunch. In an arc the higher energy particles are deflected less by the dipole magnets and consequently their trajectory is longer. Therefore, the lower energy particles, which traverse a shorter trajectory through the arc, can catch up to the higher energy particles and the bunch is compressed. The dogleg lattice explained earlier in this section could therefore be used as an arc-like bunch compressor.
 
 Bunch compressors are typically used in light sources such as FELs to increase the brightness of the electron bunch, which is defined as the charge density of particles within the 6D phase space \cite{di2018bunch}
 \begin{equation}
 \mathcal{B}_{e} = \frac{Q}{\epsilon_{n,x}\epsilon_{n,y}\epsilon_{n,z}}, \label{eq:electron_brightness}   
 \end{equation}
-For high peak brilliance radiation production (see Section~\ref{sec:peak_average_brilliance}) a high peak current is favourable because a high peak current means a large quantity of radiation is produced within a short time. A high peak current can be achieved by compressing the electron bunch longitudinally before the interaction that produces the radiation, such as photon--electron interactions in an ICS source or synchrotron radiation production in an undulator. In addition, a shorter electron bunch can typically generate shorter wavelength radiation as described for in inverse Compton scattering in Section~\ref{sec:source_size_divergence}. 
+and subsequently decrease the gain length \cite{emma2010first} -- the undulator distance required to reach saturation -- of the FEL, which means shorter undulators can be used. For high peak brilliance radiation production (see Section~\ref{sec:peak_average_brilliance}) a high peak current is favourable because a high peak current means a large quantity of radiation is produced within a short time. A high peak current can be achieved by compressing the electron bunch longitudinally before the interaction that produces the radiation, such as photon--electron interactions in an ICS source or synchrotron radiation production in an undulator. In addition, a shorter electron bunch can typically generate shorter wavelength radiation as described for in inverse Compton scattering in Section~\ref{sec:source_size_divergence}. 
 
 \section{Linear Transport Lattices}
 
