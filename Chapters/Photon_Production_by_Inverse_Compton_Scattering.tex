@@ -575,23 +575,23 @@ Naively, one would expect the luminosity to also be appropriately modelled by $\
 \section{Source Size and Divergence}
 \label{sec:source_size_divergence}
 
-The derivation of luminosity and flux in Section~\ref{sec:luminosity_and_flux} has assumed that all emission of radiation in the ICS interaction is from a point source at the centre of the interaction. However, the electron bunch--photon pulse interaction occurs in a finite spatial volume. The transverse size of this spatial volume is named the source size; the source size density (electrons per transverse area) is proportional to the transverse electron bunch electron density $n_{e}\left(x,y\right)$ and transverse laser pulse photon density $n_{L}\left(x,y\right)$ \cite{krafft2020personal}.
+The derivation of luminosity and flux in Section~\ref{sec:luminosity_and_flux} has assumed that all emission of radiation in the ICS interaction is from a point source at the centre of the interaction. However, the electron--photon interaction occurs in a finite spatial volume and the transverse size of this spatial volume is here named the source size. The source transverse density (electrons per transverse area) is given by the transverse electron bunch electron density $n_{e}\left(x,y\right)$ and transverse laser pulse photon density $n_{L}\left(x,y\right)$ \cite{krafft2020personal}
 \begin{equation}
-n_{s}\left(x,y\right) \propto n_{e}\left(x,y\right) n_{L}\left(x,y\right),
+n_{s}\left(x,y\right) = n_{e}\left(x,y\right) n_{L}\left(x,y\right),
 \label{eq:transverse_source_approx}    
 \end{equation}
 Modification of the Gaussian intensity distributions of the electron bunch (Eq.~\ref{eq:electron_gaussian_intensity_distribution}) and laser pulse (Eq.~\ref{eq:laser_gaussian_intensity_distribution}) results in the transverse densities of the photon pulse and electron bunch
 \begin{align}
 n_{e}\left(x,y\right) &= \frac{N_{e}}{2\pi\sigma_{e}^{2}}\exp\left(-\frac{x^{2}+y^{2}}{2\sigma_{e}^{2}}\right), 
 \label{eq:transverse_electron_bunch_density}\\ 
-n_{L}\left(x,y\right) &= \frac{N_{L}}{2\pi\sigma_{L}^{2}}\exp\left(-\frac{x^{2}+y^{2}}{2\sigma_{L}^{2}}\right),
+n_{L}\left(x,y\right) &= \frac{N_{L}}{2\pi\sigma_{L}^{2}}\exp\left(-\frac{x^{2}+y^{2}}{2\sigma_{L}^{2}}\right).
 \label{eq:trasverse_photon_pulse_density}
 \end{align}
-The transverse density of the source size (Eq.~\ref{eq:transverse_source_approx}) can be expanded through substitution of the transverse electron (Eq.~\ref{eq:transverse_electron_bunch_density}) and photon (Eq.~\ref{eq:trasverse_photon_pulse_density}) densities 
+The transverse density of the source (Eq.~\ref{eq:transverse_source_approx}) can be expanded through substitution of the transverse electron (Eq.~\ref{eq:transverse_electron_bunch_density}) and photon (Eq.~\ref{eq:trasverse_photon_pulse_density}) densities 
 \begin{align}
-n_{s}\left(x,y\right) \propto \frac{N_{e}}{2\pi\sigma_{e}^{2}}\exp\left(-\frac{x^{2}+y^{2}}{2\sigma_{e}^{2}}\right)\frac{N_{L}}{2\pi\sigma_{L}^{2}}\exp\left(-\frac{x^{2}+y^{2}}{2\sigma_{L}^{2}}\right), \nonumber \\
-n_{s}\left(x,y\right) \propto \frac{N_{e}N_{L}}{2\pi\sigma_{e}^{2}\sigma_{L}^{2}}\exp\left[-\frac{\left(x^{2}+y^{2}\right)\left(\sigma_{e}^{2}+\sigma_{L}^{2}\right)}{\sigma_{e}^{2}\sigma_{L}^{2}}\right], \nonumber \\
-n_{s}\left(x,y\right) \propto \frac{1}{2\pi\left(\sigma_{e}^{2}+\sigma_{L}^{2}\right)}\frac{1}{2\pi\sigma_{\gamma}^{2}}\exp\left(-\frac{x^{2}+y^{2}}{2\sigma_{\gamma}^{2}}\right),
+n_{s}\left(x,y\right) = \frac{N_{e}}{2\pi\sigma_{e}^{2}}\exp\left(-\frac{x^{2}+y^{2}}{2\sigma_{e}^{2}}\right)\frac{N_{L}}{2\pi\sigma_{L}^{2}}\exp\left(-\frac{x^{2}+y^{2}}{2\sigma_{L}^{2}}\right), \nonumber \\
+n_{s}\left(x,y\right) = \frac{N_{e}N_{L}}{2\pi\sigma_{e}^{2}\sigma_{L}^{2}}\exp\left[-\frac{\left(x^{2}+y^{2}\right)\left(\sigma_{e}^{2}+\sigma_{L}^{2}\right)}{\sigma_{e}^{2}\sigma_{L}^{2}}\right], \nonumber \\
+n_{s}\left(x,y\right) = \frac{1}{2\pi\left(\sigma_{e}^{2}+\sigma_{L}^{2}\right)}\frac{1}{2\pi\sigma_{\gamma}^{2}}\exp\left(-\frac{x^{2}+y^{2}}{2\sigma_{\gamma}^{2}}\right),
 \label{eq:expanded_transverse_source_density}    
 \end{align}
 where the transverse \textit{rms} source size of an inverse Compton scattering electron bunch--laser pulse interaction is consequently defined as
@@ -613,22 +613,7 @@ Similarly to the \textit{rms} transverse source size, the \textit{rms} source an
 \end{equation}
 where $\sigma_{e,x/y}' = \sqrt{\epsilon_{x}/\beta_{x}^{*}}$ is the \textit{rms} transverse electron bunch angular divergence for a non-diffraction limited beam and $\sigma_{L} = \sqrt{\lambda/4\pi}$ is the \textit{rms} transverse laser pulse angular divergence.
 
-A non-zero transverse source size (Eq.~\ref{eq:source_size}) suggests that photon emission from the ICS interaction can occur from any transverse position within the source size. Whilst the emission of radiation would occur mostly frequently in the centre of the bunch, due to the double Gaussian overlap, emission would be possible from the edges of the source size. A non-zero source size with possible emission from a finite transverse (Eq.~\ref{eq:source_size}) and longitudinal (Eq.~\ref{eq:longitudinal_source_size}) source size would appear to invalidate the point source approximation used in Section~\ref{sec:luminosity_and_flux}. However, the point source approximation holds if the scattered photon distribution is sampled a large distance from the source relative to the source size i.e $\sigma_{\gamma,z} \ll d$, where $d$ is the source to collimator/detector distance. When the $\sigma_{\gamma,z} \ll d$ approximation holds this is termed far-field collimation, and this approximation holds during our discussion of collimation in ICS sources in Section~\ref{sec:analytical_collimated_flux}. Far-field collimation can be stated analogously in the transverse plane via $\sigma_{\gamma,x/y} \ll a$, where $a$ is the transverse size of a collimator or detector aperture downstream of the interaction. Far-field collimation is obeyed by all ICS sources designed within this work.  
-
-\section{Spectral Density}
-
-The spectral density of an ICS source is a measure of the energy density of the produced photon spectrum; a higher spectral density for the same scattered photon energy source means more photons are produced. The spectral density of an inverse Compton scattering source is given by
-\begin{equation}
-\mathcal{S} = \frac{\mathcal{F}}{E_{\gamma}^{\mathrm{MAX}}},
-\label{eq:spectral_density}    
-\end{equation}
-where $\mathcal{F}$ is the total flux of the ICS source given by (Eq.~\ref{eq:flux_angular_crossing_hourglass}) and $E_{\gamma}$ is the scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}) at the Compton edge ($\theta = 0$). The spectral density can also be measured around the Compton edge energy for a particular bandwidth, for example by replacing the total flux $\mathcal{F}$ with the FWHM flux in a 0.1\% bandwidth $\mathcal{F_{\mathrm{0.1\%}}}$ (Eq.~\ref{eq:flux_0.1_bandwidth}).
-The spectral density around the Compton edge (Eq.~\ref{eq:compton_edge_energy}) in a 0.1\% \textit{FWHM} bandwidth is therefore
-\begin{equation}
-\mathcal{S}_{\mathrm{0.1\%}} = \frac{\mathcal{F_{\mathrm{0.1\%}}}}{E_{\gamma}^{\mathrm{MAX}}}.
-\label{eq:spectral_density_0.1}    
-\end{equation}
-Framed in terms of a particular bandwidth, the spectral density becomes an important performance parameter of a narrowband ICS source. Utilising spectral density comparisons within a particular bandwidth around the Compton edge is a more appropriate comparative measure of ICS source performance as this enables a user to understand the energy density of photons available to a particular experiment from an ICS source.    
+A non-zero transverse source size (Eq.~\ref{eq:source_size}) suggests that photon emission from the ICS interaction can occur from any transverse position within the source. Whilst the emission of radiation would occur mostly frequently in the centre of the bunch emission would also be possible from the edges of the source. A non-zero source size with possible emission from a finite transverse (Eq.~\ref{eq:source_size}) and longitudinal (Eq.~\ref{eq:longitudinal_source_size}) source would appear to invalidate the point source approximation used in Section~\ref{sec:luminosity_and_flux}. However, the point source approximation holds if the scattered photon distribution is sampled a large distance from the source relative to the source size i.e $d \gg \sigma_{\gamma,z}$, where $d$ is the source to collimator/detector distance. When $d \gg \sigma_{\gamma,z}$ holds this is termed far-field collimation, as valid for our discussion of collimation in ICS sources in Section~\ref{sec:analytical_collimated_flux}. Far-field collimation can be stated analogously in the transverse plane as $a \gg \sigma_{\gamma,x/y}$, where $a$ is the transverse size of a collimator or detector aperture downstream of the interaction. The far-field collimation condition is obeyed by all ICS sources designed within this work.  
 
 \section{Bandwidth}
 \label{sec:bandwidth}
@@ -698,6 +683,22 @@ Therefore, (Eq.~\ref{eq:RMS_bandwidth}) was selected as this is both recoil--cor
 \end{figure}
 
 However, there are some downsides to the Ranjan et al formulation (Eq.~\ref{eq:RMS_bandwidth}), as this is incapable of calculating the bandwidth for a non-linear ($a_{0}\sim 1$) ICS source. Circular collimation is also assumed implicitly by the inclusion of a single acceptance angle term $\Psi$, as in the case of a rectangular collimator the maximum collimation angle would vary in each plane. However, the bandwidth in (Eq.~\ref{eq:RMS_bandwidth}) has been extended to rectangular collimation by Hajima \cite{hajima2021bandwidth}, though the ICS sources within this thesis only employ circular collimation so Ranjan et al \cite{ranjan2018simulation} (Eq.~\ref{eq:RMS_bandwidth}) is used. 
+
+\section{Spectral Density}
+
+The spectral density of an ICS source is a measure of the energy density of the produced photon spectrum; a higher spectral density for the same scattered photon energy source means more photons are produced. The spectral density of an inverse Compton scattering source, for the full scattered photon spectrum, is given by
+\begin{equation}
+\mathcal{S} = \frac{\mathcal{F}}{E_{\gamma}^{\mathrm{MAX}}},
+\label{eq:spectral_density}    
+\end{equation}
+where $\mathcal{F}$ is the total flux of the ICS source given by (Eq.~\ref{eq:flux_angular_crossing_hourglass}) and $E_{\gamma}^{\mathrm{MAX}}$ is the maximum scattered photon energy, also known as the Compton edge energy (Eq.~\ref{eq:compton_edge_energy}), when the incident photon is backscattered ($\theta=0$).
+
+The spectral density can also be measured around the Compton edge energy for a particular bandwidth, for example by replacing the total flux $\mathcal{F}$ with the FWHM flux in a 0.1\% bandwidth $\mathcal{F_{\mathrm{0.1\%}}}$ (Eq.~\ref{eq:flux_0.1_bandwidth}). The spectral density around the Compton edge (Eq.~\ref{eq:compton_edge_energy}) in a 0.1\% \textit{FWHM} bandwidth is therefore
+\begin{equation}
+\mathcal{S}_{\mathrm{0.1\%}} = \frac{\mathcal{F_{\mathrm{0.1\%}}}}{E_{\gamma}^{\mathrm{MAX}}}.
+\label{eq:spectral_density_0.1}    
+\end{equation}
+Framed in terms of a particular bandwidth, the spectral density becomes an important performance parameter of a narrowband ICS source. If an ICS source has a higher spectral density within a particular bandwidth than another source then this source produces a higher flux of narrowband radiation. Utilising spectral density comparisons within a particular bandwidth around the Compton edge is a more appropriate comparative measure of ICS source performance because a user can understand the energy density of photons available to a particular experiment from an ICS source.   
 
 \section{Peak and Average Brilliance}
 \label{sec:peak_average_brilliance}
