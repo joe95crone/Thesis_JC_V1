@@ -479,29 +479,29 @@ where $\sigma_{i}(i=x,y,z) = \sqrt{\sigma_{i,e}^{2}+\sigma_{i,L}^{2}}$ is the co
 
 \subsection{Flux}
 
- Therefore, the energy radiated by the interaction of a Gaussian laser pulse and electron bunch becomes  
+The flux (photons generated per second) of an ICS source can be derived from the radiated energy of the ICS source and the average scattered photon energy of the emission. Using the luminosity (Eq.~\ref{eq:headon_luminosity}), the energy radiated by the interaction of a Gaussian laser pulse and electron bunch becomes  
 \begin{equation}
 U_{\gamma} = \gamma^{2}\left(1+\beta\right)\sigma\frac{N_{e}N_{L}}{2\pi\sigma_{x}\sigma_{y}}E_{L},
 \label{eq:total_interaction_energy_simplified}
 \end{equation}
 which omits the hourglass effect of the two diverging beams and is also only true in the case of a head-on interaction at the waists of the laser pulse and electron bunch -- these two effects are accommodated in Section~\ref{sec:geometric_luminosity_reduction}. The solutions for each of these cases is covered in the next section. The number of photons produced per interaction $N_{\gamma}=\sigma\mathcal{L}$ can be found using the average scattered photon energy $\gamma^{2}\left(1+\beta\right)\hbar\omega$, where if $\beta=1$, $E_{\gamma} = 2\gamma^{2}E_{L}$, as shown in Fig.~\ref{fig:cross_section_scattered_photon_energy} 
 \begin{equation}
-N_{\gamma} = \sigma\frac{N_{e}N_{L}}{2\pi\sigma_{x}\sigma_{y}^{2}+\sigma_{y}}.
+N_{\gamma} = \sigma\frac{N_{e}N_{L}}{2\pi\sigma_{x}\sigma_{y}}.
 \label{eq:no_photon_headon}
 \end{equation}
-The total flux of the photons is given by $\mathcal{F} = \sigma\mathcal{L}f$ where $\mathcal{L}$ is the luminosity of the source and $f$ is the repetition frequency of the ICS interaction. Therefore, the often quoted result \cite{krafft2010compton,curatolo2017analytical}, of the flux in the head-on configuration can  be replicated
+The total flux of the photons is given by $\mathcal{F} = \sigma\mathcal{L}f$ where $\mathcal{L}$ is the luminosity of the source and $f$ is the repetition frequency of the ICS interaction. Therefore, the often quoted result \cite{krafft2010compton,curatolo2017analytical}, of the flux in the head-on configuration can be obtained
 \begin{equation}
 \mathcal{F} = \frac{\sigma N_{e}N_{L}f}{2\pi\sigma_{x}\sigma_{y}}.
 \label{eq:headon_flux}
 \end{equation}
-Using the result derived in Section~\ref{sec:electron_photon_interaction_cross_section} (Eq.~\ref{eq:cross_section_factor}) for the portion of the cross section within an energy range $\Delta E_{\gamma}$ from the Compton edge (Eq.~\ref{eq:compton_edge_energy}), we can approximate the flux in a particular section of the ICS spectrum. For example, the flux in a 0.1\% ($10^{-3}$) portion or FWHM bandwidth of an ICS source, in the head-on ($\phi=0$), low recoil ($X \ll 1$) case is given by
+Using the result derived in Section~\ref{sec:electron_photon_interaction_cross_section} (Eq.~\ref{eq:cross_section_factor}) for the portion of the scattered photon energy within an energy range $\Delta E_{\gamma}$ from the Compton edge (Eq.~\ref{eq:compton_edge_energy}), we can approximate the flux in a part of the ICS spectrum. For example, the flux in a 0.1\% bandwidth of an ICS source (see Section~\ref{sec:bandwidth}), in the head-on ($\phi=0$), low recoil ($X \ll 1$) case is given by
 \begin{equation}
 \mathcal{F}_{0.1\%} = \frac{3}{2}\times 10^{-3} \mathcal{F},
 \label{eq:flux_0.1_bandwidth}    
 \end{equation}
-where the $3/2$ factor originates from (Eq.~\ref{eq:cross_section_factor}), the $10^{-3}$ is due to the 0.1\% bandwidth scaling and $\mathcal{F}$ is the flux (Eq.~\ref{eq:headon_flux}) of an ICS source. The flux in a 0.1\% FWHM bandwidth (Eq.~\ref{eq:flux_0.1_bandwidth}) is an important quantity for analysing the performance of an ICS source as a light source because it quantifies the portion of flux of most use for narrowband experimentation and it is used to calculate the brilliance, as expanded upon in Section~\ref{sec:peak_average_brilliance}. 
+where the $3/2$ factor originates from (Eq.~\ref{eq:cross_section_factor}), the $10^{-3}$ is due to the 0.1\% bandwidth scaling and $\mathcal{F}$ is the flux (Eq.~\ref{eq:headon_flux}) of an ICS source. The flux in a 0.1\% bandwidth (Eq.~\ref{eq:flux_0.1_bandwidth}) is an important quantity for analysing the performance of an ICS source as a light source because it quantifies the portion of flux of most use for narrowband experimentation and it is used to calculate the brilliance, as expanded upon in Section~\ref{sec:peak_average_brilliance}. 
 
-\section{Geometric Luminosity Reduction and Corrected Flux}
+\subsection{Geometric Luminosity Reduction and Corrected Flux}
 \label{sec:geometric_luminosity_reduction}
 
 A generalization of the head-on ($\phi = 0$) luminosity in (Eq.~\ref{eq:headon_luminosity}) to the case with an angular crossing ($\phi \neq 0$) can be performed, where the interaction geometry is modified and the transverse and longitudinal profiles of the interaction are adjusted. The effect of an angular crossing, which is assumed to be in the horizontal $x$ plane, can be expressed by a reduction factor $R_{AC}$ \cite{suzuki1976general,miyahara2008luminosity}
