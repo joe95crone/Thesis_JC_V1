@@ -504,7 +504,15 @@ where the $3/2$ factor originates from (Eq.~\ref{eq:cross_section_factor}), the 
 \subsection{Geometric Luminosity Reduction and Corrected Flux}
 \label{sec:geometric_luminosity_reduction}
 
-A generalization of the head-on ($\phi = 0$) luminosity in (Eq.~\ref{eq:headon_luminosity}) to the case with an angular crossing ($\phi \neq 0$) can be performed, where the interaction geometry is modified and the transverse and longitudinal profiles of the interaction are adjusted. The effect of an angular crossing, which is assumed to be in the horizontal $x$ plane, can be expressed by a reduction factor $R_{AC}$ \cite{suzuki1976general,miyahara2008luminosity}
+A generalization of the head-on ($\phi = 0$) luminosity in (Eq.~\ref{eq:headon_luminosity}) to the case with an angular crossing ($\phi \neq 0$) can be performed, where the interaction geometry is modified and the transverse and longitudinal profiles of the interaction are adjusted. A schematic of a electron bunch--laser pulse interaction at a crossing angle $\phi$ is shown in Fig.~\ref{fig:angular_crossing_hourglass_effect}.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/angular_crossing_hourglass_effect.pdf}
+\caption{Left: An electron bunch (blue) interacts with a laser pulse (red) at a crossing angle $\phi$ in the horizontal $x$ plane. The overlap (green) between the electron bunch and laser pulse is reduced due to the crossing angle, leading to a reduction in luminosity. Right: A schematic of the hourglass effect. During an electron bunch--laser pulse interaction both beams diverge longitudinally ($z$ direction) across the interaction source size $\sigma_{\gamma,z}$ (see Section~\ref{sec:source_size_divergence}). Consequently the source size at the waist $\sigma_{\gamma,x}$ (green) is smaller than at other longitudinal positions in the interaction length, for example $\sigma_{\gamma,x}^{*}$, which results in a reduction in the luminosity.  }
+\label{fig:angular_crossing_hourglass_effect}
+\end{figure}
+
+The effect of an angular crossing, which is assumed to be in the horizontal $x$ plane, can be expressed by a reduction factor $R_{AC}$ \cite{suzuki1976general,miyahara2008luminosity}
 \begin{equation}
 R_{AC} = \frac{\sigma_{x}\cos\phi}{\sqrt{\sigma_{x}^{2}\cos^{2}\phi+\sigma_{z}^{2}\sin^{2}\phi}} = \frac{1}{\sqrt{1+\left(\sigma_{z}^{2}/\sigma_{x}^{2}\right)\tan^{2}\phi}},
 \label{eq:angular_crossing_factor}    
