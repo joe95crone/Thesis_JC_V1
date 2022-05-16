@@ -166,7 +166,7 @@ The spectral bandwidth -- the photon energy spread of the laser pulse -- of the 
 \label{sec:fabry_perot_optical_cavities}
 
 A Fabry--Perot optical cavity is a Fabry--Perot interferometer \cite{fabry1901new} utilised as an optical resonator, where incident photon pulses (laser pulses) are stacked to increase the circulating pulse energy \cite{schawlow1958infrared,variola2011luminosity}.
-The Fabry-Perot optical cavity consists of a set of optical mirrors designed to transport a laser pulse with low losses and produce a small laser focus at a position within the round trip of the cavity for and electron bunch--laser pulse interaction point. The cavity is constructed from high reflectivity mirrors, however one mirror must be less reflective -- known as the input mirror -- so that the laser pulses can enter the cavity. Fabry-Perot cavities are commonly applied in the `re-circulated pulse' approach as the optical arrangement used to re-circulate the laser pulse many times. Commonly, Fabry-Perot optical cavities are constructed with 2 or 4 mirrors with the most prevalent topologies shown in Fig.~\ref{fig:2_mirror_4_mirror}. Cavities can be planar -- where all mirrors are in the same plane -- or non-planar where the path of the laser pulse is three-dimensional. Non-planar cavities are preferred due to polarisation considerations \cite{zomer2009polarization}, beyond the scope of the discussion here.
+The Fabry-Perot optical cavity consists of a set of optical mirrors designed to transport a laser pulse with low losses and produce a small laser focus at a position within the round trip of the cavity for and electron bunch--laser pulse interaction point. The cavity is constructed from high reflectivity mirrors, however one mirror must be less reflective -- known as the input mirror -- so that the laser pulses can enter the cavity. Fabry-Perot cavities are an optical arrangement commonly applied in the `re-circulated pulse' approach to re-circulate the laser pulse many times. Commonly, Fabry-Perot optical cavities are constructed with 2 or 4 mirrors with the most prevalent topologies shown in Fig.~\ref{fig:2_mirror_4_mirror}. Cavities can be planar -- where all mirrors are in the same plane -- or non-planar where the path of the laser pulse is three-dimensional. Non-planar cavities are preferred due to polarisation considerations \cite{zomer2009polarization}, details of this are beyond the scope of the discussion here.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/2_mirror_4_mirror.pdf}
@@ -175,7 +175,7 @@ The Fabry-Perot optical cavity consists of a set of optical mirrors designed to 
 \end{figure}
 
 Two-mirror cavities consist of
-two concave reflectors and require a concentric configuration to achieve a very small beam-waist where each mirror has the same focal point and the focus is at the centre of the mirrors. Consequently, the concentric configuration is mechanically very unstable \cite{dupraz2015abcd} beacause displacements of the optical axis
+two concave reflectors and require a concentric configuration to achieve a very small beam-waist where each mirror has the same focal point and the focus is at the centre of the mirrors. Consequently, the concentric configuration is mechanically very unstable \cite{dupraz2015abcd} because displacements of the optical axis
 correspond to small displacement on the mirrors \cite{variola2011luminosity} -- small cavity misalignments are inherently poorly corrected by the optics. A comprehensive discussion of the mechanical instability of 2 mirror cavities and the difficulties associated with concentric configurations is presented by Zomer et al \cite{zomer2009polarization}; following the justifications of Zomer et al only 4 mirror cavities are utilised here. 
 
 The main advantage of using a Fabry--Perot optical cavity is that the average power of the incident laser can be increased because the repetition frequency is increased from a standard laser repetition rate and the cavity can accommodate a large number of passes of the stacked optical pulse \cite{variola2011luminosity}. For example, the Nd:YAG laser in Table~\ref{tab:laser_type_parameters} has a laser repetition rate of 15~\si{\kilo\hertz}, but 100's~\si{\mega\hertz} laser pulse repetition rates can be achieved via re-circulation in an optical cavity -- a near 10,000 fold increase in laser average power. Therefore, higher average laser powers -- the stored average laser power of the cavity -- can be interacted with the high average power of a re-circulated electron bunch, with a higher interaction repetition rate, producing more inverse Compton scattering events. The average stored power of an optical cavity is given by
@@ -183,7 +183,7 @@ The main advantage of using a Fabry--Perot optical cavity is that the average po
 P_{\mathrm{avg}} = mE_{\mathrm{pulse}}f_{\mathrm{opt}},
 \label{eq:average_stored_power_cavity}    
 \end{equation}
-where $m$ is the no. laser pulses stored in the cavity, $E_{\mathrm{pulse}}$ is the energy of the pulse stored in the cavity and $f_{\mathrm{opt}}$ is the repetition frequency of the laser in the optical cavity. Large laser infrastructure is also not required as the Fabry-Perot optical cavity typically re-circulates weak laser pulses, with pulse energies of 10--100's~\si{\micro\joule}. High average powers can be stored as the $\sim100$~\si{\micro\joule} pulse is re-circulated at 100's~\si{\mega\hertz} -- a typical electron bunch repetition frequency -- yielding an average stored power of $P_{\mathrm{avg}}= 10$~\si{\kilo\watt}, much greater than the `single shot' approach where for Ti:Sa lasers the average power is 8.6~\si{\watt}.
+where $m$ is the no. of laser pulses stored in the cavity, $E_{\mathrm{pulse}}$ is the energy of the pulse stored in the cavity and $f_{\mathrm{opt}}$ is the repetition frequency of the laser in the optical cavity. Large laser infrastructure is also not required as the Fabry-Perot optical cavity typically re-circulates weak laser pulses, with pulse energies of 10--100's~\si{\micro\joule}. High average powers can be stored as the $\sim100$~\si{\micro\joule} pulse is re-circulated at 100's~\si{\mega\hertz} -- a typical electron bunch repetition frequency -- yielding an average stored power of $P_{\mathrm{avg}}= 10$~\si{\kilo\watt}, much greater than the `single shot' approach where for Ti:Sa lasers the average power is 8.6~\si{\watt}.
 
 However, implementation of Fabry-Perot cavities in an ICS source results in constraints to the path length of the laser pulse (denoted by the red line in Fig.~\ref{fig:2_mirror_4_mirror}), the crossing angle of the interaction, the focal radius (spot size) of the laser pulse at the interaction point and the average stored laser power available for interaction. These constraints on the optical cavity are interdependent; for example, reducing the path length will reduce the energy of the pulse that can be stored for (an assumed) invariant laser average power.
 
@@ -223,7 +223,7 @@ where $V$ is the fractional power loss per cavity round trip; the approximate fo
 F=\frac{2\pi T_{1}}{\left(T_{1}+V\right)^{2}}.
 \label{eq:fabry_perot_finesse}    
 \end{equation}
-Consequently a high finesse cavity is necessary transport a high average stored laser power; otherwise, power losses on the mirrors and mirror heating would become prohibitive. A high average power incident on a mirror heats the mirror causing thermoelastic deformation which affects the radii of curvature of the mirror. When the radii of curvature of the mirror is altered the coupling of the laser pulse to the cavity is poorer \cite{chaikovska2016high}, causing greater power loss which reinforces this behaviour until the cavity becomes unstable. Mitigation of thermoelastic deformation of optical mirrors in Fabry-Perot optical cavities is an active research subject \cite{amoudry2020modal}, where new mirror coatings could increase damage thresholds of mirrors and increase the stored laser power. A high average power also means a cavity is more susceptible to hot-spot defects, where manufacturing or handling defects on a mirror surface cause a hotspot and the mirror coating is damaged, resulting in a large loss of stored power \cite{wang2020prior}. Limitations on the average stored power within an optical cavity mean that the multi-pulse optical cavity approach (where $m$ pulses are re-circulated) is not advantageous to increasing the scattered photons produced by the ICS source because the energy of the pulses in a multi-pulse optical cavity must be decreased due to the number of pulses in the cavity i.e $E_{\mathrm{pulse}}/m$ in comparison to $E_{\mathrm{pulse}}$ for a single-pulse cavity.    
+Consequently a high finesse cavity is necessary for transportation of a high average stored laser power; otherwise, power losses on the mirrors and mirror heating would become prohibitive. A high average power incident on a mirror heats the mirror causing thermoelastic deformation which affects the radii of curvature of the mirror. When the radii of curvature of the mirror is altered the coupling of the laser pulse to the cavity is poorer \cite{chaikovska2016high}, causing greater power loss which reinforces this behaviour until the cavity becomes unstable. Mitigation of thermoelastic deformation of optical mirrors in Fabry-Perot optical cavities is an active research subject \cite{amoudry2020modal}, where new mirror coatings could increase damage thresholds of mirrors and increase the stored laser power. A high average power also means a cavity is more susceptible to hot-spot defects, where manufacturing or handling defects on a mirror surface cause a hotspot and the mirror coating is damaged, resulting in a large loss of stored power \cite{wang2020prior}. Limitations on the average stored power within an optical cavity mean that the multi-pulse optical cavity approach (where $m$ pulses are re-circulated) is not advantageous to increasing the scattered photons produced by the ICS source because the energy of the pulses in a multi-pulse optical cavity must be decreased due to the number of pulses in the cavity i.e $E_{\mathrm{pulse}}/m$ in comparison to $E_{\mathrm{pulse}}$ for a single-pulse cavity.    
 
 \section{Non-linear Inverse Compton Scattering}
 \label{sec:nonlinear_ICS}
@@ -304,7 +304,7 @@ utilising the commutation of four-vectors ($p_{\mu}k^{\mu} = k_{\mu}p^{\mu}$) an
 p_{1\mu}k_{1}^{\mu} = p_{2\mu}k_{2}^{\mu}.
 \label{eq:end_conservation_squared}
 \end{equation}
-Subbing (Eq.~\ref{eq:end_conservation_squared}) into (Eq.~\ref{eq:apply_photon_pfinal}) yields
+Substituting (Eq.~\ref{eq:end_conservation_squared}) into (Eq.~\ref{eq:apply_photon_pfinal}) yields
 \begin{equation}
 k_{2}^{\mu}p_{1\mu}+k_{2}^{\mu}k_{1\mu} = k_{1}^{\mu}p_{1\mu}
 \label{eq:substitution_four_vector}
@@ -334,7 +334,7 @@ where $E_{L}$ is the incident photon energy and $E_{\gamma}$ is the scattered ph
 E_{\gamma} = \frac{\left(1-\beta\cos\phi'\right)E_{L}}{1-\beta\cos\theta+\left(1-\cos\theta'\right)\frac{E_{L}}{E_{e}}} = \frac{\left(1+\beta\cos\phi\right)E_{L}}{1-\beta\cos\theta+\left(1-\cos\theta'\right)\frac{E_{L}}{E_{e}}},
 \label{eq:scattered_photon_energy}
 \end{equation}
-where a using the definition of the crossing angle $\phi=\pi-\phi'$, as shown in Fig.~\ref{fig:scattered_photon_kinematics}, yields a more convenient form for ICS sources.   
+where using the definition of the crossing angle $\phi=\pi-\phi'$, as shown in Fig.~\ref{fig:scattered_photon_kinematics}, yields a more convenient form for ICS sources.   
   
 In the head-on case ($\phi=0$), the scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}) can be simplified to 
 \begin{equation}
@@ -351,13 +351,13 @@ where the recoil term $X$ is given by (Eq.~\ref{eq:X_headon}). Extending this to
 E_{\gamma} = \frac{4\gamma^{2}E_{L}}{1+X},
 \label{eq:headon_backscattering_scattered_photon_energy}
 \end{equation}
-which is referred to in the literature \cite{krafft2010compton} as the Compton edge as it is the highest possible scattered photon energy from a electron--photon interaction in inverse Compton scattering. The $\gamma^{2}$ factor within (Eq.~\ref{eq:headon_backscattering_scattered_photon_energy}) is due to the double Doppler shift experienced by the incident photon as it is scattered, which is best explained using the classical picture in Section~\ref{sec:intro_ICS}. At low recoil the Compton edge energy is given by the well known relation
+which is referred to in the literature \cite{krafft2010compton} as the Compton edge as it is the highest possible scattered photon energy from an electron--photon interaction in inverse Compton scattering. The $\gamma^{2}$ factor within (Eq.~\ref{eq:headon_backscattering_scattered_photon_energy}) is due to the double Doppler shift experienced by the incident photon as it is scattered, which is best explained using the classical picture in Section~\ref{sec:intro_ICS}. At low recoil the Compton edge energy is given by the well known relation
 \begin{equation}
 E_{\gamma} = 4\gamma^{2}E_{L}.
 \label{eq:compton_edge_energy}    
 \end{equation}
 
-Upon inspection of the generalised ICS scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}), there is an explicit dependence of the scattered photon energy $E_{\gamma}$ on the scattering angle $\theta$. The scattering angle dependence of the scattered photon energy enables scattered photon energy discrimination through specification of a maximum scattering angle the radiation can traverse. By setting a maximum scattering angle $\theta_{\mathrm{max}}$ photons with lower energy, inherently scattered at angles $\theta > \theta_{mathrm{max}}$, will be excluded -- the produced radiation can be simply collimated.   
+Upon inspection of the generalised ICS scattered photon energy (Eq.~\ref{eq:scattered_photon_energy}), there is an explicit dependence of the scattered photon energy $E_{\gamma}$ on the scattering angle $\theta$. The scattering angle dependence of the scattered photon energy enables scattered photon energy discrimination through specification of a maximum scattering angle the radiation can traverse. By setting a maximum scattering angle $\theta_{\mathrm{max}}$ photons with lower energy, inherently scattered at angles $\theta > \theta_{\mathrm{max}}$, will be excluded -- the produced radiation can be simply collimated.   
 
 \section{Electron--Photon Interaction Cross Section}
 \label{sec:electron_photon_interaction_cross_section}
@@ -378,14 +378,14 @@ To understand the cross section of the electron--photon interaction, the interac
 
 Following the derivation by Berestetskii, Lifshitz and Pitaevskii \cite{berestetskii1982quantum}, using the amplitude arising from the Feynman diagrams in Fig.~\ref{fig:ICS_Feynman_diagrams}, the double differential cross section with respect to any polarisation of the incident and scattered photons and an unpolarised or arbitrarily polarised electron is given by 
 \begin{multline}
-\frac{d^{2}\sigma}{dYd\phi_{f}} = \frac{2r_{e}^{2}}{X}\left\{\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)  -\left(\xi_{3}+\xi_{3}'\right)\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right] \right.\\\left. +\xi_{1}\xi_{1}'\left(\frac{1}{X}-\frac{1}{Y}+\frac{1}{2}\right) + \xi_{2}\xi_{2}'\left[\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\left(1+\frac{2}{X}-\frac{2}{Y}\right)\right] \right.\\\left. + \xi_{3}\xi_{3}'\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{2}\right] \right\}
+\frac{d^{2}\sigma}{dYd\phi_{f}} = \frac{2r_{e}^{2}}{X}\left\{\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)  -\left(\xi_{3}+\xi_{3}'\right)\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}\right] \right.\\\left. +\xi_{1}\xi_{1}'\left(\frac{1}{X}-\frac{1}{Y}+\frac{1}{2}\right) + \xi_{2}\xi_{2}'\left[\frac{1}{4}\left(\frac{X}{Y}+\frac{Y}{X}\right)\left(1+\frac{2}{X}-\frac{2}{Y}\right)\right] \right.\\\left. + \xi_{3}\xi_{3}'\left[\left(\frac{1}{X}-\frac{1}{Y}\right)^{2}+\frac{1}{X}-\frac{1}{Y}+\frac{1}{2}\right] \right\},
 \label{eq:polarisation_differential_cross_section}    
 \end{multline}
 where the incident photon pulse Stokes parameters $\xi_{i} \left(i=1,~2,~3\right)$, in the electron frame (global) co-ordinate system, are given by
 \begin{align}
-\xi_{1} &= P_{t}\sin\left(2\tau-2\phi_{f}\right)\sin\phi\\
-\xi_{2} &= P_{c} \\
-\xi_{3} &= -P_{t}\cos\left(2\tau-2\phi_{f}\right)\sin\phi
+\xi_{1} &= P_{t}\sin\left(2\tau-2\phi_{f}\right)\sin\phi, \\
+\xi_{2} &= P_{c}, \\
+\xi_{3} &= -P_{t}\cos\left(2\tau-2\phi_{f}\right)\sin\phi,
 \label{eq:incident_stokes_parameters}    
 \end{align}
 where, using the same co-ordinate system as Sun and Wu \cite{sun2009characterizations,sun2011theoretical}, $-1 \geq P_{t} \geq 1$ is the degree of linear polarisation of the incident pulse ($P_{t}=-1$, full anti-parallel polarisation), $-1 \geq P_{c} \geq 1$ is the degree of circular polarisation of the incident pulse ($P_{c}=-1$, full anticlockwise polarisation), $\tau$ is the azimuthal angle of the linear polarisation, $\phi_{f}$ is the azimuthal scattering angle, $\phi$ is the crossing angle in the $x$--$z$ plane. Polarisation of the incident photon is shown diagramatically in Figure~\ref{fig:3D_coord_system}. The $\xi_{1}$ parameter resembles linear polarisation along the transverse axes whereas the $\xi_{3}$ parameter corresponds to linear polarisation at a 45\si{\degree} angle to the transverse axes and $\xi_{2}$ resembles to the degree of circular polarisation. For example, a linearly polarised incident photon oriented in the horizontal $x$ plane would be given by $\xi_{i} = \left(1,~0,~0\right)$ whilst $\xi_{i} = \left(0,~1,~0\right)$ describes a circularly polarised incident photon propagating clockwise. 
@@ -644,7 +644,7 @@ The flux in the case of an angular collision with non-negligible divergence of e
 \mathcal{F} = \sigma f R_{ACHG}\mathcal{L}_{\mathrm{HEAD-ON}}.
 \label{eq:flux_angular_crossing_hourglass}
 \end{equation}
-All subsequent equations, unless explicitly stated, use (Eq.~\ref{eq:flux_angular_crossing_hourglass}) to account for the geometric luminosity reduction of a ICS source. The luminosity of this result is given by $\mathcal{L} = R_{ACHG}\mathcal{L}_{\mathrm{HEAD-ON}}$, mirroring the form of the luminosity for the isolated angular crossing and hourglass effect.
+All subsequent equations, unless explicitly stated, use (Eq.~\ref{eq:flux_angular_crossing_hourglass}) to account for the geometric luminosity reduction of an ICS source. The luminosity of this result is given by $\mathcal{L} = R_{ACHG}\mathcal{L}_{\mathrm{HEAD-ON}}$, mirroring the form of the luminosity for the isolated angular crossing and hourglass effect.
 
 Naively, one would expect the luminosity to also be appropriately modelled by $\mathcal{L} = R_{AC}R_{HG}\mathcal{L}_{\mathrm{HEAD-ON}}$, however this is incorrect as a moderate crossing angle $\phi$ will shorten the interaction time between the laser pulse and electron beam such that the interaction length is of an order at which the electron bunch and laser pulse minimally diverge and the hourglass effect is negligible. Effectively, as shown by the example calculations, a moderate crossing angle suppresses the hourglass effect.   
 
@@ -672,7 +672,7 @@ n_{s}\left(x,y\right) = \frac{1}{2\pi\left(\sigma_{e}^{2}+\sigma_{L}^{2}\right)}
 \end{align}
 where the transverse \textit{rms} source size of an inverse Compton scattering electron bunch--laser pulse interaction is consequently defined as
 \begin{equation}
-\sigma_{\gamma,x/y} = \frac{\sigma_{e,x/y}\sigma_{L}}{\sqrt{\sigma_{e,x/y}^{2}+\sigma_{L}^{2}}}
+\sigma_{\gamma,x/y} = \frac{\sigma_{e,x/y}\sigma_{L}}{\sqrt{\sigma_{e,x/y}^{2}+\sigma_{L}^{2}}},
 \label{eq:source_size}
 \end{equation}
 where $\sigma_{e,x/y}$ is the \textit{rms} transverse electron bunch spot size in each plane and $\sigma_{L}$ is the \textit{rms} transverse laser pulse spot size. A similar derivation to (Eq.~\ref{eq:expanded_transverse_source_density}) can be made for the longitudinal domain, therefore the longitudinal \textit{rms} source size is given by
@@ -743,7 +743,7 @@ where
 \end{equation}
 is the \textit{rms} normalised transverse momentum of the electron bunch. The bandwidth formulation by Curatolo et al assumes a round transverse profile of the electron bunch as in (Eq.~\ref{eq:akagi_bandwidth}), and also includes an identical beam quality term, which is previously shown to be generally negligible. Recoil correction is included in (Eq.~\ref{eq:curatolo_bandwidth}) but angular variation is only included in the collimation term, as the acceptance angle is present in no other term. A non-linear ponderomotive broadening term $\left(\frac{a_{0}^{2}/3}{1+a_{0}^{2}/2}\right)^{2}$ is introduced in (Eq.~\ref{eq:curatolo_bandwidth}), which is advantageous over the bandwidth by Ranjan et al \cite{ranjan2018simulation} where non-linear effects are not accounted for. 
 
-The bandwidth by Curatolo et al \cite{curatolo2017analytical} also includes covariance of the emittance and collimation terms for predicting the bandwidth of skewed non-Gaussian scattered photon spectra \cite{ranjan2018simulation} produced when the ICS interaction is not between a Gaussian electron bunch and laser pulse. However, skewed non-Gaussian spectra effects can also be accounted for using a modified version of Ranjan et al's bandwidth
+The bandwidth by Curatolo et al \cite{curatolo2017analytical} also includes covariance of the emittance and collimation terms for predicting the bandwidth of skewed non-Gaussian scattered photon spectra \cite{ranjan2018simulation} produced when the ICS interaction is not between a Gaussian electron bunch and laser pulse. However, skewed non-Gaussian spectral effects can also be accounted for using a modified version of Ranjan et al's bandwidth
 \begin{equation}
 \frac{\Delta E_{\gamma}}{E_{\gamma}} = \sqrt{\left[\left(\frac{\sigma_{\theta}}{E_{\theta}}\right)+\left(\frac{\sigma_{\epsilon}}{E_{\epsilon}}\right)\right]^{2}+\left(\frac{\sigma_{e}}{E_{e}}\right)^{2}+\left(\frac{\sigma_{L}}{E_{L}}\right)^{2}},
 \label{eq:covariant_RMS_bandwidth}    
@@ -804,7 +804,7 @@ where $\mathcal{F}_{0.1\%}$ is the flux in a 0.1\% FWHM bandwidth (Eq.~\ref{eq:f
 \mathcal{B}_{\mathrm{avg}} = \frac{\mathcal{F}_{0.1\%}}{4\pi^{2}\sigma_{\gamma,x}\sqrt{\epsilon_{x}/\beta_{x}^{*}}\sigma_{\gamma,y}\sqrt{\epsilon_{y}\beta_{y}^{*}}}.
 \label{eq:average_brilliance_nondiffraction}    
 \end{equation}
-Simplifying (Eq.~\ref{eq:average_brilliance}) further, by noting that for a compact ICS source the electron bunch transverse profile size is typically larger than the laser spot size ($\sigma_{e,x/y}\gg\sigma_{L}$) i.e $\sigma_{\gamma,x/y} \approx \sqrt{\epsilon_{x/y}\beta_{x/y}^{*}}$, the average brilliance becomes
+Simplifying (Eq.~\ref{eq:average_brilliance_nondiffraction}) further, by noting that for a compact ICS source the electron bunch transverse profile size is typically larger than the laser spot size ($\sigma_{e,x/y}\gg\sigma_{L}$) i.e $\sigma_{\gamma,x/y} \approx \sqrt{\epsilon_{x/y}\beta_{x/y}^{*}}$, the average brilliance becomes
 \begin{equation}
 \mathcal{B}_{\mathrm{avg}} \approx \frac{\gamma^{2}\mathcal{F}_{0.1\%}}{4\pi^{2}\epsilon_{n,x}\epsilon_{n,y}}.
 \label{eq:average_brilliance_compact}    
