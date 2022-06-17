@@ -32,18 +32,68 @@ While scattering interactions, specifically inverse Compton scattering interacti
 % main results that Hywel + I went through (isotropic, polarisation conserved)
 % I DEFINITELY NEED TO INCLUDE MORE MATHS + DESCRIPTION OF POWER + HOW WE GET TO THE STATEMENTS
 
-Radiation is emitted when a charged particle is accelerated. Imagine a charged particle is being subjected to a small, uniform acceleration $a$ for a time $\Delta t$ after which it travels at constant velocity $u=a\Delta t$ where $u\ll c$. A shown in Fig.~\textcolor{blue}{**LINK**}, in the rest frame of the charged particle a radial electric field is produced however, in the laboratory frame the electric field is no longer completely radial and there is a kink corresponding to the acceleration of the charge. Note that the field lines must remain continuous because of Gauss' law in free space $\Delta\cdot\boldsymbol{E}=0$. The kink in the electric field corresponds to the emitted radiation.
-\textcolor{blue}{**REST FRAME E FIELD AND LAB FRAME ACCELERATED E FIELD DIAGRAM**}
-Rather than calculate the radiation properties for this scenario we instead consider an alternative scenario more appropriate to modelling radiation incident on charged particles where the acceleration applied to the charged particle causes the charged particle to oscillate. This is analogous to the well-known Hertzian dipole. A hertzian dipole emits radiation at the identical frequency to the frequency of the driving radiation and the polarisation of the incident radiation is also conserved by the emitted radiation. Within the rest of this Chapter, electrons are the only charged particle considered. 
+Radiation is emitted when a charged particle is accelerated. Imagine a particle with non-zero charge $q$ is being subjected to a small, uniform acceleration $a$ for a time $\Delta t$ after which it travels at constant velocity $u=a\Delta t$ where $u\ll c$. As shown in Fig.~\ref{fig:e_field_diagram}, in the rest frame of the charged particle a radial electric field is produced however, in the laboratory frame the electric field is no longer completely radial and there is a kink corresponding to the acceleration of the charge. Note that the field lines must remain continuous because of Gauss' law in free space $\nabla\cdot\boldsymbol{E}=0$. The kink in the electric field corresponds to the emitted radiation, which is polarised in the same direction as the acceleration of the charge but emitted perpendicular to it.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/E_field_diagram.pdf}
+\caption{Left: A charged particle at point $P$ is uniformly accelerated to point $Q$ and then moves at constant velocity $u=a\Delta t$. An observer sees the field of the constant velocity charge within a radius $r < ct$ but when $r > ct$ the observer sees the stationary charge electric field at $P$. Since field lines must remain constant there is a kink in the electric field at $r=ct$, which corresponds to the generated radiation. Right: Isotropic electric field $\boldsymbol{E}$ of the charged particle $q$ in it's rest frame.}
+\label{fig:e_field_diagram}
+\end{figure}
 
-The simplest form of radiation scattering interaction is Thomson scattering \cite{thomson1904xxxiv} between radiation incident upon an electron. The electron is treated classically because the incident radiation is much lower energy $E_{L}=hf$, with $h$ Planck's constant and $f$ the frequency, than the rest mass of the electron $m_{e}c^{2}$ ($m_{e}c^{2}\gg h\nu$). The incident radiation causes the electron to oscillate and therefore be accelerated, much like the previous Hertzian dipole case. The accelerated electron subsequently emits radiation, which is emitted isotropically in the electron frame. The radiation is emitted at an identical frequency to the incident radiation and therefore no energy is transferred; the scattering is elastic. Polarisation of the incident radiation is conserved as in the Hertzian dipole case.     
+The radial $\boldsymbol{E}_{\parallel}$ and perpendicular (kink) $\boldsymbol{E}_{\perp}$ electric fields are given by  
+\begin{align}
+\boldsymbol{E}_{\parallel} &= \frac{q}{4\pi\varepsilon_{0}r^{2}}, & \boldsymbol{E}_{\perp} &= \frac{qa_{\perp}}{4\pi\varepsilon_{0}c^{2}r},
+\label{eq:dipole_E_fields}
+\end{align}
+where $\varepsilon_{0}$ is the permitivity of free space, $r$ is the radial distance and $a_{\perp}=\sin\theta$ is the perpendicular component of the uniform acceleration at an observation angle $\theta$. Hence, the magnitude of the electric field $E\left(\boldsymbol{r},t\right)$ at some location $\boldsymbol{r}$ is
+\begin{equation}
+\lvert\boldsymbol{E}\left(\boldsymbol{r},t\right)\rvert = \frac{q\lvert\boldsymbol{a}\left(t-r/c\right)\rvert\sin\theta}{4\pi\varepsilon_{0}c^{3}r},    
+\end{equation}
+and the magnitude of the magnetic field at $\boldsymbol{r}$ is $\lvert\boldsymbol{B}\left(\boldsymbol{r},t\right)\rvert = \lvert\boldsymbol{E}\left(\boldsymbol{r},t\right)\rvert/c$ because of Faraday's law. The power flow of the emitted radiation can therefore be expressed using the Poynting vector
+\begin{equation}
+\boldsymbol{S} = \frac{1}{\mu_{0}}\left(\boldsymbol{E}\times\boldsymbol{B}\right),
+\label{eq:Poynting_vector}
+\end{equation}
+where $\mu_{0}$ is the permeability of free space and therefore the magnitude of the Poynting vector, the Poynting flux (power flow) becomes 
+\begin{equation}
+\lvert\boldsymbol{S}\left(\boldsymbol{r},t\right)\rvert = \frac{q^{2}\lvert\boldsymbol{a}^{2}\left(t-r/c\right)\rvert\sin^{2}\theta}{16\pi^{2}\varepsilonc^{3}r^{2}},
+\label{eq:Poynting_magnitude}
+\end{equation}
+where, as expected, $P \propto 1/r^{2}$ and $P \propto \sin^{2}\theta$ which means the angular distribution of the emitted radiation is in the dipole pattern shown in Fig.~\ref{fig:dipole_angular_distribution}.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.7\textwidth]{Figures/Photon_Production_by_Inverse_Compton_Scattering/dipole_angular_distribution_fixed.pdf}
+\caption{Angular distribution of the emitted radiation from an accelerated charge. The charge is accelerated along the $z$ axis, and hence no radiation is emitted in this direction. The distribution is the familiar dipole radiation pattern.}
+\label{fig:dipole_angular_distribution}
+\end{figure}
+The power of the emitted radiation by an accelerated charge as a function of time can therefore be found by integrating over the emitted radiation, which occurs into a spherical surface area $\boldsymbol{A}$
+\begin{equation}
+P\left(t\right) = \oint\boldsymbol{S}\cdot d\boldsymbol{A} = \frac{q^{2}a^{2}\left(t-r/c\right)}{6\pi\varepsilon_{0}c^{3}},
+\label{eq:accelerated_charge_radiation_power}    
+\end{equation}
+where $d\boldsymbol{A} = 2\pi r^{2}\sin\theta d\theta$, and (Eq.~\ref{eq:accelerated_charge_radiation_power}) is Larmor's formula. Considering an alternative scenario more appropriate to modelling radiation production, we imagine the acceleration applied to the charged particle with charge $q$ that causes the particle to oscillate over a distance $l$. This is analogous to the well-known Hertzian dipole which is comprehensively detailed in many textbooks \cite{purcell1965electricity,appleby2020science} therefore, for brevity, we instead replicate the main results. The oscillating charge causes a current $I$ to flow
+\begin{equation}
+I = \frac{dQ}{dt} = q\omega\cos\left(\omega t\right),    
+\end{equation}
+where $\omega$ is the frequency of the oscillation. Therefore, the power of the emitted radiation by Larmor's formula (Eq.~\ref{eq:accelerated_charge_radiation_power}) is
+\begin{equation}
+P\left(t\right) = \frac{l^{2}\omega^{2}}{6\pi\varepsilon_{0}c^{3}}q^{2}\omega^{2}\sin\left(kr-\omega t\right),
+\label{eq:dipole_radiation_power}    
+\end{equation}
+where $k$ is the wavenumber of the emitted radiation. Consequently, the average power becomes
+\begin{equation}
+\langle P\rangle = \frac{q^{2}l^{2}\omega^{4}}{12\pi\varepsilon_{0}c^{3}}.   
+\end{equation}
+To summarise the important results: an oscillating charge emits radiation at the identical frequency to the frequency of the driver of the oscillation, the power of the emitted radiation rapidly increases with oscillation frequency ($P \propto \omega^{4}$), the emitted radiation is polarised in the direction of the applied acceleration and the angular distribution of the radiation follows the dipole radiation pattern with $P \propto \sin^{2}\theta$. Next we consider incident radiation as the cause of the acceleration applied to a charged particle. Note that within the rest of this Chapter, electrons are the only charged particle considered. 
+
+The simplest radiation scattering interaction is Thomson scattering \cite{thomson1904xxxiv} where radiation is incident upon an electron and later scattered. The electron is treated classically because the incident radiation is much lower energy $E_{L}=hf$, with $h$ Planck's constant and $f$ the frequency, than the rest mass of the electron $m_{e}c^{2}$ ($m_{e}c^{2}\gg h\nu$). The incident radiation causes the electron to oscillate and therefore be accelerated, much like the previous Hertzian dipole case. The accelerated electron subsequently emits radiation, which is emitted isotropically in the electron frame. The radiation is emitted at an identical frequency to the incident radiation and therefore no energy is transferred; the scattering is elastic. Polarisation of the incident radiation is conserved as in the Hertzian dipole case.     
 
 Thomson's radiation scattering model was furthered by Compton \cite{compton1923quantum}, where the scattering between a photon and an electron -- named Compton scattering -- is modelled. Here we consider a photon of momentum $\hbar k_{1}$ is incident upon a non-relativistic electron ($\gamma \ll 1$) of momentum $p_{1}$. The incident photon accelerates the electric charge as in Thomson scattering however, the incident photon recoils because momentum has been transferred from the photon to the electron. The electron is scattered with higher momentum $p_{2}$ ($p_{2}>p_{1}$) whereas the photon recoils with lower momentum $\hbar k_{2}$ ($\hbar k_{1} > \hbar k_{2}$) and consequently the scattered photon wavelength is increased relative to the incident photon wavelength. The scattering is clearly inelastic and the magnitude of the photon recoil can be expressed as $X=4E_{L}/m_{e}c^{2}$, where $E_{L}$ is the energy of the incident photon. The decrease in momentum of the photon also causes an angular dependence on the variation of the wavelength $\Delta\lambda$ as given by
 \begin{equation}
 \Delta\lambda = \frac{h}{m_{e}c^{2}}\left(1-\cos\theta\right),
 \label{eq:Compton_wavelength}    
 \end{equation}
-where $\theta$ is the scattering angle of the photon with respect to the electron. As in Thomson scattering, the polarisation of the incident photon is conserved by the scattered photon. Compton scattering experiments are a fundamental proof of the particle nature of light because classical electromagnetism can't predict the reduction in photon wavelength.
+where $\theta$ is the scattering angle of the photon with respect to the electron. As in Thomson scattering, the polarisation of the incident photon is conserved by the scattered photon. Compton scattering experiments are a fundamental proof of the particle nature of light because classical electromagnetism can't predict the observed reduction in photon wavelength.
 
 Within this thesis, we are concerned with inverse Compton scattering -- the process of scattering a photon from a relativistically-moving electron where the scattered photon gains energy from the recoiling electron. Inverse Compton scattering was first proposed by Feenberg and Primakoff \cite{feenberg1948interaction} as a mechanism for cosmic rays to reduce in energy as they propagate throughout the universe. 
 
