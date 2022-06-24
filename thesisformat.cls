@@ -53,6 +53,7 @@
 \RequirePackage{cite}
 \RequirePackage{siunitx}
 \RequirePackage{threeparttable}
+\RequirePackage{txfonts}
 
 
 % PDF Settings
