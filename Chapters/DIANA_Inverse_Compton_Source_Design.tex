@@ -434,19 +434,41 @@ when $y=0$. The total cross section of the bremsstrahlung interaction, following
 \end{equation}
 For example, for a tungsten ($Z = 74$) target, the total cross section of the bremsstrahlung reaction is $\sigma = 4.87\times 10^{-27}$~\si{\meter}$^{2}$, a factor $\sim 73$ larger than the Thomson cross section. 
 
-The differential cross section (Eq.~\ref{eq:bremsstrahlung_differential_cross_section}) can then be converted into the intensity of a bremsstrahlung source via a reaction rate scaling factor
+Integrating the differential cross section (Eq.~\ref{eq:bremsstrahlung_differential_cross_section}) with respect to the generated photon energy $k$ gives the bremsstrahlung cross section for photon production within the energy range $k_{\mathrm{max}} \leq k \leq k_{\mathrm{min}}$ 
 \begin{equation}
-\Gamma = \frac{\rho\tau N_{A}}{A},
-\label{eq:bremsstrahlung_reaction_rate}    
+\sigma\left(k\right) = \int_{k_{\mathrm{min}}}^{k_\mathrm{max}} \frac{d\sigma}{dk}~dk.
+\label{eq:brem_integrated_cross_section}    
 \end{equation}
-where $\rho$ is the density of the bremsstrahlung target, $\tau$ is the target thickness, $N_{A}$ is Avogadro's constant and $A$ is the atomic weight of the target isotope. Hence, the intensity of a bremsstrahlung source is given by
+
+
+The flux of bremsstrahlung photons generated in an energy range $k_{\mathrm{max}} \leq k \leq k_{\mathrm{min}}$ by a bremsstrahlung source is given by
 \begin{equation}
-I = \Gamma\frac{d\sigma}{dk}
+\mathcal{F} = \sigma\left(k\right)\mathcal{L},    
+\end{equation}
+and $\mathcal{L}$ is the luminosity of a fixed target interaction -- where a relativistically moving electron beam is incident on a stationary target -- which is given by Herr and Muratori \cite{herr2006concept} as
+\begin{equation}
+\mathcal{L} = \rho_{T}\tau\Phi,     
+\end{equation}
+where $\Phi$ is the flux of electrons incident on the target, $\tau$ is the thickness of the target and $\rho_{T}$ is the number density of target atoms
+\begin{equation}
+\rho_{T} = \frac{\rho N_{A}}{M},
+\label{eq:target_number_density}    
+\end{equation}
+where $\rho$ is the density of the bremsstrahlung target, $\tau$ is the target thickness, $N_{A}$ is Avogadro's constant and $A$ is the atomic weight of the target isotope. 
+
+Hence, we define the intensity of a bremsstrahlung source as
+\begin{equation}
+I = \rho_{T}\frac{d\sigma}{dk}
 \label{eq:bremsstrahlung_intensity}    
 \end{equation}
-where the intensity of the bremsstrahlung source is quoted in units of number of photons per unit electron per \si{\mega\electronvolt} per \si{\milli\meter} of target (convertor) thickness (ph/($e^{-}$~\si{\mega\electronvolt}~\si{\milli\meter})).
+where the intensity of the bremsstrahlung source is quoted in units of number of photons per unit electron per generated photon energy in \si{\mega\electronvolt} per \si{\milli\meter} of target (convertor) thickness (ph/($e^{-}$~\si{\mega\electronvolt}~\si{\milli\meter})). Similarly, the spectral density of the bremsstrahlung interaction is defined as
+\begin{equation}
+\mathcal{S} = \frac{d\sigma}{dk}\mathcal{L},
+\label{eq:bremsstrahlung_spectral_density}    
+\end{equation}
+and is quoted in units of the number of photons per unit electron energy in \si{\mega\electronvolt} per second (ph/(\si{\mega\electronvolt}\si{\second})).
 
-The differential and total cross sections in (Eq.~\ref{eq:bremsstrahlung_differential_cross_section}) makes several approximations such as the Born approximation, that an approximate screening potential is used, that the angle of the initial momentum of the electron $\theta_{0}$ is approximated as $\theta_{0} \lesssim Z^{1/3}/111E_{0}$ and that the generated photon, incident and outgoing electron are all ultra-relativistic ($k,~E_{0},E \gg m_{e}c^{2}$). The Born approximation requires the initial and final velocities of the electron to satisfy the equations
+The differential and total cross sections in (Eq.~\ref{eq:bremsstrahlung_differential_cross_section}) make several approximations such as the Born approximation, that an approximate screening potential is used, that the angle of the initial momentum of the electron $\theta_{0}$ is approximated as $\theta_{0} \lesssim Z^{1/3}/111E_{0}$ and that the generated photon, incident and outgoing electron are all ultra-relativistic ($k,~E_{0},E \gg m_{e}c^{2}$). The Born approximation requires the initial and final velocities of the electron to satisfy the equations
 \begin{align}
 \frac{2\pi Z}{137\beta} &\ll 1, & \frac{2\pi Z}{137\beta_{0}} &\ll 1,
 \label{eq:Born_approximation}    
@@ -478,7 +500,7 @@ accelerator \cite{chin2021application}, whereas a larger electron accelerator is
 
 However, unlike the ICS process there is no inherent photon energy--angle correspondence in bremsstrahlung sources, therefore energies of photons can not be simply selected by a collimator. In bremsstrahlung sources photon energy selection is not readily achievable; the spectrum may be narrowed by attenuating the bremsstrahlung photons through a material as lower energy photons would be attenuated to a greater extent than the higher energy photons, but some would still remain and the attenuation would distort the spectrum overall whilst reducing photon fluxes. Therefore, attenuation of the spectrum is a poor way of obtaining a monochromatic photon spectrum. Unavoidably bremsstrahlung $\gamma$-ray sources produce photons with a broad energy range, as shown in Fig.~\ref{fig:BremIntensityEZ} that delivers unnecessary dose to a sample which can also interfere with the signature to be detected \cite{geddes2017impact}. Broadband radiation reduces the signal-to-noise ratio of the investigated process, consequently monoenergetic sources allow the sensitivity of a experiment to be improved \cite{jones2008bremsstrahlung}.
 
-To compare the DIANA ICS source with a common bremsstrahlung source we consider a 1~\si{\milli\ampere} electron beam from an electron linac with a maximum electron beam energy of 50~\si{\mega\electronvolt}, similar to the demonstrated 0.85~\si{\milli\ampere} ELBE linac \cite{teichert2003results}, is incident on a 1~\si{\milli\meter} thick tungsten ($Z = 74$) target. The resultant spectrum in terms of spectral density (ph/(MeV s)) using the analytical bremsstrahlung intensity  (Eq.~\ref{eq:bremsstrahlung_intensity}) at a current of 1~\si{\milli\ampere} is given in Fig.~\ref{fig:brem_1mA_DIANA_ICS_comparison}. The DIANA ICS source spectrum at $E_{\gamma} = 20$~\si{\mega\electronvolt} is selected as a comparison and the spectrum in Fig.~\ref{fig:DIANA_spectra} has been scaled by the 12.5~\si{\milli\ampere} current of the DIANA ERL for conversion from a single electron bunch--laser pulse interaction spectrum to the ICS interaction spectrum per second.
+To compare the DIANA ICS source with a common bremsstrahlung source we consider a 1~\si{\milli\ampere} electron beam from an electron linac with a maximum electron beam energy of 50~\si{\mega\electronvolt}, similar to the demonstrated 0.85~\si{\milli\ampere} ELBE linac \cite{teichert2003results}, is incident on a 1~\si{\milli\meter} thick tungsten ($Z = 74$) target. The resultant spectrum in terms of spectral density (Eq.~\ref{eq:bremsstrahlung_spectral_density}) at a current of 1~\si{\milli\ampere} is given in Fig.~\ref{fig:brem_1mA_DIANA_ICS_comparison}. The DIANA ICS source spectrum at $E_{\gamma} = 20$~\si{\mega\electronvolt} is selected as a comparison and the spectrum in Fig.~\ref{fig:DIANA_spectra} has been scaled by the 12.5~\si{\milli\ampere} current of the DIANA ERL for conversion from a single electron bunch--laser pulse interaction spectrum to the ICS interaction spectrum per second.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/DIANA_Inverse_Compton_Source_Design/Brem_1mA_DIANA_ICS_Comparison.pdf}
