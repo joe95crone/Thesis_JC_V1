@@ -567,46 +567,45 @@ The $\beta_{x}^{*}$--$\beta_{y}^{*}$ parameter space tuning curve corresponding 
 \section{Evaluation of Optimisation Methods} 
 \label{sec:evaluation_of_optimisation_methods}
 
-Optimisations have been performed for each of the cases in Table~\ref{tab:char_opt_electron_bunch_parameters} using the laser parameters in Table~\ref{tab:char_opt_laser_pulse_parameters} using the RB (Section~\ref{sec:RB_optimisation}), GA NRB and simplex NRB (Section~\ref{sec:NRB_optimisation} methods. Since case B electron bunch parameters don't fulfill the round beam optimisation criteria ($\epsilon_{nx}\neq\epsilon_{ny}$) it has been excluded from the RB method. Within this section, the optimisation methods will be compared through both single point and tuning curve optimisations, to evaluate the applicability of optimisation towards narrowband radiation production, quantify the advantage of NRB optimisation over RB optimisation and examine the feasibility of each optimisation method. 
+Optimisations have been performed for each of the cases in Table~\ref{tab:char_opt_electron_bunch_parameters} using the laser parameters in Table~\ref{tab:char_opt_laser_pulse_parameters} using the round beam (Section~\ref{sec:RB_optimisation}) and simplex elliptical beam (Section~\ref{sec:EB_optimisation} methods. Since case B electron bunch parameters don't fulfill the round beam optimisation criteria ($\epsilon_{nx}\neq\epsilon_{ny}$) it has been excluded from the RB method. Within this section, the optimisation methods will be compared through both single bandwidth and tuning curve optimisations, to evaluate the applicability of optimisation towards narrowband radiation production, quantify the advantage of EB optimisation over RB optimisation and examine the feasibility of each optimisation method. 
 
 Applying these optimisation techniques in practice requires further studies. For example, accelerator jitter may impede the the optimised electron bunch transverse profile at the interaction point from being produced and the effect of this error on source performance needs to be quantified. Errors such as misalignment of the incident laser pulse and collimator must also be studied. This is a subject for future work.  
 
 \subsection{Single Bandwidth Optimisations}
 \label{sec:single_bandwidth_optimisations}
 
-Single point bandwidth optimisations of the benchmarking cases in Table~\ref{tab:char_opt_electron_bunch_parameters}, with laser parameters in Table~\ref{tab:char_opt_laser_pulse_parameters}, are used to compare optimisation methods (RB, NRB simplex and NRB GA) at small \textit{rms} bandwidths (0.5\% \texit{rms} bandwidth for case A and C and 2\% \texit{rms} bandwidth for case B) to quantify the advantage of using each method and for comparison against the standard transverse profile matching approach in Section~\ref{sec:transverse_profile_matching}. The single point bandwidth optimised results of each case are shown in Table~\ref{tab:single_point_optimisations}. 
+Single bandwidth optimisations of the benchmarking cases in Table~\ref{tab:char_opt_electron_bunch_parameters}, with laser parameters in Table~\ref{tab:char_opt_laser_pulse_parameters}, are used to compare the round beam and elliptical beam optimisations at small \textit{rms} bandwidths (0.5\% \texit{rms} bandwidth for case A and C and 2\% \texit{rms} bandwidth for case B) to quantify the advantage of using each method and for comparison against the standard transverse profile matching approach in Section~\ref{sec:transverse_profile_matching}. The single bandwidth optimised results of each case are shown in Table~\ref{tab:single_point_optimisations}. 
 
-Comparison between optimisation methods will determine if optimising the transverse dynamics for maximal collimated flux in a narrow bandwidth is a worthwhile strategy and ascertain the benefit of using a non-round beam optimisation, beyond the obvious advantage that RB optimisation is only applicable when certain criteria are satisfied. Through examination of the variables related to the optimal solution, ICS source design can be further understood and the question of whether a round transverse profile is optimal can be answered.      
-
+Comparison between optimisation methods will determine if optimising the transverse dynamics for maximal collimated flux in a narrow bandwidth is a worthwhile strategy and ascertain the benefit of using a non-round beam optimisation, beyond the obvious advantage that RB optimisation is only applicable when the round beam approximation is valid. Through examination of the variables related to the optimal solution, ICS source design can be further understood and the question of whether a round beam is optimal can be answered.      
 \begin{table}[!h]
 \centering
-\caption{Single point optimisations for the transverse profile matching (TPM), round beam (RB), non-round beam simplex (NRB simplex) and non-round beam genetic algorithm (NRB GA) methods of all benchmarking cases. \textit{Rms} bandwidths of 0.5\% (2\%) are chosen to evaluate the single point optimisation methodologies for case A and C (case B). The optimisations are compared via the collimated flux, which is maximised, and the variables corresponding to the optimal solution.}
+\caption{Single point optimisations for the transverse profile matching (TPM), round beam (RB) and elliptical beam simplex (EB simplex) of all benchmarking cases. \textit{Rms} bandwidths of 0.5\% (2\%) are chosen to evaluate the single point optimisation methodologies for case A and C (case B). The optimisations are compared via the collimated flux, which is maximised, and the variables corresponding to the optimal solution.}
 \vspace{3mm}
 \begin{threeparttable}
-\begin{tabular}{lccccc}
+\begin{tabular}{lcccc}
 \hline\hline
-Parameter & TPM & RB & NRB simplex & NRB GA & Unit \\
+Parameter & TPM & RB & EB simplex & Unit \\
 \hline
-\multicolumn{6}{c}{Case A 0.5\% \textit{rms} bandwidth} \\
+\multicolumn{5}{c}{Case A 0.5\% \textit{rms} bandwidth} \\
 \hline
-Collimated flux & $7.37\times 10^{8}$ & $8.62\times 10^{8}$ & $8.81\times 10^{8}$ & $8.86\times 10^{8}$ & ph/\si{\second} \\
-$\beta_{x}^{*}$-function & 3.53 & 1.15 & 1.69 & 2.11 & \si{\meter}\\
-$\beta_{y}^{*}$-function & 3.53 & 1.15 & 0.88 & 0.87 & \si{\meter}\\
-Collimation angle & 0.068 & 0.066 & 0.066 & 0.066 & \si{\milli\radian}\\
+Collimated flux & $7.37\times 10^{8}$ & $8.62\times 10^{8}$ & $8.81\times 10^{8}$ & ph/\si{\second} \\
+$\beta_{x}^{*}$-function & 3.53 & 1.15 & 1.69 & \si{\meter}\\
+$\beta_{y}^{*}$-function & 3.53 & 1.15 & 0.88 & \si{\meter}\\
+Collimation angle & 0.068 & 0.066 & 0.066 & \si{\milli\radian}\\
 \hline
-\multicolumn{6}{c}{Case B 2\% \textit{rms} bandwidth} \\
+\multicolumn{5}{c}{Case B 2\% \textit{rms} bandwidth~\tnote{*} ~\tnote{$\dagger$}} \\
 \hline
-Collimated flux & -- & -- & $9.19\times 10^{9}$ & $1.04\times 10^{10}$ & ph/\si{\second} \\
-$\beta_{x}^{*}$-function & -- & -- & 3.46 & 11.05 & \si{\meter} \\
-$\beta_{y}^{*}$-function & -- & -- & 0.10 & 0.20 & \si{\meter} \\
-Collimation angle & -- & -- & 0.178 & 0.194 & \si{\milli\radian} \\ 
+Collimated flux & -- & -- & $9.19\times 10^{9}$ & ph/\si{\second} \\
+$\beta_{x}^{*}$-function & -- & -- & 3.46 & \si{\meter} \\
+$\beta_{y}^{*}$-function & -- & -- & 0.10 & \si{\meter} \\
+Collimation angle & -- & -- & 0.178 & \si{\milli\radian} \\ 
 \hline
-\multicolumn{6}{c}{Case C 0.5\% \textit{rms} bandwidth} \\
+\multicolumn{5}{c}{Case C 0.5\% \textit{rms} bandwidth} \\
 \hline
-Collimated flux & $8.35\times 10^{7}$ & $1.16\times 10^{8}$ & $1.16\times 10^{8}$ & $1.17\times 10^{8}$ & ph/\si{\second} \\
-$\beta_{x}^{*}$-function & 0.45 & 0.015 & 0.016 & 0.029 & \si{\meter} \\
-$\beta_{y}^{*}$-function & 0.45 & 0.015 & 0.015 & 0.013 & \si{\meter} \\
-Collimation angle & 2.63 & 2.62 & 2.63 & 2.64 & \si{\milli\radian}\\
+Collimated flux & $8.35\times 10^{7}$ & $1.16\times 10^{8}$ & $1.16\times 10^{8}$ & ph/\si{\second} \\
+$\beta_{x}^{*}$-function & 0.45 & 0.015 & 0.016 & \si{\meter} \\
+$\beta_{y}^{*}$-function & 0.45 & 0.015 & 0.015 & \si{\meter} \\
+Collimation angle & 2.63 & 2.62 & 2.63 & \si{\milli\radian}\\
 \hline\hline
 \end{tabular}
 \begin{tablenotes}
