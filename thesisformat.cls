@@ -125,7 +125,7 @@
 % Word Count
 %--------------------------------------------------------
 \newcommand{\quickwordcount}[1]{%
-  \immediate\write18{texcount -1 -sum -merge #1.tex > #1-words.sum }%
+  \immediate\write18{texcount -template="SUM" -1 -sum -merge  #1.tex > #1-words.sum }%
   Word Count: \input{#1-words.sum}%
 }
 
