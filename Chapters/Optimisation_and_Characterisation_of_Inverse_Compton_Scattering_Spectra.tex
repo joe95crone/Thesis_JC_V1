@@ -14,7 +14,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-
+%TC:ignore
 % Title
 %--------------------------------------------------------
 \chapter{Optimisation and Characterisation of Inverse Compton Scattering Spectra}
@@ -197,6 +197,8 @@ For the complex integration involved in evaluating the central equation of \text
 \label{eq:ICARUS_electron_energy_spread_term}
 \end{equation}
 which causes errors in the quasi-Monte Carlo integration. The `roughness' or bumps seen in the \textsc{ICARUS} spectrum in Fig.~\ref{fig:example_ICARUS_caseA} appear unphysical and, upon further investigation, seem related to the setting of the quasi-Monte Carlo integration routine used in the simulation. 
+
+%TC:endignore
 
 \section{Benchmarking Cases for Characterisation and Optimisation}
 \label{sec:benchmarking_cases_characterisation_optimisation}
@@ -643,7 +645,7 @@ A comparison of the tuning curve optimisation methods for the case A (1~\si{\gig
 
 The $\beta$-function at the IP parameter space tuning curve in Fig.~\ref{fig:case_A_optimisation_comparison} ($\beta_{x}^{*}$--$\beta_{y}^{*}$) demonstrates that an elliptical beam spot at the IP is favoured in case A because the optimal EB solution differs from the RB solution. The simplex optimisation shows a linear relationship between the $\beta$-functions -- i.e. the electron beam has the same ellipticity (ratio of $\sigma_{x}$ to $\sigma_{y}$) across the narrowband regime. The two $\beta_{x/y}^{*}$--$\theta_{\mathrm{col}}$ parameter space tuning curves for the case A electron bunch parameters both have the characteristic curves expected from these optimisations. Anomalous points are visible in the simplex EB tuning curve for small $\beta^{*}$, which conform to the round transverse profile optimisation solution and are points where the optimisation has failed to converge. The $\beta_{x}^{*}$--$\theta_{\mathrm{col}}$ tuning curve of the EB solution appears offset in collimation angle with respect to the RB solution i.e. larger $\beta_{x}^{*}$ functions for identical collimation angles. The RB and EB tuning curves appear to vary less for the $\beta_{y}^{*}$--$\theta_{\mathrm{col}}$ than the $\beta_{x}^{*}$--$\theta_{\mathrm{col}}$ tuning curves because the angular crossing is imposed in the horizontal plane.
 
-The collimated flux--\textit{rms} bandwidth tuning curves for each optimisation method are shown in Fig.~\ref{fig:case_B_optimisation_comparison} for a 0--2\% bandwidth range. Only the simplex elliptical beam optimisation results are presented here because only the elliptical beam optimisation is valid for the case B (700~\si{\mega\electronvolt} storage ring) ICS source parameters with asymmetric emittance ($\epsilon_{nx} \gg \epsilon_{ny}$) where the round beam approximation doesn't apply. Many anomalous points occur within the simplex EB tuning curve where the simulation has failed to converge -- an occassional weakness in the simplex approach. The minimum bandwidth in the case B simplex EB optimisation tuning curve is around 0.15\%, which is higher than the 0.1\% predicted by (Eq.~\ref{eq:bandwidth_limitation_minimum}) because of poor convergence of the simplex EB optimisation at the narrowest bandwidths. 
+The collimated flux--\textit{rms} bandwidth tuning curves for each optimisation method are shown in Fig.~\ref{fig:case_B_optimisation_comparison} for a 0--2\% bandwidth range. Only the simplex elliptical beam optimisation results are presented here because only the elliptical beam optimisation is valid for the case B (700~\si{\mega\electronvolt} storage ring) ICS source parameters with asymmetric emittance ($\epsilon_{nx} \gg \epsilon_{ny}$) where the round beam approximation doesn't apply. Many anomalous points occur within the simplex EB tuning curve where the simulation has failed to converge -- an occasional weakness in the simplex approach. The minimum bandwidth in the case B simplex EB optimisation tuning curve is around 0.15\%, which is higher than the 0.1\% predicted by (Eq.~\ref{eq:bandwidth_limitation_minimum}) because of poor convergence of the simplex EB optimisation at the narrowest bandwidths. 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Figures/Optimisation_and_Characterisation_of_Inverse_Compton_Scattering_Sources/CaseBoptcomp.pdf}

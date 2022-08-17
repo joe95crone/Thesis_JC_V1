@@ -36,8 +36,9 @@
 % Title Page
 %--------------------------------------------------------
 \maketitle
+\addtocounter{page}{1}
 
-
+%TC:ignore
 % Contents Page (+ word count)
 %--------------------------------------------------------
 \tableofcontents
@@ -65,7 +66,7 @@
 %\chapter*{Lay Abstract}
 %\addcontentsline{toc}{chapter}{Lay Abstract}
 
-
+%TC:ignore
 % Declaration
 %--------------------------------------------------------
 \chapter*{Declaration}
@@ -85,12 +86,12 @@ No portion of the work referred to in the thesis has been submitted in support o
 \item The ownership of certain Copyright, patents, designs, trademarks and other intellectual property (the “Intellectual Property”) and any reproductions of copyright works in the thesis, for example graphs and tables (“Reproductions”), which may be described in this thesis, may not be owned by the author and may be owned by third parties. Such Intellectual Property and Reproductions cannot and must not be made available for use without the prior written permission of the owner(s) of the relevant Intellectual Property and/or Reproductions.
 \item Further information on the conditions under which disclosure, publication and commercialisation of this thesis, the Copyright and any Intellectual Property  and/or Reproductions described in it may take place is available in the University IP Policy (see \url{http://documents.manchester.ac.uk/DocuInfo.aspx?DocID=24420}), in any relevant Thesis restriction declarations deposited in the University Library, The University Library’s regulations (see \url{http://www.library.manchester.ac.uk/about/regulations/}) and in The University’s policy on Presentation of Theses.
 \end{enumerate}
-
+%TC:endignore
 % Abstract
 %--------------------------------------------------------
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
-
+%TC:ignore
 % TOO LONG!
 
 % Little bit about ICS sources - why offer narrowband radiation, why offer high photon energy, why limited in flux, why use electrons? 
@@ -105,11 +106,16 @@ In this thesis two ICS sources are designed: the CBETA x-ray ICS source and the 
 
 % [optional] Dedication / Acknowledgement
 %--------------------------------------------------------
+%TC:ignore
 \chapter*{Acknowledgement}
 \addcontentsline{toc}{chapter}{Acknowledgement}
 
+I would like to thank my supervisors Hywel Owen, Bruno Muratori and Peter Williams for their guidance and support throughout the last $\sim$4~years, as well as Will Bertsche for stepping in after Hywel departed Manchester. This work would not have been possible without their contribution and would have been far less enjoyable without their good humour.
 
+Thanks is also due to the wider AP group at Daresbury Laboratory, especially James for his patience whilst I finished this work. Gratitude is due to the many collaborators such as the CBETA collaboration, including Kirsten and Georg, as well as and Carl, Geoff and Bal{\v{s}}a. Their contributions have improved my understanding and supported this work.
 
+I would also like to thank my friends for always reminding me there is more to life than electrons and photons, especially Chris, Hannah, Harry and Gus all of whom contributed to this PhD in one way or another (or at least listened to me complain). Thanks also to my family for their unconditional support throughout (and tolerating my lack of a proper job for 27+ years) and finally to Rachel for her patience and understanding (and putting up with me in general).
+%TC:endignore
 % [optional] Preface / 'The Author' - for the external examiner
 %--------------------------------------------------------
 %\chapter*{Preface}
@@ -156,20 +162,24 @@ In this thesis two ICS sources are designed: the CBETA x-ray ICS source and the 
 
 % Conclusion
 %--------------------------------------------------------
+%TC:ignore
 \subfile{Chapters/Conclusion}
+%TC:endignore
 
 % Bibliography
 %--------------------------------------------------------
 %\addcontentsline{toc}{chapter}{Bibliography}
 %\printbibliography
+%TC:ignore
 \bibliographystyle{unsrt}
 \bibliography{sample}
+%TC:endignore
 
 % Appendix
 %--------------------------------------------------------
-\appendix
+%\appendix
 
-\include{Appendices/AppendixTemplate}
+%\include{Appendices/AppendixTemplate}
 
 
 \end{document}
